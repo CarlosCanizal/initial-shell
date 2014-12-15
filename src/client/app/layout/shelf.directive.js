@@ -11,7 +11,7 @@ function shelf(serieApi){
   return{
     restrict: 'EA',
     scope:{
-      publisher : '@publisher'
+      publisher : '@'
     },
     templateUrl: 'app/layout/shelf.template.html',
     controller:function($scope){
