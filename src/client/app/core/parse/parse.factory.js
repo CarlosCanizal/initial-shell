@@ -11,7 +11,8 @@
   function parse($resource) {
 
     var factory = {
-      newParseResource: newParseResource
+      newParseResource: newParseResource,
+      newCloudCodeResource: newCloudCodeResource
     };
 
     return factory;
@@ -29,6 +30,18 @@
           'query':  {method:'GET', headers: headers},
           'remove': {method:'DELETE', headers: headers},
           'delete': {method:'DELETE', headers: headers} 
+        }
+      );
+    }
+
+    function newCloudCodeResource(headers){
+      return $resource(
+        'https://api.parse.com/1/functions/:function',
+        {
+          function: '@function'
+        },
+        {
+          'query': {method: 'POST', headers:headers}
         }
       );
     }

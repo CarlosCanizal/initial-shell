@@ -107,6 +107,39 @@ nav a{
   color:#666;
 }
 
+.search-box{
+  padding:1rem 0;
+}
+
+.search-box input{
+  font-family: 'Raleway', sans-serif;
+  width:90%;
+  font-size: 1.7rem;
+  border:solid 1px #999;
+  border-top-left-radius:0.5rem;
+  border-bottom-left-radius:0.5rem;
+  border-right:0;
+  padding:0 1rem;
+  color:#666;
+  outline: none;
+  -webkit-box-sizing: border-box;
+}
+
+.search-box a{
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  width:10%;
+  background-color: #ccc;
+  border:solid 1px #999;
+  letter-spacing: normal;
+  color:#666;
+  line-height: 2.5rem;
+  border-top-right-radius:0.5rem;
+  border-bottom-right-radius:0.5rem;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+
 .clearfix:after {
     visibility: hidden;
     display: block;

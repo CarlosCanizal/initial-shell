@@ -10,7 +10,7 @@
   /* @ngInject */
   function serieApi($resource, parseheaders, parse) {
 
-    var  Serie = parse.newParseResource(parseheaders.storeKeys);
+    var  Serie = parse.newCloudCodeResource(parseheaders.storeKeys);
 
     var factory = {
       getSeries: getSeries
@@ -18,15 +18,26 @@
 
     return factory;
 
-    function getSeries(publisher) {
+    // function getSeries(publisher) {
+    //   return Serie.query({
+    //     class: 'Serie',
+    //     where: {
+    //       publisher: publisher
+    //     },
+    //     limit: '1000',
+    //     order: 'name'
+    //   }).$promise;
+    // }
+
+    function getSeries() {
+      // var series = Serie.query().then(function(series){
+        // console.log(series);
+      // });
+      // console.log(series);
       return Serie.query({
-        class: 'Serie',
-        where: {
-          publisher: publisher
-        },
-        limit: '1000',
-        order: 'name'
-      }).$promise;
+        function: 'Serie'
+      }).$promise
     }
+
   }
 })();

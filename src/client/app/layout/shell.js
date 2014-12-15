@@ -11,13 +11,19 @@
     // jshint validthis: true 
     var vm = this;
 
-    serieApi.getSeries('Marvel Comics').then(function(states){
-      console.log(states);
+    // serieApi.getSeries('Marvel Comics').then(function(states){
+    //   console.log(states);
+    // },function(error){
+    //   console.error(error.data.error);
+    // });
+
+    var series = serieApi.getSeries();
+
+    series.then(function(series){
+      console.log(series.result);
     },function(error){
-      console.error(error.data.error);
+      console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
     });
-
-
   }
 
 })();
