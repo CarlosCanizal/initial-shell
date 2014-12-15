@@ -18,17 +18,6 @@
 
     return factory;
 
-    // function getSeries(publisher) {
-    //   return Serie.query({
-    //     class: 'Serie',
-    //     where: {
-    //       publisher: publisher
-    //     },
-    //     limit: '1000',
-    //     order: 'name'
-    //   }).$promise;
-    // }
-
     function getSeries(searchValue) {
       return Serie.query({
         function: 'Serie',

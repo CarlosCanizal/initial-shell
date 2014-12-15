@@ -105,6 +105,7 @@ nav a{
   font-family: 'Raleway';
   font-size:1.2rem;
   color:#666;
+  text-transform: uppercase;
 }
 
 .search-box{
@@ -113,9 +114,9 @@ nav a{
 
 .search-box input{
   font-family: 'Raleway', sans-serif;
-  width:90%;
+  width:85%;
   font-size: 1.7rem;
-  border:solid 1px #999;
+  border:solid 2px #CCC;
   border-top-left-radius:0.5rem;
   border-bottom-left-radius:0.5rem;
   border-right:0;
@@ -128,9 +129,9 @@ nav a{
 .search-box a{
   font-family: 'Raleway', sans-serif;
   text-align: center;
-  width:10%;
+  width:15%;
   background-color: #ccc;
-  border:solid 1px #999;
+  border:solid 2px #CCC;
   letter-spacing: normal;
   color:#666;
   line-height: 2.5rem;
