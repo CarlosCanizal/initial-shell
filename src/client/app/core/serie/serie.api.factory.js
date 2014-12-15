@@ -18,11 +18,9 @@
 
     return factory;
 
-    function getSeries(searchValue) {
-      return Serie.query({
-        function: 'Serie',
-        name:searchValue
-      }).$promise
+    function getSeries(params) {
+      params['function'] = 'Serie';
+      return Serie.query(params).$promise
     }
 
   }
