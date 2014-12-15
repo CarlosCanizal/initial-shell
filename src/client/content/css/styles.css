@@ -141,6 +141,10 @@ nav a{
   cursor: pointer;
 }
 
+.publisher-name{
+  text-transform: uppercase;
+}
+
 .clearfix:after {
     visibility: hidden;
     display: block;
