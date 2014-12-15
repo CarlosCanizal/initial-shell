@@ -10,20 +10,15 @@
   function Shell($scope, serieApi){
     // jshint validthis: true 
     var vm = this;
+    vm.searchValue = 'batman';
 
-    // serieApi.getSeries('Marvel Comics').then(function(states){
-    //   console.log(states);
-    // },function(error){
-    //   console.error(error.data.error);
-    // });
-
-    var series = serieApi.getSeries();
-
-    series.then(function(series){
-      console.log(series.result);
-    },function(error){
-      console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-    });
+    vm.search = function(){
+      serieApi.getSeries(vm.searchValue).then(function(series){
+        console.log(series.result);
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
   }
 
 })();

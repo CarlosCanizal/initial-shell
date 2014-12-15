@@ -24,8 +24,8 @@
               3
             </div>
             <div class="search-box pure-g">
-              <input type="text" ng-model="search" / >
-              <a>BUSCAR</a>
+              <input type="text" ng-model="vm.searchValue" / >
+              <a ng-click="vm.search();">BUSCAR</a>
             </div>
           </div>
           <div class="shelf">

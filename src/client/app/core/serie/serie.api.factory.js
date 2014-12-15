@@ -29,13 +29,10 @@
     //   }).$promise;
     // }
 
-    function getSeries() {
-      // var series = Serie.query().then(function(series){
-        // console.log(series);
-      // });
-      // console.log(series);
+    function getSeries(searchValue) {
       return Serie.query({
-        function: 'Serie'
+        function: 'Serie',
+        name:searchValue
       }).$promise
     }
 
