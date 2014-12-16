@@ -145,6 +145,14 @@ nav a{
   text-transform: uppercase;
 }
 
+.login{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color:#666;
+}
+
+
 .clearfix:after {
     visibility: hidden;
     display: block;
