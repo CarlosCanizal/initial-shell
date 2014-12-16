@@ -12,10 +12,34 @@
 
     var factory = {
       newParseResource: newParseResource,
-      newCloudCodeResource: newCloudCodeResource
+      newCloudCodeResource: newCloudCodeResource,
+      newLoginResource: newLoginResource,
+      newUserResource: newUserResource
     };
 
     return factory;
+
+    function newLoginResource(headers) {
+      return $resource(
+        'https://api.parse.com/1/login',
+        {
+        },
+        { 
+          'login':    {method:'GET', headers: headers}
+        }
+      );
+    }
+
+    function newUserResource(headers) {
+      return $resource(
+        'https://api.parse.com/1/users/me',
+        {
+        },
+        { 
+          'currentUser':    {method:'GET', headers: headers}
+        }
+      );
+    }
 
     function newParseResource(headers) {
       return $resource(
@@ -41,7 +65,8 @@
           function: '@function'
         },
         {
-          'query': {method: 'POST', headers:headers}
+          'query': {method: 'POST', headers:headers},
+          'save' : {method: 'POST', headers:headers}
         }
       );
     }

@@ -153,6 +153,22 @@ nav a{
 }
 
 
+/*login template*/
+.center-form{
+  border: solid 2px #CCC;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  padding: 3rem;
+  font-size: 1.3rem;
+  color: #999;
+  font-family: 'Raleway';
+}
+
+
+
+/*login template*/
+
+
 .clearfix:after {
     visibility: hidden;
     display: block;

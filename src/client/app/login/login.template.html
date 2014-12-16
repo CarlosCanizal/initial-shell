@@ -1,0 +1,19 @@
+<div class="center-form">
+  <form class="pure-form pure-form-aligned">
+    <fieldset>
+      <div class="pure-control-group">
+        <label for="username">Username</label>
+        <input ng-model="user.username" id="name" type="text" placeholder="Username" ng-init="user.username = 'carlos@canizal.com'">
+      </div>
+
+      <div class="pure-control-group">
+        <label for="password">Password</label>
+        <input ng-model="user.password" id="password" type="password" placeholder="Password"ng-init="user.password ='canizal'">
+      </div>
+    </fieldset>
+    <div class="pure-controls">
+    <a class="pure-button pure-button-primary" ng-click="login()">Iniciar Sesion</a>
+  </div>
+  </form>
+  
+</div>

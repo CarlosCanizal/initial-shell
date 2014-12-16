@@ -14,6 +14,11 @@
     vm.itemsList = [];
     vm.title = 'Resultados';
 
+    $scope.currentUser = null;
+    $scope.setCurrentUser = function(user){
+      $scope.currentUser = user;
+    }
+
     vm.searchByName = function(){
       var params = {
         name: vm.searchValue
