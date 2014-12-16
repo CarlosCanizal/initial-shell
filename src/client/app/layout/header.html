@@ -1,16 +1,11 @@
 <nav id="navigation">
-  <a href="#">SUSCRIPCIONES</a>
-  <a href="#">PRE ORDERNES</a>
-  <a href="#">TIENDA</a>
-  <a href="#">¿COMÓ FUNCIONA?</a>
+  <a ui-sref="home">TIENDA</a>
+  <a ui-sref="suscribe">SUSCRIPCIONES</a>
+  <a ui-sref="about">¿COMÓ FUNCIONA?</a>
 </nav>
 <div id="cart">
   <a class="login" ui-sref="app.login">Iniciar Sesion</a>
   <i class="fa fa-shopping-cart"></i>
   3
 </div>
-<div class="section-title">Suscripciones</div>
-<div class="search-box pure-g">
-  <input type="text" ng-model="vm.searchValue" / >
-  <a ng-click="vm.searchByName();">BUSCAR</a>
-</div>
+
