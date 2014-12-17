@@ -26,7 +26,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/como-funciona',
       templateUrl:'app/about/about.template.html'
     })
-    .state('cards',{
+    .state('dashboard',{
+      url:'/dashboard',
+      templateUrl: 'app/dashboard/dashboard.template.html'
+    })
+    .state('dashboard.cards',{
       url:'/cards',
       templateUrl:'app/card/card.template.html',
       controller: 'Card'

@@ -15,7 +15,7 @@
     $scope.login = function(){
       userApi.login($scope.user).then(function(user){
         $scope.setCurrentUser(user);
-        $state.go('cards');
+        $state.go('dashboard.cards');
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });
