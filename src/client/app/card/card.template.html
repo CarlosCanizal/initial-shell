@@ -1,27 +1,20 @@
-<form name ="cardForm" id="card-form" class="pure-form pure-form-aligned" novalidate>
-  <span class="card-errors"></span>
+
+<form id="card-form" name="cardForm" novalidate="novalidate" class="pure-form pure-form-aligned"><span class="card-errors"></span>
   <div class="pure-control-group">
-    <label>
-      Nombre Tarjetahabiente:
-    </label>
-    <input name="cardName"type="text" size="20" data-ng-model="card.name" data-ng-init="card.name='Javier Pedreiro'" required/>
+    <label>Nombre Tarjetahabiente</label>
+    <input name="cardName" type="text" size="20" data-ng-model="card.name" data-ng-init="card.name='Javier Pedreiro'"/>
   </div>
   <div class="pure-control-group">
-    <label>Numero que aparece en tu tarjeta:</label>
-    <input name="cardNumber" type="text" size="20" data-ng-model="card.number" data-ng-init="card.number='4242424242424242'" />
+    <label>Numero que aparece en tu tarjeta</label>
+    <input name="cardNumber" type="text" size="20" data-ng-model="card.number" data-ng-init="card.number='4242424242424242'"/>
   </div>
   <div class="pure-control-group">
     <label>CVC</label>
-    <input name="cvc" type="text" size="4" data-ng-model="card.cvc" data-ng-init="card.cvc='123'" />
+    <input name="cvc" type="text" size="4" data-ng-model="card.cvc" data-ng-init="card.cvc='123'"/>
   </div>
   <div class="pure-control-group">
     <label>Fecha de expiración (MM/AAAA)</label>
-      <input name="expMonth"  class="small-input" type="text" size="2" data-ng-model="card.exp_month" data-ng-init="card.exp_month='12'" />
-    
-    <span>/</span>
-    <input name="expYear" class="small-input" type="text" size="4" data-ng-model="card.exp_year" data-ng-init="card.exp_year='2014'"/>
-  </div>
-  
-  <a class="pure-button pure-button-primary" data-ng-click="saveCard()" >Guardar Tarjeta</a>
-  
+    <input name="expMonth" type="text" size="2" data-ng-model="card.exp_month" data-ng-init="card.exp_month='12'" class="small-input"/><span>/</span>
+    <input name="expMonth" type="text" size="4" data-ng-model="card.exp_year" data-ng-init="card.exp_year='2014'" class="small-input"/>
+  </div><a data-ng-click="saveCard()" class="pure-button pure-button-primary">Guardar Tarjeta</a>
 </form>

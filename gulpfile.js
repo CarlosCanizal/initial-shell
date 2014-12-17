@@ -24,7 +24,7 @@ gulp.task('sass', function () {
 gulp.task('jade', function () {
   return gulp.src(paths.jade)
     .pipe($.jade({
-      pretty: true 
+      pretty: true
     }))
     .pipe(gulp.dest(function(file) {
       return file.base; 

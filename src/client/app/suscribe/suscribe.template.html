@@ -1,9 +1,8 @@
+
 <div class="section-title">Suscripciones</div>
 <div class="search-box pure-g">
-  <input type="text" ng-model="vm.searchValue" / >
-  <a ng-click="vm.searchByName();">BUSCAR</a>
+  <input type="text" ng-model="vm.searchValue"/><a ng-click="vm.searchByName()">BUSCAR</a>
 </div>
-<div class="shelf" data-ng-include="'app/layout/shelf.template.html'" ng-if="vm.itemsList.length > 0">
-</div>
-<div class="shelf" shelf publisher="dc" ></div>
-<div class="shelf" shelf publisher="marvel" ></div>
+<div data-ng-include="'app/layout/shelf.template.html'" data-ng-if="vm.itemsList.length &gt; 0" class="shelf"></div>
+<div shelf="shelf" publisher="dc" class="shelf"></div>
+<div shelf="shelf" publisher="marvel" class="shelf"></div>

@@ -1,0 +1,15 @@
+.center-form
+  form.pure-form.pure-form-aligned
+    fieldset
+      .pure-control-group
+        label(for="username").
+          Username
+        input#name(ng-model="user.username" , type="text", placeholder="Username", ng-init="user.username = 'carlos@canizal.com'")
+      .pure-control-group
+        label(for="password").
+          Password
+        input#password(ng-model="user.password" , type="text", placeholder="Password", ng-init="user.password = 'carlos@canizal.com'")
+    .pure-controls
+      a.pure-button.pure-button-primary(ng-click="login()").
+        Iniciar Sesion
+      

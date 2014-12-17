@@ -1,0 +1,20 @@
+.filter-title
+  span.publisher-name.
+    {{vm.title}} Comics
+.inner-shelf.pure-g
+  .pure-u-1.pure-u-sm-1-4.pure-u-md-1-5(ng-repeat="item in vm.itemsList")
+    .item
+      .item-image
+        img(alt="", ng-src="{{item.cover.url}}")
+      .item-info.
+        {{item.name}}
+      .item-info.
+        {{item.price}} USD
+      .item-button
+        a.pure-button.pure-button-primary(ng-click="vm.suscribe()").
+          Suscribirme
+
+
+
+
+
