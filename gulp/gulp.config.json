@@ -1,6 +1,6 @@
 {
   "sass": [
-    "src/client/content/css/styles/**/*.sass",
+    "src/client/content/**/*.sass",
     "src/client/app/**/*.sass"
   ],
   "jade": [
