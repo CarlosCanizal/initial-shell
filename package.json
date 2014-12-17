@@ -1,0 +1,16 @@
+{
+  "name": "perro-de-cobre",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-jade": "^0.10.0",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-ruby-sass": "^0.4.3",
+    "gulp-size": "^0.3.0",
+    "jshint-stylish": "^0.1.5"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

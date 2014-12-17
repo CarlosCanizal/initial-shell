@@ -1,0 +1,39 @@
+doctype html
+html(data-ng-app="app")
+  head
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    link(rel="stylesheet", href="bower_components/pure/pure-min.css")
+    link(rel="stylesheet", href="bower_components/pure/grids-responsive-min.css")
+    link(rel="stylesheet", href="bower_components/components-font-awesome/css/font-awesome.min.css")
+    link(rel="stylesheet", href="content/css/styles.css")
+  body
+    div(data-ng-controller="Shell as vm")
+      #shell
+        .pure-g
+          #left-pane.pure-u-1.pure-u-sm-1-4.pure-u-md-1-6
+            .inner-box
+              .nav-top
+                .logo
+          #right-pane.pure-u-1.pure-u-sm-3-4.pure-u-md-5-6
+            #inner-box
+            .nav-top(data-ng-include="'app/layout/header.html'")
+            div(ui-view)
+    script(src="bower_components/angular/angular.js")
+    script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
+    script(src="bower_components/angular-resource/angular-resource.min.js")
+
+    //conketa
+    script(type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.0/js/conekta.js")
+    script(src="app/app.module.js")
+    script(src="app/core/core.module.js")
+    script(src="app/core/config.js")
+    script(src="app/core/parse/parse.factory.js")
+    script(src="app/core/parse/parse.headers.factory.js")
+    script(src="app/core/serie/serie.api.factory.js")
+    script(src="app/core/user/user.api.factory.js")
+    script(src="app/layout/layout.module.js")
+    script(src="app/layout/shelf.directive.js")
+    script(src="app/layout/shell.js")
+    script(src="app/login/login.controller.js")
+    script(src="app/card/card.controller.js")
+
