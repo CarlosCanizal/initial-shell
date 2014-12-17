@@ -5,11 +5,13 @@
   .module('app.layout')
   .controller('Card', Card);
 
-  Card.$inject = ['$scope','userApi'];
+  Card.$inject = ['$scope','userApi','storage'];
 
-  function Card($scope, userApi) {
+  function Card($scope, userApi, storage) {
 
     $scope.card = {};
+    $scope.currentUser = storage.get('user');
+    
 
     $scope.saveCard = function(){
       

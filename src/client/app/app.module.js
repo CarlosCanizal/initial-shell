@@ -4,6 +4,7 @@
   angular.module('app', [
     'ngResource',
     'app.core',
+    'app.storage',
     'app.layout'
   ]);
 })();
