@@ -5,10 +5,10 @@
   .module('app.core')
   .factory('userApi', userApi);
 
-  userApi.$inject = ['$resource', 'parseheaders', 'parse'];
+  userApi.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage'];
 
   /* @ngInject */
-  function userApi($resource, parseheaders, parse) {
+  function userApi($resource, $q, parseheaders, parse, storage) {
 
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  User  = parse.newUserResource(parseheaders.storeKeys);
@@ -17,17 +17,26 @@
     var factory = {
       login: login,
       currentUser: currentUser,
-      addCard : addCard
+      addCard : addCard,
+
     };
 
     return factory;
 
     function login(params) {
-      return Login.login(params).$promise;
+      var deferred = $q.defer();
+      Login.login(params).$promise.then(function(user){
+        storage.set('user',user);
+        deferred.resolve(user);
+      },function(error){
+        deferred.reject(error);
+      });
+
+      return deferred.promise
     }
 
     function currentUser() {
-      return User.currentUser().$promise;
+      return storage.get('user');
     }
 
     function addCard(params){
