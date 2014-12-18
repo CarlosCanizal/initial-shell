@@ -13,6 +13,7 @@
     vm.searchValue = null;
     vm.itemsList = [];
     vm.title = 'Resultados';
+    vm.cartItems = 0;
     vm.currentUser  = userApi.currentUser();
 
     $scope.setCurrentUser = function(user){

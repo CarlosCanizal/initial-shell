@@ -5,9 +5,9 @@
   .module('app.layout')
   .controller('Card', Card);
 
-  Card.$inject = ['$scope','userApi'];
+  Card.$inject = ['$scope','userApi','conekta'];
 
-  function Card($scope, userApi, storage) {
+  function Card($scope, userApi, conekta) {
 
     $scope.card = {};
     // $scope.currentUser = userApi.currentUser();
@@ -24,31 +24,24 @@
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
     });
 
+    $scope.deleteCard = function(index){
+      var cardId= $scope.cards[index].id
+      conekta.deleteCard($scope.currentUser.conektaId, cardId).then(function(){
+        console.log('card deleted');
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
 
     $scope.saveCard = function(){
-      
-      var conektaId = $scope.currentUser.conektaId;
-
-      Conekta.setPublishableKey('key_LDjQwU7xkazYxSRSoW7XWfQ');
-      var errorResponseHandler, successResponseHandler, tokenParams;
-      tokenParams = {card:$scope.card};
-
-      successResponseHandler = function(token) {
-        
-        userApi.addCard({conektaId:conektaId, token:token.id}).then(function(result){
-          console.log(result.result);
-        },function(error){
+      conekta.saveCard($scope.currentUser.conektaId,$scope.card).then(function(card){
+        console.log('card saved');
+      },function(error){
+        if(error.status)
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-        });
-      };
-
-      errorResponseHandler = function(error) {
-        // $scope.updating = false;
-        return console.log(error.message);
-      };
-      // $scope.updating = true;
-      Conekta.token.create(tokenParams, successResponseHandler, errorResponseHandler);
-
+        else
+          console.error(error);
+      });
     };
 
   }

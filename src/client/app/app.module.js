@@ -5,6 +5,7 @@
     'ngResource',
     'app.core',
     'app.storage',
-    'app.layout'
+    'app.layout',
+    'app.conekta'
   ]);
 })();

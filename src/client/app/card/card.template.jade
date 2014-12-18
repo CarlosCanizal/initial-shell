@@ -1,31 +1,43 @@
-form#card-form.pure-form.pure-form-aligned(name="cardForm", novalidate)
-  span.card-errors
-  .pure-control-group
-    label.
-      Nombre Tarjetahabiente
-    input(name="cardName", type="text", size="20", data-ng-model="card.name", data-ng-init="card.name='Javier Pedreiro'")
-  .pure-control-group
-    label.
-      Numero que aparece en tu tarjeta
-    input(name="cardNumber", type="text", size="20", data-ng-model="card.number", data-ng-init="card.number='4242424242424242'")
-  .pure-control-group
-    label.
-      CVC
-    input(name="cvc", type="text", size="4", data-ng-model="card.cvc", data-ng-init="card.cvc='123'")
-  .pure-control-group
-    label.
-      Fecha de expiración (MM/AAAA)
-    input.small-input(name="expMonth", type="text", size="2", data-ng-model="card.exp_month", data-ng-init="card.exp_month='12'")
-    span.
-      /
-    input.small-input(name="expMonth", type="text", size="4", data-ng-model="card.exp_year", data-ng-init="card.exp_year='2014'")
-  a.pure-button.pure-button-primary(data-ng-click="saveCard()").
-    Guardar Tarjeta
-
-#cards-list
-.pure-g(ng-repeat="card in cards")
-  .pure-u-1-3.
-    {{card.brand}} **** **** **** {{card.last4}}
-  .pure-u-1-3
-    a.pure-button.pure-button-primary.
-      Eliminar
+.filter-title
+  span.publisher-name.
+    Agregar Tarjeta
+.shelf
+  .inner-shelf
+    .shelf-space
+      form#card-form.pure-form.pure-form-aligned(name="cardForm", novalidate)
+        fieldset
+          .pure-control-group
+            label.
+              Nombre Tarjetahabiente
+            input(name="cardName", type="text", size="20", data-ng-model="card.name", data-ng-init="card.name='Javier Pedreiro'")
+          .pure-control-group
+            label.
+              Numero que aparece en tu tarjeta
+            input(name="cardNumber", type="text", size="20", data-ng-model="card.number", data-ng-init="card.number='4242424242424242'")
+          .pure-control-group
+            label.
+              CVC
+            input(name="cvc", type="text", size="4", data-ng-model="card.cvc", data-ng-init="card.cvc='123'")
+          .pure-control-group
+            label.
+              Fecha de expiración (MM/AAAA)
+            input.small-input(name="expMonth", type="text", size="2", data-ng-model="card.exp_month", data-ng-init="card.exp_month='12'")
+            span.
+              /
+            input.small-input(name="expMonth", type="text", size="4", data-ng-model="card.exp_year", data-ng-init="card.exp_year='2014'")
+          .pure-controls
+            a.pure-button.pure-button-primary(data-ng-click="saveCard()").
+              Guardar Tarjeta
+.filter-title
+  span.publisher-name.
+    Tus Tarjetas
+.shelf
+  .inner-shelf
+    .shelf-space            
+      #cards-list
+      .card-item(ng-repeat="card in cards")
+        span
+        | {{card.brand}} **** **** **** {{card.last4}}
+        a.button(data-ng-click="deleteCard($index)")
+          i.fa.fa-trash
+          |  Eliminar

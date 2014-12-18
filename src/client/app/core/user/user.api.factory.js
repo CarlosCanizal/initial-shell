@@ -19,7 +19,8 @@
       currentUser: currentUser,
       addCard : addCard,
       logout: logout,
-      getCards: getCards
+      getCards: getCards,
+      deleteCard: deleteCard
 
     };
 
@@ -53,6 +54,11 @@
     function getCards(params){
       params['function'] = 'getCards';
       return Card.get(params).$promise
+    }
+
+    function deleteCard(params){
+      params['function'] = 'deleteCard';
+      return Card.delete(params).$promise
     }
 
   }
