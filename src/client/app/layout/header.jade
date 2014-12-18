@@ -6,7 +6,14 @@ nav#navigation
   a(ui-sref="about").
     ¿COMÓ FUNCIONA?
 #cart
-  a.login(ui-sref="login").
+  a.login(ui-sref="login", data-ng-hide="vm.currentUser").
     Iniciar Sesion
-  i.fa.fa-shopping-cart
-  | 3
+  a.login(ui-sref="dashboard.cards", data-ng-show="vm.currentUser")
+    | ¡Hola! {{vm.currentUser.name}}
+    a.login(ng-click="logout()", data-ng-show="vm.currentUser")
+      | (Salir)
+
+
+  i.fa.fa-shopping-cart.
+    3
+

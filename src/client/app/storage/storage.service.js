@@ -12,7 +12,8 @@
 
     return{
       set: set,
-      get: get
+      get: get,
+      remove: remove
     }
 
     function set(key, value){
@@ -21,6 +22,10 @@
 
     function get(key){
       return localStorageService.get(key);
+    }
+
+    function remove(key){
+      return localStorageService.remove(key);
     }
 
   }

@@ -5,18 +5,29 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','serieApi'];
+  Shell.$inject = ['$scope','$state','userApi','serieApi'];
 
-  function Shell($scope, serieApi){
+  function Shell($scope, $state, userApi, serieApi){
     // jshint validthis: true 
     var vm = this;
     vm.searchValue = null;
     vm.itemsList = [];
     vm.title = 'Resultados';
+    vm.currentUser  = userApi.currentUser();
 
-    $scope.currentUser = null;
     $scope.setCurrentUser = function(user){
-      $scope.currentUser = user;
+      console.log('setCurrentUser');
+      vm.currentUser = user;
+    }
+
+    $scope.getCurrentUser = function(){
+      return vm.currentUser;
+    }
+
+    $scope.logout = function(){
+      userApi.logout();
+      vm.currentUser = null;
+      $state.go('home');
     }
 
     vm.searchByName = function(){

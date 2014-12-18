@@ -10,7 +10,10 @@
   function Card($scope, userApi, storage) {
 
     $scope.card = {};
-    $scope.currentUser = userApi.currentUser();
+    // $scope.currentUser = userApi.currentUser();
+    // $scope.setCurrentUser($scope.currentUser);
+    console.log('here currentUser');
+    $scope.currentUser = $scope.getCurrentUser();
 
 
     $scope.saveCard = function(){

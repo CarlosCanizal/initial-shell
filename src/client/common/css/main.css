@@ -1,52 +1,52 @@
-/* line 5, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 5, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 body {
   margin: 0;
   padding: 1rem 3rem;
   background: url('../images/satinweave.png'); }
 
-/* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .logo img {
   width: 100%; }
 
-/* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .inner-box {
   padding: 1rem; }
 
-/* line 23, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 23, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #navigation {
   text-align: right; }
-  /* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+  /* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #navigation a {
     padding: 0 1rem;
     font-size: 1.1rem; }
-  /* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+  /* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #navigation a:last-child {
     padding-right: 0;
     border-right: 0; }
 
-/* line 33, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 33, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 nav a {
   color: #999;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
   border-right: 1px solid #999; }
 
-/* line 39, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 39, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .shelf {
   margin-bottom: 2rem; }
 
-/* line 42, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 42, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .inner-shelf {
   border: solid 2px #CCC;
   border-radius: 0.5rem; }
 
-/* line 46, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 46, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .filter-title {
   font-family: 'Raleway', sans-serif;
   color: #666;
   font-size: 2rem; }
 
-/* line 51, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 51, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .section-title {
   font-family: 'RalewayThin';
   color: #999;
@@ -54,29 +54,29 @@ nav a {
   font-size: 2rem;
   padding-top: 1.5rem; }
 
-/* line 58, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 58, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #cart {
   padding-top: 0.5rem;
   text-align: right;
   font-size: 2rem;
   color: #999; }
 
-/* line 64, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 64, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item {
   margin: 1rem; }
-  /* line 66, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+  /* line 66, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .item img {
     width: 100%; }
 
-/* line 69, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 69, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-image {
   margin-bottom: 0.5rem; }
 
-/* line 72, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 72, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-button {
   text-align: center; }
 
-/* line 75, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 75, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-info {
   text-align: center;
   padding-bottom: 0.5rem;
@@ -85,10 +85,10 @@ nav a {
   color: #666;
   text-transform: uppercase; }
 
-/* line 83, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 83, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .search-box {
   padding: 1rem 0; }
-  /* line 85, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+  /* line 85, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box input {
     font-family: 'Raleway', sans-serif;
     width: 85%;
@@ -101,7 +101,7 @@ nav a {
     color: #666;
     outline: none;
     -webkit-box-sizing: border-box; }
-  /* line 97, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+  /* line 97, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box a {
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -116,11 +116,11 @@ nav a {
     -webkit-box-sizing: border-box;
     cursor: pointer; }
 
-/* line 111, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 111, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .publisher-name {
   text-transform: uppercase; }
 
-/* line 114, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 114, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .login {
   font-family: 'Raleway', sans-serif;
   font-size: 1.1rem;
@@ -128,7 +128,7 @@ nav a {
   color: #666; }
 
 /*login template*/
-/* line 121, /Users/carloscanizal/projects/perro-de-cobre/src/client/content/css/main.sass */
+/* line 121, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .center-form {
   border: solid 2px #CCC;
   margin: 1rem auto;

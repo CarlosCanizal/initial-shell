@@ -18,6 +18,7 @@
       login: login,
       currentUser: currentUser,
       addCard : addCard,
+      logout: logout
 
     };
 
@@ -33,6 +34,10 @@
       });
 
       return deferred.promise
+    }
+
+    function logout(){
+      return storage.remove('user');
     }
 
     function currentUser() {
