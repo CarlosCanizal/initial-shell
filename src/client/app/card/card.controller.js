@@ -15,6 +15,15 @@
     console.log('here currentUser');
     $scope.currentUser = $scope.getCurrentUser();
 
+    $scope.cards = [];
+
+    userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(result){
+        console.log(result.result);
+        $scope.cards = result.result;
+    },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+    });
+
 
     $scope.saveCard = function(){
       
@@ -37,15 +46,11 @@
         // $scope.updating = false;
         return console.log(error.message);
       };
-
       // $scope.updating = true;
       Conekta.token.create(tokenParams, successResponseHandler, errorResponseHandler);
 
-
-
     };
-      
 
-    }
+  }
 
 })();

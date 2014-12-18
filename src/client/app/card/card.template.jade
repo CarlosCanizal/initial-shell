@@ -22,5 +22,10 @@ form#card-form.pure-form.pure-form-aligned(name="cardForm", novalidate)
   a.pure-button.pure-button-primary(data-ng-click="saveCard()").
     Guardar Tarjeta
 
-
-
+#cards-list
+.pure-g(ng-repeat="card in cards")
+  .pure-u-1-3.
+    {{card.brand}} **** **** **** {{card.last4}}
+  .pure-u-1-3
+    a.pure-button.pure-button-primary.
+      Eliminar

@@ -66,7 +66,8 @@
         },
         {
           'query': {method: 'POST', headers:headers},
-          'save' : {method: 'POST', headers:headers}
+          'save' : {method: 'POST', headers:headers},
+          'get'  : {method: 'POST', headers:headers},
         }
       );
     }

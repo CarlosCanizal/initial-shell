@@ -18,7 +18,8 @@
       login: login,
       currentUser: currentUser,
       addCard : addCard,
-      logout: logout
+      logout: logout,
+      getCards: getCards
 
     };
 
@@ -47,6 +48,11 @@
     function addCard(params){
       params['function'] = 'addCard';
       return Card.save(params).$promise;
+    }
+
+    function getCards(params){
+      params['function'] = 'getCards';
+      return Card.get(params).$promise
     }
 
   }

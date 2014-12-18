@@ -16,5 +16,12 @@
     <label>Fecha de expiración (MM/AAAA)</label>
     <input name="expMonth" type="text" size="2" data-ng-model="card.exp_month" data-ng-init="card.exp_month='12'" class="small-input"/><span>/</span>
     <input name="expMonth" type="text" size="4" data-ng-model="card.exp_year" data-ng-init="card.exp_year='2014'" class="small-input"/>
-  </div><a data-ng-click="saveCard()" class="pure-button pure-button-primary">Guardar Tarjeta</a>
+  </div><a data-ng-click="saveCard()" class="pure-button pure-button-primary">
+    Guardar Tarjeta
+    </a>
 </form>
+<div id="cards-list"></div>
+<div ng-repeat="card in cards" class="pure-g">
+  <div class="pure-u-1-3">{{card.brand}} **** **** **** {{card.last4}}</div>
+  <div class="pure-u-1-3"><a class="pure-button pure-button-primary">Eliminar</a></div>
+</div>
