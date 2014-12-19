@@ -12,5 +12,6 @@ nav#navigation
     | ¡Hola! {{vm.currentUser.name}}
     a.login(ng-click="logout()", data-ng-show="vm.currentUser")
       | (Salir)
-  i.fa.fa-shopping-cart
-    | {{vm.cartItems.total}}
+  a(ui-sref="checkout")
+    i.fa.fa-shopping-cart
+      | {{vm.cartItems.total}}

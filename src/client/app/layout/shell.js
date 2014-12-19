@@ -5,15 +5,15 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$state','userApi','serieApi','cart'];
+  Shell.$inject = ['$scope','$state','userApi','serieApi','ShoppingCart'];
 
-  function Shell($scope, $state, userApi, serieApi, cart){
+  function Shell($scope, $state, userApi, serieApi, ShoppingCart){
     // jshint validthis: true 
     var vm = this;
     vm.searchValue = null;
     vm.itemsList = [];
     vm.title = 'Resultados';
-    vm.cartItems = cart.getTotal();
+    vm.cartItems = ShoppingCart.getTotal();
     vm.currentUser  = userApi.currentUser();
 
     $scope.setCurrentUser = function(user){
@@ -48,7 +48,13 @@
     }
 
     $scope.suscribe = function(item){
-      vm.cartItems = cart.addToCart(item);
+      vm.cartItems = ShoppingCart.addItem({quantity:1,
+                                           objectId:item.objectId,
+                                           price:item.price,
+                                           name:item.name, 
+                                           className:item.className,
+                                           cover:item.cover
+                                          });
     }
   }
 

@@ -7,6 +7,7 @@
     'app.storage',
     'app.layout',
     'app.conekta',
-    'app.cart'
+    'app.cart',
+    'ngUnderscore'
   ]);
 })();

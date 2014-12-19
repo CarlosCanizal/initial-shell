@@ -151,7 +151,18 @@ nav a {
   .card-item a.button {
     margin-left: 2rem; }
 
-/* line 141, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 140, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.cart-item {
+  padding: 1rem 0;
+  text-transform: uppercase; }
+  /* line 143, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .cart-item a.button {
+    margin-left: 2rem; }
+  /* line 145, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .cart-item img {
+    width: 100%; }
+
+/* line 149, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button {
   border: solid 1px #666;
   padding: 0.5rem 1rem;

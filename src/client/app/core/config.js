@@ -26,9 +26,10 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/como-funciona',
       templateUrl:'app/about/about.template.html'
     })
-    .state('cart',{
-      url:'/cart',
-      templateUrl:'app/checkout/cart/cart.template.html'
+    .state('checkout',{
+      url:'/checkout',
+      templateUrl:'app/cart/checkout/checkout.template.html',
+      controller: 'Checkout'
     })
     .state('dashboard',{
       url:'/dashboard',
