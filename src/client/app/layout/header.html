@@ -1,3 +1,3 @@
 
 <nav id="navigation"><a ui-sref="home">TIENDA</a><a ui-sref="suscribe">SUSCRIPCIONES</a><a ui-sref="about">¿COMÓ FUNCIONA?</a></nav>
-<div id="cart"><a ui-sref="login" data-ng-hide="vm.currentUser" class="login">Iniciar Sesion</a><a ui-sref="dashboard.cards" data-ng-show="vm.currentUser" class="login">¡Hola! {{vm.currentUser.name}}<a ng-click="logout()" data-ng-show="vm.currentUser" class="login">(Salir)</a></a><i class="fa fa-shopping-cart">{{vm.cartItems}}</i></div>
+<div id="cart"><a ui-sref="login" data-ng-hide="vm.currentUser" class="login">Iniciar Sesion</a><a ui-sref="dashboard.cards" data-ng-show="vm.currentUser" class="login">¡Hola! {{vm.currentUser.name}}<a ng-click="logout()" data-ng-show="vm.currentUser" class="login">(Salir)</a></a><i class="fa fa-shopping-cart">{{vm.cartItems.total}}</i></div>

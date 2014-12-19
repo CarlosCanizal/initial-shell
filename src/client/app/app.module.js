@@ -6,6 +6,7 @@
     'app.core',
     'app.storage',
     'app.layout',
-    'app.conekta'
+    'app.conekta',
+    'app.cart'
   ]);
 })();
