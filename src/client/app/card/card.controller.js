@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('app.layout')
+  .module('app.dashboard')
   .controller('Card', Card);
 
   Card.$inject = ['$scope','userApi','conekta'];

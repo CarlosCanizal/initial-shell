@@ -1,0 +1,54 @@
+
+<div class="filter-title"><span class="publisher-name">Direccion</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <form name="addressesForm" novalidate="" class="pure-form pure-form-aligned">
+        <fieldset>
+          <div data-ng-repeat="address in addresses" class="child-container">
+            <ng-form name="addressForm">
+              <div class="form-container">
+                <div class="pure-control-group">
+                  <label for="street">Calle:</label>
+                  <input id="street" name="street" data-ng-model="address.street"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="number">Numero exterior:</label>
+                  <input id="number" name="number" data-ng-model="address.number"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="apt">Numero interior:</label>
+                  <input id="apt" name="apt" data-ng-model="address.apt"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="neighborhood">Colonia:</label>
+                  <input id="neighborhood" name="neighborhood" data-ng-model="address.neighborhood"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="zip">Codigo Postal:</label>
+                  <input id="zip" name="zip" data-ng-model="address.zip"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="city">Ciudad:</label>
+                  <input id="city" name="city" data-ng-model="address.city"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="state">Estado:</label>
+                  <input id="state" name="state" data-ng-model="address.state"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="country">Pais:</label>
+                  <input id="country" name="country" data-ng-model="address.country"/>
+                </div>
+                <div class="pure-control-group">
+                  <label for="default_{{index}}">Direccion Principal:</label>
+                  <input id="default_{{index}}" data-ng-model="address.default"/>
+                </div>
+              </div>
+            </ng-form>
+          </div>
+        </fieldset>
+      </form><a data-ng-click="addAddress()" class="pure-button pure-button-primary"><i class="fa fa-plus"></i>Agregar</a>
+    </div>
+  </div>
+</div>

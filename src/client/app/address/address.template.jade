@@ -1,0 +1,58 @@
+.filter-title
+  span.publisher-name.
+    Direccion
+.shelf
+  .inner-shelf
+    .shelf-space
+      form.pure-form.pure-form-aligned(name="addressesForm", novalidate="")
+        fieldset
+          .child-container(data-ng-repeat="address in addresses")
+            ng-form(name="addressForm")
+              .form-container
+                .pure-control-group
+                  label(for="street")
+                    | Calle:
+                  input#street(name="street", data-ng-model="address.street")
+                .pure-control-group
+                  label(for="number")
+                    | Numero exterior:
+                  input#number(name="number", data-ng-model="address.number")
+                .pure-control-group
+                  label(for="apt")
+                    | Numero interior:
+                  input#apt(name="apt", data-ng-model="address.apt")
+                .pure-control-group
+                  label(for="neighborhood")
+                    | Colonia:
+                  input#neighborhood(name="neighborhood", data-ng-model="address.neighborhood")
+                .pure-control-group
+                  label(for="zip")
+                    | Codigo Postal:
+                  input#zip(name="zip", data-ng-model="address.zip")
+                .pure-control-group
+                  label(for="city")
+                    | Ciudad:
+                  input#city(name="city", data-ng-model="address.city")
+                .pure-control-group
+                  label(for="state")
+                    | Estado:
+                  input#state(name="state", data-ng-model="address.state")
+                .pure-control-group
+                  label(for="country")
+                    | Pais:
+                  input#country(name="country", data-ng-model="address.country")
+                .pure-control-group
+                  label(for="default_{{index}}")
+                    | Direccion Principal:
+                  input(id="default_{{index}}", data-ng-model="address.default")
+      a.pure-button.pure-button-primary(data-ng-click="addAddress()")
+        i.fa.fa-plus
+        |Agregar
+
+
+
+
+
+
+
+
