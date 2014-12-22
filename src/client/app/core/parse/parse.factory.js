@@ -41,16 +41,17 @@
       );
     }
 
-    function newParseResource(headers) {
+    function newParseResource(headers, parseClass) {
       return $resource(
         'https://api.parse.com/1/classes/:class/:objectId',
         {
-          objectId: '@objectId' 
+          objectId: '@objectId',
+          class: parseClass
         },
         { 
           'get':    {method:'GET', headers: headers},
           'save':   {method:'POST', headers: headers},
-          'edit':   {method:'PUT', headers: headers},
+          'update':   {method:'PUT', headers: headers},
           'query':  {method:'GET', headers: headers},
           'remove': {method:'DELETE', headers: headers},
           'delete': {method:'DELETE', headers: headers} 

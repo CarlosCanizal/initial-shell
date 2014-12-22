@@ -3,9 +3,9 @@
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
-      <form name="addressesForm" novalidate="" class="pure-form pure-form-aligned">
+      <form name="addressForm" novalidate="" class="pure-form pure-form-aligned">
         <fieldset>
-          <div data-ng-repeat="address in addresses" class="child-container">
+          <div class="child-container">
             <ng-form name="addressForm">
               <div class="form-container">
                 <div class="pure-control-group">
@@ -42,8 +42,9 @@
                 </div>
                 <div class="pure-control-group">
                   <label for="default_{{index}}">Direccion Principal:</label>
-                  <input id="default_{{index}}" data-ng-model="address.default"/>
+                  <input id="default_{{index}}" data-ng-model="address.default" type="checkbox"/>
                 </div>
+                <div class="pure-controls"><a ng-click="saveAddress()" class="pure-button pure-button-primary">Guardar</a></div>
               </div>
             </ng-form>
           </div>

@@ -13,6 +13,7 @@
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  User  = parse.newUserResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
+    var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
 
     var factory = {
       login: login,
@@ -20,7 +21,8 @@
       addCard : addCard,
       logout: logout,
       getCards: getCards,
-      deleteCard: deleteCard
+      deleteCard: deleteCard,
+      saveAddress: saveAddress
 
     };
 
@@ -59,6 +61,10 @@
     function deleteCard(params){
       params['function'] = 'deleteCard';
       return Card.delete(params).$promise
+    }
+
+    function saveAddress(params){
+      return Address.save(params).$promise;
     }
 
   }

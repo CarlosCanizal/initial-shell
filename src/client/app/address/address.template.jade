@@ -4,9 +4,9 @@
 .shelf
   .inner-shelf
     .shelf-space
-      form.pure-form.pure-form-aligned(name="addressesForm", novalidate="")
+      form.pure-form.pure-form-aligned(name="addressForm", novalidate="")
         fieldset
-          .child-container(data-ng-repeat="address in addresses")
+          .child-container
             ng-form(name="addressForm")
               .form-container
                 .pure-control-group
@@ -44,7 +44,11 @@
                 .pure-control-group
                   label(for="default_{{index}}")
                     | Direccion Principal:
-                  input(id="default_{{index}}", data-ng-model="address.default")
+                  input(id="default_{{index}}", data-ng-model="address.default",type="checkbox")
+                .pure-controls
+                  a.pure-button.pure-button-primary(ng-click="saveAddress()")
+                    | Guardar
+
       a.pure-button.pure-button-primary(data-ng-click="addAddress()")
         i.fa.fa-plus
         |Agregar
