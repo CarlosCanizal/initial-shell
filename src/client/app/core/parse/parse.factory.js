@@ -51,8 +51,8 @@
         { 
           'get':    {method:'GET', headers: headers},
           'save':   {method:'POST', headers: headers},
-          'update':   {method:'PUT', headers: headers},
-          'query':  {method:'GET', headers: headers},
+          'update': {method:'PUT', headers: headers},
+          'query':  {method:'GET', headers: headers },
           'remove': {method:'DELETE', headers: headers},
           'delete': {method:'DELETE', headers: headers} 
         }

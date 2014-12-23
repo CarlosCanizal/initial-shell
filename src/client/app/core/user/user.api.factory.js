@@ -22,7 +22,9 @@
       logout: logout,
       getCards: getCards,
       deleteCard: deleteCard,
-      saveAddress: saveAddress
+      saveAddress: saveAddress,
+      getAddresses: getAddresses,
+      deleteAddress: deleteAddress
 
     };
 
@@ -64,7 +66,27 @@
     }
 
     function saveAddress(params){
-      return Address.save(params).$promise;
+      var deferred = $q.defer();
+      Address.save(params).$promise.then(function(object){
+        return Address.get({objectId:object.objectId}).$promise
+      }).then(function(address){
+        deferred.resolve(address);
+      },function(error){
+        deferred.reject(error);
+      });
+      return deferred.promise;
+    }
+
+    function deleteAddress(objectId){
+      return Address.delete({objectId: objectId}).$promise;
+    }
+
+    function getAddresses(userId){
+      var where = {"user":{"__type":"Pointer","className":"_User","objectId":userId}}
+      return Address.query({
+        where : where,
+        order : 'createdAt'
+      }).$promise;
     }
 
   }
