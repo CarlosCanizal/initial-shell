@@ -8,11 +8,13 @@
   Address.$inject = ['$scope','userApi'];
 
 
+
   function Address($scope, userApi) {
 
     $scope.currentUser = $scope.getCurrentUser();
     $scope.address = {};
     $scope.addresses = [];
+    $scope.show = false;
 
 
     userApi.getAddresses($scope.currentUser.objectId).then(function(addresses){
@@ -23,14 +25,18 @@
 
 
     $scope.saveAddress = function(){
-
-      $scope.address.user = {"__type":"Pointer",className:"_User","objectId":$scope.currentUser.objectId}
-      userApi.saveAddress($scope.address).then(function(address){
-        console.log(address);
-        $scope.addresses.push(address);
-      },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-      });
+      if($scope.addressForm.$valid){
+        $scope.address.user = {"__type":"Pointer",className:"_User","objectId":$scope.currentUser.objectId}
+        userApi.saveAddress($scope.address).then(function(address){
+          console.log(address);
+          $scope.addresses.push(address);
+          $scope.address = {};
+          $scope.addressForm.$setPristine();
+          $scope.show = false;
+        },function(error){
+          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+        });
+      }
     }
 
     $scope.deleteAddress = function(objectId, index){

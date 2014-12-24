@@ -1,6 +1,8 @@
-$first-color: #666;
-$second-color: #999;
-$third-color: #CCC;
+$first-color: #666
+$second-color: #999
+$third-color: #CCC
+$error-color: rgb(202, 60, 60)
+$success-color: rgb(28, 184, 65)
 
 body
   margin: 0
@@ -153,19 +155,41 @@ nav
 
 .address-item:last-child
   margin-bottom: 0
-  border-bottom: 0
-  padding-bottom: 0
+  // border-bottom: 0
+  // padding-bottom: 0
 
 .address-line
   padding-bottom: 0.5rem
   a
     margin-right: 1rem
 
+.error
+  color: $error-color
+
+.success
+  color: $success-color
+
+.medium-icon
+  font-size: 1.5rem
+  position: relative
+  top: 0.3rem
+  padding-left: 0.5rem
 
 .button
   border: solid 1px $first-color
   padding: 0.5rem 1rem
   border-radius: 0.5rem
+
+.buttons-container
+  text-align: center
+  padding-bottom: 1rem
+  a
+    color: $third-color
+    cursor:pointer
+
+
+.shelf-message
+  text-align: center
 
 .button-xsmall
   font-size: 70%;
