@@ -13,7 +13,7 @@
             .address-line
               | {{address.street}} {{address.number}} {{address.apt}}
             .address-line
-              | Colonia {{address.neighborhood}}, {{address.city}} 
+              | Colonia {{address.district}}, {{address.municipality}} 
             .address-line
               | {{address.country}}, {{address.state}}, {{address.zip}} 
             .address-line
@@ -66,30 +66,26 @@
                         | Numero interior:
                       input#apt(name="apt", data-ng-model="address.apt")
                     .pure-control-group
-                      label(for="neighborhood")
-                        | Colonia:
-                      input#neighborhood(name="neighborhood", data-ng-model="address.neighborhood")
-                    .pure-control-group
                       label(for="zip", ng-show="addressForm.zip.$valid || addressForm.zip.$pristine")
                         | Codigo Postal:
                       label.error(for="zip", ng-show="addressForm.zip.$invalid && addressForm.zip.$dirty")
                         | Codigo Postal no valido:
-                      input#zip(name="zip", data-ng-model="address.zip", required="", data-ng-pattern="/[0-9]/")
+                      input#zip(name="zip", data-ng-model="address.zip", required="", data-ng-pattern="/[0-9]/",maxlength=5, data-ng-minlength=5 data-ng-maxlength=5, data-ng-change="updateUbication()")
                       i.fa.fa-dot-circle-o.medium-icon(ng-show="addressForm.zip.$pristine")
                       i.fa.fa-check-circle-o.success.medium-icon(ng-show="addressForm.zip.$valid && addressForm.zip.$dirty")
                       i.fa.fa-times-circle-o.error.medium-icon(ng-show="addressForm.zip.$invalid && addressForm.zip.$dirty")
                     .pure-control-group
-                      label(for="city")
-                        | Ciudad:
-                      input#city(name="city", data-ng-model="address.city")
+                      label(for="district")
+                        | Colonia:
+                      select(data-ng-model="address.district", data-ng-options="item.name as item.name for item in districts",data-ng-change="updateZip()")
+                    .pure-control-group
+                      label(for="municipality")
+                        | Delegacion o Municipio:
+                      select(ng-model="address.municipality", ng-options="item.name as item.name for item in municipalities",data-ng-change="updateDistricts()")
                     .pure-control-group
                       label(for="state")
                         | Estado:
-                      input#state(name="state", data-ng-model="address.state")
-                    .pure-control-group
-                      label(for="country")
-                        | Pais:
-                      input#country(name="country", data-ng-model="address.country")
+                      select(ng-model="address.state", ng-options="item.name as item.name for item in states",data-ng-change="updateMunicipalities()")
                     .pure-control-group
                       label(for="default_{{index}}")
                         | Direccion Principal:

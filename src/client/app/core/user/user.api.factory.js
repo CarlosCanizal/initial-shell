@@ -67,6 +67,7 @@
 
     function saveAddress(params){
       var deferred = $q.defer();
+      params.country = "Mexico";
       Address.save(params).$promise.then(function(object){
         return Address.get({objectId:object.objectId}).$promise
       }).then(function(address){

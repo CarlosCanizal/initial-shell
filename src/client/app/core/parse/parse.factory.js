@@ -12,6 +12,7 @@
 
     var factory = {
       newParseResource: newParseResource,
+      newSepomexResource: newSepomexResource,
       newCloudCodeResource: newCloudCodeResource,
       newLoginResource: newLoginResource,
       newUserResource: newUserResource
@@ -47,6 +48,23 @@
         {
           objectId: '@objectId',
           class: parseClass
+        },
+        { 
+          'get':    {method:'GET', headers: headers},
+          'save':   {method:'POST', headers: headers},
+          'update': {method:'PUT', headers: headers},
+          'query':  {method:'GET', headers: headers },
+          'remove': {method:'DELETE', headers: headers},
+          'delete': {method:'DELETE', headers: headers} 
+        }
+      );
+    }
+
+    function newSepomexResource(headers) {
+      return $resource(
+        'https://api.parse.com/1/classes/:class',
+        {
+          class: 'class'
         },
         { 
           'get':    {method:'GET', headers: headers},

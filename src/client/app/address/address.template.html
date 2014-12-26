@@ -10,7 +10,7 @@
           </div>
           <div ng-repeat="address in addresses" class="address-item">
             <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
-            <div class="address-line">Colonia {{address.neighborhood}}, {{address.city}} </div>
+            <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
             <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>
             <div class="address-line"><a class="pure-button pure-button-primary button-small"><i class="fa fa-edit"></i>Editar</a><a ng-click="deleteAddress(address.objectId, $index)" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a></div>
           </div>
@@ -48,25 +48,21 @@
                       <input id="apt" name="apt" data-ng-model="address.apt"/>
                     </div>
                     <div class="pure-control-group">
-                      <label for="neighborhood">Colonia:</label>
-                      <input id="neighborhood" name="neighborhood" data-ng-model="address.neighborhood"/>
-                    </div>
-                    <div class="pure-control-group">
                       <label for="zip" ng-show="addressForm.zip.$valid || addressForm.zip.$pristine">Codigo Postal:</label>
                       <label for="zip" ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="error">Codigo Postal no valido:</label>
-                      <input id="zip" name="zip" data-ng-model="address.zip" required="" data-ng-pattern="/[0-9]/"/><i ng-show="addressForm.zip.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.zip.$valid &amp;&amp; addressForm.zip.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+                      <input id="zip" name="zip" data-ng-model="address.zip" required="" data-ng-pattern="/[0-9]/" maxlength="5" data-ng-minlength='5' data-ng-maxlength='5' data-ng-change="updateUbication()"/><i ng-show="addressForm.zip.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.zip.$valid &amp;&amp; addressForm.zip.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
                     </div>
                     <div class="pure-control-group">
-                      <label for="city">Ciudad:</label>
-                      <input id="city" name="city" data-ng-model="address.city"/>
+                      <label for="district">Colonia:</label>
+                      <select data-ng-model="address.district" data-ng-options="item.name as item.name for item in districts" data-ng-change="updateZip()"></select>
+                    </div>
+                    <div class="pure-control-group">
+                      <label for="municipality">Delegacion o Municipio:</label>
+                      <select ng-model="address.municipality" ng-options="item.name as item.name for item in municipalities" data-ng-change="updateDistricts()"></select>
                     </div>
                     <div class="pure-control-group">
                       <label for="state">Estado:</label>
-                      <input id="state" name="state" data-ng-model="address.state"/>
-                    </div>
-                    <div class="pure-control-group">
-                      <label for="country">Pais:</label>
-                      <input id="country" name="country" data-ng-model="address.country"/>
+                      <select ng-model="address.state" ng-options="item.name as item.name for item in states" data-ng-change="updateMunicipalities()"></select>
                     </div>
                     <div class="pure-control-group">
                       <label for="default_{{index}}">Direccion Principal:</label>

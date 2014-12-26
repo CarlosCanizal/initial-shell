@@ -5,11 +5,11 @@
   .module('app.dashboard')
   .controller('Address', Address);
 
-  Address.$inject = ['$scope','userApi'];
+  Address.$inject = ['$scope','userApi', 'sepomexAPI'];
 
 
 
-  function Address($scope, userApi) {
+  function Address($scope, userApi, sepomexAPI) {
 
     $scope.currentUser = $scope.getCurrentUser();
     $scope.address = {};
@@ -23,6 +23,81 @@
       console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
     });
 
+    $scope.states = [];
+    $scope.municipalities = [];
+    $scope.districts = [];
+    getUbication();
+
+
+    function getDistrict(zip){
+      sepomexAPI.getDistrict(zip).then(function(result){
+        var result = result.results[0];
+        var state =  result.state;
+        var municipality = result.municipality;
+        var district = result.name;
+        getUbication(state, municipality, district);
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
+
+    function getUbication(state, municipality, district){
+      sepomexAPI.getStates().then(function(result){
+        $scope.states = result.results;
+        $scope.address.state = state ? state : $scope.states[0].name;
+        return sepomexAPI.getMunicipalities($scope.address.state);
+      }).then(function(result){
+        $scope.municipalities = result.results;
+        $scope.address.municipality =  $scope.municipalities[0] && !municipality ? $scope.municipalities[0].name : municipality;
+        return sepomexAPI.getDistricts($scope.address.state, $scope.address.municipality) 
+      }).then(function(result){
+        $scope.districts = result.results;
+        $scope.address.district =  $scope.districts[0] && !district ? $scope.districts[0].name : district;
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
+
+    $scope.updateUbication =  function(){
+      var zip = $scope.address.zip;
+      getDistrict(zip);
+    }
+
+    $scope.updateZip = function(){
+      sepomexAPI.getZip($scope.address.district, $scope.address.municipality, $scope.address.state).then(function(result){
+        $scope.addressForm.zip.$setViewValue(result.results[0].zip);
+        $scope.addressForm.zip.$render();
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
+
+    $scope.updateMunicipalities = function(){
+      $scope.address.zip = null;
+      sepomexAPI.getMunicipalities($scope.address.state).then(function(result){
+        $scope.municipalities = result.results;
+        if($scope.municipalities[0])
+          $scope.address.municipality = $scope.municipalities[0].name;
+        return sepomexAPI.getDistricts($scope.address.state, $scope.address.municipality) 
+      }).then(function(result){
+        $scope.districts = result.results;
+        if($scope.districts[0])
+          $scope.address.district = $scope.districts[0].name;
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
+
+    $scope.updateDistricts = function(){
+      $scope.address.zip = null;
+      sepomexAPI.getDistricts($scope.address.state, $scope.address.municipality).then(function(result){
+        $scope.districts = result.results;
+        if($scope.districts[0])
+          $scope.address.district = $scope.districts[0].name;
+      },function(error){
+        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      });
+    }
 
     $scope.saveAddress = function(){
       if($scope.addressForm.$valid){

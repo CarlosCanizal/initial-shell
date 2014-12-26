@@ -3,26 +3,29 @@
 
   angular
   .module('app.core')
-  .factory('parseAPI', parseAPI);
+  .factory('sepomexAPI', sepomexAPI);
 
-  parseAPI.$inject = ['$resource', 'parseheaders', 'parse'];
+  sepomexAPI.$inject = ['$resource', 'parseheaders', 'parse'];
 
   /* @ngInject */
-  function parseAPI($resource, parseheaders, parse) {
+  function sepomexAPI($resource, parseheaders, parse) {
 
-    var Mxpostapi = parse.newParseResource(parseheaders.mxpostapi);
+    var sepomexAPI = parse.newSepomexResource(parseheaders.mxpostapi);
 
     var factory = {
       getDistricts: getDistricts,
       getMunicipalities: getMunicipalities,
       getStates: getStates,
-      geoZip: geoZip
+      getDistrict: getDistrict,
+      getZip: getZip
     };
 
     return factory;
 
     function getDistricts(state, municipality) {
-      return Mxpostapi.query({
+      console.log(state);
+      console.log(municipality);
+      return sepomexAPI.query({
         class: 'Districts',
         where: {
           state: state,
@@ -30,34 +33,45 @@
         },
         limit: '1000',
         order: 'name'
-      });
+      }).$promise;
     }
 
     function getMunicipalities(state) {
-      return Mxpostapi.query({
+      return sepomexAPI.query({
         class: 'Municipalities',
         where: {
           state: state 
         },
         limit: '1000',
         order: 'name'
-      });
+      }).$promise;
     }
 
     function getStates() {
-      return Mxpostapi.query({
+      return sepomexAPI.query({
         class: 'States',
         order: 'name'
       }).$promise;
     }
 
-    function geoZip(zip) {
-      return Mxpostapi.query({
+    function getDistrict(zip) {
+      return sepomexAPI.query({
         class: 'Districts',
         where: {
           zip: zip 
         }
-      });
+      }).$promise;
+    }
+
+    function getZip(name, municipality,state) {
+      return sepomexAPI.query({
+        class: 'Districts',
+        where: {
+          name: name,
+          municipality: municipality,
+          state: state
+        }
+      }).$promise;
     }
   }
 })();
