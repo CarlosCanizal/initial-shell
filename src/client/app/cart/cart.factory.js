@@ -14,7 +14,8 @@
       getCart: getCart,
       addItem: addItem,
       getTotal: getTotal,
-      checkItem: checkItem
+      checkItem: checkItem,
+      removeItem: removeItem
     };
 
     return cart;
@@ -23,7 +24,7 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], series:[]}
+        cart = {items:[], series:[], itemsTotal: 0, cartTotal :0}
         storage.set('cart',cart)
       }
       return cart;
@@ -31,14 +32,17 @@
 
     function getTotal(){
       var cart = this.getCart();
+      var cartTotal = cart.cartTotal;
       var items = underscore.reduce(cart.items,function(memo,item){
+        cartTotal += item.quantity * item.price;
         return memo + item.quantity;
       },0,0);
       var series =  underscore.reduce(cart.series,function(memo,item){
+        cartTotal += item.quantity * item.price;
         return memo + item.quantity;
       },0,0);
-      var total = series + items;
-      return {series:series, items: items, total: total};
+      var itemsTotal = series + items;
+      return {series:series, items: items, itemsTotal: itemsTotal, cartTotal: cartTotal};
     }
 
     function checkItem(items, item){
@@ -75,6 +79,16 @@
 
       storage.set('cart',cart);
       return this.getTotal();
+    }
+
+    function removeItem(index){
+      var cart = this.getCart();
+      item = angular.copy(item);
+      var index  = cart.series.indexOf(item);
+      console.log(index);
+      // console.log(index);
+      // cart.series.splice(index,1);
+      // console.log(cart);
     }
 
 

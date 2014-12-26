@@ -56,6 +56,10 @@
                                            cover:item.cover
                                           });
     }
+
+    $scope.removeFromCart = function(item){
+      vm.cartItems = ShoppingCart.removeItem(item);
+    }
   }
 
 })();
