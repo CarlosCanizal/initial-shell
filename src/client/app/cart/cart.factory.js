@@ -16,7 +16,8 @@
       getTotal: getTotal,
       checkItem: checkItem,
       removeItem: removeItem,
-      updateQuantity: updateQuantity
+      updateQuantity: updateQuantity,
+      shippingAddress: shippingAddress
     };
 
     return cart;
@@ -25,7 +26,7 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], itemsTotal: 0, cartTotal :0}
+        cart = {items:[], itemsTotal: 0, cartTotal :0, shippingAddress:{}, paymentMethod:{}}
         storage.set('cart',cart)
       }
       return cart;
@@ -82,6 +83,20 @@
       cart.items[index].quantity = item.quantity;
       storage.set('cart',cart);
       return this.getTotal();       
+    }
+
+    function shippingAddress(address){
+      var cart = this.getCart();
+      cart.shippingAddress = address;
+      storage.set('cart',cart);
+      return cart;
+    }
+
+    function paymentMethod(paymentMethod){
+      var cart = this.getCart();
+      cart.paymentMethod = paymentMethod;
+      storage.set('cart',cart);
+      return cart;
     }
 
 
