@@ -15,7 +15,8 @@
       addItem: addItem,
       getTotal: getTotal,
       checkItem: checkItem,
-      removeItem: removeItem
+      removeItem: removeItem,
+      updateQuantity: updateQuantity
     };
 
     return cart;
@@ -24,7 +25,7 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], series:[], itemsTotal: 0, cartTotal :0}
+        cart = {items:[], itemsTotal: 0, cartTotal :0}
         storage.set('cart',cart)
       }
       return cart;
@@ -32,17 +33,14 @@
 
     function getTotal(){
       var cart = this.getCart();
-      var cartTotal = cart.cartTotal;
-      var items = underscore.reduce(cart.items,function(memo,item){
+      var cartTotal = 0;
+      var itemsTotal = underscore.reduce(cart.items,function(memo,item){
         cartTotal += item.quantity * item.price;
         return memo + item.quantity;
       },0,0);
-      var series =  underscore.reduce(cart.series,function(memo,item){
-        cartTotal += item.quantity * item.price;
-        return memo + item.quantity;
-      },0,0);
-      var itemsTotal = series + items;
-      return {series:series, items: items, itemsTotal: itemsTotal, cartTotal: cartTotal};
+      cart = {items: cart.items, itemsTotal: itemsTotal, cartTotal: cartTotal};
+      storage.set('cart',cart)
+      return cart;
     }
 
     function checkItem(items, item){
@@ -60,35 +58,30 @@
     }
 
     function addItem(item) {
-      console.log('addToCart function in factory');
+      
       var cart = this.getCart();
-      var index;
-      if(item.className == 'Serie'){
-        index = this.checkItem(cart.series, item);
-        if(index === false){
-          cart.series.push(item);
-        }
+      var index = this.checkItem(cart.items, item);
+      if(index === false){
+        cart.items.push(item);
       }else{
-        index = this.checkItem(cart.items, item);
-        if(index === false){
-          cart.items.push(item);
-        }else{
-          cart.items[index].quantity +=1;
-        }
+        cart.items[index].quantity +=1;
       }
-
       storage.set('cart',cart);
       return this.getTotal();
     }
 
     function removeItem(index){
       var cart = this.getCart();
-      item = angular.copy(item);
-      var index  = cart.series.indexOf(item);
-      console.log(index);
-      // console.log(index);
-      // cart.series.splice(index,1);
-      // console.log(cart);
+      cart.items.splice(index,1);
+      storage.set('cart',cart);
+      return this.getTotal();
+    }
+
+    function updateQuantity(item, index){
+      var cart = this.getCart();
+      cart.items[index].quantity = item.quantity;
+      storage.set('cart',cart);
+      return this.getTotal();       
     }
 
 
