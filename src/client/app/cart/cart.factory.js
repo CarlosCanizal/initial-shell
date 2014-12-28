@@ -17,7 +17,8 @@
       checkItem: checkItem,
       removeItem: removeItem,
       updateQuantity: updateQuantity,
-      shippingAddress: shippingAddress
+      shippingAddress: shippingAddress,
+      paymentMethod: paymentMethod
     };
 
     return cart;
@@ -94,12 +95,11 @@
 
     function paymentMethod(paymentMethod){
       var cart = this.getCart();
-      cart.paymentMethod = paymentMethod;
+
+      cart.paymentMethod = {type:"card",card:paymentMethod};
       storage.set('cart',cart);
       return cart;
     }
-
-
 
 
   }

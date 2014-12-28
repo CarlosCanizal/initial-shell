@@ -24,7 +24,8 @@
       deleteCard: deleteCard,
       saveAddress: saveAddress,
       getAddresses: getAddresses,
-      deleteAddress: deleteAddress
+      deleteAddress: deleteAddress,
+      chargeCard: chargeCard
 
     };
 
@@ -88,6 +89,15 @@
         where : where,
         order : 'createdAt'
       }).$promise;
+    }
+
+    function chargeCard(order, user){ 
+      var params = {
+        order: order,
+        user: user,
+        function: 'chargeCard'
+      }
+      return Card.save(params).$promise;
     }
 
   }

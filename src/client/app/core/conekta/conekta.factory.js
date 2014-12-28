@@ -5,10 +5,10 @@
   .module('app.core')
   .factory('conekta', conekta);
 
-  conekta.$inject = ['userApi','$q'];
+  conekta.$inject = ['userApi','$q','parseheaders'];
 
   /* @ngInject */
-  function conekta(userApi, $q) {
+  function conekta(userApi, $q, parseheaders) {
 
     var conketaPublicKey = "key_LDjQwU7xkazYxSRSoW7XWfQ";
 
@@ -16,6 +16,17 @@
       saveCard : saveCard,
       deleteCard : deleteCard
     }
+
+    // var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
+
+    // function chargeCard(order, user){
+    //   var params = {
+    //     order: order,
+    //     user: user,
+    //     function: 'chargeCard'
+    //   }
+    //   return Card.save(params).$promise;
+    // }
 
     function deleteCard(conektaId, cardId){
       return userApi.deleteCard({conektaId:conektaId,cardId:cardId});
