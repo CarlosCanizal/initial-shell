@@ -53,7 +53,8 @@
                                            price:item.price,
                                            name:item.name, 
                                            className:item.className,
-                                           cover:item.cover
+                                           cover:item.cover,
+                                           type: item.type
                                           });
     }
 
