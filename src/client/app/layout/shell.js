@@ -31,10 +31,6 @@
       $state.go('home');
     }
 
-    $scope.addToCart = function(item){
-      alert(itemId);
-    }
-
     vm.searchByName = function(){
       var params = {
         name: vm.searchValue
@@ -47,7 +43,7 @@
       });
     }
 
-    $scope.suscribe = function(item){
+    $scope.addToCart = function(item){
       vm.cartItems = ShoppingCart.addItem({quantity:1,
                                            objectId:item.objectId,
                                            price:item.price,
