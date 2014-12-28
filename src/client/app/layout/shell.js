@@ -57,8 +57,8 @@
                                           });
     }
 
-    $scope.removeFromCart = function(item){
-      vm.cartItems = ShoppingCart.removeItem(item);
+    $scope.removeFromCart = function(index){
+      vm.cartItems = ShoppingCart.removeItem(index);
     }
   }
 

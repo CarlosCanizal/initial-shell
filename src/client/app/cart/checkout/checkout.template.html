@@ -1,11 +1,14 @@
 
 <div class="filter-title"><span class="publisher-name">Checkout</span></div>
 <div class="shelf">
-  <div data-ng-show="showAddress" class="disable-shelf"><i class="fa fa-check-circle fa-12 success"></i></div>
+  <div data-ng-show="showAddress" class="disable-shelf"><i class="fa fa-check-square-o fa-5 success"></i></div>
   <div class="inner-shelf">
     <div class="shelf-space">
       <div id="cart-list">
-        <div class="pure-g">
+        <div ng-if="vm.cartItems.items.length &lt; 1">
+          <h2>No existen articulos en el carrito de compras</h2>
+        </div>
+        <div ng-if="vm.cartItems.items.length &gt; 0" class="pure-g">
           <div class="pure-u-1 pure-u-sm-2-3">
             <div ng-repeat="item in vm.cartItems.items" class="cart-item pure-g">
               <div class="pure-u-1 pure-u-sm-1-4 pure-u-md-1-8"><img alt="" data-ng-src="{{item.cover.url}}"/></div>
@@ -17,13 +20,13 @@
                   <div><span><i data-ng-click="minusOne(item)" class="fa fa-minus-circle"></i></span>
                     <input type="text" ng-model="item.quantity" class="xs-input"/><span><i data-ng-click="plusOne(item)" class="fa fa-plus-circle"></i></span><a data-ng-click="updateQuantity(item, $index)" class="pure-button pure-button-primary button-xsmall"><i class="fa fa-refresh"></i>Actualizar</a>
                   </div>
-                  <div><a data-ng-click="removeFromCart()" class="pure-button button-xsmall"><i class="fa fa-trash"></i>Eliminar</a></div>
+                  <div><a data-ng-click="removeFromCart($index)" class="pure-button button-xsmall"><i class="fa fa-trash"></i>Eliminar</a></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="pure-u-1 pure-u-sm-1-3">
-            <h1>$ {{vm.cartItems.cartTotal}} USD</h1><a data-ng-click="toAddress()" data-ng-hide="showAddress" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a>
+            <h1>$ {{vm.cartItems.cartTotal}} USD</h1><a data-ng-click="toAddress()" data-ng-hide="showAddress" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a><a data-ng-click="emptyCart()" data-ng-hide="showAddress" class="pure-button"><i class="fa fa-trash"></i>Vaciar Carrito</a>
           </div>
         </div>
       </div>
@@ -33,7 +36,7 @@
 <div id="address" data-ng-show="showAddress">
   <div class="filter-title"><span class="publisher-name">Direccion de Envio</span></div>
   <div class="shelf">
-    <div data-ng-show="showPayment" class="disable-shelf"><i class="fa fa-check-circle fa-12 success"></i></div>
+    <div data-ng-show="showPayment" class="disable-shelf"><i class="fa fa-check-square-o fa-5 success"></i></div>
     <div class="inner-shelf">
       <div class="shelf-space">
         <div class="pure-g">
@@ -41,13 +44,13 @@
             <div ng-if="addresses.length &lt; 1" class="shelf-message">
               <h2></h2>No existen direcciones registradas.
             </div>
-            <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
-            <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
-            <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>
+            <div class="address-line">{{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}</div>
+            <div class="address-line">Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} </div>
+            <div class="address-line">{{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} </div>
           </div>
           <div class="pure-u-1 pure-u-md-1-3">
             <div class="address-line">Cambiar direccion
-              <select ng-model="address" ng-options="item as item.street for item in addresses"></select>
+              <select ng-model="shoppingCart.shippingAddress" ng-options="item as item.street for item in addresses"></select>
             </div>
             <div class="address-line"><a class="pure-button pure-button-primary button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
           </div>
@@ -60,18 +63,18 @@
 <div id="payment" data-ng-show="showPayment">
   <div class="filter-title"><span class="publisher-name">Metodo de Pago</span></div>
   <div class="shelf">
-    <div data-ng-show="showPlaceOrder" class="disable-shelf"><i class="fa fa-check-circle fa-12 success"></i></div>
+    <div data-ng-show="showPlaceOrder" class="disable-shelf"><i class="fa fa-check-square-o fa-5 success"></i></div>
     <div class="inner-shelf">
       <div class="shelf-space">
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3">
             <div class="address-line">Tarjeta </div>
-            <div class="address-line">{{paymentMethod.name}}</div>
-            <div class="address-line"><i ng-if="paymentMethod.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="paymentMethod.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="paymentMethod.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{paymentMethod.last4}}</div>
+            <div class="address-line">{{shoppingCart.paymentMethod.card.name}}</div>
+            <div class="address-line"><i ng-if="shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{shoppingCart.paymentMethod.card.last4}}</div>
           </div>
           <div class="pure-u-1 pure-u-md-1-3">
             <div class="address-line">Cambiar Metodo de Pago
-              <select ng-model="paymentMethod" ng-options="item as item.last4 for item in paymentMethods"></select>
+              <select ng-model="shoppingCart.paymentMethod" ng-options="item as item.card.last4 for item in paymentMethods"></select>
             </div>
             <div class="address-line"><a class="pure-button pure-button-primary button-xsmall"><i class="fa fa-plus"></i>Agregar Tarjeta</a></div>
           </div>
@@ -84,23 +87,39 @@
 <div id="placeOrder" data-ng-show="showPlaceOrder">
   <div class="filter-title"><span class="publisher-name">Confirmar Orden</span></div>
   <div class="shelf">
+    <div data-ng-show="showConfirmation" class="disable-shelf"><i class="fa fa-check-square-o fa-5 success"></i></div>
     <div class="inner-shelf">
       <div class="shelf-space">
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3">
-            <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
-            <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
-            <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>
+            <div class="address-line">{{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}</div>
+            <div class="address-line">Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} </div>
+            <div class="address-line">{{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} </div>
             <div class="address-line"><a data-ng-click="toAddress()" class="pure-button button-xsmall">Modificar</a></div>
           </div>
           <div class="pure-u-1 pure-u-md-1-3"> 
-            <div class="address-line">{{paymentMethod.name}}</div>
-            <div class="address-line"><i ng-if="paymentMethod.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="paymentMethod.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="paymentMethod.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{paymentMethod.last4}}</div>
+            <div class="address-line">{{shoppingCart.paymentMethod.card.name}}</div>
+            <div class="address-line"><i ng-if="shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{shoppingCart.paymentMethod.card.last4}}</div>
             <div class="address-line"><a data-ng-click="toPaymentMethod()" class="pure-button button-xsmall">Modificar</a></div>
           </div>
           <div class="pure-u-1 pure-u-sm-1-3">
-            <h1>$ {{vm.cartItems.cartTotal}} USD</h1><a data-ng-click="placeOrder()" class="pure-button button-success"><i class="fa fa-money"></i>Pagar</a>
+            <h1>$ {{vm.cartItems.cartTotal}} USD</h1><a data-ng-click="placeOrder()" data-ng-hide="showConfirmation" class="pure-button button-success"><i class="fa fa-money"></i>Pagar</a><a data-ng-click="goToCart()" data-ng-hide="showConfirmation" class="pure-button button-success"><i class="fa fa-money"></i>Volver al carrito</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="orderStatus" data-ng-show="showConfirmation">
+  <div class="filter-title"><span class="publisher-name">Confirmación</span></div>
+  <div class="shelf">
+    <div class="inner-shelf">
+      <div class="shelf-space">
+        <div data-ng-if="confirmation" class="success-container"><i class="fa fa-check-circle fa-8"></i>
+          <h2>¡Gracias por tu compra!</h2>
+        </div>
+        <div data-ng-if="!confirmation" class="error-container"><i class="fa fa-credit-card fa-8"></i>
+          <h2>{{errorMessage}}</h2>
         </div>
       </div>
     </div>

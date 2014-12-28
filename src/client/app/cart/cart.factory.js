@@ -16,9 +16,8 @@
       getTotal: getTotal,
       checkItem: checkItem,
       removeItem: removeItem,
-      updateQuantity: updateQuantity,
-      shippingAddress: shippingAddress,
-      paymentMethod: paymentMethod
+      emptyCart: emptyCart,
+      setCart: setCart
     };
 
     return cart;
@@ -33,6 +32,11 @@
       return cart;
     }
 
+    function setCart(cart){
+      storage.set('cart',cart)
+      return this.getTotal();
+    }
+
     function getTotal(){
       var cart = this.getCart();
       var cartTotal = 0;
@@ -40,7 +44,8 @@
         cartTotal += item.quantity * item.price;
         return memo + item.quantity;
       },0,0);
-      cart = {items: cart.items, itemsTotal: itemsTotal, cartTotal: cartTotal};
+      cart.itemsTotal = itemsTotal;
+      cart.cartTotal =  cartTotal;
       storage.set('cart',cart)
       return cart;
     }
@@ -48,8 +53,6 @@
     function checkItem(items, item){
       var item_index = false;
       angular.forEach(items, function(element, index){
-        console.log(item.objectId);
-        console.log(element.objectId);
         if(element.objectId == item.objectId  && !item_index){
           console.log('same');
           item_index = index;
@@ -79,26 +82,9 @@
       return this.getTotal();
     }
 
-    function updateQuantity(item, index){
-      var cart = this.getCart();
-      cart.items[index].quantity = item.quantity;
-      storage.set('cart',cart);
-      return this.getTotal();       
-    }
-
-    function shippingAddress(address){
-      var cart = this.getCart();
-      cart.shippingAddress = address;
-      storage.set('cart',cart);
-      return cart;
-    }
-
-    function paymentMethod(paymentMethod){
-      var cart = this.getCart();
-
-      cart.paymentMethod = {type:"card",card:paymentMethod};
-      storage.set('cart',cart);
-      return cart;
+    function emptyCart(){
+      storage.remove('cart');
+      return this.getCart();
     }
 
 

@@ -5,10 +5,10 @@
   .module('app.core')
   .factory('userApi', userApi);
 
-  userApi.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage'];
+  userApi.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage', 'underscore'];
 
   /* @ngInject */
-  function userApi($resource, $q, parseheaders, parse, storage) {
+  function userApi($resource, $q, parseheaders, parse, storage, underscore) {
 
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  User  = parse.newUserResource(parseheaders.storeKeys);
@@ -58,7 +58,18 @@
 
     function getCards(params){
       params['function'] = 'getCards';
-      return Card.get(params).$promise
+      var deferred = $q.defer();
+      Card.get(params).$promise.then(function(result){
+        var cards = result.result;
+        var result = underscore.map(cards,function(item){
+          return {type:"card", card:item};
+        });
+        deferred.resolve(result);
+      },function(error){
+        deferred.reject(error);
+      });
+
+      return deferred.promise;
     }
 
     function deleteCard(params){

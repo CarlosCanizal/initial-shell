@@ -253,46 +253,60 @@ nav a {
   text-align: center; }
 
 /* line 224, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
-.fa-12 {
+.fa-5 {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
   font-size: 5rem; }
 
 /* line 230, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.fa-8 {
+  font-size: 8rem; }
+
+/* line 233, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.success-container {
+  text-align: center;
+  color: #1cb841; }
+
+/* line 237, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.error-container {
+  text-align: center;
+  color: #ca3c3c; }
+
+/* line 244, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .xs-input {
   width: 2rem; }
 
-/* line 233, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 247, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-large {
   font-size: 110%; }
 
-/* line 236, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 250, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-xlarge {
   font-size: 125%; }
 
-/* line 242, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 256, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-success, .button-error, .button-warning, .button-secondary {
   color: white;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
 
-/* line 247, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 261, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-success {
   background: #1cb841;
   /* this is a green */ }
 
-/* line 250, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 264, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-error {
   background: #ca3c3c;
   /* this is a maroon */ }
 
-/* line 253, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 267, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-warning {
   background: #df7514;
   /* this is an orange */ }
 
-/* line 256, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 270, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-secondary {
   background: #42b8dd;
   /* this is a light blue */ }
