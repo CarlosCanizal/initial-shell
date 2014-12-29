@@ -5,5 +5,5 @@
   a(ng-click="vm.searchByName()").
     BUSCAR
 .shelf(data-ng-include="'app/layout/shelf.template.html'", data-ng-if="vm.itemsList.length > 0")
-.shelf(shelf, publisher="dc")
-.shelf(shelf, publisher="marvel")
+.shelf(shelf, publisher="dc", store="Serie")
+.shelf(shelf, publisher="marvel", store="Serie")

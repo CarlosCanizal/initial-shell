@@ -11,7 +11,8 @@ function shelf(storeApi){
   return{
     restrict: 'EA',
     scope:{
-      publisher : '@'
+      publisher : '@',
+      store : '@'
     },
     templateUrl: 'app/layout/shelf.template.html',
     controller:function($scope){
@@ -20,8 +21,10 @@ function shelf(storeApi){
     },
     link:function(scope,element,attr){
       var publisher = attr.publisher;
+      var store = attr.store;
       scope.vm.title = publisher;
-      storeApi.getItems({publisher:publisher, status:'active', function:'Serie'}).then(function(series){
+
+      storeApi.getItems({publisher:publisher, status:'active', function: store}).then(function(series){
         console.log(series.result);
         scope.vm.itemsList = series.result;
       },function(error){
