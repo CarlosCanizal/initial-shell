@@ -273,40 +273,44 @@ nav a {
   text-align: center;
   color: #ca3c3c; }
 
-/* line 244, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 241, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.error-border {
+  border-color: #ca3c3c; }
+
+/* line 247, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .xs-input {
   width: 2rem; }
 
-/* line 247, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 250, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-large {
   font-size: 110%; }
 
-/* line 250, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 253, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-xlarge {
   font-size: 125%; }
 
-/* line 256, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 259, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-success, .button-error, .button-warning, .button-secondary {
   color: white;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
 
-/* line 261, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 264, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-success {
   background: #1cb841;
   /* this is a green */ }
 
-/* line 264, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 267, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-error {
   background: #ca3c3c;
   /* this is a maroon */ }
 
-/* line 267, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 270, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-warning {
   background: #df7514;
   /* this is an orange */ }
 
-/* line 270, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 273, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-secondary {
   background: #42b8dd;
   /* this is a light blue */ }

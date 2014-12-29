@@ -14,7 +14,8 @@
 
     var factory = {
       getSeries: getSeries,
-      getProducts: getProducts
+      getProducts: getProducts,
+      validateOrder: validateOrder
     };
 
     return factory;
@@ -28,6 +29,12 @@
       params['function'] = 'Product';
       return Store.query(params).$promise 
     }
+
+    function validateOrder(items){ 
+      var params ={items: items, function:'validateOrder'}
+      return Store.query(params).$promise;
+    }
+
 
   }
 })();

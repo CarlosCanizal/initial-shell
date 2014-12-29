@@ -5,10 +5,10 @@
   .module('app.cart')
   .factory('ShoppingCart', cart);
 
-  cart.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage', 'underscore'];
+  cart.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage', 'underscore', 'storeApi'];
 
   /* @ngInject */
-  function cart($resource, $q, parseheaders, parse, storage, underscore) {
+  function cart($resource, $q, parseheaders, parse, storage, underscore, storeApi) {
 
     var cart = {
       getCart: getCart,
@@ -17,7 +17,9 @@
       checkItem: checkItem,
       removeItem: removeItem,
       emptyCart: emptyCart,
-      setCart: setCart
+      setCart: setCart,
+      validateOrder: validateOrder,
+      updateItems: updateItems
     };
 
     return cart;
@@ -30,6 +32,23 @@
         storage.set('cart',cart)
       }
       return cart;
+    }
+
+    function validateOrder(){
+      var deferred = $q.defer();
+      var cart = this.getCart();
+      if(cart.items && cart.items.length > 0){
+        storeApi.validateOrder(cart.items).then(function(order){
+          deferred.resolve(order.result);
+        },function(error){
+          console.error(error);
+        });
+      }
+      else{
+        deferred.resolve({itemsAvailable:[], itemsUnavailable:[]});
+      }
+
+      return deferred.promise;
     }
 
     function setCart(cart){
@@ -62,14 +81,28 @@
 
     }
 
+    function updateItems(items){
+      var cart = this.getCart();
+      cart.items = items;
+      storage.set('cart',cart);
+      return this.getTotal();
+    }
+
     function addItem(item) {
       
       var cart = this.getCart();
       var index = this.checkItem(cart.items, item);
+
       if(index === false){
         cart.items.push(item);
       }else{
-        cart.items[index].quantity +=1;
+        if(cart.items[index].type=="available"){
+          if(cart.items[index].quantity+1  <= cart.items[index].stock){
+            cart.items[index].quantity +=1;
+          }
+        }else{
+          cart.items[index].quantity +=1;
+        }
       }
       storage.set('cart',cart);
       return this.getTotal();

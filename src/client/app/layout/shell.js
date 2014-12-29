@@ -44,14 +44,15 @@
     }
 
     $scope.addToCart = function(item){
-      vm.cartItems = ShoppingCart.addItem({quantity:1,
-                                           objectId:item.objectId,
-                                           price:item.price,
-                                           name:item.name, 
-                                           className:item.className,
-                                           cover:item.cover,
-                                           type: item.type
-                                          });
+        vm.cartItems = ShoppingCart.addItem({quantity:1,
+                                             objectId:item.objectId,
+                                             price:item.price,
+                                             name:item.name, 
+                                             className:item.className,
+                                             cover:item.cover,
+                                             type: item.type,
+                                             stock: item.stock
+                                            });
     }
 
     $scope.removeFromCart = function(index){

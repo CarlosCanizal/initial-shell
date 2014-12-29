@@ -10,18 +10,31 @@
   function Checkout($scope, $state,ShoppingCart, userApi) {
     
     $scope.currentUser = $scope.getCurrentUser();
-    $scope.vm.cartItems = ShoppingCart.getCart();
-
     $scope.shoppingCart = {};
-
-    setShoppingCart();
-
     $scope.addresses = [];
     $scope.paymentMethods = [];
-    resetViews();
+    $scope.itemsUnavailable = [];
+    $scope.vm.cartItems= ShoppingCart.getTotal();
+
+    setShoppingCart();
+    resetViews();    
+
+    ShoppingCart.validateOrder().then(function(order){
+      $scope.vm.cartItems = ShoppingCart.updateItems(order.itemsAvailable);
+      $scope.itemsUnavailable = order.itemsUnavailable;
+
+    },function(error){
+      console.error(error);
+    });
 
     $scope.plusOne = function(item){
-      ++item.quantity;
+      console.log(item.stock);
+      if(item.type == 'available'){
+        if(item.quantity+1 <= item.stock)
+          ++item.quantity;
+      }
+      else
+        ++item.quantity;
     }
 
     $scope.minusOne = function(item){
@@ -30,9 +43,8 @@
     }
 
     $scope.updateQuantity = function(item, index){
-      $scope.vm.cartItems = ShoppingCart.setCart($scope.shoppingCart);
+      $scope.vm.cartItems = ShoppingCart.setCart($scope.vm.cartItems);
       $scope.shoppingCart.items = $scope.vm.cartItems.items;
-
     }
 
     $scope.goToCart =  function(){
@@ -43,6 +55,7 @@
       $scope.showAddress = true;
       $scope.showPayment = false;
       $scope.showPlaceOrder = false;
+      cleanItemsUnavaibale();
       userApi.getAddresses($scope.currentUser.objectId).then(function(addresses){
         $scope.addresses =  addresses.results;
         $scope.shoppingCart.shippingAddress = $scope.addresses[0];
@@ -93,6 +106,10 @@
       emptyCart();
     }
 
+    $scope.cleanItemsUnavaibale = function(){
+      cleanItemsUnavaibale();
+    }
+
     function emptyCart(){
       setShoppingCart();
       resetViews();
@@ -110,6 +127,10 @@
       $scope.shoppingCart.items = $scope.vm.cartItems.items;
       $scope.shoppingCart.shippingAddress = {};
       $scope.shoppingCart.paymentMethod = {};
+    }
+
+    function cleanItemsUnavaibale(){
+      $scope.itemsUnavailable = [];
     }
   }
 
