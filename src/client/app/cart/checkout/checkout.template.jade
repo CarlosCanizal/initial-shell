@@ -58,7 +58,7 @@
                     a.pure-button.pure-button-primary.button-xsmall(data-ng-click="updateQuantity(item, $index)")
                       i.fa.fa-refresh
                       | Actualizar
-                    div.error(data-ng-if="item.quantity >= item.stock")
+                    div.error(data-ng-if="item.type== 'available' && item.quantity >= item.stock")
                       | Solo {{item.stock}} disponibles.
                   div
                     a.pure-button.button-xsmall(data-ng-click="removeFromCart($index)")
