@@ -78,7 +78,9 @@
 
       userApi.chargeCard(cart, user).then(function(result){
         console.log(result.result);
+        emptyCart();
         $scope.confirmation = true;
+
       },function(error){
         var error = angular.fromJson(error.data.error);
         $scope.confirmation = false;
@@ -88,6 +90,10 @@
     }
 
     $scope.emptyCart = function(){
+      emptyCart();
+    }
+
+    function emptyCart(){
       setShoppingCart();
       resetViews();
       $scope.vm.cartItems = ShoppingCart.emptyCart();

@@ -5,9 +5,9 @@ angular
   .module('app.layout')
   .directive('shelf',shelf);
 
-shelf.$inject = ['serieApi'];
+shelf.$inject = ['storeApi'];
 
-function shelf(serieApi){
+function shelf(storeApi){
   return{
     restrict: 'EA',
     scope:{
@@ -16,12 +16,12 @@ function shelf(serieApi){
     templateUrl: 'app/layout/shelf.template.html',
     controller:function($scope){
       $scope.vm = {};
-      $scope.vm.suscribe =  $scope.$parent.suscribe;
+      $scope.vm.addToCart =  $scope.$parent.addToCart;
     },
     link:function(scope,element,attr){
       var publisher = attr.publisher;
       scope.vm.title = publisher;
-      serieApi.getSeries({publisher:publisher}).then(function(series){
+      storeApi.getProducts({publisher:publisher}).then(function(series){
         console.log(series.result);
         scope.vm.itemsList = series.result;
       },function(error){

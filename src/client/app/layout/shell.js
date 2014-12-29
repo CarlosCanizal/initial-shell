@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$state','userApi','serieApi','ShoppingCart'];
+  Shell.$inject = ['$scope','$state','userApi','storeApi','ShoppingCart'];
 
-  function Shell($scope, $state, userApi, serieApi, ShoppingCart){
+  function Shell($scope, $state, userApi, storeApi, ShoppingCart){
     // jshint validthis: true 
     var vm = this;
     vm.searchValue = null;
@@ -35,7 +35,7 @@
       var params = {
         name: vm.searchValue
       }
-      serieApi.getSeries(params).then(function(series){
+      storeApi.getSeries(params).then(function(series){
         console.log(series.result);
         vm.itemsList = series.result;
       },function(error){
