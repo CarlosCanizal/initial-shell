@@ -60,8 +60,6 @@
                       | Actualizar
                     div.error(data-ng-if="item.quantity >= item.stock")
                       | Solo {{item.stock}} disponibles.
-
-
                   div
                     a.pure-button.button-xsmall(data-ng-click="removeFromCart($index)")
                       i.fa.fa-trash

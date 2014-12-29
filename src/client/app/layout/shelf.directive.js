@@ -21,7 +21,7 @@ function shelf(storeApi){
     link:function(scope,element,attr){
       var publisher = attr.publisher;
       scope.vm.title = publisher;
-      storeApi.getProducts({publisher:publisher, status:'active'}).then(function(series){
+      storeApi.getItems({publisher:publisher, status:'active', function:'Serie'}).then(function(series){
         console.log(series.result);
         scope.vm.itemsList = series.result;
       },function(error){
