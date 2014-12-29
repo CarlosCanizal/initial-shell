@@ -43,9 +43,16 @@
     }
 
     $scope.updateQuantity = function(item, index){
-      $scope.vm.cartItems = ShoppingCart.setCart($scope.vm.cartItems);
-      $scope.shoppingCart.items = $scope.vm.cartItems.items;
+      if(item.quantity > item.stock){
+        item.quantity = item.stock;
+      }
+      else{
+        $scope.vm.cartItems = ShoppingCart.setCart($scope.vm.cartItems);
+        $scope.shoppingCart.items = $scope.vm.cartItems.items;
+      }
     }
+
+
 
     $scope.goToCart =  function(){
       resetViews();

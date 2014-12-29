@@ -44,7 +44,7 @@
                   <div>Precio: ${{item.price}} USD</div>
                   <div><span><i data-ng-click="minusOne(item)" class="fa fa-minus-circle"></i></span>
                     <input type="text" ng-model="item.quantity" class="xs-input"/><span><i data-ng-click="plusOne(item)" class="fa fa-plus-circle"></i></span><a data-ng-click="updateQuantity(item, $index)" class="pure-button pure-button-primary button-xsmall"><i class="fa fa-refresh"></i>Actualizar</a>
-                    <div data-ng-if="item.quantity == item.stock" class="error">Solo {{item.stock}} disponibles.</div>
+                    <div data-ng-if="item.quantity &gt;= item.stock" class="error">Solo {{item.stock}} disponibles.</div>
                   </div>
                   <div><a data-ng-click="removeFromCart($index)" class="pure-button button-xsmall"><i class="fa fa-trash"></i>Eliminar</a></div>
                 </div>
