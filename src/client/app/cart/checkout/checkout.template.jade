@@ -16,8 +16,12 @@
                   .item-space
                     div
                       | {{item.name}}
-                    div(data-ng-if="item.className == 'Serie'")
+                    div(data-ng-if="item.type == 'suscription'")
                       | Suscripcion
+                    div(data-ng-if="item.type == 'preorder'")
+                      | Preorden
+                    div(data-ng-if="item.type == 'available'")
+                      | Disponible de inmediato
                     div
                       | Precio: ${{item.price}} USD
             .pure-u-1.pure-u-sm-1-3            
@@ -45,8 +49,12 @@
                 .item-space
                   div
                     | {{item.name}}
-                  div(data-ng-if="item.className == 'Serie'")
+                  div(data-ng-if="item.type == 'suscription'")
                     | Suscripcion
+                  div(data-ng-if="item.type == 'preorder'")
+                    | Preorden
+                  div(data-ng-if="item.type == 'available'")
+                    | Disponible de inmediato
                   div
                     | Precio: ${{item.price}} USD
                   div

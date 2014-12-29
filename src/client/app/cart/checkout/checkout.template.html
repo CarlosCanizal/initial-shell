@@ -12,7 +12,9 @@
               <div class="pure-u-1 pure-u-md-1-2">
                 <div class="item-space">
                   <div>{{item.name}}</div>
-                  <div data-ng-if="item.className == 'Serie'">Suscripcion</div>
+                  <div data-ng-if="item.type == 'suscription'">Suscripcion</div>
+                  <div data-ng-if="item.type == 'preorder'">Preorden</div>
+                  <div data-ng-if="item.type == 'available'">Disponible de inmediato</div>
                   <div>Precio: ${{item.price}} USD</div>
                 </div>
               </div>
@@ -40,7 +42,9 @@
               <div class="pure-u-1 pure-u-md-1-2">
                 <div class="item-space">
                   <div>{{item.name}}</div>
-                  <div data-ng-if="item.className == 'Serie'">Suscripcion</div>
+                  <div data-ng-if="item.type == 'suscription'">Suscripcion</div>
+                  <div data-ng-if="item.type == 'preorder'">Preorden</div>
+                  <div data-ng-if="item.type == 'available'">Disponible de inmediato</div>
                   <div>Precio: ${{item.price}} USD</div>
                   <div><span><i data-ng-click="minusOne(item)" class="fa fa-minus-circle"></i></span>
                     <input type="text" ng-model="item.quantity" class="xs-input"/><span><i data-ng-click="plusOne(item)" class="fa fa-plus-circle"></i></span><a data-ng-click="updateQuantity(item, $index)" class="pure-button pure-button-primary button-xsmall"><i class="fa fa-refresh"></i>Actualizar</a>
