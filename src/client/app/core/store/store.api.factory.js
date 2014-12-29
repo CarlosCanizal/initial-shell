@@ -27,6 +27,7 @@
 
     function getProducts(params){
       params['function'] = 'Product';
+      console.log(params);
       return Store.query(params).$promise 
     }
 
