@@ -29,30 +29,30 @@
     //   console.error(error);
     // });
 
-    $scope.plusOne = function(item){
-      console.log(item.stock);
-      if(item.type == 'available'){
-        if(item.quantity+1 <= item.stock)
-          ++item.quantity;
-      }
-      else
-        ++item.quantity;
-    }
+    // $scope.plusOne = function(item){
+    //   console.log(item.stock);
+    //   if(item.type == 'available'){
+    //     if(item.quantity+1 <= item.stock)
+    //       ++item.quantity;
+    //   }
+    //   else
+    //     ++item.quantity;
+    // }
 
-    $scope.minusOne = function(item){
-      if(item.quantity-1 > 0)
-        --item.quantity;
-    }
+    // $scope.minusOne = function(item){
+    //   if(item.quantity-1 > 0)
+    //     --item.quantity;
+    // }
 
-    $scope.updateQuantity = function(item, index){
-      if(item.quantity > item.stock){
-        item.quantity = item.stock;
-      }
-      else{
-        $scope.vm.cartItems = ShoppingCart.setCart($scope.vm.cartItems);
-        $scope.shoppingCart.items = $scope.vm.cartItems.items;
-      }
-    }
+    // $scope.updateQuantity = function(item, index){
+    //   if(item.quantity > item.stock){
+    //     item.quantity = item.stock;
+    //   }
+    //   else{
+    //     $scope.vm.cartItems = ShoppingCart.setCart($scope.vm.cartItems);
+    //     $scope.shoppingCart.items = $scope.vm.cartItems.items;
+    //   }
+    // }
 
 
 
@@ -64,15 +64,15 @@
       $scope.showAddress = true;
       $scope.showPayment = false;
       $scope.showPlaceOrder = false;
-      $scope.loading =  true;
-      cleanItemsUnavaibale();
-      userApi.getAddresses($scope.currentUser.objectId).then(function(addresses){
-        $scope.addresses =  addresses.results;
-        $scope.shoppingCart.shippingAddress = $scope.addresses[0];
-        $scope.loading = false;
-      },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-      });
+
+      // cleanItemsUnavaibale();
+      // userApi.getAddresses($scope.currentUser.objectId).then(function(addresses){
+      //   $scope.addresses =  addresses.results;
+      //   $scope.shoppingCart.shippingAddress = $scope.addresses[0];
+      //   $scope.loading = false;
+      // },function(error){
+      //   console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      // });
     }
 
     $scope.toPaymentMethod = function(){
