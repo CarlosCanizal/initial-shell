@@ -1,0 +1,24 @@
+angular
+  .module('app.cart')
+  .directive('paymentMethod',paymentMethod);
+
+paymentMethod.$inject = ['userApi'];
+
+function paymentMethod(userApi){
+  return{
+    restrict: 'EA',
+    templateUrl: 'app/cart/checkout/paymentMethod/paymentMethod.template.html',
+    scope: true,
+    link:function(scope,element,attr){
+      scope.loading = true;
+      userApi.getCards({conektaId:scope.currentUser.conektaId}).then(function(cards){
+        scope.cards = cards;
+        scope.paymentMethods =  scope.cards;
+        scope.shoppingCart.paymentMethod = scope.cards[0];
+        scope.loading = false;
+      },function(error){
+        console.error(error);
+      });
+    }
+  }
+}

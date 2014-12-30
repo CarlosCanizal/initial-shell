@@ -43,8 +43,8 @@ function itemsList(ShoppingCart){
           item.quantity = item.stock;
         }
         else{
-          $scope.vm.cartItems = ShoppingCart.setCart($scope.vm.cartItems);
-          $scope.shoppingCart.items = $scope.vm.cartItems.items;
+          scope.vm.cartItems = ShoppingCart.setCart(scope.vm.cartItems);
+          scope.shoppingCart.items = scope.vm.cartItems.items;
         }
       }
     }
