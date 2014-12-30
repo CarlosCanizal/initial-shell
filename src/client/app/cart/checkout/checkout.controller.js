@@ -15,17 +15,19 @@
     $scope.paymentMethods = [];
     $scope.itemsUnavailable = [];
     $scope.vm.cartItems= ShoppingCart.getTotal();
+    // $scope.setLoading(true);
+    // $scope.loading =  false;
 
     setShoppingCart();
     resetViews();    
 
-    ShoppingCart.validateOrder().then(function(order){
-      $scope.vm.cartItems = ShoppingCart.updateItems(order.itemsAvailable);
-      $scope.itemsUnavailable = order.itemsUnavailable;
-
-    },function(error){
-      console.error(error);
-    });
+    // ShoppingCart.validateOrder().then(function(order){
+    //   $scope.vm.cartItems = ShoppingCart.updateItems(order.itemsAvailable);
+    //   $scope.itemsUnavailable = order.itemsUnavailable;
+    //   $scope.setLoading(false);
+    // },function(error){
+    //   console.error(error);
+    // });
 
     $scope.plusOne = function(item){
       console.log(item.stock);
@@ -62,10 +64,12 @@
       $scope.showAddress = true;
       $scope.showPayment = false;
       $scope.showPlaceOrder = false;
+      $scope.loading =  true;
       cleanItemsUnavaibale();
       userApi.getAddresses($scope.currentUser.objectId).then(function(addresses){
         $scope.addresses =  addresses.results;
         $scope.shoppingCart.shippingAddress = $scope.addresses[0];
+        $scope.loading = false;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });

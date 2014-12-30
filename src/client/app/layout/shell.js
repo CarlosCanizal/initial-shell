@@ -15,6 +15,11 @@
     vm.title = 'Resultados';
     vm.cartItems = ShoppingCart.getTotal();
     vm.currentUser  = userApi.currentUser();
+    vm.loading = false;
+
+    $scope.setLoading = function(loading){
+      vm.loading = loading;
+    }
 
     $scope.setCurrentUser = function(user){
       console.log('setCurrentUser');

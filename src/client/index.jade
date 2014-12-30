@@ -8,6 +8,10 @@ html(data-ng-app="app")
     link(rel="stylesheet", href="common/css/main.css")
   body
     div(data-ng-controller="Shell as vm")
+      .loading-layer(data-ng-show="vm.loading")
+        div.spinner-circle
+          div.dot1
+          div.dot2
       #shell
         .pure-g
           #left-pane.pure-u-1.pure-u-sm-1-4.pure-u-md-1-6
@@ -49,4 +53,5 @@ html(data-ng-app="app")
     script(src="app/login/login.controller.js")
     script(src="app/card/card.controller.js")
     script(src="app/address/address.controller.js")
+    script(src="app/cart/checkout/items/items.directive.js")
 

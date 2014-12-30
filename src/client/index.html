@@ -9,6 +9,12 @@
   </head>
   <body>
     <div data-ng-controller="Shell as vm">
+      <div data-ng-show="vm.loading" class="loading-layer">
+        <div class="spinner-circle">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+      </div>
       <div id="shell">
         <div class="pure-g">
           <div id="left-pane" class="pure-u-1 pure-u-sm-1-4 pure-u-md-1-6">
@@ -56,5 +62,6 @@
     <script src="app/login/login.controller.js"></script>
     <script src="app/card/card.controller.js"></script>
     <script src="app/address/address.controller.js"></script>
+    <script src="app/cart/checkout/items/items.directive.js"></script>
   </body>
 </html>

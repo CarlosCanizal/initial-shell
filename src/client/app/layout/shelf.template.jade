@@ -1,23 +1,25 @@
 .filter-title
   span.publisher-name.
     {{vm.title}} Comics
-.inner-shelf.pure-g
-  .pure-u-1.pure-u-sm-1-4.pure-u-md-1-5(data-ng-repeat="item in vm.itemsList")
-    .item
-      .item-image
-        img(alt="", ng-src="{{item.cover.url}}")
-      .item-info.
-        {{item.name}}
-      .item-info.
-        {{item.price}} USD
-      .item-button
-        a.pure-button.pure-button-primary(data-ng-click="vm.addToCart(item)")
-          span(data-ng-if="item.type=='suscription'")
-            | Suscribirme 
-          span(data-ng-if="item.type=='preorder'")
-            | Preordenar
-          span(data-ng-if="item.type=='available'")
-            | Comprar
+.inner-shelf
+  .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-if="loading")
+  .pure-g(data-ng-hide="loading")
+    .pure-u-1.pure-u-sm-1-4.pure-u-md-1-5(data-ng-repeat="item in vm.itemsList")
+      .item
+        .item-image
+          img(alt="", ng-src="{{item.cover.url}}")
+        .item-info.
+          {{item.name}}
+        .item-info.
+          {{item.price}} USD
+        .item-button
+          a.pure-button.pure-button-primary(data-ng-click="vm.addToCart(item)")
+            span(data-ng-if="item.type=='suscription'")
+              | Suscribirme 
+            span(data-ng-if="item.type=='preorder'")
+              | Preordenar
+            span(data-ng-if="item.type=='available'")
+              | Comprar
           
 
 

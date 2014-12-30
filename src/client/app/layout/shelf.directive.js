@@ -23,10 +23,12 @@ function shelf(storeApi){
       var publisher = attr.publisher;
       var store = attr.store;
       scope.vm.title = publisher;
+      scope.loading = true;
 
       storeApi.getItems({publisher:publisher, status:'active', function: store}).then(function(series){
         console.log(series.result);
         scope.vm.itemsList = series.result;
+        scope.loading = false;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });
