@@ -64,7 +64,7 @@
         return memo + item.quantity;
       },0,0);
       cart.itemsTotal = itemsTotal;
-      cart.cartTotal =  cartTotal;
+      cart.cartTotal =  cartTotal.toFixed(2); // jccz checar funcion de redondeo
       storage.set('cart',cart)
       return cart;
     }

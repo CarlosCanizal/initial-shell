@@ -26,7 +26,7 @@
   .subtitle
     | Total:
   .subtitle(data-ng-class="{update:update}")
-    |$ {{item.price*item.quantity}} USD
+    |$ {{(item.price*item.quantity).toFixed(2)}} USD
   div.margin-bottom
     a.pure-button.button-xsmall(data-ng-click="removeFromCart($index)")
       i.fa.fa-trash
