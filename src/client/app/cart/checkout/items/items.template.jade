@@ -44,42 +44,21 @@
               |No existen articulos en el carrito de compras
           .pure-g(ng-if="vm.cartItems.items.length > 0")
             .pure-u-1.pure-u-sm-2-3
-              .cart-item.pure-g(ng-repeat="item in vm.cartItems.items")
-                .pure-u-1.pure-u-sm-1-4.pure-u-md-1-8
-                  img(alt="", data-ng-src="{{item.cover.url}}")
-                .pure-u-1.pure-u-md-1-2
-                  .item-space
-                    div
-                      | {{item.name}}
-                    div(data-ng-if="item.type == 'suscription'")
-                      | Suscripcion
-                    div(data-ng-if="item.type == 'preorder'")
-                      | Preorden
-                    div(data-ng-if="item.type == 'available'")
-                      | Disponible de inmediato
-                    div
-                      | Precio: ${{item.price}} USD
-                    div
-                      span
-                        i.fa.fa-minus-circle(data-ng-click="minusOne(item)")
-                      input.xs-input(type="text", ng-model="item.quantity")
-                      span
-                        i.fa.fa-plus-circle(data-ng-click="plusOne(item)")
-                      a.pure-button.pure-button-primary.button-xsmall(data-ng-click="updateQuantity(item, $index)")
-                        i.fa.fa-refresh
-                        | Actualizar
-                      div.error(data-ng-if="item.type== 'available' && item.quantity >= item.stock")
-                        | Solo {{item.stock}} disponibles.
-                    div
-                      a.pure-button.button-xsmall(data-ng-click="removeFromCart($index)")
-                        i.fa.fa-trash
-                        | Eliminar
-            .pure-u-1.pure-u-sm-1-3
-              h1
+              .cart-item.pure-g(ng-repeat="item in vm.cartItems.items", cart-item)
+            .pure-u-1.pure-u-sm-1-3.align-center
+              .title
+                | Total de la orden:
+              .title
                 |$ {{vm.cartItems.cartTotal}} USD
-              a.pure-button.button-success(data-ng-click="toAddress()",data-ng-hide="showAddress")
-                i.fa.fa-check
-                | Continuar
-              a.pure-button(data-ng-click="emptyCart()",data-ng-hide="showAddress")
-                i.fa.fa-trash
-                | Vaciar Carrito
+              .margin-bottom(data-ng-show="updateCart")
+                a.pure-button.pure-button-primary(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
+                  i.fa.fa-check
+                  | Actualizar Orden
+              .margin-bottom(data-ng-hide="updateCart")
+                a.pure-button.button-success(data-ng-click="toAddress()",data-ng-hide="showAddress")
+                  i.fa.fa-check
+                  | Continuar
+              div
+                a.pure-button(data-ng-click="emptyCart()",data-ng-hide="showAddress")
+                  i.fa.fa-trash
+                  | Vaciar Carrito

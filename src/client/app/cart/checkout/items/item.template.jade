@@ -1,0 +1,33 @@
+.pure-u-1.pure-u-sm-1-4.pure-u-md-1-5
+  img(alt="", data-ng-src="{{item.cover.url}}")
+.pure-u-1.pure-u-md-1-2
+  .item-space
+    .descriptionx
+      div.uppercase
+        | {{item.name}}
+      div(data-ng-if="item.type == 'suscription'")
+        | Suscripcion
+      div(data-ng-if="item.type == 'preorder'")
+        | Preorden
+      div(data-ng-if="item.type == 'available'")
+        | Disponible de inmediato
+      div
+        | Precio: ${{item.price}} USD
+      div.quantity
+        a.pure-button.button-small.just-icon(data-ng-click="minusOne(item)")
+          i.fa.fa-minus-circle
+        span(data-ng-class="{update:update}")
+          | {{item.quantity}}
+        a.pure-button.button-small.just-icon(data-ng-click="plusOne(item)")
+          i.fa.fa-plus-circle
+      div.error(data-ng-if="item.type== 'available' && item.quantity >= item.stock")
+        | Solo {{item.stock}} disponibles.
+.pure-u-1.pure-u-md-1-4.align-center
+  .subtitle
+    | Total:
+  .subtitle(data-ng-class="{update:update}")
+    |$ {{item.price*item.quantity}} USD
+  div.margin-bottom
+    a.pure-button.button-xsmall(data-ng-click="removeFromCart($index)")
+      i.fa.fa-trash
+      | Quitar del carrito

@@ -59,7 +59,7 @@
                                              stock: item.stock
                                             });
     }
-
+    
     $scope.removeFromCart = function(index){
       vm.cartItems = ShoppingCart.removeItem(index);
     }

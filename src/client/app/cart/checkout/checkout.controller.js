@@ -16,8 +16,7 @@
     $scope.itemsUnavailable = [];
     $scope.vm.cartItems= ShoppingCart.getTotal();
     $scope.completed = false;
-    // $scope.setLoading(true);
-    // $scope.loading =  false;
+    $scope.updateCart = false;
 
     setShoppingCart();
     resetViews();    
@@ -56,6 +55,10 @@
       cleanItemsUnavaibale();
     }
 
+    $scope.setUpdateCart= function(update){
+      $scope.updateCart = update;
+    }
+
     function emptyCart(){
       setShoppingCart();
       resetViews();
@@ -78,6 +81,8 @@
     function cleanItemsUnavaibale(){
       $scope.itemsUnavailable = [];
     }
+
+
   }
 
 })();
