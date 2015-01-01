@@ -20,15 +20,16 @@
                   | Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} 
               .address-line
                 | {{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} 
-            .pure-u-1.pure-u-md-1-3
+            .pure-u-1.pure-u-md-1-3.align-center
               .address-line
                 | Cambiar direccion
+              .address-line
                 select(ng-model="shoppingCart.shippingAddress", ng-options="item as item.street for item in addresses")
               .address-line
-                a.pure-button.pure-button-primary.button-xsmall
+                a.pure-button.button-xsmall
                   i.fa.fa-plus
                   | Agregar Direccion
-            .pure-u-1.pure-u-md-1-3
+            .pure-u-1.pure-u-md-1-3.align-center
               a.pure-button.button-success(data-ng-click="toPaymentMethod()",data-ng-hide="showPayment")
                 i.fa.fa-check
                 | Continuar
