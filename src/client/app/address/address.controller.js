@@ -33,6 +33,8 @@
       })
     }
 
+
+    //refactorizar con direcative en shipping address
     $scope.showAddressForm = function(show){
       $scope.addressFormView = show;
     }

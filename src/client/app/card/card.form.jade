@@ -1,0 +1,24 @@
+form#card-form.pure-form.pure-form-aligned(name="cardForm", novalidate)
+  fieldset
+    .pure-control-group
+      label.
+        Nombre Tarjetahabiente
+      input(name="cardName", type="text", size="20", data-ng-model="card.name")
+    .pure-control-group
+      label.
+        Numero que aparece en tu tarjeta
+      input(name="cardNumber", type="text", size="20", data-ng-model="card.number")
+    .pure-control-group
+      label.
+        CVC
+      input(name="cvc", type="text", size="4", data-ng-model="card.cvc")
+    .pure-control-group
+      label.
+        Fecha de expiración (MM/AAAA)
+      input.small-input(name="expMonth", type="text", size="2", data-ng-model="card.exp_month")
+      span.
+        /
+      input.small-input(name="expMonth", type="text", size="4", data-ng-model="card.exp_year")
+    .pure-controls
+      a.pure-button.pure-button-primary(data-ng-click="saveCard()").
+        Guardar Tarjeta

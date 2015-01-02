@@ -9,10 +9,7 @@
 
   function Card($scope, userApi, conekta) {
 
-    $scope.card = {};
-    // $scope.currentUser = userApi.currentUser();
-    // $scope.setCurrentUser($scope.currentUser);
-    console.log('here currentUser');
+    // $scope.card = {};
     $scope.currentUser = $scope.getCurrentUser();
 
     $scope.cards = [];
@@ -33,16 +30,7 @@
       });
     }
 
-    $scope.saveCard = function(){
-      conekta.saveCard($scope.currentUser.conektaId,$scope.card).then(function(card){
-        console.log('card saved');
-      },function(error){
-        if(error.status)
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-        else
-          console.error(error);
-      });
-    };
+    
 
   }
 
