@@ -1,17 +1,19 @@
 
-<div id="new-address">
+<div id="new-address" data-ng-if="addressFormView">
   <div class="filter-title"><span class="publisher-name">Nueva Direccion</span></div>
   <div class="shelf">
     <div data-ng-show="showPayment" class="disable-shelf"><i class="fa fa-check-square-o fa-5 success"></i></div>
     <div class="inner-shelf">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div data-ng-hide="loading" class="shelf-space">
-        <div data-ng-hide="loading" class="shelf-content"></div>
+        <div data-ng-hide="loading" class="shelf-content">
+          <div new-address="new-address"></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div id="address" data-ng-show="showAddress">
+<div id="address" data-ng-show="showAddress &amp;&amp; !addressFormView">
   <div class="filter-title"><span class="publisher-name">Direccion de Envio</span></div>
   <div class="shelf">
     <div data-ng-show="showPayment" class="disable-shelf"><i class="fa fa-check-square-o fa-5 success"></i></div>
@@ -36,7 +38,7 @@
                 <div class="address-line">
                   <select ng-model="shoppingCart.shippingAddress" ng-options="item as item.street for item in addresses"></select>
                 </div>
-                <div class="address-line"><a class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
+                <div class="address-line"><a data-ng-click="addressFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
               </div>
             </div>
             <div class="pure-u-1 pure-u-md-1-3 align-center"><a data-ng-click="toPaymentMethod()" data-ng-hide="showPayment" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a></div>

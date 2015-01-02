@@ -12,6 +12,15 @@ function shippingAddress(userApi){
     link:function(scope,element,attr){
       scope.loading = true;
       scope.cleanItemsUnavaibale();
+
+      scope.address = {};
+      scope.addressFormView = false;
+
+      //refactorizar con direcative en address
+       scope.showAddressForm = function(show){
+        scope.addressFormView = show;
+      }
+
       userApi.getAddresses(scope.currentUser.objectId).then(function(addresses){
         scope.addresses =  addresses.results;
         scope.shoppingCart.shippingAddress = scope.addresses[0];

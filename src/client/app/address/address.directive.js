@@ -95,6 +95,9 @@ function newAddress(userApi, sepomexAPI){
           userApi.saveAddress(scope.address).then(function(address){
             console.log(address);
             scope.addresses.push(address);
+            if(scope.shoppingCart){
+              scope.shoppingCart.shippingAddress = address;
+            }
             scope.address = {};
             scope.addressForm.$setPristine();
             scope.showAddressForm(false);
