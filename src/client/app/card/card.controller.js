@@ -14,9 +14,9 @@
 
     $scope.cards = [];
 
-    userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(result){
-        console.log(result.result);
-        $scope.cards = result.result;
+    userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
+        console.log(cards);
+        $scope.cards = cards;
     },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
     });

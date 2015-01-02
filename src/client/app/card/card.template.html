@@ -12,7 +12,7 @@
   <div class="inner-shelf">
     <div class="shelf-space">           
       <div id="cards-list"></div>
-      <div ng-repeat="card in cards" class="card-item"><span></span>{{card.brand}} **** **** **** {{card.last4}}<a data-ng-click="deleteCard($index)" class="button"><i class="fa fa-trash"></i> Eliminar</a></div>
+      <div ng-repeat="item in cards" class="card-item"><span></span>{{item.card.brand}} **** **** **** {{item.card.last4}}<a data-ng-click="deleteCard($index)" class="button"><i class="fa fa-trash"></i> Eliminar</a></div>
     </div>
   </div>
 </div>

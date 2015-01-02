@@ -12,9 +12,9 @@
   .inner-shelf
     .shelf-space            
       #cards-list
-      .card-item(ng-repeat="card in cards")
+      .card-item(ng-repeat="item in cards")
         span
-        | {{card.brand}} **** **** **** {{card.last4}}
+        | {{item.card.brand}} **** **** **** {{item.card.last4}}
         a.button(data-ng-click="deleteCard($index)")
           i.fa.fa-trash
           |  Eliminar
