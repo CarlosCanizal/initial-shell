@@ -64,8 +64,9 @@
       $scope.loginFormsView = view;
     }
 
-    $scope.setCurrentUser= function(user){
-      $scope.currentUser = user;
+    $scope.setUser= function(user){
+      $scope.setCurrentUser(user);
+      $scope.currentUser= user;
       $scope.showAddress = true;
     }
 

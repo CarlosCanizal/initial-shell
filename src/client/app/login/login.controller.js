@@ -9,7 +9,9 @@
 
   function Login($scope, $state, userApi, storage) {
 
-    $scope.setCurrentUser = function(user){
+
+
+    $scope.setUser = function(user){
       $scope.setCurrentUser(user);
       $state.go('dashboard.cards');
     }
