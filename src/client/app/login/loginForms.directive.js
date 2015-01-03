@@ -12,7 +12,7 @@ function loginForms(userApi, storage){
     link:function(scope,element,attr){
       scope.login = function(){
         userApi.login(scope.user).then(function(user){
-          scope.currentUser(user);
+          scope.setCurrentUser(user);
         },function(error){
           console.log(error);
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);

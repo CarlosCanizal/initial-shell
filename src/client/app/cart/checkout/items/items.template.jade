@@ -58,9 +58,9 @@
                 a.pure-button.button-success(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
                   i.fa.fa-check
                   | Continuar
-                a.pure-button.pure-button-primary(data-ng-if="!currentUser")
+                a.pure-button.pure-button-primary(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
                   i.fa.fa-user
-                  | Continuar
+                  | Iniciar Sesion
               div
                 a.pure-button(data-ng-click="emptyCart()",data-ng-hide="showAddress")
                   i.fa.fa-trash

@@ -17,6 +17,7 @@
     $scope.vm.cartItems= ShoppingCart.getTotal();
     $scope.completed = false;
     $scope.updateCart = false;
+    $scope.loginFormsView = false;
 
     setShoppingCart();
     resetViews();    
@@ -59,6 +60,15 @@
       $scope.updateCart = update;
     }
 
+    $scope.showLoginForms = function(view){
+      $scope.loginFormsView = view;
+    }
+
+    $scope.setCurrentUser= function(user){
+      $scope.currentUser = user;
+      $scope.showAddress = true;
+    }
+
     function emptyCart(){
       setShoppingCart();
       resetViews();
@@ -81,9 +91,7 @@
     function cleanItemsUnavaibale(){
       $scope.itemsUnavailable = [];
     }
-
-   
-
+  
 
   }
 

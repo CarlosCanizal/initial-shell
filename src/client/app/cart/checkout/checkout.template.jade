@@ -1,8 +1,9 @@
+#user-forms(login-forms, data-ng-if="!currentUser", data-ng-show="loginFormsView")
 #items-checkout(items-list, data-ng-if="!completed")
-#address-checkout(shipping-address)
-#payment-checkout(payment-method)
-#placeOrder-checkout(place-order)
-#response-checkout(response-payment)
+#address-checkout(shipping-address, data-ng-if="currentUser")
+#payment-checkout(payment-method, data-ng-if="currentUser")
+#placeOrder-checkout(place-order, data-ng-if="currentUser")
+#response-checkout(response-payment, data-ng-if="currentUser")
 
 
 
