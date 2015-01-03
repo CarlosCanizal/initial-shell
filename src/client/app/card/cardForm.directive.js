@@ -22,7 +22,7 @@ function cardForm(userApi, conekta){
           var newCard = {type:'card', card:card};
           if(scope.cards)
             scope.cards.push(newCard);
-          scope.shoppingCart
+          if(scope.shoppingCart)
             scope.shoppingCart.paymentMethod = newCard;
 
           scope.showCardForm(false);

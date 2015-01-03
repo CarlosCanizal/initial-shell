@@ -6,7 +6,7 @@
       <div class="inner-shelf">
         <div class="shelf-space">
           <div ng-if="addresses.length &lt; 1" class="shelf-message">
-            <h2>No existen direcciones registradas.</h2>
+            <div class="subtitle">No existen direcciones registradas.</div>
           </div>
           <div ng-repeat="address in addresses" class="address-item">
             <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>

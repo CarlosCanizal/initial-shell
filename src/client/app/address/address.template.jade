@@ -7,7 +7,7 @@
       .inner-shelf
         .shelf-space
           .shelf-message(ng-if="addresses.length < 1")
-            h2
+            .subtitle
               |No existen direcciones registradas.
           .address-item(ng-repeat="address in addresses")
             .address-line
