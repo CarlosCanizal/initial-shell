@@ -24,20 +24,24 @@
             <div class="pure-u-1 pure-u-md-1-3 border-right">
               <div class="information-box no-padding">
                 <div ng-if="addresses.length &lt; 1" class="shelf-message">
-                  <h2></h2>No existen direcciones registradas.
+                  <div class="subtitle">No existen direcciones registradas.</div>
                 </div>
-                <div class="address-line">{{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}</div>
-                <div class="address-line">Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} </div>
-                <div class="address-line">{{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} </div>
+                <div data-ng-show="addresses.length &gt; 0">
+                  <div class="address-line">{{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}</div>
+                  <div class="address-line">Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} </div>
+                  <div class="address-line">{{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} </div>
+                </div>
               </div>
             </div>
             <div class="pure-u-1 pure-u-md-1-3 border-right">
               <div class="information-box">
-                <div class="address-line">Cambiar direccion</div>
-                <div class="address-line">
-                  <select ng-model="shoppingCart.shippingAddress" ng-options="item as item.street for item in addresses"></select>
+                <div data-ng-show="addresses.length &gt; 0">
+                  <div class="address-line">Cambiar direccion</div>
+                  <div class="address-line">
+                    <select ng-model="shoppingCart.shippingAddress" ng-options="item as item.street for item in addresses"></select>
+                  </div>
                 </div>
-                <div class="address-line"><a data-ng-click="addressFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
+                <div class="address-line align-center"><a data-ng-click="addressFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
               </div>
             </div>
             <div class="pure-u-1 pure-u-md-1-3 align-center"><a data-ng-click="toPaymentMethod()" data-ng-hide="showPayment" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a></div>
