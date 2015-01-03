@@ -22,7 +22,8 @@
     });
 
     $scope.deleteCard = function(index){
-      var cardId= $scope.cards[index].id
+      var cardId= $scope.cards[index].card.id
+      console.log(cardId);
       conekta.deleteCard($scope.currentUser.conektaId, cardId).then(function(){
         console.log('card deleted');
       },function(error){
