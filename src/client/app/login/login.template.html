@@ -1,5 +1,4 @@
 
-
 <div class="filter-title"><span class="publisher-name">Iniciar Sesion</span></div>
 <div class="shelf">
   <div class="inner-shelf">
@@ -10,13 +9,12 @@
             <div class="title align-center">Ya soy miembro</div>
             <form class="pure-form">
               <fieldset class="pure-group">
-                <input ng-model="user.username" type="text" placeholder="Username" ng-init="user.username = 'carlos@canizal.com'" class="pure-input-2-3"/>
-                <input ng-model="user.password" type="password" placeholder="Password" ng-init="user.password = 'canizal'" class="pure-input-2-3"/>
+                <input ng-model="user.username" type="text" placeholder="Correo Electronico" ng-init="user.username = 'carlos@canizal.com'" class="pure-input-2-3"/>
+                <input ng-model="user.password" type="password" placeholder="Contraseña" ng-init="user.password = 'canizal'" class="pure-input-2-3"/>
               </fieldset>
             </form>
-            <div class="align-center"><a ng-click="login()" class="pure-button pure-button-primary">
-                Iniciar Sesion
-                </a></div>
+            <div class="align-center margin-bottom"><a ng-click="login()" class="pure-button pure-button-primary">Iniciar Sesion</a></div>
+            <div class="error align-center">Correo Electronico o Contraseña invalidos</div>
           </div>
         </div>
         <div class="pure-u-1 pure-u-sm-1-2">
@@ -24,13 +22,13 @@
             <div class="title align-center">¡Registrarme!</div>
             <form class="pure-form a">
               <fieldset class="pure-group">
-                <input ng-model="user.name" type="text" placeholder="Nombre" ng-init="user.name = 'carlos@canizal.com'" class="pure-input-2-3"/>
-                <input ng-model="user.username" type="text" placeholder="Username" ng-init="user.username = 'carlos@canizal.com'" class="pure-input-2-3"/>
-                <input ng-model="user.password" type="password" placeholder="Password" ng-init="user.password = 'canizal'" class="pure-input-2-3"/>
-                <input ng-model="user.password" type="password" placeholder="Password" ng-init="user.password = 'canizal'" class="pure-input-2-3"/>
+                <input ng-model="newUser.name" type="text" placeholder="Nombre" ng-init="newUser.name = 'Carlos Canizal'" class="pure-input-2-3"/>
+                <input ng-model="newUser.username" type="text" placeholder="Correo Electronico" ng-init="newUser.username = 'carlos@canizal.com'" class="pure-input-2-3"/>
+                <input ng-model="newUser.password" type="password" placeholder="Contraseña" ng-init="newUser.password = 'canizal'" class="pure-input-2-3"/>
+                <input ng-model="newUser.password" type="password" placeholder="Confirmar Contraseña" ng-init="newUser.password = 'canizal'" class="pure-input-2-3"/>
               </fieldset>
             </form>
-            <div class="align-center"><a ng-click="login()" class="pure-button pure-button-primary">Registrarme</a></div>
+            <div class="align-center"><a ng-click="register()" class="pure-button pure-button-primary">Registrarme</a></div>
           </div>
         </div>
       </div>

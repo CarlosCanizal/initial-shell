@@ -12,6 +12,7 @@
 
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  User  = parse.newUserResource(parseheaders.storeKeys);
+    var  Register  = parse.newRegisterResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
 
@@ -20,6 +21,7 @@
       currentUser: currentUser,
       addCard : addCard,
       logout: logout,
+      register: register,
       getCards: getCards,
       deleteCard: deleteCard,
       saveAddress: saveAddress,
@@ -34,6 +36,18 @@
     function login(params) {
       var deferred = $q.defer();
       Login.login(params).$promise.then(function(user){
+        storage.set('user',user);
+        deferred.resolve(user);
+      },function(error){
+        deferred.reject(error);
+      });
+
+      return deferred.promise
+    }
+
+    function register(params) {
+      var deferred = $q.defer();
+      Register.save(params).$promise.then(function(user){
         storage.set('user',user);
         deferred.resolve(user);
       },function(error){

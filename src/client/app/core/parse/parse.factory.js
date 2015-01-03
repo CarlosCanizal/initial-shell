@@ -12,10 +12,11 @@
 
     var factory = {
       newParseResource: newParseResource,
+      newRegisterResource: newRegisterResource,
       newSepomexResource: newSepomexResource,
       newCloudCodeResource: newCloudCodeResource,
       newLoginResource: newLoginResource,
-      newUserResource: newUserResource
+      newUserResource: newUserResource,
     };
 
     return factory;
@@ -27,6 +28,17 @@
         },
         { 
           'login':    {method:'GET', headers: headers}
+        }
+      );
+    }
+
+    function newRegisterResource(headers) {
+      return $resource(
+        'https://api.parse.com/1/users',
+        {
+        },
+        { 
+          'save':    {method:'POST', headers: headers}
         }
       );
     }
