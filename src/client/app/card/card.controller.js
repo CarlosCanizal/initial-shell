@@ -13,6 +13,7 @@
     $scope.currentUser = $scope.getCurrentUser();
 
     $scope.cards = [];
+    $scope.cardFormView  = false;
 
     userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
         console.log(cards);
@@ -29,9 +30,7 @@
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });
-    }
-
-    
+    }    
 
   }
 

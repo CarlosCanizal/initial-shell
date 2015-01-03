@@ -94,7 +94,8 @@ function newAddress(userApi, sepomexAPI){
           scope.address.user = {"__type":"Pointer",className:"_User","objectId":scope.currentUser.objectId}
           userApi.saveAddress(scope.address).then(function(address){
             console.log(address);
-            scope.addresses.push(address);
+            if(scope.addresses)
+              scope.addresses.push(address);
             if(scope.shoppingCart){
               scope.shoppingCart.shippingAddress = address;
             }

@@ -19,7 +19,15 @@ function cardForm(userApi, conekta){
 
       scope.saveCard = function(){
         conekta.saveCard(scope.currentUser.conektaId,scope.card).then(function(card){
-          console.log('card saved');
+          var newCard = {type:'card', card:card};
+          if(scope.cards)
+            scope.cards.push(newCard);
+          scope.shoppingCart
+            scope.shoppingCart.paymentMethod = newCard;
+
+          scope.showCardForm(false);
+
+          console.log(scope.cards);
         },function(error){
           if(error.status)
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);

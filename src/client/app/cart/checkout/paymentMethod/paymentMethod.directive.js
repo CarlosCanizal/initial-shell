@@ -19,6 +19,10 @@ function paymentMethod(userApi){
       },function(error){
         console.error(error);
       });
+
+      scope.showCardForm = function(show){
+        scope.cardFormView = show;
+      }
     }
   }
 }
