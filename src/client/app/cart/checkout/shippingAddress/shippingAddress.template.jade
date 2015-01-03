@@ -40,7 +40,7 @@
                     | Cambiar direccion
                   .address-line
                     select(ng-model="shoppingCart.shippingAddress", ng-options="item as item.street for item in addresses")
-                .address-line.align-center
+                .address-line
                   a.pure-button.button-xsmall(data-ng-click="addressFormView=true")
                     i.fa.fa-plus
                     | Agregar Direccion
