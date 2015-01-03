@@ -1,15 +1,51 @@
-.center-form
-  form.pure-form.pure-form-aligned
-    fieldset
-      .pure-control-group
-        label(for="username").
-          Username
-        input#name(ng-model="user.username" , type="text", placeholder="Username", ng-init="user.username = 'carlos@canizal.com'")
-      .pure-control-group
-        label(for="password").
-          Password
-        input#password(ng-model="user.password" , type="text", placeholder="Password", ng-init="user.password = 'canizal'")
-    .pure-controls
-      a.pure-button.pure-button-primary(ng-click="login()").
-        Iniciar Sesion
+//- .center-form
+//-   form.pure-form.pure-form-aligned
+//-     fieldset
+//-       .pure-control-group
+//-         label(for="username").
+//-           Username
+//-         input#name(ng-model="user.username" , type="text", placeholder="Username", ng-init="user.username = 'carlos@canizal.com'")
+//-       .pure-control-group
+//-         label(for="password").
+//-           Password
+//-         input#password(ng-model="user.password" , type="text", placeholder="Password", ng-init="user.password = 'canizal'")
+//-     .pure-controls
+//-       a.pure-button.pure-button-primary(ng-click="login()").
+//-         Iniciar Sesion
+
+
+.filter-title
+  span.publisher-name.
+    Iniciar Sesion
+.shelf
+  .inner-shelf
+    .shelf-space
+      .pure-g
+        .pure-u-1.pure-u-sm-1-2
+          .shelf-space
+            .title.align-center
+              | Ya soy miembro
+            form.pure-form
+              fieldset.pure-group
+                  input.pure-input-2-3(ng-model="user.username" , type="text", placeholder="Username", ng-init="user.username = 'carlos@canizal.com'")
+                  input.pure-input-2-3(ng-model="user.password" , type="password", placeholder="Password", ng-init="user.password = 'canizal'")
+            .align-center
+              a.pure-button.pure-button-primary(ng-click="login()").
+                Iniciar Sesion
+          
+        .pure-u-1.pure-u-sm-1-2
+          .shelf-space.border-left
+            .title.align-center
+              | ¡Registrarme!
+            form.pure-form.a
+              fieldset.pure-group
+                input.pure-input-2-3(ng-model="user.name" , type="text", placeholder="Nombre", ng-init="user.name = 'carlos@canizal.com'")
+                input.pure-input-2-3(ng-model="user.username" , type="text", placeholder="Username", ng-init="user.username = 'carlos@canizal.com'")
+                input.pure-input-2-3(ng-model="user.password" , type="password", placeholder="Password", ng-init="user.password = 'canizal'")
+                input.pure-input-2-3(ng-model="user.password" , type="password", placeholder="Password", ng-init="user.password = 'canizal'")
+            .align-center
+              a.pure-button.pure-button-primary(ng-click="login()").
+                Registrarme
+      
+
       

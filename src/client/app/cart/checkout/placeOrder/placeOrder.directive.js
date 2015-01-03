@@ -17,6 +17,8 @@ function placeOrder(userApi, ShoppingCart){
         var cart = ShoppingCart.getCart();
         scope.showConfirmation = true;
         scope.waitingForResponse = true;
+
+        console.log(cart);
         
 
         userApi.chargeCard(cart, user).then(function(result){
@@ -25,6 +27,7 @@ function placeOrder(userApi, ShoppingCart){
           scope.setStatus(true);
           scope.waitingForResponse = false;
         },function(error){
+          console.log(error);
           var error = angular.fromJson(error.data.error);
           scope.setStatus(false);
           console.log(error);

@@ -55,8 +55,11 @@
                   i.fa.fa-check
                   | Actualizar Orden
               .margin-bottom(data-ng-hide="updateCart")
-                a.pure-button.button-success(data-ng-click="toAddress()",data-ng-hide="showAddress")
+                a.pure-button.button-success(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
                   i.fa.fa-check
+                  | Continuar
+                a.pure-button.pure-button-primary(data-ng-if="!currentUser")
+                  i.fa.fa-user
                   | Continuar
               div
                 a.pure-button(data-ng-click="emptyCart()",data-ng-hide="showAddress")
