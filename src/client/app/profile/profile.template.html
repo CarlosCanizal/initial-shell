@@ -1,0 +1,29 @@
+
+<div class="filter-title"><span class="publisher-name">Mi Perfil</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <form name="profileForm" novalidate="" class="pure-form pure-form-aligned">
+        <fieldset>
+          <div class="child-container">
+            <ng-form name="profileForm">
+              <div class="form-container">
+                <div class="pure-control-group">
+                  <label for="name" ng-show="profileForm.name.$valid || profileForm.name.$pristine">Nombre:</label>
+                  <label for="name" ng-show="profileForm.name.$invalid &amp;&amp; profileForm.name.$dirty" class="error">Nombre es requerido:</label>
+                  <input id="name" name="name" data-ng-model="user.name" required=""/><i ng-show="profileForm.name.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="profileForm.name.$valid &amp;&amp; profileForm.name.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="profileForm.name.$invalid &amp;&amp; profileForm.name.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+                </div>
+                <div class="pure-control-group">
+                  <label for="email" ng-show="profileForm.email.$valid || profileForm.email.$pristine">Email:</label>
+                  <label for="email" ng-show="profileForm.email.$invalid &amp;&amp; profileForm.email.$dirty" class="error">Email es invalido:</label>
+                  <input id="email" name="email" type="email" data-ng-model="user.username" required=""/><i ng-show="profileForm.email.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="profileForm.email.$valid &amp;&amp; profileForm.email.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="profileForm.email.$invalid &amp;&amp; profileForm.email.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+                </div>
+                <div class="pure-controls"><a data-ng-click="saveProfile()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" class="pure-button"><span data-ng-if="profileForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="profileForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
+              </div>
+            </ng-form>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

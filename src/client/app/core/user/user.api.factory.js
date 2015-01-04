@@ -11,14 +11,22 @@
   function userApi($resource, $q, parseheaders, parse, storage, underscore) {
 
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
-    var  User  = parse.newUserResource(parseheaders.storeKeys);
     var  Register  = parse.newRegisterResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
 
+
+    var user = currentUser();
+    var userHeaders = parseheaders.storeKeys;
+    userHeaders['X-Parse-Session-Token'] = user.sessionToken;
+
+    var  User  = parse.newUserResource(parseheaders.storeKeys);
+
+
     var factory = {
       login: login,
       currentUser: currentUser,
+      setCurrentUser: setCurrentUser,
       addCard : addCard,
       logout: logout,
       register: register,
@@ -27,7 +35,8 @@
       saveAddress: saveAddress,
       getAddresses: getAddresses,
       deleteAddress: deleteAddress,
-      chargeCard: chargeCard
+      chargeCard: chargeCard,
+      saveProfile: saveProfile
 
     };
 
@@ -63,6 +72,10 @@
 
     function currentUser() {
       return storage.get('user');
+    }
+
+    function setCurrentUser(user){
+      return storage.set('user', user);
     }
 
     function addCard(params){
@@ -123,6 +136,10 @@
         function: 'chargeCard'
       }
       return Card.save(params).$promise;
+    }
+
+    function saveProfile(user){
+      return User.update(user).$promise;
     }
 
   }

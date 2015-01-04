@@ -45,11 +45,13 @@
 
     function newUserResource(headers) {
       return $resource(
-        'https://api.parse.com/1/users/me',
-        {
+        'https://api.parse.com/1/users/:objectId',
+        {          
+          objectId: '@objectId'
         },
         { 
-          'currentUser':    {method:'GET', headers: headers}
+          'currentUser':    {method:'GET', headers: headers},
+          'update':           {method:'PUT', headers: headers}
         }
       );
     }

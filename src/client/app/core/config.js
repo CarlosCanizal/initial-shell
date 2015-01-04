@@ -44,6 +44,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/address',
       templateUrl:'app/address/address.template.html',
       controller: 'Address'
+    })
+    .state('dashboard.profile',{
+      url:'/profile',
+      templateUrl:'app/profile/profile.template.html',
+      controller: 'Profile'
     });
   $urlRouterProvider.otherwise('/');
 }
