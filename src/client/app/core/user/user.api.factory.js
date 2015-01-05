@@ -15,17 +15,10 @@
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
 
-
-    var user = currentUser();
-    var userHeaders = parseheaders.storeKeys;
-    userHeaders['X-Parse-Session-Token'] = user.sessionToken;
-
-    var  User  = parse.newUserResource(parseheaders.storeKeys);
-
-
     var factory = {
       login: login,
       currentUser: currentUser,
+      getCurrentUser: getCurrentUser,
       setCurrentUser: setCurrentUser,
       addCard : addCard,
       logout: logout,
@@ -68,6 +61,12 @@
 
     function logout(){
       return storage.remove('user');
+    }
+
+    function getCurrentUser(){
+      var  User  = setSessionToken();
+      return User.currentUser({objectId:'me'}).$promise;
+
     }
 
     function currentUser() {
@@ -138,8 +137,16 @@
       return Card.save(params).$promise;
     }
 
-    function saveProfile(user){
-      return User.update(user).$promise;
+    function saveProfile(params){
+      var  User  = setSessionToken();
+      return User.update(params).$promise;
+    }
+
+    function setSessionToken(){
+      var user = currentUser();
+      var userHeaders = parseheaders.storeKeys;
+      userHeaders['X-Parse-Session-Token'] = user.sessionToken;
+      return parse.newUserResource(parseheaders.storeKeys);
     }
 
   }

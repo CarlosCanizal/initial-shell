@@ -23,7 +23,18 @@
 
     $scope.setCurrentUser = function(user){
       console.log('setCurrentUser');
+      userApi.setCurrentUser(user);
       vm.currentUser = user;
+    }
+
+    $scope.updateCurrentUser = function(){
+      userApi.getCurrentUser().then(function(user){
+        vm.currentUser = user;
+        userApi.setCurrentUser(user);
+
+      },function(error){
+        console.error(error);
+      });
     }
 
     $scope.getCurrentUser = function(){

@@ -14,9 +14,19 @@
                   <input id="name" name="name" data-ng-model="user.name" required=""/><i ng-show="profileForm.name.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="profileForm.name.$valid &amp;&amp; profileForm.name.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="profileForm.name.$invalid &amp;&amp; profileForm.name.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
                 </div>
                 <div class="pure-control-group">
+                  <label for="lastname" ng-show="profileForm.lastname.$valid || profileForm.lastname.$pristine">Apellido:</label>
+                  <label for="lastname" ng-show="profileForm.lastname.$invalid &amp;&amp; profileForm.lastname.$dirty" class="error">Apellido es requerido:</label>
+                  <input id="lastname" name="lastname" data-ng-model="user.lastname" required=""/><i ng-show="profileForm.lastname.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="profileForm.lastname.$valid &amp;&amp; profileForm.lastname.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="profileForm.lastname.$invalid &amp;&amp; profileForm.lastname.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+                </div>
+                <div class="pure-control-group">
                   <label for="email" ng-show="profileForm.email.$valid || profileForm.email.$pristine">Email:</label>
                   <label for="email" ng-show="profileForm.email.$invalid &amp;&amp; profileForm.email.$dirty" class="error">Email es invalido:</label>
                   <input id="email" name="email" type="email" data-ng-model="user.username" required=""/><i ng-show="profileForm.email.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="profileForm.email.$valid &amp;&amp; profileForm.email.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="profileForm.email.$invalid &amp;&amp; profileForm.email.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+                </div>
+                <div class="pure-control-group">
+                  <label for="phone" ng-show="profileForm.phone.$valid || profileForm.phone.$pristine">Movil:</label>
+                  <label for="phone" ng-show="profileForm.phone.$invalid &amp;&amp; profileForm.phone.$dirty" class="error">Movil es invalido:</label>
+                  <input id="phone" name="phone" data-ng-model="user.phone" required="" data-ng-pattern="/[0-9]/" maxlength="10" data-ng-minlength='10' data-ng-maxlength='10'/><i ng-show="profileForm.phone.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="profileForm.phone.$valid &amp;&amp; profileForm.phone.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="profileForm.phone.$invalid &amp;&amp; profileForm.phone.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
                 </div>
                 <div class="pure-controls"><a data-ng-click="saveProfile()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" class="pure-button"><span data-ng-if="profileForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="profileForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
               </div>
