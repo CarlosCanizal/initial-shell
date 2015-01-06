@@ -49,6 +49,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/profile',
       templateUrl:'app/profile/profile.template.html',
       controller: 'Profile'
+    })
+    .state('dashboard.order',{
+      url:'/order',
+      templateUrl:'app/order/order.template.html',
+      controller: 'Order'
     });
   $urlRouterProvider.otherwise('/');
 }

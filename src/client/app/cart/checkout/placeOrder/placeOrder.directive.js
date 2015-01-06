@@ -19,7 +19,6 @@ function placeOrder(userApi, ShoppingCart){
         scope.waitingForResponse = true;
 
         console.log(cart);
-        
 
         userApi.chargeCard(cart, user).then(function(result){
           console.log(result.result);
