@@ -5,21 +5,18 @@
   .module('app.dashboard')
   .controller('Order', Order);
 
-  Order.$inject = ['$scope', 'orderApi'];
+  Order.$inject = ['$scope', '$stateParams', 'orderApi'];
 
-  function Order($scope, orderApi) {
+  function Order($scope, $stateParams, orderApi) {
 
-    $scope.orders = [];
-    $scope.loading =  true;
+    var objectId = $stateParams.objectId;
 
-
-    orderApi.getOrders().then(function(result){
-      console.log(result.results);
-      $scope.orders = result.results;
-      $scope.loading =  false;
+    orderApi.getOrder(objectId).then(function(order){
+      console.log(order);
     },function(error){
-      console.error(error);
+      console.log(error);
     });
+    
   }
 
 })();

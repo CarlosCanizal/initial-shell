@@ -197,7 +197,8 @@ nav a {
 
 /* line 179, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .list-item:last-child {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  border-bottom: 0; }
 
 /* line 183, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-line {

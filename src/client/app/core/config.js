@@ -51,9 +51,14 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'Profile'
     })
     .state('dashboard.order',{
-      url:'/order',
+      url:'/orders/:objectId',
       templateUrl:'app/order/order.template.html',
       controller: 'Order'
+    })
+    .state('dashboard.orders',{
+      url:'/orders',
+      templateUrl:'app/order/orders.template.html',
+      controller: 'Orders'
     });
   $urlRouterProvider.otherwise('/');
 }

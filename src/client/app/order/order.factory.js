@@ -13,7 +13,8 @@
     var Order = parse.newParseResource(parseheaders.storeKeys,'Order');
 
     var order = {
-      getOrders: getOrders
+      getOrders: getOrders,
+      getOrder: getOrder
     };
 
     return order;
@@ -27,6 +28,10 @@
               order : 'createdAt'
              }).$promise;
       
+    }
+
+    function getOrder(objectId){
+      return Order.get({objectId:objectId}).$promise;
     }
 
   }
