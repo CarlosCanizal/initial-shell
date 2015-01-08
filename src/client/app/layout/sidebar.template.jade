@@ -1,0 +1,20 @@
+.logo
+  img(src="common/images/logo.png")
+  .logo-text
+    .logo-h3
+      | THE
+    .logo-h2
+      | COMICS'
+    .logo-h1
+      | SOCIETY
+nav.side-menu
+  a(ui-sref="about")
+    | ¿Comó funciona?
+  a(ui-sref="home")
+    | Tienda
+  a(ui-sref="suscribe")
+    | Suscripciones
+  a(ui-sref="login")
+    | Mi Cuenta
+  a(ng-click="logout()",data-ng-if="vm.currentUser")
+    | Salir

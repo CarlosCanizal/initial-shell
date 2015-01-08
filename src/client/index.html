@@ -2,6 +2,7 @@
 <html data-ng-app="app">
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
     <link rel="shorcut icon" href="common/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="bower_components/pure/pure-min.css">
     <link rel="stylesheet" href="bower_components/pure/grids-responsive-min.css">
@@ -20,15 +21,7 @@
         <div class="pure-g">
           <div id="left-pane" class="pure-u-1 pure-u-sm-1-4 pure-u-md-1-5">
             <div class="inner-box">
-              <div class="nav-top">
-                <div class="logo"><img src="common/images/logo.png">
-                  <div class="logo-text">
-                    <div class="logo-h3">THE</div>
-                    <div class="logo-h2">COMICS'</div>
-                    <div class="logo-h1">SOCIETY</div>
-                  </div>
-                </div>
-              </div>
+              <div data-ng-include="'app/layout/sidebar.template.html'" class="nav-top"></div>
             </div>
           </div>
           <div id="right-pane" class="pure-u-1 pure-u-sm-3-4 pure-u-md-4-5">

@@ -37,23 +37,35 @@ div
 #right-pane
 
 .inner-box
-  padding: 1rem 2rem 0 0
+  padding-right: 2rem
 
-#navigation
-  text-align: right
-  a
-    padding: 0 1rem
-    font-size: 1.1rem
-  a:last-child
-    padding-right:0
-    border-right:0
+.side-menu
+  color: $first-color
+  text-align: center
+
+// #navigation
+//   text-align: right
+//   a
+//     padding: 0 1rem
+//     font-size: 1.1rem
+//   a:last-child
+//     padding-right:0
+//     border-right:0
+
+a:hover, a:active, a:focus
+  outline: 0
 
 nav
   a
     color: $second-color
+    display: block
+    width:100%
     text-decoration: none
     font-family: 'Raleway', sans-serif
-    border-right: 1px solid $second-color
+    padding: 1rem 0
+    text-transform: uppercase
+    font-size: 1.2rem
+    border-bottom: 1px solid $second-color
 
 .shelf
   margin-bottom: 2rem
@@ -95,10 +107,17 @@ nav
   // margin-bottom: 1rem
 
 #cart
-  padding-top: 0.5rem
   text-align: right
-  font-size: 2rem
-  color: $second-color
+  font-size: 1.3rem
+  font-family: 'Raleway'
+  i
+    font-size: 2rem
+  span
+    font-size: 2rem
+    margin: 0 0.5rem
+  a
+    color: $first-color
+    text-decoration: none
 
 .item
   margin: 1rem

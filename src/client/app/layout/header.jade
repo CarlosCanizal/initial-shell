@@ -1,17 +1,6 @@
-nav#navigation
-  a(ui-sref="home").
-    TIENDA
-  a(ui-sref="suscribe").
-    SUSCRIPCIONES
-  a(ui-sref="about").
-    ¿COMÓ FUNCIONA?
 #cart
-  a.login(ui-sref="login", data-ng-hide="vm.currentUser").
-    Iniciar Sesion
-  a.login(ui-sref="dashboard.cards", data-ng-show="vm.currentUser")
-    | ¡Hola! {{vm.currentUser.name}}
-    a.login(ng-click="logout()", data-ng-show="vm.currentUser")
-      | (Salir)
   a(ui-sref="checkout")
     i.fa.fa-shopping-cart
+    span
       | {{vm.cartItems.itemsTotal}}
+    |articulos

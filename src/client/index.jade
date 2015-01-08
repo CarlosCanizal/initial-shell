@@ -2,6 +2,7 @@ doctype html
 html(data-ng-app="app")
   head
     meta(name="viewport", content="width=device-width,initial-scale=1")
+    meta(charset="utf-8")
     link(rel="shorcut icon", href="common/images/favicon.ico", type="image/x-icon")
     link(rel="stylesheet", href="bower_components/pure/pure-min.css")
     link(rel="stylesheet", href="bower_components/pure/grids-responsive-min.css")
@@ -17,18 +18,7 @@ html(data-ng-app="app")
         .pure-g
           #left-pane.pure-u-1.pure-u-sm-1-4.pure-u-md-1-5
             .inner-box
-              .nav-top
-                .logo
-                  img(src="common/images/logo.png")
-                  .logo-text
-                    .logo-h3
-                      | THE
-                    .logo-h2
-                      | COMICS'
-                    .logo-h1
-                      | SOCIETY
-
-
+              .nav-top(data-ng-include="'app/layout/sidebar.template.html'")
           #right-pane.pure-u-1.pure-u-sm-3-4.pure-u-md-4-5
             #inner-box
             .nav-top(data-ng-include="'app/layout/header.html'")
