@@ -1,2 +1,62 @@
-h1
-  | Order
+.filter-title
+  span.publisher-name.
+    Orden {{order.referenceId}}
+.shelf
+  .inner-shelf
+    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+    .shelf-space
+      .shelf-content(data-ng-hide="loading")
+        div
+          | Numero: {{order.referenceId}}
+        div
+          | Total: {{order.amount}}
+        div
+          | Fecha: {{order.createdAt}}
+        div
+          | Status: {{order.status}}
+
+.filter-title
+  span.publisher-name.
+    Direccion de Envio
+.shelf
+  .inner-shelf
+    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+    .shelf-space
+      .shelf-content(data-ng-hide="loading")
+        div
+          | {{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}
+        div
+          | {{order.shippingAddress.district}} {{order.shippingAddress.municipality}} 
+        div
+          | {{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}
+.filter-title
+  span.publisher-name.
+    Metodo de Pago
+.shelf
+  .inner-shelf
+    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+    .shelf-space
+      .shelf-content(data-ng-hide="loading")
+        div
+          | {{order.type}}
+        div
+          | {{order.paymentMethod.brand}}
+        div
+          | {{order.paymentMethod.last4}}
+        div
+          | {{order.paymentMethod.name}}
+.filter-title
+  span.publisher-name.
+    Articulos
+.shelf
+  .inner-shelf
+    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+    .shelf-space
+      .shelf-content(data-ng-hide="loading")
+        div(data-ng-repeat="item in order.items")
+          div
+            | {{item.name}}
+          div
+            | {{item.quantity}}
+          div
+            | {{item.price}}

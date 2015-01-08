@@ -10,9 +10,13 @@
   function Order($scope, $stateParams, orderApi) {
 
     var objectId = $stateParams.objectId;
+    $scope.order;
+    $scope.loading = true;
 
     orderApi.getOrder(objectId).then(function(order){
       console.log(order);
+      $scope.order = order;
+      $scope.loading = false;
     },function(error){
       console.log(error);
     });

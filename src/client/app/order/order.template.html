@@ -1,2 +1,57 @@
 
-<h1>Order</h1>
+<div class="filter-title"><span class="publisher-name">Orden {{order.referenceId}}</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+    <div class="shelf-space">
+      <div data-ng-hide="loading" class="shelf-content">
+        <div>Numero: {{order.referenceId}}</div>
+        <div>Total: {{order.amount}}</div>
+        <div>Fecha: {{order.createdAt}}</div>
+        <div>Status: {{order.status}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Direccion de Envio</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+    <div class="shelf-space">
+      <div data-ng-hide="loading" class="shelf-content">
+        <div>{{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}</div>
+        <div>{{order.shippingAddress.district}} {{order.shippingAddress.municipality}} </div>
+        <div>{{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Metodo de Pago</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+    <div class="shelf-space">
+      <div data-ng-hide="loading" class="shelf-content">
+        <div>{{order.type}}</div>
+        <div>{{order.paymentMethod.brand}}</div>
+        <div>{{order.paymentMethod.last4}}</div>
+        <div>{{order.paymentMethod.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Articulos</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+    <div class="shelf-space">
+      <div data-ng-hide="loading" class="shelf-content">
+        <div data-ng-repeat="item in order.items">
+          <div>{{item.name}}</div>
+          <div>{{item.quantity}}</div>
+          <div>{{item.price}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
