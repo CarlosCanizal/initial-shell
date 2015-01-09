@@ -1,8 +1,8 @@
 
-<div class="pure-u-1 pure-u-sm-1-4 pure-u-md-1-5"><img alt="" data-ng-src="{{item.cover.url}}"/></div>
-<div class="pure-u-1 pure-u-md-1-2">
+<div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-5"><img alt="" data-ng-src="{{item.cover.url}}"/></div>
+<div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-2">
   <div class="item-space">
-    <div class="descriptionx">
+    <div class="description">
       <div class="uppercase">{{item.name}}</div>
       <div data-ng-if="item.type == 'suscription'">Suscripcion</div>
       <div data-ng-if="item.type == 'preorder'">Preorden</div>
@@ -13,7 +13,7 @@
     </div>
   </div>
 </div>
-<div class="pure-u-1 pure-u-md-1-4 align-center">
+<div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-4">
   <div class="subtitle">Total:</div>
   <div data-ng-class="{update:update}" class="subtitle">$ {{(item.price*item.quantity).toFixed(2)}} USD</div>
   <div class="margin-bottom"><a data-ng-click="removeFromCart($index)" class="pure-button button-xsmall"><i class="fa fa-trash"></i>Quitar del carrito</a></div>

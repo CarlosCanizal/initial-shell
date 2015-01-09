@@ -1,7 +1,7 @@
+@import 'colors'
+
 .hidden
   display: none
-
-
 
 @media screen and (min-width: 64em)
   .visible-xl-block
@@ -12,6 +12,7 @@
     display: inline-block
   .hidden-xl
     display: none
+
 
 @media screen and (min-width: 35.5em)
   .visible-md-block
@@ -42,6 +43,24 @@
     display: inline-block
   .hidden-sm
     display: none
+
+@media screen and (max-width: 35.5em)
+  .filter-title
+    font-size: 1.3rem
+  .information-box
+    padding-left: 0 
+    border-bottom: 2px solid $third-color
+    margin-bottom: 1rem
+  .no-border
+    border-bottom: 0 !important
+  .no-margin
+    margin-bottom: 0 !important
+  .no-padding
+    padding-bottom: 0 !important
+  .border-left
+    border-left: 0 !important
+  .border-right
+    border-right: 0 !important
 
 
 

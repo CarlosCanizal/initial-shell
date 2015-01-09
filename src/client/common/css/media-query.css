@@ -1,4 +1,4 @@
-/* line 1, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+/* line 3, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
 .hidden {
   display: none; }
 
@@ -21,55 +21,87 @@
  }
 
 @media screen and (min-width: 35.5em) {
-  /* line 17, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 18, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-md-block {
     display: block; }
 
-  /* line 19, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-md-inline {
     display: inline; }
 
-  /* line 21, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-md-inline-block {
     display: inline-block; }
 
-  /* line 23, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 24, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .hidden-md {
     display: none; }
  }
 
 @media screen and (min-width: 48em) {
-  /* line 27, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-lg-block {
     display: block; }
 
-  /* line 29, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 30, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-lg-inline {
     display: inline; }
 
-  /* line 31, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 32, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-lg-inline-block {
     display: inline-block; }
 
-  /* line 33, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 34, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .hidden-lg {
     display: none; }
  }
 
 @media screen and (min-width: 35.5em) {
-  /* line 37, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 38, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-sm-block {
     display: block; }
 
-  /* line 39, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 40, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-sm-inline {
     display: inline; }
 
-  /* line 41, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 42, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .visible-sm-inline-block {
     display: inline-block; }
 
-  /* line 43, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 44, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .hidden-sm {
     display: none; }
+ }
+
+@media screen and (max-width: 35.5em) {
+  /* line 48, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .filter-title {
+    font-size: 1.3rem; }
+
+  /* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .information-box {
+    padding-left: 0;
+    border-bottom: 2px solid #CCC;
+    margin-bottom: 1rem; }
+
+  /* line 54, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .no-border {
+    border-bottom: 0 !important; }
+
+  /* line 56, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .no-margin {
+    margin-bottom: 0 !important; }
+
+  /* line 58, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .no-padding {
+    padding-bottom: 0 !important; }
+
+  /* line 60, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .border-left {
+    border-left: 0 !important; }
+
+  /* line 62, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .border-right {
+    border-right: 0 !important; }
  }

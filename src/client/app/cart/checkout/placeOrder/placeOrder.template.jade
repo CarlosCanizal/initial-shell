@@ -14,15 +14,16 @@
               .information-box.no-padding
                 .subtitle
                   | Envio:
-                .address-line
+                address.margin-bottom
                   | {{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}
-                .address-line
-                    | Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} 
-                .address-line
+                  br
+                  | Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} 
+                  br
                   | {{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} 
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="toAddress()")
                     | Modificar
+
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box
                 .subtitle
@@ -38,17 +39,19 @@
                   a.pure-button.button-xsmall(data-ng-click="toPaymentMethod()")
                     | Modificar
             .pure-u-1.pure-u-sm-1-3
-              .information-box
+              .information-box.no-border.no-margin.no-padding.align-center
                 .subtitle
                   |Total de la orden
                 .title
                   |$ {{vm.cartItems.cartTotal}} USD
-                a.pure-button.button-success.margin-bottom(data-ng-click="placeOrder()", data-ng-hide="showConfirmation")
-                  i.fa.fa-money
-                  | Pagar
-                a.pure-button(data-ng-click="goToCart()", data-ng-hide="showConfirmation")
-                  i.fa.fa-shopping-cart
-                  | Volver al carrito
+                .address-line
+                  a.pure-button.button-success.margin-bottom(data-ng-click="placeOrder()", data-ng-hide="showConfirmation")
+                    i.fa.fa-money
+                    | Pagar
+                .address-line.no-padding
+                  a.pure-button(data-ng-click="goToCart()", data-ng-hide="showConfirmation")
+                    i.fa.fa-shopping-cart
+                    | Volver al carrito
 #orderStatus(data-ng-show="showConfirmation || completed")
   .filter-title
     span.publisher-name.
