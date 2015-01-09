@@ -1,32 +1,43 @@
 /* line 3, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+#menu-button {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFF;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  z-index: 2; }
+
+/* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo {
   border-bottom: solid 5px #000; }
-  /* line 4, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+  /* line 14, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
   .logo img {
     width: 100%; }
 
-/* line 8, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 18, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-text {
   font-family: 'Raleway'; }
 
-/* line 11, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 21, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-h3 {
   font-size: 1.6rem; }
 
-/* line 14, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 24, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-h2 {
   font-size: 1.9rem; }
 
-/* line 17, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 27, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-h1 {
   font-size: 2.4rem; }
 
-/* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 30, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .side-menu {
   color: #666;
   text-align: center; }
 
-/* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 35, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 nav a {
   color: #999;
   display: block;

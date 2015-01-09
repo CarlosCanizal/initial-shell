@@ -87,21 +87,25 @@
 
   /* line 54, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .no-border {
-    border-bottom: 0 !important; }
+    border-bottom: 0; }
 
   /* line 56, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .no-margin {
-    margin-bottom: 0 !important; }
+    margin-bottom: 0; }
 
   /* line 58, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .no-padding {
-    padding-bottom: 0 !important; }
+    padding-bottom: 0; }
 
   /* line 60, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .border-left {
-    border-left: 0 !important; }
+    border-left: 0; }
 
   /* line 62, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .border-right {
-    border-right: 0 !important; }
+    border-right: 0; }
+
+  /* line 64, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .side-space {
+    padding-right: 0; }
  }
