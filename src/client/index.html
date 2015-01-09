@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="bower_components/pure/pure-min.css">
     <link rel="stylesheet" href="bower_components/pure/grids-responsive-min.css">
     <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="common/css/fonts/fontface.css">
-    <link rel="stylesheet" href="common/css/layout/sidebar.css">
-    <link rel="stylesheet" href="common/css/loading/loading.css">
-    <link rel="stylesheet" href="common/css/buttons.css">
     <link rel="stylesheet" href="common/css/main.css">
-    <link rel="stylesheet" href="common/css/media-query.css">
   </head>
   <body>
     <div data-ng-controller="Shell as vm">
@@ -24,12 +19,12 @@
       </div>
       <div id="shell">
         <div class="pure-g">
-          <div id="left-pane" class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-5">
+          <div id="left-pane" class="pure-u-1 pure-u-sm-1-4 pure-u-md-1-5">
             <div class="inner-box">
               <div data-ng-include="'app/layout/sidebar.template.html'" class="nav-top"></div>
             </div>
           </div>
-          <div id="right-pane" class="pure-u-1 pure-u-md-3-4 pure-u-lg-4-5">
+          <div id="right-pane" class="pure-u-1 pure-u-sm-3-4 pure-u-md-4-5">
             <div id="inner-box"></div>
             <div data-ng-include="'app/layout/header.html'" class="nav-top"></div>
             <div ui-view></div>
