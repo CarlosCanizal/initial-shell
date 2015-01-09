@@ -223,6 +223,29 @@ a:hover, a:active, a:focus
   text-align:center
   z-index: 2
 
+#mobile-menu
+  position: fixed
+  width: 100%
+  background-color: $menu-color
+  bottom: 0
+  left: 0
+  z-index: 2
+  text-align: center
+
+  color: $menu-font-color
+  a
+    display: inline-block
+    width:100%
+    font-size: 2rem
+  span
+    margin: 0 0.5rem
+
+.mobile-menu-item
+  cursor: pointer
+  border-right: solid 1px $menu-font-color
+  -webkit-box-sizing: border-box
+  font-family: 'Raleway' !important
+
 .fa-5
   position: absolute
   bottom: 0.5rem

@@ -28,6 +28,23 @@ html(data-ng-app="app")
             #inner-box
             .nav-top(data-ng-include="'app/layout/header.html'")
             div(ui-view)
+          #mobile-menu
+            .pure-g
+              .pure-u-1-3.mobile-menu-item
+                a
+                  i.fa.fa-home
+                |Mi cuenta
+              .pure-u-1-3.mobile-menu-item
+                a
+                  i.fa.fa-th-list
+                |Tienda
+              .pure-u-1-3.mobile-menu-item
+                a
+                  i.fa.fa-shopping-cart
+                  span
+                    |20
+                |Carrito  
+
     script(src="bower_components/angular/angular.js")
     script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
     script(src="bower_components/angular-resource/angular-resource.min.js")
