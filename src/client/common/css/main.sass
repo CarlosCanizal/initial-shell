@@ -1,10 +1,4 @@
-$first-color: #666
-$second-color: #999
-$third-color: #CCC
-$error-color: rgb(202, 60, 60)
-$success-color: rgb(28, 184, 65)
-$loading-color: #666
-$update-color: #0078e7
+@import 'colors';
 
 body
   margin: 0
@@ -14,58 +8,11 @@ body
 div
   // outline: solid 1px yellow
 
-.logo
-  img
-    width: 100%
-  border-bottom: solid 5px #000
-
-.logo-text
-  font-family: 'Raleway'
-
-.logo-h3
-  font-size: 1.6rem
-
-.logo-h2
-  font-size: 1.9rem
-
-.logo-h1
-  font-size: 2.4rem
-
-
-#left-pane
-
-#right-pane
-
 .inner-box
   padding-right: 2rem
 
-.side-menu
-  color: $first-color
-  text-align: center
-
-// #navigation
-//   text-align: right
-//   a
-//     padding: 0 1rem
-//     font-size: 1.1rem
-//   a:last-child
-//     padding-right:0
-//     border-right:0
-
 a:hover, a:active, a:focus
   outline: 0
-
-nav
-  a
-    color: $second-color
-    display: block
-    width:100%
-    text-decoration: none
-    font-family: 'Raleway', sans-serif
-    padding: 1rem 0
-    text-transform: uppercase
-    font-size: 1.2rem
-    border-bottom: 1px solid $second-color
 
 .shelf
   margin-bottom: 2rem
@@ -181,17 +128,6 @@ nav
 .table-image
   width: 5rem
 
-/*login template*/
-// .center-form
-//   border: solid 2px $third-color
-//   margin: 1rem auto
-//   border-radius: 1rem
-//   padding: 3rem
-//   font-size: 1.3rem
-//   color: #999
-//   font-family: 'Raleway'
-/*login template*/
-
 .card-item
   padding: 1rem 0
   a.button
@@ -254,10 +190,6 @@ nav
     color: $third-color
     cursor:pointer
 
-
-.shelf-message
-  // text-align: center
-
 .button-xsmall
   font-size: 70%;
 
@@ -271,19 +203,9 @@ nav
     border: 1px solid #ccc
     box-shadow: inset 0 1px 3px #ddd
     border-radius: 4px
-    // font-size: 1.6rem
     height: 2.3rem
     font-size: 1.1rem
     box-sizing: border-box
-
-.loading-layer
-  position: fixed;
-  width: 100%
-  height: 100%
-  background-color: rgba(0,0,0,0.8)
-  top:0
-  left:0 
-  z-index: 3
 
 .disable-shelf
   position: absolute
@@ -362,171 +284,3 @@ nav
 .xs-input
   width: 2em
 
-.button-large
-  font-size: 110%;
-
-.button-xlarge
-  font-size: 125%;
-
-.button-success,
-.button-error,
-.button-warning,
-.button-secondary
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-
-.button-success
-  background: rgb(28, 184, 65); /* this is a green */
-
-.button-error
-  background: rgb(202, 60, 60); /* this is a maroon */
-
-.button-warning
-  background: rgb(223, 117, 20); /* this is an orange */
-
-.button-secondary
-  background: rgb(66, 184, 221); /* this is a light blue */
-
-
-@font-face
-  font-family: 'Raleway'
-  src: url('fonts/raleway/raleway-regular-webfont.eot')
-  src: url('fonts/raleway/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/raleway/raleway-regular-webfont.woff2') format('woff2'),url('fonts/raleway/raleway-regular-webfont.woff') format('woff'),url('fonts/raleway/raleway-regular-webfont.ttf') format('truetype'),url('fonts/raleway/raleway-regular-webfont.svg#ralewayregular') format('svg')
-  font-weight: normal
-  font-style: normal
-
-@font-face
-  font-family: 'titilliumthin'
-  src: url('fonts/titillium/titillium-thin-webfont.eot')
-  src: url('fonts/titillium/titillium-thin-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/titillium/titillium-thin-webfont.woff2') format('woff2'),url('fonts/titillium/titillium-thin-webfont.woff') format('woff'),url('fonts/titillium/titillium-thin-webfont.ttf') format('truetype'),url('fonts/titillium/titillium-thin-webfont.svg#titilliumthin') format('svg')
-  font-weight: normal
-  font-style: normal
-
-@font-face
-  font-family: 'RalewayThin'
-  src: url('fonts/raleway-thin/raleway-thin-webfont.eot')
-  src: url('fonts/raleway-thin/raleway-thin-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/raleway-thin/raleway-thin-webfont.woff2') format('woff2'),url('fonts/raleway-thin/raleway-thin-webfont.woff') format('woff'),url('fonts/raleway-thin/raleway-thin-webfont.ttf') format('truetype'),url('fonts/raleway-thin/raleway-thin-webfont.svg#ralewaythin') format('svg')
-  font-weight: normal
-  font-style: normal
-
-.spinner-circle
-  margin: 20px auto
-  width: 100px
-  height: 100px
-  position: relative
-  text-align: center
-  -webkit-animation: rotate 2.0s infinite linear
-  -webkit-animation: rotate 2.0s infinite linear
-  animation: rotate 2.0s infinite linear
-
-
-.dot1, .dot2
-  width: 60%
-  height: 60%
-  display: inline-block
-  position: absolute
-  top: 0
-  background-color: $loading-color
-  border-radius: 100%
-  -webkit-animation: bounce 2.0s infinite ease-in-out
-  animation: bounce 2.0s infinite ease-in-out
-  // background-image: url(../images/cs-square.png)
-  // background-size: 100% auto
-
-.dot2
-  top: auto
-  bottom: 0px
-  animation-delay: -1.0s
-  -webkit-animation-delay: -1.0s
-
-@keyframes rotate 
-  100%
-    -webkit-transform: rotate(360deg)
-
-@keyframes rotate 
-  100%
-    -webkit-transform: rotate(360deg)
-    -webkit-transform: rotate(360deg)
-
-@keyframes bounce 
-  0%, 100%
-    -webkit-transform: scale(0.0)
-  50%
-    -webkit-transform: scale(1.0)
-
-@keyframes bounce 
-  0%, 100%
-    -webkit-transform: scale(0.0)
-    -webkit-transform: scale(0.0)
-  50%
-  -webkit-transform: scale(1.0)
-  -webkit-transform: scale(1.0)
-
-// .spinner-square
-//   width: 100px
-//   height: 100px
-//   background-color: $loading-color
-//   margin: 100px auto
-//   -webkit-animation: rotateplane 1.2s infinite ease-in-out
-//   animation: rotateplane 1.2s infinite ease-in-out
-//   background-image: url(../images/cs-square.png)
-//   background-size: 100% auto
-
-// @keyframes rotateplane
-//   0%
-//     -webkit-transform: perspective(120px)
-//   50%
-//     -webkit-transform: perspective(120px) rotateY(180deg)
-//   100%
-//     -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)
-
-// @keyframes rotateplane
-//   0%
-//     transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-//     -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-//   50%
-//     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-//     -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-//   100%
-//     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
-//     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
-
-.spinner-rectangle
-  margin: 20px auto
-  width: 50px
-  height: 30px
-  text-align: center
-  font-size: 10px
-
-.spinner-rectangle > div
-  background-color: $loading-color
-  height: 100%
-  width: 6px
-  display: inline-block
-  -webkit-animation: stretchdelay 1.2s infinite ease-in-out
-  animation: stretchdelay 1.2s infinite ease-in-out
-
-.spinner-rectangle .rect2
-  -webkit-animation-delay: -1.1s
-  animation-delay: -1.1s
-
-.spinner-rectangle .rect3
-  -webkit-animation-delay: -1.0s
-  animation-delay: -1.0s
-
-.spinner-rectangle .rect4
-  -webkit-animation-delay: -0.9s
-  animation-delay: -0.9s
-
-.spinner-rectangle .rect5
-  -webkit-animation-delay: -0.8s
-  animation-delay: -0.8s
-
-@keyframes stretchdelay
-  0%, 40%, 100%
-    transform: scaleY(0.4)
-    -webkit-transform: scaleY(0.4)
-  20%
-    transform: scaleY(1.0)
-    -webkit-transform: scaleY(1.0)

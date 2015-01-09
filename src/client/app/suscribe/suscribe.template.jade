@@ -1,9 +1,6 @@
 .section-title.
   Suscripciones
-.search-box.pure-g
-  input(type="text", ng-model="vm.searchValue")
-  a(ng-click="vm.searchByName()").
-    BUSCAR
+.search(data-ng-include="'app/layout/search.template.html'")
 .shelf(data-ng-include="'app/layout/shelf.template.html'", data-ng-if="vm.itemsList.length > 0")
 .shelf(shelf, publisher="dc", store="Serie")
 .shelf(shelf, publisher="marvel", store="Serie")

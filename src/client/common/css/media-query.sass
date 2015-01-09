@@ -1,7 +1,24 @@
-@media screen and (min-width: 35.5em)
-  .media-sm-show
-    display: normal
+@media screen and (min-width: 64em)
+  .media-xl-show
+    display: initial
+  .media-xl-hide
+    display: none
+
+@media screen and (min-width: 58em), screen and (max-width: 64em)
+  .media-lg-show
+    display: initial
+  .media-lg-hide
+    display: none
+
+@media screen and (min-width: 35.5em), screen and (max-width: 58em)
+  .media-md-show
+    display: initial
+  .media-md-hide
+    display: none
 
 @media screen and (max-width: 35.5em)
   .media-sm-hide
     display: none
+  .media-sm-show
+    display: initial
+
