@@ -1,0 +1,11 @@
+@media screen and (min-width: 35.5em) {
+  /* line 2, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .media-sm-show {
+    display: normal; }
+ }
+
+@media screen and (max-width: 35.5em) {
+  /* line 6, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .media-sm-hide {
+    display: none; }
+ }

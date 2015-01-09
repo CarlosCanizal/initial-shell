@@ -8,6 +8,7 @@ html(data-ng-app="app")
     link(rel="stylesheet", href="bower_components/pure/grids-responsive-min.css")
     link(rel="stylesheet", href="bower_components/components-font-awesome/css/font-awesome.min.css")
     link(rel="stylesheet", href="common/css/main.css")
+    link(rel="stylesheet", href="common/css/media-query.css")
   body
     div(data-ng-controller="Shell as vm")
       .loading-layer(data-ng-show="vm.loading")
@@ -16,10 +17,10 @@ html(data-ng-app="app")
           div.dot2
       #shell
         .pure-g
-          #left-pane.pure-u-1.pure-u-sm-1-4.pure-u-md-1-5
+          #left-pane.pure-u-1.pure-u-md-1-4.pure-u-lg-1-5
             .inner-box
               .nav-top(data-ng-include="'app/layout/sidebar.template.html'")
-          #right-pane.pure-u-1.pure-u-sm-3-4.pure-u-md-4-5
+          #right-pane.pure-u-1.pure-u-md-3-4.pure-u-lg-4-5
             #inner-box
             .nav-top(data-ng-include="'app/layout/header.html'")
             div(ui-view)
