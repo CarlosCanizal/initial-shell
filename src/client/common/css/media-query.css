@@ -1,39 +1,75 @@
+/* line 1, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+.hidden {
+  display: none; }
+
 @media screen and (min-width: 64em) {
-  /* line 2, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-xl-show {
-    display: initial; }
+  /* line 7, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-xl-block {
+    display: block; }
 
-  /* line 4, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-xl-hide {
+  /* line 9, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-xl-inline {
+    display: inline; }
+
+  /* line 11, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-xl-inline-block {
+    display: inline-block; }
+
+  /* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .hidden-xl {
     display: none; }
  }
 
-@media screen and (min-width: 58em), screen and (max-width: 64em) {
-  /* line 8, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-lg-show {
-    display: initial; }
+@media screen and (min-width: 35.5em) {
+  /* line 17, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-md-block {
+    display: block; }
 
-  /* line 10, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-lg-hide {
+  /* line 19, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-md-inline {
+    display: inline; }
+
+  /* line 21, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-md-inline-block {
+    display: inline-block; }
+
+  /* line 23, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .hidden-md {
     display: none; }
  }
 
-@media screen and (min-width: 35.5em), screen and (max-width: 58em) {
-  /* line 14, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-md-show {
-    display: initial; }
+@media screen and (min-width: 48em) {
+  /* line 27, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-lg-block {
+    display: block; }
 
-  /* line 16, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-md-hide {
+  /* line 29, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-lg-inline {
+    display: inline; }
+
+  /* line 31, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-lg-inline-block {
+    display: inline-block; }
+
+  /* line 33, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .hidden-lg {
     display: none; }
  }
 
-@media screen and (max-width: 35.5em) {
-  /* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-sm-hide {
-    display: none; }
+@media screen and (min-width: 35.5em) {
+  /* line 37, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-sm-block {
+    display: block; }
 
-  /* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
-  .media-sm-show {
-    display: initial; }
+  /* line 39, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-sm-inline {
+    display: inline; }
+
+  /* line 41, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .visible-sm-inline-block {
+    display: inline-block; }
+
+  /* line 43, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .hidden-sm {
+    display: none; }
  }
