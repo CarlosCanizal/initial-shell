@@ -26,15 +26,36 @@
         <div class="pure-u-1 pure-u-sm-1-2">
           <div class="shelf-space border-left">
             <div class="title align-center">¡Registrarme!</div>
-            <form class="pure-form a">
-              <fieldset class="pure-group">
-                <input ng-model="newUser.name" type="text" placeholder="Nombre" ng-init="newUser.name = 'Carlos Canizal'" class="pure-input-2-3"/>
-                <input ng-model="newUser.username" type="text" placeholder="Correo Electronico" ng-init="newUser.username = 'carlos@canizal.com'" class="pure-input-2-3"/>
-                <input ng-model="newUser.password" type="password" placeholder="Contraseña" ng-init="newUser.password = 'canizal'" class="pure-input-2-3"/>
-                <input ng-model="newUser.password" type="password" placeholder="Confirmar Contraseña" ng-init="newUser.password = 'canizal'" class="pure-input-2-3"/>
-              </fieldset>
+            <form name="registerForm" novalidate="" class="pure-form pure-form-aligned">
+              <fieldset></fieldset>
+              <div class="pure-control-group">
+                <label for="name" ng-show="registerForm.name.$valid || registerForm.name.$pristine">Nombre:</label>
+                <label for="name" ng-show="registerForm.name.$invalid &amp;&amp; registerForm.name.$dirty" class="error">Nombre es requerido:</label>
+                <input id="name" name="name" data-ng-model="newUser.name" required=""/><i ng-show="registerForm.name.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="registerForm.name.$valid &amp;&amp; registerForm.name.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="registerForm.name.$invalid &amp;&amp; registerForm.name.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+              </div>
+              <div class="pure-control-group">
+                <label for="lastname" ng-show="registerForm.lastname.$valid || registerForm.lastname.$pristine">Apellido:</label>
+                <label for="lastname" ng-show="registerForm.lastname.$invalid &amp;&amp; registerForm.lastname.$dirty" class="error">Apellifo invalido:</label>
+                <input id="lastname" name="lastname" data-ng-model="newUser.lastname" required=""/><i ng-show="registerForm.lastname.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="registerForm.lastname.$valid &amp;&amp; registerForm.lastname.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="registerForm.lastname.$invalid &amp;&amp; registerForm.lastname.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+              </div>
+              <div class="pure-control-group">
+                <label for="username" ng-show="registerForm.username.$valid || registerForm.username.$pristine">Correo Electronico:</label>
+                <label for="username" ng-show="registerForm.username.$invalid &amp;&amp; registerForm.username.$dirty" class="error">Correo Electronico invalido:</label>
+                <input id="username" name="username" type="email" data-ng-model="newUser.username" required=""/><i ng-show="registerForm.username.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="registerForm.username.$valid &amp;&amp; registerForm.username.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="registerForm.username.$invalid &amp;&amp; registerForm.username.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+              </div>
+              <div class="pure-control-group">
+                <label for="password" ng-show="registerForm.password.$valid || registerForm.password.$pristine">Contraseña:</label>
+                <label for="password" ng-show="registerForm.password.$invalid &amp;&amp; registerForm.password.$dirty" class="error">Contraseña requerido:</label>
+                <input id="password" name="password" data-ng-model="newUser.password" required=""/><i ng-show="registerForm.password.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="registerForm.password.$valid &amp;&amp; registerForm.password.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="registerForm.password.$invalid &amp;&amp; registerForm.password.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+              </div>
+              <div class="pure-control-group">
+                <label for="confirmPassword" ng-show="registerForm.confirmPassword.$valid || registerForm.confirmPassword.$pristine">Confirmar Contraseña:</label>
+                <label for="confirmPassword" ng-show="registerForm.confirmPassword.$invalid &amp;&amp; registerForm.confirmPassword.$dirty" class="error">Contraseña requerida:</label>
+                <input id="confirmPassword" name="confirmPassword" data-ng-model="newUser.confirmPassword" required=""/><i ng-show="registerForm.confirmPassword.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="registerForm.confirmPassword.$valid &amp;&amp; registerForm.confirmPassword.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="registerForm.confirmPassword.$invalid &amp;&amp; registerForm.confirmPassword.$dirty" class="fa fa-times-circle-o error medium-icon">             </i>
+              </div>
             </form>
-            <div class="align-center"><a ng-click="register()" class="pure-button pure-button-primary">Registrarme</a></div>
+            <div class="align-center margin-bottom"><a ng-click="register()" class="pure-button pure-button-primary">Registrarme</a></div>
+            <div data-ng-show="response" class="error align-center">{{response}}</div>
           </div>
         </div>
       </div>

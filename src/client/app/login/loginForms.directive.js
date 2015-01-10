@@ -29,12 +29,21 @@ function loginForms(userApi, storage){
       }
 
       scope.register = function(){
-        userApi.register(scope.newUser).then(function(user){
-          scope.setUser(user);
-        },function(error){
-          console.log(error);
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-        });
+        scope.response = false;
+        if(scope.registerForm.$valid){
+          userApi.register(scope.newUser).then(function(user){
+            scope.setUser(user);
+          },function(error){
+            scope.response = error.data.error;
+            console.log(error);
+            console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          });
+        }else{
+          scope.registerForm.name.$setDirty();
+          scope.registerForm.lastname.$setDirty();
+          scope.registerForm.username.$setDirty();
+          scope.registerForm.password.$setDirty();
+        }
       }
       
     }
