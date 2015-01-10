@@ -1,0 +1,27 @@
+/* line 2, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+#mobile-menu {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+  color: #FFF; }
+  /* line 11, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+  #mobile-menu a {
+    display: inline-block;
+    width: 100%;
+    font-size: 2rem;
+    color: #FFF;
+    text-decoration: none; }
+  /* line 17, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+  #mobile-menu span {
+    margin: 0 0.5rem; }
+
+/* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+.mobile-menu-item {
+  cursor: pointer;
+  border-right: solid 1px #FFF;
+  -webkit-box-sizing: border-box;
+  font-family: 'Raleway' !important; }
