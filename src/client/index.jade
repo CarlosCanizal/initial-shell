@@ -31,7 +31,7 @@ html(data-ng-app="app")
           #mobile-menu.hidden-lg
             .pure-g
               .pure-u-1-3.mobile-menu-item
-                a
+                a(ui-sref="login")
                   i.fa.fa-home
                 |Mi cuenta
               .pure-u-1-3.mobile-menu-item
@@ -39,10 +39,10 @@ html(data-ng-app="app")
                   i.fa.fa-th-list
                 |Tienda
               .pure-u-1-3.mobile-menu-item
-                a
+                a(ui-sref="checkout")
                   i.fa.fa-shopping-cart
                   span
-                    |20
+                    |{{vm.cartItems.itemsTotal}}
                 |Carrito  
 
     script(src="bower_components/angular/angular.js")
