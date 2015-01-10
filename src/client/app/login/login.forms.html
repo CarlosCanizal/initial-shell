@@ -7,14 +7,20 @@
         <div class="pure-u-1 pure-u-sm-1-2">
           <div class="shelf-space">
             <div class="title align-center">Ya soy miembro</div>
-            <form class="pure-form">
-              <fieldset class="pure-group">
-                <input ng-model="user.username" type="text" placeholder="Correo Electronico" ng-init="user.username = 'carlos@canizal.com'" class="pure-input-2-3"/>
-                <input ng-model="user.password" type="password" placeholder="Contraseña" ng-init="user.password = 'canizal'" class="pure-input-2-3"/>
-              </fieldset>
+            <form name="loginForm" novalidate="" class="pure-form pure-form-aligned">
+              <div class="pure-control-group">
+                <label for="username" ng-show="loginForm.username.$valid || loginForm.username.$pristine">Correo Electronico:</label>
+                <label for="username" ng-show="loginForm.username.$invalid &amp;&amp; loginForm.username.$dirty" class="error">Correo Electronico invalido:</label>
+                <input id="username" name="username" type="email" data-ng-model="user.username" required=""/><i ng-show="loginForm.username.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="loginForm.username.$valid &amp;&amp; loginForm.username.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="loginForm.username.$invalid &amp;&amp; loginForm.username.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+              </div>
+              <div class="pure-control-group">
+                <label for="password" ng-show="loginForm.password.$valid || loginForm.password.$pristine">Contraseña:</label>
+                <label for="password" ng-show="loginForm.password.$invalid &amp;&amp; loginForm.password.$dirty" class="error">Contraseña invalida:</label>
+                <input id="password" name="password" type="password" data-ng-model="user.password" required=""/><i ng-show="loginForm.password.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="loginForm.password.$valid &amp;&amp; loginForm.password.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="loginForm.password.$invalid &amp;&amp; loginForm.password.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+              </div>
             </form>
             <div class="align-center margin-bottom"><a ng-click="login()" class="pure-button pure-button-primary">Iniciar Sesion</a></div>
-            <div class="error align-center">Correo Electronico o Contraseña invalidos          </div>
+            <div data-ng-show="response" class="error align-center">{{response}}</div>
           </div>
         </div>
         <div class="pure-u-1 pure-u-sm-1-2">

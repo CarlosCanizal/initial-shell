@@ -9,15 +9,30 @@
           .shelf-space
             .title.align-center
               | Ya soy miembro
-            form.pure-form
-              fieldset.pure-group
-                  input.pure-input-2-3(ng-model="user.username" , type="text", placeholder="Correo Electronico", ng-init="user.username = 'carlos@canizal.com'")
-                  input.pure-input-2-3(ng-model="user.password" , type="password", placeholder="Contraseña", ng-init="user.password = 'canizal'")
+            form.pure-form.pure-form-aligned(name="loginForm", novalidate="")
+              .pure-control-group
+                label(for="username", ng-show="loginForm.username.$valid || loginForm.username.$pristine")
+                  | Correo Electronico:
+                label.error(for="username", ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
+                  | Correo Electronico invalido:
+                input#username(name="username", type="email", data-ng-model="user.username", required="")
+                i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.username.$pristine")
+                i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.username.$valid && loginForm.username.$dirty")
+                i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
+              .pure-control-group
+                label(for="password", ng-show="loginForm.password.$valid || loginForm.password.$pristine")
+                  | Contraseña:
+                label.error(for="password", ng-show="loginForm.password.$invalid && loginForm.password.$dirty")
+                  | Contraseña invalida:
+                input#password(name="password", type="password", data-ng-model="user.password", required="")
+                i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.password.$pristine")
+                i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.password.$valid && loginForm.password.$dirty")
+                i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.password.$invalid && loginForm.password.$dirty")
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="login()").
                 Iniciar Sesion
-            .error.align-center
-              | Correo Electronico o Contraseña invalidos          
+            .error.align-center(data-ng-show="response")
+              | {{response}}
         .pure-u-1.pure-u-sm-1-2
           .shelf-space.border-left
             .title.align-center
