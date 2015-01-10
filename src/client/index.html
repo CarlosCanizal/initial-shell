@@ -34,13 +34,7 @@
             <div data-ng-include="'app/layout/header.html'" class="nav-top"></div>
             <div ui-view></div>
           </div>
-          <div id="mobile-menu" class="hidden-lg">
-            <div class="pure-g">
-              <div class="pure-u-1-3 mobile-menu-item"><a ui-sref="login"><i class="fa fa-home"></i></a>Mi cuenta</div>
-              <div class="pure-u-1-3 mobile-menu-item"><a><i class="fa fa-th-list"></i></a>Tienda</div>
-              <div class="pure-u-1-3 mobile-menu-item"><a ui-sref="checkout"><i class="fa fa-shopping-cart"></i><span>{{vm.cartItems.itemsTotal}}</span></a>Carrito  </div>
-            </div>
-          </div>
+          <div id="mobile-menu" data-ng-include="'app/layout/mobile/menu.html'" class="hidden-lg"></div>
         </div>
       </div>
     </div>
