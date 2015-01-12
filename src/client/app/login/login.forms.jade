@@ -9,25 +9,27 @@
           .shelf-space
             .title.align-center
               | Ya soy miembro
-            form.pure-form.pure-form-aligned(name="loginForm", novalidate="")
-              .pure-control-group
+            form.pure-form.pure-form-stacked(name="loginForm", novalidate="")
                 label(for="username", ng-show="loginForm.username.$valid || loginForm.username.$pristine")
                   | Correo Electronico:
                 label.error(for="username", ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
                   | Correo Electronico invalido:
-                input#username(name="username", type="email", data-ng-model="user.username", required="")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.username.$pristine")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.username.$valid && loginForm.username.$dirty")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
-              .pure-control-group
+                .form-icon
+                  input.pure-input-1#username(name="username", type="email", data-ng-model="user.username", required="")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.username.$pristine")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.username.$valid && loginForm.username.$dirty")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
+
                 label(for="password", ng-show="loginForm.password.$valid || loginForm.password.$pristine")
                   | Contraseña:
                 label.error(for="password", ng-show="loginForm.password.$invalid && loginForm.password.$dirty")
                   | Contraseña invalida:
-                input#password(name="password", type="password", data-ng-model="user.password", required="")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.password.$pristine")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.password.$valid && loginForm.password.$dirty")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.password.$invalid && loginForm.password.$dirty")
+                .form-icon
+                  input.pure-input-1#password(name="password", type="password", data-ng-model="user.password", required="")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.password.$pristine")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.password.$valid && loginForm.password.$dirty")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.password.$invalid && loginForm.password.$dirty")
+                  
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="login()").
                 Iniciar Sesion
@@ -37,55 +39,59 @@
           .shelf-space.border-left
             .title.align-center
               | ¡Registrarme!
-            form.pure-form.pure-form-aligned(name="registerForm", novalidate="")
+            form.pure-form.pure-form-stacked(name="registerForm", novalidate="")
               fieldset
-              .pure-control-group
                 label(for="name", ng-show="registerForm.name.$valid || registerForm.name.$pristine")
                   | Nombre:
                 label.error(for="name", ng-show="registerForm.name.$invalid && registerForm.name.$dirty")
                   | Nombre es requerido:
-                input#name(name="name", data-ng-model="newUser.name", required="")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.name.$pristine")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.name.$valid && registerForm.name.$dirty")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.name.$invalid && registerForm.name.$dirty")
-              .pure-control-group
+                .form-icon
+                  input.pure-input-1#name(name="name", data-ng-model="newUser.name", required="")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.name.$pristine")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.name.$valid && registerForm.name.$dirty")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.name.$invalid && registerForm.name.$dirty")
+              
                 label(for="lastname", ng-show="registerForm.lastname.$valid || registerForm.lastname.$pristine")
                   | Apellido:
                 label.error(for="lastname", ng-show="registerForm.lastname.$invalid && registerForm.lastname.$dirty")
-                  | Apellifo invalido:
-                input#lastname(name="lastname", data-ng-model="newUser.lastname", required="")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.lastname.$pristine")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.lastname.$valid && registerForm.lastname.$dirty")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.lastname.$invalid && registerForm.lastname.$dirty")
-              .pure-control-group
+                  | Apellido invalido:
+                .form-icon
+                  input.pure-input-1#lastname(name="lastname", data-ng-model="newUser.lastname", required="")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.lastname.$pristine")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.lastname.$valid && registerForm.lastname.$dirty")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.lastname.$invalid && registerForm.lastname.$dirty")
+              
                 label(for="username", ng-show="registerForm.username.$valid || registerForm.username.$pristine")
                   | Correo Electronico:
                 label.error(for="username", ng-show="registerForm.username.$invalid && registerForm.username.$dirty")
                   | Correo Electronico invalido:
-                input#username(name="username", type="email", data-ng-model="newUser.username", required="")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.username.$pristine")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.username.$valid && registerForm.username.$dirty")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.username.$invalid && registerForm.username.$dirty")
-              .pure-control-group
+                .form-icon
+                  input.pure-input-1#username(name="username", type="email", data-ng-model="newUser.username", required="")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.username.$pristine")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.username.$valid && registerForm.username.$dirty")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.username.$invalid && registerForm.username.$dirty")
+              
                 label(for="password", ng-show="((registerForm.password.$valid || registerForm.password.$pristine) || (!registerForm.password.$error.required  && registerForm.password.$error.match && registerForm.confirmPassword.$pristine)) && !(registerForm.confirmPassword.$dirty && registerForm.password.$error.required)")
                   | Contraseña
                 label.error(for="password", ng-show="registerForm.password.$error.required && (registerForm.password.$dirty || registerForm.confirmPassword.$dirty)")
                   | Contraseña requerida:
                 label.error(for="password", ng-show="registerForm.confirmPassword.$dirty && !registerForm.password.$error.required && registerForm.password.$error.match && registerForm.password.$dirty")
                   | Contraseña no coincide:
-                input#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.password.$pristine && !(registerForm.confirmPassword.$dirty && registerForm.password.$error.required)")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="(registerForm.password.$valid && registerForm.password.$dirty) || (registerForm.confirmPassword.$pristine && registerForm.password.$dirty && registerForm.password.$error.match) ")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="(registerForm.password.$error.required && registerForm.password.$dirty) || (registerForm.confirmPassword.$dirty && registerForm.password.$error.match)")
-              .pure-control-group
+                .form-icon
+                  input.pure-input-1#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.password.$pristine && !(registerForm.confirmPassword.$dirty && registerForm.password.$error.required)")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="(registerForm.password.$valid && registerForm.password.$dirty) || (registerForm.confirmPassword.$pristine && registerForm.password.$dirty && registerForm.password.$error.match) ")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="(registerForm.password.$error.required && registerForm.password.$dirty) || (registerForm.confirmPassword.$dirty && registerForm.password.$error.match)")
+              
                 label(for="confirmPassword", ng-show="registerForm.confirmPassword.$valid || registerForm.confirmPassword.$pristine")
                   | Confirmar Contraseña:
                 label.error(for="confirmPassword", ng-show="registerForm.confirmPassword.$error.required && registerForm.confirmPassword.$dirty")
                   | Contraseña requerida:
-                input#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
-                i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.confirmPassword.$pristine")
-                i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.confirmPassword.$valid && registerForm.confirmPassword.$dirty")
-                i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$dirty")              
+                .form-icon
+                  input.pure-input-1#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
+                  i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.confirmPassword.$pristine")
+                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.confirmPassword.$valid && registerForm.confirmPassword.$dirty")
+                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$dirty")              
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="register()").
                 Registrarme
