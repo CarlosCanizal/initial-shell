@@ -10,6 +10,7 @@
             .title.align-center
               | Ya soy miembro
             form.pure-form.pure-form-stacked(name="loginForm", novalidate="")
+              fieldset
                 label(for="username", ng-show="loginForm.username.$valid || loginForm.username.$pristine")
                   | Correo Electronico:
                 label.error(for="username", ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
@@ -33,8 +34,8 @@
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="login()").
                 Iniciar Sesion
-            .error.align-center(data-ng-show="response")
-              | {{response}}
+            .error.align-center(data-ng-show="response.login")
+              | {{response.login}}
         .pure-u-1.pure-u-sm-1-2
           .shelf-space.border-left
             .title.align-center
@@ -95,8 +96,8 @@
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="register()").
                 Registrarme
-            .error.align-center(data-ng-show="response")
-              | {{response}}
+            .error.align-center(data-ng-show="response.register")
+              | {{response.register}}
       
 
       

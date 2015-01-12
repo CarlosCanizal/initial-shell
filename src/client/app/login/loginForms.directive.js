@@ -10,15 +10,15 @@ function loginForms(userApi, storage){
     templateUrl: 'app/login/login.forms.html',
     scope: true,
     link:function(scope,element,attr){
-      scope.response = false;
+      scope.response = {};
       
       scope.login = function(){
-        scope.response = false;
+        scope.response.login = false;
         if(scope.loginForm.$valid){
           userApi.login(scope.user).then(function(user){
             scope.setUser(user);
           },function(error){
-            scope.response = error.data.error;
+            scope.response.login = error.data.error;
             console.log(error);
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
           });
@@ -29,12 +29,12 @@ function loginForms(userApi, storage){
       }
 
       scope.register = function(){
-        scope.response = false;
+        scope.response.register = false;
         if(scope.registerForm.$valid){
           userApi.register(scope.newUser).then(function(user){
             scope.setUser(user);
           },function(error){
-            scope.response = error.data.error;
+            scope.response.register = error.data.error;
             console.log(error);
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
           });
