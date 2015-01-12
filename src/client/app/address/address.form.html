@@ -1,46 +1,52 @@
 
-<form name="addressForm" novalidate="" class="pure-form pure-form-aligned">
+<form name="addressForm" novalidate="" class="pure-form pure-form-stacked">
   <fieldset>
     <div class="child-container">
       <ng-form name="addressForm">
         <div class="form-container">
-          <div class="pure-control-group">
-            <label for="street" ng-show="addressForm.street.$valid || addressForm.street.$pristine">Calle:</label>
-            <label for="street" ng-show="addressForm.street.$invalid &amp;&amp; addressForm.street.$dirty" class="error">Calle es requerido:</label>
-            <input id="street" name="street" data-ng-model="address.street" required=""/><i ng-show="addressForm.street.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.street.$valid &amp;&amp; addressForm.street.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.street.$invalid &amp;&amp; addressForm.street.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          <label for="street" ng-show="addressForm.street.$valid || addressForm.street.$pristine">Calle:</label>
+          <label for="street" ng-show="addressForm.street.$invalid &amp;&amp; addressForm.street.$dirty" class="error">Calle es requerido:</label>
+          <div class="form-icon">
+            <input id="street" name="street" data-ng-model="address.street" required="" class="pure-input-1"/><i ng-show="addressForm.street.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.street.$valid &amp;&amp; addressForm.street.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.street.$invalid &amp;&amp; addressForm.street.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
           </div>
-          <div class="pure-control-group">
-            <label for="number" ng-show="addressForm.number.$valid || addressForm.number.$pristine">Número exterior:</label>
-            <label for="number" ng-show="addressForm.number.$invalid &amp;&amp; addressForm.number.$dirty" class="error">Número exterior es requerido:</label>
-            <input id="number" name="number" data-ng-model="address.number" required=""/><i ng-show="addressForm.number.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.number.$valid &amp;&amp; addressForm.number.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.number.$invalid &amp;&amp; addressForm.number.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
-          <div class="pure-control-group">
-            <label for="apt">Numero interior:</label>
-            <input id="apt" name="apt" data-ng-model="address.apt"/>
-          </div>
-          <div class="pure-control-group">
-            <label for="zip" ng-show="addressForm.zip.$valid || addressForm.zip.$pristine">Codigo Postal:</label>
-            <label for="zip" ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="error">Codigo Postal no valido:</label>
-            <input id="zip" name="zip" data-ng-model="address.zip" required="" data-ng-pattern="/[0-9]/" maxlength="5" data-ng-minlength='5' data-ng-maxlength='5' data-ng-change="updateUbication()"/><i ng-show="addressForm.zip.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.zip.$valid &amp;&amp; addressForm.zip.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
-          <div class="pure-control-group">
-            <label for="district">Colonia:</label>
-            <select data-ng-model="address.district" data-ng-options="item.name as item.name for item in districts" data-ng-change="updateZip()"></select>
-          </div>
-          <div class="pure-control-group">
-            <label for="municipality">Delegacion o Municipio:</label>
-            <select ng-model="address.municipality" ng-options="item.name as item.name for item in municipalities" data-ng-change="updateDistricts()"></select>
-          </div>
-          <div class="pure-control-group">
-            <label for="state">Estado:</label>
-            <select ng-model="address.state" ng-options="item.name as item.name for item in states" data-ng-change="updateMunicipalities()"></select>
-          </div>
-          <div class="pure-control-group">
-            <label for="default_{{index}}">Direccion Principal:</label>
-            <input id="default_{{index}}" data-ng-model="address.default"/>
-          </div>
-          <div class="pure-controls"><a data-ng-click="saveAddress()" data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}" class="pure-button"><span data-ng-if="addressForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="addressForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
         </div>
+        <div class="pure-control-group">
+          <label for="number" ng-show="addressForm.number.$valid || addressForm.number.$pristine">Número exterior:</label>
+          <label for="number" ng-show="addressForm.number.$invalid &amp;&amp; addressForm.number.$dirty" class="error">Número exterior es requerido:</label>
+          <div class="form-icon">
+            <input id="number" name="number" data-ng-model="address.number" required="" class="pure-input-1"/><i ng-show="addressForm.number.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.number.$valid &amp;&amp; addressForm.number.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.number.$invalid &amp;&amp; addressForm.number.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="pure-control-group">
+          <label for="apt">Numero interior:</label>
+          <div class="form-icon">
+            <input id="apt" name="apt" data-ng-model="address.apt" class="pure-input-1"/>
+          </div>
+        </div>
+        <div class="pure-control-group">
+          <label for="zip" ng-show="addressForm.zip.$valid || addressForm.zip.$pristine">Codigo Postal:</label>
+          <label for="zip" ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="error">Codigo Postal no valido:</label>
+          <div class="form-icon">
+            <input id="zip" name="zip" data-ng-model="address.zip" required="" data-ng-pattern="/[0-9]/" maxlength="5" data-ng-minlength='5' data-ng-maxlength='5' data-ng-change="updateUbication()" class="pure-input-1"/><i ng-show="addressForm.zip.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="addressForm.zip.$valid &amp;&amp; addressForm.zip.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="addressForm.zip.$invalid &amp;&amp; addressForm.zip.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="pure-control-group">
+          <label for="district">Colonia:</label>
+          <select data-ng-model="address.district" data-ng-options="item.name as item.name for item in districts" data-ng-change="updateZip()"></select>
+        </div>
+        <div class="pure-control-group">
+          <label for="municipality">Delegacion o Municipio:</label>
+          <select ng-model="address.municipality" ng-options="item.name as item.name for item in municipalities" data-ng-change="updateDistricts()"></select>
+        </div>
+        <div class="pure-control-group">
+          <label for="state">Estado:</label>
+          <select ng-model="address.state" ng-options="item.name as item.name for item in states" data-ng-change="updateMunicipalities()"></select>
+        </div>
+        <div class="pure-control-group">
+          <label for="default_{{index}}">Direccion Principal:</label>
+          <input id="default_{{index}}" data-ng-model="address.default"/>
+        </div>
+        <div class="pure-controls"><a data-ng-click="saveAddress()" data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}" class="pure-button"><span data-ng-if="addressForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="addressForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
       </ng-form>
     </div>
   </fieldset>

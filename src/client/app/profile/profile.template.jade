@@ -4,55 +4,57 @@
 .shelf
   .inner-shelf
     .shelf-space
-      form.pure-form.pure-form-aligned(name="profileForm", novalidate="")
+      form.pure-form.pure-form-stacked(name="profileForm", novalidate="")
         fieldset
           .child-container
             ng-form(name="profileForm")
               .form-container
-                .pure-control-group
                   label(for="name", ng-show="profileForm.name.$valid || profileForm.name.$pristine")
                     | Nombre:
                   label.error(for="name", ng-show="profileForm.name.$invalid && profileForm.name.$dirty")
                     | Nombre es requerido:
-                  input#name(name="name", data-ng-model="user.name", required="")
-                  i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.name.$pristine")
-                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.name.$valid && profileForm.name.$dirty")
-                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.name.$invalid && profileForm.name.$dirty")
-                .pure-control-group
+                  .form-icon
+                    input.pure-input-1#name(name="name", data-ng-model="user.name", required="")
+                    i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.name.$pristine")
+                    i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.name.$valid && profileForm.name.$dirty")
+                    i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.name.$invalid && profileForm.name.$dirty")
+
                   label(for="lastname", ng-show="profileForm.lastname.$valid || profileForm.lastname.$pristine")
                     | Apellido:
                   label.error(for="lastname", ng-show="profileForm.lastname.$invalid && profileForm.lastname.$dirty")
                     | Apellido es requerido:
-                  input#lastname(name="lastname", data-ng-model="user.lastname", required="")
-                  i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.lastname.$pristine")
-                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.lastname.$valid && profileForm.lastname.$dirty")
-                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.lastname.$invalid && profileForm.lastname.$dirty")
-                .pure-control-group
+                  .form-icon
+                    input.pure-input-1#lastname(name="lastname", data-ng-model="user.lastname", required="")
+                    i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.lastname.$pristine")
+                    i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.lastname.$valid && profileForm.lastname.$dirty")
+                    i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.lastname.$invalid && profileForm.lastname.$dirty")
+
                   label(for="email", ng-show="profileForm.email.$valid || profileForm.email.$pristine")
                     | Email:
                   label.error(for="email", ng-show="profileForm.email.$invalid && profileForm.email.$dirty")
                     | Email es invalido:
-                  input#email(name="email",type="email", data-ng-model="user.username", required="")
-                  i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.email.$pristine")
-                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.email.$valid && profileForm.email.$dirty")
-                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.email.$invalid && profileForm.email.$dirty")
-                .pure-control-group
+                  .form-icon
+                    input.pure-input-1#email(name="email",type="email", data-ng-model="user.username", required="")
+                    i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.email.$pristine")
+                    i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.email.$valid && profileForm.email.$dirty")
+                    i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.email.$invalid && profileForm.email.$dirty")
+
                   label(for="phone", ng-show="profileForm.phone.$valid || profileForm.phone.$pristine")
                     | Movil:
                   label.error(for="phone", ng-show="profileForm.phone.$invalid && profileForm.phone.$dirty")
                     | Movil es invalido:
-                  input#phone(name="phone", data-ng-model="user.phone", required="", data-ng-pattern="/[0-9]/",maxlength=10, data-ng-minlength=10 data-ng-maxlength=10)
-                  i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.phone.$pristine")
-                  i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.phone.$valid && profileForm.phone.$dirty")
-                  i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.phone.$invalid && profileForm.phone.$dirty")
-                .pure-controls
-                  a.pure-button(data-ng-click="saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}")
-                    span(data-ng-if="profileForm.$invalid")
-                      | Campos Requeridos    
-                      i.fa.fa-dot-circle-o.error
-                    span(data-ng-if="profileForm.$valid")
-                      i.fa.fa-thumbs-o-up
-                      |     Guardar
+                  .form-icon
+                    input.pure-input-1#phone(name="phone", data-ng-model="user.phone", required="", data-ng-pattern="/[0-9]/",maxlength=10, data-ng-minlength=10 data-ng-maxlength=10)
+                    i.fa.fa-dot-circle-o.medium-icon(ng-show="profileForm.phone.$pristine")
+                    i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.phone.$valid && profileForm.phone.$dirty")
+                    i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.phone.$invalid && profileForm.phone.$dirty")
+        .align-center
+          a.pure-button(data-ng-click="saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$invalid")
+            | Campos Requeridos    
+            i.fa.fa-dot-circle-o.error
+          a.pure-button(data-ng-click="saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$valid")
+            i.fa.fa-thumbs-o-up
+            | Guardar
 .filter-title
   span.publisher-name.
     Mi Contraseña

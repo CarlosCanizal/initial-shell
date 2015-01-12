@@ -250,7 +250,7 @@ a:hover, a:active, a:focus {
 
 /* line 210, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form select {
-  width: 12rem;
+  width: 100%;
   display: inline-block;
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 3px #ddd;
