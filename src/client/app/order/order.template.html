@@ -5,10 +5,26 @@
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
     <div class="shelf-space">
       <div data-ng-hide="loading" class="shelf-content">
-        <div>Numero: {{order.referenceId}}</div>
-        <div>Total: {{order.amount}}</div>
-        <div>Fecha: {{order.createdAt}}</div>
-        <div>Status: {{order.status}}</div>
+        <table class="info">
+          <tbody>
+            <tr>
+              <td class="info-label">Referencia:</td>
+              <td class="info-value">{{order.referenceId}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Monto:</td>
+              <td class="info-value">{{order.amount}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Fecha:</td>
+              <td class="info-value">{{order.createdAt}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">status:</td>
+              <td class="info-value">{{order.status}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -19,9 +35,7 @@
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
     <div class="shelf-space">
       <div data-ng-hide="loading" class="shelf-content">
-        <div>{{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}</div>
-        <div>{{order.shippingAddress.district}} {{order.shippingAddress.municipality}} </div>
-        <div>{{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}</div>
+        <div class="description">{{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}<br/>{{order.shippingAddress.district}} {{order.shippingAddress.municipality}} <br/>{{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}</div>
       </div>
     </div>
   </div>
@@ -32,10 +46,26 @@
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
     <div class="shelf-space">
       <div data-ng-hide="loading" class="shelf-content">
-        <div>{{order.type}}</div>
-        <div>{{order.paymentMethod.brand}}</div>
-        <div>{{order.paymentMethod.last4}}</div>
-        <div>{{order.paymentMethod.name}}</div>
+        <table class="info">
+          <tbody>
+            <tr>
+              <td class="info-label">Nombre</td>
+              <td class="info-value">{{order.paymentMethod.name}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Emisor:</td>
+              <td class="info-value">{{order.paymentMethod.brand}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Tarjeta:</td>
+              <td class="info-value">**** **** **** {{order.paymentMethod.last4}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Tipo:</td>
+              <td class="info-value">{{order.type}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -46,11 +76,26 @@
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
     <div class="shelf-space">
       <div data-ng-hide="loading" class="shelf-content">
-        <div data-ng-repeat="item in order.items">
-          <div>{{item.name}}</div>
-          <div>{{item.quantity}}</div>
-          <div>{{item.price}}</div>
-        </div>
+        <table class="info">
+          <thead>
+            <tr>
+              <th>Articulo</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="item in order.items">
+              <td class="info-value uppercase">{{item.name}}</td>
+              <td class="info-value align-center">{{item.quantity}}</td>
+              <td class="info-value align-center">{{item.price}}</td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td class="info-value align-center">{{order.amount}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

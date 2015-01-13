@@ -6,14 +6,28 @@
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
     .shelf-space
       .shelf-content(data-ng-hide="loading")
-        div
-          | Numero: {{order.referenceId}}
-        div
-          | Total: {{order.amount}}
-        div
-          | Fecha: {{order.createdAt}}
-        div
-          | Status: {{order.status}}
+        table.info
+          tbody
+            tr
+              td.info-label
+                |Referencia:
+              td.info-value
+                |{{order.referenceId}}
+            tr
+              td.info-label
+                |Monto:
+              td.info-value
+                |{{order.amount}}
+            tr
+              td.info-label
+                |Fecha:
+              td.info-value
+                |{{order.createdAt}}
+            tr
+              td.info-label
+                |status:
+              td.info-value
+                |{{order.status}}
 
 .filter-title
   span.publisher-name.
@@ -23,12 +37,12 @@
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
     .shelf-space
       .shelf-content(data-ng-hide="loading")
-        div
-          | {{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}
-        div
-          | {{order.shippingAddress.district}} {{order.shippingAddress.municipality}} 
-        div
-          | {{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}
+          .description
+            | {{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}
+            br
+            | {{order.shippingAddress.district}} {{order.shippingAddress.municipality}} 
+            br
+            | {{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}
 .filter-title
   span.publisher-name.
     Metodo de Pago
@@ -37,14 +51,30 @@
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
     .shelf-space
       .shelf-content(data-ng-hide="loading")
-        div
-          | {{order.type}}
-        div
-          | {{order.paymentMethod.brand}}
-        div
-          | {{order.paymentMethod.last4}}
-        div
-          | {{order.paymentMethod.name}}
+        table.info
+          tbody
+            tr
+              td.info-label
+                |Nombre
+              td.info-value
+                |{{order.paymentMethod.name}}
+            tr
+              td.info-label
+                |Emisor:
+              td.info-value
+                |{{order.paymentMethod.brand}}
+            tr
+              td.info-label
+                |Tarjeta:
+              td.info-value
+                |**** **** **** {{order.paymentMethod.last4}}
+            tr
+              td.info-label
+                |Tipo:
+              td.info-value
+                |{{order.type}}
+            
+
 .filter-title
   span.publisher-name.
     Articulos
@@ -53,10 +83,28 @@
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
     .shelf-space
       .shelf-content(data-ng-hide="loading")
-        div(data-ng-repeat="item in order.items")
-          div
-            | {{item.name}}
-          div
-            | {{item.quantity}}
-          div
-            | {{item.price}}
+        table.info
+          thead
+            tr
+              th
+                | Articulo
+              th
+                | Cantidad
+              th
+                | Total
+          tbody
+            tr(data-ng-repeat="item in order.items")
+              td.info-value.uppercase
+                | {{item.name}}
+              td.info-value.align-center
+                | {{item.quantity}}
+              td.info-value.align-center
+                | {{item.price}}
+            tr
+              td(colspan="2")
+              td.info-value.align-center
+                |{{order.amount}}
+
+        
+
+
