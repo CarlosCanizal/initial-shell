@@ -44,6 +44,6 @@
                     i.fa.fa-plus
                     | Agregar Direccion
             .pure-u-1.pure-u-md-1-3.align-center
-              a.pure-button.button-success(data-ng-click="toPaymentMethod()",data-ng-hide="showPayment")
+              a.pure-button.button-success(data-ng-click="toPaymentMethod()",data-ng-hide="showPayment", data-ng-class="{'pure-button-disabled': !shoppingCart.shippingAddress}")
                 i.fa.fa-check
                 | Continuar

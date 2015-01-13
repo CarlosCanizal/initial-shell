@@ -40,7 +40,7 @@
                 <div class="address-line"><a data-ng-click="addressFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
               </div>
             </div>
-            <div class="pure-u-1 pure-u-md-1-3 align-center"><a data-ng-click="toPaymentMethod()" data-ng-hide="showPayment" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a></div>
+            <div class="pure-u-1 pure-u-md-1-3 align-center"><a data-ng-click="toPaymentMethod()" data-ng-hide="showPayment" data-ng-class="{'pure-button-disabled': !shoppingCart.shippingAddress}" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a></div>
           </div>
         </div>
       </div>

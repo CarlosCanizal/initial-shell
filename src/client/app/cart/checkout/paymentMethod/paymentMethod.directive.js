@@ -11,10 +11,12 @@ function paymentMethod(userApi){
     scope: true,
     link:function(scope,element,attr){
       scope.loading = true;
+      scope.shoppingCart.paymentMethod = false;
       userApi.getCards({conektaId:scope.currentUser.conektaId}).then(function(cards){
         scope.cards = cards;
         scope.paymentMethods =  scope.cards;
-        scope.shoppingCart.paymentMethod = scope.cards[0];
+        if(scope.cards[0])
+          scope.shoppingCart.paymentMethod = scope.cards[0];
         scope.loading = false;
       },function(error){
         console.error(error);

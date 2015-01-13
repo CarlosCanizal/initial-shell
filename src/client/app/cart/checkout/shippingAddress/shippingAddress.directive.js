@@ -13,7 +13,7 @@ function shippingAddress(userApi){
       scope.loading = true;
       scope.cleanItemsUnavaibale();
 
-      scope.address = {};
+      scope.shoppingCart.shippingAddress = false;
       scope.addressFormView = false;
 
       //refactorizar con direcative en address
@@ -23,7 +23,8 @@ function shippingAddress(userApi){
 
       userApi.getAddresses(scope.currentUser.objectId).then(function(addresses){
         scope.addresses =  addresses.results;
-        scope.shoppingCart.shippingAddress = scope.addresses[0];
+        if(scope.addresses[0])
+          scope.shoppingCart.shippingAddress = scope.addresses[0];
         scope.loading = false;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
