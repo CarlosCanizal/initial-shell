@@ -17,11 +17,11 @@ function placeOrder(userApi, ShoppingCart){
         var cart = ShoppingCart.getCart();
         scope.showConfirmation = true;
         scope.waitingForResponse = true;
-
-        console.log(cart);
+        scope.order = {}
 
         userApi.chargeCard(cart, user).then(function(result){
-          console.log(result.result);
+          scope.order = result.result;
+          console.log(scope.order);
           scope.emptyCart();
           scope.setStatus(true);
           scope.waitingForResponse = false;
