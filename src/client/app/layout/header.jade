@@ -1,6 +1,10 @@
 #cart.hidden.visible-lg-block
-  a(ui-sref="checkout")
-    i.fa.fa-shopping-cart
-    span
-      | {{vm.cartItems.itemsTotal}}
-    |articulos
+  div
+    a(ui-sref="checkout")
+      i.fa.fa-shopping-cart
+      span
+        | {{vm.cartItems.itemsTotal}}
+      |articulos
+  div.login-header
+    a(ui-sref="login")
+      | Iniciar sesion
