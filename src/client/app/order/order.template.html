@@ -5,67 +5,64 @@
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
     <div class="shelf-space">
       <div data-ng-hide="loading" class="shelf-content">
-        <table class="info">
-          <tbody>
-            <tr>
-              <td class="info-label">Referencia:</td>
-              <td class="info-value">{{order.referenceId}}</td>
-            </tr>
-            <tr>
-              <td class="info-label">Monto:</td>
-              <td class="info-value">{{order.amount}}</td>
-            </tr>
-            <tr>
-              <td class="info-label">Fecha:</td>
-              <td class="info-value">{{order.createdAt}}</td>
-            </tr>
-            <tr>
-              <td class="info-label">status:</td>
-              <td class="info-value">{{order.status}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="filter-title"><span class="publisher-name">Direccion de Envio</span></div>
-<div class="shelf">
-  <div class="inner-shelf">
-    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-    <div class="shelf-space">
-      <div data-ng-hide="loading" class="shelf-content">
-        <div class="description">{{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}<br/>{{order.shippingAddress.district}} {{order.shippingAddress.municipality}} <br/>{{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="filter-title"><span class="publisher-name">Metodo de Pago</span></div>
-<div class="shelf">
-  <div class="inner-shelf">
-    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-    <div class="shelf-space">
-      <div data-ng-hide="loading" class="shelf-content">
-        <table class="info">
-          <tbody>
-            <tr>
-              <td class="info-label">Nombre</td>
-              <td class="info-value">{{order.paymentMethod.name}}</td>
-            </tr>
-            <tr>
-              <td class="info-label">Emisor:</td>
-              <td class="info-value">{{order.paymentMethod.brand}}</td>
-            </tr>
-            <tr>
-              <td class="info-label">Tarjeta:</td>
-              <td class="info-value">**** **** **** {{order.paymentMethod.last4}}</td>
-            </tr>
-            <tr>
-              <td class="info-label">Tipo:</td>
-              <td class="info-value">{{order.type}}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-3 border-right">
+            <div class="information-box no-padding">
+              <div class="information-title">RESUMEN</div>
+              <table class="info">
+                <tbody>
+                  <tr>
+                    <td class="info-label">Referencia:</td>
+                    <td class="info-value">{{order.referenceId}}</td>
+                  </tr>
+                  <tr>
+                    <td class="info-label">Monto:</td>
+                    <td class="info-value">{{order.amount}}</td>
+                  </tr>
+                  <tr>
+                    <td class="info-label">Fecha:</td>
+                    <td class="info-value">{{order.createdAt}}</td>
+                  </tr>
+                  <tr>
+                    <td class="info-label">status:</td>
+                    <td class="info-value">{{order.status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-3 border-right">
+            <div class="information-box">
+              <div class="information-title">DIRECCION DE ENVIO</div>
+              <div class="description">{{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}<br/>{{order.shippingAddress.district}} {{order.shippingAddress.municipality}} <br/>{{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}</div>
+            </div>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-3">
+            <div class="information-box">
+              <div class="information-title">METODO DE PAGO</div>
+              <table class="info">
+                <tbody>
+                  <tr>
+                    <td class="info-label">Nombre</td>
+                    <td class="info-value">{{order.paymentMethod.name}}</td>
+                  </tr>
+                  <tr>
+                    <td class="info-label">Emisor:</td>
+                    <td class="info-value">{{order.paymentMethod.brand}}</td>
+                  </tr>
+                  <tr>
+                    <td class="info-label">Tarjeta:</td>
+                    <td class="info-value">**** **** **** {{order.paymentMethod.last4}}</td>
+                  </tr>
+                  <tr>
+                    <td class="info-label">Tipo:</td>
+                    <td class="info-value">{{order.type}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -92,7 +89,7 @@
             </tr>
             <tr>
               <td colspan="2"></td>
-              <td class="info-value align-center">{{order.amount}}</td>
+              <td class="info-important align-center border-top padding-top">{{order.amount}}</td>
             </tr>
           </tbody>
         </table>
