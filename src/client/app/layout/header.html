@@ -1,5 +1,5 @@
 
 <div id="cart" class="hidden visible-lg-block">
-  <div><a ui-sref="checkout"><i class="fa fa-shopping-cart"></i><span>{{vm.cartItems.itemsTotal}}</span>articulos</a></div>
-  <div class="login-header"><a ui-sref="login">Iniciar sesion</a></div>
+  <div><a data-ui-sref="checkout"><i class="fa fa-shopping-cart"></i><span>{{vm.cartItems.itemsTotal}}</span>articulos</a></div>
+  <div class="login-header"><a data-ui-sref="login" data-ng-if="!vm.currentUser">Iniciar sesion</a><a data-ng-click="logout()" data-ng-if="vm.currentUser">Cerrar Sesion</a></div>
 </div>

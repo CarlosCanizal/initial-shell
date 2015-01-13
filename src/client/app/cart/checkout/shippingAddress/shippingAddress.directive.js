@@ -28,6 +28,7 @@ function shippingAddress(userApi){
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });
+      
     }
   }
 }

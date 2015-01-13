@@ -49,15 +49,16 @@ form.pure-form.pure-form-stacked(name="addressForm", novalidate="")
             label(for="state")
               | Estado:
             select(ng-model="address.state", ng-options="item.name as item.name for item in states",data-ng-change="updateMunicipalities()")
-          .pure-control-group
-            label(for="default_{{index}}")
-              | Direccion Principal:
-            input(id="default_{{index}}", data-ng-model="address.default")
-          .pure-controls
-            a.pure-button(data-ng-click="saveAddress()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
-              span(data-ng-if="addressForm.$invalid")
-                | Campos Requeridos    
-                i.fa.fa-dot-circle-o.error
-              span(data-ng-if="addressForm.$valid")
-                i.fa.fa-thumbs-o-up
-                |     Guardar
+  .align-center.margin-bottom
+    a.pure-button(data-ng-click="saveAddress()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
+      span(data-ng-if="addressForm.$invalid")
+        | Campos Requeridos    
+        i.fa.fa-dot-circle-o.error
+      span(data-ng-if="addressForm.$valid")
+        i.fa.fa-thumbs-o-up
+        |     Guardar
+  .align-center.margin-bottom
+    a.pure-button(data-ng-click="showAddressForm(false)")
+      | Cancelar
+
+

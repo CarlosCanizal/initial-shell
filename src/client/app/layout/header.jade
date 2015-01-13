@@ -1,10 +1,12 @@
 #cart.hidden.visible-lg-block
   div
-    a(ui-sref="checkout")
+    a(data-ui-sref="checkout")
       i.fa.fa-shopping-cart
       span
         | {{vm.cartItems.itemsTotal}}
       |articulos
   div.login-header
-    a(ui-sref="login")
+    a(data-ui-sref="login", data-ng-if="!vm.currentUser")
       | Iniciar sesion
+    a(data-ng-click="logout()", data-ng-if="vm.currentUser")
+      | Cerrar Sesion

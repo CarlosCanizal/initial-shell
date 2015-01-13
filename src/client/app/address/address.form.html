@@ -42,12 +42,9 @@
           <label for="state">Estado:</label>
           <select ng-model="address.state" ng-options="item.name as item.name for item in states" data-ng-change="updateMunicipalities()"></select>
         </div>
-        <div class="pure-control-group">
-          <label for="default_{{index}}">Direccion Principal:</label>
-          <input id="default_{{index}}" data-ng-model="address.default"/>
-        </div>
-        <div class="pure-controls"><a data-ng-click="saveAddress()" data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}" class="pure-button"><span data-ng-if="addressForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="addressForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
       </ng-form>
     </div>
   </fieldset>
+  <div class="align-center margin-bottom"><a data-ng-click="saveAddress()" data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}" class="pure-button"><span data-ng-if="addressForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="addressForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
+  <div class="align-center margin-bottom"><a data-ng-click="showAddressForm(false)" class="pure-button">Cancelar</a></div>
 </form>

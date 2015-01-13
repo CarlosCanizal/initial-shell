@@ -19,6 +19,9 @@ form#card-form.pure-form.pure-form-aligned(name="cardForm", novalidate)
       span.
         /
       input.small-input(name="expMonth", type="text", size="4", data-ng-model="card.exp_year")
-    .pure-controls
-      a.pure-button.pure-button-primary(data-ng-click="saveCard()").
-        Guardar Tarjeta
+  .align-center.margin-bottom
+    a.pure-button.pure-button-primary(data-ng-click="saveCard()")
+      | Guardar Tarjeta
+  .align-center.margin-bottom
+    a.pure-button(data-ng-click="showCardForm(false)")
+      | Cancelar
