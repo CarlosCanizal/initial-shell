@@ -33,7 +33,10 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     })
     .state('dashboard',{
       url:'/dashboard',
-      templateUrl: 'app/dashboard/dashboard.template.html'
+      templateUrl: 'app/dashboard/dashboard.template.html',
+      data:{
+        access: true
+      }
     })
     .state('dashboard.cards',{
       url:'/cards',
