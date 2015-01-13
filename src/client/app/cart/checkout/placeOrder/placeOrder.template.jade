@@ -12,9 +12,9 @@
           .pure-g
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.no-padding
-                .subtitle
+                .information-title
                   | Envio:
-                address.margin-bottom
+                .description.margin-bottom
                   | {{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}
                   br
                   | Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} 
@@ -26,7 +26,7 @@
 
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box
-                .subtitle
+                .information-title
                   | Metodo de pago:
                 .address-line
                   | {{shoppingCart.paymentMethod.card.name}}
@@ -51,7 +51,7 @@
                 .address-line.no-padding
                   a.pure-button(data-ng-click="goToCart()", data-ng-hide="showConfirmation")
                     i.fa.fa-shopping-cart
-                    | Volver al carrito
+                    | Ir al carrito
 #orderStatus(data-ng-show="showConfirmation || completed")
   .filter-title
     span.publisher-name.
@@ -69,4 +69,9 @@
             i.fa.fa-credit-card.fa-8
             h2
               | {{errorMessage}}
+            .address-line.no-padding
+              a.pure-button.pure-button-primary(data-ng-click="changePaymentMethod()")
+                i.fa.fa-shopping-cart
+                  | Cambiar metodo de Pago
+
   div(data-ng-include="'app/order/order.template.html'", data-ng-if="completed")

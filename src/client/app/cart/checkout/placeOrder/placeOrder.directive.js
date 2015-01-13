@@ -19,6 +19,11 @@ function placeOrder(userApi, ShoppingCart){
         scope.waitingForResponse = true;
         scope.order = {}
 
+        scope.changePaymentMethod = function(){
+          scope.showConfirmation = false;
+          scope.toPaymentMethod();
+        }
+
         userApi.chargeCard(cart, user).then(function(result){
           scope.order = result.result;
           console.log(scope.order);

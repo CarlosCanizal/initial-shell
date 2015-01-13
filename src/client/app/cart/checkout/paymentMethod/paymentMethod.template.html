@@ -44,7 +44,12 @@
                 <div class="address-line"><a data-ng-click="cardFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Tarjeta</a></div>
               </div>
             </div>
-            <div class="pure-u-1 pure-u-md-1-3 align-center"><a data-ng-click="toConfirmOrder()" data-ng-hide="showPlaceOrder" data-ng-class="{'pure-button-disabled':!shoppingCart.paymentMethod}" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a></div>
+            <div class="pure-u-1 pure-u-md-1-3 align-center">
+              <div data-ng-hide="showPlaceOrder">
+                <div class="address-line"><a data-ng-click="toConfirmOrder()" data-ng-class="{'pure-button-disabled':!shoppingCart.paymentMethod}" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a></div>
+                <div class="address-line no-padding"><a data-ng-click="goToCart()" data-ng-hide="showConfirmation" class="pure-button"><i class="fa fa-shopping-cart">Ir al carrito</i></a></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

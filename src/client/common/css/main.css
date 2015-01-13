@@ -391,26 +391,27 @@ a:hover, a:active, a:focus {
 .information-title {
   padding-bottom: 0.5rem;
   font-style: italic;
+  text-transform: uppercase;
   color: orange; }
 
-/* line 336, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 337, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info th {
   padding: 1rem; }
 
-/* line 339, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 340, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-label {
   text-align: right;
   padding-right: 1rem; }
 
-/* line 343, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 344, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-value {
   font-family: Helvetica; }
 
-/* line 346, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 347, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-important {
   font-family: Helvetica;
   font-weight: bold; }
 
-/* line 351, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 352, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
   font-family: 'Raleway'; }
