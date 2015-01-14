@@ -10,7 +10,7 @@
       | COMICS'
     .logo-h1
       | SOCIETY
-nav.side-menu.hidden.visible-lg-block
+nav.side-menu.hidden.visible-lg-block(data-ng-if="!vm.isDashboard")
   a(ui-sref="about")
     | ¿Comó funciona?
   a(ui-sref="home")
@@ -19,6 +19,20 @@ nav.side-menu.hidden.visible-lg-block
     | Suscripciones
   a(ui-sref="login")
     | Mi Cuenta
+  a(ng-click="logout()",data-ng-if="vm.currentUser")
+    | Salir
+  span
+    a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
+      i.fa.fa-facebook
+     a.social(href="https://twitter.com/thecomicsociety", target="_blank")
+      i.fa.fa-twitter
+nav.side-menu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
+  a(ui-sref="dashboard.profile")
+    | Mi cuenta
+  a(ui-sref="dashboard.orders")
+    | Mis Ordernes
+  a(ui-sref="suscribe")
+    | Mis Suscripciones
   a(ng-click="logout()",data-ng-if="vm.currentUser")
     | Salir
   span

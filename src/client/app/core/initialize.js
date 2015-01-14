@@ -10,6 +10,12 @@ function run($rootScope, $state, userApi) {
       event.preventDefault();
       $state.go('login');
     }
+
+    if(toState.name == "login" && userApi.currentUser()){
+      event.preventDefault();
+      $state.go('dashboard.orders');
+    }
+
   });
 }
 

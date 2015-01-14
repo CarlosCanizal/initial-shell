@@ -16,6 +16,12 @@
     vm.cartItems = ShoppingCart.getTotal();
     vm.currentUser  = userApi.currentUser();
     vm.loading = false;
+    vm.isDashboard = false;
+
+    $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
+      vm.isDashboard = toState.data && toState.data.dashboard ? true : false;
+    });
+
 
     $scope.setLoading = function(loading){
       vm.loading = loading;

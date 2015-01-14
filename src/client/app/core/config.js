@@ -35,7 +35,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/dashboard',
       templateUrl: 'app/dashboard/dashboard.template.html',
       data:{
-        access: true
+        access: true,
+        dashboard: true
       }
     })
     .state('dashboard.cards',{
@@ -46,7 +47,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.address',{
       url:'/address',
       templateUrl:'app/address/address.template.html',
-      controller: 'Address'
+      controller: 'Address',
     })
     .state('dashboard.profile',{
       url:'/profile',

@@ -7,8 +7,6 @@
 
   Address.$inject = ['$scope','userApi', 'sepomexAPI'];
 
-
-
   function Address($scope, userApi, sepomexAPI) {
 
     $scope.currentUser = $scope.getCurrentUser();
@@ -32,7 +30,6 @@
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       })
     }
-
 
     //refactorizar con direcative en shipping address
     $scope.showAddressForm = function(show){
