@@ -9,13 +9,12 @@
 
   function Account($scope, $state,userApi, conekta) {
 
-    $scope.currentUser = userApi.currentUser();
+    // $scope.currentUser = userApi.currentUser();
     
-    $scope.updateMembership = function(membership){
-      conekta.updateMembership('plan_ZugGjbdHj9qHCvcG','card_rMVp9GoeqJ7w4Kqn').then(function(user){
-        // console.log(user);
-        // $scope.updateCurrentUser();
-        // $scope.currentUser = user;
+    $scope.updateMembership = function(name){
+      conekta.updateMembership({name:name,id:'plan_ZugGjbdHj9qHCvcG'},'card_rMVp9GoeqJ7w4Kqn').then(function(user){
+        console.log(user);
+        $scope.updateCurrentUser();
       },function(error){
         console.log(error);
       });

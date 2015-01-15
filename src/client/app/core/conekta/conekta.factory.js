@@ -22,23 +22,11 @@
 
     function updateMembership(membership, card){
 
-      var deferred = $q.defer();
       var user =  userApi.currentUser();
-
-      subscribe(membership, card).then(function(result){
-        deferred.resolve(result);
-      },function(error){
-        deferred.reject(error);
+      return subscribe(membership.id, card).then(function(){
+        return userApi.saveProfile({membership: membership.name, objectId: user.objectId});
       });
-
-      // userApi.saveProfile({membership: membership, objectId: user.objectId}).then(function(result){
-      //   deferred.resolve(result);
-      // },function(error){
-      //   console.error(error);
-      //   deferred.reject(error);
-      // });
-
-      return deferred.promise;
+      
     }
 
     function subscribe(plan, card){
