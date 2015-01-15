@@ -11,22 +11,32 @@
   function conekta(userApi, $q, parseheaders) {
 
     var conketaPublicKey = "key_LDjQwU7xkazYxSRSoW7XWfQ";
+    var  Conekta  = parse.newCloudCodeResource(parseheaders.storeKeys);
 
     return conekta = {
       saveCard : saveCard,
-      deleteCard : deleteCard
+      deleteCard : deleteCard,
+      updateMembership: updateMembership
     }
 
-    // var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
+    function updateMembership(membership){
 
-    // function chargeCard(order, user){
-    //   var params = {
-    //     order: order,
-    //     user: user,
-    //     function: 'chargeCard'
-    //   }
-    //   return Card.save(params).$promise;
-    // }
+      var deferred = $q.defer();
+
+      var user =  userApi.currentUser();
+      userApi.saveProfile({membership: membership, objectId: user.objectId}).then(function(result){
+        deferred.resolve(result);
+      },function(error){
+        console.error(error);
+        deferred.reject(error);
+      })
+
+      return deferred.promise;
+    }
+
+    function suscribe(plan){
+
+    }
 
     function deleteCard(conektaId, cardId){
       return userApi.deleteCard({conektaId:conektaId,cardId:cardId});

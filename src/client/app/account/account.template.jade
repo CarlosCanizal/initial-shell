@@ -1,2 +1,22 @@
-h1
-  | Account
+.section-title
+  | Membrecia
+.filter-title
+  span.publisher-name.
+    Mi Membrecia
+.shelf
+  .inner-shelf
+    .shelf-space
+      div
+        | {{currentUser.membership}}
+.filter-title
+  span.publisher-name.
+    Actualiza Membrecia
+.shelf
+  .inner-shelf
+    .shelf-space
+      div(data-ng-if="currentUser.membership  == 'regular'")
+        a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
+          | Actualizar a PRO
+      div(data-ng-if="currentUser.membership  == 'pro'")
+        a.pure-button.pure-button-primary(data-ng-click="updateMembership('regular')")
+          | Cancelar Membrecia

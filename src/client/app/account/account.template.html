@@ -1,2 +1,19 @@
 
-<h1>Account</h1>
+<div class="section-title">Membrecia</div>
+<div class="filter-title"><span class="publisher-name">Mi Membrecia</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div>{{currentUser.membership}}</div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Actualiza Membrecia</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-if="currentUser.membership  == 'regular'"><a data-ng-click="updateMembership('pro')" class="pure-button pure-button-primary">Actualizar a PRO</a></div>
+      <div data-ng-if="currentUser.membership  == 'pro'"><a data-ng-click="updateMembership('regular')" class="pure-button pure-button-primary">Cancelar Membrecia</a></div>
+    </div>
+  </div>
+</div>
