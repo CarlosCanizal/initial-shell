@@ -44,6 +44,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl:'app/card/card.template.html',
       controller: 'Card'
     })
+    .state('dashboard.account',{
+      url:'/account',
+      templateUrl:'app/account/account.template.html',
+      controller: 'Account'
+    })
     .state('dashboard.address',{
       url:'/address',
       templateUrl:'app/address/address.template.html',
