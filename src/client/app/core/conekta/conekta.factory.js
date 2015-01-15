@@ -5,10 +5,10 @@
   .module('app.core')
   .factory('conekta', conekta);
 
-  conekta.$inject = ['userApi','$q','parseheaders'];
+  conekta.$inject = ['userApi','$q', 'parse','parseheaders'];
 
   /* @ngInject */
-  function conekta(userApi, $q, parseheaders) {
+  function conekta(userApi, $q, parse, parseheaders) {
 
     var conketaPublicKey = "key_LDjQwU7xkazYxSRSoW7XWfQ";
     var  Conekta  = parse.newCloudCodeResource(parseheaders.storeKeys);
@@ -16,26 +16,36 @@
     return conekta = {
       saveCard : saveCard,
       deleteCard : deleteCard,
-      updateMembership: updateMembership
+      updateMembership: updateMembership,
+      subcribe: subscribe
     }
 
-    function updateMembership(membership){
+    function updateMembership(membership, card){
 
       var deferred = $q.defer();
-
       var user =  userApi.currentUser();
-      userApi.saveProfile({membership: membership, objectId: user.objectId}).then(function(result){
+
+      subscribe(membership, card).then(function(result){
         deferred.resolve(result);
       },function(error){
-        console.error(error);
         deferred.reject(error);
-      })
+      });
+
+      // userApi.saveProfile({membership: membership, objectId: user.objectId}).then(function(result){
+      //   deferred.resolve(result);
+      // },function(error){
+      //   console.error(error);
+      //   deferred.reject(error);
+      // });
 
       return deferred.promise;
     }
 
-    function suscribe(plan){
-
+    function subscribe(plan, card){
+      var conektaId = userApi.currentUser().conektaId;
+      var params = {plan: plan, card: card, conektaId: conektaId, "function":"subscribe"}
+      console.log(params);
+      return Conekta.save(params).$promise;
     }
 
     function deleteCard(conektaId, cardId){

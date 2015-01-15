@@ -12,9 +12,10 @@
     $scope.currentUser = userApi.currentUser();
     
     $scope.updateMembership = function(membership){
-      conekta.updateMembership(membership).then(function(user){
-        $scope.updateCurrentUser();
-        $scope.currentUser = user;
+      conekta.updateMembership('plan_ZugGjbdHj9qHCvcG','card_rMVp9GoeqJ7w4Kqn').then(function(user){
+        // console.log(user);
+        // $scope.updateCurrentUser();
+        // $scope.currentUser = user;
       },function(error){
         console.log(error);
       });
