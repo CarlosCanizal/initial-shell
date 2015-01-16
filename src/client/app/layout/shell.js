@@ -20,6 +20,8 @@
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       vm.isDashboard = toState.data && toState.data.dashboard ? true : false;
+      if(toState.data)
+        vm.active = toState.data.section;
     });
 
 

@@ -42,22 +42,34 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.cards',{
       url:'/cards',
       templateUrl:'app/card/card.template.html',
-      controller: 'Card'
+      controller: 'Card',
+      data:{
+        section: 'account'
+      }
     })
     .state('dashboard.account',{
       url:'/account',
       templateUrl:'app/account/account.template.html',
-      controller: 'Account'
+      controller: 'Account',
+      data:{
+        section: 'account'
+      }
     })
     .state('dashboard.address',{
       url:'/address',
       templateUrl:'app/address/address.template.html',
       controller: 'Address',
+      data:{
+        section: 'account'
+      }
     })
     .state('dashboard.profile',{
       url:'/profile',
       templateUrl:'app/profile/profile.template.html',
-      controller: 'Profile'
+      controller: 'Profile',
+      data:{
+        section: 'account'
+      }
     })
     .state('dashboard.order',{
       url:'/orders/:objectId',

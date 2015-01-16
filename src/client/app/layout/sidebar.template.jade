@@ -27,7 +27,7 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="!vm.isDashboard")
      a.social(href="https://twitter.com/thecomicsociety", target="_blank")
       i.fa.fa-twitter
 nav.side-menu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
-  a(ui-sref="dashboard.profile")
+  a(ui-sref="dashboard.account", data-ng-class="{'active': vm.active == 'account'}")
     | Mi cuenta
   a(ui-sref="dashboard.orders")
     | Mis Ordernes

@@ -49,6 +49,10 @@
   font-size: 1.2rem;
   border-bottom: 1px solid #999; }
 /* line 46, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+#left-pane nav .active {
+  color: #000;
+  border-color: #000; }
+/* line 49, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 #left-pane nav .social {
   text: align-center;
   margin: 0 0.5rem;
@@ -59,6 +63,6 @@
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   color: #FFF; }
-  /* line 56, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+  /* line 59, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
   #left-pane nav .social:hover {
     background-color: black; }
