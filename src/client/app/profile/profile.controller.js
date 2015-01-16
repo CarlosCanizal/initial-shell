@@ -12,14 +12,14 @@
     $scope.user = $scope.getCurrentUser();
 
     $scope.saveProfile = function(){
-      $scope.setLoading(true);
+      $scope.showLoading();
       var sessionToken = $scope.user.sessionToken;
       userApi.saveProfile($scope.user).then(function(user){
         $scope.setLoading(false);
         $scope.updateCurrentUser();
       },function(error){
         console.error(error);
-      });
+      }).finally($scope.hideLoading);
     }
     
   }
