@@ -44,7 +44,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl:'app/card/card.template.html',
       controller: 'Card',
       data:{
-        section: 'account'
+        menu: 'account',
+        submenu: 'cards'
       }
     })
     .state('dashboard.account',{
@@ -52,7 +53,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl:'app/account/account.template.html',
       controller: 'Account',
       data:{
-        section: 'account'
+        menu: 'account',
+        submenu: 'account'
       }
     })
     .state('dashboard.address',{
@@ -60,7 +62,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl:'app/address/address.template.html',
       controller: 'Address',
       data:{
-        section: 'account'
+        menu: 'account',
+        submenu: 'address'
       }
     })
     .state('dashboard.profile',{
@@ -68,7 +71,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl:'app/profile/profile.template.html',
       controller: 'Profile',
       data:{
-        section: 'account'
+        menu: 'account',
+        submenu: 'profile'
       }
     })
     .state('dashboard.order',{

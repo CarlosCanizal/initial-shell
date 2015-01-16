@@ -2,11 +2,11 @@
   | Mi Cuenta
 #submenu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
   nav
-    a(data-ui-sref="dashboard.account")
+    a(data-ui-sref="dashboard.account", data-ng-class="{'active':vm.submenu == 'account'}")
       |Membresia
-    a(data-ui-sref="dashboard.profile")
+    a(data-ui-sref="dashboard.profile", data-ng-class="{'active':vm.submenu == 'profile'}")
       |Perfil
-    a(data-ui-sref="dashboard.address")
+    a(data-ui-sref="dashboard.address", data-ng-class="{'active':vm.submenu == 'address'}")
       |Direccion
-    a(data-ui-sref="dashboard.cards")
+    a(data-ui-sref="dashboard.cards", data-ng-class="{'active':vm.submenu == 'cards'}")
       |Tarjetas
