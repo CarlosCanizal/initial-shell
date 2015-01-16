@@ -416,6 +416,20 @@ a:hover, a:active, a:focus {
   font-family: Helvetica;
   font-weight: bold; }
 
-/* line 357, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 356, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+#submenu {
+  text-align: right; }
+  /* line 358, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  #submenu nav {
+    margin: 1rem 0; }
+    /* line 360, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    #submenu nav a {
+      padding: 0 1rem;
+      color: #999;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-right: solid 1px #CCC; }
+
+/* line 368, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
   font-family: 'Raleway'; }

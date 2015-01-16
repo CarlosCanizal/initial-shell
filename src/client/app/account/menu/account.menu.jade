@@ -1,0 +1,12 @@
+.section-title
+  | Mi Cuenta
+#submenu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
+  nav
+    a(data-ui-sref="dashboard.account")
+      |Membresia
+    a(data-ui-sref="dashboard.profile")
+      |Perfil
+    a(data-ui-sref="dashboard.address")
+      |Direccion
+    a(data-ui-sref="dashboard.cards")
+      |Tarjetas
