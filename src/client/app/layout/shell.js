@@ -24,9 +24,17 @@
       vm.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });
 
-
+    //si no se usa quitar
     $scope.setLoading = function(loading){
       vm.loading = loading;
+    }
+
+    $scope.showLoading = function(){
+      vm.loading = true;
+    }
+
+    $scope.hideLoading = function(){
+      vm.loading = false;
     }
 
     $scope.setCurrentUser = function(user){

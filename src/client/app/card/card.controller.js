@@ -25,9 +25,11 @@
     });
 
     $scope.deleteCard = function(index){
+      $scope.setLoading(true);
       var cardId= $scope.cards[index].card.id
       conekta.deleteCard($scope.currentUser.conektaId, cardId).then(function(){
         $scope.cards.splice(index, 1);
+        $scope.setLoading(false);
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });

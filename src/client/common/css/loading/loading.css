@@ -14,12 +14,13 @@
   width: 100px;
   height: 100px;
   position: relative;
+  top: 35%;
   text-align: center;
   -webkit-animation: rotate 2s infinite linear;
   -webkit-animation: rotate 2s infinite linear;
   animation: rotate 2s infinite linear; }
 
-/* line 23, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 24, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .dot1, .dot2 {
   width: 60%;
   height: 60%;
@@ -31,7 +32,7 @@
   -webkit-animation: bounce 2s infinite ease-in-out;
   animation: bounce 2s infinite ease-in-out; }
 
-/* line 34, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 35, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .dot2 {
   top: auto;
   bottom: 0px;
@@ -39,49 +40,49 @@
   -webkit-animation-delay: -1s; }
 
 @-webkit-keyframes rotate {
-  /* line 41, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 42, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   100% {
     -webkit-transform: rotate(360deg); } }
 
 @keyframes rotate {
-  /* line 41, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 42, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   100% {
     -webkit-transform: rotate(360deg); } }
 
 @keyframes rotate {
-  /* line 45, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 46, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   100% {
     -webkit-transform: rotate(360deg);
     -webkit-transform: rotate(360deg); } }
 
 @-webkit-keyframes bounce {
-  /* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 51, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   0%, 100% {
     -webkit-transform: scale(0); }
 
-  /* line 52, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 53, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   50% {
     -webkit-transform: scale(1); } }
 
 @keyframes bounce {
-  /* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 51, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   0%, 100% {
     -webkit-transform: scale(0); }
 
-  /* line 52, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 53, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   50% {
     -webkit-transform: scale(1); } }
 
 @keyframes bounce {
   -webkit-transform: scale(1);
   -webkit-transform: scale(1);
-  /* line 56, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 57, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   0%, 100% {
     -webkit-transform: scale(0);
     -webkit-transform: scale(0); }
  }
 
-/* line 66, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 67, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .spinner-rectangle {
   margin: 20px auto;
   width: 50px;
@@ -89,7 +90,7 @@
   text-align: center;
   font-size: 10px; }
 
-/* line 73, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 74, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .spinner-rectangle > div {
   background-color: #666;
   height: 100%;
@@ -98,44 +99,44 @@
   -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
   animation: stretchdelay 1.2s infinite ease-in-out; }
 
-/* line 81, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 82, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .spinner-rectangle .rect2 {
   -webkit-animation-delay: -1.1s;
   animation-delay: -1.1s; }
 
-/* line 85, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 86, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .spinner-rectangle .rect3 {
   -webkit-animation-delay: -1s;
   animation-delay: -1s; }
 
-/* line 89, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 90, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .spinner-rectangle .rect4 {
   -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s; }
 
-/* line 93, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+/* line 94, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
 .spinner-rectangle .rect5 {
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s; }
 
 @-webkit-keyframes stretchdelay {
-  /* line 98, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 99, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   0%, 40%, 100% {
     transform: scaleY(0.4);
     -webkit-transform: scaleY(0.4); }
 
-  /* line 101, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 102, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   20% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }
 
 @keyframes stretchdelay {
-  /* line 98, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 99, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   0%, 40%, 100% {
     transform: scaleY(0.4);
     -webkit-transform: scaleY(0.4); }
 
-  /* line 101, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  /* line 102, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
   20% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }

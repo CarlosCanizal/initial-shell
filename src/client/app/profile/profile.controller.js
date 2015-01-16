@@ -10,13 +10,12 @@
   function Profile($scope, userApi) {
 
     $scope.user = $scope.getCurrentUser();
-    console.log($scope.user);
 
     $scope.saveProfile = function(){
-      console.log($scope.user.objectId);
+      $scope.setLoading(true);
       var sessionToken = $scope.user.sessionToken;
       userApi.saveProfile($scope.user).then(function(user){
-        console.log(user);
+        $scope.setLoading(false);
         $scope.updateCurrentUser();
       },function(error){
         console.error(error);
