@@ -13,7 +13,7 @@ function run($rootScope, $state, userApi) {
 
     if(toState.name == "login" && userApi.currentUser()){
       event.preventDefault();
-      $state.go('dashboard.orders');
+      $state.go('dashboard.account');
     }
 
   });

@@ -11,7 +11,7 @@
   function conekta(userApi, $q, parse, parseheaders) {
 
     var conketaPublicKey = "key_LDjQwU7xkazYxSRSoW7XWfQ";
-    var  Conekta  = parse.newCloudCodeResource(parseheaders.storeKeys);
+    var  conektaResource  = parse.newCloudCodeResource(parseheaders.storeKeys);
 
     return conekta = {
       saveCard : saveCard,
@@ -33,7 +33,7 @@
       var conektaId = userApi.currentUser().conektaId;
       var params = {plan: plan, card: card, conektaId: conektaId, "function":"subscribe"}
       console.log(params);
-      return Conekta.save(params).$promise;
+      return conektaResource.save(params).$promise;
     }
 
     function deleteCard(conektaId, cardId){
