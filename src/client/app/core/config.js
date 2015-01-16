@@ -78,12 +78,22 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.order',{
       url:'/orders/:objectId',
       templateUrl:'app/order/order.template.html',
-      controller: 'Order'
+      controller: 'Order',
+      data:{
+        menu: 'orders',
+        submenu: 'order'
+
+      }
     })
     .state('dashboard.orders',{
       url:'/orders',
       templateUrl:'app/order/orders.template.html',
-      controller: 'Orders'
+      controller: 'Orders',
+      data:{
+        menu: 'orders',
+        submenu: 'orders'
+
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

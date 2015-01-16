@@ -1,0 +1,7 @@
+.section-title
+  | Mis Ordenes
+#submenu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
+  nav
+    a(data-ui-sref="dashboard.orders", data-ng-class="{'active':vm.submenu == 'orders'}")
+      |Ordenes
+    
