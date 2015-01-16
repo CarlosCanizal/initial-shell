@@ -25,9 +25,9 @@
     });
 
     //si no se usa quitar
-    $scope.setLoading = function(loading){
-      vm.loading = loading;
-    }
+    // $scope.setLoading = function(loading){
+    //   vm.loading = loading;
+    // }
 
     $scope.showLoading = function(){
       vm.loading = true;

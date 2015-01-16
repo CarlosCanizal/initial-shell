@@ -18,7 +18,7 @@ function cardForm(userApi, conekta){
                    };
 
       scope.saveCard = function(){
-        scope.setLoading(true);
+        scope.showLoading();
         conekta.saveCard(scope.currentUser.conektaId,scope.card).then(function(card){
           var newCard = {type:'card', card:card};
           if(scope.cards)
@@ -27,7 +27,6 @@ function cardForm(userApi, conekta){
             scope.shoppingCart.paymentMethod = newCard;
 
           scope.showCardForm(false);
-          scope.setLoading(false);
 
           console.log(scope.cards);
         },function(error){
@@ -35,7 +34,7 @@ function cardForm(userApi, conekta){
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
           else
             console.error(error);
-        });
+        }).finally(scope.hideLoading);
       };
     }
   }

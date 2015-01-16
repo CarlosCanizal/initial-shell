@@ -91,7 +91,7 @@ function newAddress(userApi, sepomexAPI){
 
       scope.saveAddress = function(){
         if(scope.addressForm.$valid){
-          scope.setLoading(true);
+          scope.showLoading();
           scope.address.user = {"__type":"Pointer",className:"_User","objectId":scope.currentUser.objectId}
           userApi.saveAddress(scope.address).then(function(address){
             console.log(address);
@@ -103,10 +103,9 @@ function newAddress(userApi, sepomexAPI){
             scope.address = {};
             scope.addressForm.$setPristine();
             scope.showAddressForm(false);
-            scope.setLoading(false);
           },function(error){
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-          });
+          }).finally(scope.hideLoading);
         }
       }
       

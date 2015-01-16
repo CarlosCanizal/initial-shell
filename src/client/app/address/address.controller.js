@@ -24,14 +24,13 @@
     });
 
     $scope.deleteAddress = function(objectId, index){
-      $scope.setLoading(true);
+      $scope.showLoading()
       userApi.deleteAddress(objectId).then(function(response){
         console.log(response);
         $scope.addresses.splice(index,1);
-        $scope.setLoading(false);
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-      })
+      }).finally($scope.hideLoading)
     }
 
     //refactorizar con direcative en shipping address
