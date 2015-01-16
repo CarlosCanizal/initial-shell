@@ -10,7 +10,7 @@
         .shelf-message(ng-if="orders.length < 1")
           .subtitle
             |No existen ordenes registradas.
-        .list-item(ng-repeat="item in orders")
+        .list-item(ng-repeat="item in orders", data-ui-sref="dashboard.order({objectId : item.objectId})")
           .pure-g
             .pure-u-1.pure-u-md-1-5
               | REFERENCIA
@@ -24,8 +24,7 @@
               | TIPO
           .pure-g
             .pure-u-1.pure-u-md-1-5
-              a.pure-button(data-ui-sref="dashboard.order({objectId : item.objectId})")
-                | {{item.referenceId}}
+              | {{item.referenceId}}
             .pure-u-1.pure-u-md-1-5
               | {{item.createdAt}}
             .pure-u-1.pure-u-md-1-5
