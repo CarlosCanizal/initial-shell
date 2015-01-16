@@ -14,9 +14,9 @@
 .shelf
   .inner-shelf
     .shelf-space
-      div(data-ng-if="vm.currentUser.membership  == 'regular'")
+      div(data-ng-if="vm.currentUser.membership  == 'basic'")
         a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
           | Actualizar a PRO
       div(data-ng-if="vm.currentUser.membership  == 'pro'")
-        a.pure-button.pure-button-primary(data-ng-click="updateMembership('regular')")
+        a.pure-button.pure-button-primary(data-ng-click="updateMembership('basic')")
           | Cancelar Membrecia

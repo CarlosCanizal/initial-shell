@@ -13,7 +13,7 @@
 
     $scope.setUser = function(user){
       $scope.setCurrentUser(user);
-      $state.go('dashboard.cards');
+      $state.go('dashboard.account');
     }
     
   }
