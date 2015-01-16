@@ -14,9 +14,11 @@
 
     $scope.cards = [];
     $scope.cardFormView  = false;
+    $scope.loading = true;
 
     userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
         console.log(cards);
+        $scope.loading = false;
         $scope.cards = cards;
     },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
