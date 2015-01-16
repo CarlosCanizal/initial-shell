@@ -4,18 +4,21 @@
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
-      <div ng-if="addresses.length &lt; 1" class="shelf-message">
-        <div class="subtitle">No existen direcciones registradas.</div>
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div id="address-list" data-ng-hide="loading"> 
+        <div ng-if="addresses.length &lt; 1" class="shelf-message">
+          <div class="subtitle">No existen direcciones registradas.</div>
+        </div>
+        <div ng-repeat="address in addresses" class="address-item">
+          <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
+          <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
+          <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>
+          <div class="address-line"><a class="pure-button pure-button-primary button-small"><i class="fa fa-edit"></i>Editar</a><a ng-click="deleteAddress(address.objectId, $index)" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a></div>
+        </div>
+        <div class="buttons-container"><a ng-click="addressFormView = true"><i class="fa fa-plus-circle fa-4x"></i></a>
+          <div>Agregar Dirección</div>
+        </div>
       </div>
-      <div ng-repeat="address in addresses" class="address-item">
-        <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
-        <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
-        <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>
-        <div class="address-line"><a class="pure-button pure-button-primary button-small"><i class="fa fa-edit"></i>Editar</a><a ng-click="deleteAddress(address.objectId, $index)" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a></div>
-      </div>
-    </div>
-    <div class="buttons-container"><a ng-click="addressFormView = true"><i class="fa fa-plus-circle fa-4x"></i></a>
-      <div>Agregar Dirección</div>
     </div>
   </div>
 </div>

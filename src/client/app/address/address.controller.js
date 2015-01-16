@@ -13,10 +13,12 @@
     $scope.address = {};
     $scope.addresses = [];
     $scope.addressFormView = false;
+    $scope.loading = true;
 
 
     userApi.getAddresses($scope.currentUser.objectId).then(function(addresses){
       $scope.addresses =  addresses.results;
+      $scope.loading = false;
     },function(error){
       console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
     });
