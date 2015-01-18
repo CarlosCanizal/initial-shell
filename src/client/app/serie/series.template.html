@@ -1,2 +1,15 @@
 
-<h1>Series</h1>
+<div id="series-menu" data-ng-include="'app/serie/menu/serie.menu.html'"></div>
+<div class="filter-title"><span class="publisher-name">Mis Series</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+    <div data-ng-hide="loading" class="shelf-space">
+      <div data-ng-hide="loading" class="shelf-content">
+        <div ng-if="series.length &lt; 1" class="shelf-message">
+          <div class="subtitle">No existen series registradas.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
