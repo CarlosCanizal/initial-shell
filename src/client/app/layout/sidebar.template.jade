@@ -31,7 +31,7 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
     | Mi cuenta
   a(ui-sref="dashboard.orders", data-ng-class="{'active': vm.menu == 'orders'}")
     | Mis Ordernes
-  a(ui-sref="suscribe")
+  a(ui-sref="dashboard.series", data-ng-class="{'active': vm.menu == 'series'}")
     | Mis Suscripciones
   a(ng-click="logout()",data-ng-if="vm.currentUser")
     | Salir
