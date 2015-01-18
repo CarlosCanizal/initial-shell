@@ -5,11 +5,21 @@
   .module('app.dashboard')
   .controller('Series', Series);
 
-  Series.$inject = ['$scope'];
+  Series.$inject = ['$scope', 'subscriptionApi'];
 
-  function Series($scope) {
+  function Series($scope, subscriptionApi) {
 
-    
+    $scope.series = [];
+    $scope.loading =  true;
+
+    subscriptionApi.getSubscriptions().then(function(result){
+      $scope.series = result.results;
+      $scope.loading =  false;
+    },function(error){
+      console.error(error);
+    });
+
+
 
   }
 
