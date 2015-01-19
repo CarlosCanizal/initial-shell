@@ -84,6 +84,15 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'series'
       }
     })
+    .state('dashboard.serie',{
+      url:'/series/:objectId',
+      templateUrl:'app/serie/serie.template.html',
+      controller: 'Serie',
+      data:{
+        menu: 'series',
+        submenu: 'serie'
+      }
+    })
     .state('dashboard.order',{
       url:'/orders/:objectId',
       templateUrl:'app/order/order.template.html',

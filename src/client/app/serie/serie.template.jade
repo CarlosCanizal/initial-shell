@@ -1,0 +1,10 @@
+#series-menu(data-ng-include="'app/serie/menu/serie.menu.html'")
+.filter-title
+  span.publisher-name.
+    Mis Series
+.shelf
+  .inner-shelf
+    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+    .shelf-content(data-ng-hide="loading").
+      Serie
+          
