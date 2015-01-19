@@ -86,10 +86,11 @@
                                              stock: item.stock
                                             });
     }
+
+    // $scope.setCartItems  = function(cartItems){
+    //   vm.cartItems = cartItems;
+    // }
     
-    $scope.removeFromCart = function(index){
-      vm.cartItems = ShoppingCart.removeItem(index);
-    }
   }
 
 })();

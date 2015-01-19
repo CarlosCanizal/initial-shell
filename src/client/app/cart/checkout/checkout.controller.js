@@ -38,11 +38,13 @@
     }
 
     $scope.toPaymentMethod = function(){
+      ShoppingCart.setCart($scope.shoppingCart);
       $scope.showPayment = true;
       $scope.showPlaceOrder = false;
     }
 
     $scope.toConfirmOrder = function(){
+      ShoppingCart.setCart($scope.shoppingCart);
       $scope.showPlaceOrder = true;
     }
 
@@ -66,6 +68,14 @@
       $scope.setCurrentUser(user);
       $scope.currentUser= user;
       $scope.showAddress = true;
+    }
+
+    $scope.removeFromCart = function(index){
+      alert();
+      $scope.vm.cartItems = ShoppingCart.removeItem(index);
+      $scope.shoppingCart.items  = $scope.vm.cartItems.items;
+      console.log($scope.shoppingCart.items);
+      ShoppingCart.setCart($scope.shoppingCart);
     }
 
     function emptyCart(){
