@@ -4,18 +4,16 @@
 <div class="shelf">
   <div class="inner-shelf">
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-    <div data-ng-hide="loading" class="shelf-space">
-      <div data-ng-hide="loading" class="shelf-content">
-        <div ng-if="series.length &lt; 1" class="shelf-message">
-          <div class="subtitle">No existen series registradas.</div>
-        </div>
-        <div data-ng-repeat="item in series" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
-          <div class="item">
-            <div class="item-image"><img alt="" ng-src="{{item.serie.cover.url}}"/></div>
-            <div class="item-info">{{item.serie.name}}</div>
-            <div class="item-info">{{item.serie.price}} USD</div>
-            <div class="item-button"><a class="pure-button pure-button-primary">Cancelar</a></div>
-          </div>
+    <div data-ng-hide="loading" class="shelf-content">
+      <div ng-if="series.length &lt; 1" class="shelf-message">
+        <div class="subtitle">No existen series registradas.</div>
+      </div>
+      <div data-ng-repeat="item in series" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
+        <div class="item">
+          <div class="item-image"><img alt="" ng-src="{{item.serie.cover.url}}"/></div>
+          <div class="item-info">{{item.serie.name}}</div>
+          <div class="item-info">{{item.serie.price}} USD</div>
+          <div class="item-button"><a class="pure-button pure-button-primary">Cancelar</a></div>
         </div>
       </div>
     </div>
