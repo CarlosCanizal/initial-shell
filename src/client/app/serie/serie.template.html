@@ -13,11 +13,14 @@
         </div>
         <div class="pure-u-1 pure-u-md-2-3">
           <div class="item">
-            <div>{{serie.name}}</div>
-            <div>{{subscription.status}}</div>
-            <div data-ng-if="subscription.status == 'active'"><a class="pure-button button-warning">Pausar Suscripción</a></div>
-            <div data-ng-if="subscription.status == 'paused'">             <a class="pure-button button-success">Activar Suscripción</a></div>
-            <div><a class="pure-button button-error">Cancelar Suscripción</a></div>
+            <div class="title uppercase">{{serie.name}}</div>
+            <div data-ng-if="subscription.status == 'active'" class="row">
+              <div class="row subtitle success">Suscripción Activa</div><a class="pure-button button-warning">Pausar Suscripción</a>
+            </div>
+            <div data-ng-if="subscription.status == 'paused'" class="row">             
+              <div class="row subtitle warning">Suscripción Pausada</div><a class="pure-button button-success">Activar Suscripción</a>
+            </div>
+            <div class="row"><a class="pure-button button-error">Cancelar Suscripción</a></div>
           </div>
         </div>
       </div>

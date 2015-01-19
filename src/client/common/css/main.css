@@ -12,44 +12,44 @@ html, button, input, select, textarea, .pure-g [class*="pure-u"] {
 #right-pane {
   margin-top: 2.3rem; }
 
-/* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 19, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .inner-box {
   padding-right: 2rem; }
 
-/* line 23, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .side-space {
   padding-right: 2rem; }
 
-/* line 26, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 a:hover, a:active, a:focus {
   outline: 0; }
 
-/* line 29, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .shelf {
   margin-bottom: 2rem;
   position: relative; }
 
-/* line 33, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 32, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .inner-shelf {
   border: solid 2px #CCC;
   border-radius: 0.5rem;
   color: #666;
   position: relative; }
 
-/* line 40, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 39, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .shelf-space {
   padding: 1rem; }
 
-/* line 43, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 42, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-space {
   padding: 0 1rem; }
 
-/* line 46, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 45, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .filter-title {
   color: #666;
   font-size: 2rem; }
 
-/* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 49, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .section-title {
   font-family: 'RalewayLight';
   color: #999;
@@ -57,16 +57,16 @@ a:hover, a:active, a:focus {
   font-size: 2rem;
   padding-top: 1rem; }
 
-/* line 57, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 56, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .title {
   font-size: 1.8rem;
   margin-bottom: 1rem; }
 
-/* line 61, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 60, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .subtitle {
   font-size: 1.3rem; }
 
-/* line 64, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 63, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #cart {
   background-color: rgba(0, 0, 0, 0.7);
   text-align: right;
@@ -79,45 +79,45 @@ a:hover, a:active, a:focus {
   padding: 0.3rem 1rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem; }
-  /* line 76, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 75, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #cart i {
     font-size: 1.8rem; }
-  /* line 78, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 77, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #cart span {
     font-size: 1.8rem;
     margin: 0 0.5rem; }
-  /* line 81, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 80, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #cart a {
     color: #FFF;
     text-decoration: none; }
-    /* line 84, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 83, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #cart a:hover {
       color: orange; }
 
-/* line 87, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 86, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .login-header {
   font-size: 0.8rem;
   color: #999; }
-  /* line 90, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 89, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .login-header a {
     cursor: pointer; }
 
-/* line 93, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 92, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item {
   margin: 1rem; }
-  /* line 95, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 94, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .item img {
     width: 100%; }
 
-/* line 98, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 97, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-image {
   margin-bottom: 0.5rem; }
 
-/* line 101, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 100, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-button {
   text-align: center; }
 
-/* line 104, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 103, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-info {
   text-align: center;
   padding-bottom: 0.5rem;
@@ -126,10 +126,10 @@ a:hover, a:active, a:focus {
   color: #666;
   text-transform: uppercase; }
 
-/* line 112, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 111, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .search-box {
   padding: 1rem 0; }
-  /* line 114, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 113, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box input {
     width: 85%;
     font-size: 1.7rem;
@@ -141,7 +141,7 @@ a:hover, a:active, a:focus {
     color: #666;
     outline: none;
     -webkit-box-sizing: border-box; }
-  /* line 125, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 124, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box a {
     text-align: center;
     width: 15%;
@@ -155,99 +155,103 @@ a:hover, a:active, a:focus {
     -webkit-box-sizing: border-box;
     cursor: pointer; }
 
-/* line 138, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 137, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .publisher-name {
   text-transform: uppercase; }
 
-/* line 141, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 140, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .shelf-name {
   text-transform: uppercase; }
 
-/* line 144, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 143, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .uppercase {
   text-transform: uppercase; }
 
-/* line 147, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 146, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .login {
   font-size: 1.1rem;
   text-decoration: none;
   color: #666; }
 
-/* line 152, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 151, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .table-image {
   width: 5rem; }
 
-/* line 155, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 154, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .card-item {
   padding: 1rem 0; }
-  /* line 157, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 156, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .card-item a.button {
     margin-left: 2rem; }
 
-/* line 160, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 159, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .cart-item {
   padding-bottom: 0.5rem; }
-  /* line 162, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 161, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .cart-item:last-child {
     padding-bottom: 0; }
-  /* line 164, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 163, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .cart-item a.button {
     margin-left: 2rem; }
-  /* line 166, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 165, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .cart-item img {
     width: 100%; }
 
-/* line 170, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 169, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-item {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: solid 1px #CCC; }
 
-/* line 175, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 174, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-item:last-child {
   margin-bottom: 0; }
 
-/* line 178, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 177, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .list-item {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: solid 1px #CCC;
   cursor: pointer; }
-  /* line 183, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 182, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .list-item:hover {
     color: orange; }
 
-/* line 187, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 186, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .list-item:last-child {
   margin-bottom: 0;
   border-bottom: 0; }
 
-/* line 191, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 190, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-line {
   padding-bottom: 0.5rem; }
 
-/* line 195, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 194, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error {
   color: #ca3c3c; }
 
-/* line 198, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 197, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .success {
   color: #1cb841; }
 
-/* line 201, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 200, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.warning {
+  color: #f57b00; }
+
+/* line 203, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .update {
   color: #0078e7; }
 
-/* line 204, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 206, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .form-icon {
   position: relative; }
 
-/* line 207, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 209, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form-stacked label {
   font-family: 'RalewayLight';
   margin: 0.5rem 0; }
 
-/* line 211, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 213, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .medium-icon {
   font-size: 1.5rem;
   position: absolute;
@@ -255,30 +259,30 @@ a:hover, a:active, a:focus {
   right: 0.5rem;
   padding-left: 0.5rem; }
 
-/* line 219, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 221, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button {
   border: solid 1px #666;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem; }
 
-/* line 224, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 226, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .buttons-container {
   text-align: center;
   padding-bottom: 1rem; }
-  /* line 227, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 229, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .buttons-container a {
     color: #CCC;
     cursor: pointer; }
 
-/* line 231, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 233, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-xsmall {
   font-size: 70%; }
 
-/* line 234, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 236, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-small {
   font-size: 85%; }
 
-/* line 238, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 240, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form select {
   width: 100%;
   display: inline-block;
@@ -289,7 +293,7 @@ a:hover, a:active, a:focus {
   font-size: 1.1rem;
   box-sizing: border-box; }
 
-/* line 248, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 250, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .disable-shelf {
   position: absolute;
   width: 100%;
@@ -299,144 +303,148 @@ a:hover, a:active, a:focus {
   text-align: center;
   z-index: 2; }
 
-/* line 258, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 260, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .fa-5 {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
   font-size: 5rem; }
 
-/* line 264, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 266, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .fa-8 {
   font-size: 8rem; }
 
-/* line 267, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 269, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .success-container {
   text-align: center;
   color: #1cb841; }
 
-/* line 271, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 273, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error-container {
   text-align: center;
   color: #ca3c3c; }
 
-/* line 275, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 277, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error-border {
   border-color: #ca3c3c; }
 
-/* line 278, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 280, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .description > div {
   font-size: 1.2rem;
   padding-bottom: 0.5rem; }
 
-/* line 283, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 285, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .quantity a {
   background-color: transparent;
   color: #666; }
 
-/* line 287, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 289, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .relative {
   position: relative; }
 
-/* line 290, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 292, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .information-box {
   padding-left: 1rem;
   padding-bottom: 0.5rem; }
 
-/* line 294, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 296, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .border-right {
   border-right: solid 2px #CCC;
   -webkit-box-sizing: border-box; }
 
-/* line 298, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 300, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .border-left {
   border-left: solid 2px #CCC;
   -webkit-box-sizing: border-box; }
 
-/* line 302, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 304, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .border-top {
   border-top: solid 2px #CCC;
   -webkit-box-sizing: border-box; }
 
-/* line 306, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 308, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-top {
   padding-top: 0.5rem; }
 
-/* line 309, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 311, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .information-box.no-padding {
   padding-left: 0; }
 
-/* line 312, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 314, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .quantity input {
   margin: 0 0.5rem;
   color: #666; }
 
-/* line 316, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 318, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .align-center {
   text-align: center; }
 
-/* line 319, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 321, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form .pure-group input {
   margin: 0 auto; }
 
-/* line 322, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 324, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-bottom {
   margin-bottom: 0.5rem; }
 
-/* line 326, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 328, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-button i {
   margin-right: 0.3rem; }
 
-/* line 330, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 332, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-line i {
   margin-right: 0.3rem; }
 
-/* line 335, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 337, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-button.just-icon i {
   margin-right: 0; }
 
-/* line 338, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 340, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .xs-input {
   width: 2em; }
 
 /* line 343, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.row {
+  padding-bottom: 1rem; }
+
+/* line 348, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .information-title {
   padding-bottom: 0.5rem;
   font-style: italic;
   text-transform: uppercase;
   color: orange; }
 
-/* line 350, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 355, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info th {
   padding: 1rem; }
 
-/* line 353, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 358, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-label {
   text-align: right;
   padding-right: 1rem; }
 
-/* line 357, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 362, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-value, .pure-g .info-value {
   font-family: Helvetica; }
 
-/* line 360, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 365, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-important {
   font-family: Helvetica;
   font-weight: bold; }
 
-/* line 364, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 369, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #submenu {
   text-align: right; }
-  /* line 366, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 371, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #submenu nav {
     margin: 1rem 0; }
-    /* line 368, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 373, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav a {
       padding: 0 1rem;
       color: #999;
       text-decoration: none;
       text-transform: uppercase;
       border-right: solid 1px #CCC; }
-    /* line 374, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 379, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav .active {
       color: orange; }

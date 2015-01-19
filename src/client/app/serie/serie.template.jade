@@ -1,7 +1,7 @@
 #series-menu(data-ng-include="'app/serie/menu/serie.menu.html'")
 .filter-title
-  span.publisher-name.
-    {{serie.name}}
+  span.publisher-name
+    | {{serie.name}}
 .shelf
   .inner-shelf
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
@@ -13,17 +13,19 @@
               img(alt="", ng-src="{{serie.cover.url}}")
         .pure-u-1.pure-u-md-2-3
           .item
-            div
+            .title.uppercase
               | {{serie.name}}
-            div
-              | {{subscription.status}}
-            div(data-ng-if="subscription.status == 'active'")
+            .row(data-ng-if="subscription.status == 'active'")
+              .row.subtitle.success
+                | Suscripción Activa
               a.pure-button.button-warning
                 | Pausar Suscripción
-            div(data-ng-if="subscription.status == 'paused'")              
+            .row(data-ng-if="subscription.status == 'paused'")              
+              .row.subtitle.warning
+                | Suscripción Pausada
               a.pure-button.button-success
                 |Activar Suscripción
-            div
+            .row
               a.pure-button.button-error
                 |Cancelar Suscripción
 
