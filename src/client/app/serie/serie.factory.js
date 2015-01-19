@@ -32,7 +32,10 @@
     }
 
     function getSubscription(objectId){
-      return Subscription.get({objectId:objectId}).$promise;
+      return Subscription.get({
+              objectId:objectId,
+              include: 'serie'
+             }).$promise;
     }
 
   }

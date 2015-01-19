@@ -9,11 +9,13 @@
         <div class="subtitle">No existen series registradas.</div>
       </div>
       <div data-ng-repeat="item in series" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
-        <div class="item">
+        <div data-ui-sref="dashboard.serie({objectId : item.objectId})" class="item">
           <div class="item-image"><img alt="" ng-src="{{item.serie.cover.url}}"/></div>
           <div class="item-info">{{item.serie.name}}</div>
-          <div class="item-info">{{item.serie.price}} USD</div>
-          <div class="item-button"><a class="pure-button pure-button-primary">Cancelar</a></div>
+          <div class="item-info">
+            {{item.serie.price}} USD
+                
+          </div>
         </div>
       </div>
     </div>
