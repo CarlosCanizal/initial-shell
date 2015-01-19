@@ -22,7 +22,7 @@
     function getSubscriptions(){
       var user = userApi.currentUser();
       console.log(user.objectId);
-      var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId}}
+      var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId},"status":{"$ne":"cancelled"}}
       return Subscription.query({
               where : where,
               include: 'serie',
