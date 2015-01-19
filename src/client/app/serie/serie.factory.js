@@ -14,10 +14,12 @@
 
     var subscription = {
       getSubscriptions: getSubscriptions,
-      getSubscription: getSubscription
+      getSubscription: getSubscription,
+      changeStatus: changeStatus
     };
 
     return subscription;
+
 
     function getSubscriptions(){
       var user = userApi.currentUser();
@@ -36,6 +38,10 @@
               objectId:objectId,
               include: 'serie'
              }).$promise;
+    }
+
+    function changeStatus(objectId, status){
+      return Subscription.update({objectId:objectId,status:status}).$promise;
     }
 
   }

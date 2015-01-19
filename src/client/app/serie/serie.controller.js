@@ -22,6 +22,15 @@
       $scope.loading = false;
     });
 
+    $scope.changeStatus= function(status){
+      subscriptionApi.changeStatus(objectId, status).then(function(result){
+        console.log(result);
+        $scope.subscription.status = result.status;
+      },function(error){
+        console.log(error);
+      });
+    }
+
   }
 
 })();
