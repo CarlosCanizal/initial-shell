@@ -38,13 +38,11 @@
     }
 
     $scope.toPaymentMethod = function(){
-      ShoppingCart.setCart($scope.shoppingCart);
       $scope.showPayment = true;
       $scope.showPlaceOrder = false;
     }
 
     $scope.toConfirmOrder = function(){
-      ShoppingCart.setCart($scope.shoppingCart);
       $scope.showPlaceOrder = true;
     }
 
