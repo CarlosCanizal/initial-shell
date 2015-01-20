@@ -26,7 +26,6 @@
       $scope.completed = status;
     }
 
-
     $scope.goToCart =  function(){
       resetViews();
     }
@@ -99,8 +98,7 @@
 
     function cleanItemsUnavaibale(){
       $scope.itemsUnavailable = [];
-    }
-  
+    }  
 
   }
 
