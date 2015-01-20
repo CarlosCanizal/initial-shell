@@ -30,7 +30,6 @@
               include: 'serie',
               order : 'createdAt'
              }).$promise;
-      
     }
 
     function getSubscription(objectId){

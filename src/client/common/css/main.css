@@ -433,18 +433,22 @@ a:hover, a:active, a:focus {
   font-weight: bold; }
 
 /* line 369, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.pointer {
+  cursor: pointer; }
+
+/* line 372, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #submenu {
   text-align: right; }
-  /* line 371, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 374, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #submenu nav {
     margin: 1rem 0; }
-    /* line 373, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 376, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav a {
       padding: 0 1rem;
       color: #999;
       text-decoration: none;
       text-transform: uppercase;
       border-right: solid 1px #CCC; }
-    /* line 379, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 382, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav .active {
       color: orange; }
