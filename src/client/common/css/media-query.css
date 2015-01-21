@@ -113,4 +113,8 @@
   /* line 67, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .side-space {
     padding-right: 0; }
+
+  /* line 69, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .confirmation-box {
+    margin-top: 50%; }
  }

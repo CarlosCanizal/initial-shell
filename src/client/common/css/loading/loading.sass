@@ -1,13 +1,33 @@
 @import '../colors';
 
-.loading-layer
+.opacity-layer
   position: fixed;
   width: 100%
   height: 100%
   background-color: rgba(0,0,0,0.8)
   top:0
   left:0 
-  z-index: 3
+  z-index: 4
+
+.confirmation-box
+  border: solid 2px $second-color
+  margin: 0 auto
+  border-radius: 0.5rem
+  background: url('../../images/satinweave.png')
+  padding: 1rem
+  margin-top: 15%
+  .confirmation-text
+    font-size: 1.2rem
+  .confirmation-buttons
+    margin-top: 1rem
+  .icon
+    font-size: 5rem
+    color: $error-color
+    line-height: 5rem
+
+
+
+
 
 .spinner-circle
   margin: 20px auto
