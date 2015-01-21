@@ -26,6 +26,7 @@
   <div class="filter-title"><span class="publisher-name">Actualiza Membresia</span></div>
   <div class="shelf">
     <div class="inner-shelf">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div class="shelf-space">
         <div data-ng-hide="loading" class="shelf-content">
           <div class="pure-g">
@@ -54,7 +55,7 @@
             </div>
             <div class="pure-u-1 pure-u-md-1-3 align-center">
               <div data-ng-hide="showPlaceOrder">
-                <div class="address-line"><a data-ng-click="updateMembership('pro')" data-ng-if="vm.currentUser.membership  == 'basic'" class="pure-button pure-button-primary">Actualizar a PRO</a><a data-ng-click="updateMembership('basic')" data-ng-if="vm.currentUser.membership  == 'pro'" class="pure-button pure-button-primary">Cancelar Membrecia</a></div>
+                <div class="address-line"><a data-ng-click="updateMembership('pro')" data-ng-if="vm.currentUser.membership  == 'basic'" class="pure-button pure-button-primary">Actualizar a PRO</a><a data-ng-click="cancelMembership()" data-ng-if="vm.currentUser.membership  == 'pro'" class="pure-button pure-button-primary">Cancelar Membrecia</a></div>
               </div>
             </div>
           </div>

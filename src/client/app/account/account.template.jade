@@ -27,6 +27,7 @@
       Actualiza Membresia
   .shelf
     .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-space
         .shelf-content(data-ng-hide="loading")
           .pure-g
@@ -61,6 +62,6 @@
                 .address-line
                   a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')", data-ng-if="vm.currentUser.membership  == 'basic'")
                     | Actualizar a PRO
-                  a.pure-button.pure-button-primary(data-ng-click="updateMembership('basic')", data-ng-if="vm.currentUser.membership  == 'pro'")
+                  a.pure-button.pure-button-primary(data-ng-click="cancelMembership()", data-ng-if="vm.currentUser.membership  == 'pro'")
                     | Cancelar Membrecia
         

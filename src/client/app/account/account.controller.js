@@ -15,6 +15,18 @@
     $scope. paymentMethods = [];
     $scope.cards = [];
     $scope.subscription = {payment:null};
+    $scope.loading = true;
+
+
+    userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
+      $scope.cards = cards;
+      $scope.subscription.payment = $scope.cards[0];
+    },function(error){
+      console.log(error);
+    }).finally(function(){
+      $scope.loading = false;
+    });
+
 
 
     $scope.updateCard = function(card){
@@ -23,11 +35,14 @@
     
     $scope.updateMembership = function(name){
       conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card.id).then(function(user){
-        console.log(user);
         $scope.updateCurrentUser();
       },function(error){
         console.log(error);
       });
+    }
+
+    $scope.cancelMembership =  function(){
+
     }
 
     $scope.showCardForm = function(view){
