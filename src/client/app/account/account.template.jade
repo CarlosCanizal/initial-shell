@@ -37,11 +37,11 @@
                     |No existen metodos de pago registrados.
                 div(data-ng-show="cards.length > 0")
                   .address-line
-                    | Tarjeta 
+                    | Tarjeta
                   .address-line
                     | {{subscription.payment.card.name}}
                   .address-line
-                    i.fa.fa-cc-visa(ng-if="subscription..payment.card.brand == 'VISA'")
+                    i.fa.fa-cc-visa(ng-if="subscription.payment.card.brand == 'VISA'")
                     i.fa.fa-cc-mastercard(ng-if="subscription.payment.card.brand == 'MC'")
                     i.fa.fa-cc-amex(ng-if="subscription.payment.card.brand == 'AMERICAN_EXPRESS'")
                     | **** **** **** {{subscription.payment.card.last4}}

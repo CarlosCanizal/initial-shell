@@ -35,9 +35,9 @@
                   <div class="subtitle">No existen metodos de pago registrados.</div>
                 </div>
                 <div data-ng-show="cards.length &gt; 0">
-                  <div class="address-line">Tarjeta </div>
+                  <div class="address-line">Tarjeta</div>
                   <div class="address-line">{{subscription.payment.card.name}}</div>
-                  <div class="address-line"><i ng-if="subscription..payment.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="subscription.payment.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="subscription.payment.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{subscription.payment.card.last4}}</div>
+                  <div class="address-line"><i ng-if="subscription.payment.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="subscription.payment.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="subscription.payment.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{subscription.payment.card.last4}}</div>
                 </div>
               </div>
             </div>

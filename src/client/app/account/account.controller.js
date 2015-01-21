@@ -22,7 +22,7 @@
     }
     
     $scope.updateMembership = function(name){
-      conekta.updateMembership({name:name,id:'plan_ZugGjbdHj9qHCvcG'},'card_rMVp9GoeqJ7w4Kqn').then(function(user){
+      conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card.id).then(function(user){
         console.log(user);
         $scope.updateCurrentUser();
       },function(error){
