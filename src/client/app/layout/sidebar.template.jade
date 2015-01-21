@@ -29,6 +29,8 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="!vm.isDashboard")
 nav.side-menu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
   a(ui-sref="dashboard.account", data-ng-class="{'active': vm.menu == 'account'}")
     | Mi cuenta
+  a(ui-sref="home")
+    | Tienda
   a(ui-sref="dashboard.orders", data-ng-class="{'active': vm.menu == 'orders'}")
     | Mis Ordernes
   a(ui-sref="dashboard.series", data-ng-class="{'active': vm.menu == 'series'}")

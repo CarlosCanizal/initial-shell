@@ -7,15 +7,60 @@
     .shelf-space
       div
         | {{vm.currentUser.membership}}
-.filter-title
-  span.publisher-name.
-    Actualiza Membresia
-.shelf
-  .inner-shelf
-    .shelf-space
-      div(data-ng-if="vm.currentUser.membership  == 'basic'")
-        a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
-          | Actualizar a PRO
-      div(data-ng-if="vm.currentUser.membership  == 'pro'")
-        a.pure-button.pure-button-primary(data-ng-click="updateMembership('basic')")
-          | Cancelar Membrecia
+      p
+        | Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.
+        
+#new-card(data-ng-if="cardFormView")
+  .filter-title
+    span.publisher-name
+      | Agregar Tarjeta
+  .shelf
+    .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-space(data-ng-hide="loading")
+        .shelf-content(data-ng-hide="loading")
+          div(card-form)
+
+#update-membership(data-ng-show="!cardFormView")
+  .filter-title
+    span.publisher-name.
+      Actualiza Membresia
+  .shelf
+    .inner-shelf
+      .shelf-space
+        .shelf-content(data-ng-hide="loading")
+          .pure-g
+            .pure-u-1.pure-u-md-1-3.border-right
+              .information-box.no-padding
+                .shelf-message(data-ng-if="cards.length < 1")
+                  .subtitle
+                    |No existen metodos de pago registrados.
+                div(data-ng-show="cards.length > 0")
+                  .address-line
+                    | Tarjeta 
+                  .address-line
+                    | {{subscription.payment.card.name}}
+                  .address-line
+                    i.fa.fa-cc-visa(ng-if="subscription..payment.card.brand == 'VISA'")
+                    i.fa.fa-cc-mastercard(ng-if="subscription.payment.card.brand == 'MC'")
+                    i.fa.fa-cc-amex(ng-if="subscription.payment.card.brand == 'AMERICAN_EXPRESS'")
+                    | **** **** **** {{subscription.payment.card.last4}}
+            .pure-u-1.pure-u-md-1-3.border-right
+              .information-box
+                div(data-ng-show="cards.length > 0")
+                  .address-line
+                    | Cambiar Metodo de Pago
+                  .address-line
+                    select(ng-model="subscription.payment", ng-options="item as item.card.last4 for item in cards")
+                .address-line
+                  a.pure-button.button-xsmall(data-ng-click="cardFormView=true")
+                    i.fa.fa-plus
+                    | Agregar Tarjeta
+            .pure-u-1.pure-u-md-1-3.align-center
+              div(data-ng-hide="showPlaceOrder")
+                .address-line
+                  a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')", data-ng-if="vm.currentUser.membership  == 'basic'")
+                    | Actualizar a PRO
+                  a.pure-button.pure-button-primary(data-ng-click="updateMembership('basic')", data-ng-if="vm.currentUser.membership  == 'pro'")
+                    | Cancelar Membrecia
+        

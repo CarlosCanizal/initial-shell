@@ -25,10 +25,11 @@ function cardForm(userApi, conekta){
             scope.cards.push(newCard);
           if(scope.shoppingCart)
             scope.shoppingCart.paymentMethod = newCard;
+          if(scope.subscription){
+            scope.updateCard(newCard);
+          }
 
           scope.showCardForm(false);
-
-          console.log(scope.cards);
         },function(error){
           if(error.status)
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
