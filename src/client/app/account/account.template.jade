@@ -62,6 +62,13 @@
                 .address-line
                   a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')", data-ng-if="vm.currentUser.membership  == 'basic'")
                     | Actualizar a PRO
-                  a.pure-button.pure-button-primary(data-ng-click="cancelMembership()", data-ng-if="vm.currentUser.membership  == 'pro'")
-                    | Cancelar Membrecia
+                  div(data-ng-if="currentUser.membership  == 'pro'")
+                    .address-line
+                      a.pure-button.button-success()
+                        i.fa.fa-credit-card
+                        | Actualizar Tarjeta
+                    .address-line.no-padding
+                      a.pure-button(data-ng-click="cancelMembership()")
+                        i.fa.fa-trash
+                        | Cancelar
         
