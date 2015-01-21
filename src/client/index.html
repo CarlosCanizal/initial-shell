@@ -23,15 +23,7 @@
           <div class="dot2"></div>
         </div>
       </div>
-      <div data-ng-show="vm.confirm" class="opacity-layer">
-        <div class="pure-g">
-          <div class="confirmation-box pure-u-3-4 pure-u-sm-1-2 pure-u-md-1-3 align-center">
-            <div class="icon"><i class="fa fa-question-circle"></i></div>
-            <div class="confirmation-text">¿Deses ejecutar esta acción?</div>
-            <div class="confirmation-buttons"><a class="pure-button margin-right">No,Cancelar</a><a class="pure-button button-error">Si, Continuar</a></div>
-          </div>
-        </div>
-      </div>
+      <div data-ng-show="vm.confirm" data-ng-include="'app/message/message.template.html'" class="opacity-layer"></div>
       <div id="shell">
         <div class="pure-g">
           <div id="left-pane" class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-5">
