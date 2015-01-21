@@ -9,8 +9,8 @@
 
   function Account($scope, $state,userApi, conekta) {
 
-    // $scope.currentUser = userApi.currentUser();
     $scope.currentUser = userApi.currentUser();
+    var currentUser = userApi.currentUser();
     $scope.cardFormView = false;
     $scope. paymentMethods = [];
     $scope.cards = [];
@@ -34,11 +34,12 @@
     }
     
     $scope.updateMembership = function(name){
+      $scope.showLoading();
       conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card.id).then(function(user){
         $scope.updateCurrentUser();
       },function(error){
         console.log(error);
-      });
+      }).finally($scope.hideLoading);
     }
 
     $scope.cancelMembership =  function(){
