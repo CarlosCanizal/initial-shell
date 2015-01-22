@@ -21,7 +21,8 @@
             a.pure-button.pure-button-primary.button-small
               i.fa.fa-edit
               |Editar
-            a.pure-button.button-small(ng-click="deleteAddress(address.objectId, $index)")
+            //- a.pure-button.button-small(ng-click="deleteAddress(address.objectId, $index)")
+            a.pure-button(data-ng-click="showModal()", data-question='¿Eliminar dirección?', data-confirm="deleteAddress(address.objectId, $index)", confirm-message)
               i.fa.fa-trash 
               |Borrar
         .buttons-container
