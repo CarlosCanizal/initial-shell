@@ -70,7 +70,6 @@
     }
 
     $scope.removeFromCart = function(index){
-      alert();
       $scope.vm.cartItems = ShoppingCart.removeItem(index);
       $scope.shoppingCart.items  = $scope.vm.cartItems.items;
       console.log($scope.shoppingCart.items);

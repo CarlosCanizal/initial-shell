@@ -12,15 +12,12 @@
               <div class="pure-u-1 pure-u-md-1-2">
                 <div class="item-space">
                   <div>{{item.name}}</div>
-                  <div data-ng-if="item.type == 'serie'">Suscripcion</div>
-                  <div data-ng-if="item.type == 'preorder'">Preorden</div>
-                  <div data-ng-if="item.type == 'available'">Disponible de inmediato</div>
                   <div>Precio: ${{item.price}} USD</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="pure-u-1 pure-u-sm-1-3">           <a data-ng-click="cleanItemsUnavaibale()" class="pure-button"><i class="fa fa-trash"></i>Cerrar</a></div>
+          <div class="pure-u-1 pure-u-sm-1-3 align-center">         <a data-ng-click="cleanItemsUnavaibale()" class="pure-button"><i class="fa fa-times-circle"></i>Cerrar</a></div>
         </div>
       </div>
     </div>
@@ -46,8 +43,7 @@
               <div class="title">$ {{vm.cartItems.cartTotal}} USD</div>
               <div data-ng-show="updateCart" class="margin-bottom"><a data-ng-click="updateQuantity()" data-ng-hide="showAddress" class="pure-button pure-button-primary"><i class="fa fa-check"></i>Actualizar Orden</a></div>
               <div data-ng-hide="updateCart" class="margin-bottom"><a data-ng-if="currentUser" data-ng-click="toAddress()" data-ng-hide="showAddress" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a><a data-ng-if="!currentUser" data-ng-click="showLoginForms(true)" class="pure-button pure-button-primary"><i class="fa fa-user"></i>Iniciar Sesion</a></div>
-              <div><a data-ng-click="showModal()" data-question="¿Vaciar carrito?" data-confirm="emptyCart()" data-ng-hide="showAddress" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i>Vaciar Carrito</a>
-              </div>
+              <div><a data-ng-click="showModal()" data-question="¿Vaciar carrito?" data-confirm="emptyCart()" data-ng-hide="showAddress" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i>Vaciar Carrito</a></div>
             </div>
           </div>
         </div>
