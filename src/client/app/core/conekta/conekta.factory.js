@@ -38,9 +38,12 @@
     }
 
     function unsubscribe(plan){
+      var user =  userApi.currentUser();
       var conektaId = userApi.currentUser().conektaId;
       var params = {plan: plan, conektaId: conektaId, "function":"unsubscribe"}
-      return conektaResource.save(params).$promise;
+      return conektaResource.save(params).$promise.then(function(){
+        return userApi.saveProfile({membership: 'basic', objectId: user.objectId});
+      });
     }
 
     function deleteCard(conektaId, cardId){
