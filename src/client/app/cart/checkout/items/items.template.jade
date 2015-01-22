@@ -62,6 +62,7 @@
                   i.fa.fa-user
                   | Iniciar Sesion
               div
-                a.pure-button(data-ng-click="emptyCart()",data-ng-hide="showAddress")
+                //- a.pure-button(data-ng-click="emptyCart()",data-ng-hide="showAddress")
+                a.pure-button(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="emptyCart()",data-ng-hide="showAddress", confirm-message)
                   i.fa.fa-trash
                   | Vaciar Carrito

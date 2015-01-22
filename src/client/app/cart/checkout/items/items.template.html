@@ -46,7 +46,8 @@
               <div class="title">$ {{vm.cartItems.cartTotal}} USD</div>
               <div data-ng-show="updateCart" class="margin-bottom"><a data-ng-click="updateQuantity()" data-ng-hide="showAddress" class="pure-button pure-button-primary"><i class="fa fa-check"></i>Actualizar Orden</a></div>
               <div data-ng-hide="updateCart" class="margin-bottom"><a data-ng-if="currentUser" data-ng-click="toAddress()" data-ng-hide="showAddress" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a><a data-ng-if="!currentUser" data-ng-click="showLoginForms(true)" class="pure-button pure-button-primary"><i class="fa fa-user"></i>Iniciar Sesion</a></div>
-              <div><a data-ng-click="emptyCart()" data-ng-hide="showAddress" class="pure-button"><i class="fa fa-trash"></i>Vaciar Carrito</a></div>
+              <div><a data-ng-click="showModal()" data-question="¿Vaciar carrito?" data-confirm="emptyCart()" data-ng-hide="showAddress" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i>Vaciar Carrito</a>
+              </div>
             </div>
           </div>
         </div>
