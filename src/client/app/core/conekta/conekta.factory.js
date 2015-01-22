@@ -17,7 +17,8 @@
       saveCard : saveCard,
       deleteCard : deleteCard,
       updateMembership: updateMembership,
-      subcribe: subscribe
+      subcribe: subscribe,
+      unsubscribe: unsubscribe
     }
 
     function updateMembership(membership, card){
@@ -33,6 +34,12 @@
       var conektaId = userApi.currentUser().conektaId;
       var params = {plan: plan, card: card, conektaId: conektaId, "function":"subscribe"}
       console.log(params);
+      return conektaResource.save(params).$promise;
+    }
+
+    function unsubscribe(plan){
+      var conektaId = userApi.currentUser().conektaId;
+      var params = {plan: plan, conektaId: conektaId, "function":"unsubscribe"}
       return conektaResource.save(params).$promise;
     }
 

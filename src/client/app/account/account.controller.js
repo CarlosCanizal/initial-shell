@@ -43,7 +43,13 @@
     }
 
     $scope.cancelMembership =  function(){
-      alert('cancelMembership');
+      $scope.showLoading();
+      conekta.unsubscribe('plan_CczxCcuzBBUew3Vm').then(function(user){
+        console.log(user);
+        $scope.updateCurrentUser();
+      },function(error){
+        console.log(error);
+      }).finally($scope.hideLoading);
     }
 
     $scope.showCardForm = function(view){
