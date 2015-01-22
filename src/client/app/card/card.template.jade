@@ -16,7 +16,8 @@
           i.fa.fa-cc-amex.fa-lg(ng-if="item.card.brand == 'AMERICAN_EXPRESS'")
           span
           |**** **** **** {{item.card.last4}}
-          a.button(data-ng-click="deleteCard($index)")
+          //- a.button(data-ng-click="deleteCard($index)")
+          a.pure-button(data-ng-click="showModal()", data-question='¿Eliminar tarjeta?', data-confirm="deleteCard($index)", confirm-message)
             i.fa.fa-trash
             |  Eliminar
         .buttons-container
