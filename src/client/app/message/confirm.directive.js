@@ -11,6 +11,7 @@ function confirmDialog(){
     templateUrl: 'app/message/message.template.html',
     controller:function($scope, Message){
       $scope.showModal= false;
+      $scope.question = '¿Deses ejecutar esta acción?';
 
       $scope.confirmModal = function(){
         Message.setValue(true);
@@ -21,6 +22,8 @@ function confirmDialog(){
         Message.setValue(false);
         Message.setModal(false);
       }
+
+      
         
       $scope.$watch(
         function() {
@@ -29,6 +32,18 @@ function confirmDialog(){
         function() {
           console.log('modal', 'Change detected, new object:', Message.showModal);
           $scope.showModal =   Message.showModal;
+          // angular.copy(Message.showModal, $scope.showModal);
+        },
+        true // No need to be true
+      );
+
+      $scope.$watch(
+        function() {
+          return Message.question;
+        },
+        function() {
+          console.log('question', 'Change detected, new object:', Message.question);
+          $scope.question =   Message.question;
           // angular.copy(Message.showModal, $scope.showModal);
         },
         true // No need to be true

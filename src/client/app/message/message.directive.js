@@ -15,8 +15,13 @@ function confirmMessage(Message){
       console.log(Message);
 
 
-      scope.showModal = function(event){
+      scope.showModal = function(){
         Message.setModal(true);
+      }
+
+      if(attribute.question){
+        console.log(attribute.question);
+        Message.setQuestion(attribute.question);
       }
 
       scope.hideModal = function(){
