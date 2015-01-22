@@ -11,7 +11,6 @@ function confirmMessage(Message){
     link:function(scope, element, attribute){
 
       scope.show= false;
-      scope.onConfirm = false;
 
 
       scope.showModal = function(){
@@ -37,11 +36,7 @@ function confirmMessage(Message){
           if(Message.currentValue == true){
             console.log('viewer', 'Change detected, new object:', Message.currentValue);
             Message.setValue(false);
-            alert(Message.onConfirm)
-            // if(scope.onConfirm){
-              // alert(scope.onConfirm);
-              scope.$eval(Message.onConfirm);
-            // }
+            scope.$eval(Message.onConfirm);
           }
           // angular.copy(Message.currentObject, scope.show);
         },
