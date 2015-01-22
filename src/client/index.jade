@@ -20,7 +20,8 @@ html(data-ng-app="app")
         div.spinner-circle
           div.dot1
           div.dot2
-      .opacity-layer(data-ng-show="vm.confirm", data-ng-include="'app/message/message.template.html'")
+      //- .opacity-layer(data-ng-show="vm.confirmation", data-ng-include="'app/message/message.template.html'")
+      confirm-dialog
       #shell
         .pure-g
           #left-pane.pure-u-1.pure-u-md-1-4.pure-u-lg-1-5
@@ -80,6 +81,9 @@ html(data-ng-app="app")
     script(src="app/cart/checkout/items/itemsList.directive.js")
     script(src="app/cart/checkout/items/cartItem.directive.js")
     script(src="app/login/loginForms.directive.js")
+    script(src="app/message/message.service.js")
+    script(src="app/message/message.directive.js")
+    script(src="app/message/confirm.directive.js")
     script(src="app/cart/checkout/shippingAddress/shippingAddress.directive.js")
     script(src="app/cart/checkout/paymentMethod/paymentMethod.directive.js")
     script(src="app/cart/checkout/placeOrder/placeOrder.directive.js")

@@ -58,7 +58,7 @@
                 <div class="address-line"><a data-ng-click="updateMembership('pro')" data-ng-if="vm.currentUser.membership  == 'basic'" class="pure-button pure-button-primary">Actualizar a PRO</a>
                   <div data-ng-if="vm.currentUser.membership  == 'pro'">
                     <div class="address-line"><a class="pure-button button-success"><i class="fa fa-credit-card"></i>Actualizar Tarjeta</a></div>
-                    <div class="address-line no-padding"><a data-ng-click="cancelMembership()" class="pure-button"><i class="fa fa-trash"></i>Cancelar</a></div>
+                    <div class="address-line no-padding"><a data-ng-click="showModal()" data-confirm="cancelMembership()" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i>Cancelar Membresia</a></div>
                   </div>
                 </div>
               </div>

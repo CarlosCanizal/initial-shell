@@ -43,7 +43,7 @@
     }
 
     $scope.cancelMembership =  function(){
-
+      alert('cancelMembership');
     }
 
     $scope.showCardForm = function(view){

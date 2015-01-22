@@ -17,7 +17,7 @@
     vm.currentUser  = userApi.currentUser();
     vm.loading = false;
     vm.isDashboard = false;
-    vm.confirm = false;
+    vm.confirmation = false;
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       vm.isDashboard = toState.data && toState.data.dashboard ? true : false;
@@ -31,6 +31,18 @@
 
     $scope.hideLoading = function(){
       vm.loading = false;
+    }
+
+    $scope.showConfirmation = function(){
+      vm.confirmation = true;
+    }
+
+    $scope.hideConfirmation = function(){
+      vm.confirmation = false;
+    }
+
+    $scope.returnConfirmation = function(value){
+      return value;
     }
 
     $scope.setCurrentUser = function(user){
