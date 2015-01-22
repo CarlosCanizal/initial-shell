@@ -49,7 +49,7 @@
                     i.fa.fa-money
                     | Pagar
                 .address-line.no-padding
-                  a.pure-button(data-ng-click="goToCart()", data-ng-hide="showConfirmation")
+                  a.pure-button(data-ng-click="showModal()", data-question='¿Ir al carrito?', data-confirm="goToCart()", data-ng-hide="showConfirmation", confirm-message)
                     i.fa.fa-shopping-cart
                     | Ir al carrito
 #orderStatus(data-ng-show="showConfirmation || completed")
