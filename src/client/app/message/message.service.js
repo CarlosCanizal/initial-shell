@@ -11,6 +11,7 @@
     this.currentValue = false;
     this.showModal = false;
     this.question =  '¿Deses ejecutar esta acción?';
+    this.onConfirm = false;
 
     this.setValue = function(newValue){
       this.currentValue = newValue;
@@ -22,6 +23,10 @@
 
     this.setQuestion = function(question){
       this.question = question;
+    }
+
+    this.setOnConfirm = function(newValue){
+      this.onConfirm = newValue;
     }
 
 

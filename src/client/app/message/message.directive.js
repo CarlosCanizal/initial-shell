@@ -8,23 +8,24 @@ function confirmMessage(Message){
   return{
     restrict: 'EA',
     scope: true,
-    // templateUrl: 'app/message/message.template.html',
     link:function(scope, element, attribute){
 
       scope.show= false;
-      console.log(Message);
+      scope.onConfirm = false;
 
 
       scope.showModal = function(){
+        Message.setOnConfirm(attribute.confirm);
+        Message.setQuestion(attribute.question);
         Message.setModal(true);
       }
 
       if(attribute.question){
-        console.log(attribute.question);
         Message.setQuestion(attribute.question);
       }
 
       scope.hideModal = function(){
+        scope.onConfirm = 'hey listen';
         Message.setModal(false);
       }
 
@@ -36,8 +37,11 @@ function confirmMessage(Message){
           if(Message.currentValue == true){
             console.log('viewer', 'Change detected, new object:', Message.currentValue);
             Message.setValue(false);
-            console.log('attribute',attribute.confirm);
-            scope.$eval(attribute.confirm);
+            alert(Message.onConfirm)
+            // if(scope.onConfirm){
+              // alert(scope.onConfirm);
+              scope.$eval(Message.onConfirm);
+            // }
           }
           // angular.copy(Message.currentObject, scope.show);
         },
