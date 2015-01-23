@@ -16,7 +16,7 @@
     $scope.upgradeView = false;
     // $scope. paymentMethods = [];
     $scope.cards = [];
-    $scope.subscription = {payment:{}};
+    $scope.subscription = {payment:false};
     $scope.loading = true;
     $scope.unsubscribe = {comment:null};
 

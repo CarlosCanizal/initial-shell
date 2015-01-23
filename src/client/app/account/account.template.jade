@@ -81,7 +81,7 @@
                     | Actualizar a PRO
                   div(data-ng-if="vm.currentUser.membership  == 'pro'")
                     .address-line
-                      a.pure-button.button-success(data-ng-click="updateCard()")
+                      a.pure-button.button-success(data-ng-click="updateCard()",data-ng-class="{'pure-button-disabled': cards.length < 1}")
                         i.fa.fa-credit-card
                         | Actualizar Tarjeta
         
