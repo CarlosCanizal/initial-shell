@@ -27,7 +27,7 @@
       return subscribe(membership.id, card).then(function(){
         return userApi.logMembership({user: user.objectId, status:'active'});
       }).then(function(){
-        return userApi.saveProfile({membership: membership.name, objectId: user.objectId});
+        return userApi.saveProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded'});
       });
       
     }
@@ -44,7 +44,9 @@
       var conektaId = userApi.currentUser().conektaId;
       var params = {plan: plan, conektaId: conektaId, "function":"unsubscribe"}
       return conektaResource.save(params).$promise.then(function(){
-        return userApi.saveProfile({membership: 'basic', objectId: user.objectId});
+        return userApi.logMembership({user: user.objectId, status:'cancelled'});
+      }).then(function(){
+        return userApi.saveProfile({objectId: user.objectId, membership: 'basic', upgrade:'cancelled'});
       });
     }
 
