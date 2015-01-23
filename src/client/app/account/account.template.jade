@@ -10,7 +10,8 @@
       p
         | Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.
       div.align-center(data-ng-if="vm.currentUser.membership  == 'basic'")
-        a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
+        //- a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
+        a.pure-button.pure-button-primary(data-ng-click="showUpgrade()")
           | Actualizar a PRO
       div.align-right(data-ng-if="vm.currentUser.membership  == 'pro'")
         a.pure-button(data-ng-click="showCancelForm()")
@@ -37,7 +38,7 @@
 
 
 
-#update-membership(data-ng-show="!cardFormView")
+#update-membership(data-ng-show="upgradeView || vm.currentUser.membership  == 'pro'")
   .filter-title
     span.publisher-name.
       Actualiza Membresia
@@ -83,8 +84,4 @@
                       a.pure-button.button-success(data-ng-click="updateCard()")
                         i.fa.fa-credit-card
                         | Actualizar Tarjeta
-                    //- .address-line.no-padding
-                    //-   a.pure-button(data-ng-click="showModal()", data-question='¿Deseas cancelar tu membresia?', data-confirm="cancelMembership()", confirm-message)
-                    //-     i.fa.fa-trash
-                    //-     | Cancelar Membresia
         

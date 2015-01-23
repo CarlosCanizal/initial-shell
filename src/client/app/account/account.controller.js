@@ -13,6 +13,7 @@
     var currentUser = userApi.currentUser();
     $scope.cardFormView = false;
     $scope.cancelFormView = false;
+    $scope.upgradeView = false;
     $scope. paymentMethods = [];
     $scope.cards = [];
     $scope.subscription = {payment:null};
@@ -32,8 +33,9 @@
     $scope.updateCard = function(card){
       if($scope.subscription.payment){
         $scope.showLoading();
-        conekta.subscriptionCard($scope.subscription.payment.card.id).then(function(user){
+        conekta.subscriptionCard($scope.subscription.payment.card).then(function(user){
           // $scope.subscription.payment
+
         },function(error){
           console.log(error);
         }).finally($scope.hideLoading);
@@ -43,7 +45,7 @@
     $scope.updateMembership = function(name){
       if($scope.subscription.payment){
         $scope.showLoading();
-        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card.id).then(function(user){
+        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card).then(function(user){
           $scope.updateCurrentUser();
         },function(error){
           console.log(error);
@@ -63,6 +65,10 @@
 
     $scope.hideCancelForm = function(){
       $scope.cancelFormView = false;
+    }
+
+     $scope.showUpgrade = function(){
+      $scope.upgradeView = true;
     }
     
   }

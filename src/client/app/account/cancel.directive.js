@@ -2,9 +2,9 @@ angular
   .module('app.cart')
   .directive('cancelMembership',cancelMembership);
 
-cancelMembership.$inject = [];
+cancelMembership.$inject = ['conekta'];
 
-function cancelMembership(){
+function cancelMembership(conekta){
   return{
     restrict: 'EA',
     templateUrl: 'app/account/cancel.form.html',
@@ -15,12 +15,16 @@ function cancelMembership(){
         console.log(scope);
         if(scope.cancelForm.$valid){
           scope.showLoading();
-          conekta.unsubscribe('plan_CczxCcuzBBUew3Vm').then(function(user){
+          console.log(scope.unsubscribe.comment);
+          conekta.unsubscribe(scope.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment).then(function(user){
             console.log(user);
             scope.updateCurrentUser();
           },function(error){
             console.log(error);
-          }).finally(scope.hideLoading);
+          }).finally(function(){
+            scope.hideLoading();
+            scope.hideCancelForm();
+          });
         }else{
           scope.cancelForm.comment.$setDirty();
         }
