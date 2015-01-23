@@ -32,12 +32,14 @@
     }
     
     $scope.updateMembership = function(name){
-      $scope.showLoading();
-      conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card.id).then(function(user){
-        $scope.updateCurrentUser();
-      },function(error){
-        console.log(error);
-      }).finally($scope.hideLoading);
+      if($scope.subscription.payment){
+        $scope.showLoading();
+        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment.card.id).then(function(user){
+          $scope.updateCurrentUser();
+        },function(error){
+          console.log(error);
+        }).finally($scope.hideLoading);
+      }
     }
 
     $scope.cancelMembership =  function(){
