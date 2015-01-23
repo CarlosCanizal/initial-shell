@@ -27,8 +27,6 @@
       $scope.loading = false;
     });
 
-
-
     $scope.updateCard = function(card){
       $scope.subscription.payment = card;
     }

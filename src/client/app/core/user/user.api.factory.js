@@ -14,6 +14,7 @@
     var  Register  = parse.newRegisterResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
+    var  Membership = parse.newParseResource(parseheaders.storeKeys,'Membership');
 
     var factory = {
       login: login,
@@ -29,7 +30,8 @@
       getAddresses: getAddresses,
       deleteAddress: deleteAddress,
       chargeCard: chargeCard,
-      saveProfile: saveProfile
+      saveProfile: saveProfile,
+      logMembership: logMembership
 
     };
 
@@ -45,6 +47,11 @@
       });
 
       return deferred.promise
+    }
+
+    function logMembership(params){
+      params.user = {"__type":"Pointer",className:"_User","objectId":params.user}
+      return Membership.save(params).$promise;
     }
 
     function register(params) {

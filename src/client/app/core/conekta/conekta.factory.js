@@ -25,6 +25,8 @@
 
       var user =  userApi.currentUser();
       return subscribe(membership.id, card).then(function(){
+        return userApi.logMembership({user: user.objectId, status:'active'});
+      }).then(function(){
         return userApi.saveProfile({membership: membership.name, objectId: user.objectId});
       });
       
