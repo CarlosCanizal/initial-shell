@@ -67,8 +67,12 @@
       $scope.cancelFormView = false;
     }
 
-     $scope.showUpgrade = function(){
+    $scope.showUpgrade = function(){
       $scope.upgradeView = true;
+    }
+
+    $scope.hideUpgrade = function(){
+      $scope.upgradeView = false;
     }
     
   }

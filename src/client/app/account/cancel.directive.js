@@ -12,7 +12,6 @@ function cancelMembership(conekta){
     link:function(scope,element,attr){
 
       scope.cancelMembership =  function(){
-        console.log(scope);
         if(scope.cancelForm.$valid){
           scope.showLoading();
           console.log(scope.unsubscribe.comment);
