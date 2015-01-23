@@ -22,13 +22,13 @@
       subscriptionCard: subscriptionCard
     }
 
-    function updateMembership(membership, card){
+    function updateMembership(membership, payment){
 
       var user =  userApi.currentUser();
-      return subscribe(membership.id, card).then(function(){
-        return userApi.logMembership({user: user.objectId, status:'active', notes:card});
+      return subscribe(membership.id, payment.card.id).then(function(){
+        return userApi.logMembership({user: user.objectId, status:'active', notes:payment});
       }).then(function(){
-        return userApi.saveProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:card});
+        return userApi.saveProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment});
       });
       
     }
@@ -36,7 +36,6 @@
     function subscribe(plan, card){
       var conektaId = userApi.currentUser().conektaId;
       var params = {plan: plan, card: card, conektaId: conektaId, "function":"subscribe"}
-      console.log(params);
       return conektaResource.save(params).$promise;
     }
 
@@ -51,14 +50,14 @@
       });
     }
 
-    function subscriptionCard(card){
+    function subscriptionCard(payment){
       var user =  userApi.currentUser();
       var conektaId = userApi.currentUser().conektaId;
-      var params = { card:card.id, conektaId: conektaId, "function":"subscriptionCard"}
+      var params = { card:payment.card.id, conektaId: conektaId, "function":"subscriptionCard"}
       return conektaResource.save(params).$promise.then(function(){
-        return userApi.logMembership({user: user.objectId, status:'updateCard', notes:card});
+        return userApi.logMembership({user: user.objectId, status:'updateCard', notes:payment});
       }).then(function(){
-        return userApi.saveProfile({subscriptionCard:card});
+        return userApi.saveProfile({objectId: user.objectId, subscriptionCard:payment});
       });
     }
 

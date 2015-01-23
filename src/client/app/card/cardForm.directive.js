@@ -26,7 +26,7 @@ function cardForm(userApi, conekta){
           if(scope.shoppingCart)
             scope.shoppingCart.paymentMethod = newCard;
           if(scope.subscription){
-            scope.updateCard(newCard);
+            scope.addCard(newCard);
           }
 
           scope.showCardForm(false);
