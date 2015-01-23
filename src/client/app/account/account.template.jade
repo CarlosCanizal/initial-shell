@@ -9,7 +9,12 @@
         | {{vm.currentUser.membership}}
       p
         | Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.
-        
+      div.align-center(data-ng-if="vm.currentUser.membership  == 'basic'")
+        a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
+          | Actualizar a PRO
+      div.align-right(data-ng-if="vm.currentUser.membership  == 'pro'")
+        a.pure-button(data-ng-click="showCancelForm()")
+          | Cancelar Membresia
 #new-card(data-ng-if="cardFormView")
   .filter-title
     span.publisher-name
@@ -20,6 +25,17 @@
       .shelf-space(data-ng-hide="loading")
         .shelf-content(data-ng-hide="loading")
           div(card-form)
+
+#cancel-membership(data-ng-show="cancelFormView")
+  .filter-title
+    span.publisher-name.error
+      | Cancelar Membresia
+  .shelf
+    .inner-shelf.error-border
+      .shelf-space
+        cancel-membership
+
+
 
 #update-membership(data-ng-show="!cardFormView")
   .filter-title
@@ -67,8 +83,8 @@
                       a.pure-button.button-success(data-ng-click="updateCard()")
                         i.fa.fa-credit-card
                         | Actualizar Tarjeta
-                    .address-line.no-padding
-                      a.pure-button(data-ng-click="showModal()", data-question='¿Deseas cancelar tu membresia?', data-confirm="cancelMembership()", confirm-message)
-                        i.fa.fa-trash
-                        | Cancelar Membresia
+                    //- .address-line.no-padding
+                    //-   a.pure-button(data-ng-click="showModal()", data-question='¿Deseas cancelar tu membresia?', data-confirm="cancelMembership()", confirm-message)
+                    //-     i.fa.fa-trash
+                    //-     | Cancelar Membresia
         

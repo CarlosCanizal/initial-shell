@@ -16,7 +16,6 @@ function newAddress(userApi, sepomexAPI){
       scope.districts = [];
 
       getUbication();
-      console.log('canizal');
       console.log(scope.addressFormView);
 
       function getDistrict(zip){

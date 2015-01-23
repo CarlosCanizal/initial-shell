@@ -12,10 +12,12 @@
     $scope.currentUser = userApi.currentUser();
     var currentUser = userApi.currentUser();
     $scope.cardFormView = false;
+    $scope.cancelFormView = false;
     $scope. paymentMethods = [];
     $scope.cards = [];
     $scope.subscription = {payment:null};
     $scope.loading = true;
+    $scope.unsubscribe = {comment:null};
 
 
     userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
@@ -49,18 +51,18 @@
       }
     }
 
-    $scope.cancelMembership =  function(){
-      $scope.showLoading();
-      conekta.unsubscribe('plan_CczxCcuzBBUew3Vm').then(function(user){
-        console.log(user);
-        $scope.updateCurrentUser();
-      },function(error){
-        console.log(error);
-      }).finally($scope.hideLoading);
-    }
+
 
     $scope.showCardForm = function(view){
       $scope.cardFormView  = view;
+    }
+
+    $scope.showCancelForm = function(){
+      $scope.cancelFormView = true;
+    }
+
+    $scope.hideCancelForm = function(){
+      $scope.cancelFormView = false;
     }
     
   }

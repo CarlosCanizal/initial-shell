@@ -13,7 +13,17 @@ function confirmMessage(Message){
       scope.show= false;
 
 
-      scope.showModal = function(){
+      scope.showModal = function(valid){
+        if (valid === undefined){
+          showModal();
+        }else{
+          if(valid){
+            showModal();
+          }
+        }
+      }
+
+      function showModal(){
         Message.setOnConfirm(attribute.confirm);
         Message.setQuestion(attribute.question);
         Message.setModal(true);
