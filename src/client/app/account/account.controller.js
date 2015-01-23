@@ -28,7 +28,14 @@
     });
 
     $scope.updateCard = function(card){
-      $scope.subscription.payment = card;
+      if($scope.subscription.payment){
+        $scope.showLoading();
+        conekta.subscriptionCard($scope.subscription.payment.card.id).then(function(user){
+          // $scope.subscription.payment
+        },function(error){
+          console.log(error);
+        }).finally($scope.hideLoading);
+      }
     }
     
     $scope.updateMembership = function(name){

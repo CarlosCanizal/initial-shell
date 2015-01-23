@@ -18,7 +18,8 @@
       deleteCard : deleteCard,
       updateMembership: updateMembership,
       subcribe: subscribe,
-      unsubscribe: unsubscribe
+      unsubscribe: unsubscribe,
+      subscriptionCard: subscriptionCard
     }
 
     function updateMembership(membership, card){
@@ -48,6 +49,13 @@
       }).then(function(){
         return userApi.saveProfile({objectId: user.objectId, membership: 'basic', upgrade:'cancelled'});
       });
+    }
+
+    function subscriptionCard(card){
+      var user =  userApi.currentUser();
+      var conektaId = userApi.currentUser().conektaId;
+      var params = { card:card, conektaId: conektaId, "function":"subscriptionCard"}
+      return conektaResource.save(params).$promise
     }
 
     function deleteCard(conektaId, cardId){
