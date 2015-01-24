@@ -23,14 +23,17 @@
 
     userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
       $scope.cards = cards;
+      console.log(currentUser.subscriptionCard);
       if(currentUser.subscriptionCard){
-        
+        var flag = true;
         angular.forEach(cards,function(value){
           if(angular.equals(currentUser.subscriptionCard,value)){
             $scope.subscription.payment = value;
+            flag = false;
           }
         });
-
+        if(flag)
+          $scope.subscription.payment = $scope.cards[0];
       }else{
         console.log('out');
         $scope.subscription.payment = $scope.cards[0];

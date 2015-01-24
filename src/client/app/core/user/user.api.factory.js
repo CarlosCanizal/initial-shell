@@ -106,7 +106,9 @@
     }
 
     function deleteCard(params){
+      var user = currentUser();
       params['function'] = 'deleteCard';
+      params['user'] = user;
       return Card.delete(params).$promise
     }
 

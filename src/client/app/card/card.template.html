@@ -9,8 +9,8 @@
         <div ng-if="cards.length &lt; 1" class="shelf-message">
           <div class="subtitle">No existen tarjetas registradas.</div>
         </div>
-        <div ng-repeat="item in cards" class="card-item"><i ng-if="item.card.brand == 'VISA'" class="fa fa-cc-visa fa-lg"></i><i ng-if="item.card.brand == 'MC'" class="fa fa-cc-mastercard fa-lg"></i><i ng-if="item.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex fa-lg"></i><span></span>**** **** **** {{item.card.last4}}<a data-ng-click="showModal()" data-question="¿Eliminar tarjeta?" data-confirm="deleteCard($index)" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i> Eliminar</a>
-        </div>
+        <div ng-repeat="item in cards" class="card-item"><i ng-if="item.card.brand == 'VISA'" class="fa fa-cc-visa fa-lg"></i><i ng-if="item.card.brand == 'MC'" class="fa fa-cc-mastercard fa-lg"></i><i ng-if="item.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex fa-lg"></i><span></span>**** **** **** {{item.card.last4}}<a data-ng-click="showModal()" data-question="¿Eliminar tarjeta?" data-confirm="deleteCard({{$index}})" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i> Eliminar</a></div>
+        <div data-ng-if="error" class="error align-center">{{error}}</div>
         <div class="buttons-container"><a ng-click="cardFormView = true"><i class="fa fa-plus-circle fa-4x"></i></a>
           <div>Agregar Tarjeta</div>
         </div>

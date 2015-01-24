@@ -15,6 +15,7 @@
     $scope.cards = [];
     $scope.cardFormView  = false;
     $scope.loading = true;
+    $scope.error = false;
 
     userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
         console.log(cards);
@@ -25,12 +26,18 @@
     });
 
     $scope.deleteCard = function(index){
+      var card= $scope.cards[parseInt(index)].card
+      if(card.id == $scope.currentUser.subscriptionCard.card.id){
+        $scope.error = 'La tarjeta con terminacion '+card.last4+' se encuentra ligada a tu membrecia, si deseas eliminarla, primero debes cancelar tu suscripcion.';
+        return;
+      }
+      $scope.error = false;
       $scope.showLoading();
-      var cardId= $scope.cards[index].card.id
-      conekta.deleteCard($scope.currentUser.conektaId, cardId).then(function(){
+      conekta.deleteCard($scope.currentUser.conektaId, card.id).then(function(){
         $scope.cards.splice(index, 1);
       },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+        console.log(error);
+        // console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       }).finally($scope.hideLoading);
     }  
 

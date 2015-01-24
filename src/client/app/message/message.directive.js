@@ -13,14 +13,8 @@ function confirmMessage(Message){
       scope.show= false;
 
 
-      scope.showModal = function(valid){
-        if (valid === undefined){
-          showModal();
-        }else{
-          if(valid){
-            showModal();
-          }
-        }
+      scope.showModal = function(){
+        showModal();
       }
 
       function showModal(){
@@ -34,7 +28,6 @@ function confirmMessage(Message){
       }
 
       scope.hideModal = function(){
-        scope.onConfirm = 'hey listen';
         Message.setModal(false);
       }
 
