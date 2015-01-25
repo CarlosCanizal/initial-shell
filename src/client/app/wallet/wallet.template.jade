@@ -1,2 +1,15 @@
-h1
-  | Wallet
+#account-menu(data-ng-include="'app/account/menu/account.menu.html'")
+.filter-title
+  span.publisher-name.
+    Mi Saldo
+.shelf
+  .inner-shelf
+    .shelf-space
+      | Tu cuenta tiene un saldo de: {{vm.currentUser.wallet.toFixed(2)}}
+.filter-title
+  span.publisher-name.
+    Cupon
+.shelf
+  .inner-shelf
+    .shelf-space
+      |¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
