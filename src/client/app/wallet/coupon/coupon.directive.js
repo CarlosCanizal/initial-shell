@@ -2,9 +2,9 @@ angular
   .module('app.dashboard')
   .directive('coupon',coupon);
 
-coupon.$inject = [];
+coupon.$inject = ['couponApi'];
 
-function coupon(Message){
+function coupon(couponApi){
   return{
     restrict: 'EA',
     scope: true,
@@ -12,7 +12,7 @@ function coupon(Message){
     link:function(scope, element, attribute){
       
       scope.redeemCode = function(){
-        alert('redeemCode');
+        couponApi.redeemCode(scope.coupon.code);
       }
 
     }
