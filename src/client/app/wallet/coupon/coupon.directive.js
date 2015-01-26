@@ -12,7 +12,13 @@ function coupon(couponApi){
     link:function(scope, element, attribute){
       
       scope.redeemCode = function(){
-        couponApi.redeemCode(scope.coupon.code);
+        couponApi.redeemCode(scope.coupon.code).then(function(code){
+          console.log('redeemCode',code);
+        },function(error){
+          console.error(error);
+        }).finally(function(){
+
+        });
       }
 
     }
