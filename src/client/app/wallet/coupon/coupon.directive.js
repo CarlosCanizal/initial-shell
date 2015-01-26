@@ -19,13 +19,13 @@ function coupon(couponApi, userApi){
           couponApi.redeemCode(scope.coupon.code, userApi.currentUser()).then(function(code){
             console.log('redeemCode',code);
             scope.success = "Codigo valido";
+            scope.updateCurrentUser();
           },function(error){
             console.error(error);
             scope.error = error.data.error;
           }).finally(scope.hideLoading);
         }
       }
-
     }
   }
 }
