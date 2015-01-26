@@ -5,3 +5,24 @@
   .inner-shelf
     .shelf-space
       |¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
+      form.pure-form.pure-form-stacked(name="couponForm", novalidate="")
+        fieldset
+          .child-container
+            ng-form(name="couponForm")
+              .form-container
+                  label(for="coupon", ng-show="couponForm.coupon.$valid || couponForm.coupon.$pristine")
+                    | Cupon:
+                  label.error(for="coupon", ng-show="couponForm.coupon.$invalid && couponForm.coupon.$dirty")
+                    | Cupon es requerido:
+                  .form-icon
+                    input.pure-input-1#coupon(name="coupon", data-ng-model="coupon.code", required="")
+                    i.fa.fa-dot-circle-o.medium-icon(ng-show="couponForm.coupon.$pristine")
+                    i.fa.fa-check-circle-o.success.medium-icon(ng-show="couponForm.coupon.$valid && couponForm.coupon.$dirty")
+                    i.fa.fa-times-circle-o.error.medium-icon(ng-show="couponForm.coupon.$invalid && couponForm.coupon.$dirty")
+      .align-center
+        a.pure-button(data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="couponForm.$invalid")
+          | Campos Requeridos    
+          i.fa.fa-dot-circle-o.error
+        a.pure-button(data-ng-click="redeemCode()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="couponForm.$valid")
+          i.fa.fa-thumbs-o-up
+          | Guardar

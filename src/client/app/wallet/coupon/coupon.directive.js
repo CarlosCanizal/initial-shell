@@ -11,6 +11,9 @@ function coupon(Message){
     templateUrl: 'app/wallet/coupon/coupon.form.html',
     link:function(scope, element, attribute){
       
+      scope.redeemCode = function(){
+        alert('redeemCode');
+      }
 
     }
   }
