@@ -23,6 +23,10 @@
         a.pure-button(data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="couponForm.$invalid")
           | Campos Requeridos    
           i.fa.fa-dot-circle-o.error
-        a.pure-button(data-ng-click="redeemCode()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="couponForm.$valid")
+        a.pure-button.button-success(data-ng-click="redeemCode()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="couponForm.$valid")
           i.fa.fa-thumbs-o-up
-          | Guardar
+          | Validar Codigo
+        .error(data-ng-if="error")
+          | {{error}}
+        .success(data-ng-if="success")
+          | {{success}}

@@ -18,7 +18,10 @@
           </div>
         </fieldset>
       </form>
-      <div class="align-center"><a data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="redeemCode()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$valid" class="pure-button"><i class="fa fa-thumbs-o-up"></i>Guardar</a></div>
+      <div class="align-center"><a data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="redeemCode()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$valid" class="pure-button button-success"><i class="fa fa-thumbs-o-up"></i>Validar Codigo</a>
+        <div data-ng-if="error" class="error">{{error}}</div>
+        <div data-ng-if="success" class="success">{{success}}</div>
+      </div>
     </div>
   </div>
 </div>
