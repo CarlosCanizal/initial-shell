@@ -18,8 +18,8 @@
 
     return factory;
 
-    function redeemCode(code){
-      return Coupon.get({code:code,function:'redeemCode'}).$promise;
+    function redeemCode(code, user){
+      return Coupon.get({code:code, user:user,function:'redeemCode'}).$promise;
     }
 
 

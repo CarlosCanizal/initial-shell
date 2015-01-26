@@ -2,9 +2,9 @@ angular
   .module('app.dashboard')
   .directive('coupon',coupon);
 
-coupon.$inject = ['couponApi'];
+coupon.$inject = ['couponApi','userApi'];
 
-function coupon(couponApi){
+function coupon(couponApi, userApi){
   return{
     restrict: 'EA',
     scope: true,
@@ -13,9 +13,10 @@ function coupon(couponApi){
       scope.redeemCode = function(){
         scope.error = false;
         scope.success = false;
+
         if(scope.couponForm.$valid){
           scope.showLoading();
-          couponApi.redeemCode(scope.coupon.code).then(function(code){
+          couponApi.redeemCode(scope.coupon.code, userApi.currentUser()).then(function(code){
             console.log('redeemCode',code);
             scope.success = "Codigo valido";
           },function(error){
