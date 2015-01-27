@@ -37,7 +37,16 @@ function wallet(userApi, ShoppingCart){
       }
 
       scope.doNotUseWallet = function(){
+        scope.showLoading();
+        var cart = ShoppingCart.getCart();
         scope.payWithWallet = false;
+        cart.useWallet = false;
+
+        cart.total = cart.cartTotal;
+        cart.wallet = 0;
+        ShoppingCart.setCart(cart);
+        scope.shoppingCart = cart;
+        scope.hideLoading();
       }
       
     }
