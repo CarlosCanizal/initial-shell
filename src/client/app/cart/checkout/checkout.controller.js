@@ -18,7 +18,7 @@
     $scope.completed = false;
     $scope.updateCart = false;
     $scope.loginFormsView = false;
-    $scope.couponView = false;
+    $scope.walletView = false;
 
     $scope.shoppingCart = ShoppingCart.getCart();
 
@@ -73,7 +73,7 @@
     $scope.setUser= function(user){
       $scope.setCurrentUser(user);
       $scope.currentUser= user;
-      $scope.showAddress = true;
+      // $scope.showAddress = true;
     }
 
     $scope.removeFromCart = function(index){
@@ -83,8 +83,12 @@
       ShoppingCart.setCart($scope.shoppingCart);
     }
 
-    $scope.showCouponView =  function(){
-      $scope.couponView = true;
+    $scope.showWalletView =  function(){
+      $scope.walletView = true;
+    }
+
+    $scope.hideWalletView =  function(){
+      $scope.walletView = false;
     }
 
     function emptyCart(){
