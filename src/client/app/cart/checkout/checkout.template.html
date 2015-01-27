@@ -2,7 +2,7 @@
 <div class="section-title">Carrito de Compras</div>
 <div id="user-forms" login-forms="login-forms" data-ng-if="!currentUser" data-ng-show="loginFormsView"></div>
 <div id="items-checkout" items-list="items-list" data-ng-if="!completed"></div>
-<div id="wallet-checkout" wallet="wallet" data-ng-show="(currentUser &amp;&amp; currentUser.wallet &gt; 0) || walletView"></div>
+<div id="wallet-checkout" wallet="wallet" data-ng-if="walletView"></div>
 <div id="address-checkout" shipping-address="shipping-address" data-ng-if="currentUser"></div>
 <div id="payment-checkout" payment-method="payment-method" data-ng-if="currentUser"></div>
 <div id="placeOrder-checkout" place-order="place-order" data-ng-if="currentUser"></div>

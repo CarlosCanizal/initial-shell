@@ -40,26 +40,47 @@
             .pure-u-1.pure-u-lg-2-3
               .cart-item.pure-g(ng-repeat="item in vm.cartItems.items", cart-item)
             .pure-u-1.pure-u-lg-1-3.align-center
-              .title
-                | Total de la orden:
-              .title
-                |$ {{vm.cartItems.cartTotal}} USD
-              .margin-bottom(data-ng-show="updateCart")
-                a.pure-button.pure-button-primary(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
-                  i.fa.fa-check
-                  | Actualizar Orden
-              .margin-bottom(data-ng-hide="updateCart")
-                a.pure-button.button-success(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
-                  i.fa.fa-check
-                  | Continuar
-                a.pure-button.pure-button-primary(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
-                  i.fa.fa-user
-                  | Iniciar Sesion
-              div
-                a.pure-button(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="emptyCart()",data-ng-hide="showAddress", confirm-message)
-                  i.fa.fa-trash
-                  | Vaciar Carrito
-              div
+              table.total-table
+                tr
+                  td.table-label
+                    |Total de la orden:
+                  td
+                    |$
+                  td
+                    |{{shoppingCart.cartTotal}}
+                tr
+                  td.table-label
+                    |Descuento:
+                  td
+                    |$
+                  td
+                    |{{shoppingCart.wallet}}
+                tr
+                  td.table-label
+                    |Total a Pagar:
+                  td
+                    |$
+                  td
+                    |{{shoppingCart.total}}
+              .pure-g
+                .pure-u-1.pure-u-sm-1-2
+                  .margin-bottom(data-ng-show="updateCart")
+                    a.pure-button.pure-button-primary(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
+                      i.fa.fa-check
+                      | Actualizar Orden
+                  .margin-bottom(data-ng-hide="updateCart")
+                    a.pure-button.button-success.button-small(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
+                      i.fa.fa-check
+                      | Continuar
+                    a.pure-button.pure-button-primary.button-small(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
+                      i.fa.fa-user
+                      | Iniciar Sesion
+                .pure-u-1.pure-u-sm-1-2
+                  div.margin-bottom
+                    a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="emptyCart()",data-ng-hide="showAddress", confirm-message)
+                      i.fa.fa-trash
+                      | Vaciar Carrito
+              div.pointer.action
                 a(data-ng-click="showWalletView()")
                   i.fa.fa-ticket
-                  | Tengo un cupon
+                  | Pagar con saldo o cupon

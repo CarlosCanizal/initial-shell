@@ -92,9 +92,9 @@
     }
 
     function emptyCart(){
+      $scope.vm.cartItems = ShoppingCart.emptyCart();
       setShoppingCart();
       resetViews();
-      $scope.vm.cartItems = ShoppingCart.emptyCart();
     }
 
     function resetViews(){
