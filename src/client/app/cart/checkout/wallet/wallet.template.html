@@ -6,14 +6,16 @@
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div data-ng-hide="loading" class="shelf-space">
         <div data-ng-hide="loading" class="shelf-content">
-          <div class="pure-g">
+          <div data-ng-if="currentUser" class="pure-g">
             <div class="pure-u-1 pure-u-md-1-3 border-right">
               <div class="information-box no-padding">Tienes un codigo, ingresalo para agregar saldo a tu cuenta.
                 <coupon></coupon>
               </div>
             </div>
             <div class="pure-u-1 pure-u-md-1-3 border-right">
-              <div class="information-box">Saldo Disponible: ${{vm.currentUser.wallet - shoppingCart.wallet }}<a data-ng-click="useWallet()" data-ng-hide="payWithWallet" class="pure-button pure-button-primary button-xsmall">Usar mi saldo</a><a data-ng-click="doNotUseWallet()" data-ng-show="payWithWallet" class="pure-button pure-button-primary button-xsmall">No usar mi saldo</a></div>
+              <div class="information-box">Saldo Disponible: ${{vm.currentUser.wallet - shoppingCart.wallet }}
+                <div class="align-center"><a data-ng-click="useWallet()" data-ng-hide="payWithWallet" class="pure-button pure-button-primary button-small">Usar mi saldo</a><a data-ng-click="doNotUseWallet()" data-ng-show="payWithWallet" class="pure-button pure-button-primary button-small">No usar mi saldo</a></div>
+              </div>
             </div>
             <div class="pure-u-1 pure-u-md-1-3 align-center">
               <table class="total-table">
@@ -35,6 +37,7 @@
               </table><a data-ng-click="hideWalletView()" class="pure-button">Cerrar Monedero</a>
             </div>
           </div>
+          <div data-ng-if="!currentUser" class="align-center">Inicia sesion para ver el saldo de tu cuenta o canjear un cupon.            <a data-ng-if="!currentUser" data-ng-click="showLoginForms(true)" class="pure-button pure-button-primary button-small"><i class="fa fa-user"></i>Iniciar Sesion</a></div>
         </div>
       </div>
     </div>

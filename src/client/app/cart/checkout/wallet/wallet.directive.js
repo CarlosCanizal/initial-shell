@@ -32,7 +32,9 @@ function wallet(userApi, ShoppingCart){
         cart.wallet = walletTotal;
         cart.useWallet = true;
         ShoppingCart.setCart(cart);
-        scope.updateShoppingCart(cart);
+        scope.shoppingCart.total =  cart.total;
+        scope.shoppingCart.wallet =  cart.wallet;
+        scope.shoppingCart.useWallet =  true;
         scope.hideLoading();
       }
 
@@ -45,7 +47,9 @@ function wallet(userApi, ShoppingCart){
         cart.total = cart.cartTotal;
         cart.wallet = 0;
         ShoppingCart.setCart(cart);
-        scope.updateShoppingCart(cart);
+        scope.shoppingCart.total =  cart.total;
+        scope.shoppingCart.wallet =  cart.wallet;
+        scope.shoppingCart.useWallet =  false;
         scope.hideLoading();
       }
       
