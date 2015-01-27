@@ -18,6 +18,7 @@
     $scope.completed = false;
     $scope.updateCart = false;
     $scope.loginFormsView = false;
+    $scope.couponView = false;
 
     setShoppingCart();
     resetViews();    
@@ -74,6 +75,10 @@
       $scope.shoppingCart.items  = $scope.vm.cartItems.items;
       console.log($scope.shoppingCart.items);
       ShoppingCart.setCart($scope.shoppingCart);
+    }
+
+    $scope.showCouponView =  function(){
+      $scope.couponView = true;
     }
 
     function emptyCart(){

@@ -46,18 +46,18 @@
                     <td>$</td>
                     <td>{{vm.cartItems.cartTotal}}</td>
                   </tr>
-                  <tr>
+                  <tr data-ng-if="vm.currentUser &amp;&amp; vm.currentUser.wallet &gt; 0">
                     <td class="table-label">Monedero:</td>
                     <td>$</td>
-                    <td>10.00</td>
+                    <td>{{vm.currentUser.wallet.toFixed(2)}}</td>
                   </tr>
                   <tr>
                     <td class="table-label">Total a Pagar:</td>
                     <td>$</td>
-                    <td>100.00</td>
+                    <td>0.00</td>
                   </tr>
                 </table>
-                <div class="margin-bottom align-right"><a><i class="fa fa-ticket"></i>Tengo un cupon</a></div>
+                <div class="margin-bottom align-right"><a data-ng-click="showCouponView()"><i class="fa fa-ticket"></i>Tengo un cupon</a></div>
                 <div data-ng-show="updateCart" class="margin-bottom align-right"><a data-ng-click="updateQuantity()" data-ng-hide="showAddress" class="pure-button pure-button-primary"><i class="fa fa-check"></i>Actualizar Orden</a></div>
                 <div data-ng-hide="updateCart" class="margin-bottom align-right"><a data-ng-if="currentUser" data-ng-click="toAddress()" data-ng-hide="showAddress" class="pure-button button-success"><i class="fa fa-check"></i>Continuar</a><a data-ng-if="!currentUser" data-ng-click="showLoginForms(true)" class="pure-button pure-button-primary"><i class="fa fa-user"></i>Iniciar Sesion</a></div>
                 <div class="align-right"><a data-ng-click="showModal()" data-question="¿Vaciar carrito?" data-confirm="emptyCart()" data-ng-hide="showAddress" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"></i>Vaciar Carrito</a></div>
