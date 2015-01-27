@@ -1,0 +1,46 @@
+#wallet
+  .filter-title
+    span.publisher-name.
+      Monedero
+  .shelf
+    //- .disable-shelf(data-ng-show="showShipping")
+      i.fa.fa-check-square-o.fa-5.success
+    .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-space(data-ng-hide="loading")
+        .shelf-content(data-ng-hide="loading")
+          .pure-g
+            .pure-u-1.pure-u-md-1-3.border-right
+              .information-box.no-padding
+                |Tienes un codigo, ingresalo para agregar saldo a tu cuenta.
+                coupon
+            .pure-u-1.pure-u-md-1-3.border-right
+              .information-box
+                | Saldo Disponible: ${{vm.currentUser.wallet - shoppingCart.wallet }}
+                a.pure-button.pure-button-primary.button-xsmall(data-ng-click="useWallet()", data-ng-hide="payWithWallet")
+                  | Usar mi saldo
+                a.pure-button.pure-button-primary.button-xsmall(data-ng-click="doNotUseWallet()", data-ng-show="payWithWallet")
+                  | No usar mi saldo
+            .pure-u-1.pure-u-md-1-3.align-center
+              table.total-table
+                tr
+                  td.table-label
+                    |Total de la orden:
+                  td
+                    |$
+                  td
+                    |{{shoppingCart.cartTotal}}
+                tr
+                  td.table-label
+                    |Descuento:
+                  td
+                    |$
+                  td
+                    |{{shoppingCart.wallet}}
+                tr
+                  td.table-label
+                    |Total a Pagar:
+                  td
+                    |$
+                  td
+                    |{{shoppingCart.total}}

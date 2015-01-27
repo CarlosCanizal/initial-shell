@@ -450,36 +450,35 @@ a:hover, a:active, a:focus {
 
 /* line 381, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .total-table {
-  font-size: 1.2rem;
   margin: 0 auto;
   margin-bottom: 1rem;
   text-align: right; }
-  /* line 386, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 385, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .total-table .table-label {
     padding-right: 1rem; }
 
-/* line 389, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 388, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .coupon-row {
   font-size: 1rem;
   padding: 0.5rem 0; }
 
-/* line 393, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 392, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .total-container {
   display: inline-block; }
 
-/* line 396, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 395, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #submenu {
   text-align: right; }
-  /* line 398, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 397, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #submenu nav {
     margin: 1rem 0; }
-    /* line 400, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 399, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav a {
       padding: 0 1rem;
       color: #999;
       text-decoration: none;
       text-transform: uppercase;
       border-right: solid 1px #CCC; }
-    /* line 406, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 405, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav .active {
       color: orange; }

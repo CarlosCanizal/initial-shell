@@ -1,27 +1,20 @@
 
-<div class="filter-title"><span class="publisher-name">Cupon</span></div>
-<div class="shelf">
-  <div class="inner-shelf">
-    <div class="shelf-space">¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
-      <form name="couponForm" novalidate="" class="pure-form pure-form-stacked">
-        <fieldset>
-          <div class="child-container">
-            <ng-form name="couponForm">
-              <div class="form-container">
-                <label for="coupon" ng-show="couponForm.coupon.$valid || couponForm.coupon.$pristine">Cupon:</label>
-                <label for="coupon" ng-show="couponForm.coupon.$invalid &amp;&amp; couponForm.coupon.$dirty" class="error">Cupon es requerido:</label>
-                <div class="form-icon">
-                  <input id="coupon" name="coupon" data-ng-model="coupon.code" required="" class="pure-input-1"/><i ng-show="couponForm.coupon.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="couponForm.coupon.$valid &amp;&amp; couponForm.coupon.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="couponForm.coupon.$invalid &amp;&amp; couponForm.coupon.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-                </div>
-              </div>
-            </ng-form>
+<form name="couponForm" novalidate="" class="pure-form pure-form-stacked">
+  <fieldset>
+    <div class="child-container">
+      <ng-form name="couponForm">
+        <div class="form-container">
+          <label for="coupon" ng-show="couponForm.coupon.$valid || couponForm.coupon.$pristine">Cupon:</label>
+          <label for="coupon" ng-show="couponForm.coupon.$invalid &amp;&amp; couponForm.coupon.$dirty" class="error">Cupon es requerido:</label>
+          <div class="form-icon">
+            <input id="coupon" name="coupon" data-ng-model="coupon.code" required="" class="pure-input-1"/><i ng-show="couponForm.coupon.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="couponForm.coupon.$valid &amp;&amp; couponForm.coupon.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="couponForm.coupon.$invalid &amp;&amp; couponForm.coupon.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
           </div>
-        </fieldset>
-      </form>
-      <div class="align-center"><a data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="redeemCode()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$valid" class="pure-button button-success"><i class="fa fa-thumbs-o-up"></i>Validar Codigo</a>
-        <div data-ng-if="error" class="error">{{error}}</div>
-        <div data-ng-if="success" class="success">{{success}}</div>
-      </div>
+        </div>
+      </ng-form>
     </div>
-  </div>
+  </fieldset>
+</form>
+<div class="align-center"><a data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="redeemCode()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="couponForm.$valid" class="pure-button button-success"><i class="fa fa-thumbs-o-up"></i>Validar Codigo</a>
+  <div data-ng-if="error" class="error">{{error}}</div>
+  <div data-ng-if="success" class="success">{{success}}</div>
 </div>

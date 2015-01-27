@@ -2,13 +2,11 @@
   | Carrito de Compras
 #user-forms(login-forms, data-ng-if="!currentUser", data-ng-show="loginFormsView")
 #items-checkout(items-list, data-ng-if="!completed")
-#coupon-checkout(coupon, data-ng-if="couponView")
+#wallet-checkout(wallet, data-ng-if="currentUser")
 #address-checkout(shipping-address, data-ng-if="currentUser")
 #payment-checkout(payment-method, data-ng-if="currentUser")
 #placeOrder-checkout(place-order, data-ng-if="currentUser")
 #response-checkout(response-payment, data-ng-if="currentUser")
-
-
 
       
         

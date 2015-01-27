@@ -20,8 +20,14 @@
     $scope.loginFormsView = false;
     $scope.couponView = false;
 
+    $scope.shoppingCart = ShoppingCart.getCart();
+
     setShoppingCart();
-    resetViews();    
+    resetViews();
+
+    $scope.updateShoppingCart = function(cart){
+      $scope.shoppingCart = cart;
+    }
 
     $scope.setStatus = function(status){
       $scope.completed = status;
