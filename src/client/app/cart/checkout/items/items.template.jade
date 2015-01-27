@@ -40,45 +40,22 @@
             .pure-u-1.pure-u-lg-2-3
               .cart-item.pure-g(ng-repeat="item in vm.cartItems.items", cart-item)
             .pure-u-1.pure-u-lg-1-3.align-center
-              .total-container
-                table.total-table
-                  tr
-                    td.table-label
-                      |Total:
-                    td
-                      |$
-                    td
-                      |{{vm.cartItems.cartTotal}}
-                  tr(data-ng-if="vm.currentUser && vm.currentUser.wallet > 0")
-                    td.table-label
-                      |Monedero:
-                    td
-                      |$
-                    td
-                      |{{vm.currentUser.wallet.toFixed(2)}}
-                  tr
-                    td.table-label
-                      |Total a Pagar:
-                    td
-                      |$
-                    td
-                      |0.00
-                .margin-bottom.align-right()
-                  a(data-ng-click="showCouponView()")
-                    i.fa.fa-ticket
-                    |Tengo un cupon
-                .margin-bottom.align-right(data-ng-show="updateCart")
-                  a.pure-button.pure-button-primary(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
-                    i.fa.fa-check
-                    | Actualizar Orden
-                .margin-bottom.align-right(data-ng-hide="updateCart")
-                  a.pure-button.button-success(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
-                    i.fa.fa-check
-                    | Continuar
-                  a.pure-button.pure-button-primary(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
-                    i.fa.fa-user
-                    | Iniciar Sesion
-                div.align-right
-                  a.pure-button(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="emptyCart()",data-ng-hide="showAddress", confirm-message)
-                    i.fa.fa-trash
-                    | Vaciar Carrito
+              .title
+                | Total de la orden:
+              .title
+                |$ {{vm.cartItems.cartTotal}} USD
+              .margin-bottom(data-ng-show="updateCart")
+                a.pure-button.pure-button-primary(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
+                  i.fa.fa-check
+                  | Actualizar Orden
+              .margin-bottom(data-ng-hide="updateCart")
+                a.pure-button.button-success(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
+                  i.fa.fa-check
+                  | Continuar
+                a.pure-button.pure-button-primary(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
+                  i.fa.fa-user
+                  | Iniciar Sesion
+              div
+                a.pure-button(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="emptyCart()",data-ng-hide="showAddress", confirm-message)
+                  i.fa.fa-trash
+                  | Vaciar Carrito
