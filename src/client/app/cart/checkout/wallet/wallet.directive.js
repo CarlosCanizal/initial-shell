@@ -23,7 +23,7 @@ function wallet(userApi, ShoppingCart){
         scope.payWithWallet = true;
         cart.useWallet = true;
         cart.userWallet = scope.getCurrentUser().wallet;
-        scope.updateShoppingCart(ShoppingCart.setCart(cart));
+        scope.updateWallet(ShoppingCart.setCart(cart));
         scope.hideLoading();
       }
 
@@ -32,13 +32,9 @@ function wallet(userApi, ShoppingCart){
         var cart = ShoppingCart.getCart();
         scope.payWithWallet = false;
         cart.useWallet = false;
-
         cart.total = cart.cartTotal;
         cart.wallet = 0;
-        ShoppingCart.setCart(cart);
-        scope.shoppingCart.total =  cart.total;
-        scope.shoppingCart.wallet =  cart.wallet;
-        scope.shoppingCart.useWallet =  false;
+        scope.updateWallet(ShoppingCart.setCart(cart));
         scope.hideLoading();
       }
       

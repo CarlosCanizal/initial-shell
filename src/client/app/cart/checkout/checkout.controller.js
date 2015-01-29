@@ -34,8 +34,19 @@
     setShoppingCart();
     resetViews();
 
-    $scope.updateShoppingCart = function(cart){
+    $scope.updateWallet = function(cart){
+      //Entender como funcion y por que no copia el objeto en el select , function useWallet en wallet.directive
+      if($scope.shoppingCart.shippingAddress)
+        cart.shippingAddress = $scope.shoppingCart.shippingAddress;
+
+      if($scope.shoppingCart.paymentMethod)
+        cart.paymentMethod = $scope.shoppingCart.paymentMethod;
+
       $scope.shoppingCart = cart;
+    }
+
+    $scope.getShoppingCart = function(){
+      return $scope.shoppingCart;
     }
 
     $scope.setStatus = function(status){

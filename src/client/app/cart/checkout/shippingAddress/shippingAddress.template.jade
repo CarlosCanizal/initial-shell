@@ -38,7 +38,7 @@
                   .address-line
                     | Cambiar direccion
                   .address-line
-                    select(ng-model="shoppingCart.shippingAddress", ng-options="item as item.street for item in addresses")
+                    select(data-ng-model="shoppingCart.shippingAddress", data-ng-options="item as item.street for item in addresses")
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="addressFormView=true")
                     i.fa.fa-plus

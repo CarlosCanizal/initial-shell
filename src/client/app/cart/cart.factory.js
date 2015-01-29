@@ -28,7 +28,7 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], itemsTotal: 0, cartTotal :0, total:0,useWallet:false, wallet:0, userWallet:0, descuento:0, shippingAddress:{}, paymentMethod:{}}
+        cart = {items:[], itemsTotal: 0, cartTotal :0, total:0,useWallet:false, wallet:0, userWallet:0, descuento:0, shippingAddress: false, paymentMethod:false}
         // storage.set('cart',cart)
         this.setCart(cart);
       }
@@ -53,10 +53,11 @@
     }
 
     function setCart(cart){
-
       var cartTotal = cart.cartTotal;
       var total = cartTotal;
-      
+      var prevCart = storage.get('cart');
+
+
       if(cart.useWallet && (cart.userWallet && cart.userWallet > 0)){
         total = (cartTotal-cart.userWallet) > 0 ? cartTotal-cart.userWallet : 0;
         cart.wallet = (cart.userWallet - cartTotal > 0 )? cartTotal : cart.userWallet ;

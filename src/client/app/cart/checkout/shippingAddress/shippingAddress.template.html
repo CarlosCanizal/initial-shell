@@ -34,7 +34,7 @@
                 <div data-ng-show="addresses.length &gt; 0">
                   <div class="address-line">Cambiar direccion</div>
                   <div class="address-line">
-                    <select ng-model="shoppingCart.shippingAddress" ng-options="item as item.street for item in addresses"></select>
+                    <select data-ng-model="shoppingCart.shippingAddress" data-ng-options="item as item.street for item in addresses"></select>
                   </div>
                 </div>
                 <div class="address-line"><a data-ng-click="addressFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Direccion</a></div>
