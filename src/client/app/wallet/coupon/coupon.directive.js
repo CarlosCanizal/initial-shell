@@ -16,10 +16,14 @@ function coupon(couponApi, userApi){
 
         if(scope.couponForm.$valid){
           scope.showLoading();
-          couponApi.redeemCode(scope.coupon.code, userApi.currentUser()).then(function(code){
-            console.log('redeemCode',code);
+          couponApi.redeemCode(scope.coupon.code, userApi.currentUser()).then(function(result){
+            var coupon = result.result;
             scope.success = "Codigo valido";
             scope.updateCurrentUser();
+            if(scope.shoppingCart){
+              scope.shoppingCart.userWallet += coupon.amount;
+              scope.updateShoppingCart(scope.shoppingCart);
+            }
           },function(error){
             console.error(error);
             scope.error = error.data.error;

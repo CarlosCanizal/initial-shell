@@ -56,9 +56,10 @@
 
       var cartTotal = cart.cartTotal;
       var total = cartTotal;
+      
       if(cart.useWallet && (cart.userWallet && cart.userWallet > 0)){
         total = (cartTotal-cart.userWallet) > 0 ? cartTotal-cart.userWallet : 0;
-        cart.wallet = (cart.userWallet - cartTotal > 0 )? cartTotal : 0;
+        cart.wallet = (cart.userWallet - cartTotal > 0 )? cartTotal : cart.userWallet ;
       }else{
         total = cartTotal;
         cart.wallet = 0;
