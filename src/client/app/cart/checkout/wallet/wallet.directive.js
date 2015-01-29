@@ -21,20 +21,9 @@ function wallet(userApi, ShoppingCart){
         var cart = ShoppingCart.getCart();
         var wallet = user.wallet;
         scope.payWithWallet = true;
-
-        var total = (cart.cartTotal - wallet) >=0 ? cart.cartTotal - wallet : 0;
-        var walletTotal = (wallet - cart.cartTotal) >= 0 ? cart.cartTotal : 0;
-
-        console.log('total', total);
-        console.log('wallet', walletTotal);
-
-        cart.total = total;
-        cart.wallet = walletTotal;
         cart.useWallet = true;
-        ShoppingCart.setCart(cart);
-        scope.shoppingCart.total =  cart.total;
-        scope.shoppingCart.wallet =  cart.wallet;
-        scope.shoppingCart.useWallet =  true;
+        cart.userWallet = scope.getCurrentUser().wallet;
+        scope.updateShoppingCart(ShoppingCart.setCart(cart));
         scope.hideLoading();
       }
 

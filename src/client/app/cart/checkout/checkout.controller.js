@@ -22,6 +22,15 @@
 
     $scope.shoppingCart = ShoppingCart.getCart();
 
+    if(!$scope.currentUser){
+      if($scope.shoppingCart.wallet){
+        $scope.shoppingCart.wallet = 0;
+        $scope.shoppingCart.useWallet = false;
+        $scope.shoppingCart.userWallet = 0;
+        ShoppingCart.setCart($scope.shoppingCart);
+      }
+    }
+
     setShoppingCart();
     resetViews();
 
@@ -39,6 +48,7 @@
 
     $scope.toAddress = function(){
       $scope.showAddress = true;
+      $scope.walletView = false;
       $scope.showPayment = false;
       $scope.showPlaceOrder = false;
     }

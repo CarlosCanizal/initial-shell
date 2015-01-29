@@ -28,8 +28,9 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], itemsTotal: 0, cartTotal :0, shippingAddress:{}, paymentMethod:{}}
-        storage.set('cart',cart)
+        cart = {items:[], itemsTotal: 0, cartTotal :0, total:0,useWallet:false, wallet:0, userWallet:0, shippingAddress:{}, paymentMethod:{}}
+        // storage.set('cart',cart)
+        this.setCart(cart);
       }
       return cart;
     }
@@ -52,6 +53,18 @@
     }
 
     function setCart(cart){
+
+      var cartTotal = cart.cartTotal;
+      var total = cartTotal;
+      if(cart.useWallet && (cart.userWallet && cart.userWallet > 0)){
+        total = (cartTotal-cart.userWallet) > 0 ? cartTotal-cart.userWallet : 0;
+        cart.wallet = (cart.userWallet - cartTotal > 0 )? cart.userWallet - cartTotal : 0;
+      }else{
+        total = cartTotal;
+        cart.wallet = 0;
+      }
+      cart.total = total;
+
       storage.set('cart',cart)
       return this.getTotal();
     }
