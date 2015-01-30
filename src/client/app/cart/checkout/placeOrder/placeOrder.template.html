@@ -25,23 +25,7 @@
             </div>
             <div class="pure-u-1 pure-u-sm-1-3">
               <div class="information-box no-border no-margin no-padding align-center">
-                <table class="total-table">
-                  <tr>
-                    <td class="table-label">Total de la orden:</td>
-                    <td>$</td>
-                    <td>{{shoppingCart.cartTotal}}</td>
-                  </tr>
-                  <tr data-ng-if="shoppingCart.wallet &gt; 0">
-                    <td class="table-label">Descuento:</td>
-                    <td>$</td>
-                    <td>{{shoppingCart.wallet}}</td>
-                  </tr>
-                  <tr>
-                    <td class="table-label">Total a Pagar:</td>
-                    <td>$</td>
-                    <td>{{shoppingCart.total}}</td>
-                  </tr>
-                </table>
+                <div data-ng-include="'app/cart/checkout/totals/totals.template.html'"></div>
                 <div class="address-line"><a data-ng-click="placeOrder()" data-ng-hide="showConfirmation" class="pure-button button-success margin-bottom"><i class="fa fa-money"></i>Pagar</a></div>
                 <div class="address-line no-padding"><a data-ng-click="showModal()" data-question="¿Ir al carrito?" data-confirm="goToCart()" data-ng-hide="showConfirmation" confirm-message="confirm-message" class="pure-button"><i class="fa fa-shopping-cart"></i>Ir al carrito</a></div>
               </div>

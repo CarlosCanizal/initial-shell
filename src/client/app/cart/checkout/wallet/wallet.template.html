@@ -18,23 +18,7 @@
               <div class="align-center"><a data-ng-click="useWallet()" data-ng-hide="payWithWallet" class="pure-button pure-button-primary button-small">Usar mi saldo</a><a data-ng-click="doNotUseWallet()" data-ng-show="payWithWallet" class="pure-button pure-button-primary button-small">No usar mi saldo</a></div>
             </div>
             <div class="pure-u-1 pure-u-md-1-3 align-center">
-              <table class="total-table">
-                <tr>
-                  <td class="table-label">Total de la orden:</td>
-                  <td>$</td>
-                  <td>{{shoppingCart.cartTotal}}</td>
-                </tr>
-                <tr>
-                  <td class="table-label">Descuento:</td>
-                  <td>$</td>
-                  <td>{{shoppingCart.wallet}}</td>
-                </tr>
-                <tr>
-                  <td class="table-label">Total a Pagar:</td>
-                  <td>$</td>
-                  <td>{{shoppingCart.total}}</td>
-                </tr>
-              </table><a data-ng-click="hideWalletView()" class="pure-button">Cerrar Monedero</a>
+              <div data-ng-include="'app/cart/checkout/totals/totals.template.html'"></div><a data-ng-click="hideWalletView()" class="pure-button">Cerrar Monedero</a>
             </div>
           </div>
           <div data-ng-if="!currentUser" class="align-center">Inicia sesion para ver el saldo de tu cuenta o canjear un cupon.            <a data-ng-if="!currentUser" data-ng-click="showLoginForms(true)" class="pure-button pure-button-primary button-small"><i class="fa fa-user"></i>Iniciar Sesion</a></div>

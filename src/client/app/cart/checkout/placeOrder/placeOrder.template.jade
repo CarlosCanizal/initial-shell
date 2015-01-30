@@ -40,28 +40,7 @@
                     | Modificar
             .pure-u-1.pure-u-sm-1-3
               .information-box.no-border.no-margin.no-padding.align-center
-                table.total-table
-                  tr
-                    td.table-label
-                      |Total de la orden:
-                    td
-                      |$
-                    td
-                      |{{shoppingCart.cartTotal}}
-                  tr(data-ng-if="shoppingCart.wallet > 0")
-                    td.table-label
-                      |Descuento:
-                    td
-                      |$
-                    td
-                      |{{shoppingCart.wallet}}
-                  tr
-                    td.table-label
-                      |Total a Pagar:
-                    td
-                      |$
-                    td
-                      |{{shoppingCart.total}}
+                div(data-ng-include="'app/cart/checkout/totals/totals.template.html'")
                 .address-line
                   a.pure-button.button-success.margin-bottom(data-ng-click="placeOrder()", data-ng-hide="showConfirmation")
                     i.fa.fa-money
