@@ -43,15 +43,15 @@
               div(data-ng-include="'app/cart/checkout/totals/totals.template.html'")
               .pure-g
                 .pure-u-1.pure-u-sm-1-2
-                  .margin-bottom(data-ng-show="updateCart")
+                  .margin-bottom(data-ng-show="checkout.updateCart")
                     a.pure-button.pure-button-primary.button-small(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
                       i.fa.fa-check
                       | Actualizar Orden
-                  .margin-bottom(data-ng-hide="updateCart")
-                    a.pure-button.button-success.button-small(data-ng-if="currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
+                  .margin-bottom(data-ng-hide="checkout.updateCart")
+                    a.pure-button.button-success.button-small(data-ng-if="vm.currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
                       i.fa.fa-check
                       | Continuar
-                    a.pure-button.pure-button-primary.button-small(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
+                    a.pure-button.pure-button-primary.button-small(data-ng-if="!vm.currentUser", data-ng-click="showLoginForms(true)")
                       i.fa.fa-user
                       | Iniciar Sesion
                 .pure-u-1.pure-u-sm-1-2

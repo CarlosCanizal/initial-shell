@@ -33,7 +33,7 @@ function cartItem(ShoppingCart){
         if(item.quantity-1 > 0){
           --item.quantity;
           scope.update = true;
-          scope.setUpdateCart(true); 
+          checkout.updateCart = true;
         }
       }
 

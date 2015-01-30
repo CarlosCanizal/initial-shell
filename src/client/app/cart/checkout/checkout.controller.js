@@ -10,7 +10,7 @@
   function Checkout($scope, $state,ShoppingCart, userApi) {
 
     var vm = $scope.vm;
-    var checkoutVm = this;
+    var checkout = this;
 
     // checkoutVm.shoppingCart = $scope.vm.shoppingCart;
     $scope.$watch('vm.currentUser',function(){
@@ -28,7 +28,7 @@
     $scope.paymentMethods = [];
     $scope.itemsUnavailable = [];
     $scope.completed = false;
-    checkoutVm.updateCart = false;
+    checkout.updateCart = false;
     $scope.loginFormsView = false;
     $scope.walletView = false;
 
@@ -94,7 +94,7 @@
     }
 
     vm.setUpdateCart = function(update){
-      $scope.updateCart = update;
+      checkout.updateCart = update;
     }
 
     $scope.showLoginForms = function(view){

@@ -13,9 +13,8 @@ function itemsList(ShoppingCart){
     templateUrl: 'app/cart/checkout/items/items.template.html',
     scope: true,
     link:function(scope,element,attr){
+      var checkout = scope.checkout;
       
-      console.log('inside itemsList', scope.checkout);
-
       scope.loading = true;
 
       ShoppingCart.validateOrder().then(function(order){
