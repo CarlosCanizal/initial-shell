@@ -23,6 +23,17 @@
 
     //refactor
     vm.shoppingCart = ShoppingCart.getTotal();
+
+    $scope.updateShoppingCart =  function(cart){
+      vm.shoppingCart = cart;
+      return vm.shoppingCart;
+    }
+
+    $scope.getShoppingCart =  function(){
+      return vm.shoppingCart;
+    }
+
+
     //refactor
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){

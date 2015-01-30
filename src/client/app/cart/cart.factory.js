@@ -21,7 +21,8 @@
       setCart: setCart,
       validateOrder: validateOrder,
       updateItems: updateItems,
-      initialize: initialize
+      initialize: initialize,
+      initializeTotals: initializeTotals
     };
 
     return cart;
@@ -31,16 +32,23 @@
       var cart = storage.get('cart');
       if(!cart){
         cart = this.initialize();
-        this.setCart(cart);
       }
       return cart;
     }
 
-    function initialize(items){
+    function initialize(){
       var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0, shippingAddress: false, paymentMethod:false}
-      if(items)
-        cart.items = items;
-      return cart;
+      return this.setCart(cart);
+    }
+
+    function initializeTotals(){
+      var cart = this.getCart();
+      cart.items = [];
+      cart.itemsTotal =  0;
+      cart.cartTotal = 0;
+      cart.total = false;
+      return this.setCart(cart);
+
     }
 
     function validateOrder(){
@@ -61,8 +69,8 @@
     }
 
     function setCart(cart){
-      var prevCart = storage.get('cart');
-      cart = this.calculateTotal(cart);
+      // var prevCart = storage.get('cart');
+      // cart = this.calculateTotal(cart);
       storage.set('cart',cart)
       return this.getTotal();
     }
@@ -150,8 +158,7 @@
     }
 
     function emptyCart(){
-      storage.remove('cart');
-      return this.getCart();
+      return this.initializeTotals();
     }
 
 

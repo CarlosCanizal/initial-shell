@@ -39,10 +39,7 @@
         ShoppingCart.setCart($scope.shoppingCart);
       }
     }
-
     
-
-    setShoppingCart();
     resetViews();
 
     $scope.updateWallet = function(cart){
@@ -56,9 +53,9 @@
       $scope.shoppingCart = cart;
     }
 
-    $scope.getShoppingCart = function(){
-      return $scope.shoppingCart;
-    }
+    // $scope.getShoppingCart = function(){
+    //   return $scope.shoppingCart;
+    // }
 
     $scope.setStatus = function(status){
       $scope.completed = status;
@@ -124,8 +121,7 @@
     }
 
     function emptyCart(){
-      $scope.vm.cartItems = ShoppingCart.emptyCart();
-      setShoppingCart();
+      $scope.shoppingCart = ShoppingCart.emptyCart();
       resetViews();
     }
 
@@ -136,11 +132,9 @@
       $scope.showConfirmation = false;
     }
 
-    function setShoppingCart(){
-      // $scope.shoppingCart.items = $scope.vm.cartItems.items;
-      $scope.shoppingCart.shippingAddress = {};
-      $scope.shoppingCart.paymentMethod = {};
-    }
+    // function setShoppingCart(){
+    //   $scope.shoppingCart = ShoppingCart.initialize($scope.shoppingCart.items);
+    // }
 
     function cleanItemsUnavaibale(){
       $scope.itemsUnavailable = [];
