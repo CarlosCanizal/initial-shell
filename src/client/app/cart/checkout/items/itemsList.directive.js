@@ -18,7 +18,7 @@ function itemsList(ShoppingCart){
       scope.loading = true;
 
       ShoppingCart.validateOrder().then(function(order){
-        scope.vm.cartItems = ShoppingCart.updateItems(order.itemsAvailable);
+        scope.vm.shoppingCart = ShoppingCart.updateItems(order.itemsAvailable);
         scope.itemsUnavailable = order.itemsUnavailable;
         scope.loading = false;
       },function(error){
