@@ -8,6 +8,15 @@
   Checkout.$inject = ['$scope', '$state','ShoppingCart', 'userApi'];
 
   function Checkout($scope, $state,ShoppingCart, userApi) {
+
+    $scope.$watch('vm.currentUser',function(){
+      $scope.currentUser = $scope.getCurrentUser();
+      if($scope.currentUser){
+        console.log('vm.currentUser', $scope.currentUser.membership);
+        $scope.shoppingCart.membership = $scope.currentUser.membership;
+        ShoppingCart.setCart($scope.shoppingCart);
+      }
+    });
     
     $scope.currentUser = $scope.getCurrentUser();
     $scope.shoppingCart = {};
@@ -30,6 +39,8 @@
         ShoppingCart.setCart($scope.shoppingCart);
       }
     }
+
+    
 
     setShoppingCart();
     resetViews();

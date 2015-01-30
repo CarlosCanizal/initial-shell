@@ -62,7 +62,6 @@
     }
 
     $scope.getCurrentUser = function(){
-      console.log('currentUser',vm.currentUser);
       return vm.currentUser;
     }
 
