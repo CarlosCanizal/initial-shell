@@ -19,8 +19,6 @@ function wallet(userApi, ShoppingCart){
       scope.useWallet = function(){
         scope.showLoading();
         var cart = ShoppingCart.getCart();
-        // var wallet = user.wallet;
-        var wallet = cart.userWallet;
         scope.payWithWallet = true;
         cart.useWallet = true;
         cart.userWallet = scope.getCurrentUser().wallet;
