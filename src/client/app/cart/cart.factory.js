@@ -67,7 +67,8 @@
         return memo + item.quantity;
       },0,0);
       cart.itemsTotal = itemsTotal;
-      cart.cartTotal =  cartTotal.toFixed(2); // jccz checar funcion de redondeo
+      // cart.cartTotal =  cartTotal.toFixed(2); // jccz checar funcion de redondeo
+      cart.cartTotal =  cartTotal
       cart = this.calculateTotal(cart);
       storage.set('cart',cart)
       return cart;
@@ -79,7 +80,7 @@
 
       if(cart.membership == 'pro'){
         var discount = 15 /100;
-        cart.discount = (cartTotal * discount).toFixed(2);
+        cart.discount = (cartTotal * discount)
         cartTotal -= cart.discount;
       }
 
@@ -90,7 +91,7 @@
         total = cartTotal;
         cart.wallet = 0;
       }
-      cart.total = total.toFixed(2);
+      cart.total = total;
       return cart;
     }
 

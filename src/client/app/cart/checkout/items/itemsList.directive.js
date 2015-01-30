@@ -25,7 +25,7 @@ function itemsList(ShoppingCart){
 
       scope.updateQuantity = function(item, index){
         scope.vm.cartItems = ShoppingCart.setCart(scope.vm.cartItems);
-        scope.shoppingCart.items = scope.vm.cartItems.items;
+        scope.shoppingCart = scope.vm.cartItems;
         scope.setUpdateCart(false);
       }
 
