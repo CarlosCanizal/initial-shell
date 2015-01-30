@@ -44,22 +44,22 @@
               .pure-g
                 .pure-u-1.pure-u-sm-1-2
                   .margin-bottom(data-ng-show="checkout.updateCart")
-                    a.pure-button.pure-button-primary.button-small(data-ng-click="updateQuantity()",data-ng-hide="showAddress")
+                    a.pure-button.pure-button-primary.button-small(data-ng-click="checkout.updateQuantity()",data-ng-hide="checkout.showAddress")
                       i.fa.fa-check
                       | Actualizar Orden
                   .margin-bottom(data-ng-hide="checkout.updateCart")
-                    a.pure-button.button-success.button-small(data-ng-if="shell.currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
+                    a.pure-button.button-success.button-small(data-ng-if="shell.currentUser", data-ng-click="checkout.toAddress()",data-ng-hide="checkout.showAddress")
                       i.fa.fa-check
                       | Continuar
-                    a.pure-button.pure-button-primary.button-small(data-ng-if="!shell.currentUser", data-ng-click="showLoginForms(true)")
+                    a.pure-button.pure-button-primary.button-small(data-ng-if="!shell.currentUser", data-ng-click="checkout.showLoginForms(true)")
                       i.fa.fa-user
                       | Iniciar Sesion
                 .pure-u-1.pure-u-sm-1-2
                   div.margin-bottom
-                    a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="emptyCart()",data-ng-hide="showAddress", confirm-message)
+                    a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Vaciar carrito?', data-confirm="checkout.emptyCart()",data-ng-hide="checkout.showAddress", confirm-message)
                       i.fa.fa-trash
                       | Vaciar Carrito
               div.pointer.action
-                a(data-ng-click="showWalletView()")
+                a(data-ng-click="checkout.showWalletView()")
                   i.fa.fa-ticket
                   | Pagar con saldo o cupon

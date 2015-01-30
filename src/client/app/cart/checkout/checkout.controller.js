@@ -12,9 +12,7 @@
     var shell = $scope.shell;
     var checkout = this;
 
-    // checkoutshell.shoppingCart = $scope.shell.shoppingCart;
     $scope.$watch('shell.currentUser',function(){
-      // $scope.currentUser = $scope.getCurrentUser();
       if(shell.currentUser){
         console.log('shell.currentUser', shell.currentUser.membership);
         shell.shoppingCart.membership = shell.currentUser.membership;
@@ -22,122 +20,108 @@
       }
     });
 
-    
-    // $scope.currentUser = $scope.getCurrentUser();
-    $scope.addresses = [];
-    $scope.paymentMethods = [];
-    $scope.itemsUnavailable = [];
-    $scope.completed = false;
+    checkout.addresses = [];
+    checkout.paymentMethods = [];
+    checkout.itemsUnavailable = [];
+    checkout.completed = false;
     checkout.updateCart = false;
-    $scope.loginFormsView = false;
-    $scope.walletView = false;
+    checkout.loginFormsView = false;
+    checkout.walletView = false;
 
     shell.shoppingCart = ShoppingCart.getCart();
 
     console.log(shell.shoppingCart);
 
     return;
-    if(!$scope.currentUser){
-      if($scope.shoppingCart.wallet){
-        $scope.shoppingCart.wallet = 0;
-        $scope.shoppingCart.useWallet = false;
-        $scope.shoppingCart.userWallet = 0;
-        ShoppingCart.setCart($scope.shoppingCart);
+    if(!shell.currentUser){
+      if(shell.shoppingCart.wallet){
+        shell.shoppingCart.wallet = 0;
+        shell.shoppingCart.useWallet = false;
+        shell.shoppingCart.userWallet = 0;
+        ShoppingCart.setCart(shell.shoppingCart);
       }
     }
 
     resetViews();
 
-    $scope.updateWallet = function(cart){
+    checkout.updateWallet = function(cart){
       //Entender como funcion y por que no copia el objeto en el select , function useWallet en wallet.directive
-      if($scope.shoppingCart.shippingAddress)
-        cart.shippingAddress = $scope.shoppingCart.shippingAddress;
+      if(shell.shoppingCart.shippingAddress)
+        cart.shippingAddress = shell.shoppingCart.shippingAddress;
 
-      if($scope.shoppingCart.paymentMethod)
-        cart.paymentMethod = $scope.shoppingCart.paymentMethod;
+      if(shell.shoppingCart.paymentMethod)
+        cart.paymentMethod = shell.shoppingCart.paymentMethod;
 
-      $scope.shoppingCart = cart;
+      shell.shoppingCart = cart;
     }
 
-    $scope.setStatus = function(status){
-      $scope.completed = status;
+    checkout.setStatus = function(status){
+      checkout.completed = status;
     }
 
-    $scope.goToCart =  function(){
+    checkout.goToCart =  function(){
       resetViews();
     }
 
-    $scope.toAddress = function(){
-      $scope.showAddress = true;
-      $scope.walletView = false;
-      $scope.showPayment = false;
-      $scope.showPlaceOrder = false;
+    checkout.toAddress = function(){
+      checkout.showAddress = true;
+      checkout.walletView = false;
+      checkout.showPayment = false;
+      checkout.showPlaceOrder = false;
     }
 
-    $scope.toPaymentMethod = function(){
-      ShoppingCart.setCart($scope.shoppingCart);
-      $scope.showPayment = true;
-      $scope.showPlaceOrder = false;
+    checkout.toPaymentMethod = function(){
+      ShoppingCart.setCart(shell.shoppingCart);
+      checkout.showPayment = true;
+      checkout.showPlaceOrder = false;
     }
 
-    $scope.toConfirmOrder = function(){
-      ShoppingCart.setCart($scope.shoppingCart);
-      $scope.showPlaceOrder = true;
+    checkout.toConfirmOrder = function(){
+      ShoppingCart.setCart(shell.shoppingCart);
+      checkout.showPlaceOrder = true;
     }
 
-    $scope.emptyCart = function(){
-      emptyCart();
+    checkout.emptyCart = function(){
+      shell.shoppingCart = ShoppingCart.emptyCart();
+      resetViews();
     }
 
-    $scope.cleanItemsUnavaibale = function(){
+    checkout.cleanItemsUnavaibale = function(){
       cleanItemsUnavaibale();
     }
 
-    // checkout.setUpdateCart = function(update){
-    //   checkout.updateCart = update;
-    // }
-
-    $scope.showLoginForms = function(view){
-      $scope.loginFormsView = view;
+    checkout.showLoginForms = function(view){
+      checkout.loginFormsView = view;
     }
 
-    $scope.setUser= function(user){
-      $scope.setCurrentUser(user);
-      $scope.currentUser= user;
-      // $scope.showAddress = true;
+    checkout.setUser= function(user){
+      checkout.setCurrentUser(user);
+      shell.currentUser= user;
+      // checkout.showAddress = true;
     }
 
-    $scope.removeFromCart = function(index){
-      $scope.shoppingCart = ShoppingCart.removeItem(index);
-      $scope.updateShoppingCart($scope.shoppingCart);
+    checkout.removeFromCart = function(index){
+      shell.shoppingCart = ShoppingCart.removeItem(index);
+      checkout.updateShoppingCart(shell.shoppingCart);
     }
 
-    $scope.showWalletView =  function(){
-      $scope.walletView = true;
+    checkout.showWalletView =  function(){
+      checkout.walletView = true;
     }
 
-    $scope.hideWalletView =  function(){
-      $scope.walletView = false;
-    }
-
-    function emptyCart(){
-      $scope.shoppingCart = ShoppingCart.emptyCart();
-      resetViews();
+    checkout.hideWalletView =  function(){
+      checkout.walletView = false;
     }
 
     function resetViews(){
-      $scope.showAddress = false;
-      $scope.showPayment = false;
-      $scope.showPlaceOrder = false;
-      $scope.showConfirmation = false;
+      checkout.showAddress = false;
+      checkout.showPayment = false;
+      checkout.showPlaceOrder = false;
+      checkout.showConfirmation = false;
     }
 
-    // function setShoppingCart(){
-    //   $scope.shoppingCart = ShoppingCart.initialize($scope.shoppingCart.items);
-    // }
-
     function cleanItemsUnavaibale(){
-      $scope.itemsUnavailable = [];
+      checkout.itemsUnavailable = [];
     }  
 
   }

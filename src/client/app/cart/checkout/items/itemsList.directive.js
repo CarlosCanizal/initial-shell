@@ -1,6 +1,3 @@
-// (function() {
-//   'use strict';
-
 angular
   .module('app.cart')
   .directive('itemsList',itemsList);
@@ -13,26 +10,24 @@ function itemsList(ShoppingCart){
     templateUrl: 'app/cart/checkout/items/items.template.html',
     scope: true,
     link:function(scope,element,attr){
+      var shell = scope.shell;
       var checkout = scope.checkout;
       
       scope.loading = true;
 
       ShoppingCart.validateOrder().then(function(order){
-        scope.shell.shoppingCart = ShoppingCart.updateItems(order.itemsAvailable);
-        scope.itemsUnavailable = order.itemsUnavailable;
+        shell.shoppingCart = ShoppingCart.updateItems(order.itemsAvailable);
+        checkout.itemsUnavailable = order.itemsUnavailable;
         scope.loading = false;
       },function(error){
         console.error(error);
       });
 
-      scope.updateQuantity = function(item, index){
-        scope.shell.cartItems = ShoppingCart.setCart(scope.shell.cartItems);
-        scope.shoppingCart = scope.shell.cartItems;
-        scope.setUpdateCart(false);
+      checkout.updateQuantity = function(item, index){
+        shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
+        checkout.updateCart = false;
       }
 
     }
   }
 }
-
-// });
