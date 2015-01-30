@@ -14,6 +14,7 @@
       getCart: getCart,
       addItem: addItem,
       getTotal: getTotal,
+      calculateTotal: calculateTotal,
       checkItem: checkItem,
       removeItem: removeItem,
       emptyCart: emptyCart,
@@ -28,7 +29,7 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], itemsTotal: 0, cartTotal :0, total:0,useWallet:false, wallet:0, userWallet:0, descuento:0, shippingAddress: false, paymentMethod:false}
+        cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0, shippingAddress: false, paymentMethod:false}
         // storage.set('cart',cart)
         this.setCart(cart);
       }
@@ -53,21 +54,12 @@
     }
 
     function setCart(cart){
-      var cartTotal = cart.cartTotal;
-      var total = cartTotal;
+      
+      
       var prevCart = storage.get('cart');
-
-
-      if(cart.useWallet && (cart.userWallet && cart.userWallet > 0)){
-        total = (cartTotal-cart.userWallet) > 0 ? cartTotal-cart.userWallet : 0;
-        cart.wallet = (cart.userWallet - cartTotal > 0 )? cartTotal : cart.userWallet ;
-      }else{
-        total = cartTotal;
-        cart.wallet = 0;
-      }
-      cart.total = total;
-
+      cart = this.calculateTotal(cart);
       storage.set('cart',cart)
+
       return this.getTotal();
     }
 
@@ -80,7 +72,23 @@
       },0,0);
       cart.itemsTotal = itemsTotal;
       cart.cartTotal =  cartTotal.toFixed(2); // jccz checar funcion de redondeo
+      cart = this.calculateTotal(cart);
       storage.set('cart',cart)
+      return cart;
+    }
+    
+    function calculateTotal(cart){
+      var cartTotal = cart.cartTotal;
+      var total = cartTotal;
+
+      if(cart.useWallet && (cart.userWallet && cart.userWallet > 0)){
+        total = (cartTotal-cart.userWallet) > 0 ? cartTotal-cart.userWallet : 0;
+        cart.wallet = (cart.userWallet - cartTotal > 0 )? cartTotal : cart.userWallet ;
+      }else{
+        total = cartTotal;
+        cart.wallet = 0;
+      }
+      cart.total = total;
       return cart;
     }
 

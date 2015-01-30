@@ -6,13 +6,20 @@ table.total-table
       |$
     td
       |{{shoppingCart.cartTotal}}
-  tr
+  tr.action
+    td.table-label
+      |Saldo:
+    td
+      |$
+    td
+      |{{shoppingCart.wallet}}
+  tr.action
     td.table-label
       |Descuento:
     td
       |$
     td
-      |{{shoppingCart.wallet}}
+      |{{shoppingCart.discount}}
   tr
     td.table-label
       |Total a Pagar:
