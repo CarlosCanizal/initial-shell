@@ -149,8 +149,7 @@
     function removeItem(index){
       var cart = this.getCart();
       cart.items.splice(index,1);
-      storage.set('cart',cart);
-      return this.getTotal();
+      return this.setCart(cart);
     }
 
     function emptyCart(){

@@ -10,6 +10,8 @@ function cartItem(ShoppingCart){
     templateUrl: 'app/cart/checkout/items/item.template.html',
     scope: true,
     link:function(scope, element, attr){
+      var checkout = scope.checkout;
+
       scope.update = false;
 
       scope.plusOne = function(item){
@@ -17,13 +19,13 @@ function cartItem(ShoppingCart){
           if(item.quantity+1 <= item.stock){
             ++item.quantity;
             scope.update = true;
-            scope.setUpdateCart(true);
+            checkout.updateCart = true;
           }
         }
         else{
           ++item.quantity;
           scope.update = true;
-          scope.setUpdateCart(true);
+          checkout.updateCart = true;
         }
       }
 

@@ -28,8 +28,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     })
     .state('checkout',{
       url:'/checkout',
-      templateUrl:'app/cart/checkout/checkout.template.html',
-      controller: 'Checkout'
+      templateUrl:'app/cart/checkout/checkout.template.html'
     })
     .state('dashboard',{
       url:'/dashboard',

@@ -9,28 +9,34 @@
 
   function Checkout($scope, $state,ShoppingCart, userApi) {
 
+    var vm = $scope.vm;
+    var checkoutVm = this;
+
+    // checkoutVm.shoppingCart = $scope.vm.shoppingCart;
     $scope.$watch('vm.currentUser',function(){
-      $scope.currentUser = $scope.getCurrentUser();
-      if($scope.currentUser){
-        console.log('vm.currentUser', $scope.currentUser.membership);
-        $scope.shoppingCart.membership = $scope.currentUser.membership;
-        ShoppingCart.setCart($scope.shoppingCart);
+      // $scope.currentUser = $scope.getCurrentUser();
+      if(vm.currentUser){
+        console.log('vm.currentUser', vm.currentUser.membership);
+        vm.shoppingCart.membership = vm.currentUser.membership;
+        ShoppingCart.setCart(vm.shoppingCart);
       }
     });
+
     
-    $scope.currentUser = $scope.getCurrentUser();
-    $scope.shoppingCart = {};
+    // $scope.currentUser = $scope.getCurrentUser();
     $scope.addresses = [];
     $scope.paymentMethods = [];
     $scope.itemsUnavailable = [];
-    $scope.vm.cartItems= ShoppingCart.getTotal();
     $scope.completed = false;
-    $scope.updateCart = false;
+    checkoutVm.updateCart = false;
     $scope.loginFormsView = false;
     $scope.walletView = false;
 
-    $scope.shoppingCart = ShoppingCart.getCart();
+    vm.shoppingCart = ShoppingCart.getCart();
 
+    console.log(vm.shoppingCart);
+
+    return;
     if(!$scope.currentUser){
       if($scope.shoppingCart.wallet){
         $scope.shoppingCart.wallet = 0;
@@ -52,10 +58,6 @@
 
       $scope.shoppingCart = cart;
     }
-
-    // $scope.getShoppingCart = function(){
-    //   return $scope.shoppingCart;
-    // }
 
     $scope.setStatus = function(status){
       $scope.completed = status;
@@ -91,7 +93,7 @@
       cleanItemsUnavaibale();
     }
 
-    $scope.setUpdateCart= function(update){
+    vm.setUpdateCart = function(update){
       $scope.updateCart = update;
     }
 
@@ -106,10 +108,8 @@
     }
 
     $scope.removeFromCart = function(index){
-      $scope.vm.cartItems = ShoppingCart.removeItem(index);
-      $scope.shoppingCart.items  = $scope.vm.cartItems.items;
-      console.log($scope.shoppingCart.items);
-      ShoppingCart.setCart($scope.shoppingCart);
+      $scope.shoppingCart = ShoppingCart.removeItem(index);
+      $scope.updateShoppingCart($scope.shoppingCart);
     }
 
     $scope.showWalletView =  function(){

@@ -10,12 +10,14 @@
   function Shell($scope, $state, userApi, storeApi, ShoppingCart){
     // jshint validthis: true 
     var vm = this;
+
     vm.searchValue = null;
     vm.itemsList = [];
     vm.title = 'Resultados';
+    vm.checkoutVm;
 
     //remove if refactor
-    vm.cartItems = ShoppingCart.getTotal();
+    // vm.cartItems = ShoppingCart.getTotal();
     //remove if refactor
 
     vm.currentUser  = userApi.currentUser();
