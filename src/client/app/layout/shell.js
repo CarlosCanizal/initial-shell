@@ -19,11 +19,17 @@
     vm.isDashboard = false;
     vm.confirmation = false;
 
+    //refactor
+    vm.shoppingCart = ShoppingCart.getTotal();
+    //refactor
+
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       vm.isDashboard = toState.data && toState.data.dashboard ? true : false;
       vm.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
       vm.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });
+
+
 
     $scope.showLoading = function(){
       vm.loading = true;
@@ -94,10 +100,6 @@
                                              stock: item.stock
                                             });
     }
-
-    // $scope.setCartItems  = function(cartItems){
-    //   vm.cartItems = cartItems;
-    // }
     
   }
 
