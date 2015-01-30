@@ -16,7 +16,7 @@
               .subtitle
                 | Saldo Disponible:
               .subtitle.margin-bottom
-                | ${{vm.currentUser.wallet - shoppingCart.wallet }}
+                | ${{shell.currentUser.wallet - shoppingCart.wallet }}
               .align-center
                 a.pure-button.pure-button-primary.button-small(data-ng-click="useWallet()", data-ng-hide="payWithWallet")
                   | Usar mi saldo

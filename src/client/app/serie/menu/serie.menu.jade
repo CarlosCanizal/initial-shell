@@ -1,7 +1,7 @@
 .section-title
   | Mis Suscripciones
-#submenu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
+#submenu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
   nav
-    a(data-ui-sref="dashboard.series", data-ng-class="{'active':vm.submenu == 'series'}")
+    a(data-ui-sref="dashboard.series", data-ng-class="{'active':shell.submenu == 'series'}")
       |Series
     

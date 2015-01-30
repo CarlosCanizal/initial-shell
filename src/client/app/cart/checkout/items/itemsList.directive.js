@@ -18,7 +18,7 @@ function itemsList(ShoppingCart){
       scope.loading = true;
 
       ShoppingCart.validateOrder().then(function(order){
-        scope.vm.shoppingCart = ShoppingCart.updateItems(order.itemsAvailable);
+        scope.shell.shoppingCart = ShoppingCart.updateItems(order.itemsAvailable);
         scope.itemsUnavailable = order.itemsUnavailable;
         scope.loading = false;
       },function(error){
@@ -26,8 +26,8 @@ function itemsList(ShoppingCart){
       });
 
       scope.updateQuantity = function(item, index){
-        scope.vm.cartItems = ShoppingCart.setCart(scope.vm.cartItems);
-        scope.shoppingCart = scope.vm.cartItems;
+        scope.shell.cartItems = ShoppingCart.setCart(scope.shell.cartItems);
+        scope.shoppingCart = scope.shell.cartItems;
         scope.setUpdateCart(false);
       }
 

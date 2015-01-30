@@ -4,11 +4,11 @@
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
-      <div>{{vm.currentUser.membership}}</div>
+      <div>{{shell.currentUser.membership}}</div>
       <p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>
-      <div data-ng-if="vm.currentUser.membership  == 'basic'" class="align-center"><a data-ng-click="showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
+      <div data-ng-if="shell.currentUser.membership  == 'basic'" class="align-center"><a data-ng-click="showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
       </div>
-      <div data-ng-if="vm.currentUser.membership  == 'pro'" class="align-right"><a data-ng-click="showCancelForm()" class="pure-button">Cancelar Membresia</a></div>
+      <div data-ng-if="shell.currentUser.membership  == 'pro'" class="align-right"><a data-ng-click="showCancelForm()" class="pure-button">Cancelar Membresia</a></div>
     </div>
   </div>
 </div>
@@ -35,7 +35,7 @@
     </div>
   </div>
 </div>
-<div id="update-membership" data-ng-show="upgradeView || vm.currentUser.membership  == 'pro'">
+<div id="update-membership" data-ng-show="upgradeView || shell.currentUser.membership  == 'pro'">
   <div class="filter-title"><span class="publisher-name">Actualiza Membresia</span></div>
   <div class="shelf">
     <div class="inner-shelf">
@@ -68,8 +68,8 @@
             </div>
             <div class="pure-u-1 pure-u-md-1-3 align-center">
               <div data-ng-hide="showPlaceOrder">
-                <div class="address-line"><a data-ng-click="updateMembership('pro')" data-ng-if="vm.currentUser.membership  == 'basic'" data-ng-class="{'pure-button-disabled': cards.length &lt; 1}" class="pure-button pure-button-primary">Actualizar a PRO</a>
-                  <div data-ng-if="vm.currentUser.membership  == 'pro'">
+                <div class="address-line"><a data-ng-click="updateMembership('pro')" data-ng-if="shell.currentUser.membership  == 'basic'" data-ng-class="{'pure-button-disabled': cards.length &lt; 1}" class="pure-button pure-button-primary">Actualizar a PRO</a>
+                  <div data-ng-if="shell.currentUser.membership  == 'pro'">
                     <div class="address-line"><a data-ng-click="updateCard()" data-ng-class="{'pure-button-disabled': cards.length &lt; 1}" class="pure-button button-success"><i class="fa fa-credit-card"></i>Actualizar Tarjeta</a></div>
                   </div>
                 </div>

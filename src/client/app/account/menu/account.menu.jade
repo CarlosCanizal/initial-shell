@@ -1,14 +1,14 @@
 .section-title
   | Mi Cuenta
-#submenu.hidden.visible-lg-block(data-ng-if="vm.isDashboard")
+#submenu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
   nav
-    a(data-ui-sref="dashboard.account", data-ng-class="{'active':vm.submenu == 'account'}")
+    a(data-ui-sref="dashboard.account", data-ng-class="{'active':shell.submenu == 'account'}")
       |Membresia
-    a(data-ui-sref="dashboard.profile", data-ng-class="{'active':vm.submenu == 'profile'}")
+    a(data-ui-sref="dashboard.profile", data-ng-class="{'active':shell.submenu == 'profile'}")
       |Perfil
-    a(data-ui-sref="dashboard.address", data-ng-class="{'active':vm.submenu == 'address'}")
+    a(data-ui-sref="dashboard.address", data-ng-class="{'active':shell.submenu == 'address'}")
       |Direccion
-    a(data-ui-sref="dashboard.cards", data-ng-class="{'active':vm.submenu == 'cards'}")
+    a(data-ui-sref="dashboard.cards", data-ng-class="{'active':shell.submenu == 'cards'}")
       |Tarjetas
-    a(data-ui-sref="dashboard.wallet", data-ng-class="{'active':vm.submenu == 'wallet'}")
+    a(data-ui-sref="dashboard.wallet", data-ng-class="{'active':shell.submenu == 'wallet'}")
       |Monedero

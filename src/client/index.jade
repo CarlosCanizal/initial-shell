@@ -15,12 +15,12 @@ html(data-ng-app="app")
     link(rel="stylesheet", href="common/css/main.css")
     link(rel="stylesheet", href="common/css/media-query.css")
   body
-    div(data-ng-controller="Shell as vm")
-      .opacity-layer(data-ng-show="vm.loading")
+    div(data-ng-controller="Shell as shell")
+      .opacity-layer(data-ng-show="shell.loading")
         div.spinner-circle
           div.dot1
           div.dot2
-      //- .opacity-layer(data-ng-show="vm.confirmation", data-ng-include="'app/message/message.template.html'")
+      //- .opacity-layer(data-ng-show="shell.confirmation", data-ng-include="'app/message/message.template.html'")
       confirm-dialog
       #shell
         .pure-g

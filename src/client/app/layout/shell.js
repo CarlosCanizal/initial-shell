@@ -9,57 +9,56 @@
 
   function Shell($scope, $state, userApi, storeApi, ShoppingCart){
     // jshint validthis: true 
-    var vm = this;
+    var shell = this;
 
-    vm.searchValue = null;
-    vm.itemsList = [];
-    vm.title = 'Resultados';
-    vm.checkoutVm;
+    shell.searchValue = null;
+    shell.itemsList = [];
+    shell.title = 'Resultados';
 
     //remove if refactor
-    // vm.cartItems = ShoppingCart.getTotal();
+    // shell.cartItems = ShoppingCart.getTotal();
     //remove if refactor
 
-    vm.currentUser  = userApi.currentUser();
-    vm.loading = false;
-    vm.isDashboard = false;
-    vm.confirmation = false;
+    shell.currentUser  = userApi.currentUser();
+    shell.loading = false;
+    shell.isDashboard = false;
+    shell.confirmation = false;
 
     //refactor
-    vm.shoppingCart = ShoppingCart.getTotal();
+    shell.shoppingCart = ShoppingCart.getTotal();
 
     $scope.updateShoppingCart =  function(cart){
-      vm.shoppingCart = cart;
-      return vm.shoppingCart;
+      shell.shoppingCart = cart;
+      return shell.shoppingCart;
     }
 
     $scope.getShoppingCart =  function(){
-      return vm.shoppingCart;
+      return shell.shoppingCart;
     }
 
 
     //refactor
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
-      vm.isDashboard = toState.data && toState.data.dashboard ? true : false;
-      vm.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
-      vm.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
+      shell.isDashboard = toState.data && toState.data.dashboard ? true : false;
+      shell.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
+      shell.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });
 
     $scope.showLoading = function(){
-      vm.loading = true;
+      shell.loading = true;
     }
 
     $scope.hideLoading = function(){
-      vm.loading = false;
+      shell.loading = false;
     }
 
     $scope.showConfirmation = function(){
-      vm.confirmation = true;
+      shell.confirmation = true;
     }
 
     $scope.hideConfirmation = function(){
-      vm.confirmation = false;
+      shell.confirmation = false;
     }
 
     $scope.returnConfirmation = function(value){
@@ -69,12 +68,12 @@
     $scope.setCurrentUser = function(user){
       console.log('setCurrentUser');
       userApi.setCurrentUser(user);
-      vm.currentUser = user;
+      shell.currentUser = user;
     }
 
     $scope.updateCurrentUser = function(){
       userApi.getCurrentUser().then(function(user){
-        vm.currentUser = user;
+        shell.currentUser = user;
         userApi.setCurrentUser(user);
 
       },function(error){
@@ -83,29 +82,29 @@
     }
 
     $scope.getCurrentUser = function(){
-      return vm.currentUser;
+      return shell.currentUser;
     }
 
     $scope.logout = function(){
       userApi.logout();
-      vm.currentUser = null;
+      shell.currentUser = null;
       $state.go('home');
     }
 
-    vm.searchByName = function(){
+    shell.searchByName = function(){
       var params = {
-        name: vm.searchValue
+        name: shell.searchValue
       }
       storeApi.getSeries(params).then(function(series){
         console.log(series.result);
-        vm.itemsList = series.result;
+        shell.itemsList = series.result;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });
     }
 
     $scope.addToCart = function(item){
-        vm.shoppingCart = ShoppingCart.addItem({quantity:1,
+        shell.shoppingCart = ShoppingCart.addItem({quantity:1,
                                              objectId:item.objectId,
                                              price:item.price,
                                              name:item.name, 

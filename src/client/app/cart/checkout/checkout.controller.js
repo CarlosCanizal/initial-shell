@@ -9,16 +9,16 @@
 
   function Checkout($scope, $state,ShoppingCart, userApi) {
 
-    var vm = $scope.vm;
+    var shell = $scope.shell;
     var checkout = this;
 
-    // checkoutVm.shoppingCart = $scope.vm.shoppingCart;
-    $scope.$watch('vm.currentUser',function(){
+    // checkoutshell.shoppingCart = $scope.shell.shoppingCart;
+    $scope.$watch('shell.currentUser',function(){
       // $scope.currentUser = $scope.getCurrentUser();
-      if(vm.currentUser){
-        console.log('vm.currentUser', vm.currentUser.membership);
-        vm.shoppingCart.membership = vm.currentUser.membership;
-        ShoppingCart.setCart(vm.shoppingCart);
+      if(shell.currentUser){
+        console.log('shell.currentUser', shell.currentUser.membership);
+        shell.shoppingCart.membership = shell.currentUser.membership;
+        ShoppingCart.setCart(shell.shoppingCart);
       }
     });
 
@@ -32,9 +32,9 @@
     $scope.loginFormsView = false;
     $scope.walletView = false;
 
-    vm.shoppingCart = ShoppingCart.getCart();
+    shell.shoppingCart = ShoppingCart.getCart();
 
-    console.log(vm.shoppingCart);
+    console.log(shell.shoppingCart);
 
     return;
     if(!$scope.currentUser){
@@ -93,9 +93,9 @@
       cleanItemsUnavaibale();
     }
 
-    vm.setUpdateCart = function(update){
-      checkout.updateCart = update;
-    }
+    // checkout.setUpdateCart = function(update){
+    //   checkout.updateCart = update;
+    // }
 
     $scope.showLoginForms = function(view){
       $scope.loginFormsView = view;

@@ -1,12 +1,12 @@
-#cart.hidden.visible-lg-block(data-ng-if="!vm.isDashboard")
+#cart.hidden.visible-lg-block(data-ng-if="!shell.isDashboard")
   div
     a(data-ui-sref="checkout")
       i.fa.fa-shopping-cart
       span
-        | {{vm.shoppingCart.itemsTotal}}
+        | {{shell.shoppingCart.itemsTotal}}
       |articulos
   div.login-header
-    a(data-ui-sref="login", data-ng-if="!vm.currentUser")
+    a(data-ui-sref="login", data-ng-if="!shell.currentUser")
       | Iniciar sesion
-    a(data-ng-click="logout()", data-ng-if="vm.currentUser")
+    a(data-ng-click="logout()", data-ng-if="shell.currentUser")
       | Cerrar Sesion

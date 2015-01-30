@@ -33,12 +33,12 @@
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-space
         .shelf-content(data-ng-hide="loading")
-          div(ng-if="vm.shoppingCart.items.length < 1")
+          div(ng-if="shell.shoppingCart.items.length < 1")
             h2
               |No existen articulos en el carrito de compras
-          .pure-g(ng-if="vm.shoppingCart.items.length > 0")
+          .pure-g(ng-if="shell.shoppingCart.items.length > 0")
             .pure-u-1.pure-u-lg-2-3
-              .cart-item.pure-g(ng-repeat="item in vm.shoppingCart.items", cart-item)
+              .cart-item.pure-g(ng-repeat="item in shell.shoppingCart.items", cart-item)
             .pure-u-1.pure-u-lg-1-3.align-center
               div(data-ng-include="'app/cart/checkout/totals/totals.template.html'")
               .pure-g
@@ -48,10 +48,10 @@
                       i.fa.fa-check
                       | Actualizar Orden
                   .margin-bottom(data-ng-hide="checkout.updateCart")
-                    a.pure-button.button-success.button-small(data-ng-if="vm.currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
+                    a.pure-button.button-success.button-small(data-ng-if="shell.currentUser", data-ng-click="toAddress()",data-ng-hide="showAddress")
                       i.fa.fa-check
                       | Continuar
-                    a.pure-button.pure-button-primary.button-small(data-ng-if="!vm.currentUser", data-ng-click="showLoginForms(true)")
+                    a.pure-button.pure-button-primary.button-small(data-ng-if="!shell.currentUser", data-ng-click="showLoginForms(true)")
                       i.fa.fa-user
                       | Iniciar Sesion
                 .pure-u-1.pure-u-sm-1-2
