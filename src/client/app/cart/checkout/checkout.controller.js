@@ -137,7 +137,7 @@
     }
 
     function setShoppingCart(){
-      $scope.shoppingCart.items = $scope.vm.cartItems.items;
+      // $scope.shoppingCart.items = $scope.vm.cartItems.items;
       $scope.shoppingCart.shippingAddress = {};
       $scope.shoppingCart.paymentMethod = {};
     }

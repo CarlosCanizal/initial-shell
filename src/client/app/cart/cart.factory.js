@@ -20,7 +20,8 @@
       emptyCart: emptyCart,
       setCart: setCart,
       validateOrder: validateOrder,
-      updateItems: updateItems
+      updateItems: updateItems,
+      initialize: initialize
     };
 
     return cart;
@@ -29,9 +30,16 @@
 
       var cart = storage.get('cart');
       if(!cart){
-        cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0, shippingAddress: false, paymentMethod:false}
+        cart = this.initialize();
         this.setCart(cart);
       }
+      return cart;
+    }
+
+    function initialize(items){
+      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0, shippingAddress: false, paymentMethod:false}
+      if(items)
+        cart.items = items;
       return cart;
     }
 

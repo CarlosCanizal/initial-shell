@@ -13,7 +13,9 @@
     vm.searchValue = null;
     vm.itemsList = [];
     vm.title = 'Resultados';
+    //remove if refactor
     vm.cartItems = ShoppingCart.getTotal();
+    //remove if refactor
     vm.currentUser  = userApi.currentUser();
     vm.loading = false;
     vm.isDashboard = false;
@@ -28,8 +30,6 @@
       vm.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
       vm.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });
-
-
 
     $scope.showLoading = function(){
       vm.loading = true;
