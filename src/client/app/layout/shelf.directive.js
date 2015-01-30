@@ -17,6 +17,7 @@ function shelf(storeApi){
     templateUrl: 'app/layout/shelf.template.html',
     controller:function($scope){
       $scope.vm = {};
+      //checar esto
       $scope.vm.addToCart =  $scope.$parent.addToCart;
     },
     link:function(scope,element,attr){

@@ -39,7 +39,7 @@
         ShoppingCart.setCart($scope.shoppingCart);
       }
     }
-    
+
     resetViews();
 
     $scope.updateWallet = function(cart){

@@ -13,9 +13,11 @@
     vm.searchValue = null;
     vm.itemsList = [];
     vm.title = 'Resultados';
+
     //remove if refactor
     vm.cartItems = ShoppingCart.getTotal();
     //remove if refactor
+
     vm.currentUser  = userApi.currentUser();
     vm.loading = false;
     vm.isDashboard = false;
@@ -101,7 +103,7 @@
     }
 
     $scope.addToCart = function(item){
-        vm.cartItems = ShoppingCart.addItem({quantity:1,
+        vm.shoppingCart = ShoppingCart.addItem({quantity:1,
                                              objectId:item.objectId,
                                              price:item.price,
                                              name:item.name, 

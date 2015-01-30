@@ -48,7 +48,6 @@
       cart.cartTotal = 0;
       cart.total = false;
       return this.setCart(cart);
-
     }
 
     function validateOrder(){
@@ -69,8 +68,6 @@
     }
 
     function setCart(cart){
-      // var prevCart = storage.get('cart');
-      // cart = this.calculateTotal(cart);
       storage.set('cart',cart)
       return this.getTotal();
     }
@@ -83,7 +80,6 @@
         return memo + item.quantity;
       },0,0);
       cart.itemsTotal = itemsTotal;
-      // cart.cartTotal =  cartTotal.toFixed(2); // jccz checar funcion de redondeo
       cart.cartTotal =  cartTotal
       cart = this.calculateTotal(cart);
       storage.set('cart',cart)
