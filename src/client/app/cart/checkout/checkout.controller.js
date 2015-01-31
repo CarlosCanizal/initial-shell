@@ -29,6 +29,7 @@
     checkout.walletView = false;
 
     shell.shoppingCart = ShoppingCart.getCart();
+
     if(!shell.currentUser){
       if(shell.shoppingCart.wallet){
         shell.shoppingCart.wallet = 0;
@@ -98,7 +99,6 @@
 
     checkout.removeFromCart = function(index){
       shell.shoppingCart = ShoppingCart.removeItem(index);
-      checkout.updateShoppingCart(shell.shoppingCart); 
     }
 
     checkout.showWalletView =  function(){

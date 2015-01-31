@@ -15,10 +15,6 @@
     shell.itemsList = [];
     shell.title = 'Resultados';
 
-    //remove if refactor
-    // shell.cartItems = ShoppingCart.getTotal();
-    //remove if refactor
-
     shell.currentUser  = userApi.currentUser();
     shell.loading = false;
     shell.isDashboard = false;

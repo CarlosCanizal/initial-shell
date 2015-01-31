@@ -7,7 +7,7 @@
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-space(data-ng-hide="loading")
         .shelf-content(data-ng-hide="loading")
-          .pure-g(data-ng-if="currentUser")
+          .pure-g(data-ng-if="shell.currentUser")
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.no-padding
                 |Tienes un codigo, ingresalo para agregar saldo a tu cuenta.
@@ -16,7 +16,7 @@
               .subtitle
                 | Saldo Disponible:
               .subtitle.margin-bottom
-                | ${{shell.currentUser.wallet - shoppingCart.wallet }}
+                | ${{shell.currentUser.wallet - shell.shoppingCart.wallet }}
               .align-center
                 a.pure-button.pure-button-primary.button-small(data-ng-click="useWallet()", data-ng-hide="payWithWallet")
                   | Usar mi saldo
@@ -24,11 +24,11 @@
                   | No usar mi saldo
             .pure-u-1.pure-u-md-1-3.align-center
               div(data-ng-include="'app/cart/checkout/totals/totals.template.html'")
-              a.pure-button(data-ng-click="hideWalletView()")
+              a.pure-button(data-ng-click="checkout.hideWalletView()")
                 | Cerrar Monedero
-          div.align-center(data-ng-if="!currentUser")
+          div.align-center(data-ng-if="!shell.currentUser")
             |Inicia sesion para ver el saldo de tu cuenta o canjear un cupon.            
-            a.pure-button.pure-button-primary.button-small(data-ng-if="!currentUser", data-ng-click="showLoginForms(true)")
+            a.pure-button.pure-button-primary.button-small(data-ng-if="!shell.currentUser", data-ng-click="checkout.showLoginForms(true)")
               i.fa.fa-user
               | Iniciar Sesion
 

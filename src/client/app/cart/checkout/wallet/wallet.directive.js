@@ -12,6 +12,8 @@ function wallet(userApi, ShoppingCart){
     link:function(scope,element,attr){
       // var user = scope.getCurrentUser();
       var shell = scope.shell;
+      var checkout = scope.checkout;
+
       scope.payWithWallet = false;
 
       if(shell.shoppingCart.useWallet && shell.currentUser && shell.currentUser.wallet > 0)
@@ -21,19 +23,16 @@ function wallet(userApi, ShoppingCart){
         scope.showLoading();
         scope.payWithWallet = true;
         shell.shoppingCart.useWallet = true;
-        shell.shoppingCart.userWallet = scope.currentUser.wallet;
-        ShoppingCart.setCart(cart);
+        shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
         scope.hideLoading();
       }
 
       scope.doNotUseWallet = function(){
-        scope.showLoading();
-        var cart = ShoppingCart.getCart();
+        scope.showLoading();        
         scope.payWithWallet = false;
         shell.shoppingCart.useWallet = false;
-        shell.shoppingCart.total = cart.cartTotal;
         shell.shoppingCart.wallet = 0;
-        ShoppingCart.setCart(cart);
+        shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
         scope.hideLoading();
       }
       
