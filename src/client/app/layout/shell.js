@@ -27,6 +27,7 @@
     //refactor
     shell.shoppingCart = ShoppingCart.getTotal();
 
+    //quitar
     $scope.updateShoppingCart =  function(cart){
       shell.shoppingCart = cart;
       return shell.shoppingCart;
@@ -81,9 +82,9 @@
       });
     }
 
-    $scope.getCurrentUser = function(){
-      return shell.currentUser;
-    }
+    // $scope.getCurrentUser = function(){
+    //   return shell.currentUser;
+    // }
 
     $scope.logout = function(){
       userApi.logout();

@@ -10,19 +10,19 @@ function wallet(userApi, ShoppingCart){
     templateUrl: 'app/cart/checkout/wallet/wallet.template.html',
     scope: true,
     link:function(scope,element,attr){
-      var user = scope.getCurrentUser();
+      // var user = scope.getCurrentUser();
+      var shell = scope.shell;
       scope.payWithWallet = false;
 
-      if(scope.shoppingCart.useWallet && user && user.wallet > 0)
+      if(shell.shoppingCart.useWallet && shell.currentUser && shell.currentUser.wallet > 0)
         scope.payWithWallet = true;        
 
       scope.useWallet = function(){
         scope.showLoading();
-        var cart = ShoppingCart.getCart();
         scope.payWithWallet = true;
-        cart.useWallet = true;
-        cart.userWallet = scope.currentUser.wallet;
-        scope.updateWallet(ShoppingCart.setCart(cart));
+        shell.shoppingCart.useWallet = true;
+        shell.shoppingCart.userWallet = scope.currentUser.wallet;
+        ShoppingCart.setCart(cart);
         scope.hideLoading();
       }
 
@@ -30,10 +30,10 @@ function wallet(userApi, ShoppingCart){
         scope.showLoading();
         var cart = ShoppingCart.getCart();
         scope.payWithWallet = false;
-        cart.useWallet = false;
-        cart.total = cart.cartTotal;
-        cart.wallet = 0;
-        scope.updateWallet(ShoppingCart.setCart(cart));
+        shell.shoppingCart.useWallet = false;
+        shell.shoppingCart.total = cart.cartTotal;
+        shell.shoppingCart.wallet = 0;
+        ShoppingCart.setCart(cart);
         scope.hideLoading();
       }
       

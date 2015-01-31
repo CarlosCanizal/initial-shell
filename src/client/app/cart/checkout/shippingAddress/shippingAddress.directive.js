@@ -10,21 +10,28 @@ function shippingAddress(userApi){
     templateUrl: 'app/cart/checkout/shippingAddress/shippingAddress.template.html',
     scope: true,
     link:function(scope,element,attr){
-      scope.loading = true;
-      scope.cleanItemsUnavaibale();
+      var shell = scope.shell;
+      var checkout = scope.checkout;
 
-      scope.shoppingCart.shippingAddress = false;
-      scope.addressFormView = false;
+      console.log('checkout', checkout);
+
+      scope.loading = true;
+
+      //checar por que no funciona
+      checkout.cleanItemsUnavaibale();
+
+      shell.shoppingCart.shippingAddress = false;
+      checkout.addressFormView = false;
 
       //refactorizar con direcative en address
        scope.showAddressForm = function(show){
         scope.addressFormView = show;
       }
 
-      userApi.getAddresses(scope.currentUser.objectId).then(function(addresses){
+      userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
         scope.addresses =  addresses.results;
         if(scope.addresses[0])
-          scope.shoppingCart.shippingAddress = scope.addresses[0];
+          shell.shoppingCart.shippingAddress = scope.addresses[0];
         scope.loading = false;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
