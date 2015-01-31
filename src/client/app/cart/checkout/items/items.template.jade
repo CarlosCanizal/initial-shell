@@ -3,13 +3,13 @@
     span.publisher-name.error
       | Articulos no disponibles
   .shelf
-    .disable-shelf(data-ng-show="showAddress")
+    .disable-shelf(data-ng-show="checkout.showAddress")
       i.fa.fa-check-square-o.fa-5.success
     .inner-shelf.error-border
       .shelf-space
           .pure-g
             .pure-u-1.pure-u-sm-2-3
-              .cart-item.pure-g(ng-repeat="item in itemsUnavailable")
+              .cart-item.pure-g(ng-repeat="item in checkout.itemsUnavailable")
                 .pure-u-1.pure-u-sm-1-4.pure-u-md-1-8
                   img(alt="", data-ng-src="{{item.cover.url}}")
                 .pure-u-1.pure-u-md-1-2
@@ -19,7 +19,7 @@
                     div
                       | Precio: ${{item.price}} USD
             .pure-u-1.pure-u-sm-1-3.align-center          
-              a.pure-button(data-ng-click="cleanItemsUnavaibale()")
+              a.pure-button(data-ng-click="checkout.cleanItemsUnavaibale()")
                 i.fa.fa-times-circle
                 | Cerrar
 #items-available
@@ -27,7 +27,7 @@
     span.publisher-name.
       Checkout
   .shelf
-    .disable-shelf(data-ng-show="showAddress")
+    .disable-shelf(data-ng-show="checkout.showAddress")
       i.fa.fa-check-square-o.fa-5.success
     .inner-shelf
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")

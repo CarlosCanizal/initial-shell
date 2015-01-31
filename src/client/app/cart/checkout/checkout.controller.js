@@ -73,7 +73,11 @@
 
     checkout.toPaymentMethod = function(){
       ShoppingCart.setCart(shell.shoppingCart);
+      
       checkout.showPayment = true;
+      if(!checkout.loadPayment)
+        checkout.loadPayment = true;
+
       checkout.showPlaceOrder = false;
     }
 

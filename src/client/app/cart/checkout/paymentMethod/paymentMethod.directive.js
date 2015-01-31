@@ -11,20 +11,24 @@ function paymentMethod(userApi){
     scope: true,
     link:function(scope,element,attr){
       var shell = scope.shell;
+      var checkout =  scope.checkout;
+
       scope.loading = true;
       shell.shoppingCart.paymentMethod = false;
+
       userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
-        scope.cards = cards;
-        scope.paymentMethods =  scope.cards;
-        if(scope.cards[0])
-          shell.shoppingCart.paymentMethod = scope.cards[0];
+        //checar que onda con esta variable cards
+        checkout.cards = cards;
+        checkout.paymentMethods =  checkout.cards;
+        if(checkout.cards[0])
+          shell.shoppingCart.paymentMethod = checkout.cards[0];
         scope.loading = false;
       },function(error){
         console.error(error);
       });
 
       scope.showCardForm = function(show){
-        scope.cardFormView = show;
+        checkout.cardFormView = show;
       }
     }
   }
