@@ -62,6 +62,10 @@
 
     checkout.toAddress = function(){
       checkout.showAddress = true;
+
+      if(!checkout.loadAddress)
+        checkout.loadAddress = true;
+
       checkout.walletView = false;
       checkout.showPayment = false;
       checkout.showPlaceOrder = false;
@@ -110,7 +114,10 @@
     }
 
     function resetViews(){
+      
       checkout.showAddress = false;
+      // checkout. loadAddress = false;
+
       checkout.showPayment = false;
       checkout.showPlaceOrder = false;
       checkout.showConfirmation = false;
