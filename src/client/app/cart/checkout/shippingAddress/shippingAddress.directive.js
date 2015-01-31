@@ -16,7 +16,7 @@ function shippingAddress(userApi){
 
       checkout.cleanItemsUnavaibale();
 
-      shell.shoppingCart.shippingAddress = false;
+      // shell.shoppingCart.shippingAddress = false;
       checkout.addressFormView = false;
 
       //refactorizar con direcative en address
@@ -26,8 +26,10 @@ function shippingAddress(userApi){
 
       userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
         checkout.addresses =  addresses.results;
-        if(checkout.addresses[0])
+        if(checkout.addresses[0]){
           shell.shoppingCart.shippingAddress = checkout.addresses[0];
+          console.log('done!');
+        }
         scope.loading = false;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);

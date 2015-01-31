@@ -26,19 +26,19 @@
                 .shelf-message(ng-if="checkout.addresses.length < 1")
                   .subtitle
                     |No existen direcciones registradas.
-                .description(data-ng-show="addresses.length > 0")
-                  | {{shoppingCart.shippingAddress.street}} {{shoppingCart.shippingAddress.number}} {{shoppingCart.shippingAddress.apt}}
+                .description(data-ng-show="checkout.addresses.length > 0")
+                  | {{shell.shoppingCart.shippingAddress.street}} {{shell.shoppingCart.shippingAddress.number}} {{shell.shoppingCart.shippingAddress.apt}}
                   br
-                  | Colonia {{shoppingCart.shippingAddress.district}}, {{shoppingCart.shippingAddress.municipality}} 
+                  | Colonia {{shell.shoppingCart.shippingAddress.district}}, {{shell.shoppingCart.shippingAddress.municipality}} 
                   br
-                  | {{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} 
+                  | {{shell.shoppingCart.shippingAddress.country}}, {{shell.shoppingCart.shippingAddress.state}}, {{shell.shoppingCart.shippingAddress.zip}} 
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box
                 div(data-ng-show="checkout.addresses.length > 0")
                   .address-line
                     | Cambiar direccion
                   .address-line
-                    select(data-ng-model="shell.shoppingCart.shippingAddress", data-ng-options="item as item.street for item in checkout.addresses")
+                    select(data-ng-model="shell.shoppingCart.shippingAddress", data-ng-options="someObject.street for someObject in checkout.addresses track by someObject.objectId")
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.addressFormView=true")
                     i.fa.fa-plus

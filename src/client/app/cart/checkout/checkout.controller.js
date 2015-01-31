@@ -43,11 +43,11 @@
 
     checkout.updateWallet = function(cart){
       //Entender como funcion y por que no copia el objeto en el select , function useWallet en wallet.directive
-      if(shell.shoppingCart.shippingAddress)
-        cart.shippingAddress = shell.shoppingCart.shippingAddress;
+      // if(shell.shoppingCart.shippingAddress)
+      //   cart.shippingAddress = shell.shoppingCart.shippingAddress;
 
-      if(shell.shoppingCart.paymentMethod)
-        cart.paymentMethod = shell.shoppingCart.paymentMethod;
+      // if(shell.shoppingCart.paymentMethod)
+      //   cart.paymentMethod = shell.shoppingCart.paymentMethod;
 
       shell.shoppingCart = cart;
     }
