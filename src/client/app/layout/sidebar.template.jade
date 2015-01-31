@@ -19,7 +19,7 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard")
     | Suscripciones
   a(ui-sref="login")
     | Mi Cuenta
-  a(ng-click="logout()",data-ng-if="shell.currentUser")
+  a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
   span
     a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
@@ -35,7 +35,7 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
     | Mis Ordernes
   a(ui-sref="dashboard.series", data-ng-class="{'active': shell.menu == 'series'}")
     | Mis Suscripciones
-  a(ng-click="logout()",data-ng-if="shell.currentUser")
+  a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
   span
     a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")

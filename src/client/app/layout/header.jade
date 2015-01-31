@@ -8,5 +8,5 @@
   div.login-header
     a(data-ui-sref="login", data-ng-if="!shell.currentUser")
       | Iniciar sesion
-    a(data-ng-click="logout()", data-ng-if="shell.currentUser")
+    a(data-ng-click="shell.logout()", data-ng-if="shell.currentUser")
       | Cerrar Sesion

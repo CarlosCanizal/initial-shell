@@ -95,8 +95,7 @@
       checkout.loginFormsView = view;
     }
 
-    checkout.setUser= function(user){
-      checkout.setCurrentUser(user);
+    $scope.setUser= function(user){
       shell.currentUser= user;
       // checkout.showAddress = true;
     }

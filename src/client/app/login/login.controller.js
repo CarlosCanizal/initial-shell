@@ -8,11 +8,10 @@
   Login.$inject = ['$scope','$state','userApi','storage'];
 
   function Login($scope, $state, userApi, storage) {
-
-
+    var shell = $scope.shell
 
     $scope.setUser = function(user){
-      $scope.setCurrentUser(user);
+      shell.setCurrentUser(user);
       $state.go('dashboard.account');
     }
     
