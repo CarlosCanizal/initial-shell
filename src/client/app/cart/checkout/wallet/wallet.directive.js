@@ -20,20 +20,20 @@ function wallet(userApi, ShoppingCart){
         scope.payWithWallet = true;        
 
       scope.useWallet = function(){
-        scope.showLoading();
+        shell.showLoading();
         scope.payWithWallet = true;
         shell.shoppingCart.useWallet = true;
         shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
-        scope.hideLoading();
+        shell.hideLoading();
       }
 
       scope.doNotUseWallet = function(){
-        scope.showLoading();        
+        shell.showLoading();        
         scope.payWithWallet = false;
         shell.shoppingCart.useWallet = false;
         shell.shoppingCart.wallet = 0;
         shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
-        scope.hideLoading();
+        shell.hideLoading();
       }
       
     }

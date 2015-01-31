@@ -42,6 +42,14 @@
       shell.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });
 
+    shell.showLoading = function(){
+      shell.loading = true;
+    }
+
+    shell.hideLoading = function(){
+      shell.loading = false;
+    }
+
     $scope.showLoading = function(){
       shell.loading = true;
     }
@@ -50,25 +58,25 @@
       shell.loading = false;
     }
 
-    $scope.showConfirmation = function(){
+    shell.showConfirmation = function(){
       shell.confirmation = true;
     }
 
-    $scope.hideConfirmation = function(){
+    shell.hideConfirmation = function(){
       shell.confirmation = false;
     }
 
-    $scope.returnConfirmation = function(value){
+    shell.returnConfirmation = function(value){
       return value;
     }
 
-    $scope.setCurrentUser = function(user){
+    shell.setCurrentUser = function(user){
       console.log('setCurrentUser');
       userApi.setCurrentUser(user);
       shell.currentUser = user;
     }
 
-    $scope.updateCurrentUser = function(){
+    shell.updateCurrentUser = function(){
       userApi.getCurrentUser().then(function(user){
         shell.currentUser = user;
         userApi.setCurrentUser(user);
@@ -78,11 +86,7 @@
       });
     }
 
-    // $scope.getCurrentUser = function(){
-    //   return shell.currentUser;
-    // }
-
-    $scope.logout = function(){
+    shell.logout = function(){
       userApi.logout();
       shell.currentUser = null;
       $state.go('home');
@@ -100,7 +104,7 @@
       });
     }
 
-    $scope.addToCart = function(item){
+    shell.addToCart = function(item){
         shell.shoppingCart = ShoppingCart.addItem({quantity:1,
                                              objectId:item.objectId,
                                              price:item.price,

@@ -3,7 +3,7 @@
 <div class="inner-shelf">
   <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-if="loading" class="spinner"></div>
   <div data-ng-hide="loading" class="pure-g">
-    <div data-ng-repeat="item in shell.itemsList" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
+    <div data-ng-repeat="item in itemsList" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
       <div class="item">
         <div class="item-image"><img alt="" ng-src="{{item.cover.url}}"/></div>
         <div class="item-info">{{item.name}}</div>
