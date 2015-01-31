@@ -12,12 +12,8 @@ function shippingAddress(userApi){
     link:function(scope,element,attr){
       var shell = scope.shell;
       var checkout = scope.checkout;
-
-      console.log('checkout', checkout);
-
       scope.loading = true;
 
-      //checar por que no funciona
       checkout.cleanItemsUnavaibale();
 
       shell.shoppingCart.shippingAddress = false;
@@ -29,9 +25,9 @@ function shippingAddress(userApi){
       }
 
       userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
-        scope.addresses =  addresses.results;
-        if(scope.addresses[0])
-          shell.shoppingCart.shippingAddress = scope.addresses[0];
+        checkout.addresses =  addresses.results;
+        if(checkout.addresses[0])
+          shell.shoppingCart.shippingAddress = checkout.addresses[0];
         scope.loading = false;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);

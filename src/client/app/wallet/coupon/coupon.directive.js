@@ -11,23 +11,24 @@ function coupon(couponApi, userApi){
     templateUrl: 'app/wallet/coupon/coupon.form.html',
     link:function(scope, element, attribute){
       scope.redeemCode = function(){
+        var shell = scope.shell;
+
         scope.error = false;
         scope.success = false;
 
         if(scope.couponForm.$valid){
-          scope.showLoading();
+          shell.showLoading();
           couponApi.redeemCode(scope.coupon.code, userApi.currentUser()).then(function(result){
             var coupon = result.result;
             scope.success = "Codigo valido";
-            scope.updateCurrentUser();
-            if(scope.shoppingCart){
-              scope.shoppingCart.userWallet += coupon.amount;
-              scope.updateShoppingCart(scope.shoppingCart);
+            shell.updateCurrentUser();
+            if(shell.shoppingCart){
+              shell.shoppingCart.userWallet += coupon.amount;
             }
           },function(error){
             console.error(error);
             scope.error = error.data.error;
-          }).finally(scope.hideLoading);
+          }).finally(shell.hideLoading);
         }
       }
     }

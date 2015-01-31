@@ -1,4 +1,4 @@
-#new-address(data-ng-if="addressFormView")
+#new-address(data-ng-if="checkout.addressFormView")
   .filter-title
     span.publisher-name.
       Agregar Dirección
@@ -9,12 +9,12 @@
         .shelf-content
           div(new-address)
 
-#address(data-ng-show="showAddress && !addressFormView")
+#address(data-ng-show="checkout.showAddress && !checkout.addressFormView")
   .filter-title
     span.publisher-name.
       Entrega
   .shelf
-    .disable-shelf(data-ng-show="showPayment")
+    .disable-shelf(data-ng-show="checkout.showPayment")
       i.fa.fa-check-square-o.fa-5.success
     .inner-shelf
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
@@ -23,7 +23,7 @@
           .pure-g
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.no-padding
-                .shelf-message(ng-if="addresses.length < 1")
+                .shelf-message(ng-if="checkout.addresses.length < 1")
                   .subtitle
                     |No existen direcciones registradas.
                 .description(data-ng-show="addresses.length > 0")
@@ -34,22 +34,22 @@
                   | {{shoppingCart.shippingAddress.country}}, {{shoppingCart.shippingAddress.state}}, {{shoppingCart.shippingAddress.zip}} 
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box
-                div(data-ng-show="addresses.length > 0")
+                div(data-ng-show="checkout.addresses.length > 0")
                   .address-line
                     | Cambiar direccion
                   .address-line
-                    select(data-ng-model="shoppingCart.shippingAddress", data-ng-options="item as item.street for item in addresses")
+                    select(data-ng-model="shell.shoppingCart.shippingAddress", data-ng-options="item as item.street for item in checkout.addresses")
                 .address-line
-                  a.pure-button.button-xsmall(data-ng-click="addressFormView=true")
+                  a.pure-button.button-xsmall(data-ng-click="checkout.addressFormView=true")
                     i.fa.fa-plus
                     | Agregar Direccion
             .pure-u-1.pure-u-md-1-3.align-center
               div(data-ng-hide="showPayment")
                 .address-line
-                  a.pure-button.button-success(data-ng-click="toPaymentMethod()", data-ng-class="{'pure-button-disabled': !shoppingCart.shippingAddress}")
+                  a.pure-button.button-success(data-ng-click="checkout.toPaymentMethod()", data-ng-class="{'pure-button-disabled': !shell.shoppingCart.shippingAddress}")
                     i.fa.fa-check
                     | Continuar
                 .address-line.no-padding
-                  a.pure-button(data-ng-click="showModal()", data-question='¿Ir al carrito?', data-confirm="goToCart()", data-ng-hide="showConfirmation", confirm-message)
+                  a.pure-button(data-ng-click="showModal()", data-question='¿Ir al carrito?', data-confirm="checkout.goToCart()", data-ng-hide="checkout.showConfirmation", confirm-message)
                     i.fa.fa-shopping-cart
                     | Ir al carrito

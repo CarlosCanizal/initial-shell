@@ -24,10 +24,10 @@
     shell.shoppingCart = ShoppingCart.getTotal();
 
     //quitar
-    $scope.updateShoppingCart =  function(cart){
-      shell.shoppingCart = cart;
-      return shell.shoppingCart;
-    }
+    // $scope.updateShoppingCart =  function(cart){
+    //   shell.shoppingCart = cart;
+    //   return shell.shoppingCart;
+    // }
 
     $scope.getShoppingCart =  function(){
       return shell.shoppingCart;
