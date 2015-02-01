@@ -1,37 +1,38 @@
-#account-menu(data-ng-include="'app/account/menu/account.menu.html'")
-.filter-title
-  span.publisher-name.
-    Mis Tarjetas
-.shelf
-  .inner-shelf
-    .shelf-space
-      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-      #cards-list(data-ng-hide="loading")
-        .shelf-message(ng-if="cards.length < 1")
-          .subtitle
-            |No existen tarjetas registradas.
-        .card-item(ng-repeat="item in cards")
-          i.fa.fa-cc-visa.fa-lg(ng-if="item.card.brand == 'VISA'")
-          i.fa.fa-cc-mastercard.fa-lg(ng-if="item.card.brand == 'MC'")
-          i.fa.fa-cc-amex.fa-lg(ng-if="item.card.brand == 'AMERICAN_EXPRESS'")
-          span
-          |**** **** **** {{item.card.last4}}
-          a.pure-button(data-ng-click="showModal()", data-question='¿Eliminar tarjeta?', data-confirm="deleteCard({{$index}})", confirm-message)
-            i.fa.fa-trash
-            |  Eliminar
-        .error.align-center(data-ng-if="error")
-          |{{error}}
-        .buttons-container
-          a(ng-click="cardFormView = true")
-            i.fa.fa-plus-circle.fa-4x
-          div
-            |Agregar Tarjeta
-
-div(data-ng-show="cardFormView")
+div(data-ng-controller="Payment as payment")
+  #account-menu(data-ng-include="'app/account/menu/account.menu.html'")
   .filter-title
     span.publisher-name.
-      Agregar Tarjeta
+      Mis Tarjetas
   .shelf
     .inner-shelf
       .shelf-space
-        div(card-form)
+        .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+        #cards-list(data-ng-hide="loading")
+          .shelf-message(ng-if="payment.cards.length < 1")
+            .subtitle
+              |No existen tarjetas registradas.
+          .card-item(ng-repeat="item in payment.cards")
+            i.fa.fa-cc-visa.fa-lg(ng-if="item.card.brand == 'VISA'")
+            i.fa.fa-cc-mastercard.fa-lg(ng-if="item.card.brand == 'MC'")
+            i.fa.fa-cc-amex.fa-lg(ng-if="item.card.brand == 'AMERICAN_EXPRESS'")
+            span
+            |**** **** **** {{item.card.last4}}
+            a.pure-button(data-ng-click="showModal()", data-question='¿Eliminar tarjeta?', data-confirm="payment.deleteCard({{$index}})", confirm-message)
+              i.fa.fa-trash
+              |  Eliminar
+          .error.align-center(data-ng-if="payment.error")
+            |{{payment.error}}
+          .buttons-container
+            a(ng-click="payment.cardFormView = true")
+              i.fa.fa-plus-circle.fa-4x
+            div
+              |Agregar Tarjeta
+
+  div(data-ng-show="payment.cardFormView")
+    .filter-title
+      span.publisher-name.
+        Agregar Tarjeta
+    .shelf
+      .inner-shelf
+        .shelf-space
+          div(card-form)

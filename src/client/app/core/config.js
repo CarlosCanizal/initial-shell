@@ -41,7 +41,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.cards',{
       url:'/cards',
       templateUrl:'app/card/card.template.html',
-      controller: 'Card',
+      // controller: 'Card',
       data:{
         menu: 'account',
         submenu: 'cards'

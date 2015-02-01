@@ -10,32 +10,37 @@ function cardForm(userApi, conekta){
     templateUrl: 'app/card/card.form.html',
     scope: true,
     link:function(scope,element,attr){
+      var shell = scope.shell;
+      var paymentMethod;
+      if(scope.payment)
+        paymentMethod = scope.payment;
+      else if(scope.account)
+        paymentMethod = scope.account;
+
+
       scope.card = {name:'Javier Pedreiro',
-                    number: '4242424242424242',
-                    cvc: '123',
-                    exp_month: '05',
-                    exp_year: '2015'
-                   };
+                            number: '4242424242424242',
+                            cvc: '123',
+                            exp_month: '05',
+                            exp_year: '2015'
+                           };
 
       scope.saveCard = function(){
-        scope.showLoading();
-        conekta.saveCard(scope.currentUser.conektaId,scope.card).then(function(card){
+        shell.showLoading();
+        conekta.saveCard(shell.currentUser.conektaId,scope.card).then(function(card){
           var newCard = {type:'card', card:card};
-          if(scope.cards)
-            scope.cards.push(newCard);
-          if(scope.shoppingCart)
-            scope.shoppingCart.paymentMethod = newCard;
-          if(scope.subscription){
-            scope.addCard(newCard);
-          }
+          if(paymentMethod.cards)
+            paymentMethod.cards.push(newCard);
+          if(shell.shoppingCart)
+            shell.shoppingCart.paymentMethod = newCard;
 
-          scope.showCardForm(false);
+          paymentMethod.showCardForm(false);
         },function(error){
           if(error.status)
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
           else
             console.error(error);
-        }).finally(scope.hideLoading);
+        }).finally(shell.hideLoading);
       };
     }
   }
