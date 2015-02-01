@@ -10,22 +10,22 @@ function cancelMembership(conekta){
     templateUrl: 'app/account/cancel.form.html',
     scope: true,
     link:function(scope,element,attr){
+      var shell =  scope.shell;
+      var account =  scope.account;
 
       scope.cancelMembership =  function(){
         if(scope.cancelForm.$valid){
-          scope.showLoading();
-          console.log(scope.unsubscribe.comment);
-          conekta.unsubscribe(scope.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment).then(function(user){
-            console.log(user);
-            scope.updateCurrentUser();
+          shell.showLoading();
+          conekta.unsubscribe(account.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment).then(function(user){
+            shell.updateCurrentUser();
           },function(error){
             console.log(error);
           }).finally(function(){
-            scope.hideLoading();
-            scope.hideCancelForm();
+            shell.hideLoading();
+            account.hideCancelForm();
           });
         }else{
-          scope.cancelForm.comment.$setDirty();
+          account.cancelForm.comment.$setDirty();
         }
       }
 
