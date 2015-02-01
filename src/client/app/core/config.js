@@ -38,9 +38,9 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         dashboard: true
       }
     })
-    .state('dashboard.cards',{
-      url:'/cards',
-      templateUrl:'app/card/card.template.html',
+    .state('dashboard.payment',{
+      url:'/payment',
+      templateUrl:'app/payment/payment.template.html',
       // controller: 'Card',
       data:{
         menu: 'account',

@@ -32,7 +32,7 @@
       payment.error = false;
       shell.showLoading();
       conekta.deleteCard(shell.currentUser.conektaId, card.id).then(function(){
-        payment.payment.cards.splice(index, 1);
+        payment.cards.splice(index, 1);
       },function(error){
         console.log(error);
         // console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);

@@ -7,7 +7,7 @@ cardForm.$inject = ['userApi','conekta'];
 function cardForm(userApi, conekta){
   return{
     restrict: 'EA',
-    templateUrl: 'app/card/card.form.html',
+    templateUrl: 'app/payment/card.form.html',
     scope: true,
     link:function(scope,element,attr){
       var shell = scope.shell;
