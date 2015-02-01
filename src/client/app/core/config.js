@@ -59,7 +59,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.wallet',{
       url:'/wallet',
       templateUrl:'app/wallet/wallet.template.html',
-      controller: 'Wallet',
+      // controller: 'Wallet',
       data:{
         menu: 'account',
         submenu: 'wallet'

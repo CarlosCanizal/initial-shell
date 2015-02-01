@@ -8,7 +8,7 @@
   Wallet.$inject = ['$scope','$stateParams'];
 
   function Wallet($scope, $stateParams) {
-    
+    var shell = $scope.shell;
   }
 
 })();
