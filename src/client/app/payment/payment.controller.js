@@ -13,8 +13,9 @@
 
     payment.cards = [];
     payment.cardFormView  = false;
-    payment.loading = true;
+    
     payment.error = false;
+    $scope.loading = true;
 
     userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
         $scope.loading = false;
