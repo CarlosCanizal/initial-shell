@@ -68,7 +68,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.address',{
       url:'/address',
       templateUrl:'app/address/address.template.html',
-      controller: 'Address',
+      // controller: 'Address',
       data:{
         menu: 'account',
         submenu: 'address'
