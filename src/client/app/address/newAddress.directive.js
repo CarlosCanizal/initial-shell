@@ -11,12 +11,13 @@ function newAddress(userApi, sepomexAPI){
     scope: true,
     link:function(scope,element,attr){
 
+      var shell =  scope.shell;
+
       scope.states = [];
       scope.municipalities = [];
       scope.districts = [];
 
       getUbication();
-      console.log(scope.addressFormView);
 
       function getDistrict(zip){
         sepomexAPI.getDistrict(zip).then(function(result){
@@ -91,7 +92,7 @@ function newAddress(userApi, sepomexAPI){
       scope.saveAddress = function(){
         if(scope.addressForm.$valid){
           scope.showLoading();
-          scope.address.user = {"__type":"Pointer",className:"_User","objectId":scope.currentUser.objectId}
+          scope.address.user = {"__type":"Pointer",className:"_User","objectId":shell.currentUser.objectId}
           userApi.saveAddress(scope.address).then(function(address){
             console.log(address);
             if(scope.addresses)

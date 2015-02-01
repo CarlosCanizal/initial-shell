@@ -24,7 +24,8 @@
       console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
     });
 
-    address.deleteAddress = function(objectId, index){
+    $scope.deleteAddress = function(objectId, index){
+      alert(index);
       shell.showLoading()
       userApi.deleteAddress(objectId).then(function(response){
         address.addresses.splice(index,1);
@@ -34,7 +35,7 @@
     }
 
     //refactorizar con direcative en shipping address
-    address.showAddressForm = function(show){
+    $scope.showAddressForm = function(show){
       address.addressFormView = show;
     }
     
