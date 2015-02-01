@@ -1,105 +1,106 @@
-#orders-menu(data-ng-include="'app/order/menu/order.menu.html'", data-ng-if="shell.isDashboard")
-.filter-title
-  span.publisher-name.
-    Orden {{order.referenceId}}
-.shelf
-  .inner-shelf
-    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-    .shelf-space
-      .shelf-content(data-ng-hide="loading")
-        .pure-g
-          .pure-u-1.pure-u-md-1-3.border-right
-            .information-box.no-padding
-              .information-title
-                | RESUMEN
-              table.info
-                tbody
-                  tr
-                    td.info-label
-                      |Referencia:
-                    td.info-value
-                      |{{order.referenceId}}
-                  tr
-                    td.info-label
-                      |Monto:
-                    td.info-value
-                      |{{order.amount}}
-                  tr
-                    td.info-label
-                      |Fecha:
-                    td.info-value
-                      | {{order.createdAt | date: 'medium'}}
-                  tr
-                    td.info-label
-                      |status:
-                    td.info-value
-                      |{{order.status}}
-          .pure-u-1.pure-u-md-1-3.border-right
-            .information-box
-              .information-title
-                | DIRECCION DE ENVIO
-              .description
-                | {{order.shippingAddress.street}} {{order.shippingAddress.number}} {{order.shippingAddress.apt}}
-                br
-                | {{order.shippingAddress.district}} {{order.shippingAddress.municipality}} 
-                br
-                | {{order.shippingAddress.country}}, {{order.shippingAddress.state}},  {{order.shippingAddress.zip}}
-          .pure-u-1.pure-u-md-1-3
-            .information-box
-              .information-title
-                | METODO DE PAGO
-              table.info
-                tbody
-                  tr
-                    td.info-label
-                      |Nombre
-                    td.info-value
-                      |{{order.paymentMethod.name}}
-                  tr
-                    td.info-label
-                      |Emisor:
-                    td.info-value
-                      |{{order.paymentMethod.brand}}
-                  tr
-                    td.info-label
-                      |Tarjeta:
-                    td.info-value
-                      |**** **** **** {{order.paymentMethod.last4}}
-                  tr
-                    td.info-label
-                      |Tipo:
-                    td.info-value
-                      |{{order.type}}
+div(data-ng-controller="Order as order")
+  #orders-menu(data-ng-include="'app/order/menu/order.menu.html'", data-ng-if="shell.isDashboard")
+  .filter-title
+    span.publisher-name.
+      Orden {{order.info.referenceId}}
+  .shelf
+    .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-space
+        .shelf-content(data-ng-hide="loading")
+          .pure-g
+            .pure-u-1.pure-u-md-1-3.border-right
+              .information-box.no-padding
+                .information-title
+                  | RESUMEN
+                table.info
+                  tbody
+                    tr
+                      td.info-label
+                        |Referencia:
+                      td.info-value
+                        |{{order.info.referenceId}}
+                    tr
+                      td.info-label
+                        |Monto:
+                      td.info-value
+                        |{{order.info.amount}}
+                    tr
+                      td.info-label
+                        |Fecha:
+                      td.info-value
+                        | {{order.info.createdAt | date: 'medium'}}
+                    tr
+                      td.info-label
+                        |status:
+                      td.info-value
+                        |{{order.info.status}}
+            .pure-u-1.pure-u-md-1-3.border-right
+              .information-box
+                .information-title
+                  | DIRECCION DE ENVIO
+                .description
+                  | {{order.info.shippingAddress.street}} {{order.info.shippingAddress.number}} {{order.info.shippingAddress.apt}}
+                  br
+                  | {{order.info.shippingAddress.district}} {{order.info.shippingAddress.municipality}} 
+                  br
+                  | {{order.info.shippingAddress.country}}, {{order.info.shippingAddress.state}},  {{order.info.shippingAddress.zip}}
+            .pure-u-1.pure-u-md-1-3
+              .information-box
+                .information-title
+                  | METODO DE PAGO
+                table.info
+                  tbody
+                    tr
+                      td.info-label
+                        |Nombre
+                      td.info-value
+                        |{{order.info.paymentMethod.name}}
+                    tr
+                      td.info-label
+                        |Emisor:
+                      td.info-value
+                        |{{order.info.paymentMethod.brand}}
+                    tr
+                      td.info-label
+                        |Tarjeta:
+                      td.info-value
+                        |**** **** **** {{order.info.paymentMethod.last4}}
+                    tr
+                      td.info-label
+                        |Tipo:
+                      td.info-value
+                        |{{order.info.type}}
 
-.filter-title
-  span.publisher-name.
-    Articulos
-.shelf
-  .inner-shelf
-    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-    .shelf-space
-      .shelf-content(data-ng-hide="loading")
-        table.info
-          thead
-            tr
-              th
-                | Articulo
-              th
-                | Cantidad
-              th
-                | Total
-          tbody
-            tr(data-ng-repeat="item in order.items")
-              td.info-value.uppercase
-                | {{item.name}}
-              td.info-value.align-center
-                | {{item.quantity}}
-              td.info-value.align-center
-                | {{item.price}}
-            tr
-              td(colspan="2")
-              td.info-important.align-center.border-top.padding-top
-                |{{order.amount}}
+  .filter-title
+    span.publisher-name.
+      Articulos
+  .shelf
+    .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-space
+        .shelf-content(data-ng-hide="loading")
+          table.info
+            thead
+              tr
+                th
+                  | Articulo
+                th
+                  | Cantidad
+                th
+                  | Total
+            tbody
+              tr(data-ng-repeat="item in order.info.items")
+                td.info-value.uppercase
+                  | {{item.name}}
+                td.info-value.align-center
+                  | {{item.quantity}}
+                td.info-value.align-center
+                  | {{item.price}}
+              tr
+                td(colspan="2")
+                td.info-important.align-center.border-top.padding-top
+                  |{{order.info.amount}}
 
         
 
