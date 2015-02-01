@@ -8,35 +8,38 @@
   Account.$inject = ['$scope','$state','userApi','conekta'];
 
   function Account($scope, $state,userApi, conekta) {
+    var shell = $scope.shell;
+    var account = this;
 
-    $scope.currentUser = userApi.currentUser();
-    var currentUser = userApi.currentUser();
-    $scope.cardFormView = false;
-    $scope.cancelFormView = false;
-    $scope.upgradeView = false;
-    // $scope. paymentMethods = [];
-    $scope.cards = [];
-    $scope.subscription = {payment:false};
+    // $scope.currentUser = userApi.currentUser();
+    // var currentUser = userApi.currentUser();
+
+    account.cardFormView = false;
+    account.cancelFormView = false;
+    account.upgradeView = false;
+    //checar esta variable cards tal vez sea la misma que payment methods
+    account.cards = [];
+    account.subscription = {payment:false};
     $scope.loading = true;
-    $scope.unsubscribe = {comment:null};
+    account.unsubscribe = {comment:null};
 
 
-    userApi.getCards({conektaId:$scope.currentUser.conektaId}).then(function(cards){
-      $scope.cards = cards;
-      console.log(currentUser.subscriptionCard);
-      if(currentUser.subscriptionCard){
+    userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
+      account.cards = cards;
+      
+      if(shell.currentUser.subscriptionCard){
         var flag = true;
         angular.forEach(cards,function(value){
-          if(angular.equals(currentUser.subscriptionCard,value)){
-            $scope.subscription.payment = value;
+          if(angular.equals(shell.currentUser.subscriptionCard,value)){
+            account.subscription.payment = value;
             flag = false;
           }
         });
         if(flag)
-          $scope.subscription.payment = $scope.cards[0];
+          account.subscription.payment = account.cards[0];
       }else{
         console.log('out');
-        $scope.subscription.payment = $scope.cards[0];
+        account.subscription.payment = account.cards[0];
       }
     },function(error){
       console.log(error);
@@ -44,53 +47,52 @@
       $scope.loading = false;
     });
 
-    $scope.updateCard = function(){
-      if($scope.subscription.payment){
-        $scope.showLoading();
-        conekta.subscriptionCard($scope.subscription.payment).then(function(user){
-          console.log(user);
-          $scope.updateCurrentUser();
+    account.updateCard = function(){
+      if(account.subscription.payment){
+        shell.showLoading();
+        conekta.subscriptionCard(account.subscription.payment).then(function(user){
+          shell.updateCurrentUser();
         },function(error){
           console.log(error);
-        }).finally($scope.hideLoading);
+        }).finally(shell.hideLoading);
       }
     }
 
-    $scope.addCard = function(card){
-      $scope.subscription.payment = card;
+    account.addCard = function(card){
+      account.subscription.payment = card;
     }
     
-    $scope.updateMembership = function(name){
-      if($scope.subscription.payment){
-        $scope.showLoading();
-        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},$scope.subscription.payment).then(function(user){
-          $scope.updateCurrentUser();
+    account.updateMembership = function(name){
+      if(account.subscription.payment){
+        shell.showLoading();
+        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment).then(function(user){
+          shell.updateCurrentUser();
         },function(error){
           console.log(error);
-        }).finally($scope.hideLoading);
+        }).finally(shell.hideLoading);
       }
     }
 
 
 
-    $scope.showCardForm = function(view){
-      $scope.cardFormView  = view;
+    account.showCardForm = function(view){
+      account.cardFormView  = view;
     }
 
-    $scope.showCancelForm = function(){
-      $scope.cancelFormView = true;
+    account.showCancelForm = function(){
+      account.cancelFormView = true;
     }
 
-    $scope.hideCancelForm = function(){
-      $scope.cancelFormView = false;
+    account.hideCancelForm = function(){
+      account.cancelFormView = false;
     }
 
-    $scope.showUpgrade = function(){
-      $scope.upgradeView = true;
+    account.showUpgrade = function(){
+      account.upgradeView = true;
     }
 
-    $scope.hideUpgrade = function(){
-      $scope.upgradeView = false;
+    account.hideUpgrade = function(){
+      account.upgradeView = false;
     }
     
   }

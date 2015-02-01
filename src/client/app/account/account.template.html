@@ -1,76 +1,78 @@
 
-<div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'"></div>
-<div class="filter-title"><span class="publisher-name">Mi Membresia</span></div>
-<div class="shelf">
-  <div class="inner-shelf">
-    <div class="shelf-space">
-      <div>{{shell.currentUser.membership}}</div>
-      <p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>
-      <div data-ng-if="shell.currentUser.membership  == 'basic'" class="align-center"><a data-ng-click="showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
-      </div>
-      <div data-ng-if="shell.currentUser.membership  == 'pro'" class="align-right"><a data-ng-click="showCancelForm()" class="pure-button">Cancelar Membresia</a></div>
-    </div>
-  </div>
-</div>
-<div id="new-card" data-ng-if="cardFormView">
-  <div class="filter-title"><span class="publisher-name">Agregar Tarjeta</span></div>
+<div data-ng-controller="Account as account">
+  <div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'"></div>
+  <div class="filter-title"><span class="publisher-name">Mi Membresia</span></div>
   <div class="shelf">
     <div class="inner-shelf">
-      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-      <div data-ng-hide="loading" class="shelf-space">
-        <div data-ng-hide="loading" class="shelf-content">
-          <div card-form="card-form"></div>
+      <div class="shelf-space">
+        <div>{{shell.currentUser.membership}}</div>
+        <p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>
+        <div data-ng-if="shell.currentUser.membership  == 'basic'" class="align-center"><a data-ng-click="account.showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
+        </div>
+        <div data-ng-if="shell.currentUser.membership  == 'pro'" class="align-right"><a data-ng-click="account.showCancelForm()" class="pure-button">Cancelar Membresia</a></div>
+      </div>
+    </div>
+  </div>
+  <div id="new-card" data-ng-if="account.cardFormView">
+    <div class="filter-title"><span class="publisher-name">Agregar Tarjeta</span></div>
+    <div class="shelf">
+      <div class="inner-shelf">
+        <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+        <div data-ng-hide="loading" class="shelf-space">
+          <div data-ng-hide="loading" class="shelf-content">
+            <div card-form="card-form"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div id="cancel-membership" data-ng-show="cancelFormView">
-  <div class="filter-title"><span class="publisher-name error">Cancelar Membresia</span></div>
-  <div class="shelf">
-    <div class="inner-shelf error-border">
-      <div class="shelf-space">
-        <cancel-membership></cancel-membership>
+  <div id="cancel-membership" data-ng-show="account.cancelFormView">
+    <div class="filter-title"><span class="publisher-name error">Cancelar Membresia</span></div>
+    <div class="shelf">
+      <div class="inner-shelf error-border">
+        <div class="shelf-space">
+          <cancel-membership></cancel-membership>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div id="update-membership" data-ng-show="upgradeView || shell.currentUser.membership  == 'pro'">
-  <div class="filter-title"><span class="publisher-name">Actualiza Membresia</span></div>
-  <div class="shelf">
-    <div class="inner-shelf">
-      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-      <div class="shelf-space">
-        <div data-ng-hide="loading" class="shelf-content">
-          <div class="pure-g">
-            <div class="pure-u-1 pure-u-md-1-3 border-right">
-              <div class="information-box no-padding">
-                <div data-ng-if="cards.length &lt; 1" class="shelf-message">
-                  <div class="subtitle">No existen metodos de pago registrados.</div>
-                </div>
-                <div data-ng-show="cards.length &gt; 0">
-                  <div class="address-line">Tarjeta</div>
-                  <div class="address-line">{{subscription.payment.card.name}}</div>
-                  <div class="address-line"><i ng-if="subscription.payment.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="subscription.payment.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="subscription.payment.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{subscription.payment.card.last4}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="pure-u-1 pure-u-md-1-3 border-right">
-              <div class="information-box">
-                <div data-ng-show="cards.length &gt; 0">
-                  <div class="address-line">Cambiar Metodo de Pago</div>
-                  <div class="address-line">
-                    <select ng-model="subscription.payment" ng-options="item as item.card.last4 for item in cards"></select>
+  <div id="update-membership" data-ng-show="account.upgradeView || shell.currentUser.membership  == 'pro'">
+    <div class="filter-title"><span class="publisher-name">Actualiza Membresia</span></div>
+    <div class="shelf">
+      <div class="inner-shelf">
+        <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+        <div class="shelf-space">
+          <div data-ng-hide="loading" class="shelf-content">
+            <div class="pure-g">
+              <div class="pure-u-1 pure-u-md-1-3 border-right">
+                <div class="information-box no-padding">
+                  <div data-ng-if="account.cards.length &lt; 1" class="shelf-message">
+                    <div class="subtitle">No existen metodos de pago registrados.</div>
+                  </div>
+                  <div data-ng-show="account.cards.length &gt; 0">
+                    <div class="address-line">Tarjeta</div>
+                    <div class="address-line">{{account.subscription.payment.card.name}}</div>
+                    <div class="address-line"><i ng-if="account.subscription.payment.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="account.subscription.payment.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="account.subscription.payment.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{account.subscription.payment.card.last4}}</div>
                   </div>
                 </div>
-                <div class="address-line"><a data-ng-click="cardFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Tarjeta</a></div>
               </div>
-            </div>
-            <div class="pure-u-1 pure-u-md-1-3 align-center">
-              <div data-ng-hide="showPlaceOrder">
-                <div class="address-line"><a data-ng-click="updateMembership('pro')" data-ng-if="shell.currentUser.membership  == 'basic'" data-ng-class="{'pure-button-disabled': cards.length &lt; 1}" class="pure-button pure-button-primary">Actualizar a PRO</a>
-                  <div data-ng-if="shell.currentUser.membership  == 'pro'">
-                    <div class="address-line"><a data-ng-click="updateCard()" data-ng-class="{'pure-button-disabled': cards.length &lt; 1}" class="pure-button button-success"><i class="fa fa-credit-card"></i>Actualizar Tarjeta</a></div>
+              <div class="pure-u-1 pure-u-md-1-3 border-right">
+                <div class="information-box">
+                  <div data-ng-show="account.cards.length &gt; 0">
+                    <div class="address-line">Cambiar Metodo de Pago</div>
+                    <div class="address-line">
+                      <select ng-model="account.subscription.payment" ng-options="item as item.card.last4 for item in account.cards"></select>
+                    </div>
+                  </div>
+                  <div class="address-line"><a data-ng-click="account.cardFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Tarjeta</a></div>
+                </div>
+              </div>
+              <div class="pure-u-1 pure-u-md-1-3 align-center">
+                <div data-ng-hide="checkout.showPlaceOrder">
+                  <div class="address-line"><a data-ng-click="account.updateMembership('pro')" data-ng-if="shell.currentUser.membership  == 'basic'" data-ng-class="{'pure-button-disabled': account.cards.length &lt; 1}" class="pure-button pure-button-primary">Actualizar a PRO</a>
+                    <div data-ng-if="shell.currentUser.membership  == 'pro'">
+                      <div class="address-line"><a data-ng-click="account.updateCard()" data-ng-class="{'pure-button-disabled': account.cards.length &lt; 1}" class="pure-button button-success"><i class="fa fa-credit-card"></i>Actualizar Tarjeta</a></div>
+                    </div>
                   </div>
                 </div>
               </div>

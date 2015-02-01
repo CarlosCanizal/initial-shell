@@ -50,7 +50,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.account',{
       url:'/account',
       templateUrl:'app/account/account.template.html',
-      controller: 'Account',
+      // controller: 'Account',
       data:{
         menu: 'account',
         submenu: 'account'
