@@ -77,7 +77,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.profile',{
       url:'/profile',
       templateUrl:'app/profile/profile.template.html',
-      controller: 'Profile',
+      // controller: 'Profile',
       data:{
         menu: 'account',
         submenu: 'profile'

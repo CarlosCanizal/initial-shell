@@ -8,17 +8,20 @@
   Profile.$inject = ['$scope','userApi'];
 
   function Profile($scope, userApi) {
+    var shell = $scope.shell;
+    var profile = this; 
 
-    $scope.user = $scope.getCurrentUser();
+    profile.user = shell.currentUser;
 
     $scope.saveProfile = function(){
-      $scope.showLoading();
-      var sessionToken = $scope.user.sessionToken;
-      userApi.saveProfile($scope.user).then(function(user){
-        $scope.updateCurrentUser();
+      shell.showLoading();
+      var sessionToken = profile.user.sessionToken;
+      userApi.saveProfile(profile.user).then(function(user){
+        //siempre que se actualize el user debe ir updateCurrentUser();
+        shell.updateCurrentUser();
       },function(error){
         console.error(error);
-      }).finally($scope.hideLoading);
+      }).finally(shell.hideLoading);
     }
     
   }
