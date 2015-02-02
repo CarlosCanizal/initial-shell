@@ -8,15 +8,18 @@
   Series.$inject = ['$scope', 'subscriptionApi'];
 
   function Series($scope, subscriptionApi) {
-
-    $scope.series = [];
+    var shell = $scope.shell;
+    var series = this;
+   
+    series.list = [];
     $scope.loading =  true;
 
     subscriptionApi.getSubscriptions().then(function(result){
-      $scope.series = result.results;
-      $scope.loading =  false;
+      series.list = result.results;
     },function(error){
       console.error(error);
+    }).finally(function(){
+      $scope.loading =  false;
     });
 
 

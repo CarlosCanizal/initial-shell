@@ -86,7 +86,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.series',{
       url:'/series',
       templateUrl:'app/serie/series.template.html',
-      controller: 'Series',
+      // controller: 'Series',
       data:{
         menu: 'series',
         submenu: 'series'
