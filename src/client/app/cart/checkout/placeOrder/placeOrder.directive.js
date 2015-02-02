@@ -10,33 +10,34 @@ function placeOrder(userApi, ShoppingCart){
     templateUrl: 'app/cart/checkout/placeOrder/placeOrder.template.html',
     scope: true,
     link:function(scope,element,attr){
-      // scope.showConfirmation = true;
+      var shell = scope.shell;
+      var checkout =  scope.checkout;
       
       scope.placeOrder = function(){
         var user = scope.currentUser;
         var cart = ShoppingCart.getCart();
-        scope.showConfirmation = true;
+
+        checkout.showConfirmation = true;
         scope.waitingForResponse = true;
         scope.order = {}
 
         scope.changePaymentMethod = function(){
-          scope.showConfirmation = false;
-          scope.toPaymentMethod();
+          checkout.showConfirmation = false;
+          checkout.toPaymentMethod();
         }
 
         userApi.chargeCard(cart, user).then(function(result){
           scope.order = result.result;
-          console.log(scope.order);
-          scope.emptyCart();
-          scope.setStatus(true);
-          scope.waitingForResponse = false;
+          checkout.emptyCart();
+          checkout.setStatus(true);
         },function(error){
           console.log(error);
           var error = angular.fromJson(error.data.error);
-          scope.setStatus(false);
+          checkout.setStatus(false);
           console.log(error);
           scope.errorMessage =  error.message_to_purchaser;
-          scope.waitingForResponse = false;
+        }).finally(function(){
+          scope.waitingForResponse = false;          
         });
       }
     }

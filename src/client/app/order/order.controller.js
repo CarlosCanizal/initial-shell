@@ -11,15 +11,18 @@
     var shell = $scope.shell;
     var order = this;
 
-    var objectId = $stateParams.objectId;
-    $scope.loading = true;
+    if($stateParams.objectId){
+      var objectId = $stateParams.objectId;
+      $scope.loading = true;
 
-    orderApi.getOrder(objectId).then(function(result){
-      order.info = result;
-      $scope.loading = false;
-    },function(error){
-      console.log(error);
-    });
+      orderApi.getOrder(objectId).then(function(result){
+        order.info = result;
+      },function(error){
+        console.log(error);
+      }).finally($scope.loading = false;);
+    }else if($scope.order){
+      order.info = $scope.order;
+    }
     
   }
 
