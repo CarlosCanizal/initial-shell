@@ -27,7 +27,7 @@ function paymentMethod(userApi){
         console.error(error);
       });
 
-      scope.showCardForm = function(show){
+      checkout.showCardForm = function(show){
         checkout.cardFormView = show;
       }
     }

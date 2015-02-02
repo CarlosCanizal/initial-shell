@@ -12,10 +12,19 @@ function cardForm(userApi, conekta){
     link:function(scope,element,attr){
       var shell = scope.shell;
       var paymentMethod;
+
       if(scope.payment)
         paymentMethod = scope.payment;
+      
       else if(scope.account)
         paymentMethod = scope.account;
+
+      else if(scope.checkout){
+        paymentMethod = scope.checkout;
+        var checkout = scope.checkout;
+      }
+
+
 
 
       scope.card = {name:'Javier Pedreiro',
@@ -29,9 +38,11 @@ function cardForm(userApi, conekta){
         shell.showLoading();
         conekta.saveCard(shell.currentUser.conektaId,scope.card).then(function(card){
           var newCard = {type:'card', card:card};
-          if(paymentMethod.cards)
+
+          if(paymentMethod && paymentMethod.cards)
             paymentMethod.cards.push(newCard);
-          if(shell.shoppingCart)
+
+          if(checkout && shell.shoppingCart)
             shell.shoppingCart.paymentMethod = newCard;
 
           paymentMethod.showCardForm(false);
