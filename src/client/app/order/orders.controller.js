@@ -8,17 +8,18 @@
   Orders.$inject = ['$scope', 'orderApi'];
 
   function Orders($scope, orderApi) {
+    var shell = $scope.shell;
+    var orders  = this;
 
-    $scope.orders = [];
+    orders.list = [];
     $scope.loading =  true;
 
-
     orderApi.getOrders().then(function(result){
-      console.log(result.results);
-      $scope.orders = result.results;
-      $scope.loading =  false;
+      orders.list = result.results;
     },function(error){
       console.error(error);
+    }).finally(function(){
+      $scope.loading =  false;
     });
   }
 

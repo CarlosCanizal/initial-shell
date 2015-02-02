@@ -113,7 +113,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.orders',{
       url:'/orders',
       templateUrl:'app/order/orders.template.html',
-      controller: 'Orders',
+      // controller: 'Orders',
       data:{
         menu: 'orders',
         submenu: 'orders'
