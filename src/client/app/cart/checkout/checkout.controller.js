@@ -16,6 +16,7 @@
       if(shell.currentUser){
         console.log('shell.currentUser', shell.currentUser.membership);
         shell.shoppingCart.membership = shell.currentUser.membership;
+        shell.shoppingCart.userWallet = shell.currentUser.wallet;
         ShoppingCart.setCart(shell.shoppingCart);
       }
     });

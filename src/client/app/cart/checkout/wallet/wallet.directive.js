@@ -24,6 +24,7 @@ function wallet(userApi, ShoppingCart){
         scope.payWithWallet = true;
         shell.shoppingCart.useWallet = true;
         shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
+        console.log(shell.shoppingCart);
         shell.hideLoading();
       }
 
