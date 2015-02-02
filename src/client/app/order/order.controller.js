@@ -19,7 +19,9 @@
         order.info = result;
       },function(error){
         console.log(error);
-      }).finally($scope.loading = false;);
+      }).finally(function(){
+        $scope.loading = false
+      });
     }else if($scope.order){
       order.info = $scope.order;
     }

@@ -14,7 +14,7 @@ function placeOrder(userApi, ShoppingCart){
       var checkout =  scope.checkout;
       
       scope.placeOrder = function(){
-        var user = scope.currentUser;
+        // var user = shell.currentUser;
         var cart = ShoppingCart.getCart();
 
         checkout.showConfirmation = true;
@@ -26,8 +26,8 @@ function placeOrder(userApi, ShoppingCart){
           checkout.toPaymentMethod();
         }
 
-        userApi.chargeCard(cart, user).then(function(result){
-          scope.order = result.result;
+        userApi.chargeCard(cart, shell.currentUser).then(function(result){
+          scope.order.info = result.result;
           checkout.emptyCart();
           checkout.setStatus(true);
         },function(error){
