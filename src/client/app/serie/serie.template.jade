@@ -1,41 +1,42 @@
-#series-menu(data-ng-include="'app/serie/menu/serie.menu.html'")
-.filter-title
-  span.publisher-name
-    | {{serie.name}}
-.shelf
-  .inner-shelf
-    .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-    .shelf-content(data-ng-hide="loading")
-      .pure-g
-        .pure-u-1.pure-u-md-1-3
-          .item
-            .item-image
-              img(alt="", ng-src="{{serie.cover.url}}")
-        .pure-u-1.pure-u-md-2-3
-          .item(data-ng-if="subscription.status != 'cancelled'")
-            .title.uppercase
-              | {{serie.name}}
-            .row(data-ng-if="subscription.status == 'active'")
-              .row.subtitle.success
-                | Suscripción Activa
-              a.pure-button.button-warning(data-ng-click="changeStatus('paused')")
-                | Pausar Suscripción
-            .row(data-ng-if="subscription.status == 'paused'")              
-              .row.subtitle.warning
-                | Suscripción Pausada
-              a.pure-button.button-success(data-ng-click="changeStatus('active')")
+div(data-ng-controller="Serie as serie")
+  #series-menu(data-ng-include="'app/serie/menu/serie.menu.html'")
+  .filter-title
+    span.publisher-name
+      | {{serie.info.name}}
+  .shelf
+    .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-content(data-ng-hide="loading")
+        .pure-g
+          .pure-u-1.pure-u-md-1-3
+            .item
+              .item-image
+                img(alt="", ng-src="{{serie.info.cover.url}}")
+          .pure-u-1.pure-u-md-2-3
+            .item(data-ng-if="serie.subscription.status != 'cancelled'")
+              .title.uppercase
+                | {{serie.info.name}}
+              .row(data-ng-if="serie.subscription.status == 'active'")
+                .row.subtitle.success
+                  | Suscripción Activa
+                a.pure-button.button-warning(data-ng-click="serie.changeStatus('paused')")
+                  | Pausar Suscripción
+              .row(data-ng-if="serie.subscription.status == 'paused'")              
+                .row.subtitle.warning
+                  | Suscripción Pausada
+                a.pure-button.button-success(data-ng-click="serie.changeStatus('active')")
+                  |Activar Suscripción
+              .row
+                a.pure-button.button-error(data-ng-click="serie.changeStatus('cancelled')")
+                  |Cancelar Suscripción
+            .item(data-ng-if="serie.subscription.status == 'cancelled'")
+              .row.subtitle
+                |Tu subscription a la serie 
+                span.uppercase
+                  |{{serie.info.name}} 
+                |ha sido cancelada.
+              a.pure-button.button-success(data-ng-click="serie.changeStatus('active')")
                 |Activar Suscripción
-            .row
-              a.pure-button.button-error(data-ng-click="changeStatus('cancelled')")
-                |Cancelar Suscripción
-          .item(data-ng-if="subscription.status == 'cancelled'")
-            .row.subtitle
-              |Tu subscription a la serie 
-              span.uppercase
-                |{{serie.name}} 
-              |ha sido cancelada.
-            a.pure-button.button-success(data-ng-click="changeStatus('active')")
-              |Activar Suscripción
 
 
 
