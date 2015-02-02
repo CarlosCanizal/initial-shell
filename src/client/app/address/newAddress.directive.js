@@ -12,6 +12,10 @@ function newAddress(userApi, sepomexAPI){
     link:function(scope,element,attr){
 
       var shell =  scope.shell;
+      var address;
+
+      if(scope.address)
+        var address = scope.address;
 
       scope.states = [];
       scope.municipalities = [];
@@ -91,21 +95,23 @@ function newAddress(userApi, sepomexAPI){
 
       scope.saveAddress = function(){
         if(scope.addressForm.$valid){
-          scope.showLoading();
+          shell.showLoading();
           scope.address.user = {"__type":"Pointer",className:"_User","objectId":shell.currentUser.objectId}
-          userApi.saveAddress(scope.address).then(function(address){
-            console.log(address);
-            if(scope.addresses)
-              scope.addresses.push(address);
-            if(scope.shoppingCart){
-              scope.shoppingCart.shippingAddress = address;
+          userApi.saveAddress(scope.address).then(function(result){
+    
+            if(address.addresses){
+              address.addresses.push(result);
+            }
+            
+            if(shell.shoppingCart){
+              shell.shoppingCart.shippingAddress = result;
             }
             scope.address = {};
             scope.addressForm.$setPristine();
             scope.showAddressForm(false);
           },function(error){
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-          }).finally(scope.hideLoading);
+          }).finally(shell.hideLoading);
         }
       }
       

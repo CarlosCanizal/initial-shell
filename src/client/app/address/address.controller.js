@@ -25,7 +25,6 @@
     });
 
     $scope.deleteAddress = function(objectId, index){
-      alert(index);
       shell.showLoading()
       userApi.deleteAddress(objectId).then(function(response){
         address.addresses.splice(index,1);
