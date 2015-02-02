@@ -21,7 +21,7 @@ function shippingAddress(userApi){
 
       //refactorizar con direcative en address
        scope.showAddressForm = function(show){
-        scope.addressFormView = show;
+        checkout.addressFormView = show;
       }
 
       userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
