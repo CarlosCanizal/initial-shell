@@ -50,14 +50,6 @@
       shell.loading = false;
     }
 
-    $scope.showLoading = function(){
-      shell.loading = true;
-    }
-
-    $scope.hideLoading = function(){
-      shell.loading = false;
-    }
-
     shell.showConfirmation = function(){
       shell.confirmation = true;
     }

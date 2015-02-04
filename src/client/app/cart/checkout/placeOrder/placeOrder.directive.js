@@ -30,6 +30,7 @@ function placeOrder(userApi, ShoppingCart){
           scope.order.info = result.result;
           checkout.emptyCart();
           checkout.setStatus(true);
+          shell.updateCurrentUser();
         },function(error){
           console.log(error);
           var error = angular.fromJson(error.data.error);
