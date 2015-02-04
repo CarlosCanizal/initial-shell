@@ -26,7 +26,7 @@
 
     payment.deleteCard = function(index){
       var card = payment.cards[parseInt(index)].card
-      if(card.id == shell.currentUser.subscriptionCard.card.id){
+      if(shell.currentUser.upgrade == 'upgraded' && card.id == shell.currentUser.subscriptionCard.card.id){
         payment.error = 'La tarjeta con terminacion '+card.last4+' se encuentra ligada a tu membrecia, si deseas eliminarla, primero debes cancelar tu suscripcion.';
         return;
       }
