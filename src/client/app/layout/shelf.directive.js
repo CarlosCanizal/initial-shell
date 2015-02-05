@@ -19,7 +19,7 @@ function shelf(storeApi){
       $scope.shell = $scope.$parent.shell
     },
     link:function(scope,element,attr){
-      // var shell = scope.shell;
+      var shell = scope.shell;
 
       var publisher = attr.publisher;
       var store = attr.store;
@@ -28,16 +28,12 @@ function shelf(storeApi){
       scope.itemsList = [];
 
       storeApi.getItems({publisher:publisher, status:'active', function: store}).then(function(series){
-        console.log('series result', series.result);
         scope.itemsList = series.result;
-        scope.loading = false;
       },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+        shell.setError(error);
+      }).finally(function(){
+        scope.loading = false;
       });
-
-      
-
-
     }
   }
 }

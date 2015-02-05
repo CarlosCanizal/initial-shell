@@ -18,9 +18,9 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'Login',
       templateUrl:'app/login/login.template.html'
     })
-    .state('suscribe',{
+    .state('subscribe',{
       url:'/suscripciones',
-      templateUrl:'app/suscribe/suscribe.template.html'
+      templateUrl:'app/subscribe/subscribe.template.html'
     })
     .state('about',{
       url:'/como-funciona',
