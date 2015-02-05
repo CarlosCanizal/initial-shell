@@ -37,7 +37,7 @@ function confirmMessage(Message){
         },
         function() {
           if(Message.currentValue == true){
-            console.log('viewer', 'Change detected, new object:', Message.currentValue);
+            // console.log('viewer', 'Change detected, new object:', Message.currentValue);
             Message.setValue(false);
             scope.$eval(Message.onConfirm);
           }

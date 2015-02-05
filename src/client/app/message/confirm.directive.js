@@ -30,7 +30,7 @@ function confirmDialog(){
           return Message.showModal;
         },
         function() {
-          console.log('modal', 'Change detected, new object:', Message.showModal);
+          // console.log('modal', 'Change detected, new object:', Message.showModal);
           $scope.showModal =   Message.showModal;
           // angular.copy(Message.showModal, $scope.showModal);
         },
@@ -42,7 +42,7 @@ function confirmDialog(){
           return Message.question;
         },
         function() {
-          console.log('question', 'Change detected, new object:', Message.question);
+          // console.log('question', 'Change detected, new object:', Message.question);
           $scope.question =   Message.question;
           // angular.copy(Message.showModal, $scope.showModal);
         },

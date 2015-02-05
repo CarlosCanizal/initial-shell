@@ -18,10 +18,11 @@
     $scope.loading = true;
 
     userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
-        $scope.loading = false;
-        payment.cards = cards;
+      payment.cards = cards;
     },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      shell.setError(error);
+    }).finally(function(){
+      $scope.loading = false;
     });
 
     payment.deleteCard = function(index){
@@ -35,8 +36,7 @@
       conekta.deleteCard(shell.currentUser.conektaId, card.id).then(function(){
         payment.cards.splice(index, 1);
       },function(error){
-        console.log(error);
-        // console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+        shell.setError(error);
       }).finally(shell.hideLoading);
     }  
 
