@@ -479,21 +479,22 @@ a:hover, a:active, a:focus {
   color: white;
   background-color: #ca3c3c;
   border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem; }
+  border-bottom-right-radius: 0.5rem;
+  z-index: 4; }
 
-/* line 409, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 410, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #submenu {
   text-align: right; }
-  /* line 411, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 412, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #submenu nav {
     margin: 1rem 0; }
-    /* line 413, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 414, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav a {
       padding: 0 1rem;
       color: #999;
       text-decoration: none;
       text-transform: uppercase;
       border-right: solid 1px #CCC; }
-    /* line 419, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 420, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav .active {
       color: orange; }

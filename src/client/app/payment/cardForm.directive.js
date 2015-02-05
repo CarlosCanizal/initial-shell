@@ -53,10 +53,11 @@ function cardForm(userApi, conekta){
 
           paymentMethod.showCardForm(false);
         },function(error){
-          if(error.status)
-            console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-          else
-            console.error(error);
+          // if(error.status)
+          //   console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          // else
+          //   console.error(error);
+          shell.setError(error);
         }).finally(shell.hideLoading);
       };
     }
