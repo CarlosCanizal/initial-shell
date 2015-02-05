@@ -17,7 +17,7 @@
     orderApi.getOrders().then(function(result){
       orders.list = result.results;
     },function(error){
-      console.error(error);
+      shell.setError(error);
     }).finally(function(){
       $scope.loading =  false;
     });

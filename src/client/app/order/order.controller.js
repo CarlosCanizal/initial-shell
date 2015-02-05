@@ -18,7 +18,7 @@
       orderApi.getOrder(objectId).then(function(result){
         order.info = result;
       },function(error){
-        console.log(error);
+        shell.setError(error);
       }).finally(function(){
         $scope.loading = false
       });
