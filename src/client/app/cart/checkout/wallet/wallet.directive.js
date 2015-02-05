@@ -10,7 +10,6 @@ function wallet(userApi, ShoppingCart){
     templateUrl: 'app/cart/checkout/wallet/wallet.template.html',
     scope: true,
     link:function(scope,element,attr){
-      // var user = scope.getCurrentUser();
       var shell = scope.shell;
       var checkout = scope.checkout;
 

@@ -109,6 +109,7 @@
     }
 
     shell.setError = function(error){
+      // console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       console.log(error);
       shell.error = error;
     }

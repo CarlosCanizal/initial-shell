@@ -107,7 +107,7 @@ function newAddress(userApi, sepomexAPI){
             }
             
             if(checkout){
-              // checkout.addresses.push(result);
+              checkout.addresses.push(result);
               shell.shoppingCart.shippingAddress = result;
             }
             scope.newAddress = {};

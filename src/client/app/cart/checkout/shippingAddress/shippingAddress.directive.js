@@ -12,14 +12,10 @@ function shippingAddress(userApi){
     link:function(scope,element,attr){
       var shell = scope.shell;
       var checkout = scope.checkout;
+      checkout.cleanItemsUnavaibale();
+      checkout.addressFormView = false;
       scope.loading = true;
 
-      checkout.cleanItemsUnavaibale();
-
-      // shell.shoppingCart.shippingAddress = false;
-      checkout.addressFormView = false;
-
-      //refactorizar con direcative en address
        scope.showAddressForm = function(show){
         checkout.addressFormView = show;
       }
@@ -28,11 +24,11 @@ function shippingAddress(userApi){
         checkout.addresses =  addresses.results;
         if(checkout.addresses[0]){
           shell.shoppingCart.shippingAddress = checkout.addresses[0];
-          console.log('done!');
         }
-        scope.loading = false;
       },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+        shell.setError(error);
+      }).finally(function(){
+        scope.loading = false;        
       });
       
     }
