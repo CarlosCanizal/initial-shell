@@ -21,8 +21,7 @@ function loginForms(userApi, storage){
             scope.setUser(user);
           },function(error){
             scope.response.login = error.data.error;
-            console.log(error);
-            console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+            shell.setError(error);
           }).finally(shell.hideLoading);
         }else{
           scope.loginForm.username.$setDirty();
@@ -37,9 +36,11 @@ function loginForms(userApi, storage){
           userApi.register(scope.newUser).then(function(user){
             scope.setUser(user);
           },function(error){
-            scope.response.register = error.data.error;
-            console.log(error);
-            console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+            if(error.data.error){
+              scope.response.register = error.data.error;
+            }else{
+              shell.setError(error);
+            }
           }).finally(shell.hideLoading);
         }else{
           scope.registerForm.name.$setDirty();

@@ -14,7 +14,6 @@ function placeOrder(userApi, ShoppingCart){
       var checkout =  scope.checkout;
       
       scope.placeOrder = function(){
-        // var user = shell.currentUser;
         var cart = ShoppingCart.getCart();
 
         checkout.showConfirmation = true;
@@ -32,11 +31,13 @@ function placeOrder(userApi, ShoppingCart){
           checkout.setStatus(true);
           shell.updateCurrentUser();
         },function(error){
-          console.log(error);
           var error = angular.fromJson(error.data.error);
           checkout.setStatus(false);
-          console.log(error);
-          scope.errorMessage =  error.message_to_purchaser;
+          if(error.message_to_purchaser){
+            scope.errorMessage =  error.message_to_purchaser;
+          }else{
+            shell.setError(error);
+          }
         }).finally(function(){
           scope.waitingForResponse = false;          
         });

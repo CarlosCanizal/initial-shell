@@ -17,14 +17,14 @@ function paymentMethod(userApi){
       shell.shoppingCart.paymentMethod = false;
 
       userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
-        //checar que onda con esta variable cards
         checkout.cards = cards;
         checkout.paymentMethods =  checkout.cards;
         if(checkout.cards[0])
           shell.shoppingCart.paymentMethod = checkout.cards[0];
-        scope.loading = false;
       },function(error){
-        console.error(error);
+        shell.setError(error);
+      }).finally(function(){
+        scope.loading = false;
       });
 
       checkout.showCardForm = function(show){

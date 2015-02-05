@@ -13,6 +13,17 @@ function cardForm(userApi, conekta){
       var shell = scope.shell;
       var paymentMethod;
 
+      scope.months = [];
+      for(var i=1; i<=12; i++){
+        scope.months.push(i);
+      }
+
+      scope.years = [];
+      for(var j=2015; j<=2030; j++){
+        scope.years.push(j);
+      }
+
+
       if(scope.payment){
         paymentMethod = scope.payment;
       }
@@ -27,8 +38,8 @@ function cardForm(userApi, conekta){
       scope.card = {name:'Javier Pedreiro',
                             number: '4242424242424242',
                             cvc: '123',
-                            exp_month: '05',
-                            exp_year: '2015'
+                            exp_month: scope.months[0],
+                            exp_year: scope.years[0]
                            };
 
       scope.hideCardForm = function(){
