@@ -13,19 +13,16 @@ function cardForm(userApi, conekta){
       var shell = scope.shell;
       var paymentMethod;
 
-      if(scope.payment)
+      if(scope.payment){
         paymentMethod = scope.payment;
-      
-      else if(scope.account)
+      }
+      else if(scope.account){
         paymentMethod = scope.account;
-
+      }
       else if(scope.checkout){
         paymentMethod = scope.checkout;
         var checkout = scope.checkout;
       }
-
-
-
 
       scope.card = {name:'Javier Pedreiro',
                             number: '4242424242424242',
@@ -33,6 +30,10 @@ function cardForm(userApi, conekta){
                             exp_month: '05',
                             exp_year: '2015'
                            };
+
+      scope.hideCardForm = function(){
+        paymentMethod.showCardForm(false);
+      }
 
       scope.saveCard = function(){
         shell.showLoading();
