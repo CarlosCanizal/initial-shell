@@ -39,11 +39,16 @@ function cardForm(userApi, conekta){
         conekta.saveCard(shell.currentUser.conektaId,scope.card).then(function(card){
           var newCard = {type:'card', card:card};
 
-          if(paymentMethod && paymentMethod.cards)
+          if(paymentMethod && paymentMethod.cards){
             paymentMethod.cards.push(newCard);
+            
+            if(paymentMethod.subscription)
+              paymentMethod.subscription.payment = newCard;
+          }
 
-          if(checkout && shell.shoppingCart)
+          if(checkout && shell.shoppingCart){
             shell.shoppingCart.paymentMethod = newCard;
+          }
 
           paymentMethod.showCardForm(false);
         },function(error){
