@@ -26,8 +26,7 @@ function coupon(couponApi, userApi){
               shell.shoppingCart.userWallet += coupon.amount;
             }
           },function(error){
-            console.error(error);
-            scope.error = error.data.error;
+            shell.setError(error);
           }).finally(shell.hideLoading);
         }
       }
