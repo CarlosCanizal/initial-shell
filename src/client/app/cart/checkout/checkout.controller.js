@@ -111,10 +111,7 @@
     }
 
     function resetViews(){
-      
       checkout.showAddress = false;
-      // checkout. loadAddress = false;
-
       checkout.showPayment = false;
       checkout.showPlaceOrder = false;
       checkout.showConfirmation = false;

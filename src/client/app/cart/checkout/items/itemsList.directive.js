@@ -19,9 +19,10 @@ function itemsList(ShoppingCart){
       ShoppingCart.validateOrder().then(function(order){
         shell.shoppingCart = ShoppingCart.updateItems(order.itemsAvailable);
         checkout.itemsUnavailable = order.itemsUnavailable;
-        scope.loading = false;
       },function(error){
-        console.error(error);
+        shell.setError(error);
+      }).finally(function(){
+        scope.loading = false;       
       });
 
       scope.updateQuantity = function(item, index){
