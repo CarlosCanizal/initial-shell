@@ -107,12 +107,13 @@ function newAddress(userApi, sepomexAPI){
             }
             
             if(checkout){
-              checkout.addresses.push(result);
+              // checkout.addresses.push(result);
               shell.shoppingCart.shippingAddress = result;
             }
             scope.newAddress = {};
             scope.addressForm.$setPristine();
             scope.showAddressForm(false);
+
           },function(error){
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
           }).finally(shell.hideLoading);

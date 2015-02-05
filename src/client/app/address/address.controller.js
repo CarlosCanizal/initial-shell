@@ -19,9 +19,10 @@
 
     userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
       address.addresses =  addresses.results;
-      $scope.loading = false;
     },function(error){
-      console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+      shell.setError(error);
+    }).finally(function(){
+      $scope.loading = false;
     });
 
     $scope.deleteAddress = function(objectId, index){
@@ -29,7 +30,7 @@
       userApi.deleteAddress(objectId).then(function(response){
         address.addresses.splice(index,1);
       },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+        shell.setError(error);
       }).finally(shell.hideLoading)
     }
 

@@ -20,7 +20,7 @@
         //siempre que se actualize el user debe ir updateCurrentUser();
         shell.updateCurrentUser();
       },function(error){
-        console.error(error);
+        shell.setError(error);
       }).finally(shell.hideLoading);
     }
     
