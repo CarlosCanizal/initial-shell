@@ -76,6 +76,9 @@ div(data-ng-controller="Account as account")
                   .address-line
                     a.pure-button.pure-button-primary(data-ng-click="account.updateMembership('pro')", data-ng-if="shell.currentUser.membership  == 'basic'", data-ng-class="{'pure-button-disabled': account.cards.length < 1}")
                       | Actualizar a PRO
+                  .address-line
+                    a.pure-button(data-ng-click="account.hideUpgrade()")
+                      | Continuar en Basic
                     div(data-ng-if="shell.currentUser.membership  == 'pro'")
                       .address-line
                         a.pure-button.button-success(data-ng-click="account.updateCard()",data-ng-class="{'pure-button-disabled': account.cards.length < 1}")

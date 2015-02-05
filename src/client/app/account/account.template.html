@@ -68,7 +68,8 @@
               </div>
               <div class="pure-u-1 pure-u-md-1-3 align-center">
                 <div data-ng-hide="checkout.showPlaceOrder">
-                  <div class="address-line"><a data-ng-click="account.updateMembership('pro')" data-ng-if="shell.currentUser.membership  == 'basic'" data-ng-class="{'pure-button-disabled': account.cards.length &lt; 1}" class="pure-button pure-button-primary">Actualizar a PRO</a>
+                  <div class="address-line"><a data-ng-click="account.updateMembership('pro')" data-ng-if="shell.currentUser.membership  == 'basic'" data-ng-class="{'pure-button-disabled': account.cards.length &lt; 1}" class="pure-button pure-button-primary">Actualizar a PRO</a></div>
+                  <div class="address-line"><a data-ng-click="account.hideUpgrade()" class="pure-button">Continuar en Basic</a>
                     <div data-ng-if="shell.currentUser.membership  == 'pro'">
                       <div class="address-line"><a data-ng-click="account.updateCard()" data-ng-class="{'pure-button-disabled': account.cards.length &lt; 1}" class="pure-button button-success"><i class="fa fa-credit-card"></i>Actualizar Tarjeta</a></div>
                     </div>
