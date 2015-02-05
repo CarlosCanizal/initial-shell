@@ -107,6 +107,11 @@
                                              stock: item.stock
                                             });
     }
+
+    shell.setError = function(error){
+      console.log(error);
+      shell.error = error;
+    }
     
   }
 

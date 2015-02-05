@@ -11,9 +11,6 @@
     var shell = $scope.shell;
     var account = this;
 
-    // $scope.currentUser = userApi.currentUser();
-    // var currentUser = userApi.currentUser();
-
     account.cardFormView = false;
     account.cancelFormView = false;
     account.upgradeView = false;
@@ -38,11 +35,10 @@
         if(flag)
           account.subscription.payment = account.cards[0];
       }else{
-        console.log('out');
         account.subscription.payment = account.cards[0];
       }
     },function(error){
-      console.log(error);
+      shell.setError(error);
     }).finally(function(){
       $scope.loading = false;
     });
@@ -53,7 +49,7 @@
         conekta.subscriptionCard(account.subscription.payment).then(function(user){
           shell.updateCurrentUser();
         },function(error){
-          console.log(error);
+          shell.setError(error);
         }).finally(shell.hideLoading);
       }
     }
@@ -68,18 +64,17 @@
         conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment).then(function(user){
           shell.updateCurrentUser();
         },function(error){
-          console.log(error);
+          shell.setError(error);
         }).finally(shell.hideLoading);
       }
     }
-
-
 
     account.showCardForm = function(view){
       account.cardFormView  = view;
     }
 
     account.showCancelForm = function(){
+      account.hideUpgrade();
       account.cancelFormView = true;
     }
 

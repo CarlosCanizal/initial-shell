@@ -20,7 +20,9 @@ html(data-ng-app="app")
         div.spinner-circle
           div.dot1
           div.dot2
-      //- .opacity-layer(data-ng-show="shell.confirmation", data-ng-include="'app/message/message.template.html'")
+      .error-layer(data-ng-if="shell.error")
+        |shell.error
+
       confirm-dialog
       #shell
         .pure-g

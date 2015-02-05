@@ -11,7 +11,6 @@ div(data-ng-controller="Account as account")
         p
           | Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.
         div.align-center(data-ng-if="shell.currentUser.membership  == 'basic'")
-          //- a.pure-button.pure-button-primary(data-ng-click="updateMembership('pro')")
           a.pure-button.pure-button-primary(data-ng-click="account.showUpgrade()")
             | Actualizar a PRO
         div.align-right(data-ng-if="shell.currentUser.membership  == 'pro'")
@@ -36,10 +35,7 @@ div(data-ng-controller="Account as account")
       .inner-shelf.error-border
         .shelf-space
           cancel-membership
-
-
-
-  #update-membership(data-ng-show="account.upgradeView || shell.currentUser.membership  == 'pro'")
+  #update-membership(data-ng-show="(account.upgradeView || shell.currentUser.membership  == 'pro') && !account.cancelFormView")
     .filter-title
       span.publisher-name.
         Actualiza Membresia

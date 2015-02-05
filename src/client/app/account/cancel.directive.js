@@ -19,7 +19,7 @@ function cancelMembership(conekta){
           conekta.unsubscribe(account.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment).then(function(user){
             shell.updateCurrentUser();
           },function(error){
-            console.log(error);
+            shell.setError(error);
           }).finally(function(){
             shell.hideLoading();
             account.hideCancelForm();

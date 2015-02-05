@@ -7,8 +7,7 @@
       <div class="shelf-space">
         <div>{{shell.currentUser.membership}}</div>
         <p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>
-        <div data-ng-if="shell.currentUser.membership  == 'basic'" class="align-center"><a data-ng-click="account.showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
-        </div>
+        <div data-ng-if="shell.currentUser.membership  == 'basic'" class="align-center"><a data-ng-click="account.showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a></div>
         <div data-ng-if="shell.currentUser.membership  == 'pro'" class="align-right"><a data-ng-click="account.showCancelForm()" class="pure-button">Cancelar Membresia</a></div>
       </div>
     </div>
@@ -36,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div id="update-membership" data-ng-show="account.upgradeView || shell.currentUser.membership  == 'pro'">
+  <div id="update-membership" data-ng-show="(account.upgradeView || shell.currentUser.membership  == 'pro') &amp;&amp; !account.cancelFormView">
     <div class="filter-title"><span class="publisher-name">Actualiza Membresia</span></div>
     <div class="shelf">
       <div class="inner-shelf">
