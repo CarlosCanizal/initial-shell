@@ -19,17 +19,16 @@
       serie.subscription = subscription;
       serie.info = subscription.serie;
     },function(error){
-      console.log(error);
+      shell.setError(error);
     }).finally(function(){
       $scope.loading = false;
     });
 
     serie.changeStatus= function(status){
       subscriptionApi.changeStatus(objectId, status).then(function(result){
-        console.log(result);
         serie.subscription.status = result.status;
       },function(error){
-        console.log(error);
+        shell.setError(error);
       });
     }
 
