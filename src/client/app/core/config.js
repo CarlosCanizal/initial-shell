@@ -123,7 +123,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/orders',
       templateUrl:'app/order/orders.template.html',
       controller: 'Orders',
-      controllerAs: 'order',
+      // controllerAs: 'order',
       data:{
         menu: 'orders',
         submenu: 'orders'

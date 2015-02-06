@@ -26,6 +26,7 @@ function placeOrder(userApi, ShoppingCart){
         }
 
         userApi.chargeCard(cart, shell.currentUser).then(function(result){
+          console.log(result.result);
           scope.order.info = result.result;
           checkout.emptyCart();
           checkout.setStatus(true);
