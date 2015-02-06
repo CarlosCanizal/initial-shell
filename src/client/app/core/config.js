@@ -16,6 +16,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('login',{
       url:'/login',
       controller: 'Login',
+      controllerAs: 'login',
       templateUrl:'app/login/login.template.html'
     })
     .state('subscribe',{
@@ -41,7 +42,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.payment',{
       url:'/payment',
       templateUrl:'app/payment/payment.template.html',
-      // controller: 'Card',
+      controller: 'Payment',
+      controllerAs: 'payment',
       data:{
         menu: 'account',
         submenu: 'cards'
@@ -50,7 +52,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.account',{
       url:'/account',
       templateUrl:'app/account/account.template.html',
-      // controller: 'Account',
+      controller: 'Account',
+      controllerAs: 'account',
       data:{
         menu: 'account',
         submenu: 'account'
@@ -59,7 +62,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.wallet',{
       url:'/wallet',
       templateUrl:'app/wallet/wallet.template.html',
-      // controller: 'Wallet',
+      controller: 'Wallet',
+      controllerAs: 'wallet',
       data:{
         menu: 'account',
         submenu: 'wallet'
@@ -68,7 +72,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.address',{
       url:'/address',
       templateUrl:'app/address/address.template.html',
-      // controller: 'Address',
+      controller: 'Address',
+      controllerAs: 'address',
       data:{
         menu: 'account',
         submenu: 'address'
@@ -77,7 +82,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.profile',{
       url:'/profile',
       templateUrl:'app/profile/profile.template.html',
-      // controller: 'Profile',
+      controller: 'Profile',
+      controllerAs: 'profile',
       data:{
         menu: 'account',
         submenu: 'profile'
@@ -86,7 +92,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.series',{
       url:'/series',
       templateUrl:'app/serie/series.template.html',
-      // controller: 'Series',
+      controller: 'Series',
+      controllerAs: 'series',
       data:{
         menu: 'series',
         submenu: 'series'
@@ -95,7 +102,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.serie',{
       url:'/series/:objectId',
       templateUrl:'app/serie/serie.template.html',
-      // controller: 'Serie',
+      controller: 'Serie',
+      controllerAs: 'serie',
       data:{
         menu: 'series',
         submenu: 'serie'
@@ -104,7 +112,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.order',{
       url:'/orders/:objectId',
       templateUrl:'app/order/order.template.html',
-      // controller: 'Order',
+      controller: 'Order',
+      controllerAs: 'order',
       data:{
         menu: 'orders',
         submenu: 'order'
@@ -113,7 +122,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('dashboard.orders',{
       url:'/orders',
       templateUrl:'app/order/orders.template.html',
-      // controller: 'Orders',
+      controller: 'Orders',
+      controllerAs: 'order',
       data:{
         menu: 'orders',
         submenu: 'orders'

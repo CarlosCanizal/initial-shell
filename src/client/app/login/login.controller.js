@@ -9,6 +9,7 @@
 
   function Login($scope, $state, userApi, storage) {
     var shell = $scope.shell
+    var login = this;
 
     $scope.setUser = function(user){
       shell.setCurrentUser(user);

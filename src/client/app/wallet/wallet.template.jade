@@ -1,17 +1,16 @@
-div(data-ng-controller="Wallet as wallet")
-  #account-menu(data-ng-include="'app/account/menu/account.menu.html'")
-  .filter-title
-    span.publisher-name.
-      Mi Saldo
-  .shelf
-    .inner-shelf
-      .shelf-space
-        | Tu cuenta tiene un saldo de: {{shell.currentUser.wallet}}
-  .filter-title
-    span.publisher-name.
-      Cupon
-  .shelf
-    .inner-shelf
-      .shelf-space
-        |¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
-        coupon
+#account-menu(data-ng-include="'app/account/menu/account.menu.html'")
+.filter-title
+  span.publisher-name.
+    Mi Saldo
+.shelf
+  .inner-shelf
+    .shelf-space
+      | Tu cuenta tiene un saldo de: {{shell.currentUser.wallet}}
+.filter-title
+  span.publisher-name.
+    Cupon
+.shelf
+  .inner-shelf
+    .shelf-space
+      |¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
+      coupon

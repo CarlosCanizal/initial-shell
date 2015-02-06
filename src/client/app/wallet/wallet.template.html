@@ -1,18 +1,16 @@
 
-<div data-ng-controller="Wallet as wallet">
-  <div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'"></div>
-  <div class="filter-title"><span class="publisher-name">Mi Saldo</span></div>
-  <div class="shelf">
-    <div class="inner-shelf">
-      <div class="shelf-space">Tu cuenta tiene un saldo de: {{shell.currentUser.wallet}}</div>
-    </div>
+<div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'"></div>
+<div class="filter-title"><span class="publisher-name">Mi Saldo</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">Tu cuenta tiene un saldo de: {{shell.currentUser.wallet}}</div>
   </div>
-  <div class="filter-title"><span class="publisher-name">Cupon</span></div>
-  <div class="shelf">
-    <div class="inner-shelf">
-      <div class="shelf-space">¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
-        <coupon></coupon>
-      </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Cupon</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
+      <coupon></coupon>
     </div>
   </div>
 </div>
