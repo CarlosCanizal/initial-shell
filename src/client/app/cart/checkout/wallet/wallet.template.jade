@@ -9,23 +9,25 @@
         .shelf-content(data-ng-hide="loading")
           .pure-g(data-ng-if="shell.currentUser")
             .pure-u-1.pure-u-md-1-3.border-right
-              .information-box.no-padding
+              .information-box.padding-right-1
                 |Tienes un codigo, ingresalo para agregar saldo a tu cuenta.
                 coupon
             .pure-u-1.pure-u-md-1-3.border-right.align-center.action
-              .subtitle
-                | Saldo Disponible:
-              .subtitle.margin-bottom
-                | ${{shell.currentUser.wallet - shell.shoppingCart.wallet }}
-              .align-center
-                a.pure-button.pure-button-primary.button-small(data-ng-click="useWallet()", data-ng-hide="payWithWallet")
-                  | Usar mi saldo
-                a.pure-button.pure-button-primary.button-small(data-ng-click="doNotUseWallet()", data-ng-show="payWithWallet")
-                  | No usar mi saldo
+              .padding-side-1
+                .subtitle
+                  | Saldo Disponible:
+                .subtitle.margin-bottom
+                  | ${{shell.currentUser.wallet - shell.shoppingCart.wallet }}
+                .align-center
+                  a.pure-button.pure-button-primary.button-small(data-ng-click="useWallet()", data-ng-hide="payWithWallet")
+                    | Usar mi saldo
+                  a.pure-button.pure-button-primary.button-small(data-ng-click="doNotUseWallet()", data-ng-show="payWithWallet")
+                    | No usar mi saldo
             .pure-u-1.pure-u-md-1-3.align-center
-              div(data-ng-include="'app/cart/checkout/totals/totals.template.html'")
-              a.pure-button(data-ng-click="checkout.hideWalletView()")
-                | Cerrar Monedero
+              .padding-side-1
+                div(data-ng-include="'app/cart/checkout/totals/totals.template.html'")
+                a.pure-button(data-ng-click="checkout.hideWalletView()")
+                  | Cerrar Monedero
           div.align-center(data-ng-if="!shell.currentUser")
             |Inicia sesion para ver el saldo de tu cuenta o canjear un cupon.            
             a.pure-button.pure-button-primary.button-small(data-ng-if="!shell.currentUser", data-ng-click="checkout.showLoginForms(true)")
