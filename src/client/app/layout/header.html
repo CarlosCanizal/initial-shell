@@ -1,5 +1,5 @@
 
-<div id="cart" data-ng-if="!shell.isDashboard" class="hidden visible-lg-block">
+<div id="cart" data-ng-if="!shell.isDashboard" class="hidden visible-lg-inline-block">
   <div><a data-ui-sref="checkout"><i class="fa fa-shopping-cart"></i><span>{{shell.shoppingCart.itemsTotal}}</span>articulos</a></div>
   <div class="login-header"><a data-ui-sref="login" data-ng-if="!shell.currentUser">Iniciar sesion</a><a data-ng-click="shell.logout()" data-ng-if="shell.currentUser">Cerrar Sesion</a></div>
 </div>
