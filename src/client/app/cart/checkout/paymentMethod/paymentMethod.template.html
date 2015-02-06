@@ -38,7 +38,7 @@
                 <div data-ng-show="checkout.paymentMethods.length &gt; 0">
                   <div class="address-line">Cambiar Metodo de Pago</div>
                   <div class="address-line">
-                    <select ng-model="shell.shoppingCart.paymentMethod" ng-options="item as item.card.last4 for item in checkout.paymentMethods"></select>
+                    <select ng-model="shell.shoppingCart.paymentMethod" data-ng-options="item as item.card.last4 for item in checkout.paymentMethods track by item.objectId"></select>
                   </div>
                 </div>
                 <div class="address-line"><a data-ng-click="checkout.cardFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Tarjeta</a></div>

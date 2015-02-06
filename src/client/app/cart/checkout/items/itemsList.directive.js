@@ -22,7 +22,7 @@ function itemsList(ShoppingCart){
       },function(error){
         shell.setError(error);
       }).finally(function(){
-        scope.loading = false;       
+        scope.loading = false;   
       });
 
       scope.updateQuantity = function(item, index){
