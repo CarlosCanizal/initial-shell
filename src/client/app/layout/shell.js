@@ -13,6 +13,11 @@
 
     shell.searchValue = null;
     shell.itemsList = [];
+    shell.errorResponse = null;
+    shell.errorBar = false;
+    shell.error = null;
+
+
     shell.title = 'Resultados';
 
     shell.currentUser  = userApi.currentUser();
@@ -29,13 +34,6 @@
       return shell.shoppingCart;
     }
 
-    $scope.getShoppingCart =  function(){
-      return shell.shoppingCart;
-    }
-
-
-    //refactor
-
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       shell.isDashboard = toState.data && toState.data.dashboard ? true : false;
       shell.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
@@ -43,6 +41,7 @@
     });
 
     shell.showLoading = function(){
+      shell.initError()
       shell.loading = true;
     }
 
@@ -74,7 +73,7 @@
         userApi.setCurrentUser(user);
 
       },function(error){
-        console.error(error);
+        shell.setError(error);
       });
     }
 
@@ -111,7 +110,18 @@
     shell.setError = function(error){
       // console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       console.log(error);
-      shell.error = error;
+      shell.errorResponse = error;
+      shell.errorBar = true;
+      if(error.message_to_purchaser){
+        shell.errorBar = false;
+        shell.error = error.message_to_purchaser;
+      }
+    }
+
+    shell.initError  = function(){
+      shell.errorResponse = null;
+      shell.errorBar = false;
+      shell.error = null;
     }
     
   }

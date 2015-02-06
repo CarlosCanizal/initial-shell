@@ -31,4 +31,5 @@
   </fieldset>
   <div class="align-center margin-bottom"><a data-ng-click="saveCard()" class="pure-button pure-button-primary">Guardar Tarjeta</a></div>
   <div class="align-center margin-bottom"><a data-ng-click="hideCardForm()" class="pure-button">Cancelar</a></div>
+  <div data-ng-if="!shell.errorBar" class="error align-center">{{shell.error}}</div>
 </form>

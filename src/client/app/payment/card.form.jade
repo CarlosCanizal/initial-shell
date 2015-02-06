@@ -42,3 +42,5 @@ form#card-form.pure-form.pure-form-stacked(name="cardForm", novalidate)
   .align-center.margin-bottom
     a.pure-button(data-ng-click="hideCardForm()")
       | Cancelar
+  .error.align-center(data-ng-if="!shell.errorBar")
+    {{shell.error}}
