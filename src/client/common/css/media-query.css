@@ -87,34 +87,42 @@
   .information-box {
     padding-left: 0;
     border-bottom: 2px solid #CCC;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    padding-bottom: 1rem; }
 
-  /* line 56, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 57, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .no-border {
     border-bottom: 0;
     border-right: 0; }
 
-  /* line 59, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 60, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .no-margin {
     margin-bottom: 0; }
 
-  /* line 61, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 62, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .no-padding {
     padding-bottom: 0; }
 
-  /* line 63, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 64, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .border-left {
     border-left: 0; }
 
-  /* line 65, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 66, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .border-right {
     border-right: 0; }
 
-  /* line 67, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 68, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .side-space {
     padding-right: 0; }
 
-  /* line 69, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  /* line 70, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .confirmation-box {
     margin-top: 50%; }
+
+  /* line 72, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .item-space {
+    padding: 0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #CCC; }
  }

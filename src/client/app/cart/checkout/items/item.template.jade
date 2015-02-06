@@ -23,11 +23,12 @@
       div.error(data-ng-if="item.type== 'available' && item.quantity >= item.stock")
         | Solo {{item.stock}} disponibles.
 .pure-u-1.pure-u-sm-1-3.pure-u-md-1-4
-  .subtitle
-    | Total:
-  .subtitle(data-ng-class="{update:update}")
-    |$ {{(item.price*item.quantity).toFixed(2)}} USD
-  div.margin-bottom
-    a.pure-button.button-xsmall(data-ng-click="checkout.removeFromCart($index)")
-      i.fa.fa-trash
-      | Quitar del carrito
+  .item-space
+    .subtitle
+      | Total:
+    .subtitle(data-ng-class="{update:update}")
+      |$ {{(item.price*item.quantity).toFixed(2)}} USD
+    div.margin-bottom
+      a.pure-button.button-xsmall(data-ng-click="checkout.removeFromCart($index)")
+        i.fa.fa-trash
+        | Quitar del carrito
