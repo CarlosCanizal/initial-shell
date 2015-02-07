@@ -13,7 +13,8 @@
           <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
           <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
           <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>
-          <div class="address-line"><a class="pure-button pure-button-primary button-small"><i class="fa fa-edit"></i>Editar</a><a data-ng-click="showModal()" data-question="¿Eliminar dirección?" data-confirm="deleteAddress(address.objectId, $index)" confirm-message="confirm-message" class="pure-button"><i class="fa fa-trash"> </i>Borrar</a></div>
+          <div class="address-line"><a data-ng-click="showModal()" data-question="¿Eliminar dirección?" data-confirm="deleteAddress(address.objectId, $index)" confirm-message="confirm-message" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a>
+          </div>
         </div>
         <div class="buttons-container"><a ng-click="address.addressFormView = true"><i class="fa fa-plus-circle fa-4x"></i></a>
           <div>Agregar Dirección</div>
