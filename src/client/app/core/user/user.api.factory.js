@@ -28,6 +28,7 @@
       deleteCard: deleteCard,
       saveAddress: saveAddress,
       getAddresses: getAddresses,
+      getAddress: getAddress,
       deleteAddress: deleteAddress,
       chargeCard: chargeCard,
       saveProfile: saveProfile,
@@ -135,6 +136,10 @@
         where : where,
         order : 'createdAt'
       }).$promise;
+    }
+
+    function getAddress(addressId){
+      return Address.get({objectId:addressId}).$promise;
     }
 
     function chargeCard(order, user){ 
