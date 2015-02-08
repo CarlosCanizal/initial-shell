@@ -50,7 +50,7 @@
                     i.fa.fa-check-circle-o.success.medium-icon(ng-show="profileForm.phone.$valid && profileForm.phone.$dirty")
                     i.fa.fa-times-circle-o.error.medium-icon(ng-show="profileForm.phone.$invalid && profileForm.phone.$dirty")
         .align-center
-          a.pure-button(data-ng-click="saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$invalid")
+          a.pure-button(data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$invalid")
             | Campos Requeridos    
             i.fa.fa-dot-circle-o.error
           a.pure-button(data-ng-click="saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$valid")
@@ -62,3 +62,42 @@
 .shelf
   .inner-shelf
     .shelf-space
+      form.pure-form.pure-form-stacked(name="passwordForm", novalidate="")
+        fieldset
+          label(for="name", ng-show="passwordForm.oldPassword.$valid || passwordForm.oldPassword.$pristine")
+            | Contraseña:
+          label.error(for="oldPassword", ng-show="passwordForm.oldPassword.$invalid && passwordForm.oldPassword.$dirty")
+            | Contraseña es requerido:
+          .form-icon
+            input.pure-input-1#oldPassword(name="oldPassword", data-ng-model="profile.user.oldPassword", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.oldPassword.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="passwordForm.oldPassword.$valid && passwordForm.oldPassword.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="passwordForm.oldPassword.$invalid && passwordForm.name.$dirty")
+          label(for="password", ng-show="((passwordForm.password.$valid || passwordForm.password.$pristine) || (!passwordForm.password.$error.required  && passwordForm.password.$error.match && passwordForm.confirmPassword.$pristine)) && !(passwordForm.confirmPassword.$dirty && passwordForm.password.$error.required)")
+            | Nueva contraseña
+          label.error(for="password", ng-show="passwordForm.password.$error.required && (passwordForm.password.$dirty || passwordForm.confirmPassword.$dirty)")
+            | Nueva contraseña requerida:
+          label.error(for="password", ng-show="passwordForm.confirmPassword.$dirty && !passwordForm.password.$error.required && passwordForm.password.$error.match && passwordForm.password.$dirty")
+            | Nueva contraseña no coincide:
+          .form-icon
+            input.pure-input-1#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.password.$pristine && !(passwordForm.confirmPassword.$dirty && passwordForm.password.$error.required)")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="(passwordForm.password.$valid && passwordForm.password.$dirty) || (passwordForm.confirmPassword.$pristine && passwordForm.password.$dirty && passwordForm.password.$error.match) ")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="(passwordForm.password.$error.required && passwordForm.password.$dirty) || (passwordForm.confirmPassword.$dirty && passwordForm.password.$error.match)")
+        
+          label(for="confirmPassword", ng-show="passwordForm.confirmPassword.$valid || passwordForm.confirmPassword.$pristine")
+            | Confirmar Contraseña:
+          label.error(for="confirmPassword", ng-show="passwordForm.confirmPassword.$error.required && passwordForm.confirmPassword.$dirty")
+            | Contraseña requerida:
+          .form-icon
+            input.pure-input-1#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.confirmPassword.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="passwordForm.confirmPassword.$valid && passwordForm.confirmPassword.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="passwordForm.confirmPassword.$invalid && passwordForm.confirmPassword.$dirty")      
+        .align-center
+          a.pure-button(data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$invalid")
+            | Campos Requeridos    
+            i.fa.fa-dot-circle-o.error
+          a.pure-button(data-ng-click="updatePassword()", data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$valid")
+            i.fa.fa-thumbs-o-up
+            | Guardar

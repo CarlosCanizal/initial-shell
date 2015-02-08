@@ -33,7 +33,7 @@
             </ng-form>
           </div>
         </fieldset>
-        <div class="align-center"><a data-ng-click="saveProfile()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="profileForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="saveProfile()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="profileForm.$valid" class="pure-button"><i class="fa fa-thumbs-o-up"></i>Guardar</a></div>
+        <div class="align-center"><a data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="profileForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="saveProfile()" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="profileForm.$valid" class="pure-button"><i class="fa fa-thumbs-o-up"></i>Guardar</a></div>
       </form>
     </div>
   </div>
@@ -41,6 +41,28 @@
 <div class="filter-title"><span class="publisher-name">Mi Contraseña</span></div>
 <div class="shelf">
   <div class="inner-shelf">
-    <div class="shelf-space"></div>
+    <div class="shelf-space">
+      <form name="passwordForm" novalidate="" class="pure-form pure-form-stacked">
+        <fieldset>
+          <label for="name" ng-show="passwordForm.oldPassword.$valid || passwordForm.oldPassword.$pristine">Contraseña:</label>
+          <label for="oldPassword" ng-show="passwordForm.oldPassword.$invalid &amp;&amp; passwordForm.oldPassword.$dirty" class="error">Contraseña es requerido:</label>
+          <div class="form-icon">
+            <input id="oldPassword" name="oldPassword" data-ng-model="profile.user.oldPassword" required="" class="pure-input-1"/><i ng-show="passwordForm.oldPassword.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="passwordForm.oldPassword.$valid &amp;&amp; passwordForm.oldPassword.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="passwordForm.oldPassword.$invalid &amp;&amp; passwordForm.name.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+          <label for="password" ng-show="((passwordForm.password.$valid || passwordForm.password.$pristine) || (!passwordForm.password.$error.required  &amp;&amp; passwordForm.password.$error.match &amp;&amp; passwordForm.confirmPassword.$pristine)) &amp;&amp; !(passwordForm.confirmPassword.$dirty &amp;&amp; passwordForm.password.$error.required)">Nueva contraseña</label>
+          <label for="password" ng-show="passwordForm.password.$error.required &amp;&amp; (passwordForm.password.$dirty || passwordForm.confirmPassword.$dirty)" class="error">Nueva contraseña requerida:</label>
+          <label for="password" ng-show="passwordForm.confirmPassword.$dirty &amp;&amp; !passwordForm.password.$error.required &amp;&amp; passwordForm.password.$error.match &amp;&amp; passwordForm.password.$dirty" class="error">Nueva contraseña no coincide:</label>
+          <div class="form-icon">
+            <input id="password" name="password" type="password" data-ng-model="newUser.password" required="" password-match="passwordMatch" class="pure-input-1"/><i ng-show="passwordForm.password.$pristine &amp;&amp; !(passwordForm.confirmPassword.$dirty &amp;&amp; passwordForm.password.$error.required)" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="(passwordForm.password.$valid &amp;&amp; passwordForm.password.$dirty) || (passwordForm.confirmPassword.$pristine &amp;&amp; passwordForm.password.$dirty &amp;&amp; passwordForm.password.$error.match) " class="fa fa-check-circle-o success medium-icon"></i><i ng-show="(passwordForm.password.$error.required &amp;&amp; passwordForm.password.$dirty) || (passwordForm.confirmPassword.$dirty &amp;&amp; passwordForm.password.$error.match)" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+          <label for="confirmPassword" ng-show="passwordForm.confirmPassword.$valid || passwordForm.confirmPassword.$pristine">Confirmar Contraseña:</label>
+          <label for="confirmPassword" ng-show="passwordForm.confirmPassword.$error.required &amp;&amp; passwordForm.confirmPassword.$dirty" class="error">Contraseña requerida:</label>
+          <div class="form-icon">
+            <input id="confirmPassword" name="confirmPassword" type="password" data-ng-model="passwordMatch" required="" class="pure-input-1"/><i ng-show="passwordForm.confirmPassword.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="passwordForm.confirmPassword.$valid &amp;&amp; passwordForm.confirmPassword.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="passwordForm.confirmPassword.$invalid &amp;&amp; passwordForm.confirmPassword.$dirty" class="fa fa-times-circle-o error medium-icon">     </i>
+          </div>
+        </fieldset>
+        <div class="align-center"><a data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}" data-ng-if="passwordForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="updatePassword()" data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}" data-ng-if="passwordForm.$valid" class="pure-button"><i class="fa fa-thumbs-o-up"></i>Guardar</a></div>
+      </form>
+    </div>
   </div>
 </div>
