@@ -53,7 +53,7 @@
           a.pure-button(data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$invalid")
             | Campos Requeridos    
             i.fa.fa-dot-circle-o.error
-          a.pure-button(data-ng-click="saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$valid")
+          a.pure-button(data-ng-click="profile.saveProfile()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="profileForm.$valid")
             i.fa.fa-thumbs-o-up
             | Guardar
 .filter-title
@@ -69,7 +69,7 @@
           label.error(for="oldPassword", ng-show="passwordForm.oldPassword.$invalid && passwordForm.oldPassword.$dirty")
             | Contraseña es requerido:
           .form-icon
-            input.pure-input-1#oldPassword(name="oldPassword", data-ng-model="profile.oldPassword", required="")
+            input.pure-input-1#oldPassword(name="oldPassword",type="password", data-ng-model="profile.oldPassword", required="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.oldPassword.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="passwordForm.oldPassword.$valid && passwordForm.oldPassword.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="passwordForm.oldPassword.$invalid && passwordForm.name.$dirty")
@@ -98,7 +98,7 @@
           a.pure-button(data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$invalid")
             | Campos Requeridos    
             i.fa.fa-dot-circle-o.error
-          a.pure-button(data-ng-click="updatePassword()", data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$valid")
+          a.pure-button(data-ng-click="profile.updatePassword()", data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$valid")
             i.fa.fa-thumbs-o-up
             | Guardar
         .align-center.error(data-ng-if="shell.error")
