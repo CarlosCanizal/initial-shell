@@ -18,6 +18,7 @@
 
     var factory = {
       login: login,
+      checkPassword: checkPassword,
       currentUser: currentUser,
       getCurrentUser: getCurrentUser,
       setCurrentUser: setCurrentUser,
@@ -32,6 +33,7 @@
       deleteAddress: deleteAddress,
       chargeCard: chargeCard,
       saveProfile: saveProfile,
+      updatePassword: updatePassword,
       logMembership: logMembership
 
     };
@@ -46,8 +48,17 @@
       },function(error){
         deferred.reject(error);
       });
-
       return deferred.promise
+    }
+
+    function checkPassword(params){
+      var deferred = $q.defer();
+      Login.login(params).$promise.then(function(user){
+        deferred.resolve(user);
+      },function(error){
+        deferred.reject(error);
+      });
+      return deferred.promise;
     }
 
     function logMembership(params){
@@ -154,6 +165,15 @@
     function saveProfile(params){
       var  User  = setSessionToken();
       return User.update(params).$promise;
+    }
+
+    function updatePassword(user,oldPassword, newPassword){
+      var  User  = setSessionToken();
+
+      return this.checkPassword({username:user.username, password:oldPassword}).then(function(user){
+        return User.update({objectId:user.objectId,password: newPassword}).$promise;        
+      });
+      
     }
 
     function setSessionToken(){

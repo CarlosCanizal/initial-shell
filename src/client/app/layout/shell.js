@@ -16,6 +16,7 @@
     shell.errorResponse = null;
     shell.errorBar = false;
     shell.error = null;
+    shell.message = null;
 
 
     shell.title = 'Resultados';
@@ -116,12 +117,21 @@
         shell.errorBar = false;
         shell.error = error.message_to_purchaser;
       }
+      else if(error.data){
+       shell.errorBar = false;
+       shell.error = error.data.error; 
+      }
+    }
+
+    shell.setMessage = function(message){
+      shell.message = message;
     }
 
     shell.initError  = function(){
       shell.errorResponse = null;
       shell.errorBar = false;
       shell.error = null;
+      shell.message = null;
     }
     
   }

@@ -69,7 +69,7 @@
           label.error(for="oldPassword", ng-show="passwordForm.oldPassword.$invalid && passwordForm.oldPassword.$dirty")
             | Contraseña es requerido:
           .form-icon
-            input.pure-input-1#oldPassword(name="oldPassword", data-ng-model="profile.user.oldPassword", required="")
+            input.pure-input-1#oldPassword(name="oldPassword", data-ng-model="profile.oldPassword", required="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.oldPassword.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="passwordForm.oldPassword.$valid && passwordForm.oldPassword.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="passwordForm.oldPassword.$invalid && passwordForm.name.$dirty")
@@ -80,7 +80,7 @@
           label.error(for="password", ng-show="passwordForm.confirmPassword.$dirty && !passwordForm.password.$error.required && passwordForm.password.$error.match && passwordForm.password.$dirty")
             | Nueva contraseña no coincide:
           .form-icon
-            input.pure-input-1#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
+            input.pure-input-1#password(name="password", type="password" data-ng-model="profile.newPassword", required="", password-match="passwordMatch")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.password.$pristine && !(passwordForm.confirmPassword.$dirty && passwordForm.password.$error.required)")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="(passwordForm.password.$valid && passwordForm.password.$dirty) || (passwordForm.confirmPassword.$pristine && passwordForm.password.$dirty && passwordForm.password.$error.match) ")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="(passwordForm.password.$error.required && passwordForm.password.$dirty) || (passwordForm.confirmPassword.$dirty && passwordForm.password.$error.match)")
@@ -101,3 +101,7 @@
           a.pure-button(data-ng-click="updatePassword()", data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$valid")
             i.fa.fa-thumbs-o-up
             | Guardar
+        .align-center.error(data-ng-if="shell.error")
+          |{{shell.error}}
+        .align-center.success(data-ng-if="shell.message")
+          |{{shell.message}}
