@@ -9,7 +9,7 @@
       .shelf-content(data-ng-hide="loading")
         .pure-g
           .pure-u-1.pure-u-md-1-3.border-right
-            .information-box.no-padding
+            .information-box.padding-right-1
               .information-title
                 | RESUMEN
               table.info
@@ -35,7 +35,7 @@
                     td.info-value
                       |{{order.info.status}}
           .pure-u-1.pure-u-md-1-3.border-right
-            .information-box
+            .information-box.padding-side-1
               .information-title
                 | DIRECCION DE ENVIO
               .description
@@ -45,7 +45,7 @@
                 br
                 | {{order.info.shippingAddress.country}}, {{order.info.shippingAddress.state}},  {{order.info.shippingAddress.zip}}
           .pure-u-1.pure-u-md-1-3
-            .information-box
+            .information-box.padding-side-1
               .information-title
                 | METODO DE PAGO
               table.info
