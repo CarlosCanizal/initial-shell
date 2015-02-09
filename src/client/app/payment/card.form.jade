@@ -16,20 +16,20 @@ form#card-form.pure-form.pure-form-stacked(name="cardForm", novalidate)
       label.error(for="cardNumber", ng-show="cardForm.cardNumber.$invalid && cardForm.cardNumber.$dirty")
         | Numero de tarjeta es requerido:
       .form-icon
-      input.pure-input-1#cardNumber(name="cardNumber", data-ng-model="card.number", validate-card)
-      i.fa.fa-dot-circle-o.medium-icon(ng-show="cardForm.cardNumber.$pristine")
-      i.fa.fa-check-circle-o.success.medium-icon(ng-show="cardForm.cardNumber.$valid && cardForm.cardNumber.$dirty")
-      i.fa.fa-times-circle-o.error.medium-icon(ng-show="cardForm.cardNumber.$invalid && cardForm.cardNumber.$dirty")
+        input.pure-input-1#cardNumber(name="cardNumber", data-ng-model="card.number", validate-card)
+        i.fa.fa-dot-circle-o.medium-icon(ng-show="cardForm.cardNumber.$pristine")
+        i.fa.fa-check-circle-o.success.medium-icon(ng-show="cardForm.cardNumber.$valid && cardForm.cardNumber.$dirty")
+        i.fa.fa-times-circle-o.error.medium-icon(ng-show="cardForm.cardNumber.$invalid && cardForm.cardNumber.$dirty")
     .form-container
       label(for="cvc", ng-show="cardForm.cvc.$valid || cardForm.cvc.$pristine")
         | CVC (ultimos 3 digitos de la parte trasera de tu tarjeta)
       label.error(for="cvc", ng-show="cardForm.cvc.$invalid && cardForm.cvc.$dirty")
         | CVC es requerido:
       .form-icon
-      input.pure-input-1#cvc(name="cvc", data-ng-model="card.cvc", validate-cvc)
-      i.fa.fa-dot-circle-o.medium-icon(ng-show="cardForm.cvc.$pristine")
-      i.fa.fa-check-circle-o.success.medium-icon(ng-show="cardForm.cvc.$valid && cardForm.cvc.$dirty")
-      i.fa.fa-times-circle-o.error.medium-icon(ng-show="cardForm.cvc.$invalid && cardForm.cvc.$dirty")
+        input.pure-input-1#cvc(name="cvc", data-ng-model="card.cvc", validate-cvc)
+        i.fa.fa-dot-circle-o.medium-icon(ng-show="cardForm.cvc.$pristine")
+        i.fa.fa-check-circle-o.success.medium-icon(ng-show="cardForm.cvc.$valid && cardForm.cvc.$dirty")
+        i.fa.fa-times-circle-o.error.medium-icon(ng-show="cardForm.cvc.$invalid && cardForm.cvc.$dirty")
     .form-container
       label(for="expirationDate")
         |Fecha de expiración (MM/AAAA)

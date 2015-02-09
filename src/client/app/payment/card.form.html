@@ -11,14 +11,16 @@
     <div class="form-container">
       <label for="cardNumber" ng-show="cardForm.cardNumber.$valid || cardForm.cardNumber.$pristine">Numero que aparece en tu tarjeta:</label>
       <label for="cardNumber" ng-show="cardForm.cardNumber.$invalid &amp;&amp; cardForm.cardNumber.$dirty" class="error">Numero de tarjeta es requerido:</label>
-      <div class="form-icon"></div>
-      <input id="cardNumber" name="cardNumber" data-ng-model="card.number" validate-card="validate-card" class="pure-input-1"/><i ng-show="cardForm.cardNumber.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="cardForm.cardNumber.$valid &amp;&amp; cardForm.cardNumber.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="cardForm.cardNumber.$invalid &amp;&amp; cardForm.cardNumber.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+      <div class="form-icon">
+        <input id="cardNumber" name="cardNumber" data-ng-model="card.number" validate-card="validate-card" class="pure-input-1"/><i ng-show="cardForm.cardNumber.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="cardForm.cardNumber.$valid &amp;&amp; cardForm.cardNumber.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="cardForm.cardNumber.$invalid &amp;&amp; cardForm.cardNumber.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+      </div>
     </div>
     <div class="form-container">
       <label for="cvc" ng-show="cardForm.cvc.$valid || cardForm.cvc.$pristine">CVC (ultimos 3 digitos de la parte trasera de tu tarjeta)</label>
       <label for="cvc" ng-show="cardForm.cvc.$invalid &amp;&amp; cardForm.cvc.$dirty" class="error">CVC es requerido:</label>
-      <div class="form-icon"></div>
-      <input id="cvc" name="cvc" data-ng-model="card.cvc" validate-cvc="validate-cvc" class="pure-input-1"/><i ng-show="cardForm.cvc.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="cardForm.cvc.$valid &amp;&amp; cardForm.cvc.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="cardForm.cvc.$invalid &amp;&amp; cardForm.cvc.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+      <div class="form-icon">
+        <input id="cvc" name="cvc" data-ng-model="card.cvc" validate-cvc="validate-cvc" class="pure-input-1"/><i ng-show="cardForm.cvc.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="cardForm.cvc.$valid &amp;&amp; cardForm.cvc.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="cardForm.cvc.$invalid &amp;&amp; cardForm.cvc.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+      </div>
     </div>
     <div class="form-container">
       <label for="expirationDate">Fecha de expiración (MM/AAAA)
