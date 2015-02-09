@@ -11,7 +11,12 @@
         input(type="date" ng-model="sales.startDate")
         |Fin
         input(type="date" ng-model="sales.endDate")
-        a.pure-button.pure-button-primary.button.small(data-ng-click="sales.getSales(sales.startDate, sales.endDate)")
+        a.pure-button.pure-button-primary.button-small(data-ng-click="sales.getSales(sales.startDate, sales.endDate)")
           |Buscar
+        h1
+          | Total ${{sales.total}}
+        h1
+          | Numero de ordenes {{sales.orders.length}}
+
 
         

@@ -13,16 +13,19 @@
     var today = new Date();
     sales.startDate = today;
     sales.endDate = today;
-
+    sales.orders = [];
+    sales.total = 0;
 
     sales.getSales = function(startDate, endDate){
+      shell.showLoading();
       salesApi.getSales({startDate:startDate, endDate:endDate}).then(function(result){
+        var result = result.result;
         console.log(result);
+        sales.orders = result.orders;
+        sales.total = result.total;
       },function(error){
         shell.setError(error);
-      }).finally(function(){
-
-      })
+      }).finally(shell.hideLoading)
     } 
   }
 
