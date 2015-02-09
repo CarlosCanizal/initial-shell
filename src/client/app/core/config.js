@@ -129,6 +129,22 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'orders'
 
       }
+    })
+    .state('admin',{
+      url:'/admin',
+      templateUrl: 'app/admin/admin.template.html',
+      data:{
+        access: true,
+        admin: true
+      }
+    })
+    .state('admin.sales',{
+      url:'/sales',
+      templateUrl: 'app/admin/sales/sales.template.html',
+      data:{
+        access: true,
+        admin: true
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

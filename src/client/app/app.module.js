@@ -9,6 +9,7 @@
     'app.layout',
     'app.conekta',
     'app.cart',
-    'app.dashboard'
+    'app.dashboard',
+    'app.admin'
   ]);
 })();
