@@ -18,15 +18,15 @@
             .row(data-ng-if="serie.subscription.status == 'active'")
               .row.subtitle.success
                 | Suscripción Activa
-              a.pure-button.button-warning(data-ng-click="serie.changeStatus('paused')")
+              a.pure-button.button-warning.button-small(data-ng-click="serie.changeStatus('paused')")
                 | Pausar Suscripción
             .row(data-ng-if="serie.subscription.status == 'paused'")              
               .row.subtitle.warning
                 | Suscripción Pausada
-              a.pure-button.button-success(data-ng-click="serie.changeStatus('active')")
+              a.pure-button.button-success.button-small(data-ng-click="serie.changeStatus('active')")
                 |Activar Suscripción
             .row
-              a.pure-button.button-error(data-ng-click="serie.changeStatus('cancelled')")
+              a.pure-button.button-error.button-small(data-ng-click="serie.changeStatus('cancelled')")
                 |Cancelar Suscripción
           .item(data-ng-if="serie.subscription.status == 'cancelled'")
             .row.subtitle

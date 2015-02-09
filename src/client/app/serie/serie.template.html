@@ -15,12 +15,12 @@
           <div data-ng-if="serie.subscription.status != 'cancelled'" class="item">
             <div class="title uppercase">{{serie.info.name}}</div>
             <div data-ng-if="serie.subscription.status == 'active'" class="row">
-              <div class="row subtitle success">Suscripción Activa</div><a data-ng-click="serie.changeStatus('paused')" class="pure-button button-warning">Pausar Suscripción</a>
+              <div class="row subtitle success">Suscripción Activa</div><a data-ng-click="serie.changeStatus('paused')" class="pure-button button-warning button-small">Pausar Suscripción</a>
             </div>
             <div data-ng-if="serie.subscription.status == 'paused'" class="row">             
-              <div class="row subtitle warning">Suscripción Pausada</div><a data-ng-click="serie.changeStatus('active')" class="pure-button button-success">Activar Suscripción</a>
+              <div class="row subtitle warning">Suscripción Pausada</div><a data-ng-click="serie.changeStatus('active')" class="pure-button button-success button-small">Activar Suscripción</a>
             </div>
-            <div class="row"><a data-ng-click="serie.changeStatus('cancelled')" class="pure-button button-error">Cancelar Suscripción</a></div>
+            <div class="row"><a data-ng-click="serie.changeStatus('cancelled')" class="pure-button button-error button-small">Cancelar Suscripción</a></div>
           </div>
           <div data-ng-if="serie.subscription.status == 'cancelled'" class="item">
             <div class="row subtitle">Tu subscription a la serie <span class="uppercase">{{serie.info.name}} </span>ha sido cancelada.</div><a data-ng-click="serie.changeStatus('active')" class="pure-button button-success">Activar Suscripción</a>
