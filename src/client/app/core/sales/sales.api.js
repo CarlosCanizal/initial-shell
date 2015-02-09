@@ -20,6 +20,9 @@
 
     function getSales(params){
       // var user = userApi.currentUser();
+      if(!params)
+        var params = {};
+      
       params['function'] = 'getSales';
       return Sale.save(params).$promise;
     }
