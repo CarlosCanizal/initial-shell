@@ -141,6 +141,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('admin.sales',{
       url:'/sales',
       templateUrl: 'app/admin/sales/sales.template.html',
+      controller: 'Sales',
+      controllerAs: 'sales',
       data:{
         access: true,
         admin: true
