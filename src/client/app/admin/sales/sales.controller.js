@@ -13,13 +13,13 @@
     var today = new Date();
     sales.startDate = today;
     sales.endDate = today;
-    sales.orders = [];
-    sales.total = 0;
+    sales.result = {};
+
     shell.showLoading();
     salesApi.getSales().then(function(result){
+      console.log(result);
       var result = result.result;
-      sales.orders = result.orders;
-      sales.total = result.total;
+      sales.result = result;
     },function(){
       shell.setError(error);
     }).finally(shell.hideLoading);
@@ -31,8 +31,7 @@
       shell.showLoading();
       salesApi.getSales({startDate:startDate, endDate:endDate}).then(function(result){
         var result = result.result;
-        sales.orders = result.orders;
-        sales.total = result.total;
+        sales.result = result;
       },function(error){
         shell.setError(error);
       }).finally(shell.hideLoading)

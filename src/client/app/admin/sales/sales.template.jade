@@ -14,9 +14,11 @@
         a.pure-button.pure-button-primary.button-small(data-ng-click="sales.getSales(sales.startDate, sales.endDate)")
           |Buscar
         h1
-          | Total ${{sales.total}}
+          | Total: ${{sales.result.total}}
         h1
-          | Numero de ordenes {{sales.orders.length}}
+          | Numero de ordenes: {{sales.result.orders.length}}
+        h1
+          | Numero de articulos: {{sales.result.items}}
 
 
         

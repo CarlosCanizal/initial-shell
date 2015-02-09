@@ -8,8 +8,9 @@
       <div id="sales">Inicio 
         <input type="date" ng-model="sales.startDate"/>Fin
         <input type="date" ng-model="sales.endDate"/><a data-ng-click="sales.getSales(sales.startDate, sales.endDate)" class="pure-button pure-button-primary button-small">Buscar</a>
-        <h1>Total ${{sales.total}}</h1>
-        <h1>Numero de ordenes {{sales.orders.length}}</h1>
+        <h1>Total: ${{sales.result.total}}</h1>
+        <h1>Numero de ordenes: {{sales.result.orders.length}}</h1>
+        <h1>Numero de articulos: {{sales.result.items}}</h1>
       </div>
     </div>
   </div>
