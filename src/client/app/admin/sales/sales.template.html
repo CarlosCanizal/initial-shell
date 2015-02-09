@@ -1,2 +1,10 @@
 
-<h1>Sales</h1>
+<div id="account-menu" data-ng-include="'app/admin/menu/admin.menu.html'"></div>
+<div class="filter-title"><span class="publisher-name">Ventas</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+    </div>
+  </div>
+</div>
