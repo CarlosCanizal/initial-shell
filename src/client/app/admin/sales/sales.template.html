@@ -1,5 +1,5 @@
 
-<div id="account-menu" data-ng-include="'app/admin/menu/admin.menu.html'"></div>
+<div id="admin-menu" data-ng-include="'app/admin/menu/admin.menu.html'"></div>
 <div class="filter-title"><span class="publisher-name">Ventas</span></div>
 <div class="shelf">
   <div class="inner-shelf">
@@ -11,6 +11,24 @@
         <h1>Total: ${{sales.result.total}}</h1>
         <h1>Numero de ordenes: {{sales.result.orders.length}}</h1>
         <h1>Numero de articulos: {{sales.result.items}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Articulos</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div id="items">{{sales.byTotal}}</div>
+      <div class="pure-g">
+        <div data-ng-repeat="item in sales.itemsList | orderBy: 'total':true " class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
+          <div class="item">
+            <div class="item-image"><img alt="" ng-src="{{item.item.cover.url}}"/></div>
+            <div class="item-info">{{item.item.name}}</div>
+            <div class="item-info">Total de ventas: {{item.total}}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
