@@ -14,9 +14,9 @@
           i.fa.fa-cc-visa.fa-lg(ng-if="item.card.brand == 'VISA'")
           i.fa.fa-cc-mastercard.fa-lg(ng-if="item.card.brand == 'MC'")
           i.fa.fa-cc-amex.fa-lg(ng-if="item.card.brand == 'AMERICAN_EXPRESS'")
-          span
-          |**** **** **** {{item.card.last4}}
-          a.pure-button(data-ng-click="showModal()", data-question='¿Eliminar tarjeta?', data-confirm="payment.deleteCard({{$index}})", confirm-message)
+          span.padding-left-1
+            |**** **** **** {{item.card.last4}}
+          a.pure-button.button-small.margin-left-1(data-ng-click="showModal()", data-question='¿Eliminar tarjeta?', data-confirm="payment.deleteCard({{$index}})", confirm-message)
             i.fa.fa-trash
             |  Eliminar
         .error.align-center(data-ng-if="payment.error")
