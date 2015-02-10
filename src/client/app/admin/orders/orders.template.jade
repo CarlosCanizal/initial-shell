@@ -1,2 +1,53 @@
-h1
-  |Orders
+#admin-menu(data-ng-include="'app/admin/menu/admin.menu.html'")
+.filter-title
+  span.publisher-name.
+    Orders
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #orders
+        .margin-bottom-1
+          |Inicio 
+          input(type="date" ng-model="orders.startDate")
+          |Fin
+          input(type="date" ng-model="orders.endDate")
+          a.pure-button.pure-button-primary.button-small(data-ng-click="orders.getOrders(orders.startDate, orders.endDate)")
+            |Buscar
+        .shelf-content
+          .shelf-message(ng-if="orders.list.length < 1")
+            .subtitle
+              |No existen ordenes registradas.
+          .list-item(ng-repeat="item in orders.list", data-ui-sref="dashboard.order({objectId : item.objectId})")
+            .pure-g
+              .pure-u-1.pure-u-md-1-5
+                .pure-g
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                    | Referencia
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
+                    | {{item.referenceId}}
+              .pure-u-1.pure-u-md-1-5
+                .pure-g
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                    | Fecha
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
+                    | {{item.createdAt | date: 'mediumDate'}}
+              .pure-u-1.pure-u-md-1-5
+                .pure-g
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                    | Monto
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
+                    | {{item.amount}}
+              .pure-u-1.pure-u-md-1-5
+                .pure-g
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                    | Estado
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
+                    | {{item.status}}
+              .pure-u-1.pure-u-md-1-5
+                .pure-g
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                    | Tipo
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
+                    | {{item.type}}
+        

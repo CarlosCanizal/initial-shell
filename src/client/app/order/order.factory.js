@@ -14,15 +14,32 @@
 
     var order = {
       getOrders: getOrders,
-      getOrder: getOrder
+      getOrder: getOrder,
+      getAllOrders: getAllOrders
     };
 
     return order;
 
     function getOrders(){
       var user = userApi.currentUser();
-      console.log(user.objectId);
       var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId}}
+      return Order.query({
+              where : where,
+              order : 'createdAt'
+             }).$promise;
+      
+    }
+
+    function getAllOrders(params){
+      var user = userApi.currentUser();
+      var startDate, endDate;
+
+      startDate = (params && params.startDate) ? new Date(params.startDate) : new Date();
+      endDate = (params && params.endDate) ? new Date(params.endDate) : new Date();
+      startDate.setHours(0);
+      endDate.setHours(24);
+
+      var where = {"createdAt":{"$gte":startDate,"$lte":endDate}}
       return Order.query({
               where : where,
               order : 'createdAt'
