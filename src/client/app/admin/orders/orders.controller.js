@@ -18,16 +18,16 @@
     shell.showLoading();
 
     orderApi.getAllOrders().then(function(result){
-      console.log(result);
+      orders.list = result.results;
     },function(error){
-      shell.setError();
+      shell.setError(error);
     }).finally(shell.hideLoading);
 
     orders.getOrders = function(startDate, endDate){
       orderApi.getAllOrders({startDate:startDate, endDate: endDate}).then(function(result){
-        console.log(result);
+        orders.list = result.results;
       },function(error){
-        shell.setError();
+        shell.setError(error);
       }).finally(shell.hideLoading);
     }
 

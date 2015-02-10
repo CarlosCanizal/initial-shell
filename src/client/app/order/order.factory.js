@@ -44,7 +44,6 @@
               where : where,
               order : 'createdAt'
              }).$promise;
-      
     }
 
     function getOrder(objectId){
