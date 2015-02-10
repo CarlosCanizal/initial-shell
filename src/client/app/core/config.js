@@ -167,6 +167,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         access: true,
         admin: true
       }
+    })
+    .state('admin.preorders',{
+      url:'/preorders',
+      templateUrl: 'app/admin/preorders/preorders.template.html',
+      controller: 'Preorders',
+      controllerAs: 'preorders',
+      data:{
+        access: true,
+        admin: true
+      }
     });
   $urlRouterProvider.otherwise('/');
 }
