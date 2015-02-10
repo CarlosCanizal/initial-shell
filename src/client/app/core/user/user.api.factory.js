@@ -157,8 +157,16 @@
 
       startDate = (params && params.startDate) ? new Date(params.startDate) : false;
       endDate = (params && params.endDate) ? new Date(params.endDate) : false;
+      
+
       membership = (params && params.membership && params.membership != 'any') ? params.membership : false;
       if(startDate && endDate){
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        endDate.setHours(24);
+        endDate.setMinutes(0);
+        endDate.setSeconds(0);
         where.createdAt = {"$gte":startDate,"$lte":endDate};
       }
       if(membership){

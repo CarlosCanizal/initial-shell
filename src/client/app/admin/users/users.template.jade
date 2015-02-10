@@ -1,7 +1,7 @@
 #admin-menu(data-ng-include="'app/admin/menu/admin.menu.html'")
 .filter-title
   span.publisher-name.
-    Users
+    Usuarios
 .shelf
   .inner-shelf
     .shelf-space
@@ -19,6 +19,8 @@
           .shelf-message(ng-if="users.list.length < 1")
             .subtitle
               |No existen usuarios registrados.
+          h1.align-right
+            | Total {{users.list.length}}
           #list(ng-if="users.list.length > 0")
             table.info-table
               thead
@@ -41,3 +43,73 @@
                     |{{user.username}}
                   td
                     |{{user.membership}}
+.filter-title
+  span.publisher-name.
+    Usuarios que han comprado
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-content
+        .shelf-message(ng-if="users.buyers.length < 1")
+          .subtitle
+            |No existen usuarios con estos parametros.
+        h1.align-right
+          | Total {{users.buyers.length}}
+        #list(ng-if="users.buyers.length > 0")
+          table.info-table
+            thead
+              tr
+                th
+                  |Nombre
+                th
+                  |Telefono
+                th
+                  |Email
+                th
+                  |Membresia
+            tbody
+              tr(ng-repeat="user in users.buyers", data-ui-sref="admin.user({objectId : user.objectId})")
+                td
+                  |{{user.name}} {{user.lastname}}
+                td
+                  |{{user.phone}}
+                td
+                  |{{user.username}}
+                td
+                  |{{user.membership}}
+.filter-title
+  span.publisher-name.
+    Usuarios que no han comprado
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-content
+        .shelf-message(ng-if="users.notBuyers.length < 1")
+          .subtitle
+            |No existen usuarios con estos parametros.
+        h1.align-right
+          | Total {{users.notBuyers.length}}
+        #list(ng-if="users.notBuyers.length > 0")
+          table.info-table
+            thead
+              tr
+                th
+                  |Nombre
+                th
+                  |Telefono
+                th
+                  |Email
+                th
+                  |Membresia
+            tbody
+              tr(ng-repeat="user in users.notBuyers", data-ui-sref="admin.user({objectId : user.objectId})")
+                td
+                  |{{user.name}} {{user.lastname}}
+                td
+                  |{{user.phone}}
+                td
+                  |{{user.username}}
+                td
+                  |{{user.membership}}
