@@ -46,7 +46,7 @@
               byTotal[item.objectId].total += item.quantity*item.price;
             }else{
               var total = item.quantity*item.price;
-              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total};
+              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total, price:item.price};
             }
 
           });
