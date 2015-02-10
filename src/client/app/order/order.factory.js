@@ -37,7 +37,11 @@
       startDate = (params && params.startDate) ? new Date(params.startDate) : new Date();
       endDate = (params && params.endDate) ? new Date(params.endDate) : new Date();
       startDate.setHours(0);
+      startDate.setMinutes(0);
+      startDate.setSeconds(0);
       endDate.setHours(24);
+      endDate.setMinutes(0);
+      endDate.setSeconds(0);
 
       var where = {"createdAt":{"$gte":startDate,"$lte":endDate}}
       return Order.query({
