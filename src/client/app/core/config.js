@@ -147,6 +147,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         access: true,
         admin: true
       }
+    })
+    .state('admin.subscriptions',{
+      url:'/subscriptions',
+      templateUrl: 'app/admin/subscriptions/subscriptions.template.html',
+      controller: 'Subscriptions',
+      controllerAs: 'subscriptions',
+      data:{
+        access: true,
+        admin: true
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

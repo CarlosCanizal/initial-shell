@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('app.dashboard')
+  .module('app.admin')
   .controller('Sales', Sales);
 
   Sales.$inject = ['$scope','salesApi'];
