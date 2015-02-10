@@ -16,6 +16,10 @@
         h1
           | Total: ${{sales.result.total}}
         h1
+          | Discount: ${{sales.result.discount}}
+        h1
+          | Wallet: ${{sales.result.wallet}}
+        h1
           | Numero de ordenes: {{sales.result.orders.length}}
         h1
           | Numero de articulos: {{sales.result.items}}
@@ -35,6 +39,8 @@
               img(alt="", ng-src="{{item.item.cover.url}}")
             .item-info.
               {{item.item.name}}
+            .item-info.
+              Cantidad: {{item.quantity}}
             .item-info.
               Total de ventas: {{item.total}}
 

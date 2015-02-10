@@ -19,6 +19,7 @@
     shell.showLoading();
     salesApi.getSales().then(function(result){
       sales.result = result.result;
+
     },function(){
       shell.setError(error);
     }).finally(shell.hideLoading);
@@ -27,6 +28,7 @@
       shell.showLoading();
       salesApi.getSales({startDate:startDate, endDate:endDate}).then(function(result){
         sales.result = result.result;
+        console.log(result);
       },function(error){
         shell.setError(error);
       }).finally(shell.hideLoading)
@@ -39,12 +41,12 @@
         var filtered = [];
         angular.forEach(orders, function(order){
           angular.forEach(order.items, function(item){
-            console.log('id',item.objectId);
-            console.log('quantity', item.quantity);
             if(item.objectId in byTotal){
-              byTotal[item.objectId].total += item.quantity;
+              byTotal[item.objectId].quantity += item.quantity;
+              byTotal[item.objectId].total += item.quantity*item.price;
             }else{
-              byTotal[item.objectId] = {item:item, total: item.quantity};
+              var total = item.quantity*item.price;
+              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total};
             }
 
           });
