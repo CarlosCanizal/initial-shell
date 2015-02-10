@@ -7,36 +7,33 @@
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div id="users">
         <div class="shelf-content">
-          <div ng-if="users.list.length &lt; 1" class="shelf-message">
-            <div class="subtitle">No existen usuarios registradas.</div>
+          <div class="margin-bottom-1">Inicio 
+            <input type="date" ng-model="users.startDate"/>Fin
+            <input type="date" ng-model="users.endDate"/>
+            <select ng-model="users.membership" ng-options="item as item for item in users.memberships" data-ng-change="updateMunicipalities()"></select><a data-ng-click="users.search(users.startDate, users.endDate, users.membership)" class="pure-button pure-button-primary button-small">Buscar</a>
           </div>
-          <div ng-repeat="item in users.list" data-ui-sref="admin.user({objectId : item.objectId})" class="list-item">
-            <div class="pure-g">
-              <div class="pure-u-1 pure-u-md-1-5">
-                <div class="pure-g">
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">Nombre</div>
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.name}} {{item.lastname}}</div>
-                </div>
-              </div>
-              <div class="pure-u-1 pure-u-md-1-5">
-                <div class="pure-g">
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">Telefono</div>
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.phone}}</div>
-                </div>
-              </div>
-              <div class="pure-u-1 pure-u-md-1-5">
-                <div class="pure-g">
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">email</div>
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.username}}</div>
-                </div>
-              </div>
-              <div class="pure-u-1 pure-u-md-1-5">
-                <div class="pure-g">
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">Membresia</div>
-                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.membership}}</div>
-                </div>
-              </div>
-            </div>
+          <div ng-if="users.list.length &lt; 1" class="shelf-message">
+            <div class="subtitle">No existen usuarios registrados.</div>
+          </div>
+          <div id="list" ng-if="users.list.length &gt; 0">
+            <table class="info-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Telefono</th>
+                  <th>Email</th>
+                  <th>Membresia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="user in users.list" data-ui-sref="admin.user({objectId : user.objectId})">
+                  <td>{{user.name}} {{user.lastname}}</td>
+                  <td>{{user.phone}}</td>
+                  <td>{{user.username}}</td>
+                  <td>{{user.membership}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

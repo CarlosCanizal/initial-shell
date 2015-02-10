@@ -151,8 +151,22 @@
       }).$promise;
     }
 
-    function getAllUsers(){
+    function getAllUsers(params){
+      var startDate, endDate, membership;
+      var where = {};
+
+      startDate = (params && params.startDate) ? new Date(params.startDate) : false;
+      endDate = (params && params.endDate) ? new Date(params.endDate) : false;
+      membership = (params && params.membership && params.membership != 'any') ? params.membership : false;
+      if(startDate && endDate){
+        where.createdAt = {"$gte":startDate,"$lte":endDate};
+      }
+      if(membership){
+        where.membership = membership;
+      }
+
       return User.query({
+        where : where,
         order : 'createdAt'
       }).$promise;
     }
