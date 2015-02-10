@@ -15,6 +15,7 @@
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
     var  Membership = parse.newParseResource(parseheaders.storeKeys,'Membership');
+    var  User = parse.newParseResource(parseheaders.storeKeys,'_User');
 
     var factory = {
       login: login,
@@ -34,7 +35,8 @@
       chargeCard: chargeCard,
       saveProfile: saveProfile,
       updatePassword: updatePassword,
-      logMembership: logMembership
+      logMembership: logMembership,
+      getAllUsers: getAllUsers
 
     };
 
@@ -145,6 +147,12 @@
       var where = {"user":{"__type":"Pointer","className":"_User","objectId":userId}}
       return Address.query({
         where : where,
+        order : 'createdAt'
+      }).$promise;
+    }
+
+    function getAllUsers(){
+      return User.query({
         order : 'createdAt'
       }).$promise;
     }

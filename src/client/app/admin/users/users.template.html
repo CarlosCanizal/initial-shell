@@ -1,2 +1,45 @@
 
-<h1>Users</h1>
+<div id="admin-menu" data-ng-include="'app/admin/menu/admin.menu.html'"></div>
+<div class="filter-title"><span class="publisher-name">Users</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div id="users">
+        <div class="shelf-content">
+          <div ng-if="users.list.length &lt; 1" class="shelf-message">
+            <div class="subtitle">No existen usuarios registradas.</div>
+          </div>
+          <div ng-repeat="item in users.list" data-ui-sref="admin.user({objectId : item.objectId})" class="list-item">
+            <div class="pure-g">
+              <div class="pure-u-1 pure-u-md-1-5">
+                <div class="pure-g">
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">Nombre</div>
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.name}} {{item.lastname}}</div>
+                </div>
+              </div>
+              <div class="pure-u-1 pure-u-md-1-5">
+                <div class="pure-g">
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">Telefono</div>
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.phone}}</div>
+                </div>
+              </div>
+              <div class="pure-u-1 pure-u-md-1-5">
+                <div class="pure-g">
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">email</div>
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.username}}</div>
+                </div>
+              </div>
+              <div class="pure-u-1 pure-u-md-1-5">
+                <div class="pure-g">
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1">Membresia</div>
+                  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1 info-value">{{item.membership}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
