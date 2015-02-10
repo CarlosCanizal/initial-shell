@@ -168,6 +168,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         admin: true
       }
     })
+    .state('admin.order',{
+      url:'/orders/:objectId',
+      templateUrl:'app/order/order.template.html',
+      controller: 'Order',
+      controllerAs: 'order',
+      data:{
+        access: true,
+        admin: true,
+      }
+    })
     .state('admin.preorders',{
       url:'/preorders',
       templateUrl: 'app/admin/preorders/preorders.template.html',
