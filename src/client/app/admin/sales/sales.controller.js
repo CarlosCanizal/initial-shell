@@ -14,7 +14,7 @@
     sales.startDate = today;
     sales.endDate = today;
     sales.result = {};
-    sales.itemsList;
+    sales.list = [];
 
     shell.showLoading();
     salesApi.getSales().then(function(result){
@@ -42,11 +42,14 @@
         angular.forEach(orders, function(order){
           angular.forEach(order.items, function(item){
             if(item.objectId in byTotal){
-              byTotal[item.objectId].quantity += item.quantity;
-              byTotal[item.objectId].total += item.quantity*item.price;
+              if(item.quantity)
+                byTotal[item.objectId].quantity += item.quantity;
+              if(item.quantity && item.price)
+                byTotal[item.objectId].total += item.quantity*item.price;
             }else{
+              if(item.quantity && item.price)
               var total = item.quantity*item.price;
-              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total, price:item.price};
+              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total, price:item.price, type:item.type};
             }
 
           });
@@ -55,7 +58,7 @@
           filtered.push(item);
         });
 
-        sales.itemsList = filtered;
+        sales.list = filtered;
       }
     });
 

@@ -29,16 +29,21 @@
 .shelf
   .inner-shelf
     .shelf-space
+      .shelf-message(ng-if="sales.list.length < 1")
+        .subtitle
+          |No exiten articulos en este periodo.
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       #items
-        |{{sales.byTotal}}
       .pure-g
-        .pure-u-1.pure-u-md-1-2.pure-u-lg-1-4.pure-u-xl-1-5(data-ng-repeat="item in sales.itemsList | orderBy: 'total':true ")
+        div(data-ng)
+        .pure-u-1.pure-u-md-1-2.pure-u-lg-1-4.pure-u-xl-1-5(data-ng-repeat="item in sales.list | orderBy: 'total':true ")
           .item
             .item-image
               img(alt="", ng-src="{{item.item.cover.url}}")
             .item-info.
               {{item.item.name}}
+            .item-info.
+              {{item.type}}
             .item-info.
               Cantidad: {{item.quantity}}
             .item-info.
