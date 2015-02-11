@@ -13,6 +13,7 @@
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  Register  = parse.newRegisterResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
+    var  UserCloud  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
     var  Membership = parse.newParseResource(parseheaders.storeKeys,'Membership');
     var  UserStats = parse.newParseResource(parseheaders.storeKeys,'UserStats');
@@ -38,7 +39,8 @@
       updatePassword: updatePassword,
       logMembership: logMembership,
       getAllUsers: getAllUsers,
-      getUser: getUser
+      getUser: getUser,
+      saveUserProfile: saveUserProfile
     };
 
     return factory;
@@ -203,6 +205,10 @@
     function saveProfile(params){
       var  User  = setSessionToken();
       return User.update(params).$promise;
+    }
+
+    function saveUserProfile(params){
+      return UserCloud.save({user:params,function:'saveProfile'}).$promise;
     }
 
     function updatePassword(user,oldPassword, newPassword){

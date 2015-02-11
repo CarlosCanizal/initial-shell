@@ -200,7 +200,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     })
     .state('admin.userProfile',{
       url:'/users/:objectId/profile',
-      templateUrl: 'app/profile/profile.template.html',
+      templateUrl: 'app/admin/users/user.template.html',
       controller: 'UserProfile',
       controllerAs: 'profile',
       data:{
