@@ -15,7 +15,7 @@
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
     var  Membership = parse.newParseResource(parseheaders.storeKeys,'Membership');
-    var  User = parse.newParseResource(parseheaders.storeKeys,'_User');
+    var  UserStats = parse.newParseResource(parseheaders.storeKeys,'UserStats');
 
     var factory = {
       login: login,
@@ -37,7 +37,6 @@
       updatePassword: updatePassword,
       logMembership: logMembership,
       getAllUsers: getAllUsers
-
     };
 
     return factory;
@@ -170,11 +169,12 @@
         where.createdAt = {"$gte":startDate,"$lte":endDate};
       }
       if(membership){
-        where.membership = membership;
+        where.user = {"$inQuery":{"where":{"membership":membership},"className":"_User"}};
       }
 
-      return User.query({
+      return UserStats.query({
         where : where,
+        include: 'user',
         order : 'createdAt'
       }).$promise;
     }

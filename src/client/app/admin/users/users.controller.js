@@ -21,6 +21,7 @@
     users.endDate = today;
 
     userApi.getAllUsers().then(function(result){
+      console.log(result);
       users.list = result.results;
       var query = getBuyers(users.list);
       users.buyers = query.buyers;
@@ -37,6 +38,7 @@
         params.membership = membership;
 
       userApi.getAllUsers(params).then(function(result){
+        console.log(result);
         users.list = result.results;
         var query = getBuyers(users.list);
         users.buyers = query.buyers;
@@ -46,15 +48,15 @@
       }).finally(shell.hideLoading);
     }
 
-    function getBuyers(users){
-      var usersList = {buyers:[], notBuyers:[]};
-      angular.forEach(users, function(user){
-        if(user.isBuyer)
-          usersList.buyers.push(user);
+    function getBuyers(statsList){
+      var stats = {buyers:[], notBuyers:[]};
+      angular.forEach(statsList, function(stat){
+        if(stat.orders > 0)
+          stats.buyers.push(stat);
         else
-          usersList.notBuyers.push(user);
+          stats.notBuyers.push(stat);
       });
-      return usersList;
+      return stats;
     }
 
 

@@ -28,21 +28,37 @@
                   th
                     |Nombre
                   th
-                    |Telefono
-                  th
                     |Email
                   th
                     |Membresia
+                  th
+                    |Orders
+                  th
+                    |Items
+                  th
+                    |Total
+                  th
+                    |Monedero
+                  th
+                    |Descuento
               tbody
-                tr(ng-repeat="user in users.list", data-ui-sref="admin.user({objectId : user.objectId})")
+                tr(ng-repeat="stat in users.list", data-ui-sref="admin.user({objectId : stat.user.objectId})")
                   td
-                    |{{user.name}} {{user.lastname}}
+                    |{{stat.user.name}} {{stat.user.lastname}}
                   td
-                    |{{user.phone}}
+                    |{{stat.user.username}}
                   td
-                    |{{user.username}}
+                    |{{stat.user.membership}}
                   td
-                    |{{user.membership}}
+                    |{{stat.orders}}
+                  td
+                    |{{stat.items}}
+                  td
+                    |{{stat.total | currency}}
+                  td
+                    |{{stat.wallet | currency}}
+                  td
+                    |{{stat.discount | currency}}
 .filter-title
   span.publisher-name.
     Usuarios que han comprado
@@ -63,21 +79,37 @@
                 th
                   |Nombre
                 th
-                  |Telefono
-                th
                   |Email
                 th
                   |Membresia
+                th
+                  |Orders
+                th
+                  |Items
+                th
+                  |Total
+                th
+                  |Monedero
+                th
+                  |Descuento
             tbody
-              tr(ng-repeat="user in users.buyers", data-ui-sref="admin.user({objectId : user.objectId})")
+              tr(ng-repeat="stat in users.buyers", data-ui-sref="admin.user({objectId : stat.user.objectId})")
                 td
-                  |{{user.name}} {{user.lastname}}
+                  |{{stat.user.name}} {{stat.user.lastname}}
                 td
-                  |{{user.phone}}
+                  |{{stat.user.username}}
                 td
-                  |{{user.username}}
+                  |{{stat.user.membership}}
                 td
-                  |{{user.membership}}
+                  |{{stat.orders}}
+                td
+                  |{{stat.items}}
+                td
+                  |{{stat.total | currency}}
+                td
+                  |{{stat.wallet | currency}}
+                td
+                  |{{stat.discount | currency}}
 .filter-title
   span.publisher-name.
     Usuarios que no han comprado
@@ -98,18 +130,34 @@
                 th
                   |Nombre
                 th
-                  |Telefono
-                th
                   |Email
                 th
                   |Membresia
+                th
+                  |Orders
+                th
+                  |Items
+                th
+                  |Total
+                th
+                  |Monedero
+                th
+                  |Descuento
             tbody
-              tr(ng-repeat="user in users.notBuyers", data-ui-sref="admin.user({objectId : user.objectId})")
+              tr(ng-repeat="stat in users.notBuyers", data-ui-sref="admin.user({objectId : stat.user.objectId})")
                 td
-                  |{{user.name}} {{user.lastname}}
+                  |{{stat.user.name}} {{stat.user.lastname}}
                 td
-                  |{{user.phone}}
+                  |{{stat.user.username}}
                 td
-                  |{{user.username}}
+                  |{{stat.user.membership}}
                 td
-                  |{{user.membership}}
+                  |{{stat.orders}}
+                td
+                  |{{stat.items}}
+                td
+                  |{{stat.total | currency}}
+                td
+                  |{{stat.wallet | currency}}
+                td
+                  |{{stat.discount | currency}}
