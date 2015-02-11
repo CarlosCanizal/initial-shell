@@ -5,11 +5,11 @@
   .module('app.dashboard')
   .controller('Profile', Profile);
 
-  Profile.$inject = ['$scope','userApi'];
+  Profile.$inject = ['$scope','$stateParams','userApi'];
 
-  function Profile($scope, userApi) {
+  function Profile($scope, $stateParams, userApi){
     var shell = $scope.shell;
-    var profile = this; 
+    var profile = this;
 
     profile.user = shell.currentUser;
     profile.newPassword = null;

@@ -16,6 +16,7 @@
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
     var  Membership = parse.newParseResource(parseheaders.storeKeys,'Membership');
     var  UserStats = parse.newParseResource(parseheaders.storeKeys,'UserStats');
+    var  User = parse.newUserResource(parseheaders.storeKeys);
 
     var factory = {
       login: login,
@@ -36,7 +37,8 @@
       saveProfile: saveProfile,
       updatePassword: updatePassword,
       logMembership: logMembership,
-      getAllUsers: getAllUsers
+      getAllUsers: getAllUsers,
+      getUser: getUser
     };
 
     return factory;
@@ -147,6 +149,12 @@
       return Address.query({
         where : where,
         order : 'createdAt'
+      }).$promise;
+    }
+
+    function getUser(userId){
+      return User.get({
+        objectId : userId
       }).$promise;
     }
 

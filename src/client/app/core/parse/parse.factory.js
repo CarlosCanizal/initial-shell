@@ -50,8 +50,9 @@
           objectId: '@objectId'
         },
         { 
-          'currentUser':    {method:'GET', headers: headers},
-          'update':           {method:'PUT', headers: headers}
+          'currentUser':{method:'GET', headers: headers},
+          'get':        {method:'GET', headers: headers},
+          'update':     {method:'PUT', headers: headers}
         }
       );
     }

@@ -198,11 +198,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         admin: true
       }
     })
-    .state('admin.user',{
-      url:'/users/:objectId',
-      templateUrl: 'app/admin/users/users.template.html',
-      controller: 'Users',
-      controllerAs: 'users',
+    .state('admin.userProfile',{
+      url:'/users/:objectId/profile',
+      templateUrl: 'app/profile/profile.template.html',
+      controller: 'UserProfile',
+      controllerAs: 'profile',
       data:{
         access: true,
         admin: true
