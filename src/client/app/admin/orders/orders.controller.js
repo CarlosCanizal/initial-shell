@@ -3,28 +3,34 @@
 
   angular
   .module('app.admin')
-  .controller('Orders', Orders);
+  .controller('AdminOrders', AdminOrders);
 
-  Orders.$inject = ['$scope','orderApi'];
+  AdminOrders.$inject = ['$scope','$stateParams','orderApi'];
 
-  function Orders($scope, orderApi) {
+  function AdminOrders($scope, $stateParams, orderApi) {
     
     var shell = $scope.shell;
     var orders = this;
     var today = new Date();
+    var params = {};
     orders.startDate = today;
     orders.endDate = today;
     orders.list = [];
     shell.showLoading();
 
-    orderApi.getAllOrders().then(function(result){
+    if($stateParams.userId)
+      params.userId =  $stateParams.userId;
+
+    orderApi.getAllOrders(params).then(function(result){
       orders.list = result.results;
     },function(error){
       shell.setError(error);
     }).finally(shell.hideLoading);
 
     orders.getOrders = function(startDate, endDate){
-      orderApi.getAllOrders({startDate:startDate, endDate: endDate}).then(function(result){
+      params.startDate = startDate;
+      params.endDate = endDate;
+      orderApi.getAllOrders(params).then(function(result){
         orders.list = result.results;
       },function(error){
         shell.setError(error);

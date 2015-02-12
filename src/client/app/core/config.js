@@ -161,7 +161,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('admin.orders',{
       url:'/orders',
       templateUrl: 'app/admin/orders/orders.template.html',
-      controller: 'Orders',
+      controller: 'AdminOrders',
       controllerAs: 'orders',
       data:{
         access: true,
@@ -203,6 +203,26 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl: 'app/admin/users/user.template.html',
       controller: 'UserProfile',
       controllerAs: 'profile',
+      data:{
+        access: true,
+        admin: true
+      }
+    })
+    .state('admin.userOrders',{
+      url:'/users/:userId/orders',
+      templateUrl: 'app/admin/orders/orders.template.html',
+      controller: 'AdminOrders',
+      controllerAs: 'orders',
+      data:{
+        access: true,
+        admin: true
+      }
+    })
+    .state('admin.userPayment',{
+      url:'/users/:userId/payment',
+      templateUrl: 'app/payment/payment.template.html',
+      controller: 'AdminPayment',
+      controllerAs: 'payment',
       data:{
         access: true,
         admin: true
