@@ -237,6 +237,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         access: true,
         admin: true
       }
+    })
+    .state('admin.userWallet',{
+      url:'/users/:userId/wallet',
+      templateUrl: 'app/admin/users/wallet/wallet.template.html',
+      controller: 'AdminWallet',
+      controllerAs: 'wallet',
+      data:{
+        access: true,
+        admin: true
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

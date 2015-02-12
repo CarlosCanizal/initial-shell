@@ -1,0 +1,16 @@
+
+<div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'"></div>
+<div class="filter-title"><span class="publisher-name">Mi Saldo</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">Tu cuenta tiene un saldo de: {{wallet.user.wallet}}</div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Cupon</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">Ingresa el cupon del usuario
+      <admin-coupon user-id="{{wallet.user.objectId}}"></admin-coupon>
+    </div>
+  </div>
+</div>
