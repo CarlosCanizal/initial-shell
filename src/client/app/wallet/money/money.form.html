@@ -1,0 +1,20 @@
+
+<form name="moneyForm" novalidate="" class="pure-form pure-form-stacked">
+  <fieldset>
+    <div class="child-container">
+      <ng-form name="moneyForm">
+        <div class="form-container">
+          <label for="amount" ng-show="moneyForm.amount.$valid || moneyForm.amount.$pristine">Cantidad:</label>
+          <label for="amount" ng-show="moneyForm.amount.$invalid &amp;&amp; moneyForm.amount.$dirty" class="error">Cantidad es requerido:</label>
+          <div class="form-icon">
+            <input id="amount" name="amount" data-ng-model="wallet.amount" required="" class="pure-input-1"/><i ng-show="moneyForm.amount.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="moneyForm.amount.$valid &amp;&amp; moneyForm.amount.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="moneyForm.amount.$invalid &amp;&amp; moneyForm.amount.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+      </ng-form>
+    </div>
+  </fieldset>
+</form>
+<div class="align-center"><a data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="moneyForm.$invalid" class="pure-button">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></a><a data-ng-click="addMoney(wallet.amount)" data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}" data-ng-if="moneyForm.$valid" class="pure-button button-success"><i class="fa fa-thumbs-o-up"></i>Agregar saldo</a>
+  <div data-ng-if="error" class="error">{{error}}</div>
+  <div data-ng-if="success" class="success">{{success}}</div>
+</div>

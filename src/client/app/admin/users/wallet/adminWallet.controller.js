@@ -10,6 +10,7 @@
   function AdminWallet($scope, $stateParams, userApi) {
     var shell = $scope.shell;
     var wallet = this;
+    wallet.user = null;
 
     var userId = $stateParams.userId;
     
@@ -24,9 +25,6 @@
       console.log(amount);
       wallet.user.wallet += amount;
     }
-
-
-
 
 
   }

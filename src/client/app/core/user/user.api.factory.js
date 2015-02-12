@@ -40,7 +40,8 @@
       logMembership: logMembership,
       getAllUsers: getAllUsers,
       getUser: getUser,
-      saveUserProfile: saveUserProfile
+      saveUserProfile: saveUserProfile,
+      addMoney: addMoney
     };
 
     return factory;
@@ -209,6 +210,11 @@
 
     function saveUserProfile(params){
       return UserCloud.save({user:params,function:'saveProfile'}).$promise;
+    }
+
+    function addMoney(params){
+      console.log(params);
+     return UserCloud.save({user:params,function:'addMoney'}).$promise; 
     }
 
     function updatePassword(user,oldPassword, newPassword){

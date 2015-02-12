@@ -1,7 +1,7 @@
 #account-menu(data-ng-include="'app/account/menu/account.menu.html'")
 .filter-title
   span.publisher-name.
-    Mi Saldo
+    Saldo
 .shelf
   .inner-shelf
     .shelf-space
@@ -13,4 +13,12 @@
   .inner-shelf
     .shelf-space
       |Ingresa el cupon del usuario
+      |{{wallet.user.objectId}}
       admin-coupon(user-id='{{wallet.user.objectId}}')
+.filter-title
+  span.publisher-name.
+    Agregar saldo al monedero
+.shelf
+  .inner-shelf
+    .shelf-space
+      money(user-id='{{wallet.user.objectId}}')
