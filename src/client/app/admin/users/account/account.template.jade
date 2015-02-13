@@ -6,13 +6,13 @@
   .inner-shelf
     .shelf-space
       div
-        | {{shell.currentUser.membership}}
+        | {{account.user.membership}}
       p
         | Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.
-      div.align-center(data-ng-if="shell.currentUser.membership  == 'basic'")
+      div.align-center(data-ng-if="account.user.membership  == 'basic'")
         a.pure-button.pure-button-primary(data-ng-click="account.showUpgrade()")
           | Actualizar a PRO
-      div.align-right(data-ng-if="shell.currentUser.membership  == 'pro'")
+      div.align-right(data-ng-if="account.user.membership  == 'pro'")
         a.pure-button(data-ng-click="account.showCancelForm()")
           | Cancelar Membresia
 #new-card(data-ng-if="account.cardFormView")
@@ -24,7 +24,7 @@
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-space(data-ng-hide="loading")
         .shelf-content(data-ng-hide="loading")
-          div(card-form)
+          card-form(conekta-id="{{account.user.conektaId}}")
 
 #cancel-membership(data-ng-show="account.cancelFormView")
   .filter-title
@@ -34,7 +34,7 @@
     .inner-shelf.error-border
       .shelf-space
         cancel-membership
-#update-membership(data-ng-show="(account.upgradeView || shell.currentUser.membership  == 'pro') && !account.cancelFormView")
+#update-membership(data-ng-show="(account.upgradeView || account.user.membership  == 'pro') && !account.cancelFormView")
   .filter-title
     span.publisher-name.
       Actualiza Membresia
@@ -45,7 +45,7 @@
         .shelf-content(data-ng-hide="loading")
           .pure-g
             .pure-u-1.pure-u-md-1-3.border-right
-              .information-box.padding-right-1
+              .information-box.no-padding
                 .shelf-message(data-ng-if="account.cards.length < 1")
                   .subtitle
                     |No existen metodos de pago registrados.
@@ -60,7 +60,7 @@
                     i.fa.fa-cc-amex(ng-if="account.subscription.payment.card.brand == 'AMERICAN_EXPRESS'")
                     | **** **** **** {{account.subscription.payment.card.last4}}
             .pure-u-1.pure-u-md-1-3.border-right
-              .information-box.padding-side-1
+              .information-box
                 div(data-ng-show="account.cards.length > 0")
                   .address-line
                     | Cambiar Metodo de Pago
@@ -71,14 +71,14 @@
                     i.fa.fa-plus
                     | Agregar Tarjeta
             .pure-u-1.pure-u-md-1-3.align-center
-              div.padding-side-1(data-ng-hide="checkout.showPlaceOrder")
+              div(data-ng-hide="checkout.showPlaceOrder")
                 .address-line
-                  a.pure-button.pure-button-primary(data-ng-click="account.updateMembership('pro')", data-ng-if="shell.currentUser.membership  == 'basic'", data-ng-class="{'pure-button-disabled': account.cards.length < 1}")
+                  a.pure-button.pure-button-primary(data-ng-click="account.updateMembership('pro')", data-ng-if="account.user.membership  == 'basic'", data-ng-class="{'pure-button-disabled': account.cards.length < 1}")
                     | Actualizar a PRO
                 .address-line
-                  a.pure-button(data-ng-click="account.hideUpgrade()",data-ng-if="shell.currentUser.membership  == 'basic'")
+                  a.pure-button(data-ng-click="account.hideUpgrade()",data-ng-if="account.user.membership  == 'basic'")
                     | Continuar en Basic
-                  div(data-ng-if="shell.currentUser.membership  == 'pro'")
+                  div(data-ng-if="account.user.membership  == 'pro'")
                     .address-line
                       a.pure-button.button-success(data-ng-click="account.updateCard()",data-ng-class="{'pure-button-disabled': account.cards.length < 1}")
                         i.fa.fa-credit-card

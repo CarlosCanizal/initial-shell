@@ -15,8 +15,8 @@
     var userId = $stateParams.userId;
     
     shell.showLoading();
-    userApi.getUser().then(function(result){
-      wallet.user = result.results[0];
+    userApi.getUser(userId).then(function(user){
+      wallet.user = user;
     },function(error){
       shell.setError(error);
     }).finally(shell.hideLoading);
@@ -25,8 +25,5 @@
       console.log(amount);
       wallet.user.wallet += amount;
     }
-
-
   }
-
 })();

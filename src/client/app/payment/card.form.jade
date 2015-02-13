@@ -37,7 +37,7 @@ form#card-form.pure-form.pure-form-stacked(name="cardForm", novalidate)
           select.left(data-ng-model="card.exp_month" ng-options="n for n in months")
           select.right(data-ng-model="card.exp_year" ng-options="n for n in years")
   .align-center.margin-bottom
-    a.pure-button.pure-button-primary(data-ng-click="saveCard()")
+    a.pure-button.pure-button-primary(data-ng-click="saveCard(conektaId)")
       | Guardar Tarjeta
   .align-center.margin-bottom
     a.pure-button(data-ng-click="hideCardForm()")

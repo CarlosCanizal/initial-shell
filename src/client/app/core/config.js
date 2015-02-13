@@ -247,6 +247,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         access: true,
         admin: true
       }
+    })
+    .state('admin.userAccount',{
+      url:'/users/:userId/account',
+      templateUrl: 'app/admin/users/account/account.template.html',
+      controller: 'AdminAccount',
+      controllerAs: 'account',
+      data:{
+        access: true,
+        admin: true
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

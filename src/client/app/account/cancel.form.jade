@@ -17,7 +17,7 @@ form.pure-form.pure-form-stacked(name="cancelForm", novalidate="")
     a.pure-button(data-ng-if="cancelForm.$invalid")
       i.fa.fa-dot-circle-o
       | Campos Requeridos
-    a.pure-button.button-error(data-ng-click="showModal()", data-question='¿Deseas cancelar tu membresia?', data-confirm="cancelMembership()",data-ng-if="cancelForm.$valid", confirm-message)
+    a.pure-button.button-error(data-ng-click="showModal()", data-question='¿Deseas cancelar tu membresia?', data-confirm="cancelMembership(account.user)",data-ng-if="cancelForm.$valid", confirm-message)
       i.fa.fa-times
       | Cancelar Membrecia
   .align-center.margin-bottom

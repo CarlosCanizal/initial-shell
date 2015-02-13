@@ -46,9 +46,16 @@ function cardForm(userApi, conekta){
         paymentMethod.showCardForm(false);
       }
 
-      scope.saveCard = function(){
+      if(attr.conektaId){
+        scope.conektaId = attr.conektaId;
+      }
+      else{
+        scope.conektaId = shell.currentUser.conektaId;
+      }
+
+      scope.saveCard = function(conektaId){
         shell.showLoading();
-        conekta.saveCard(shell.currentUser.conektaId,scope.card).then(function(card){
+        conekta.saveCard(conektaId,scope.card).then(function(card){
           var newCard = {type:'card', card:card};
 
           if(paymentMethod && paymentMethod.cards){

@@ -13,11 +13,18 @@ function cancelMembership(conekta){
       var shell =  scope.shell;
       var account =  scope.account;
 
-      scope.cancelMembership =  function(){
+      scope.cancelMembership =  function(user){
+        console.log(user);
         if(scope.cancelForm.$valid){
           shell.showLoading();
-          conekta.unsubscribe(account.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment).then(function(user){
-            shell.updateCurrentUser();
+          conekta.unsubscribe(account.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment, user).then(function(user){
+            if(account && account.user){
+              account.updateUser(user.result);
+            }
+            else{
+              shell.updateCurrentUser();
+            }
+
           },function(error){
             shell.setError(error);
           }).finally(function(){

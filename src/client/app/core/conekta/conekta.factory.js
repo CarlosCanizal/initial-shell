@@ -22,31 +22,36 @@
       subscriptionCard: subscriptionCard
     }
 
-    function updateMembership(membership, payment){
+    function updateMembership(membership, payment, user){
 
-      var user =  userApi.currentUser();
-      return subscribe(membership.id, payment.card.id).then(function(){
+      if(!user)
+        user =  userApi.currentUser();
+
+      return subscribe(membership.id, payment.card.id, user.conektaId).then(function(){
         return userApi.logMembership({user: user.objectId, status:'active', notes:payment});
       }).then(function(){
-        return userApi.saveProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment});
+        return userApi.saveUserProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment});
       });
       
     }
 
-    function subscribe(plan, card){
-      var conektaId = userApi.currentUser().conektaId;
+    function subscribe(plan, card, conektaId){
       var params = {plan: plan, card: card, conektaId: conektaId, "function":"subscribe"}
       return conektaResource.save(params).$promise;
     }
 
-    function unsubscribe(card,plan,message){
-      var user =  userApi.currentUser();
-      var conektaId = userApi.currentUser().conektaId;
-      var params = {plan: plan, conektaId: conektaId, "function":"unsubscribe"}
+    function unsubscribe(card, plan, message, user){
+
+      if(!user)
+        user = userApi.currentUser();
+
+      console.log(user.objectId);
+
+      var params = {plan: plan, conektaId: user.conektaId, "function":"unsubscribe"}
       return conektaResource.save(params).$promise.then(function(){
         return userApi.logMembership({user: user.objectId, status:'cancelled',notes:{message:message}});
       }).then(function(){
-        return userApi.saveProfile({objectId: user.objectId, membership: 'basic', upgrade:'cancelled'});
+        return userApi.saveUserProfile({objectId: user.objectId, membership: 'basic', upgrade:'cancelled'});
       });
     }
 

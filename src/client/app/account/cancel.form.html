@@ -13,6 +13,6 @@ Lamentamos mucho que nos abandones, nos gustaria que nos dejaras tus comentarios
       </ng-form>
     </div>
   </fieldset>
-  <div class="align-center margin-bottom"><a data-ng-if="cancelForm.$invalid" class="pure-button"><i class="fa fa-dot-circle-o"></i>Campos Requeridos</a><a data-ng-click="showModal()" data-question="¿Deseas cancelar tu membresia?" data-confirm="cancelMembership()" data-ng-if="cancelForm.$valid" confirm-message="confirm-message" class="pure-button button-error"><i class="fa fa-times"></i>Cancelar Membrecia</a></div>
+  <div class="align-center margin-bottom"><a data-ng-if="cancelForm.$invalid" class="pure-button"><i class="fa fa-dot-circle-o"></i>Campos Requeridos</a><a data-ng-click="showModal()" data-question="¿Deseas cancelar tu membresia?" data-confirm="cancelMembership(account.user)" data-ng-if="cancelForm.$valid" confirm-message="confirm-message" class="pure-button button-error"><i class="fa fa-times"></i>Cancelar Membrecia</a></div>
   <div class="align-center margin-bottom"><a data-ng-click="account.hideCancelForm()" class="pure-button button-success"><i class="fa fa-check"></i>Continuar Membrecia</a></div>
 </form>
