@@ -197,20 +197,20 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'AdminOrders',
       controllerAs: 'orders'
     })
-    .state('admin.userPayment',{
-      url:'/users/:userId/payment',
+    .state('admin.user.payment',{
+      url:'/payment',
       templateUrl: 'app/payment/payment.template.html',
       controller: 'AdminPayment',
       controllerAs: 'payment'
     })
     .state('admin.user.address',{
       url:'/address',
-      templateUrl: 'app/admin/address/address.template.html',
+      templateUrl: 'app/address/address.template.html',
       controller: 'AdminAddress',
       controllerAs: 'address'
     })
-    .state('admin.userWallet',{
-      url:'/users/:userId/wallet',
+    .state('admin.user.wallet',{
+      url:'/wallet',
       templateUrl: 'app/admin/users/wallet/wallet.template.html',
       controller: 'AdminWallet',
       controllerAs: 'wallet'

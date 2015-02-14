@@ -1,4 +1,5 @@
-#account-menu(data-ng-include="'app/account/menu/account.menu.html'")
+#admin-menu(data-ng-include="'app/admin/users/menu/user.menu.html'", data-ng-if="view")
+#account-menu(data-ng-include="'app/account/menu/account.menu.html'", data-ng-if="!view")
 .filter-title
   span.publisher-name.
     Mis Direcciones
