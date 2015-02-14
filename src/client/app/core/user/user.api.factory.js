@@ -179,9 +179,15 @@
         endDate.setSeconds(0);
         where.createdAt = {"$gte":startDate,"$lte":endDate};
       }
+
       if(membership){
-        where.user = {"$inQuery":{"where":{"membership":membership},"className":"_User"}};
+        where.user = {"$inQuery":{"where":{"membership":membership, "role":"client"},"className":"_User"}};
+        console.log(where.user);
+      }else{
+        where.user = {"$inQuery":{"where":{"role":"client"},"className":"_User"}};
       }
+
+
 
       return UserStats.query({
         where : where,
