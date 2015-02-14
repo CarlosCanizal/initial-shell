@@ -191,12 +191,6 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'UserProfile',
       controllerAs: 'profile'
     })
-    // .state('admin.userProfile',{
-    //   url:'/users/:objectId/profile',
-    //   templateUrl: 'app/admin/users/user.template.html',
-    //   controller: 'UserProfile',
-    //   controllerAs: 'profile'
-    // })
     .state('admin.userOrders',{
       url:'/users/:userId/orders',
       templateUrl: 'app/admin/orders/orders.template.html',
@@ -209,9 +203,9 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'AdminPayment',
       controllerAs: 'payment'
     })
-    .state('admin.userAddress',{
-      url:'/users/:userId/address',
-      templateUrl: 'app/address/address.template.html',
+    .state('admin.user.address',{
+      url:'/address',
+      templateUrl: 'app/admin/address/address.template.html',
       controller: 'AdminAddress',
       controllerAs: 'address'
     })

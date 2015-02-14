@@ -9,21 +9,16 @@
 
   function AdminAddress($scope,$stateParams, userApi, sepomexAPI) {
     var shell = $scope.shell;
+    var view = $scope.view;
     var address = this;
 
     address.address = {};
     address.addresses = [];
     address.addressFormView = false;
     $scope.loading = true;
-    var user;
 
-    userApi.getUser($stateParams.userId).then(function(result){
-      user = result;
-      return userApi.getAddresses(user.objectId);
-
-    }).then(function(addresses){
+    userApi.getAddresses(view.user.objectId).then(function(addresses){
       address.addresses =  addresses.results;
-
     },function(error){
       shell.setError(error);
     }).finally(function(){
