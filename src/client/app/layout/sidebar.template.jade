@@ -11,7 +11,7 @@
     .logo-h1
       | SOCIETY
 nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
-  a(ui-sref="admin.users")
+  a(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
     | Usuarios
   a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir

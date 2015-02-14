@@ -142,7 +142,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/sales',
       templateUrl: 'app/admin/sales/sales.template.html',
       controller: 'Sales',
-      controllerAs: 'sales'
+      controllerAs: 'sales',
+       data:{
+        menu: 'sales',
+        submenu: 'sales'
+      }
     })
     .state('admin.subscriptions',{
       url:'/subscriptions',
@@ -172,7 +176,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/users',
       templateUrl: 'app/admin/users/users.template.html',
       controller: 'Users',
-      controllerAs: 'users'
+      controllerAs: 'users',
+       data:{
+        menu: 'users',
+        submenu: 'users'
+      }
     })
     .state('admin.user',{
       url:'/users/:userId',
@@ -189,7 +197,12 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/profile',
       templateUrl: 'app/admin/users/user.template.html',
       controller: 'UserProfile',
-      controllerAs: 'profile'
+      controllerAs: 'profile',
+       data:{
+        menu: 'users',
+        submenu: 'profile'
+      }
+
     })
     .state('admin.userOrders',{
       url:'/users/:userId/orders',
@@ -201,25 +214,41 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/payment',
       templateUrl: 'app/payment/payment.template.html',
       controller: 'AdminPayment',
-      controllerAs: 'payment'
+      controllerAs: 'payment',
+       data:{
+        menu: 'users',
+        submenu: 'payment'
+      }
     })
     .state('admin.user.address',{
       url:'/address',
       templateUrl: 'app/address/address.template.html',
       controller: 'AdminAddress',
-      controllerAs: 'address'
+      controllerAs: 'address',
+       data:{
+        menu: 'users',
+        submenu: 'address'
+      }
     })
     .state('admin.user.wallet',{
       url:'/wallet',
       templateUrl: 'app/admin/users/wallet/wallet.template.html',
       controller: 'AdminWallet',
-      controllerAs: 'wallet'
+      controllerAs: 'wallet',
+       data:{
+        menu: 'users',
+        submenu: 'wallet'
+      }
     })
     .state('admin.user.account',{
       url:'/account',
       templateUrl: 'app/admin/users/account/account.template.html',
       controller: 'AdminAccount',
-      controllerAs: 'account'
+      controllerAs: 'account',
+       data:{
+        menu: 'users',
+        submenu: 'account'
+      }
     });
   $urlRouterProvider.otherwise('/');
 }
