@@ -2,8 +2,8 @@
   | {{view.user.name}} {{view.user.lastname}}
 #submenu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
   nav
-    a(data-ui-sref="admin.users", data-ng-class="{'active':shell.submenu == 'account'}")
-      |Usuarios
+    a(data-ui-sref="admin.user.account", data-ng-class="{'active':shell.submenu == 'account'}")
+      |Cuenta
     a(data-ui-sref="admin.user.profile", data-ng-class="{'active':shell.submenu == 'profile'}")
       |Perfil
     a(data-ui-sref="admin.user.address", data-ng-class="{'active':shell.submenu == 'address'}")

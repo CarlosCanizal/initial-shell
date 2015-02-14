@@ -215,8 +215,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'AdminWallet',
       controllerAs: 'wallet'
     })
-    .state('admin.userAccount',{
-      url:'/users/:userId/account',
+    .state('admin.user.account',{
+      url:'/account',
       templateUrl: 'app/admin/users/account/account.template.html',
       controller: 'AdminAccount',
       controllerAs: 'account'
