@@ -20,16 +20,20 @@
     account.subscription = {payment:false};
     $scope.loading = true;
     account.unsubscribe = {comment:null};
-    account.user = shell.currentUser;
+
+    if(view)
+      account.user = view.user;
+    else
+      account.user = shell.currentUser;
 
 
-    userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
+    userApi.getCards({conektaId:account.user.conektaId}).then(function(cards){
       account.cards = cards;
       
-      if(shell.currentUser.subscriptionCard){
+      if(account.user.subscriptionCard){
         var flag = true;
         angular.forEach(cards,function(value){
-          if(angular.equals(shell.currentUser.subscriptionCard,value)){
+          if(angular.equals(account.user.subscriptionCard,value)){
             account.subscription.payment = value;
             flag = false;
           }
@@ -64,11 +68,10 @@
     account.updateMembership = function(name){
       if(account.subscription.payment){
         shell.showLoading();
-        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment).then(function(result){
+        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment, account.user).then(function(result){
           if(!view){
             shell.updateCurrentUser();
           }
-
           account.user = result.result;
         },function(error){
           shell.setError(error);

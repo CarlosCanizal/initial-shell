@@ -243,7 +243,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('admin.user.account',{
       url:'/account',
       templateUrl: 'app/admin/users/account/account.template.html',
-      controller: 'AdminAccount',
+      controller: 'Account',
       controllerAs: 'account',
        data:{
         menu: 'users',

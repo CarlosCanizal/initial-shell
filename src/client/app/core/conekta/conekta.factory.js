@@ -23,10 +23,6 @@
     }
 
     function updateMembership(membership, payment, user){
-
-      if(!user)
-        user =  userApi.currentUser();
-
       return subscribe(membership.id, payment.card.id, user.conektaId).then(function(){
         return userApi.logMembership({user: user.objectId, status:'active', notes:payment});
       }).then(function(){
