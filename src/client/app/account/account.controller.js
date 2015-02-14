@@ -9,6 +9,7 @@
 
   function Account($scope, $state,userApi, conekta) {
     var shell = $scope.shell;
+    var view = $scope.view;
     var account = this;
 
     account.cardFormView = false;
@@ -19,6 +20,7 @@
     account.subscription = {payment:false};
     $scope.loading = true;
     account.unsubscribe = {comment:null};
+    account.user = shell.currentUser;
 
 
     userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
@@ -47,7 +49,8 @@
       if(account.subscription.payment){
         shell.showLoading();
         conekta.subscriptionCard(account.subscription.payment).then(function(user){
-          shell.updateCurrentUser();
+          if(!view)
+            shell.updateCurrentUser();
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);
@@ -61,16 +64,20 @@
     account.updateMembership = function(name){
       if(account.subscription.payment){
         shell.showLoading();
-        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment).then(function(user){
-          shell.updateCurrentUser();
+        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment).then(function(result){
+          if(!view){
+            shell.updateCurrentUser();
+          }
+
+          account.user = result.result;
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);
       }
     }
 
-    account.showCardForm = function(view){
-      account.cardFormView  = view;
+    account.showCardForm = function(viewForm){
+      account.cardFormView  = viewForm;
     }
 
     account.showCancelForm = function(){
@@ -88,6 +95,10 @@
 
     account.hideUpgrade = function(){
       account.upgradeView = false;
+    }
+
+    account.updateUser = function(user){
+      account.user = user;
     }
     
   }
