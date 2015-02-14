@@ -10,7 +10,17 @@
       | COMICS'
     .logo-h1
       | SOCIETY
-nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard")
+nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
+  a(ui-sref="admin.users")
+    | Usuarios
+  a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+    | Salir
+  span
+    a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
+      i.fa.fa-facebook
+     a.social(href="https://twitter.com/thecomicsociety", target="_blank")
+      i.fa.fa-twitter
+nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
   a(ui-sref="about")
     | ¿Comó funciona?
   a(ui-sref="home")

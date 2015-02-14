@@ -26,10 +26,8 @@
     shell.isDashboard = false;
     shell.confirmation = false;
 
-    //refactor
     shell.shoppingCart = ShoppingCart.getTotal();
 
-    //quitar
     shell.updateShoppingCart =  function(cart){
       shell.shoppingCart = cart;
       return shell.shoppingCart;
@@ -37,6 +35,7 @@
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       shell.isDashboard = toState.data && toState.data.dashboard ? true : false;
+      shell.isAdmin = toState.data && toState.data.admin ? true : false;
       shell.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
       shell.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });
@@ -109,7 +108,6 @@
     }
 
     shell.setError = function(error){
-      // console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       console.log(error);
       shell.errorResponse = error;
       shell.errorBar = true;

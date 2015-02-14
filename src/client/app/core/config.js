@@ -142,121 +142,90 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/sales',
       templateUrl: 'app/admin/sales/sales.template.html',
       controller: 'Sales',
-      controllerAs: 'sales',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'sales'
     })
     .state('admin.subscriptions',{
       url:'/subscriptions',
       templateUrl: 'app/admin/subscriptions/subscriptions.template.html',
       controller: 'Subscriptions',
-      controllerAs: 'subscriptions',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'subscriptions'
     })
     .state('admin.orders',{
       url:'/orders',
       templateUrl: 'app/admin/orders/orders.template.html',
       controller: 'AdminOrders',
-      controllerAs: 'orders',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'orders'
     })
     .state('admin.order',{
       url:'/orders/:objectId',
       templateUrl:'app/order/order.template.html',
       controller: 'Order',
-      controllerAs: 'order',
-      data:{
-        access: true,
-        admin: true,
-      }
+      controllerAs: 'order'
     })
     .state('admin.preorders',{
       url:'/preorders',
       templateUrl: 'app/admin/preorders/preorders.template.html',
       controller: 'Preorders',
-      controllerAs: 'preorders',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'preorders'
     })
     .state('admin.users',{
       url:'/users',
       templateUrl: 'app/admin/users/users.template.html',
       controller: 'Users',
-      controllerAs: 'users',
-      data:{
-        access: true,
-        admin: true
+      controllerAs: 'users'
+    })
+    .state('admin.user',{
+      url:'/users/:userId',
+      template: '<ui-view></ui-view>',
+      controller: 'View',
+      controllerAs: 'view',
+      resolve:{
+        user: function(userApi,$stateParams){
+          return userApi.getUser($stateParams.userId);
+        }
       }
     })
-    .state('admin.userProfile',{
-      url:'/users/:objectId/profile',
+    .state('admin.user.profile',{
+      url:'/profile',
       templateUrl: 'app/admin/users/user.template.html',
       controller: 'UserProfile',
-      controllerAs: 'profile',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'profile'
     })
+    // .state('admin.userProfile',{
+    //   url:'/users/:objectId/profile',
+    //   templateUrl: 'app/admin/users/user.template.html',
+    //   controller: 'UserProfile',
+    //   controllerAs: 'profile'
+    // })
     .state('admin.userOrders',{
       url:'/users/:userId/orders',
       templateUrl: 'app/admin/orders/orders.template.html',
       controller: 'AdminOrders',
-      controllerAs: 'orders',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'orders'
     })
     .state('admin.userPayment',{
       url:'/users/:userId/payment',
       templateUrl: 'app/payment/payment.template.html',
       controller: 'AdminPayment',
-      controllerAs: 'payment',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'payment'
     })
     .state('admin.userAddress',{
       url:'/users/:userId/address',
       templateUrl: 'app/address/address.template.html',
       controller: 'AdminAddress',
-      controllerAs: 'address',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'address'
     })
     .state('admin.userWallet',{
       url:'/users/:userId/wallet',
       templateUrl: 'app/admin/users/wallet/wallet.template.html',
       controller: 'AdminWallet',
-      controllerAs: 'wallet',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'wallet'
     })
     .state('admin.userAccount',{
       url:'/users/:userId/account',
       templateUrl: 'app/admin/users/account/account.template.html',
       controller: 'AdminAccount',
-      controllerAs: 'account',
-      data:{
-        access: true,
-        admin: true
-      }
+      controllerAs: 'account'
     });
   $urlRouterProvider.otherwise('/');
 }

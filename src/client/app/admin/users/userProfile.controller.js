@@ -5,20 +5,14 @@
   .module('app.admin')
   .controller('UserProfile', UserProfile);
 
-  UserProfile.$inject = ['$scope','$stateParams','userApi', 'orderApi'];
+  UserProfile.$inject = ['$scope','userApi', 'orderApi'];
 
-  function UserProfile($scope,$stateParams, userApi, orderApi) {
+  function UserProfile($scope, userApi, orderApi) {
     var shell = $scope.shell;
+    var view = $scope.view;
     var profile =  this;
-    var userId = $stateParams.objectId;
+    profile.user = view.user;
 
-    shell.showLoading();
-    userApi.getUser(userId).then(function(result){
-      profile.user = result;
-    },function(error){
-      shell.setError(error);
-    }).finally(shell.hideLoading);
-    
   }
 
 })();
