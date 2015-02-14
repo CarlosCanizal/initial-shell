@@ -1,5 +1,5 @@
 .section-title
-  | {{profile.user.name}} {{profile.user.lastname}}
+  | {{view.user.name}} {{view.user.lastname}}
 #submenu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
   nav
     a(data-ui-sref="admin.users", data-ng-class="{'active':shell.submenu == 'account'}")

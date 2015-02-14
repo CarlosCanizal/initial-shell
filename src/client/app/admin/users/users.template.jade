@@ -42,7 +42,7 @@
                   th
                     |Descuento
               tbody
-                tr.pointer(ng-repeat="stat in users.list", data-ui-sref="admin.userProfile({objectId : stat.user.objectId})")
+                tr.pointer(ng-repeat="stat in users.list", data-ui-sref="admin.user.profile({userId : stat.user.objectId})")
                   td
                     |{{stat.user.name}} {{stat.user.lastname}}
                   td
