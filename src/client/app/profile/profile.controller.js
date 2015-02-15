@@ -10,23 +10,16 @@
   function Profile($scope, $stateParams, userApi){
     var shell = $scope.shell;
     var profile = this;
+    var view = $scope.view;
 
-    profile.user = shell.currentUser;
-    profile.newPassword = null;
-    profile.oldPassword = null;
-
-    // profile.saveProfile = function(){
-    //   if($scope.profileForm.$valid){
-    //     shell.showLoading();
-    //     // var sessionToken = profile.user.sessionToken;
-    //     userApi.saveProfile(profile.user).then(function(user){
-    //       //siempre que se actualize el user debe ir updateCurrentUser();
-    //       shell.updateCurrentUser();
-    //     },function(error){
-    //       shell.setError(error);
-    //     }).finally(shell.hideLoading);
-    //   }
-    // }
+    if(view){
+      profile.user = view.user;
+    }
+    else{
+      profile.user = shell.currentUser;
+      profile.newPassword = null;
+      profile.oldPassword = null;
+    }
 
     profile.updatePassword = function(){
       if($scope.passwordForm.$valid){

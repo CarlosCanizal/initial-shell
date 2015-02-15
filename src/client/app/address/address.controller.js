@@ -10,14 +10,20 @@
   function Address($scope, userApi, sepomexAPI) {
     var shell = $scope.shell;
     var address = this;
+    var view = $scope.view;
 
     address.address = {};
     address.addresses = [];
     address.addressFormView = false;
     $scope.loading = true;
 
+    if(view)
+      address.user = view.user
+    else
+      address.user = shell.currentUser;
 
-    userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
+
+    userApi.getAddresses(address.user.objectId).then(function(addresses){
       address.addresses =  addresses.results;
     },function(error){
       shell.setError(error);

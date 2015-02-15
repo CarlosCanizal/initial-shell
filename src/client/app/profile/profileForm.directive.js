@@ -12,12 +12,14 @@ function profileForm(userApi){
     link:function(scope,element,attr){
       var shell = scope.shell;
       var profile = scope.profile;
+      var view = scope.view;
 
       scope.saveProfile = function(){
         if(scope.profileForm.$valid){
           shell.showLoading();
-          userApi.saveProfile(profile.user).then(function(user){
-            shell.updateCurrentUser();
+          userApi.saveUserProfile(profile.user).then(function(user){
+            if(view)
+              shell.updateCurrentUser();
           },function(error){
             shell.setError(error);
           }).finally(shell.hideLoading);

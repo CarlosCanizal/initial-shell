@@ -195,14 +195,13 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     })
     .state('admin.user.profile',{
       url:'/profile',
-      templateUrl: 'app/admin/users/user.template.html',
-      controller: 'UserProfile',
+      templateUrl: 'app/profile/profile.template.html',
+      controller: 'Profile',
       controllerAs: 'profile',
        data:{
         menu: 'users',
         submenu: 'profile'
       }
-
     })
     .state('admin.userOrders',{
       url:'/users/:userId/orders',
@@ -223,7 +222,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     .state('admin.user.address',{
       url:'/address',
       templateUrl: 'app/address/address.template.html',
-      controller: 'AdminAddress',
+      controller: 'Address',
       controllerAs: 'address',
        data:{
         menu: 'users',
