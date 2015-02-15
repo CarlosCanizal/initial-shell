@@ -22,9 +22,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>${{sales.result.total}}</td>
-              <td>${{sales.result.discount}}</td>
-              <td>${{sales.result.wallet}}</td>
+              <td>{{sales.result.total | currency}}</td>
+              <td>{{sales.result.discount | currency}}</td>
+              <td>{{sales.result.wallet | currency}}</td>
               <td>{{sales.result.orders.length}}</td>
               <td>{{sales.result.items}}</td>
             </tr>
@@ -60,7 +60,7 @@
                 <td>{{item.type}}</td>
                 <td>{{item.quantity}}</td>
                 <td>{{item.price}}</td>
-                <td>{{item.total}}</td>
+                <td>{{item.total | currency }}</td>
               </tr>
             </tbody>
           </table>

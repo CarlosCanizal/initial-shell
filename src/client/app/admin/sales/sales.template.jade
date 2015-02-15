@@ -30,11 +30,11 @@
           tbody
             tr
               td
-                |${{sales.result.total}}
+                |{{sales.result.total | currency}}
               td
-                |${{sales.result.discount}}
+                |{{sales.result.discount | currency}}
               td
-                |${{sales.result.wallet}}
+                |{{sales.result.wallet | currency}}
               td
                 |{{sales.result.orders.length}}
               td
@@ -75,7 +75,7 @@
                 td
                   |{{item.price}}
                 td
-                  |{{item.total}}
+                  |{{item.total | currency }}
 
 
         
