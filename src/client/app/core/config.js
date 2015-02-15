@@ -177,7 +177,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl: 'app/admin/users/users.template.html',
       controller: 'Users',
       controllerAs: 'users',
-       data:{
+      data:{
         menu: 'users',
         submenu: 'users'
       }
@@ -203,11 +203,15 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'profile'
       }
     })
-    .state('admin.userOrders',{
-      url:'/users/:userId/orders',
+    .state('admin.user.orders',{
+      url:'/orders',
       templateUrl: 'app/admin/orders/orders.template.html',
       controller: 'AdminOrders',
-      controllerAs: 'orders'
+      controllerAs: 'orders',
+      data:{
+        menu: 'users',
+        submenu: 'orders'
+      }
     })
     .state('admin.user.payment',{
       url:'/payment',
