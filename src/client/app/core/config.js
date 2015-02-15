@@ -273,6 +273,26 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         menu: 'users',
         submenu: 'account'
       }
+    })
+    .state('admin.products',{
+      url:'/products',
+      templateUrl: 'app/admin/products/products.template.html',
+      controller: 'Products',
+      controllerAs: 'products',
+       data:{
+        menu: 'products',
+        submenu: 'products'
+      }
+    })
+    .state('admin.product',{
+      url:'/products/:productId',
+      templateUrl: 'app/admin/products/product.template.html',
+      controller: 'Product',
+      controllerAs: 'product',
+       data:{
+        menu: 'products',
+        submenu: 'products'
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

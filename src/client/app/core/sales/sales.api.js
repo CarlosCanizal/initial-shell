@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('app.dashboard')
+  .module('app.admin')
   .factory('salesApi', salesApi);
 
   salesApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];

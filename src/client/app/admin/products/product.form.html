@@ -1,0 +1,18 @@
+
+<form name="productForm" novalidate="" class="pure-form pure-form-stacked">
+  <fieldset>
+    <div class="child-container">
+      <ng-form name="productForm">
+        <div class="form-container">
+          <label for="name" ng-show="productForm.name.$valid || productForm.name.$pristine">Nombre:</label>
+          <label for="name" ng-show="productForm.name.$invalid &amp;&amp; productForm.name.$dirty" class="error">Nombre es requerido:</label>
+          <div class="form-icon">
+            <input id="name" name="name" data-ng-model="product.info.name" required="" class="pure-input-1"/><i ng-show="productForm.name.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.name.$valid &amp;&amp; productForm.name.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.name.$invalid &amp;&amp; productForm.name.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+      </ng-form>
+    </div>
+  </fieldset>
+  <div class="align-center margin-bottom"><a data-ng-click="product.saveProduct()" data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}" class="pure-button button-success button-small"><span data-ng-if="productForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="productForm.$valid"><i class="fa fa-thumbs-o-up"></i>    Guardar</span></a></div>
+  <div class="align-center margin-bottom"><a data-ng-click="product.showForm(false)" class="pure-button">Cancelar</a></div>
+</form>

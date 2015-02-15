@@ -1,0 +1,37 @@
+
+<div id="admin-menu" data-ng-include="'app/admin/orders/menu/orders.menu.html'"></div>
+<div class="filter-title"><span class="publisher-name">Edit Product</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div id="product-form" data-ng-include="'app/admin/products/product.form.html'"></div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Product Info</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div id="product">
+        <div>{{product.info.name}}</div>
+        <div>{{product.info.type}}</div>
+        <div>{{product.info.stock}}</div>
+        <div>{{product.info.price}}</div>
+        <div>{{product.info.publisher}}</div>
+        <div>{{product.info.cover.url}}</div>
+        <div>{{product.info.status}}</div><a data-ng-clic="product.form = true" class="pure-button pure-button-primary button-small">Editar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-title"><span class="publisher-name">Product Stats</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div id="stats"></div>
+    </div>
+  </div>
+</div>
