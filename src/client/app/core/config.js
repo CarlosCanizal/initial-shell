@@ -124,11 +124,6 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl:'app/order/orders.template.html',
       controller: 'Orders',
       // controllerAs: 'order',
-      data:{
-        menu: 'orders',
-        submenu: 'orders'
-
-      }
     })
     .state('admin',{
       url:'/admin',
@@ -158,7 +153,13 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/orders',
       templateUrl: 'app/admin/orders/orders.template.html',
       controller: 'AdminOrders',
-      controllerAs: 'orders'
+      controllerAs: 'orders',
+       data:{
+        menu: 'orders',
+        submenu: 'orders'
+      }
+
+
     })
     .state('admin.order',{
       url:'/orders/:objectId',

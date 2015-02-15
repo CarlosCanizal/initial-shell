@@ -13,6 +13,8 @@
 nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
   a(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
     | Usuarios
+  a(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")
+    | Ordenes
   a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
   span
