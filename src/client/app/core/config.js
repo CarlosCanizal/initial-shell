@@ -244,6 +244,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'wallet'
       }
     })
+    .state('admin.user.series',{
+      url:'/series',
+      templateUrl: 'app/admin/users/series/series.template.html',
+      controller: 'AdminSeries',
+      controllerAs: 'series',
+       data:{
+        menu: 'users',
+        submenu: 'series'
+      }
+    })
     .state('admin.user.account',{
       url:'/account',
       templateUrl: 'app/admin/users/account/account.template.html',

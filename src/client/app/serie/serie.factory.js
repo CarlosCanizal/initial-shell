@@ -21,9 +21,10 @@
     return subscription;
 
 
-    function getSubscriptions(){
-      var user = userApi.currentUser();
-      console.log(user.objectId);
+    function getSubscriptions(user){
+      if(!user)
+        var user = userApi.currentUser();
+      
       var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId},"status":{"$ne":"cancelled"}}
       return Subscription.query({
               where : where,
