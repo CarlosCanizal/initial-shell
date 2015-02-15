@@ -254,6 +254,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'series'
       }
     })
+    .state('admin.user.serie',{
+      url:'/series/:objectId',
+      templateUrl: 'app/admin/users/series/series.template.html',
+      controller: 'Serie',
+      controllerAs: 'series',
+       data:{
+        menu: 'users',
+        submenu: 'series'
+      }
+    })
     .state('admin.user.account',{
       url:'/account',
       templateUrl: 'app/admin/users/account/account.template.html',
