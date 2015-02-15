@@ -1,12 +1,14 @@
 #admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'")
-.filter-title
-  span.publisher-name.
-    Edit Product
-.shelf
-  .inner-shelf
-    .shelf-space
-      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-      product-form
+
+div(data-ng-show="product.form")
+  .filter-title
+    span.publisher-name.
+      Edit Product
+  .shelf
+    .inner-shelf
+      .shelf-space
+        .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+        product-form
 .filter-title
   span.publisher-name.
     Product Info
@@ -29,7 +31,7 @@
           |{{product.info.cover.url}}
         div
           |{{product.info.status}}
-        a.pure-button.pure-button-primary.button-small(data-ng-clic="product.form = true")
+        a.pure-button.pure-button-primary.button-small(data-ng-click="product.form = true")
           |Editar
 .filter-title
   span.publisher-name.

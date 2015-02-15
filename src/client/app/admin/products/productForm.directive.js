@@ -19,6 +19,7 @@ function productForm(productsApi){
         shell.showLoading();
         productsApi.saveProduct(product.info).then(function(result){
           // product.updateProduct(result);
+          console.log(result);
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);
