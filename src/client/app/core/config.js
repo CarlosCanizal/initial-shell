@@ -139,7 +139,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'Sales',
       controllerAs: 'sales',
        data:{
-        menu: 'sales',
+        menu: 'orders',
         submenu: 'sales'
       }
     })
