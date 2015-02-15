@@ -289,7 +289,12 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl: 'app/admin/products/product.template.html',
       controller: 'Product',
       controllerAs: 'product',
-       data:{
+      resolve:{
+        info: function(productsApi,$stateParams){
+          return productsApi.getProduct($stateParams.productId);
+        }
+      },
+      data:{
         menu: 'products',
         submenu: 'products'
       }

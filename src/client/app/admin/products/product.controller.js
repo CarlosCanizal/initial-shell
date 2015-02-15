@@ -5,34 +5,24 @@
   .module('app.admin')
   .controller('Product', Product);
 
-  Product.$inject = ['$scope','$stateParams','productsApi'];
+  Product.$inject = ['$scope','$stateParams','productsApi','info'];
 
-  function Product($scope, $stateParams, productsApi) {
+  function Product($scope, $stateParams, productsApi, info) {
     var shell = $scope.shell;
     var product = this;
-    var productId = $stateParams.productId;
+    // var productId = $stateParams.productId;
 
     product.form = false;
-
-    shell.showLoading();
-    productsApi.getProduct(productId).then(function(result){
-      product.info = result;
-    },function(error){
-      shell.setError(error);
-    }).finally(shell.hideLoading);
+    product.info = info;
 
     product.showForm = function(view){
       product.form = view;
     }
 
-    product.saveProduct = function(){
-      shell.showLoading();
-      productsApi.saveProduct(product.info).then(function(result){
-        console.log(result);
-      },function(error){
-        shell.setError(error);
-      }).finally(shell.hideLoading);
+    product.updateProduct = function(info){
+      product.info  = info;
     }
+
   }
 
 })();

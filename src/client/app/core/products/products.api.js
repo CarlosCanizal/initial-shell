@@ -33,7 +33,11 @@
     }
 
     function saveProduct(params){
-      return Product.update(params).$promise;
+      if(params.objectId)
+        return Product.update(params).$promise;
+      else
+        return Product.save(params).$promise;
+        
     }
 
   }

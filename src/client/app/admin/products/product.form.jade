@@ -8,18 +8,18 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
           label.error(for="name", ng-show="productForm.name.$invalid && productForm.name.$dirty")
             | Nombre es requerido:
           .form-icon
-            input.pure-input-1#name(name="name", data-ng-model="product.info.name", required="")
+            input.pure-input-1#name(name="name", data-ng-model="form.name", required="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.name.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.name.$valid && productForm.name.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.name.$invalid && productForm.name.$dirty")
   .align-center.margin-bottom
-    a.pure-button.button-success.button-small(data-ng-click="product.saveProduct()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
+    a.pure-button.button-success.button-small(data-ng-click="saveProduct()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
       span(data-ng-if="productForm.$invalid")
         | Campos Requeridos    
         i.fa.fa-dot-circle-o.error
       span(data-ng-if="productForm.$valid")
         i.fa.fa-thumbs-o-up
-        |     Guardar
+        | Guardar
   .align-center.margin-bottom
     a.pure-button(data-ng-click="product.showForm(false)")
       | Cancelar
