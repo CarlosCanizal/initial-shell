@@ -19,6 +19,8 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
     | Productos
   a(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}")
     | Publishers
+  a(ui-sref="admin.series", data-ng-class="{'active': shell.menu == 'series'}")
+    | Series
   a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
 nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")

@@ -3,11 +3,11 @@
 
   angular
   .module('app.admin')
-  .controller('NewSerie', NewSerie);
+  .controller('newSerie', newSerie);
 
-  NewSerie.$inject = ['$scope','$stateParams','serieApi'];
+  newSerie.$inject = ['$scope','$stateParams','serieApi'];
 
-  function NewSerie($scope, $stateParams, serieApi) {
+  function newSerie($scope, $stateParams, serieApi) {
     var shell = $scope.shell;
     var serie = this;
 

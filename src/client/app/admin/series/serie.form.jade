@@ -23,16 +23,6 @@ form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.type.$valid && serieForm.type.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.type.$invalid && serieForm.type.$dirty")
         .form-container
-          label(for="stock", ng-show="serieForm.stock.$valid || serieForm.stock.$pristine")
-            | Cantidad:
-          label.error(for="stock", ng-show="serieForm.stock.$invalid && serieForm.stock.$dirty")
-            | Cantidad es requerido:
-          .form-icon
-            input.pure-input-1#stock(name="stock", data-ng-model="form.stock", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.stock.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.stock.$valid && serieForm.stock.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.stock.$invalid && serieForm.stock.$dirty")
-        .form-container
           label(for="price", ng-show="serieForm.price.$valid || serieForm.price.$pristine")
             | Precio:
           label.error(for="price", ng-show="serieForm.price.$invalid && serieForm.price.$dirty")
