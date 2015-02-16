@@ -1,0 +1,41 @@
+#admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'")
+.filter-title
+  span.publisher-name.
+    Publishers
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #publishers(data-ng-if="publishers.list.length > 0")
+        table.info-table
+          thead
+            tr
+              th
+                |Nombre
+              th
+                |Tipo
+              th
+                |Stock
+              th
+                |Status
+              th
+                |Precio
+              th
+                |Editorial
+          tbody
+            tr.pointer(data-ng-repeat="publisher in publishers.list", ui-sref="admin.publisher({publisherId:publisher.objectId})")
+              td
+                |{{publisher.name}}
+              td
+                |{{publisher.type}}
+              td
+                |{{publisher.stock}}
+              td
+                |{{publisher.status}}
+              td
+                |{{publisher.price | currency}}
+              td
+                |{{publisher.publisher}}
+    .margin-1.align-right
+      a.pure-button.button-small.pure-button-primary(data-ui-sref="admin.newPublisher")
+        |Agregar Nuevo

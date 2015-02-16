@@ -308,6 +308,41 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         menu: 'products',
         submenu: 'products'
       }
+    })
+    .state('admin.publishers',{
+      url:'/publishers',
+      templateUrl: 'app/admin/publishers/publishers.template.html',
+      controller: 'Publishers',
+      controllerAs: 'publishers',
+       data:{
+        menu: 'publishers',
+        submenu: 'publishers'
+      }
+    })
+    .state('admin.newPublisher',{
+      url:'/publishers/new',
+      templateUrl: 'app/admin/publishers/new.template.html',
+      controller: 'newPublisher',
+      controllerAs: 'publisher',
+      data:{
+        menu: 'publishers',
+        submenu: 'publishers'
+      }
+    })
+    .state('admin.publisher',{
+      url:'/publishers/:publisherId',
+      templateUrl: 'app/admin/publishers/publisher.template.html',
+      controller: 'Publisher',
+      controllerAs: 'publisher',
+      resolve:{
+        info: function(publisherApi,$stateParams){
+          return publisherApi.getPublisher($stateParams.publisherId);
+        }
+      },
+      data:{
+        menu: 'publishers',
+        submenu: 'publishers'
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

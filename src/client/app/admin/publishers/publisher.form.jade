@@ -1,0 +1,85 @@
+form.pure-form.pure-form-stacked(name="publisherForm", novalidate="")
+  fieldset
+    .child-container
+      ng-form(name="publisherForm")
+        .form-container
+          label(for="name", ng-show="publisherForm.name.$valid || publisherForm.name.$pristine")
+            | Nombre:
+          label.error(for="name", ng-show="publisherForm.name.$invalid && publisherForm.name.$dirty")
+            | Nombre es requerido:
+          .form-icon
+            input.pure-input-1#name(name="name", data-ng-model="form.name", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.name.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.name.$valid && publisherForm.name.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.name.$invalid && publisherForm.name.$dirty")
+        .form-container
+          label(for="type", ng-show="publisherForm.type.$valid || publisherForm.type.$pristine")
+            | Tipo:
+          label.error(for="type", ng-show="publisherForm.type.$invalid && publisherForm.type.$dirty")
+            | Tipo es requerido:
+          .form-icon
+            input.pure-input-1#type(name="type", data-ng-model="form.type", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.type.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.type.$valid && publisherForm.type.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.type.$invalid && publisherForm.type.$dirty")
+        .form-container
+          label(for="stock", ng-show="publisherForm.stock.$valid || publisherForm.stock.$pristine")
+            | Cantidad:
+          label.error(for="stock", ng-show="publisherForm.stock.$invalid && publisherForm.stock.$dirty")
+            | Cantidad es requerido:
+          .form-icon
+            input.pure-input-1#stock(name="stock", data-ng-model="form.stock", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.stock.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.stock.$valid && publisherForm.stock.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.stock.$invalid && publisherForm.stock.$dirty")
+        .form-container
+          label(for="price", ng-show="publisherForm.price.$valid || publisherForm.price.$pristine")
+            | Precio:
+          label.error(for="price", ng-show="publisherForm.price.$invalid && publisherForm.price.$dirty")
+            | Precio es requerido:
+          .form-icon
+            input.pure-input-1#price(name="price", data-ng-model="form.price", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.price.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.price.$valid && publisherForm.price.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.price.$invalid && publisherForm.price.$dirty")
+        .form-container
+          label(for="publisher", ng-show="publisherForm.publisher.$valid || publisherForm.publisher.$pristine")
+            | Editorial:
+          label.error(for="publisher", ng-show="publisherForm.publisher.$invalid && publisherForm.publisher.$dirty")
+            | Editorial es requerido:
+          .form-icon
+            input.pure-input-1#publisher(name="publisher", data-ng-model="form.publisher", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.publisher.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.publisher.$valid && publisherForm.publisher.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.publisher.$invalid && publisherForm.publisher.$dirty")
+        //- .form-container
+        //-   label(for="cover", ng-show="publisherForm.cover.$valid || publisherForm.cover.$pristine")
+        //-     | Imagen:
+        //-   label.error(for="cover", ng-show="publisherForm.cover.$invalid && publisherForm.cover.$dirty")
+        //-     | Imagen es requerido:
+        //-   .form-icon
+        //-     input.pure-input-1#cover(name="cover", data-ng-model="form.cover.url", required="")
+        //-     i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.cover.$pristine")
+        //-     i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.cover.$valid && publisherForm.cover.$dirty")
+        //-     i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.cover.$invalid && publisherForm.cover.$dirty")
+        .form-container
+          label(for="status", ng-show="publisherForm.status.$valid || publisherForm.status.$pristine")
+            | Status:
+          label.error(for="status", ng-show="publisherForm.status.$invalid && publisherForm.status.$dirty")
+            | Status es requerido:
+          .form-icon
+            input.pure-input-1#status(name="status", data-ng-model="form.status", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.status.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.status.$valid && publisherForm.status.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.status.$invalid && publisherForm.status.$dirty")
+  .align-center.margin-bottom
+    a.pure-button.button-success.button-small(data-ng-click="saveProduct()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
+      span(data-ng-if="publisherForm.$invalid")
+        | Campos Requeridos    
+        i.fa.fa-dot-circle-o.error
+      span(data-ng-if="publisherForm.$valid")
+        i.fa.fa-thumbs-o-up
+        | Guardar
+  .align-center.margin-bottom
+    a.pure-button(data-ng-click="publisher.showForm(false)")
+      | Cancelar

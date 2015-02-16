@@ -1,0 +1,43 @@
+#admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'")
+
+div(data-ng-show="publisher.form")
+  .filter-title
+    span.publisher-name.
+      Edit Publisher
+  .shelf
+    .inner-shelf
+      .shelf-space
+        .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+        publisher-form
+.filter-title
+  span.publisher-name.
+    Publisher Info
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #publisher
+        div
+          |{{publisher.info.name}}
+        div
+          |{{publisher.info.type}}
+        div
+          |{{publisher.info.stock}}
+        div
+          |{{publisher.info.price}}
+        div
+          |{{publisher.info.publisher}}
+        div
+          |{{publisher.info.cover.url}}
+        div
+          |{{publisher.info.status}}
+        a.pure-button.pure-button-primary.button-small(data-ng-click="publisher.form = true")
+          |Editar
+.filter-title
+  span.publisher-name.
+    Publisher Stats
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #stats
