@@ -1,0 +1,53 @@
+
+<form name="productForm" novalidate="" class="pure-form pure-form-stacked">
+  <fieldset>
+    <div class="child-container">
+      <ng-form name="productForm">
+        <div class="form-container">
+          <label for="name" ng-show="productForm.name.$valid || productForm.name.$pristine">Nombre:</label>
+          <label for="name" ng-show="productForm.name.$invalid &amp;&amp; productForm.name.$dirty" class="error">Nombre es requerido:</label>
+          <div class="form-icon">
+            <input id="name" name="name" data-ng-model="form.name" required="" class="pure-input-1"/><i ng-show="productForm.name.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.name.$valid &amp;&amp; productForm.name.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.name.$invalid &amp;&amp; productForm.name.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="type" ng-show="productForm.type.$valid || productForm.type.$pristine">Tipo:</label>
+          <label for="type" ng-show="productForm.type.$invalid &amp;&amp; productForm.type.$dirty" class="error">Tipo es requerido:</label>
+          <div class="form-icon">
+            <input id="type" name="type" data-ng-model="form.type" required="" class="pure-input-1"/><i ng-show="productForm.type.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.type.$valid &amp;&amp; productForm.type.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.type.$invalid &amp;&amp; productForm.type.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="stock" ng-show="productForm.stock.$valid || productForm.stock.$pristine">Cantidad:</label>
+          <label for="stock" ng-show="productForm.stock.$invalid &amp;&amp; productForm.stock.$dirty" class="error">Cantidad es requerido:</label>
+          <div class="form-icon">
+            <input id="stock" name="stock" data-ng-model="form.stock" required="" class="pure-input-1"/><i ng-show="productForm.stock.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.stock.$valid &amp;&amp; productForm.stock.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.stock.$invalid &amp;&amp; productForm.stock.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="price" ng-show="productForm.price.$valid || productForm.price.$pristine">Precio:</label>
+          <label for="price" ng-show="productForm.price.$invalid &amp;&amp; productForm.price.$dirty" class="error">Precio es requerido:</label>
+          <div class="form-icon">
+            <input id="price" name="price" data-ng-model="form.price" required="" class="pure-input-1"/><i ng-show="productForm.price.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.price.$valid &amp;&amp; productForm.price.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.price.$invalid &amp;&amp; productForm.price.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="publisher" ng-show="productForm.publisher.$valid || productForm.publisher.$pristine">Editorial:</label>
+          <label for="publisher" ng-show="productForm.publisher.$invalid &amp;&amp; productForm.publisher.$dirty" class="error">Editorial es requerido:</label>
+          <div class="form-icon">
+            <input id="publisher" name="publisher" data-ng-model="form.publisher" required="" class="pure-input-1"/><i ng-show="productForm.publisher.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.publisher.$valid &amp;&amp; productForm.publisher.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.publisher.$invalid &amp;&amp; productForm.publisher.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="status" ng-show="productForm.status.$valid || productForm.status.$pristine">Status:</label>
+          <label for="status" ng-show="productForm.status.$invalid &amp;&amp; productForm.status.$dirty" class="error">Status es requerido:</label>
+          <div class="form-icon">
+            <input id="status" name="status" data-ng-model="form.status" required="" class="pure-input-1"/><i ng-show="productForm.status.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.status.$valid &amp;&amp; productForm.status.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.status.$invalid &amp;&amp; productForm.status.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+      </ng-form>
+    </div>
+  </fieldset>
+  <div class="align-center margin-bottom"><a data-ng-click="saveProduct()" data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}" class="pure-button button-success button-small"><span data-ng-if="productForm.$invalid">Campos Requeridos    <i class="fa fa-dot-circle-o error"></i></span><span data-ng-if="productForm.$valid"><i class="fa fa-thumbs-o-up"></i>Guardar</span></a></div>
+  <div class="align-center margin-bottom"><a data-ng-click="product.showForm(false)" class="pure-button">Cancelar</a></div>
+</form>

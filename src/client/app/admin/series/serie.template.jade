@@ -1,0 +1,43 @@
+#admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'")
+
+div(data-ng-show="serie.form")
+  .filter-title
+    span.publisher-name.
+      Edit Serie
+  .shelf
+    .inner-shelf
+      .shelf-space
+        .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+        serie-form
+.filter-title
+  span.publisher-name.
+    Serie Info
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #serie
+        div
+          |{{serie.info.name}}
+        div
+          |{{serie.info.type}}
+        div
+          |{{serie.info.stock}}
+        div
+          |{{serie.info.price}}
+        div
+          |{{serie.info.publisher}}
+        div
+          |{{serie.info.cover.url}}
+        div
+          |{{serie.info.status}}
+        a.pure-button.pure-button-primary.button-small(data-ng-click="serie.form = true")
+          |Editar
+.filter-title
+  span.publisher-name.
+    Serie Stats
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #stats

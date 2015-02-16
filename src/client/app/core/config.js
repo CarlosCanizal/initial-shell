@@ -343,6 +343,41 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         menu: 'publishers',
         submenu: 'publishers'
       }
+    })
+    .state('admin.series',{
+      url:'/series',
+      templateUrl: 'app/admin/series/series.template.html',
+      controller: 'Series',
+      controllerAs: 'series',
+       data:{
+        menu: 'series',
+        submenu: 'series'
+      }
+    })
+    .state('admin.newSerie',{
+      url:'/series/new',
+      templateUrl: 'app/admin/series/new.template.html',
+      controller: 'newSerie',
+      controllerAs: 'serie',
+      data:{
+        menu: 'series',
+        submenu: 'series'
+      }
+    })
+    .state('admin.serie',{
+      url:'/series/:serieId',
+      templateUrl: 'app/admin/series/serie.template.html',
+      controller: 'Serie',
+      controllerAs: 'serie',
+      resolve:{
+        info: function(serieApi,$stateParams){
+          return serieApi.getSerie($stateParams.serieId);
+        }
+      },
+      data:{
+        menu: 'series',
+        submenu: 'series'
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

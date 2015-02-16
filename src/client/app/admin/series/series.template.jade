@@ -1,0 +1,41 @@
+#admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'")
+.filter-title
+  span.publisher-name.
+    Serieos
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #series(data-ng-if="series.list.length > 0")
+        table.info-table
+          thead
+            tr
+              th
+                |Nombre
+              th
+                |Tipo
+              th
+                |Stock
+              th
+                |Status
+              th
+                |Precio
+              th
+                |Editorial
+          tbody
+            tr.pointer(data-ng-repeat="serie in series.list", ui-sref="admin.serie({serieId:serie.objectId})")
+              td
+                |{{serie.name}}
+              td
+                |{{serie.type}}
+              td
+                |{{serie.stock}}
+              td
+                |{{serie.status}}
+              td
+                |{{serie.price | currency}}
+              td
+                |{{serie.publisher}}
+    .margin-1.align-right
+      a.pure-button.button-small.pure-button-primary(data-ui-sref="admin.newSerie")
+        |Agregar Nuevo

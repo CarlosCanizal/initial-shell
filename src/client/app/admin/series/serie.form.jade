@@ -1,0 +1,85 @@
+form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
+  fieldset
+    .child-container
+      ng-form(name="serieForm")
+        .form-container
+          label(for="name", ng-show="serieForm.name.$valid || serieForm.name.$pristine")
+            | Nombre:
+          label.error(for="name", ng-show="serieForm.name.$invalid && serieForm.name.$dirty")
+            | Nombre es requerido:
+          .form-icon
+            input.pure-input-1#name(name="name", data-ng-model="form.name", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.name.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.name.$valid && serieForm.name.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.name.$invalid && serieForm.name.$dirty")
+        .form-container
+          label(for="type", ng-show="serieForm.type.$valid || serieForm.type.$pristine")
+            | Tipo:
+          label.error(for="type", ng-show="serieForm.type.$invalid && serieForm.type.$dirty")
+            | Tipo es requerido:
+          .form-icon
+            input.pure-input-1#type(name="type", data-ng-model="form.type", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.type.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.type.$valid && serieForm.type.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.type.$invalid && serieForm.type.$dirty")
+        .form-container
+          label(for="stock", ng-show="serieForm.stock.$valid || serieForm.stock.$pristine")
+            | Cantidad:
+          label.error(for="stock", ng-show="serieForm.stock.$invalid && serieForm.stock.$dirty")
+            | Cantidad es requerido:
+          .form-icon
+            input.pure-input-1#stock(name="stock", data-ng-model="form.stock", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.stock.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.stock.$valid && serieForm.stock.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.stock.$invalid && serieForm.stock.$dirty")
+        .form-container
+          label(for="price", ng-show="serieForm.price.$valid || serieForm.price.$pristine")
+            | Precio:
+          label.error(for="price", ng-show="serieForm.price.$invalid && serieForm.price.$dirty")
+            | Precio es requerido:
+          .form-icon
+            input.pure-input-1#price(name="price", data-ng-model="form.price", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.price.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.price.$valid && serieForm.price.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.price.$invalid && serieForm.price.$dirty")
+        .form-container
+          label(for="publisher", ng-show="serieForm.publisher.$valid || serieForm.publisher.$pristine")
+            | Editorial:
+          label.error(for="publisher", ng-show="serieForm.publisher.$invalid && serieForm.publisher.$dirty")
+            | Editorial es requerido:
+          .form-icon
+            input.pure-input-1#publisher(name="publisher", data-ng-model="form.publisher", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.publisher.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.publisher.$valid && serieForm.publisher.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.publisher.$invalid && serieForm.publisher.$dirty")
+        //- .form-container
+        //-   label(for="cover", ng-show="serieForm.cover.$valid || serieForm.cover.$pristine")
+        //-     | Imagen:
+        //-   label.error(for="cover", ng-show="serieForm.cover.$invalid && serieForm.cover.$dirty")
+        //-     | Imagen es requerido:
+        //-   .form-icon
+        //-     input.pure-input-1#cover(name="cover", data-ng-model="form.cover.url", required="")
+        //-     i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.cover.$pristine")
+        //-     i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.cover.$valid && serieForm.cover.$dirty")
+        //-     i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.cover.$invalid && serieForm.cover.$dirty")
+        .form-container
+          label(for="status", ng-show="serieForm.status.$valid || serieForm.status.$pristine")
+            | Status:
+          label.error(for="status", ng-show="serieForm.status.$invalid && serieForm.status.$dirty")
+            | Status es requerido:
+          .form-icon
+            input.pure-input-1#status(name="status", data-ng-model="form.status", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.status.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.status.$valid && serieForm.status.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.status.$invalid && serieForm.status.$dirty")
+  .align-center.margin-bottom
+    a.pure-button.button-success.button-small(data-ng-click="saveSerie()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
+      span(data-ng-if="serieForm.$invalid")
+        | Campos Requeridos    
+        i.fa.fa-dot-circle-o.error
+      span(data-ng-if="serieForm.$valid")
+        i.fa.fa-thumbs-o-up
+        | Guardar
+  .align-center.margin-bottom
+    a.pure-button(data-ng-click="serie.showForm(false)")
+      | Cancelar
