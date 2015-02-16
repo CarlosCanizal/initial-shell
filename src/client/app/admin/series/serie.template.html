@@ -1,34 +1,34 @@
 
 <div id="admin-menu" data-ng-include="'app/admin/orders/menu/orders.menu.html'"></div>
-<div data-ng-show="product.form">
-  <div class="filter-title"><span class="publisher-name">Edit Product</span></div>
+<div data-ng-show="serie.form">
+  <div class="filter-title"><span class="publisher-name">Edit Serie</span></div>
   <div class="shelf">
     <div class="inner-shelf">
       <div class="shelf-space">
         <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-        <product-form></product-form>
+        <serie-form></serie-form>
       </div>
     </div>
   </div>
 </div>
-<div class="filter-title"><span class="publisher-name">Product Info</span></div>
+<div class="filter-title"><span class="publisher-name">Serie Info</span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-      <div id="product">
-        <div>{{product.info.name}}</div>
-        <div>{{product.info.type}}</div>
-        <div>{{product.info.stock}}</div>
-        <div>{{product.info.price}}</div>
-        <div>{{product.info.publisher}}</div>
-        <div>{{product.info.cover.url}}</div>
-        <div>{{product.info.status}}</div><a data-ng-click="product.form = true" class="pure-button pure-button-primary button-small">Editar</a>
+      <div id="serie">
+        <div>{{serie.info.name}}</div>
+        <div>{{serie.info.type}}</div>
+        <div>{{serie.info.stock}}</div>
+        <div>{{serie.info.price}}</div>
+        <div>{{serie.info.publisher}}</div>
+        <div>{{serie.info.cover.url}}</div>
+        <div>{{serie.info.status}}</div><a data-ng-click="serie.form = true" class="pure-button pure-button-primary button-small">Editar</a>
       </div>
     </div>
   </div>
 </div>
-<div class="filter-title"><span class="publisher-name">Product Stats</span></div>
+<div class="filter-title"><span class="publisher-name">Serie Stats</span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
