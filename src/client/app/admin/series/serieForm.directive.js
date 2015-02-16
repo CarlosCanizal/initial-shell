@@ -15,12 +15,12 @@ function serieForm($state, serieApi){
       var serie = scope.serie;
       scope.form = serie.info;
 
-      scope.saveProduct = function(){
+      scope.saveSerie = function(){
         shell.showLoading();
         serie.info.stock = parseInt(serie.info.stock);
         serie.info.price = parseFloat(serie.info.price);
 
-        serieApi.saveProduct(serie.info).then(function(result){          
+        serieApi.saveSerie(serie.info).then(function(result){          
           if(serie.info.objectId)
             serie.showForm(false);
           else{
