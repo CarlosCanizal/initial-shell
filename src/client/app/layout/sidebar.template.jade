@@ -15,6 +15,10 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
     | Usuarios
   a(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")
     | Ordenes
+  a(ui-sref="admin.products", data-ng-class="{'active': shell.menu == 'products'}")
+    | Productos
+  a(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}")
+    | Publishers
   a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
 nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
