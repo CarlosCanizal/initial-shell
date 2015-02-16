@@ -32,11 +32,9 @@
           </div>
         </div>
         <div class="form-container">
-          <label for="publisher" ng-show="productForm.publisher.$valid || productForm.publisher.$pristine">Editorial:</label>
-          <label for="publisher" ng-show="productForm.publisher.$invalid &amp;&amp; productForm.publisher.$dirty" class="error">Editorial es requerido:</label>
-          <div class="form-icon">
-            <input id="publisher" name="publisher" data-ng-model="form.publisher" required="" class="pure-input-1"/><i ng-show="productForm.publisher.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.publisher.$valid &amp;&amp; productForm.publisher.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.publisher.$invalid &amp;&amp; productForm.publisher.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
+          <label for="district">Editorial:</label>
+          <select data-ng-model="publisher" data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.name for item in product.publishers track by item.name" class="complete-1"></select>
+          <input type="hidden" data-ng-model="form.publisher"/>
         </div>
         <div class="form-container">
           <label for="status" ng-show="productForm.status.$valid || productForm.status.$pristine">Status:</label>

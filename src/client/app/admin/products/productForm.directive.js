@@ -2,9 +2,9 @@ angular
   .module('app.cart')
   .directive('productForm',productForm);
 
-productForm.$inject = ['$state','productsApi'];
+productForm.$inject = ['$state','productsApi','publisherApi'];
 
-function productForm($state, productsApi){
+function productForm($state, productsApi, publisherApi){
   return{
     restrict: 'EA',
     templateUrl: 'app/admin/products/product.form.html',
@@ -14,6 +14,22 @@ function productForm($state, productsApi){
       var shell =  scope.shell;
       var product = scope.product;
       scope.form = product.info;
+      scope.publisher = {name:null};
+      product.publishers = [];
+
+      publisherApi.getPublishers().then(function(result){
+        var publishers = result.results;
+        product.publishers = publishers;
+        if(scope.form.publisher){
+          scope.publisher.name = scope.form.publisher;
+        }
+        else{
+          scope.publisher = product.publishers[0];
+          scope.form.publisher = scope.publisher.name;
+        }
+      },function(error){
+        shell.setError(errpr);
+      });
 
       scope.saveProduct = function(){
         shell.showLoading();
