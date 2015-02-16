@@ -33,6 +33,9 @@ div(data-ng-show="product.form")
           |{{product.info.status}}
         a.pure-button.pure-button-primary.button-small(data-ng-click="product.form = true")
           |Editar
+        a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Producto?', data-confirm="deleteProduct(product.info.objectId, $index)", confirm-message)
+          i.fa.fa-trash 
+          |Borrar
 .filter-title
   span.publisher-name.
     Product Stats

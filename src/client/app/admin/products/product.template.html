@@ -23,7 +23,7 @@
         <div>{{product.info.price}}</div>
         <div>{{product.info.publisher}}</div>
         <div>{{product.info.cover.url}}</div>
-        <div>{{product.info.status}}</div><a data-ng-click="product.form = true" class="pure-button pure-button-primary button-small">Editar</a>
+        <div>{{product.info.status}}</div><a data-ng-click="product.form = true" class="pure-button pure-button-primary button-small">Editar</a><a data-ng-click="showModal()" data-question="¿Eliminar Producto?" data-confirm="deleteProduct(product.info.objectId, $index)" confirm-message="confirm-message" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a>
       </div>
     </div>
   </div>

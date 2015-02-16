@@ -15,7 +15,8 @@
     var product = {
       getProducts: getProducts,
       getProduct: getProduct,
-      saveProduct: saveProduct
+      saveProduct: saveProduct,
+      deleteProduct: deleteProduct
     };
 
     return product;
@@ -37,8 +38,12 @@
         return Product.update(params).$promise;
       else
         return Product.save(params).$promise;
-        
     }
+
+    function deleteProduct(objectId){
+      return Product.delete({objectId: objectId}).$promise;
+    }
+
 
   }
 })();
