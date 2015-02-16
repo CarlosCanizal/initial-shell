@@ -52,16 +52,16 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.publisher.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.publisher.$valid && productForm.publisher.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.publisher.$invalid && productForm.publisher.$dirty")
-        .form-container
-          label(for="cover", ng-show="productForm.cover.$valid || productForm.cover.$pristine")
-            | Imagen:
-          label.error(for="cover", ng-show="productForm.cover.$invalid && productForm.cover.$dirty")
-            | Imagen es requerido:
-          .form-icon
-            input.pure-input-1#cover(name="cover", data-ng-model="form.cover.url", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.cover.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.cover.$valid && productForm.cover.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.cover.$invalid && productForm.cover.$dirty")
+        //- .form-container
+        //-   label(for="cover", ng-show="productForm.cover.$valid || productForm.cover.$pristine")
+        //-     | Imagen:
+        //-   label.error(for="cover", ng-show="productForm.cover.$invalid && productForm.cover.$dirty")
+        //-     | Imagen es requerido:
+        //-   .form-icon
+        //-     input.pure-input-1#cover(name="cover", data-ng-model="form.cover.url", required="")
+        //-     i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.cover.$pristine")
+        //-     i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.cover.$valid && productForm.cover.$dirty")
+        //-     i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.cover.$invalid && productForm.cover.$dirty")
         .form-container
           label(for="status", ng-show="productForm.status.$valid || productForm.status.$pristine")
             | Status:

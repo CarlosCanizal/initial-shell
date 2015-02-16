@@ -284,6 +284,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'products'
       }
     })
+    .state('admin.newProduct',{
+      url:'/products/new',
+      templateUrl: 'app/admin/products/new.template.html',
+      controller: 'newProduct',
+      controllerAs: 'product',
+      data:{
+        menu: 'products',
+        submenu: 'products'
+      }
+    })
     .state('admin.product',{
       url:'/products/:productId',
       templateUrl: 'app/admin/products/product.template.html',

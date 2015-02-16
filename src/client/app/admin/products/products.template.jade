@@ -23,7 +23,7 @@
               th
                 |Editorial
           tbody
-            tr(data-ng-repeat="product in products.list", ui-sref="admin.product({productId:product.objectId})")
+            tr.pointer(data-ng-repeat="product in products.list", ui-sref="admin.product({productId:product.objectId})")
               td
                 |{{product.name}}
               td
@@ -36,3 +36,6 @@
                 |{{product.price | currency}}
               td
                 |{{product.publisher}}
+    .margin-1.align-right
+      a.pure-button.button-small.pure-button-primary(data-ui-sref="admin.newProduct")
+        |Agregar Nuevo

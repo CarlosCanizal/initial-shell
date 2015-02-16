@@ -2,9 +2,9 @@ angular
   .module('app.cart')
   .directive('productForm',productForm);
 
-productForm.$inject = ['productsApi'];
+productForm.$inject = ['$state','productsApi'];
 
-function productForm(productsApi){
+function productForm($state, productsApi){
   return{
     restrict: 'EA',
     templateUrl: 'app/admin/products/product.form.html',
@@ -20,9 +20,14 @@ function productForm(productsApi){
         product.info.stock = parseInt(product.info.stock);
         product.info.price = parseFloat(product.info.price);
 
-        productsApi.saveProduct(product.info).then(function(result){
-          // product.updateProduct(result);
-          product.showForm(false);
+        productsApi.saveProduct(product.info).then(function(result){          
+          if(product.info.objectId)
+            product.showForm(false);
+          else{
+            $state.go('admin.product',{productId:result.objectId})
+          }
+
+
           console.log(result);
         },function(error){
           shell.setError(error);

@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr data-ng-repeat="product in products.list" ui-sref="admin.product({productId:product.objectId})">
+            <tr data-ng-repeat="product in products.list" ui-sref="admin.product({productId:product.objectId})" class="pointer">
               <td>{{product.name}}</td>
               <td>{{product.type}}</td>
               <td>{{product.stock}}</td>
@@ -30,5 +30,6 @@
         </table>
       </div>
     </div>
+    <div class="margin-1 align-right"><a data-ui-sref="admin.newProduct" class="pure-button button-small pure-button-primary">Agregar Nuevo</a></div>
   </div>
 </div>
