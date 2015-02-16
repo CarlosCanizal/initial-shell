@@ -12,6 +12,66 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.name.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.name.$valid && productForm.name.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.name.$invalid && productForm.name.$dirty")
+        .form-container
+          label(for="type", ng-show="productForm.type.$valid || productForm.type.$pristine")
+            | Tipo:
+          label.error(for="type", ng-show="productForm.type.$invalid && productForm.type.$dirty")
+            | Tipo es requerido:
+          .form-icon
+            input.pure-input-1#type(name="type", data-ng-model="form.type", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.type.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.type.$valid && productForm.type.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.type.$invalid && productForm.type.$dirty")
+        .form-container
+          label(for="stock", ng-show="productForm.stock.$valid || productForm.stock.$pristine")
+            | Cantidad:
+          label.error(for="stock", ng-show="productForm.stock.$invalid && productForm.stock.$dirty")
+            | Cantidad es requerido:
+          .form-icon
+            input.pure-input-1#stock(name="stock", data-ng-model="form.stock", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.stock.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.stock.$valid && productForm.stock.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.stock.$invalid && productForm.stock.$dirty")
+        .form-container
+          label(for="price", ng-show="productForm.price.$valid || productForm.price.$pristine")
+            | Precio:
+          label.error(for="price", ng-show="productForm.price.$invalid && productForm.price.$dirty")
+            | Precio es requerido:
+          .form-icon
+            input.pure-input-1#price(name="price", data-ng-model="form.price", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.price.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.price.$valid && productForm.price.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.price.$invalid && productForm.price.$dirty")
+        .form-container
+          label(for="publisher", ng-show="productForm.publisher.$valid || productForm.publisher.$pristine")
+            | Editorial:
+          label.error(for="publisher", ng-show="productForm.publisher.$invalid && productForm.publisher.$dirty")
+            | Editorial es requerido:
+          .form-icon
+            input.pure-input-1#publisher(name="publisher", data-ng-model="form.publisher", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.publisher.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.publisher.$valid && productForm.publisher.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.publisher.$invalid && productForm.publisher.$dirty")
+        .form-container
+          label(for="cover", ng-show="productForm.cover.$valid || productForm.cover.$pristine")
+            | Imagen:
+          label.error(for="cover", ng-show="productForm.cover.$invalid && productForm.cover.$dirty")
+            | Imagen es requerido:
+          .form-icon
+            input.pure-input-1#cover(name="cover", data-ng-model="form.cover.url", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.cover.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.cover.$valid && productForm.cover.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.cover.$invalid && productForm.cover.$dirty")
+        .form-container
+          label(for="status", ng-show="productForm.status.$valid || productForm.status.$pristine")
+            | Status:
+          label.error(for="status", ng-show="productForm.status.$invalid && productForm.status.$dirty")
+            | Status es requerido:
+          .form-icon
+            input.pure-input-1#status(name="status", data-ng-model="form.status", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.status.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.status.$valid && productForm.status.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.status.$invalid && productForm.status.$dirty")
   .align-center.margin-bottom
     a.pure-button.button-success.button-small(data-ng-click="saveProduct()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
       span(data-ng-if="productForm.$invalid")

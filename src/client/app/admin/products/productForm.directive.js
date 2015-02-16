@@ -17,8 +17,12 @@ function productForm(productsApi){
 
       scope.saveProduct = function(){
         shell.showLoading();
+        product.info.stock = parseInt(product.info.stock);
+        product.info.price = parseFloat(product.info.price);
+
         productsApi.saveProduct(product.info).then(function(result){
           // product.updateProduct(result);
+          product.showForm(false);
           console.log(result);
         },function(error){
           shell.setError(error);
