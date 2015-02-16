@@ -20,14 +20,12 @@ function publisherForm($state, publisherApi){
         publisher.info.stock = parseInt(publisher.info.stock);
         publisher.info.price = parseFloat(publisher.info.price);
 
-        publisherApi.saveProduct(publisher.info).then(function(result){          
+        publisherApi.savePublisher(publisher.info).then(function(result){          
           if(publisher.info.objectId)
             publisher.showForm(false);
           else{
             $state.go('admin.publisher',{publisherId:result.objectId})
           }
-
-
           console.log(result);
         },function(error){
           shell.setError(error);

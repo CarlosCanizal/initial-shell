@@ -17,13 +17,7 @@
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div id="publisher">
-        <div>{{publisher.info.name}}</div>
-        <div>{{publisher.info.type}}</div>
-        <div>{{publisher.info.stock}}</div>
-        <div>{{publisher.info.price}}</div>
-        <div>{{publisher.info.publisher}}</div>
-        <div>{{publisher.info.cover.url}}</div>
-        <div>{{publisher.info.status}}</div><a data-ng-click="publisher.form = true" class="pure-button pure-button-primary button-small">Editar</a>
+        <div>{{publisher.info.name}}</div><a data-ng-click="publisher.form = true" class="pure-button pure-button-primary button-small">Editar</a>
       </div>
     </div>
   </div>
