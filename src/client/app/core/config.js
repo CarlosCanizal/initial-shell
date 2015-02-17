@@ -291,7 +291,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controllerAs: 'product',
       data:{
         menu: 'products',
-        submenu: 'products'
+        submenu: 'product'
       }
     })
     .state('admin.product',{
@@ -306,7 +306,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       },
       data:{
         menu: 'products',
-        submenu: 'products'
+        submenu: 'product'
       }
     })
     .state('admin.publishers',{
@@ -326,7 +326,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controllerAs: 'publisher',
       data:{
         menu: 'publishers',
-        submenu: 'publishers'
+        submenu: 'publisher'
       }
     })
     .state('admin.publisher',{

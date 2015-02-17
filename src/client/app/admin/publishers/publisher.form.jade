@@ -12,6 +12,16 @@ form.pure-form.pure-form-stacked(name="publisherForm", novalidate="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.name.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.name.$valid && publisherForm.name.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.name.$invalid && publisherForm.name.$dirty")
+        .form-container
+          label(for="label", ng-show="publisherForm.label.$valid || publisherForm.label.$pristine")
+            | Label:
+          label.error(for="label", ng-show="publisherForm.label.$invalid && publisherForm.label.$dirty")
+            | Label es requerido:
+          .form-icon
+            input.pure-input-1#label(name="label", data-ng-model="form.label", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="publisherForm.label.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="publisherForm.label.$valid && publisherForm.label.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="publisherForm.label.$invalid && publisherForm.label.$dirty")
   .align-center.margin-bottom
     a.pure-button.button-success.button-small(data-ng-click="saveProduct()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
       span(data-ng-if="publisherForm.$invalid")
@@ -20,6 +30,9 @@ form.pure-form.pure-form-stacked(name="publisherForm", novalidate="")
       span(data-ng-if="publisherForm.$valid")
         i.fa.fa-thumbs-o-up
         | Guardar
-  .align-center.margin-bottom
+  .align-center.margin-bottom(data-ng-if="form.objectId")
     a.pure-button(data-ng-click="publisher.showForm(false)")
       | Cancelar
+  .align-center.margin-bottom(data-ng-if="!form.objectId")
+    a.pure-button(data-ui-sref="admin.products")
+      | Regresar

@@ -1,4 +1,4 @@
-#admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'")
+#admin-menu(data-ng-include="'app/admin/publishers/menu/publishers.menu.html'")
 .filter-title
   span.publisher-name.
     Publishers
@@ -13,29 +13,13 @@
               th
                 |Nombre
               th
-                |Tipo
-              th
-                |Stock
-              th
-                |Status
-              th
-                |Precio
-              th
-                |Editorial
+                |Label
           tbody
             tr.pointer(data-ng-repeat="publisher in publishers.list", ui-sref="admin.publisher({publisherId:publisher.objectId})")
               td
                 |{{publisher.name}}
               td
-                |{{publisher.type}}
-              td
-                |{{publisher.stock}}
-              td
-                |{{publisher.status}}
-              td
-                |{{publisher.price | currency}}
-              td
-                |{{publisher.publisher}}
+                |{{publisher.label}}
     .margin-1.align-right
       a.pure-button.button-small.pure-button-primary(data-ui-sref="admin.newPublisher")
         |Agregar Nuevo

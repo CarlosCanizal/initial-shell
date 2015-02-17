@@ -80,6 +80,9 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
       span(data-ng-if="productForm.$valid")
         i.fa.fa-thumbs-o-up
         | Guardar
-  .align-center.margin-bottom
+  .align-center.margin-bottom(data-ng-if="form.objectId")
     a.pure-button(data-ng-click="product.showForm(false)")
       | Cancelar
+  .align-center.margin-bottom(data-ng-if="!form.objectId")
+    a.pure-button(data-ui-sref="admin.publishers")
+      | Regresar

@@ -1,5 +1,5 @@
 
-<div id="admin-menu" data-ng-include="'app/admin/orders/menu/orders.menu.html'"></div>
+<div id="admin-menu" data-ng-include="'app/admin/publishers/menu/publishers.menu.html'"></div>
 <div class="filter-title"><span class="publisher-name">Publishers</span></div>
 <div class="shelf">
   <div class="inner-shelf">
@@ -10,21 +10,13 @@
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Tipo</th>
-              <th>Stock</th>
-              <th>Status</th>
-              <th>Precio</th>
-              <th>Editorial</th>
+              <th>Label</th>
             </tr>
           </thead>
           <tbody>
             <tr data-ng-repeat="publisher in publishers.list" ui-sref="admin.publisher({publisherId:publisher.objectId})" class="pointer">
               <td>{{publisher.name}}</td>
-              <td>{{publisher.type}}</td>
-              <td>{{publisher.stock}}</td>
-              <td>{{publisher.status}}</td>
-              <td>{{publisher.price | currency}}</td>
-              <td>{{publisher.publisher}}</td>
+              <td>{{publisher.label}}</td>
             </tr>
           </tbody>
         </table>

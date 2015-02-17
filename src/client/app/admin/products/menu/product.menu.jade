@@ -1,0 +1,6 @@
+.section-title
+  | Producto
+#submenu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
+  nav
+    a(data-ui-sref="admin.products", data-ng-class="{'active':shell.submenu == 'products'}")
+      |Regresar

@@ -1,0 +1,6 @@
+.section-title
+  | Publisher
+#submenu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
+  nav
+    a(data-ui-sref="admin.publishers", data-ng-class="{'active':shell.submenu == 'publisher'}")
+      |Regresar
