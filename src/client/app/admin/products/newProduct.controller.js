@@ -11,9 +11,8 @@
     var shell = $scope.shell;
     var product = this;
     product.types = productsApi.getTypes();
-    product.info = {type:product.types[0].name};
-
-
+    product.statusList = productsApi.getStatusList();
+    product.info = {type:product.types[0].name, status: product.statusList[0].name};
   }
 
 })();

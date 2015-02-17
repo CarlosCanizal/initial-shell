@@ -17,7 +17,8 @@
       getProduct: getProduct,
       saveProduct: saveProduct,
       deleteProduct: deleteProduct,
-      getTypes: getTypes
+      getTypes: getTypes,
+      getStatusList: getStatusList
     };
 
     return product;
@@ -47,6 +48,10 @@
 
     function getTypes(){
       return [{name:'preorder', label:'Preorden'},{name:'available', label:'Disponible'}];
+    }
+
+    function getStatusList(){
+      return [{name:'active', label:'Active'},{name:'outOfStock', label:'Out of Stock'}];
     }
 
   }

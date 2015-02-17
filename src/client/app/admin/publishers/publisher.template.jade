@@ -18,6 +18,8 @@ div(data-ng-show="publisher.form")
       #publisher
         div
           |{{publisher.info.name}}
+        div
+          |{{publisher.info.label}}
         a.pure-button.pure-button-primary.button-small(data-ng-click="publisher.form = true")
           |Editar
         a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Publisher?', data-confirm="deletePublisher(publisher.info.objectId, $index)", confirm-message)
