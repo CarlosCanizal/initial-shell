@@ -15,7 +15,8 @@
     var serie = {
       getSeries: getSeries,
       getSerie: getSerie,
-      saveSerie: saveSerie
+      saveSerie: saveSerie,
+      deleteSerie: deleteSerie
     };
 
     return serie;
@@ -37,7 +38,10 @@
         return Serie.update(params).$promise;
       else
         return Serie.save(params).$promise;
-        
+    }
+
+    function deleteSerie(objectId){
+      return Serie.delete({objectId: objectId}).$promise;
     }
 
   }

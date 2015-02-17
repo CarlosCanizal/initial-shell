@@ -23,7 +23,7 @@
         <div>{{serie.info.price}}</div>
         <div>{{serie.info.publisher}}</div>
         <div>{{serie.info.cover.url}}</div>
-        <div>{{serie.info.status}}</div><a data-ng-click="serie.form = true" class="pure-button pure-button-primary button-small">Editar</a>
+        <div>{{serie.info.status}}</div><a data-ng-click="serie.form = true" class="pure-button pure-button-primary button-small">Editar</a><a data-ng-click="showModal()" data-question="¿Eliminar Serie?" data-confirm="deleteSerie(serie.info.objectId, $index)" confirm-message="confirm-message" class="pure-button button-small"><i class="fa fa-trash"></i>Borrar</a>
       </div>
     </div>
   </div>

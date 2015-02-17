@@ -33,6 +33,9 @@ div(data-ng-show="serie.form")
           |{{serie.info.status}}
         a.pure-button.pure-button-primary.button-small(data-ng-click="serie.form = true")
           |Editar
+        a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Serie?', data-confirm="deleteSerie(serie.info.objectId, $index)", confirm-message)
+          i.fa.fa-trash
+          |Borrar
 .filter-title
   span.publisher-name.
     Serie Stats
