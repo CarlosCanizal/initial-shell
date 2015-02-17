@@ -43,7 +43,7 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.price.$valid && productForm.price.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.price.$invalid && productForm.price.$dirty")
         .form-container
-          label(for="district")
+          label(for="publisher")
             | Editorial:
           select.complete-1(data-ng-model="publisher", data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.name for item in product.publishers track by item.name")
           input(type="hidden", data-ng-model="form.publisher")

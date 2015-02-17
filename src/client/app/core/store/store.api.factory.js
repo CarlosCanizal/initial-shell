@@ -33,7 +33,6 @@
     // }
 
     function getItems(params){
-      console.log(params);
       return Store.query(params).$promise  
     }
 

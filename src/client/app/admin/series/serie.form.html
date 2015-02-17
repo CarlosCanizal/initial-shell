@@ -25,11 +25,9 @@
           </div>
         </div>
         <div class="form-container">
-          <label for="publisher" ng-show="serieForm.publisher.$valid || serieForm.publisher.$pristine">Editorial:</label>
-          <label for="publisher" ng-show="serieForm.publisher.$invalid &amp;&amp; serieForm.publisher.$dirty" class="error">Editorial es requerido:</label>
-          <div class="form-icon">
-            <input id="publisher" name="publisher" data-ng-model="form.publisher" required="" class="pure-input-1"/><i ng-show="serieForm.publisher.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="serieForm.publisher.$valid &amp;&amp; serieForm.publisher.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="serieForm.publisher.$invalid &amp;&amp; serieForm.publisher.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
+          <label for="publisher">Editorial:</label>
+          <select data-ng-model="publisher" data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.name for item in serie.publishers track by item.name" class="complete-1"></select>
+          <input type="hidden" data-ng-model="form.publisher"/>
         </div>
         <div class="form-container">
           <label for="status" ng-show="serieForm.status.$valid || serieForm.status.$pristine">Status:</label>

@@ -2,9 +2,9 @@ angular
   .module('app.cart')
   .directive('serieForm',serieForm);
 
-serieForm.$inject = ['$state','serieApi'];
+serieForm.$inject = ['$state','serieApi','publisherApi'];
 
-function serieForm($state, serieApi){
+function serieForm($state, serieApi, publisherApi){
   return{
     restrict: 'EA',
     templateUrl: 'app/admin/series/serie.form.html',
@@ -14,6 +14,23 @@ function serieForm($state, serieApi){
       var shell =  scope.shell;
       var serie = scope.serie;
       scope.form = serie.info;
+
+      scope.publisher = {name:null};
+      serie.publishers = [];
+
+      publisherApi.getPublishers().then(function(result){
+        var publishers = result.results;
+        serie.publishers = publishers;
+        if(scope.form.publisher){
+          scope.publisher.name = scope.form.publisher;
+        }
+        else{
+          scope.publisher = serie.publishers[0];
+          scope.form.publisher = scope.publisher.name;
+        }
+      },function(error){
+        shell.setError(error);
+      });
 
       scope.saveSerie = function(){
         shell.showLoading();

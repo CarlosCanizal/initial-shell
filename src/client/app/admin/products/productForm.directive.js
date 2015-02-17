@@ -28,7 +28,7 @@ function productForm($state, productsApi, publisherApi){
           scope.form.publisher = scope.publisher.name;
         }
       },function(error){
-        shell.setError(errpr);
+        shell.setError(error);
       });
 
       scope.saveProduct = function(){
@@ -42,8 +42,6 @@ function productForm($state, productsApi, publisherApi){
           else{
             $state.go('admin.product',{productId:result.objectId})
           }
-
-
           console.log(result);
         },function(error){
           shell.setError(error);
