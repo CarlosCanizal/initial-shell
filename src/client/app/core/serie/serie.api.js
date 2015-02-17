@@ -16,7 +16,8 @@
       getSeries: getSeries,
       getSerie: getSerie,
       saveSerie: saveSerie,
-      deleteSerie: deleteSerie
+      deleteSerie: deleteSerie,
+      getStatusList: getStatusList
     };
 
     return serie;
@@ -42,6 +43,10 @@
 
     function deleteSerie(objectId){
       return Serie.delete({objectId: objectId}).$promise;
+    }
+
+    function getStatusList(){
+      return [{name:'active', label:'Active'},{name:'inactive',label:'Inactive'}];
     }
 
   }

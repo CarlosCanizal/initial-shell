@@ -10,8 +10,8 @@
   function newSerie($scope, $stateParams, serieApi) {
     var shell = $scope.shell;
     var serie = this;
-
-    serie.info = {};
+    serie.statusList = serieApi.getStatusList();
+    serie.info = {status:'active'};
 
   }
 

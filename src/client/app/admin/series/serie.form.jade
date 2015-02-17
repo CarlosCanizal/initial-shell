@@ -27,6 +27,11 @@ form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
             |Editorial:
           select.complete-1(data-ng-model="publisher", data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.label for item in serie.publishers track by item.name")
           input(type="hidden", data-ng-model="form.publisher")
+        .form-container
+          label(for="status")
+            | Status:
+          select.complete-1(data-ng-model="status", data-ng-change="form.status = status.name" data-ng-options="item as item.label for item in serie.statusList track by item.name")
+          input(type="hidden", data-ng-model="form.status")
         //- .form-container
         //-   label(for="cover", ng-show="serieForm.cover.$valid || serieForm.cover.$pristine")
         //-     | Imagen:

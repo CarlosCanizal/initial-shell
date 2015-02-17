@@ -22,6 +22,11 @@
           <select data-ng-model="publisher" data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.label for item in serie.publishers track by item.name" class="complete-1"></select>
           <input type="hidden" data-ng-model="form.publisher"/>
         </div>
+        <div class="form-container">
+          <label for="status">Status:</label>
+          <select data-ng-model="status" data-ng-change="form.status = status.name" data-ng-options="item as item.label for item in serie.statusList track by item.name" class="complete-1"></select>
+          <input type="hidden" data-ng-model="form.status"/>
+        </div>
       </ng-form>
     </div>
   </fieldset>

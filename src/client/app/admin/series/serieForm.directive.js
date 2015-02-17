@@ -16,6 +16,7 @@ function serieForm($state, serieApi, publisherApi){
       scope.form = serie.info;
 
       scope.publisher = {name:null};
+      scope.status = {name:scope.form.status};
       serie.publishers = [];
 
       publisherApi.getPublishers().then(function(result){

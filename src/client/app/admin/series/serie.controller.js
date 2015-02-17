@@ -10,8 +10,8 @@
   function Serie($scope, $state, $stateParams, serieApi, info) {
     var shell = $scope.shell;
     var serie = this;
-    // var productId = $stateParams.productId;
-
+    
+    serie.statusList = serieApi.getStatusList();
     serie.form = false;
     serie.info = info;
 

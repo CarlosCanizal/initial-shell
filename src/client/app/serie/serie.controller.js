@@ -15,6 +15,8 @@
     serie.subscription;
     $scope.loading = true;
 
+
+
     subscriptionApi.getSubscription(objectId).then(function(subscription){
       serie.subscription = subscription;
       serie.info = subscription.serie;
