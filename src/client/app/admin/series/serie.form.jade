@@ -13,16 +13,6 @@ form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.name.$valid && serieForm.name.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.name.$invalid && serieForm.name.$dirty")
         .form-container
-          label(for="type", ng-show="serieForm.type.$valid || serieForm.type.$pristine")
-            | Tipo:
-          label.error(for="type", ng-show="serieForm.type.$invalid && serieForm.type.$dirty")
-            | Tipo es requerido:
-          .form-icon
-            input.pure-input-1#type(name="type", data-ng-model="form.type", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.type.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.type.$valid && serieForm.type.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.type.$invalid && serieForm.type.$dirty")
-        .form-container
           label(for="price", ng-show="serieForm.price.$valid || serieForm.price.$pristine")
             | Precio:
           label.error(for="price", ng-show="serieForm.price.$invalid && serieForm.price.$dirty")
@@ -47,16 +37,6 @@ form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
         //-     i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.cover.$pristine")
         //-     i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.cover.$valid && serieForm.cover.$dirty")
         //-     i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.cover.$invalid && serieForm.cover.$dirty")
-        .form-container
-          label(for="status", ng-show="serieForm.status.$valid || serieForm.status.$pristine")
-            | Status:
-          label.error(for="status", ng-show="serieForm.status.$invalid && serieForm.status.$dirty")
-            | Status es requerido:
-          .form-icon
-            input.pure-input-1#status(name="status", data-ng-model="form.status", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="serieForm.status.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="serieForm.status.$valid && serieForm.status.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="serieForm.status.$invalid && serieForm.status.$dirty")
   .align-center.margin-bottom
     a.pure-button.button-success.button-small(data-ng-click="saveSerie()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
       span(data-ng-if="serieForm.$invalid")

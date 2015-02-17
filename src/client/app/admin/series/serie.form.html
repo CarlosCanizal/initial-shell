@@ -11,13 +11,6 @@
           </div>
         </div>
         <div class="form-container">
-          <label for="type" ng-show="serieForm.type.$valid || serieForm.type.$pristine">Tipo:</label>
-          <label for="type" ng-show="serieForm.type.$invalid &amp;&amp; serieForm.type.$dirty" class="error">Tipo es requerido:</label>
-          <div class="form-icon">
-            <input id="type" name="type" data-ng-model="form.type" required="" class="pure-input-1"/><i ng-show="serieForm.type.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="serieForm.type.$valid &amp;&amp; serieForm.type.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="serieForm.type.$invalid &amp;&amp; serieForm.type.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
-        </div>
-        <div class="form-container">
           <label for="price" ng-show="serieForm.price.$valid || serieForm.price.$pristine">Precio:</label>
           <label for="price" ng-show="serieForm.price.$invalid &amp;&amp; serieForm.price.$dirty" class="error">Precio es requerido:</label>
           <div class="form-icon">
@@ -28,13 +21,6 @@
           <label for="publisher">Editorial:</label>
           <select data-ng-model="publisher" data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.label for item in serie.publishers track by item.name" class="complete-1"></select>
           <input type="hidden" data-ng-model="form.publisher"/>
-        </div>
-        <div class="form-container">
-          <label for="status" ng-show="serieForm.status.$valid || serieForm.status.$pristine">Status:</label>
-          <label for="status" ng-show="serieForm.status.$invalid &amp;&amp; serieForm.status.$dirty" class="error">Status es requerido:</label>
-          <div class="form-icon">
-            <input id="status" name="status" data-ng-model="form.status" required="" class="pure-input-1"/><i ng-show="serieForm.status.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="serieForm.status.$valid &amp;&amp; serieForm.status.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="serieForm.status.$invalid &amp;&amp; serieForm.status.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
         </div>
       </ng-form>
     </div>
