@@ -46,7 +46,7 @@
     }
 
     function getTypes(){
-      return [{name:'preorder', label:'Preorden'},{name:'active', label:'Disponible'}];
+      return [{name:'preorder', label:'Preorden'},{name:'available', label:'Disponible'}];
     }
 
   }

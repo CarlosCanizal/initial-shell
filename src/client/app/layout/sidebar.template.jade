@@ -11,28 +11,28 @@
     .logo-h1
       | SOCIETY
 nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
-  a(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
+  a.pointer(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
     | Usuarios
-  a(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")
+  a.pointer(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")
     | Ordenes
-  a(ui-sref="admin.products", data-ng-class="{'active': shell.menu == 'products'}")
+  a.pointer(ui-sref="admin.products", data-ng-class="{'active': shell.menu == 'products'}")
     | Productos
-  a(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}")
+  a.pointer(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}")
     | Publishers
-  a(ui-sref="admin.series", data-ng-class="{'active': shell.menu == 'series'}")
+  a.pointer(ui-sref="admin.series", data-ng-class="{'active': shell.menu == 'series'}")
     | Series
-  a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
 nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
-  a(ui-sref="about")
+  a.pointer(ui-sref="about")
     | ¿Comó funciona?
-  a(ui-sref="home")
+  a.pointer(ui-sref="home")
     | Tienda
-  a(ui-sref="subscribe")
+  a.pointer(ui-sref="subscribe")
     | Suscripciones
-  a(ui-sref="login")
+  a.pointer(ui-sref="login")
     | Mi Cuenta
-  a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
   span
     a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
@@ -40,15 +40,15 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.i
      a.social(href="https://twitter.com/thecomicsociety", target="_blank")
       i.fa.fa-twitter
 nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
-  a(ui-sref="dashboard.account", data-ng-class="{'active': shell.menu == 'account'}")
+  a.pointer(ui-sref="dashboard.account", data-ng-class="{'active': shell.menu == 'account'}")
     | Mi cuenta
-  a(ui-sref="home")
+  a.pointer(ui-sref="home")
     | Tienda
-  a(ui-sref="dashboard.orders", data-ng-class="{'active': shell.menu == 'orders'}")
+  a.pointer(ui-sref="dashboard.orders", data-ng-class="{'active': shell.menu == 'orders'}")
     | Mis Ordernes
-  a(ui-sref="dashboard.series", data-ng-class="{'active': shell.menu == 'series'}")
+  a.pointer(ui-sref="dashboard.series", data-ng-class="{'active': shell.menu == 'series'}")
     | Mis Suscripciones
-  a(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
   span
     a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
