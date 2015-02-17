@@ -12,16 +12,21 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.name.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.name.$valid && productForm.name.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.name.$invalid && productForm.name.$dirty")
+        //- .form-container
+        //-   label(for="type", ng-show="productForm.type.$valid || productForm.type.$pristine")
+        //-     | Tipo:
+        //-   label.error(for="type", ng-show="productForm.type.$invalid && productForm.type.$dirty")
+        //-     | Tipo es requerido:
+        //-   .form-icon
+        //-     input.pure-input-1#type(name="type", data-ng-model="form.type", required="")
+        //-     i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.type.$pristine")
+        //-     i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.type.$valid && productForm.type.$dirty")
+        //-     i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.type.$invalid && productForm.type.$dirty")
         .form-container
-          label(for="type", ng-show="productForm.type.$valid || productForm.type.$pristine")
-            | Tipo:
-          label.error(for="type", ng-show="productForm.type.$invalid && productForm.type.$dirty")
-            | Tipo es requerido:
-          .form-icon
-            input.pure-input-1#type(name="type", data-ng-model="form.type", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.type.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.type.$valid && productForm.type.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.type.$invalid && productForm.type.$dirty")
+          label(for="type")
+            | Editorial:
+          select.complete-1(data-ng-model="type", data-ng-change="form.type = type.name" data-ng-options="item as item.label for item in product.types track by item.name")
+          input(type="hidden", data-ng-model="form.type")
         .form-container
           label(for="stock", ng-show="productForm.stock.$valid || productForm.stock.$pristine")
             | Cantidad:
@@ -45,7 +50,7 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
         .form-container
           label(for="publisher")
             | Editorial:
-          select.complete-1(data-ng-model="publisher", data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.name for item in product.publishers track by item.name")
+          select.complete-1(data-ng-model="publisher", data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.label for item in product.publishers track by item.name")
           input(type="hidden", data-ng-model="form.publisher")
         //- .form-container
         //-   label(for="cover", ng-show="productForm.cover.$valid || productForm.cover.$pristine")

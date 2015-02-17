@@ -10,8 +10,9 @@
   function newProduct($scope, $stateParams, productsApi) {
     var shell = $scope.shell;
     var product = this;
+    product.types = productsApi.getTypes();
+    product.info = {type:product.types[0].name};
 
-    product.info = {};
 
   }
 

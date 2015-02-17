@@ -16,7 +16,8 @@
       getProducts: getProducts,
       getProduct: getProduct,
       saveProduct: saveProduct,
-      deleteProduct: deleteProduct
+      deleteProduct: deleteProduct,
+      getTypes: getTypes
     };
 
     return product;
@@ -44,6 +45,9 @@
       return Product.delete({objectId: objectId}).$promise;
     }
 
+    function getTypes(){
+      return [{name:'preorder', label:'Preorden'},{name:'active', label:'Disponible'}];
+    }
 
   }
 })();

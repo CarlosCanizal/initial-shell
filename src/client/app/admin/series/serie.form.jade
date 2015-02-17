@@ -35,7 +35,7 @@ form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
         .form-container
           label(for="publisher")
             |Editorial:
-          select.complete-1(data-ng-model="publisher", data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.name for item in serie.publishers track by item.name")
+          select.complete-1(data-ng-model="publisher", data-ng-change="form.publisher = publisher.name" data-ng-options="item as item.label for item in serie.publishers track by item.name")
           input(type="hidden", data-ng-model="form.publisher")
         //- .form-container
         //-   label(for="cover", ng-show="serieForm.cover.$valid || serieForm.cover.$pristine")
