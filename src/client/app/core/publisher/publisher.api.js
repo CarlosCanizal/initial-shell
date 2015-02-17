@@ -15,7 +15,8 @@
     var publisher = {
       getPublishers: getPublishers,
       getPublisher: getPublisher,
-      savePublisher: savePublisher
+      savePublisher: savePublisher,
+      deletePublisher: deletePublisher
     };
 
     return publisher;
@@ -37,7 +38,10 @@
         return Publisher.update(params).$promise;
       else
         return Publisher.save(params).$promise;
-        
+    }
+
+    function deletePublisher(objectId){
+      return Publisher.delete({objectId: objectId}).$promise;
     }
 
   }

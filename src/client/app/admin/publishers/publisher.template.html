@@ -17,7 +17,7 @@
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div id="publisher">
-        <div>{{publisher.info.name}}</div><a data-ng-click="publisher.form = true" class="pure-button pure-button-primary button-small">Editar</a>
+        <div>{{publisher.info.name}}</div><a data-ng-click="publisher.form = true" class="pure-button pure-button-primary button-small">Editar</a><a data-ng-click="showModal()" data-question="¿Eliminar Publisher?" data-confirm="deletePublisher(publisher.info.objectId, $index)" confirm-message="confirm-message" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a>
       </div>
     </div>
   </div>
