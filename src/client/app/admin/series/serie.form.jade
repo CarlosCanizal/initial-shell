@@ -46,5 +46,8 @@ form.pure-form.pure-form-stacked(name="serieForm", novalidate="")
         i.fa.fa-thumbs-o-up
         | Guardar
   .align-center.margin-bottom
-    a.pure-button(data-ng-click="serie.showForm(false)")
+    a.pure-button(data-ng-click="serie.showForm(false)", data-ng-if="form.objectId")
       | Cancelar
+  .align-center.margin-bottom(data-ng-if="!form.objectId")
+    a.pure-button(data-ui-sref="admin.publishers")
+      | Regresar
