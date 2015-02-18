@@ -16,30 +16,55 @@ div(data-ng-show="product.form")
     .shelf-space
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       #product
-        div
-          |{{product.info.name}}
-        div
-          |{{product.info.type}}
-        div
-          |{{product.info.stock}}
-        div
-          |{{product.info.price}}
-        div
-          |{{product.info.publisher}}
-        div
-          |{{product.info.cover.url}}
-        div
-          |{{product.info.status}}
-        a.pure-button.pure-button-primary.button-small(data-ng-click="product.form = true")
-          |Editar
-        a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Producto?', data-confirm="deleteProduct(product.info.objectId, $index)", confirm-message)
-          i.fa.fa-trash 
-          |Borrar
-.filter-title
-  span.publisher-name.
-    Product Stats
-.shelf
-  .inner-shelf
-    .shelf-space
-      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-      #stats
+        table.info
+          tbody
+            tr
+              td.info-label
+                |Nombre:
+              td.info-value
+                |{{product.info.name}}
+            tr
+              td.info-label
+                |Disponibilidad:
+              td.info-value
+                |{{product.info.type}}
+            tr
+              td.info-label
+                |Cantidad:
+              td.info-value
+                |{{product.info.stock}}
+            tr
+              td.info-label
+                |Precio:
+              td.info-value
+                |{{product.info.price}}
+            tr
+              td.info-label
+                |Publisher:
+              td.info-value
+                |{{product.info.publisher}}
+            tr
+              td.info-label
+                |Cover:
+              td.info-value
+                |{{product.info.cover.url}}
+            tr
+              td.info-label
+                |Status:
+              td.info-value
+                |{{product.info.status}}
+        .margin-top-1
+          a.pure-button.pure-button-primary.button-small.margin-right-1-2(data-ng-click="product.form = true")
+            i.fa.fa-pencil
+            |Editar
+          a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Producto?', data-confirm="deleteProduct(product.info.objectId, $index)", confirm-message)
+            i.fa.fa-trash 
+            |Borrar
+//- .filter-title
+//-   span.publisher-name.
+//-     Product Stats
+//- .shelf
+//-   .inner-shelf
+//-     .shelf-space
+//-       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+//-       #stats

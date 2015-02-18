@@ -17,18 +17,20 @@
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div id="publisher">
-        <div>{{publisher.info.name}}</div>
-        <div>{{publisher.info.label}}</div><a data-ng-click="publisher.form = true" class="pure-button pure-button-primary button-small">Editar</a><a data-ng-click="showModal()" data-question="¿Eliminar Publisher?" data-confirm="deletePublisher(publisher.info.objectId, $index)" confirm-message="confirm-message" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a>
+        <table class="info">
+          <tbody>
+            <tr>
+              <td class="info-label">Nombre:</td>
+              <td class="info-value">{{publisher.info.name}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Label:</td>
+              <td class="info-value">{{publisher.info.label}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="margin-top-1"><a data-ng-click="publisher.form = true" class="pure-button pure-button-primary button-small margin-right-1-2"><i class="fa fa-pencil"></i>Editar</a><a data-ng-click="showModal()" data-question="¿Eliminar Publisher?" data-confirm="deletePublisher(publisher.info.objectId, $index)" confirm-message="confirm-message" class="pure-button button-small"><i class="fa fa-trash"> </i>Borrar</a></div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="filter-title"><span class="publisher-name">Publisher Stats</span></div>
-<div class="shelf">
-  <div class="inner-shelf">
-    <div class="shelf-space">
-      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
-      <div id="stats"></div>
     </div>
   </div>
 </div>

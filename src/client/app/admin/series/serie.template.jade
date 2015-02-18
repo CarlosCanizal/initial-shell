@@ -17,26 +17,45 @@ div(data-ng-show="serie.form")
     .shelf-space
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       #serie
-        div
-          |{{serie.info.name}}
-        div
-          |{{serie.info.price}}
-        div
-          |{{serie.info.publisher}}
-        div
-          |{{serie.info.cover.url}}
-        div
-          |{{serie.info.status}}
-        a.pure-button.pure-button-primary.button-small(data-ng-click="serie.form = true")
-          |Editar
-        a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Serie?', data-confirm="deleteSerie(serie.info.objectId, $index)", confirm-message)
-          i.fa.fa-trash
-          |Borrar
-.filter-title
-  span.publisher-name.
-    Serie Stats
-.shelf
-  .inner-shelf
-    .shelf-space
-      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-      #stats
+        table.info
+          tbody
+            tr
+              td.info-label
+                |Nombre:
+              td.info-value
+                |{{serie.info.name}}
+            tr
+              td.info-label
+                |Precio:
+              td.info-value
+                |{{serie.info.price}}
+            tr
+              td.info-label
+                |Publisher:
+              td.info-value
+                |{{serie.info.publisher}}
+            tr
+              td.info-label
+                |Cover:
+              td.info-value
+                |{{serie.info.cover.url}}
+            tr
+              td.info-label
+                |Status:
+              td.info-value
+                |{{serie.info.status}}
+        .margin-top-1
+          a.pure-button.pure-button-primary.button-small.margin-right-1-2(data-ng-click="serie.form = true")
+            i.fa.fa-pencil
+            |Editar
+          a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar Serie?', data-confirm="deleteSerie(serie.info.objectId, $index)", confirm-message)
+            i.fa.fa-trash
+            |Borrar
+//- .filter-title
+//-   span.publisher-name.
+//-     Serie Stats
+//- .shelf
+//-   .inner-shelf
+//-     .shelf-space
+//-       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+//-       #stats

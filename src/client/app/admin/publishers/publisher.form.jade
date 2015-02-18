@@ -31,8 +31,8 @@ form.pure-form.pure-form-stacked(name="publisherForm", novalidate="")
         i.fa.fa-thumbs-o-up
         | Guardar
   .align-center.margin-bottom(data-ng-if="form.objectId")
-    a.pure-button(data-ng-click="publisher.showForm(false)")
+    a.pure-button.button-small(data-ng-click="publisher.showForm(false)")
       | Cancelar
   .align-center.margin-bottom(data-ng-if="!form.objectId")
-    a.pure-button(data-ui-sref="admin.products")
+    a.pure-button.button-small(data-ui-sref="admin.products")
       | Regresar
