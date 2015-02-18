@@ -45,7 +45,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
     })
     .state('checkout',{
       url:'/checkout',
-      templateUrl:'app/cart/checkout/checkout.template.html'
+      templateUrl:'app/cart/checkout/checkout.template.html',
+      data:{
+        menu: 'home',
+        submenu: 'store'
+      }
     })
     .state('dashboard',{
       url:'/dashboard',
