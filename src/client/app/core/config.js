@@ -11,21 +11,37 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
       url:'/',
-      templateUrl: 'app/layout/shell.html'
+      templateUrl: 'app/layout/shell.html',
+      data:{
+        menu: 'home',
+        submenu: 'store'
+      }
     })
     .state('login',{
       url:'/login',
       controller: 'Login',
       controllerAs: 'login',
-      templateUrl:'app/login/login.template.html'
+      templateUrl:'app/login/login.template.html',
+      data:{
+        menu: 'login',
+        submenu: 'login'
+      }
     })
     .state('subscribe',{
       url:'/suscripciones',
-      templateUrl:'app/subscribe/subscribe.template.html'
+      templateUrl:'app/subscribe/subscribe.template.html',
+      data:{
+        menu: 'suscribe',
+        submenu: 'suscribe'
+      }
     })
     .state('about',{
       url:'/como-funciona',
-      templateUrl:'app/about/about.template.html'
+      templateUrl:'app/about/about.template.html',
+      data:{
+        menu: 'about',
+        submenu: 'about'
+      }
     })
     .state('checkout',{
       url:'/checkout',

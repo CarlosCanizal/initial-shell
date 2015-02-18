@@ -24,13 +24,13 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
   a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
 nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
-  a.pointer(ui-sref="about")
+  a.pointer(ui-sref="about", data-ng-class="{'active': shell.menu == 'about'}")
     | ¿Comó funciona?
-  a.pointer(ui-sref="home")
+  a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}")
     | Tienda
-  a.pointer(ui-sref="subscribe")
+  a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}")
     | Suscripciones
-  a.pointer(ui-sref="login")
+  a.pointer(ui-sref="login", data-ng-class="{'active': shell.menu == 'login'}")
     | Mi Cuenta
   a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
     | Salir
