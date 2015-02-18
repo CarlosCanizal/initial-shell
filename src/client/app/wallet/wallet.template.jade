@@ -5,7 +5,12 @@
 .shelf
   .inner-shelf
     .shelf-space
-      | Tu cuenta tiene un saldo de: {{shell.currentUser.wallet}}
+      span.text-secondary-black
+        |Tu cuenta tiene un saldo de: 
+      span.important
+        | {{shell.currentUser.wallet | currency}} 
+      span.text-secondary-black
+        |pesos
 .filter-title
   span.publisher-name.
     Cupon

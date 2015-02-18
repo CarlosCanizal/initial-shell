@@ -7,10 +7,10 @@
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div id="address-list" data-ng-hide="loading"> 
-        <div ng-if="address.addresses.length &lt; 1" class="shelf-message">
+        <div ng-if="address.addresses.length &lt; 1" class="shelf-message bottom-divider">
           <div class="subtitle">No existen direcciones registradas.</div>
         </div>
-        <div ng-repeat="address in address.addresses" class="address-item">
+        <div ng-repeat="address in address.addresses" class="bottom-divider">
           <div class="address-line">{{address.street}} {{address.number}} {{address.apt}}</div>
           <div class="address-line">Colonia {{address.district}}, {{address.municipality}} </div>
           <div class="address-line">{{address.country}}, {{address.state}}, {{address.zip}} </div>

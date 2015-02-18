@@ -31,9 +31,9 @@ a:hover, a:active, a:focus
   position:relative
 
 .inner-shelf
-  border: solid 2px $third-color
+  border: solid 1px $dividers-black
   border-radius: 0.5rem
-  color: $first-color
+  color: $text-primary-black
   position: relative
 
 
@@ -44,12 +44,12 @@ a:hover, a:active, a:focus
   padding: 0 1rem
 
 .filter-title
-  color: $first-color
+  color: $text-secondary-black
   font-size: 2rem
 
 .section-title
   font-family: 'RalewayLight'
-  color:#999
+  color: $text-primary-black
   text-align: right
   font-size: 2rem
   padding-top: 1rem
@@ -63,7 +63,7 @@ a:hover, a:active, a:focus
   // margin-bottom: 1rem
 
 #cart
-  background-color: $menu-color
+  background-color: $accent-color
   text-align: right
   font-size: 1rem
   position: fixed
@@ -79,14 +79,14 @@ a:hover, a:active, a:focus
     font-size: 1.8rem
     margin: 0 0.5rem
   a
-    color: $menu-font-color
+    color: $text-primary-white
     text-decoration: none
     &:hover
       color: $menu-hover-color
 
 .login-header
   font-size: 0.8rem
-  color: $second-color
+  color: $text-primary-white
   a
     cursor: pointer
 
@@ -112,7 +112,7 @@ a:hover, a:active, a:focus
   padding-bottom: 0.5rem
   font-family: 'Raleway'
   font-size: 1.2rem
-  color: $first-color
+  color: $text-primary-black
   text-transform: uppercase
 
 .search-box
@@ -120,21 +120,22 @@ a:hover, a:active, a:focus
   input
     width:85%
     font-size: 1.7rem
-    border:solid 2px $third-color
+    // border:solid 2px $third-color
+    border: solid 2px $dividers-black
     border-top-left-radius:0.5rem
     border-bottom-left-radius:0.5rem
     border-right:0
     padding:0 1rem
-    color:$first-color
+    color:$text-primary-black
     outline: none
     -webkit-box-sizing: border-box
   a
     text-align: center
     width:15%
-    background-color: $third-color
-    border:solid 2px $third-color
+    background-color: $accent-color
+    border:solid 2px $accent-color
     letter-spacing: normal
-    color:$first-color
+    color: $text-primary-white
     line-height: 2.5rem
     border-top-right-radius:0.5rem
     border-bottom-right-radius:0.5rem
@@ -173,10 +174,13 @@ a:hover, a:active, a:focus
     width: 100%
 
 
-.address-item
+// .address-item
+  
+
+.bottom-divider
+  border-bottom:solid 1px $dividers-black
   margin-bottom: 1rem
   padding-bottom: 1rem
-  border-bottom:solid 1px $third-color
 
 .address-item:last-child
   margin-bottom: 0
@@ -184,7 +188,7 @@ a:hover, a:active, a:focus
 .list-item
   margin-bottom: 1rem
   padding-bottom: 1rem
-  border-bottom:solid 1px $third-color
+  border-bottom:solid 1px $dividers-black
   cursor: pointer
   &:hover
     color: $menu-hover-color
@@ -215,6 +219,8 @@ a:hover, a:active, a:focus
 
 .form-icon
   position: relative
+  i
+    color: $text-disable-black
 
 .pure-form-stacked label
   font-family: 'RalewayLight'
@@ -229,15 +235,16 @@ a:hover, a:active, a:focus
 
 
 .button
-  border: solid 1px $first-color
+  border: solid 1px $text-primary-black
   padding: 0.5rem 1rem
   border-radius: 0.5rem
 
 .buttons-container
   text-align: center
   padding-bottom: 1rem
+  color: $text-disable-black
   a
-    color: $third-color
+    color: $text-disable-black
     cursor:pointer
 
 .button-xsmall
@@ -304,15 +311,15 @@ a:hover, a:active, a:focus
   //padding-bottom: 0.5rem
 
 .border-right
-  border-right: solid 2px $third-color
+  border-right: solid 1px $dividers-black
   -webkit-box-sizing: border-box
 
 .border-left
-  border-left: solid 2px $third-color
+  border-left: solid 1px $dividers-black
   -webkit-box-sizing: border-box
 
 .border-top
-  border-top: solid 2px $third-color
+  border-top: solid 1px $dividers-black
   -webkit-box-sizing: border-box
 
 .padding-top
@@ -420,8 +427,8 @@ a:hover, a:active, a:focus
 .pointer
   cursor: pointer
 
-tr.pointer:hover
-  color: $menu-hover-color
+.pointer:hover
+  color: $accent-color !important
 
 .form-container
   textarea
@@ -473,6 +480,11 @@ tr.pointer:hover
   border-bottom-right-radius: 0.5rem
   z-index: 4
 
+.text-secondary-black
+  color: $text-secondary-black
+
+.important
+  font-size: 1.5rem
 
 #submenu
   text-align: right

@@ -8,10 +8,10 @@
     .shelf-space
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       #address-list(data-ng-hide="loading")  
-        .shelf-message(ng-if="address.addresses.length < 1")
+        .shelf-message.bottom-divider(ng-if="address.addresses.length < 1")
           .subtitle
             |No existen direcciones registradas.
-        .address-item(ng-repeat="address in address.addresses")
+        .bottom-divider(ng-repeat="address in address.addresses")
           .address-line
             | {{address.street}} {{address.number}} {{address.apt}}
           .address-line

@@ -96,7 +96,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controllerAs: 'address',
       data:{
         menu: 'account',
-        submenu: 'addresses'
+        submenu: 'address'
       }
     })
     .state('dashboard.profile',{
