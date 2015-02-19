@@ -3,15 +3,13 @@
 <div class="filter-title"><span class="publisher-name">Saldo</span></div>
 <div class="shelf">
   <div class="inner-shelf">
-    <div class="shelf-space">Tu cuenta tiene un saldo de: {{wallet.user.wallet}}</div>
+    <div class="shelf-space"><span>Saldo en la cuenta del usuario:  </span><span class="important">{{wallet.user.wallet | currency}} </span><span>pesos.</span></div>
   </div>
 </div>
 <div class="filter-title"><span class="publisher-name">Cupon</span></div>
 <div class="shelf">
   <div class="inner-shelf">
-    <div class="shelf-space">
-      Ingresa el cupon del usuario
-      {{wallet.user.objectId}}
+    <div class="shelf-space">Ingresa el cupon del usuario.
       <admin-coupon user-id="{{wallet.user.objectId}}"></admin-coupon>
     </div>
   </div>
