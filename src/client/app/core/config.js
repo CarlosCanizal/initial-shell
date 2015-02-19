@@ -185,7 +185,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       url:'/orders/:objectId',
       templateUrl:'app/order/order.template.html',
       controller: 'Order',
-      controllerAs: 'order'
+      controllerAs: 'order',
+       data:{
+        menu: 'orders',
+        submenu: 'order'
+      }
     })
     .state('admin.preorders',{
       url:'/preorders',

@@ -10,37 +10,37 @@ div(data-ng-controller="Orders as orders")
       .shelf-space(data-ng-hide="loading")
         .shelf-content(data-ng-hide="loading")
           .shelf-message(ng-if="orders.list.length < 1")
-            .subtitle
+            .subtitle.align-center
               |No existen ordenes registradas.
           .list-item(ng-repeat="item in orders.list", data-ui-sref="dashboard.order({objectId : item.objectId})")
             .pure-g
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
                     | Referencia
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.referenceId}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
                     | Fecha
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.createdAt | date: 'mediumDate'}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
                     | Monto
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
-                    | {{item.amount}}
+                    | {{item.amount | currency}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
                     | Estado
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.status}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
                     | Tipo
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.type}}

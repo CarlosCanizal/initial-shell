@@ -1,4 +1,4 @@
-//- #admin-menu(data-ng-include="'app/admin/users/menu/users.menu.html'")
+#admin-menu(data-ng-include="'app/admin/users/menu/users.menu.html'")
 .filter-title
   span.publisher-name.
     Usuarios
@@ -9,18 +9,20 @@
       #users
         .shelf-content
           .margin-bottom-1
-            |Inicio 
+            span.margin-right-1-2
+              |Inicio 
             input(type="date" ng-model="users.startDate")
-            |Fin
+            span.margin-side-1-2
+              |Fin
             input(type="date" ng-model="users.endDate")
-            select(ng-model="users.membership", ng-options="item as item for item in users.memberships",data-ng-change="updateMunicipalities()")
-            a.pure-button.pure-button-primary.button-small(data-ng-click="users.search(users.startDate, users.endDate, users.membership)")
+            select.margin-side-1-2(ng-model="users.membership", ng-options="item as item for item in users.memberships",data-ng-change="updateMunicipalities()")
+            a.pure-button.pure-button-primary.button-small.margin-left-1-2(data-ng-click="users.search(users.startDate, users.endDate, users.membership)")
               |Buscar
           .shelf-message(ng-if="users.list.length < 1")
             .subtitle
               |No existen usuarios registrados.
           h1.align-right
-            | Total {{users.list.length}}
+            | Total: {{users.list.length}}
           #list(ng-if="users.list.length > 0")
             table.info-table
               thead
@@ -71,7 +73,7 @@
           .subtitle
             |No existen usuarios con estos parametros.
         h1.align-right
-          | Total {{users.buyers.length}}
+          | Total: {{users.buyers.length}}
         #list(ng-if="users.buyers.length > 0")
           table.info-table
             thead
@@ -122,7 +124,7 @@
           .subtitle
             |No existen usuarios con estos parametros.
         h1.align-right
-          | Total {{users.notBuyers.length}}
+          | Total: {{users.notBuyers.length}}
         #list(ng-if="users.notBuyers.length > 0")
           table.info-table
             thead

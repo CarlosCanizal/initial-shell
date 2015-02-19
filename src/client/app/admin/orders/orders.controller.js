@@ -18,8 +18,10 @@
     orders.list = [];
     shell.showLoading();
 
-    if($stateParams.userId)
+    if($stateParams.userId){
+      orders.byUser = true
       params.userId =  $stateParams.userId;
+    }
 
     orderApi.getAllOrders(params).then(function(result){
       orders.list = result.results;

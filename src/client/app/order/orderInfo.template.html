@@ -18,7 +18,7 @@
                   </tr>
                   <tr>
                     <td class="info-label">Monto:</td>
-                    <td class="info-value">{{order.info.amount}}</td>
+                    <td class="info-value">{{order.info.amount | currency}}</td>
                   </tr>
                   <tr>
                     <td class="info-label">Fecha:</td>
@@ -76,7 +76,7 @@
       <div data-ng-hide="loading" class="shelf-content">
         <table class="info">
           <thead>
-            <tr>
+            <tr class="text-secondary-black">
               <th>Articulo</th>
               <th>Cantidad</th>
               <th>Total</th>
@@ -86,11 +86,11 @@
             <tr data-ng-repeat="item in order.info.items">
               <td class="info-value uppercase">{{item.name}}</td>
               <td class="info-value align-center">{{item.quantity}}</td>
-              <td class="info-value align-center">{{item.price}}</td>
+              <td class="info-value align-right">{{item.price | currency}}</td>
             </tr>
             <tr>
               <td colspan="2"></td>
-              <td class="info-important align-center border-top padding-top">{{order.info.amount}}</td>
+              <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}}</td>
             </tr>
           </tbody>
         </table>

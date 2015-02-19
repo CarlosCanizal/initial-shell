@@ -23,7 +23,7 @@
                     td.info-label
                       |Monto:
                     td.info-value
-                      |{{order.info.amount}}
+                      |{{order.info.amount | currency}}
                   tr
                     td.info-label
                       |Fecha:
@@ -81,7 +81,7 @@
       .shelf-content(data-ng-hide="loading")
         table.info
           thead
-            tr
+            tr.text-secondary-black
               th
                 | Articulo
               th
@@ -94,12 +94,12 @@
                 | {{item.name}}
               td.info-value.align-center
                 | {{item.quantity}}
-              td.info-value.align-center
-                | {{item.price}}
+              td.info-value.align-right
+                | {{item.price | currency}}
             tr
               td(colspan="2")
-              td.info-important.align-center.border-top.padding-top
-                |{{order.info.amount}}
+              td.info-important.align-right.border-top.padding-top
+                |{{order.info.amount | currency}}
 
         
 
