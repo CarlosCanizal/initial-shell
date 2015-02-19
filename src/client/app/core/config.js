@@ -17,6 +17,22 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'store'
       }
     })
+    .state('item', {
+      url:'/item/:objectId',
+      templateUrl: 'app/item/item.template.html',
+      controller: 'Item',
+      controllerAs: 'item',
+      resolve: {
+        info: function(productsApi, $stateParams){
+          var objectId = $stateParams.objectId;
+          return productsApi.getProduct($stateParams.objectId);
+        }
+      },
+      data:{
+        menu: 'home',
+        submenu: 'store'
+      }
+    })
     .state('login',{
       url:'/login',
       controller: 'Login',

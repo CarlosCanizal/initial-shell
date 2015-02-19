@@ -671,3 +671,19 @@ a:hover, a:active, a:focus {
 /* line 564, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .mastercard {
   color: #FFC107; }
+
+/* line 568, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.item-details img {
+  width: 100%; }
+/* line 570, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.item-details .item-name {
+  color: rgba(0, 0, 0, 0.87);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding-bottom: 1rem; }
+/* line 575, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.item-details .item-description {
+  padding-bottom: 1rem; }
+/* line 577, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.item-details .item-attribute {
+  padding-bottom: 1rem; }

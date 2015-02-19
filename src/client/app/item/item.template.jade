@@ -1,0 +1,26 @@
+//- #account-menu(data-ng-include="'app/account/menu/account.menu.html'", data-ng-if="!view")
+//- #admin-menu(data-ng-include="'app/admin/users/menu/user.menu.html'", data-ng-if="view")
+.filter-title
+  span.publisher-name.
+    Información
+.shelf
+  .inner-shelf
+    .shelf-space
+      .pure-g.item-details
+        .pure-u-1.pure-u-sm-1-3.pure-u-md-1-4
+          img(data-ng-src="{{item.info.cover.url}}")
+        .pure-u-1.pure-u-sm-2-3.pure-u-md-3-4
+          .padding-side-1
+            .item-name
+              |{{item.info.name}}
+            .item-description
+              |{{item.info.description}}
+            .item-attribute
+              span.text-secondary-black.margin-right-1
+                |Precio:
+              |{{item.info.price | currency}}
+            .item-attribute
+              span.text-secondary-black.margin-right-1
+                |Editorial:
+              span.uppercase
+                |{{item.info.publisher}}
