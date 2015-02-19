@@ -659,3 +659,15 @@ a:hover, a:active, a:focus {
   /* line 555, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .initial-layer.ng-hide .initial-logo {
     width: 0; }
+
+/* line 558, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.amex {
+  color: #2196F3; }
+
+/* line 561, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.visa {
+  color: #01579B; }
+
+/* line 564, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.mastercard {
+  color: #FFC107; }

@@ -50,7 +50,7 @@
                 <div data-ng-show="account.cards.length &gt; 0">
                   <div class="address-line">Tarjeta</div>
                   <div class="address-line">{{account.subscription.payment.card.name}}</div>
-                  <div class="address-line"><i ng-if="account.subscription.payment.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="account.subscription.payment.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="account.subscription.payment.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{account.subscription.payment.card.last4}}</div>
+                  <div class="address-line"><i ng-if="account.subscription.payment.card.brand == 'VISA'" class="fa fa-cc-visa visa"></i><i ng-if="account.subscription.payment.card.brand == 'MC'" class="fa fa-cc-mastercard mastercard"></i><i ng-if="account.subscription.payment.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex amex"></i>**** **** **** {{account.subscription.payment.card.last4}}</div>
                 </div>
               </div>
             </div>

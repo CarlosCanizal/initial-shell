@@ -50,7 +50,7 @@ function cardForm(userApi, conekta){
         scope.conektaId = attr.conektaId;
       }
       else{
-        scope.conektaId = view.user ? view.user.conektaId :shell.currentUser.conektaId;
+        scope.conektaId = view && view.user ? view.user.conektaId :shell.currentUser.conektaId;
       }
 
       scope.saveCard = function(conektaId){
@@ -66,6 +66,7 @@ function cardForm(userApi, conekta){
           }
 
           if(checkout && shell.shoppingCart){
+            checkout.paymentMethods.push(newCard);
             shell.shoppingCart.paymentMethod = newCard;
           }
 

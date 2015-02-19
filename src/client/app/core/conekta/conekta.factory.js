@@ -80,7 +80,7 @@
           deferred.resolve(result.result);
         },function(error){
           deferred.reject(error);
-          //console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
         });
       };
 

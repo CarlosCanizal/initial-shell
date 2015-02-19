@@ -28,6 +28,7 @@
     checkout.updateCart = false;
     checkout.loginFormsView = false;
     checkout.walletView = false;
+    
 
     shell.shoppingCart = ShoppingCart.getCart();
 
@@ -66,8 +67,8 @@
     }
 
     checkout.toPaymentMethod = function(){
+
       ShoppingCart.setCart(shell.shoppingCart);
-      
       checkout.showPayment = true;
       if(!checkout.loadPayment)
         checkout.loadPayment = true;
@@ -110,6 +111,11 @@
       checkout.walletView = false;
     }
 
+    checkout.setMethods = function(cards){
+      checkout.paymentMethods = cards;
+      console.log(checkout.paymentMethods);
+    }
+
     function resetViews(){
       checkout.showAddress = false;
       checkout.showPayment = false;
@@ -120,6 +126,7 @@
     function cleanItemsUnavaibale(){
       checkout.itemsUnavailable = [];
     }  
+
 
   }
 

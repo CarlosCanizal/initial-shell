@@ -19,7 +19,7 @@
               <div class="information-box padding-side-1">
                 <div class="information-title">Metodo de pago:</div>
                 <div class="address-line">{{shell.shoppingCart.paymentMethod.card.name}}</div>
-                <div class="address-line"><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}</div>
+                <div class="address-line"><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa visa"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard mastercard"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex amex"></i>**** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}</div>
                 <div class="address-line"><a data-ng-click="checkout.toPaymentMethod()" class="pure-button button-xsmall">Modificar</a></div>
               </div>
             </div>

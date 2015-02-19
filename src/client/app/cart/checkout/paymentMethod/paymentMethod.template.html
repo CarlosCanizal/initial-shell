@@ -29,7 +29,7 @@
                 <div data-ng-show="checkout.paymentMethods.length &gt; 0">
                   <div class="address-line">Tarjeta </div>
                   <div class="address-line">{{shell.shoppingCart.paymentMethod.card.name}}</div>
-                  <div class="address-line"><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex"></i>**** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}</div>
+                  <div class="address-line"><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa visa"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard mastercard"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex amex"></i>**** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}</div>
                 </div>
               </div>
             </div>
@@ -38,7 +38,7 @@
                 <div data-ng-show="checkout.paymentMethods.length &gt; 0">
                   <div class="address-line">Cambiar Metodo de Pago</div>
                   <div class="address-line">
-                    <select ng-model="shell.shoppingCart.paymentMethod" data-ng-options="item as item.card.last4 for item in checkout.paymentMethods track by item.objectId"></select>
+                    <select ng-model="shell.shoppingCart.paymentMethod" data-ng-options="item as item.card.last4 for item in checkout.paymentMethods"></select>
                   </div>
                 </div>
                 <div class="address-line"><a data-ng-click="checkout.cardFormView=true" class="pure-button button-xsmall"><i class="fa fa-plus"></i>Agregar Tarjeta</a></div>

@@ -31,9 +31,9 @@
                 .address-line
                   | {{shell.shoppingCart.paymentMethod.card.name}}
                 .address-line
-                  i.fa.fa-cc-visa(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'")
-                  i.fa.fa-cc-mastercard(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'")
-                  i.fa.fa-cc-amex(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'")
+                  i.fa.fa-cc-visa.visa(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'")
+                  i.fa.fa-cc-mastercard.mastercard(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'")
+                  i.fa.fa-cc-amex.amex(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'")
                   | **** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.toPaymentMethod()")

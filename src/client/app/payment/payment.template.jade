@@ -13,9 +13,9 @@
             |No existen tarjetas registradas.
         .bottom-divider(ng-if="payment.cards.length > 0")
           .card-item(ng-repeat="item in payment.cards")
-            i.fa.fa-cc-visa.fa-lg(ng-if="item.card.brand == 'VISA'")
-            i.fa.fa-cc-mastercard.fa-lg(ng-if="item.card.brand == 'MC'")
-            i.fa.fa-cc-amex.fa-lg(ng-if="item.card.brand == 'AMERICAN_EXPRESS'")
+            i.fa.fa-cc-visa.fa-lg.visa(ng-if="item.card.brand == 'VISA'")
+            i.fa.fa-cc-mastercard.fa-lg.mastercard(ng-if="item.card.brand == 'MC'")
+            i.fa.fa-cc-amex.fa-lg.amex(ng-if="item.card.brand == 'AMERICAN_EXPRESS'")
             span.padding-left-1
               |**** **** **** {{item.card.last4}}
             a.pure-button.button-small.margin-left-1(data-ng-click="showModal()", data-question='¿Eliminar tarjeta?', data-confirm="payment.deleteCard({{$index}})", confirm-message)
