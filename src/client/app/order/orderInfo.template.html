@@ -1,5 +1,7 @@
 
 <div id="orders-menu" data-ng-include="'app/order/menu/order.menu.html'" data-ng-if="shell.isDashboard"></div>
+<div id="admin-menu" data-ng-include="'app/admin/orders/menu/orders.menu.html'" data-ng-if="!orders.byUser"></div>
+<div id="admin-menu" data-ng-include="'app/admin/users/menu/user.menu.html'" data-ng-if="orders.byUser"></div>
 <div class="filter-title"><span class="publisher-name">Orden {{order.info.referenceId}}</span></div>
 <div class="shelf">
   <div class="inner-shelf">

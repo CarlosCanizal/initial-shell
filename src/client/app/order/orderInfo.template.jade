@@ -1,4 +1,8 @@
 #orders-menu(data-ng-include="'app/order/menu/order.menu.html'", data-ng-if="shell.isDashboard")
+#admin-menu(data-ng-include="'app/admin/orders/menu/orders.menu.html'", data-ng-if="!orders.byUser")
+#admin-menu(data-ng-include="'app/admin/users/menu/user.menu.html'", data-ng-if="orders.byUser")
+
+
 .filter-title
   span.publisher-name.
     Orden {{order.info.referenceId}}

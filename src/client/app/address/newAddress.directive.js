@@ -99,7 +99,14 @@ function newAddress(userApi, sepomexAPI){
       scope.saveAddress = function(){
         if(scope.addressForm.$valid){
           shell.showLoading();
-          scope.newAddress.user = {"__type":"Pointer",className:"_User","objectId":shell.currentUser.objectId}
+          var objectId;
+
+          if(address)
+            objectId = address.user.objectId;
+          else
+            objectId = shell.currentUser.objectId;
+
+          scope.newAddress.user = {"__type":"Pointer",className:"_User","objectId":objectId}
           userApi.saveAddress(scope.newAddress).then(function(result){
     
             if(address && address.addresses){
