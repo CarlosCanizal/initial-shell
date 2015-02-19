@@ -11,6 +11,7 @@ function cardForm(userApi, conekta){
     scope: true,
     link:function(scope,element,attr){
       var shell = scope.shell;
+      var view = scope.view;
       var paymentMethod;
 
       scope.months = [];
@@ -22,7 +23,6 @@ function cardForm(userApi, conekta){
       for(var j=2015; j<=2030; j++){
         scope.years.push(j);
       }
-
 
       if(scope.payment){
         paymentMethod = scope.payment;
@@ -50,7 +50,7 @@ function cardForm(userApi, conekta){
         scope.conektaId = attr.conektaId;
       }
       else{
-        scope.conektaId = shell.currentUser.conektaId;
+        scope.conektaId = view.user ? view.user.conektaId :shell.currentUser.conektaId;
       }
 
       scope.saveCard = function(conektaId){
