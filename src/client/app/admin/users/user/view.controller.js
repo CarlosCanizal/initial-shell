@@ -12,7 +12,6 @@
     var view = this;
     var userId = $stateParams.userId;
     view.user = user;
-
   }
 
 })();

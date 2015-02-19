@@ -26,7 +26,6 @@
     else
       account.user = shell.currentUser;
 
-
     userApi.getCards({conektaId:account.user.conektaId}).then(function(cards){
       account.cards = cards;
       
@@ -52,7 +51,7 @@
     account.updateCard = function(){
       if(account.subscription.payment){
         shell.showLoading();
-        conekta.subscriptionCard(account.subscription.payment).then(function(user){
+        conekta.subscriptionCard(account.subscription.payment, account.user).then(function(user){
           if(!view)
             shell.updateCurrentUser();
         },function(error){

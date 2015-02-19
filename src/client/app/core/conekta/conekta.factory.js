@@ -51,14 +51,13 @@
       });
     }
 
-    function subscriptionCard(payment){
-      var user =  userApi.currentUser();
-      var conektaId = userApi.currentUser().conektaId;
+    function subscriptionCard(payment, user){
+      var conektaId = user.conektaId;
       var params = { card:payment.card.id, conektaId: conektaId, "function":"subscriptionCard"}
       return conektaResource.save(params).$promise.then(function(){
         return userApi.logMembership({user: user.objectId, status:'updateCard', notes:payment});
       }).then(function(){
-        return userApi.saveProfile({objectId: user.objectId, subscriptionCard:payment});
+        return userApi.saveUserProfile({objectId: user.objectId, subscriptionCard:payment});
       });
     }
 
