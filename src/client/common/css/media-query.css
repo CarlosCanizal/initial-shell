@@ -77,7 +77,7 @@
 @media screen and (max-width: 35.5em) {
   /* line 48, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   body {
-    padding-bottom: 2rem; }
+    padding: 1rem 2rem 2rem 2rem; }
 
   /* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .filter-title {

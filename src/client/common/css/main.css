@@ -265,7 +265,7 @@ a:hover, a:active, a:focus {
 .form-icon {
   position: relative; }
   /* line 224, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
-  .form-icon i {
+  .form-icon i.fa-dot-circle-o {
     color: rgba(0, 0, 0, 0.26); }
 
 /* line 227, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
