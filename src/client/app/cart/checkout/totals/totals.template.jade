@@ -5,25 +5,25 @@ table.total-table
     td
       |$
     td
-      |{{shell.shoppingCart.cartTotal}}
+      |{{shell.shoppingCart.cartTotal | currency: ''}} MXN
   tr.action
     td.table-label
       |Saldo:
     td
       |$
     td
-      |{{shell.shoppingCart.wallet}}
+      |{{shell.shoppingCart.wallet | currency: ''}} MXN
   tr.action
     td.table-label
       |Descuento:
     td
       |$
     td
-      |{{shell.shoppingCart.discount}}
+      |{{shell.shoppingCart.discount | currency: ''}} MXN
   tr
     td.table-label
       |Total a Pagar:
     td
       |$
     td
-      |{{shell.shoppingCart.total}}
+      |{{shell.shoppingCart.total | currency: ''}} MXN

@@ -135,11 +135,11 @@
         cart.items.push(item);
       }else{
         if(cart.items[index].type=="available"){
-          if(cart.items[index].quantity+1  <= cart.items[index].stock){
-            cart.items[index].quantity +=1;
+          if(cart.items[index].quantity+item.quantity  <= cart.items[index].stock){
+            cart.items[index].quantity +=item.quantity;
           }
         }else{
-          cart.items[index].quantity +=1;
+          cart.items[index].quantity += item.quantity;
         }
       }
       storage.set('cart',cart);

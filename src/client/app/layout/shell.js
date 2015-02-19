@@ -100,8 +100,10 @@
       });
     }
 
-    shell.addToCart = function(item){
-        shell.shoppingCart = ShoppingCart.addItem({quantity:1,
+    shell.addToCart = function(item, qty){
+        var quantity;
+        quantity = qty ? parseInt(qty) : 1;
+        shell.shoppingCart = ShoppingCart.addItem({quantity:quantity,
                                              objectId:item.objectId,
                                              price:item.price,
                                              name:item.name, 

@@ -7,7 +7,7 @@
       <div data-ng-if="item.type == 'serie'">Suscripcion</div>
       <div data-ng-if="item.type == 'preorder'">Preorden</div>
       <div data-ng-if="item.type == 'available'">Disponible de inmediato</div>
-      <div>Precio: ${{item.price}} USD</div>
+      <div>Precio: {{item.price | currency}} MXN</div>
       <div class="quantity"><a data-ng-click="minusOne(item)" class="pure-button button-small just-icon"><i class="fa fa-minus-circle"></i></a><span data-ng-class="{update:update}">{{item.quantity}}</span><a data-ng-click="plusOne(item)" class="pure-button button-small just-icon"><i class="fa fa-plus-circle"></i></a></div>
       <div data-ng-if="item.type== 'available' &amp;&amp; item.quantity &gt;= item.stock" class="error">Solo {{item.stock}} disponibles.</div>
     </div>
@@ -16,7 +16,7 @@
 <div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-4">
   <div class="item-space">
     <div class="subtitle">Total:</div>
-    <div data-ng-class="{update:update}" class="subtitle">$ {{(item.price*item.quantity).toFixed(2)}} USD</div>
+    <div data-ng-class="{update:update}" class="subtitle">{{(item.price*item.quantity) | currency}} MXN</div>
     <div class="margin-bottom"><a data-ng-click="checkout.removeFromCart($index)" class="pure-button button-xsmall"><i class="fa fa-trash"></i>Quitar del carrito</a></div>
   </div>
 </div>

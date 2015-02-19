@@ -17,10 +17,32 @@
               |{{item.info.description}}
             .item-attribute
               span.text-secondary-black.margin-right-1
+                |Editorial:
+              span.uppercase
+                |{{item.info.publisher}}
+            .item-attribute
+              span.text-secondary-black.margin-right-1
                 |Precio:
               |{{item.info.price | currency}}
             .item-attribute
               span.text-secondary-black.margin-right-1
-                |Editorial:
+                |Disponibilidad:
               span.uppercase
-                |{{item.info.publisher}}
+                |{{item.info.type}}
+            .item-attribute
+              a.pure-button.button-small.just-icon(data-ng-click="item.minusOne()")
+                i.fa.fa-minus-circle
+              span.margin-side-1(data-ng-class="{update:update}")
+                | {{item.quantity}}
+              a.pure-button.button-small.just-icon(data-ng-click="item.plusOne()")
+                i.fa.fa-plus-circle
+            .item-attribute.error(data-ng-if="item.type== 'available' && item.quantity >= item.stock")
+              | Solo {{item.stock}} disponibles.
+            .item-action
+              a.pure-button.pure-button-primary(data-ng-click="shell.addToCart(item.info, item.quantity)")
+                span(data-ng-if="item.info.type=='serie'")
+                  | Suscribirme 
+                span(data-ng-if="item.info.type=='preorder'")
+                  | Preordenar
+                span(data-ng-if="item.info.type=='available'")
+                  | Comprar

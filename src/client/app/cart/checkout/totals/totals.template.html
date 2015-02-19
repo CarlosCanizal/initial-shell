@@ -3,21 +3,21 @@
   <tr>
     <td class="table-label">Total de la orden:</td>
     <td>$</td>
-    <td>{{shell.shoppingCart.cartTotal}}</td>
+    <td>{{shell.shoppingCart.cartTotal | currency: ''}} MXN</td>
   </tr>
   <tr class="action">
     <td class="table-label">Saldo:</td>
     <td>$</td>
-    <td>{{shell.shoppingCart.wallet}}</td>
+    <td>{{shell.shoppingCart.wallet | currency: ''}} MXN</td>
   </tr>
   <tr class="action">
     <td class="table-label">Descuento:</td>
     <td>$</td>
-    <td>{{shell.shoppingCart.discount}}</td>
+    <td>{{shell.shoppingCart.discount | currency: ''}} MXN</td>
   </tr>
   <tr>
     <td class="table-label">Total a Pagar:</td>
     <td>$</td>
-    <td>{{shell.shoppingCart.total}}</td>
+    <td>{{shell.shoppingCart.total | currency: ''}} MXN</td>
   </tr>
 </table>
