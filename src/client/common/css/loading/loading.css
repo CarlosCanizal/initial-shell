@@ -160,3 +160,69 @@
   20% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }
+
+/* line 126, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+.spinner-square {
+  margin: 0 auto;
+  width: 4rem;
+  height: 4rem;
+  position: relative; }
+
+/* line 132, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+.cube1, .cube2 {
+  background-color: rgba(255, 255, 255, 0.87);
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: cubemove 1.8s infinite ease-in-out;
+  animation: cubemove 1.8s infinite ease-in-out; }
+
+/* line 142, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s; }
+
+@-webkit-keyframes cubemove {
+  /* line 147, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5); }
+
+  /* line 149, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg); }
+
+  /* line 151, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5); }
+
+  /* line 153, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  100% {
+    -webkit-transform: rotate(-360deg); } }
+
+@keyframes cubemove {
+  /* line 157, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5); }
+
+  /* line 160, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg); }
+
+  /* line 163, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg); }
+
+  /* line 166, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5); }
+
+  /* line 169, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/loading/loading.sass */
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg); } }

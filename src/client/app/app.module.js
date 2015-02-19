@@ -4,6 +4,7 @@
   angular.module('app', [
     'ngResource',
     'ngUnderscore',
+    'ngAnimate',
     'app.core',
     'app.storage',
     'app.layout',

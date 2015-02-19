@@ -16,6 +16,15 @@ html(data-ng-app="app")
     link(rel="stylesheet", href="common/css/media-query.css")
   body
     div(data-ng-controller="Shell as shell")
+      .initial-layer(data-ng-hide="shell.loaded")
+        .initial-logo
+          img(src="common/images/quimera-white.png")
+        .initial-text(data-ng-hide="shell.loaded")
+          |Ingresando a la Sociedad.
+        .spinner-square(data-ng-hide="shell.loaded")
+          .cube1
+          .cube2
+        
       .opacity-layer(data-ng-show="shell.loading")
         div.spinner-circle
           div.dot1
@@ -41,6 +50,8 @@ html(data-ng-app="app")
     script(src="bower_components/angular-resource/angular-resource.min.js")
     script(src="bower_components/angular-local-storage/dist/angular-local-storage.min.js")
     script(src="bower_components/ng-underscore/build/ng-underscore.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.6/angular-animate.min.js")
+
 
     //conketa
     script(type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.0/js/conekta.js")
