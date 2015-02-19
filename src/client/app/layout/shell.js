@@ -17,6 +17,7 @@
     shell.errorBar = false;
     shell.error = null;
     shell.message = null;
+    shell.sideMenu = false;
 
 
     shell.title = 'Resultados';
@@ -130,6 +131,10 @@
       shell.errorBar = false;
       shell.error = null;
       shell.message = null;
+    }
+
+    shell.showSideMenu = function(showIt){
+      shell.sideMenu = showIt;
     }
     
   }

@@ -1,27 +1,57 @@
-/* line 2, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+/* line 3, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+#menu-button {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #3F51B5;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  z-index: 2; }
+
+/* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
 #mobile-menu {
   position: fixed;
   width: 100%;
-  background-color: #7C4DFF;
+  background-color: #3F51B5;
   bottom: 0;
   left: 0;
   z-index: 2;
   text-align: center;
   color: rgba(255, 255, 255, 0.87); }
-  /* line 11, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+  /* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
   #mobile-menu a {
     display: inline-block;
     width: 100%;
     font-size: 2rem;
     color: rgba(255, 255, 255, 0.87);
     text-decoration: none; }
-  /* line 17, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+  /* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
   #mobile-menu span {
     margin: 0 0.5rem; }
 
-/* line 20, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+/* line 31, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
 .mobile-menu-item {
   cursor: pointer;
   border-right: solid 1px rgba(255, 255, 255, 0.12);
   -webkit-box-sizing: border-box;
   font-family: 'Raleway' !important; }
+
+/* line 37, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+#mobile-side-menu {
+  padding: 1rem;
+  position: fixed;
+  width: 60%;
+  height: 100%;
+  background-color: #3F51B5;
+  z-index: 3;
+  top: 0;
+  left: 0; }
+
+/* line 47, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+.logo-mobile {
+  text-align: center;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.12); }
+  /* line 49, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/mobile/menu.sass */
+  .logo-mobile img {
+    width: 40%; }

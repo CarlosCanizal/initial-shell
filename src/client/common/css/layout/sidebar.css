@@ -1,45 +1,34 @@
 /* line 3, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
-#menu-button {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #7C4DFF;
-  color: rgba(255, 255, 255, 0.87);
-  font-size: 2rem;
-  padding: 0.3rem 0.8rem;
-  z-index: 2; }
-
-/* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo {
   border-bottom: solid 5px rgba(0, 0, 0, 0.87); }
-  /* line 14, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+  /* line 4, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
   .logo img {
     width: 100%; }
 
-/* line 18, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 8, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-text {
   font-family: 'Raleway';
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 12, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-h3 {
   font-size: 1.6rem; }
 
-/* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 15, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-h2 {
   font-size: 1.9rem; }
 
-/* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 18, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo-h1 {
   font-size: 2.4rem; }
 
-/* line 31, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+/* line 21, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .side-menu {
   color: rgba(0, 0, 0, 0.87);
   text-align: center; }
 
-/* line 37, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
-#left-pane nav > a, #left-pane nav > span {
+/* line 27, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+.left-pane nav > a, .left-pane nav > span {
   color: rgba(0, 0, 0, 0.54);
   display: block;
   width: 100%;
@@ -49,12 +38,12 @@
   text-transform: uppercase;
   font-size: 1.2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-/* line 47, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
-#left-pane nav .active {
+/* line 37, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+.left-pane nav .active {
   color: rgba(0, 0, 0, 0.87);
   border-color: rgba(0, 0, 0, 0.87); }
-/* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
-#left-pane nav .social {
+/* line 40, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+.left-pane nav .social {
   text: align-center;
   margin: 0 0.5rem;
   display: inline-block;
@@ -64,6 +53,18 @@
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.54);
   color: rgba(255, 255, 255, 0.87); }
-  /* line 60, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
-  #left-pane nav .social:hover {
+  /* line 50, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+  .left-pane nav .social:hover {
     background-color: #7C4DFF; }
+
+/* line 54, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+.left-pane.mobile nav > a, .left-pane.mobile nav > span {
+  color: rgba(255, 255, 255, 0.54);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+/* line 57, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+.left-pane.mobile .active {
+  color: rgba(255, 255, 255, 0.87);
+  border-color: rgba(255, 255, 255, 0.87); }
+/* line 60, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
+.left-pane.mobile .social {
+  background-color: rgba(0, 0, 0, 0.54); }

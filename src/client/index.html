@@ -26,8 +26,9 @@
       <div data-ng-if="shell.errorBar" class="error-layer">{{shell.errorResponse}}</div>
       <confirm-dialog></confirm-dialog>
       <div id="shell">
+        <div id="mobile-side-menu" data-ng-include="'app/layout/mobile/side-menu.html'" data-ng-if="shell.sideMenu"></div>
         <div class="pure-g">
-          <div id="left-pane" class="pure-u-1 pure-u-md-1-4 pure-u-lg-1-5">
+          <div class="left-pane pure-u-1 pure-u-md-1-4 pure-u-lg-1-5">
             <div class="side-space">
               <div data-ng-include="'app/layout/sidebar.template.html'" class="nav-top"></div>
             </div>
@@ -37,7 +38,7 @@
             <div data-ng-include="'app/layout/header.html'" class="nav-top"></div>
             <div ui-view></div>
           </div>
-          <div id="mobile-menu" data-ng-include="'app/layout/mobile/menu.html'" class="hidden-lg"></div>
+          <div id="mobile-menu" data-ng-include="'app/layout/mobile/menu.html'" data-ng-hide="shell.sideMenu || shell.isDashboard || shell.isAdmin" class="hidden-lg"></div>
         </div>
       </div>
     </div>

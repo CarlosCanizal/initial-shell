@@ -1,8 +1,19 @@
 @import '../../colors'
+
+#menu-button
+  position: fixed
+  top: 0
+  left: 0
+  background-color: $primary-color
+  color: $text-primary-white
+  font-size: 2rem
+  padding: 0.3rem 0.8rem
+  z-index: 2
+
 #mobile-menu
   position: fixed
   width: 100%
-  background-color: $accent-color
+  background-color: $primary-color
   bottom: 0
   left: 0
   z-index: 2
@@ -22,3 +33,20 @@
   border-right: solid 1px $dividers-white
   -webkit-box-sizing: border-box
   font-family: 'Raleway' !important
+
+#mobile-side-menu
+  padding: 1rem
+  position: fixed
+  width:60%
+  height:100%;
+  background-color: $primary-color
+  z-index: 3
+  top: 0
+  left: 0
+
+.logo-mobile
+  text-align: center
+  img
+    width: 40%
+  border-bottom: solid 1px $dividers-white
+

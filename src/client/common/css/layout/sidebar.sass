@@ -1,15 +1,5 @@
 @import '../colors';
 
-#menu-button
-  position: fixed
-  top: 0
-  left: 0
-  background-color: $accent-color
-  color: $text-primary-white
-  font-size: 2rem
-  padding: 0.3rem 0.8rem
-  z-index: 2
-
 .logo
   img
     width: 100%
@@ -32,7 +22,7 @@
   color: $text-primary-black;
   text-align: center
 
-#left-pane
+.left-pane
   nav
     & > a, & > span
       color: $text-secondary-black
@@ -59,3 +49,13 @@
       color: $text-primary-white
       &:hover
         background-color: $accent-color
+.left-pane.mobile
+  nav
+    & > a, & > span
+      color: $text-secondary-white
+      border-bottom: 1px solid $dividers-white
+  .active
+    color: $text-primary-white
+    border-color: $text-primary-white
+  .social
+    background-color: $text-secondary-black

@@ -25,15 +25,17 @@ html(data-ng-app="app")
 
       confirm-dialog
       #shell
+        #mobile-side-menu(data-ng-include="'app/layout/mobile/side-menu.html'", data-ng-if="shell.sideMenu")
         .pure-g
-          #left-pane.pure-u-1.pure-u-md-1-4.pure-u-lg-1-5
+          .left-pane.pure-u-1.pure-u-md-1-4.pure-u-lg-1-5
             .side-space
               .nav-top(data-ng-include="'app/layout/sidebar.template.html'")
           #right-pane.pure-u-1.pure-u-md-3-4.pure-u-lg-4-5
             #inner-box
             .nav-top(data-ng-include="'app/layout/header.html'")
             div(ui-view)
-          #mobile-menu.hidden-lg(data-ng-include="'app/layout/mobile/menu.html'")
+          #mobile-menu.hidden-lg(data-ng-include="'app/layout/mobile/menu.html'", data-ng-hide="shell.sideMenu || shell.isDashboard || shell.isAdmin")
+          
 
 
 
