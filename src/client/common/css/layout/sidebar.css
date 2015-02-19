@@ -3,15 +3,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #FFF;
+  background-color: #7C4DFF;
+  color: rgba(255, 255, 255, 0.87);
   font-size: 2rem;
   padding: 0.3rem 0.8rem;
   z-index: 2; }
 
 /* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
 .logo {
-  border-bottom: solid 5px #000; }
+  border-bottom: solid 5px rgba(0, 0, 0, 0.87); }
   /* line 14, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/layout/sidebar.sass */
   .logo img {
     width: 100%; }
