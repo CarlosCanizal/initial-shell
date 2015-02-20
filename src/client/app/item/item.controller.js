@@ -14,7 +14,14 @@
     item.quantity = 1;
 
     item.plusOne = function(){
-      item.quantity +=1;
+      if(item.info.type == 'available'){
+        if(item.quantity+1 <= item.info.stock){
+          item.quantity +=1;
+        }
+      }
+      else{
+        item.quantity +=1;
+      }
     }
 
     item.minusOne = function(){
