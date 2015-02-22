@@ -130,11 +130,10 @@
       
       var cart = this.getCart();
       var index = this.checkItem(cart.items, item);
-
       if(index === false){
         cart.items.push(item);
       }else{
-        if(cart.items[index].type=="available"){
+        if(cart.items[index].available=="available"){
           if(cart.items[index].quantity+item.quantity  <= cart.items[index].stock){
             cart.items[index].quantity +=item.quantity;
           }

@@ -14,7 +14,7 @@
     item.quantity = 1;
 
     item.plusOne = function(){
-      if(item.info.type == 'available'){
+      if(item.info.available == 'available'){
         if(item.quantity+1 <= item.info.stock){
           item.quantity +=1;
         }

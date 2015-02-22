@@ -5,11 +5,11 @@
     .description
       div.uppercase
         | {{item.name}}
-      div(data-ng-if="item.type == 'serie'")
+      div(data-ng-if="item.available == 'serie'")
         | Suscripcion
-      div(data-ng-if="item.type == 'preorder'")
+      div(data-ng-if="item.available == 'preorder'")
         | Preorden
-      div(data-ng-if="item.type == 'available'")
+      div(data-ng-if="item.available == 'available'")
         | Disponible de inmediato
       div
         | Precio: {{item.price | currency}} MXN
@@ -20,7 +20,7 @@
           | {{item.quantity}}
         a.pure-button.button-small.just-icon(data-ng-click="plusOne(item)")
           i.fa.fa-plus-circle
-      div.error(data-ng-if="item.type== 'available' && item.quantity >= item.stock")
+      div.error(data-ng-if="item.available == 'available' && item.quantity >= item.stock")
         | Solo {{item.stock}} disponibles.
 .pure-u-1.pure-u-sm-1-3.pure-u-md-1-4
   .item-space

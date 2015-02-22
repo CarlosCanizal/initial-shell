@@ -8,7 +8,7 @@
         <div class="item-image"><a data-ui-sref="item({objectId:item.objectId})"> <img alt="" ng-src="{{item.cover.url}}"/></a></div>
         <div class="item-info"><a data-ui-sref="item({objectId:item.objectId})" class="pointer">{{item.name}}</a></div>
         <div class="item-info">{{item.price | currency}} MXN</div>
-        <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.type=='serie'">Suscribirme </span><span data-ng-if="item.type=='preorder'">Preordenar</span><span data-ng-if="item.type=='available'">Comprar</span></a></div>
+        <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.available == 'serie'">Suscribirme </span><span data-ng-if="item.available == 'preorder'">Preordenar</span><span data-ng-if="item.available == 'available'">Comprar</span></a></div>
       </div>
     </div>
   </div>

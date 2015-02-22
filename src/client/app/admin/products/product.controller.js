@@ -14,7 +14,7 @@
 
     product.form = false;
     product.info = info;
-    product.types = productsApi.getTypes();
+    product.availables = productsApi.getAvailables();
     product.statusList = productsApi.getStatusList();
 
     product.showForm = function(view){

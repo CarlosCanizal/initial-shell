@@ -28,7 +28,7 @@
               span.text-secondary-black.margin-right-1
                 |Disponibilidad:
               span.uppercase
-                |{{item.info.type}}
+                |{{item.info.available}}
             .item-attribute
               a.pure-button.button-small.just-icon(data-ng-click="item.minusOne()")
                 i.fa.fa-minus-circle
@@ -36,13 +36,13 @@
                 | {{item.quantity}}
               a.pure-button.button-small.just-icon(data-ng-click="item.plusOne()")
                 i.fa.fa-plus-circle
-            .item-attribute.error(data-ng-if="item.info.type== 'available' && item.quantity >= item.info.stock")
+            .item-attribute.error(data-ng-if="item.info.available == 'available' && item.quantity >= item.info.stock")
               | Solo {{item.info.stock}} disponibles.
             .item-action
               a.pure-button.pure-button-primary(data-ng-click="shell.addToCart(item.info, item.quantity)")
-                span(data-ng-if="item.info.type=='serie'")
+                span(data-ng-if="item.info.available =='serie'")
                   | Suscribirme 
-                span(data-ng-if="item.info.type=='preorder'")
+                span(data-ng-if="item.info.available =='preorder'")
                   | Preordenar
-                span(data-ng-if="item.info.type=='available'")
+                span(data-ng-if="item.info.available =='available'")
                   | Comprar

@@ -71,11 +71,11 @@
                 td
                   |{{item.item.name}}
                 td
-                  |{{item.type}}
+                  |{{item.available}}
                 td
                   |{{item.quantity}}
                 td
-                  |{{item.price}}
+                  |{{item.price | currency}}
                 td.text-align-right
                   |{{item.total | currency }}
 

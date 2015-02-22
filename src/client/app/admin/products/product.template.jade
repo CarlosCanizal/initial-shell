@@ -27,7 +27,7 @@ div(data-ng-show="product.form")
               td.info-label
                 |Disponibilidad:
               td.info-value
-                |{{product.info.type}}
+                |{{product.info.available}}
             tr
               td.info-label
                 |Cantidad:
@@ -37,7 +37,7 @@ div(data-ng-show="product.form")
               td.info-label
                 |Precio:
               td.info-value
-                |{{product.info.price}}
+                |{{product.info.price | currency}}
             tr
               td.info-label
                 |Publisher:

@@ -15,7 +15,7 @@ function cartItem(ShoppingCart){
       scope.update = false;
 
       scope.plusOne = function(item){
-        if(item.type == 'available'){
+        if(item.available == 'available'){
           if(item.quantity+1 <= item.stock){
             ++item.quantity;
             scope.update = true;

@@ -107,9 +107,9 @@
                                              objectId:item.objectId,
                                              price:item.price,
                                              name:item.name, 
-                                             className:item.className,
-                                             cover:item.cover,
                                              type: item.type,
+                                             cover:item.cover,
+                                             available: item.available,
                                              stock: item.stock
                                             });
     }
@@ -122,10 +122,10 @@
         shell.errorBar = false;
         shell.error = error.message_to_purchaser;
       }
-      else if(error.data){
-       shell.errorBar = false;
+      // else if(error.data){
+      //  shell.errorBar = false;
        shell.error = error.data.error; 
-      }
+      // }
     }
 
     shell.setMessage = function(message){

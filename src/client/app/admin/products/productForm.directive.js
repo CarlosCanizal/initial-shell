@@ -15,7 +15,7 @@ function productForm($state, productsApi, publisherApi){
       var product = scope.product;
       scope.form = product.info;
       scope.publisher = {name:null};
-      scope.type = {name:scope.form.type};
+      scope.available = {name:scope.form.available};
       scope.status = {name:scope.form.status};
 
       product.publishers = [];

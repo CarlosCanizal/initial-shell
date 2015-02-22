@@ -11,11 +11,11 @@
           </div>
         </div>
         <div class="form-container">
-          <label for="type">Diponibilidad:</label>
-          <select data-ng-model="type" data-ng-change="form.type = type.name" data-ng-options="item as item.label for item in product.types track by item.name" class="complete-1"></select>
-          <input type="hidden" data-ng-model="form.type"/>
+          <label for="available">Diponibilidad:</label>
+          <select data-ng-model="available" data-ng-change="form.available = available.name" data-ng-options="item as item.label for item in product.availables track by item.name" class="complete-1"></select>
+          <input type="hidden" data-ng-model="form.available"/>
         </div>
-        <div data-ng-show="form.type == 'available'" class="form-container">
+        <div data-ng-show="form.available == 'available'" class="form-container">
           <label for="stock" ng-show="productForm.stock.$valid || productForm.stock.$pristine">Cantidad:</label>
           <label for="stock" ng-show="productForm.stock.$invalid &amp;&amp; productForm.stock.$dirty" class="error">Cantidad es requerido:</label>
           <div class="form-icon">

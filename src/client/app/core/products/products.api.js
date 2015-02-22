@@ -17,7 +17,7 @@
       getProduct: getProduct,
       saveProduct: saveProduct,
       deleteProduct: deleteProduct,
-      getTypes: getTypes,
+      getAvailables: getAvailables,
       getStatusList: getStatusList
     };
 
@@ -30,7 +30,7 @@
     }
 
     function getProduct(productId){
-      return Product.get({
+      return Product.query({
         objectId: productId
       }).$promise;
     }
@@ -46,7 +46,7 @@
       return Product.delete({objectId: objectId}).$promise;
     }
 
-    function getTypes(){
+    function getAvailables(){
       return [{name:'preorder', label:'Preorden'},{name:'available', label:'Disponible'}];
     }
 

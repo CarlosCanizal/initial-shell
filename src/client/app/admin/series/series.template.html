@@ -19,7 +19,7 @@
           <tbody>
             <tr data-ng-repeat="serie in series.list" ui-sref="admin.serie({serieId:serie.objectId})" class="pointer">
               <td>{{serie.name}}</td>
-              <td>{{serie.type}}</td>
+              <td>{{serie.available}}</td>
               <td>{{serie.status}}</td>
               <td>{{serie.price | currency}}</td>
               <td>{{serie.publisher}}</td>

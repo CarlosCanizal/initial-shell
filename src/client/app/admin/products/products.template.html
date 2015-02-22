@@ -20,7 +20,7 @@
           <tbody>
             <tr data-ng-repeat="product in products.list" ui-sref="admin.product({productId:product.objectId})" class="pointer">
               <td>{{product.name}}</td>
-              <td>{{product.type}}</td>
+              <td>{{product.available}}</td>
               <td>{{product.stock}}</td>
               <td>{{product.status}}</td>
               <td>{{product.price | currency}}</td>

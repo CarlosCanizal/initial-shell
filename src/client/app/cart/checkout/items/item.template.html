@@ -4,12 +4,12 @@
   <div class="item-space">
     <div class="description">
       <div class="uppercase">{{item.name}}</div>
-      <div data-ng-if="item.type == 'serie'">Suscripcion</div>
-      <div data-ng-if="item.type == 'preorder'">Preorden</div>
-      <div data-ng-if="item.type == 'available'">Disponible de inmediato</div>
+      <div data-ng-if="item.available == 'serie'">Suscripcion</div>
+      <div data-ng-if="item.available == 'preorder'">Preorden</div>
+      <div data-ng-if="item.available == 'available'">Disponible de inmediato</div>
       <div>Precio: {{item.price | currency}} MXN</div>
       <div class="quantity"><a data-ng-click="minusOne(item)" class="pure-button button-small just-icon"><i class="fa fa-minus-circle"></i></a><span data-ng-class="{update:update}">{{item.quantity}}</span><a data-ng-click="plusOne(item)" class="pure-button button-small just-icon"><i class="fa fa-plus-circle"></i></a></div>
-      <div data-ng-if="item.type== 'available' &amp;&amp; item.quantity &gt;= item.stock" class="error">Solo {{item.stock}} disponibles.</div>
+      <div data-ng-if="item.available == 'available' &amp;&amp; item.quantity &gt;= item.stock" class="error">Solo {{item.stock}} disponibles.</div>
     </div>
   </div>
 </div>

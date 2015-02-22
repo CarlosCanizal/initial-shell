@@ -16,11 +16,11 @@
           {{item.price | currency}} MXN
         .item-button
           a.pure-button.pure-button-primary(data-ng-click="shell.addToCart(item)")
-            span(data-ng-if="item.type=='serie'")
+            span(data-ng-if="item.available == 'serie'")
               | Suscribirme 
-            span(data-ng-if="item.type=='preorder'")
+            span(data-ng-if="item.available == 'preorder'")
               | Preordenar
-            span(data-ng-if="item.type=='available'")
+            span(data-ng-if="item.available == 'available'")
               | Comprar
           
 

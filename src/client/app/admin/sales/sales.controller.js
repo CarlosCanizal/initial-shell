@@ -49,7 +49,7 @@
             }else{
               if(item.quantity && item.price)
               var total = item.quantity*item.price;
-              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total, price:item.price, type:item.type};
+              byTotal[item.objectId] = {item:item, quantity: item.quantity, total:total, price:item.price, available:item.available};
             }
 
           });

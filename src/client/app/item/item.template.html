@@ -11,10 +11,10 @@
             <div class="item-description">{{item.info.description}}</div>
             <div class="item-attribute"><span class="text-secondary-black margin-right-1">Editorial:</span><span class="uppercase">{{item.info.publisher}}</span></div>
             <div class="item-attribute"><span class="text-secondary-black margin-right-1">Precio:</span>{{item.info.price | currency}}</div>
-            <div class="item-attribute"><span class="text-secondary-black margin-right-1">Disponibilidad:</span><span class="uppercase">{{item.info.type}}</span></div>
+            <div class="item-attribute"><span class="text-secondary-black margin-right-1">Disponibilidad:</span><span class="uppercase">{{item.info.available}}</span></div>
             <div class="item-attribute"><a data-ng-click="item.minusOne()" class="pure-button button-small just-icon"><i class="fa fa-minus-circle"></i></a><span data-ng-class="{update:update}" class="margin-side-1">{{item.quantity}}</span><a data-ng-click="item.plusOne()" class="pure-button button-small just-icon"><i class="fa fa-plus-circle"></i></a></div>
-            <div data-ng-if="item.info.type== 'available' &amp;&amp; item.quantity &gt;= item.info.stock" class="item-attribute error">Solo {{item.info.stock}} disponibles.</div>
-            <div class="item-action"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.type=='serie'">Suscribirme </span><span data-ng-if="item.info.type=='preorder'">Preordenar</span><span data-ng-if="item.info.type=='available'">Comprar</span></a></div>
+            <div data-ng-if="item.info.available == 'available' &amp;&amp; item.quantity &gt;= item.info.stock" class="item-attribute error">Solo {{item.info.stock}} disponibles.</div>
+            <div class="item-action"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.available =='serie'">Suscribirme </span><span data-ng-if="item.info.available =='preorder'">Preordenar</span><span data-ng-if="item.info.available =='available'">Comprar</span></a></div>
           </div>
         </div>
       </div>

@@ -57,9 +57,9 @@
             <tbody>
               <tr data-ng-repeat="item in sales.list | orderBy: 'total':true ">
                 <td>{{item.item.name}}</td>
-                <td>{{item.type}}</td>
+                <td>{{item.available}}</td>
                 <td>{{item.quantity}}</td>
-                <td>{{item.price}}</td>
+                <td>{{item.price | currency}}</td>
                 <td class="text-align-right">{{item.total | currency }}</td>
               </tr>
             </tbody>
