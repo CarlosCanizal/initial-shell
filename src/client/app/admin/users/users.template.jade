@@ -18,11 +18,11 @@
             select.margin-side-1-2(ng-model="users.membership", ng-options="item as item for item in users.memberships",data-ng-change="updateMunicipalities()")
             a.pure-button.pure-button-primary.button-small.margin-left-1-2(data-ng-click="users.search(users.startDate, users.endDate, users.membership)")
               |Buscar
+          h1.align-right
+            | Total: {{users.list.length}}
           .shelf-message(ng-if="users.list.length < 1")
             .subtitle
               |No existen usuarios registrados.
-          h1.align-right
-            | Total: {{users.list.length}}
           #list(ng-if="users.list.length > 0")
             table.info-table
               thead
@@ -69,11 +69,11 @@
     .shelf-space
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-content
+        h1.align-right
+          | Total: {{users.buyers.length}}
         .shelf-message(ng-if="users.buyers.length < 1")
           .subtitle
             |No existen usuarios con estos parametros.
-        h1.align-right
-          | Total: {{users.buyers.length}}
         #list(ng-if="users.buyers.length > 0")
           table.info-table
             thead
@@ -120,11 +120,11 @@
     .shelf-space
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-content
+        h1.align-right
+          | Total: {{users.notBuyers.length}}
         .shelf-message(ng-if="users.notBuyers.length < 1")
           .subtitle
             |No existen usuarios con estos parametros.
-        h1.align-right
-          | Total: {{users.notBuyers.length}}
         #list(ng-if="users.notBuyers.length > 0")
           table.info-table
             thead

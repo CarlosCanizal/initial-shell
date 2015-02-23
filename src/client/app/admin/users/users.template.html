@@ -12,10 +12,10 @@
             <input type="date" ng-model="users.endDate"/>
             <select ng-model="users.membership" ng-options="item as item for item in users.memberships" data-ng-change="updateMunicipalities()" class="margin-side-1-2"></select><a data-ng-click="users.search(users.startDate, users.endDate, users.membership)" class="pure-button pure-button-primary button-small margin-left-1-2">Buscar</a>
           </div>
+          <h1 class="align-right">Total: {{users.list.length}}</h1>
           <div ng-if="users.list.length &lt; 1" class="shelf-message">
             <div class="subtitle">No existen usuarios registrados.</div>
           </div>
-          <h1 class="align-right">Total: {{users.list.length}}</h1>
           <div id="list" ng-if="users.list.length &gt; 0">
             <table class="info-table">
               <thead>
@@ -55,10 +55,10 @@
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div class="shelf-content">
+        <h1 class="align-right">Total: {{users.buyers.length}}</h1>
         <div ng-if="users.buyers.length &lt; 1" class="shelf-message">
           <div class="subtitle">No existen usuarios con estos parametros.</div>
         </div>
-        <h1 class="align-right">Total: {{users.buyers.length}}</h1>
         <div id="list" ng-if="users.buyers.length &gt; 0">
           <table class="info-table">
             <thead>
@@ -97,10 +97,10 @@
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div class="shelf-content">
+        <h1 class="align-right">Total: {{users.notBuyers.length}}</h1>
         <div ng-if="users.notBuyers.length &lt; 1" class="shelf-message">
           <div class="subtitle">No existen usuarios con estos parametros.</div>
         </div>
-        <h1 class="align-right">Total: {{users.notBuyers.length}}</h1>
         <div id="list" ng-if="users.notBuyers.length &gt; 0">
           <table class="info-table">
             <thead>
