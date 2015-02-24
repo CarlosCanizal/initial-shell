@@ -100,3 +100,35 @@
     </div>
   </div>
 </div>
+<div data-ng-if="order.info.notAvailable &amp;&amp; order.info.notAvailable.length &gt; 0">
+  <div class="filter-title"><span class="publisher-name error">No disponibles al momento de pagar</span></div>
+  <div class="shelf">
+    <div class="inner-shelf error-border">
+      <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
+      <div class="shelf-space">
+        <div data-ng-hide="loading" class="shelf-content">
+          <table class="info">
+            <thead>
+              <tr class="text-secondary-black">
+                <th>Articulo</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-ng-repeat="item in order.info.notAvailable">
+                <td class="info-value uppercase">{{item.name}}</td>
+                <td class="info-value align-center">{{item.quantity}}</td>
+                <td class="info-value align-right">{{item.price | currency}}</td>
+              </tr>
+              <tr>
+                <td colspan="2"></td>
+                <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

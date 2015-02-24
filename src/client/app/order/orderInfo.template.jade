@@ -105,6 +105,37 @@
               td.info-important.align-right.border-top.padding-top
                 |{{order.info.amount | currency}}
 
+div(data-ng-if="order.info.notAvailable && order.info.notAvailable.length > 0")
+  .filter-title
+    span.publisher-name.error
+      |No disponibles al momento de pagar
+  .shelf
+    .inner-shelf.error-border
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-space
+        .shelf-content(data-ng-hide="loading")
+          table.info
+            thead
+              tr.text-secondary-black
+                th
+                  | Articulo
+                th
+                  | Cantidad
+                th
+                  | Total
+            tbody
+              tr(data-ng-repeat="item in order.info.notAvailable")
+                td.info-value.uppercase
+                  | {{item.name}}
+                td.info-value.align-center
+                  | {{item.quantity}}
+                td.info-value.align-right
+                  | {{item.price | currency}}
+              tr
+                td(colspan="2")
+                td.info-important.align-right.border-top.padding-top
+                  |{{order.info.amount | currency}}
+
         
 
 
