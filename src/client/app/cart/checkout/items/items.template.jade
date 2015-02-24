@@ -18,6 +18,8 @@
                       | {{item.name}}
                     div
                       | Precio: {{item.price |currency}} MXN
+                    div.error
+                      | Cantidad no disponible {{item.quantity}}
             .pure-u-1.pure-u-sm-1-3.align-center          
               a.pure-button(data-ng-click="checkout.cleanItemsUnavaibale()")
                 i.fa.fa-times-circle

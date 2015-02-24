@@ -122,7 +122,7 @@ div(data-ng-if="order.info.notAvailable && order.info.notAvailable.length > 0")
                 th
                   | Cantidad
                 th
-                  | Total
+                  | Precio
             tbody
               tr(data-ng-repeat="item in order.info.notAvailable")
                 td.info-value.uppercase
@@ -131,10 +131,6 @@ div(data-ng-if="order.info.notAvailable && order.info.notAvailable.length > 0")
                   | {{item.quantity}}
                 td.info-value.align-right
                   | {{item.price | currency}}
-              tr
-                td(colspan="2")
-                td.info-important.align-right.border-top.padding-top
-                  |{{order.info.amount | currency}}
 
         
 

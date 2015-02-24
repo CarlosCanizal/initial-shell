@@ -112,7 +112,7 @@
               <tr class="text-secondary-black">
                 <th>Articulo</th>
                 <th>Cantidad</th>
-                <th>Total</th>
+                <th>Precio</th>
               </tr>
             </thead>
             <tbody>
@@ -120,10 +120,6 @@
                 <td class="info-value uppercase">{{item.name}}</td>
                 <td class="info-value align-center">{{item.quantity}}</td>
                 <td class="info-value align-right">{{item.price | currency}}</td>
-              </tr>
-              <tr>
-                <td colspan="2"></td>
-                <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}}</td>
               </tr>
             </tbody>
           </table>
