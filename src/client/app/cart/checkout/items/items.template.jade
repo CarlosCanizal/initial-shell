@@ -1,4 +1,4 @@
-#items-unavailable(data-ng-if="itemsUnavailable.length > 0")         
+#items-unavailable(data-ng-if="checkout.itemsUnavailable.length > 0")         
   .filter-title
     span.publisher-name.error
       | Articulos no disponibles
@@ -14,10 +14,10 @@
                   img(alt="", data-ng-src="{{item.cover.url}}")
                 .pure-u-1.pure-u-md-1-2
                   .item-space
-                    div
+                    div.uppercase
                       | {{item.name}}
                     div
-                      | Precio: ${{item.price |currency}} MXN
+                      | Precio: {{item.price |currency}} MXN
             .pure-u-1.pure-u-sm-1-3.align-center          
               a.pure-button(data-ng-click="checkout.cleanItemsUnavaibale()")
                 i.fa.fa-times-circle
