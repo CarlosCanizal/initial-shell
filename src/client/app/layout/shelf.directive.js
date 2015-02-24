@@ -26,7 +26,7 @@ function shelf(storeApi){
       shell.title = publisher;
       scope.loading = true;
       scope.itemsList = [];
-      storeApi.getItems({publisher:publisher, status:'active', function: store}).then(function(series){
+      storeApi.getItems({publisher:publisher, status:'active', minStock: 1 , function: store}).then(function(series){
         scope.itemsList = series.result;
       },function(error){
         shell.setError(error);
