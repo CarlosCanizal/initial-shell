@@ -30,6 +30,7 @@ function shippingAddress(userApi, shippingApi){
         checkout.addresses =  addresses.results;
         if(checkout.addresses[0]){
           shell.shoppingCart.shippingAddress = checkout.addresses[0];
+          checkout.updateShipping();
         }
       },function(error){
         shell.setError(error);

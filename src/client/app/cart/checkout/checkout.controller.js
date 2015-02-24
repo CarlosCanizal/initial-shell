@@ -69,7 +69,7 @@
 
     checkout.toPaymentMethod = function(){
 
-      ShoppingCart.setCart(shell.shoppingCart);
+      shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
       checkout.showPayment = true;
       if(!checkout.loadPayment)
         checkout.loadPayment = true;
@@ -78,7 +78,7 @@
     }
 
     checkout.toConfirmOrder = function(){
-      ShoppingCart.setCart(shell.shoppingCart);
+      shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
       checkout.showPlaceOrder = true;
     }
 
@@ -118,6 +118,11 @@
 
     checkout.setShippingMethods = function(methods){
       checkout.shippingMethods = methods;
+    }
+
+    checkout.updateShipping = function(){
+      console.log('inside');
+      shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
     }
 
     function resetViews(){

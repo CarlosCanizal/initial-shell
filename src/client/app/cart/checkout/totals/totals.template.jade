@@ -6,6 +6,19 @@ table.total-table
       |$
     td
       |{{shell.shoppingCart.cartTotal | currency: ''}} MXN
+  tr(data-ng-show="shell.shoppingCart.shippingMethod && shell.shoppingCart.shippingAddress")
+    td.table-label
+      |Envio:
+    td
+      |$
+    td
+      |{{shell.shoppingCart.shippingMethod.price | currency: ''}} MXN
+  tr(data-ng-hide="shell.shoppingCart.shippingMethod && shell.shoppingCart.shippingAddress")
+    td.table-label
+      |Envio:
+    td
+    td
+      |+ Envio
   tr.action
     td.table-label
       |Saldo:
@@ -26,4 +39,4 @@ table.total-table
     td
       |$
     td
-      |{{shell.shoppingCart.total | currency: ''}} MXN
+      |{{shell.shoppingCart.total| currency: ''}} MXN

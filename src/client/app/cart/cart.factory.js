@@ -21,8 +21,7 @@
       setCart: setCart,
       validateOrder: validateOrder,
       updateItems: updateItems,
-      initialize: initialize,
-      initializeTotals: initializeTotals
+      initialize: initialize
     };
 
     return cart;
@@ -37,18 +36,21 @@
     }
 
     function initialize(){
-      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0,shippingMethod:false, shippingAddress: false, paymentMethod:false}
+      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false, useWallet:false, wallet:0, userWallet:0, discount:0,shippingMethod:false, shippingAddress: false, paymentMethod:false}
       return this.setCart(cart);
     }
 
-    function initializeTotals(){
-      var cart = this.getCart();
-      cart.items = [];
-      cart.itemsTotal =  0;
-      cart.cartTotal = 0;
-      cart.total = false;
-      return this.setCart(cart);
-    }
+    // function initializeTotals(){
+    //   var cart = this.getCart();
+    //   cart.items = [];
+    //   cart.itemsTotal =  0;
+    //   cart.cartTotal = 0;
+    //   cart.total = false;
+    //   cart.shippingMethod = false;
+    //   cart.shippingAddress = false;
+    //   cart.paymentMethod= false;
+    //   return this.setCart(cart);
+    // }
 
     function validateOrder(){
       var deferred = $q.defer();
@@ -57,7 +59,7 @@
         storeApi.validateOrder(cart.items).then(function(order){
           deferred.resolve(order.result);
         },function(error){
-          console.error(error);
+          shell.setError(error);
         });
       }
       else{
@@ -96,6 +98,10 @@
         cartTotal -= cart.discount;
       }
 
+      if(cart.shippingMethod && cart.shippingAddress){
+        cartTotal += cart.shippingMethod.price;
+      }
+
       if(cart.useWallet && (cart.userWallet && cart.userWallet > 0)){
         total = (cartTotal-cart.userWallet) > 0 ? cartTotal-cart.userWallet : 0;
         cart.wallet = (cart.userWallet - cartTotal > 0 )? cartTotal : cart.userWallet ;
@@ -111,7 +117,6 @@
       var item_index = false;
       angular.forEach(items, function(element, index){
         if(element.objectId == item.objectId  && !item_index){
-          console.log('same');
           item_index = index;
         }
       });
@@ -152,7 +157,7 @@
     }
 
     function emptyCart(){
-      return this.initializeTotals();
+      return this.initialize();
     }
 
 

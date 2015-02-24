@@ -5,6 +5,16 @@
     <td>$</td>
     <td>{{shell.shoppingCart.cartTotal | currency: ''}} MXN</td>
   </tr>
+  <tr data-ng-show="shell.shoppingCart.shippingMethod &amp;&amp; shell.shoppingCart.shippingAddress">
+    <td class="table-label">Envio:</td>
+    <td>$</td>
+    <td>{{shell.shoppingCart.shippingMethod.price | currency: ''}} MXN</td>
+  </tr>
+  <tr data-ng-hide="shell.shoppingCart.shippingMethod &amp;&amp; shell.shoppingCart.shippingAddress">
+    <td class="table-label">Envio:</td>
+    <td></td>
+    <td>+ Envio</td>
+  </tr>
   <tr class="action">
     <td class="table-label">Saldo:</td>
     <td>$</td>
@@ -18,6 +28,6 @@
   <tr>
     <td class="table-label">Total a Pagar:</td>
     <td>$</td>
-    <td>{{shell.shoppingCart.total | currency: ''}} MXN</td>
+    <td>{{shell.shoppingCart.total| currency: ''}} MXN</td>
   </tr>
 </table>
