@@ -23,7 +23,7 @@ function shelf(storeApi){
 
       var publisher = attr.publisher;
       var store = attr.store;
-      shell.title = publisher;
+      scope.title = publisher;
       scope.loading = true;
       scope.itemsList = [];
       storeApi.getItems({publisher:publisher, status:'active', minStock: 1 , function: store}).then(function(series){
