@@ -78,7 +78,7 @@
     }
 
     checkout.toConfirmOrder = function(){
-      shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
+      ShoppingCart.setCart(shell.shoppingCart);
       checkout.showPlaceOrder = true;
     }
 
@@ -121,7 +121,6 @@
     }
 
     checkout.updateShipping = function(){
-      console.log('inside');
       shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
     }
 

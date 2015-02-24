@@ -90,7 +90,7 @@
                 | Articulo
               th
                 | Cantidad
-              th
+              th(colspan="3")
                 | Total
           tbody
             tr(data-ng-repeat="item in order.info.items")
@@ -99,11 +99,22 @@
               td.info-value.align-center
                 | {{item.quantity}}
               td.info-value.align-right
-                | {{item.price | currency}}
+                |$
+              td.info-value.align-right
+                | {{item.price | currency:''}} MXN
+            tr(data-ng-if="order.info.shippingMethod")
+              td.info-value.uppercase
+                | Envio {{order.info.shippingMethod.name}}
+              td.info-value.align-center
+                | 1
+              td.info-value.align-right
+                |$
+              td.info-value.align-right
+                | {{order.info.shippingMethod.price | currency:''}} MXN
             tr
-              td(colspan="2")
+              td(colspan="3")
               td.info-important.align-right.border-top.padding-top
-                |{{order.info.amount | currency}}
+                |{{order.info.amount | currency}} MXN
 
 div(data-ng-if="order.info.notAvailable && order.info.notAvailable.length > 0")
   .filter-title
