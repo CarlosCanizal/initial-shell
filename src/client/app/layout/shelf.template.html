@@ -2,18 +2,20 @@
 <div class="filter-title"><span class="publisher-name">{{title}}</span></div>
 <div class="inner-shelf">
   <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-if="loading" class="spinner"></div>
-  <div ng-if="itemsList.length &lt; 1" class="shelf-message">
-    <div class="shelf-space">
-      <div class="subtitle">No existen productos con estos parametros.</div>
+  <div data-ng-hide="loading">
+    <div ng-if="itemsList.length &lt; 1" class="shelf-message">
+      <div class="shelf-space">
+        <div class="subtitle">No existen productos con estos parametros.</div>
+      </div>
     </div>
-  </div>
-  <div data-ng-hide="loading" class="pure-g">
-    <div data-ng-repeat="item in itemsList" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
-      <div class="item">
-        <div class="item-image"><a data-ui-sref="item({objectId:item.objectId})"> <img alt="" ng-src="{{item.cover.url}}"/></a></div>
-        <div class="item-info"><a data-ui-sref="item({objectId:item.objectId})" class="pointer">{{item.name}}</a></div>
-        <div class="item-info">{{item.price | currency}} MXN</div>
-        <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.available == 'serie'">Suscribirme </span><span data-ng-if="item.available == 'preorder'">Preordenar</span><span data-ng-if="item.available == 'available'">Comprar</span></a></div>
+    <div class="pure-g">
+      <div data-ng-repeat="item in itemsList" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
+        <div class="item">
+          <div class="item-image"><a data-ui-sref="item({objectId:item.objectId})"> <img alt="" ng-src="{{item.cover.url}}"/></a></div>
+          <div class="item-info"><a data-ui-sref="item({objectId:item.objectId})" class="pointer">{{item.name}}</a></div>
+          <div class="item-info">{{item.price | currency}} MXN</div>
+          <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.available == 'serie'">Suscribirme </span><span data-ng-if="item.available == 'preorder'">Preordenar</span><span data-ng-if="item.available == 'available'">Comprar</span></a></div>
+        </div>
       </div>
     </div>
   </div>
