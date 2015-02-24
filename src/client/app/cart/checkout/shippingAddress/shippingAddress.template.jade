@@ -36,15 +36,23 @@
               .information-box.padding-side-1
                 div(data-ng-show="checkout.addresses.length > 0")
                   .address-line
+                    | Seleccionar metodo de envio
+                  .address-line
+                    select(data-ng-model="shell.shoppingCart.shippingMethod", data-ng-options="item.name for item in checkout.shippingMethods track by item.objectId")                      
+              .information-box.padding-side-1
+                div(data-ng-show="checkout.addresses.length > 0")
+                  .address-line
                     | Cambiar direccion
                   .address-line
-                    select(data-ng-model="shell.shoppingCart.shippingAddress", data-ng-options="someObject.street for someObject in checkout.addresses track by someObject.objectId")
+                    select(data-ng-model="shell.shoppingCart.shippingAddress", data-ng-options="item.street for item in checkout.addresses track by item.objectId")
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.addressFormView=true")
                     i.fa.fa-plus
                     | Agregar Direccion
             .pure-u-1.pure-u-md-1-3.align-center
               div.padding-side-1(data-ng-hide="showPayment")
+                .shipping-method
+                  | {{shell.shoppingCart.shippingMethod.name}} - {{shell.shoppingCart.shippingMethod.price | currency}}
                 .address-line
                   a.pure-button.button-success(data-ng-click="checkout.toPaymentMethod()", data-ng-class="{'pure-button-disabled': !shell.shoppingCart.shippingAddress}")
                     i.fa.fa-check

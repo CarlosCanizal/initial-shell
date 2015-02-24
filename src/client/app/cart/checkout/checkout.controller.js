@@ -23,6 +23,7 @@
 
     checkout.addresses = [];
     checkout.paymentMethods = [];
+    checkout.shippingMethods = [];
     checkout.itemsUnavailable = [];
     checkout.completed = false;
     checkout.updateCart = false;
@@ -113,7 +114,10 @@
 
     checkout.setMethods = function(cards){
       checkout.paymentMethods = cards;
-      console.log(checkout.paymentMethods);
+    }
+
+    checkout.setShippingMethods = function(methods){
+      checkout.shippingMethods = methods;
     }
 
     function resetViews(){

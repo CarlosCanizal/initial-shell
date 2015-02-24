@@ -37,7 +37,7 @@
     }
 
     function initialize(){
-      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0, shippingAddress: false, paymentMethod:false}
+      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false,useWallet:false, wallet:0, userWallet:0, discount:0,shippingMethod:false, shippingAddress: false, paymentMethod:false}
       return this.setCart(cart);
     }
 

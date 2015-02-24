@@ -2,9 +2,9 @@ angular
   .module('app.cart')
   .directive('shippingAddress',shippingAddress);
 
-shippingAddress.$inject = ['userApi'];
+shippingAddress.$inject = ['userApi', 'shippingApi'];
 
-function shippingAddress(userApi){
+function shippingAddress(userApi, shippingApi){
   return{
     restrict: 'EA',
     templateUrl: 'app/cart/checkout/shippingAddress/shippingAddress.template.html',
@@ -20,7 +20,13 @@ function shippingAddress(userApi){
         checkout.addressFormView = show;
       }
 
-      userApi.getAddresses(shell.currentUser.objectId).then(function(addresses){
+      shippingApi.getList().then(function(result){
+        checkout.shippingMethods = result.results;
+        if(checkout.shippingMethods[0]){
+          shell.shoppingCart.shippingMethod = checkout.shippingMethods[0];
+        }
+        return userApi.getAddresses(shell.currentUser.objectId)
+      }).then(function(addresses){
         checkout.addresses =  addresses.results;
         if(checkout.addresses[0]){
           shell.shoppingCart.shippingAddress = checkout.addresses[0];
