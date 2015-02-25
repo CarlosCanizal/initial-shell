@@ -23,7 +23,7 @@
     }
 
     function updateMembership(membership, payment, user){
-      return subscribe(membership.id, payment.card.id, user.conektaId).then(function(){
+      return subscribe(membership.id, payment.card.id, user).then(function(){
         return userApi.logMembership({user: user.objectId, status:'active', notes:payment});
       }).then(function(){
         return userApi.saveUserProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment});
@@ -31,8 +31,8 @@
       
     }
 
-    function subscribe(plan, card, conektaId){
-      var params = {plan: plan, card: card, conektaId: conektaId, "function":"subscribe"}
+    function subscribe(plan, card, user){
+      var params = {user: user,plan: plan, card: card, "function":"subscribe"}
       return conektaResource.save(params).$promise;
     }
 
@@ -43,7 +43,7 @@
 
       console.log(user.objectId);
 
-      var params = {plan: plan, conektaId: user.conektaId, "function":"unsubscribe"}
+      var params = {user:user, plan: plan, "function":"unsubscribe"}
       return conektaResource.save(params).$promise.then(function(){
         return userApi.logMembership({user: user.objectId, status:'cancelled',notes:{message:message}});
       }).then(function(){

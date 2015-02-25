@@ -682,20 +682,18 @@ a:hover, a:active, a:focus {
   padding: 1rem 0; }
   /* line 572, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box input {
-    display: inline-block;
     width: 85%;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     border: solid 2px rgba(0, 0, 0, 0.12);
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     border-right: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     color: rgba(0, 0, 0, 0.87);
     outline: none;
     -webkit-box-sizing: border-box; }
-  /* line 584, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 583, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box a {
-    display: inline-block;
     text-align: center;
     width: 15%;
     background-color: #7C4DFF;
