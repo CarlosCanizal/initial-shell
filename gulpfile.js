@@ -52,3 +52,7 @@ gulp.task('partials', function () {
     .pipe(gulp.dest(".tmp/partials"))
     .pipe($.size());
 });
+
+gulp.task('clean', function () {
+  return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
+});
