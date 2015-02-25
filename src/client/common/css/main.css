@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 1rem 3rem;
-  background: url('../images/satinweave.png'); }
+  background: url('/common/images/satinweave.png'); }
 
 /* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
@@ -151,144 +151,115 @@ a:hover, a:active, a:focus {
   color: #0078e7;
   margin-bottom: 0.5rem; }
 
-/* line 130, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
-.search-box {
-  padding: 1rem 0; }
-  /* line 132, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
-  .search-box input {
-    width: 85%;
-    font-size: 1.7rem;
-    border: solid 2px rgba(0, 0, 0, 0.12);
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    border-right: 0;
-    padding: 0 1rem;
-    color: rgba(0, 0, 0, 0.87);
-    outline: none;
-    -webkit-box-sizing: border-box; }
-  /* line 143, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
-  .search-box a {
-    text-align: center;
-    width: 15%;
-    background-color: #7C4DFF;
-    border: solid 2px #7C4DFF;
-    letter-spacing: normal;
-    color: rgba(255, 255, 255, 0.87);
-    line-height: 2.5rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    -webkit-box-sizing: border-box;
-    cursor: pointer; }
-
-/* line 156, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 132, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .publisher-name {
   text-transform: uppercase; }
 
-/* line 159, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 135, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .shelf-name {
   text-transform: uppercase; }
 
-/* line 162, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 138, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .uppercase {
   text-transform: uppercase; }
 
-/* line 165, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 141, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .login {
   font-size: 1.1rem;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 170, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 146, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .table-image {
   width: 5rem; }
 
-/* line 173, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 149, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .card-item {
   padding: 1rem 0;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12); }
-  /* line 176, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 152, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .card-item:last-child {
     border-bottom: 0;
     padding-bottom: 0; }
-  /* line 179, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 155, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .card-item i {
     margin-right: 1rem; }
 
-/* line 182, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 158, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .cart-item {
   padding-bottom: 0.5rem; }
-  /* line 184, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 160, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .cart-item:last-child {
     padding-bottom: 0; }
-  /* line 186, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 162, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .cart-item a.button {
     margin-left: 2rem; }
-  /* line 188, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 164, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .cart-item img {
     width: 100%; }
 
-/* line 194, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 170, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .bottom-divider {
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   margin-bottom: 1rem;
   padding-bottom: 1rem; }
 
-/* line 199, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 175, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-item:last-child {
   margin-bottom: 0; }
 
-/* line 202, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 178, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .list-item {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   cursor: pointer; }
-  /* line 207, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 183, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .list-item:hover {
     color: #FF9100; }
 
-/* line 211, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 187, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .list-item:last-child {
   margin-bottom: 0;
   border-bottom: 0; }
 
-/* line 215, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 191, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-line {
   padding-bottom: 0.5rem; }
 
-/* line 219, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 195, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .action {
   color: #0078e7; }
 
-/* line 222, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 198, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error {
   color: #dd514c; }
 
-/* line 225, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 201, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .success {
   color: #1cb841; }
 
-/* line 228, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 204, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .warning {
   color: #f57b00; }
 
-/* line 231, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 207, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .update {
   color: #0078e7; }
 
-/* line 234, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 210, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .form-icon {
   position: relative; }
-  /* line 236, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 212, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .form-icon i.fa-dot-circle-o {
     color: rgba(0, 0, 0, 0.26); }
 
-/* line 239, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 215, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form-stacked label {
   font-family: 'RalewayLight';
   margin: 0.5rem 0; }
 
-/* line 243, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 219, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .medium-icon {
   font-size: 1.5rem;
   position: absolute;
@@ -296,31 +267,31 @@ a:hover, a:active, a:focus {
   right: 0.5rem;
   padding-left: 0.5rem; }
 
-/* line 251, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 227, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button {
   border: solid 1px rgba(0, 0, 0, 0.87);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem; }
 
-/* line 256, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 232, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .buttons-container {
   text-align: center;
   padding-bottom: 1rem;
   color: rgba(0, 0, 0, 0.26); }
-  /* line 260, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 236, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .buttons-container a {
     color: rgba(0, 0, 0, 0.26);
     cursor: pointer; }
 
-/* line 264, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 240, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-xsmall {
   font-size: 70%; }
 
-/* line 267, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 243, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .button-small {
   font-size: 85%; }
 
-/* line 271, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 247, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form select {
   width: 100%;
   display: inline-block;
@@ -331,7 +302,7 @@ a:hover, a:active, a:focus {
   font-size: 1.1rem;
   box-sizing: border-box; }
 
-/* line 281, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 257, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .disable-shelf {
   position: absolute;
   width: 100%;
@@ -341,265 +312,265 @@ a:hover, a:active, a:focus {
   text-align: center;
   z-index: 2; }
 
-/* line 291, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 267, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .fa-5 {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
   font-size: 5rem; }
 
-/* line 297, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 273, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .fa-8 {
   font-size: 8rem; }
 
-/* line 300, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 276, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .success-container {
   text-align: center;
   color: #1cb841; }
 
-/* line 304, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 280, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error-container {
   text-align: center;
   color: #dd514c; }
 
-/* line 308, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 284, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error-border {
   border-color: #dd514c; }
 
-/* line 311, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 287, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .description > div {
   font-size: 1.2rem;
   padding-bottom: 0.5rem; }
 
-/* line 316, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 292, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .quantity a {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 320, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 296, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .relative {
   position: relative; }
 
-/* line 325, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 301, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .border-right {
   border-right: solid 1px rgba(0, 0, 0, 0.12);
   -webkit-box-sizing: border-box; }
 
-/* line 329, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 305, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .border-left {
   border-left: solid 1px rgba(0, 0, 0, 0.12);
   -webkit-box-sizing: border-box; }
 
-/* line 333, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 309, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .border-top {
   border-top: solid 1px rgba(0, 0, 0, 0.12);
   -webkit-box-sizing: border-box; }
 
-/* line 337, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 313, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-1 {
   padding: 1rem; }
 
-/* line 340, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 316, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-top {
   padding-top: 0.5rem; }
 
-/* line 343, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 319, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-right-1 {
   padding-right: 1rem; }
 
-/* line 346, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 322, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-left-1 {
   padding-left: 1rem; }
 
-/* line 349, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 325, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-bottom-1 {
   padding-bottom: 1rem; }
 
-/* line 352, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 328, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-left-1 {
   margin-left: 1rem; }
 
-/* line 355, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 331, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-bottom-1 {
   margin-bottom: 1rem; }
 
-/* line 358, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 334, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-top-1 {
   margin-top: 1rem; }
 
-/* line 361, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 337, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-right-1 {
   margin-right: 1rem; }
 
-/* line 364, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 340, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-right-1-2 {
   margin-right: 0.5rem; }
 
-/* line 367, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 343, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-left-1-2 {
   margin-left: 0.5rem; }
 
-/* line 370, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 346, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-top-bottom-1 {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-/* line 374, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 350, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .padding-side-1 {
   padding-left: 1rem;
   padding-right: 1rem; }
 
-/* line 378, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 354, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-button {
   white-space: normal; }
 
-/* line 381, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 357, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .information-box.no-padding {
   padding-left: 0; }
 
-/* line 384, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 360, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .quantity input {
   margin: 0 0.5rem;
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 388, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 364, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .query-params {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12); }
 
-/* line 393, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 369, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .align-center {
   text-align: center; }
 
-/* line 396, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 372, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .align-right {
   text-align: right; }
 
-/* line 399, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 375, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-form .pure-group input {
   margin: 0 auto; }
 
-/* line 402, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 378, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-bottom {
   margin-bottom: 0.5rem; }
 
-/* line 405, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 381, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-side-1 {
   margin-left: 1rem;
   margin-right: 1rem; }
 
-/* line 409, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 385, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-side-1-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem; }
 
-/* line 413, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 389, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-right {
   margin-right: 1rem; }
 
-/* line 416, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 392, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .margin-1 {
   margin: 1rem; }
 
-/* line 420, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 396, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-button i {
   margin-right: 0.3rem; }
 
-/* line 424, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 400, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .address-line i {
   margin-right: 0.3rem; }
 
-/* line 428, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 404, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pure-button.just-icon i {
   margin-right: 0; }
 
-/* line 431, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 407, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .xs-input {
   width: 2em; }
 
-/* line 434, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 410, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .row {
   padding-bottom: 1rem; }
 
-/* line 439, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 415, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .information-title {
   padding-bottom: 0.5rem;
   font-style: italic;
   text-transform: uppercase;
   color: #FF9100; }
 
-/* line 446, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 422, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info th {
   padding: 1rem; }
 
-/* line 449, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 425, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-label {
   text-align: right;
   padding-right: 1rem;
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 454, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 430, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-value, .pure-g .info-value {
   font-family: Helvetica; }
 
-/* line 457, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 433, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-important {
   font-family: Helvetica;
   font-weight: bold; }
 
-/* line 461, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 437, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pointer {
   cursor: pointer; }
 
-/* line 464, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 440, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .pointer:hover {
   color: #FF9100 !important; }
 
-/* line 468, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 444, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .form-container textarea {
   width: 100%; }
-/* line 470, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 446, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .form-container select {
   width: 49%;
   display: inline-block; }
 
-/* line 475, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 451, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .form-container select.complete-1 {
   width: 100%; }
 
-/* line 479, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 455, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .total-table {
   margin: 0 auto;
   margin-bottom: 1rem;
   text-align: right; }
-  /* line 483, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 459, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .total-table .table-label {
     padding-right: 1rem; }
 
-/* line 487, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 463, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-table td {
   padding: 0 1rem;
   font-size: 1.1rem;
   padding-top: 0.5rem;
   text-align: right; }
-/* line 492, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 468, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .info-table th {
   padding: 0 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   padding-bottom: 0.5rem;
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 500, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 476, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .coupon-row {
   font-size: 1rem;
   padding: 0.5rem 0; }
 
-/* line 504, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 480, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .total-container {
   display: inline-block; }
 
-/* line 507, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 483, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .error-layer {
   position: fixed;
   right: 1rem;
@@ -611,33 +582,33 @@ a:hover, a:active, a:focus {
   border-bottom-right-radius: 0.5rem;
   z-index: 4; }
 
-/* line 518, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 494, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .text-secondary-black {
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 521, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 497, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .important {
   font-size: 1.5rem;
   color: #FF9100; }
 
-/* line 525, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 501, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 #submenu {
   text-align: right; }
-  /* line 527, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 503, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   #submenu nav {
     margin: 1rem 0; }
-    /* line 529, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 505, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav a {
       padding: 0 1rem;
       color: rgba(0, 0, 0, 0.54);
       text-decoration: none;
       text-transform: uppercase;
       border-right: solid 1px rgba(0, 0, 0, 0.12); }
-    /* line 535, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 511, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     #submenu nav .active {
       color: #FF9100; }
 
-/* line 538, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 514, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .initial-layer {
   top: 0;
   left: 0;
@@ -648,7 +619,7 @@ a:hover, a:active, a:focus {
   z-index: 5;
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all; }
-  /* line 548, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 524, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .initial-layer .initial-logo {
     margin: 3rem auto;
     margin-bottom: 1rem;
@@ -656,11 +627,11 @@ a:hover, a:active, a:focus {
     text-align: center;
     -webkit-transition: 0.5s linear all;
     transition: 0.5s linear all; }
-    /* line 555, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 531, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
     .initial-layer .initial-logo img {
       width: 100%; }
 
-/* line 558, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 534, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .initial-text {
   color: rgba(255, 255, 255, 0.87);
   font-size: 1.2rem;
@@ -668,40 +639,71 @@ a:hover, a:active, a:focus {
   margin-bottom: 2rem;
   font-family: 'RalewayLight'; }
 
-/* line 565, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 541, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .initial-layer.ng-hide {
   top: 100%; }
-  /* line 567, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 543, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .initial-layer.ng-hide .initial-logo {
     width: 0; }
 
-/* line 570, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 546, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .amex {
   color: #2196F3; }
 
-/* line 573, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 549, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .visa {
   color: #01579B; }
 
-/* line 576, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 552, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .mastercard {
   color: #FFC107; }
 
-/* line 580, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 556, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-details img {
   width: 100%; }
-/* line 582, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 558, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-details .item-name {
   color: rgba(0, 0, 0, 0.87);
   text-transform: uppercase;
   font-size: 1.3rem;
   padding-bottom: 0.5rem; }
-/* line 587, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 563, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-details .item-description {
   padding-bottom: 0.5rem; }
-/* line 589, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 565, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-details .item-attribute {
   padding-bottom: 0.5rem; }
-/* line 591, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 567, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .item-details .item-action {
   margin-top: 3rem; }
+
+/* line 570, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.search-box {
+  padding: 1rem 0; }
+  /* line 572, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .search-box input {
+    display: inline-block;
+    width: 85%;
+    font-size: 1.7rem;
+    border: solid 2px rgba(0, 0, 0, 0.12);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-right: 0;
+    padding: 0.5rem 1rem;
+    color: rgba(0, 0, 0, 0.87);
+    outline: none;
+    -webkit-box-sizing: border-box; }
+  /* line 584, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .search-box a {
+    display: inline-block;
+    text-align: center;
+    width: 15%;
+    background-color: #7C4DFF;
+    border: solid 2px #7C4DFF;
+    letter-spacing: normal;
+    color: rgba(255, 255, 255, 0.87);
+    line-height: 2.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    -webkit-box-sizing: border-box;
+    cursor: pointer; }

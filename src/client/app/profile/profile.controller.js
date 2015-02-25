@@ -37,8 +37,7 @@
           shell.setError(error);
         }).finally(shell.hideLoading);
       }
-    }
-    
+    };
   }
 
 })();

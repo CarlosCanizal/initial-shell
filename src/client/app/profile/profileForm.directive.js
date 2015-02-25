@@ -24,7 +24,7 @@ function profileForm(userApi){
             shell.setError(error);
           }).finally(shell.hideLoading);
         }
-      }
+      };
     }
-  }
+  };
 }

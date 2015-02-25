@@ -14,7 +14,7 @@
       set: set,
       get: get,
       remove: remove
-    }
+    };
 
     function set(key, value){
       return localStorageService.set(key, value);

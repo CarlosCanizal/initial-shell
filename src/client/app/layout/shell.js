@@ -33,7 +33,7 @@
     shell.updateShoppingCart =  function(cart){
       shell.shoppingCart = cart;
       return shell.shoppingCart;
-    }
+    };
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       if(!shell.loaded)
@@ -46,31 +46,31 @@
     });
 
     shell.showLoading = function(){
-      shell.initError()
+      shell.initError();
       shell.loading = true;
-    }
+    };
 
     shell.hideLoading = function(){
       shell.loading = false;
-    }
+    };
 
     shell.showConfirmation = function(){
       shell.confirmation = true;
-    }
+    };
 
     shell.hideConfirmation = function(){
       shell.confirmation = false;
-    }
+    };
 
     shell.returnConfirmation = function(value){
       return value;
-    }
+    };
 
     shell.setCurrentUser = function(user){
       console.log('setCurrentUser');
       userApi.setCurrentUser(user);
       shell.currentUser = user;
-    }
+    };
 
     shell.updateCurrentUser = function(){
       userApi.getCurrentUser().then(function(user){
@@ -80,25 +80,25 @@
       },function(error){
         shell.setError(error);
       });
-    }
+    };
 
     shell.logout = function(){
       userApi.logout();
       shell.currentUser = null;
       $state.go('home');
-    }
+    };
 
     shell.searchByName = function(){
       var params = {
         name: shell.searchValue
-      }
+      };
       storeApi.getSeries(params).then(function(series){
         console.log(series.result);
         shell.itemsList = series.result;
       },function(error){
         console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
       });
-    }
+    };
 
     shell.addToCart = function(item, qty){
         var quantity;
@@ -112,7 +112,7 @@
                                              available: item.available,
                                              stock: item.stock
                                             });
-    }
+    };
 
     shell.setError = function(error){
       console.log(error);
@@ -126,22 +126,22 @@
       //  shell.errorBar = false;
        shell.error = error.data.error; 
       // }
-    }
+    };
 
     shell.setMessage = function(message){
       shell.message = message;
-    }
+    };
 
     shell.initError  = function(){
       shell.errorResponse = null;
       shell.errorBar = false;
       shell.error = null;
       shell.message = null;
-    }
+    };
 
     shell.showSideMenu = function(showIt){
       shell.sideMenu = showIt;
-    }
+    };
     
   }
 

@@ -18,7 +18,7 @@
     $scope.loading = true;
 
     if(view)
-      address.user = view.user
+      address.user = view.user;
     else
       address.user = shell.currentUser;
 
@@ -32,18 +32,18 @@
     });
 
     $scope.deleteAddress = function(objectId, index){
-      shell.showLoading()
+      shell.showLoading();
       userApi.deleteAddress(objectId).then(function(response){
         address.addresses.splice(index,1);
       },function(error){
         shell.setError(error);
-      }).finally(shell.hideLoading)
-    }
+      }).finally(shell.hideLoading);
+    };
 
     //refactorizar con direcative en shipping address
     $scope.showAddressForm = function(show){
       address.addressFormView = show;
-    }
+    };
     
   }
 

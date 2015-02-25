@@ -16,12 +16,12 @@ function confirmDialog(){
       $scope.confirmModal = function(){
         Message.setValue(true);
         Message.setModal(false);
-      }
+      };
 
       $scope.cancelModal = function(){
         Message.setValue(false);
         Message.setModal(false);
-      }
+      };
 
       
         
@@ -52,5 +52,5 @@ function confirmDialog(){
 
 
     }
-  }
+  };
 }

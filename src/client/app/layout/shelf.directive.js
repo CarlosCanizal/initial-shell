@@ -16,7 +16,7 @@ function shelf(storeApi){
     },
     templateUrl: 'app/layout/shelf.template.html',
     controller:function($scope){
-      $scope.shell = $scope.$parent.shell
+      $scope.shell = $scope.$parent.shell;
     },
     link:function(scope,element,attr){
       var shell = scope.shell;
@@ -34,7 +34,7 @@ function shelf(storeApi){
         scope.loading = false;
       });
     }
-  }
+  };
 }
 
 // });

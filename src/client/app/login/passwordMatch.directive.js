@@ -14,12 +14,12 @@ function passwordMatch(userApi, storage){
         var value = scope.$eval(attrs.ngModel);
         var value2 = scope.$eval(attrs.passwordMatch);
         return value == value2;
-      }
+      };
 
       scope.$watch(checker, function(response){
         ctrl.$setValidity("match",response);
       });
       
     }
-  }
+  };
 }

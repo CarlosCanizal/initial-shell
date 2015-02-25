@@ -32,7 +32,7 @@
     });
 
     payment.deleteCard = function(index){
-      var card = payment.cards[parseInt(index)].card
+      var card = payment.cards[parseInt(index)].card;
       if(payment.user.upgrade == 'upgraded' && card.id == payment.user.subscriptionCard.card.id){
         payment.error = 'La tarjeta con terminacion '+card.last4+' se encuentra ligada a tu membrecia, si deseas eliminarla, primero debes cancelar tu suscripcion.';
         return;
@@ -44,11 +44,11 @@
       },function(error){
         shell.setError(error);
       }).finally(shell.hideLoading);
-    }  
+    };
 
     payment.showCardForm = function(view){
       payment.cardFormView  = view;
-    }
+    };
 
   }
 

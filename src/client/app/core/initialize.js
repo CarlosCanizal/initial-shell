@@ -1,6 +1,6 @@
 angular
 .module('app')
-.run(run)
+.run(run);
 
 run.$inject = ['$rootScope', '$state', 'userApi'];
 

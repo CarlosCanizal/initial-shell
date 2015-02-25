@@ -58,11 +58,11 @@
           shell.setError(error);
         }).finally(shell.hideLoading);
       }
-    }
+    };
 
     account.addCard = function(card){
       account.subscription.payment = card;
-    }
+    };
     
     account.updateMembership = function(name){
       if(account.subscription.payment){
@@ -76,32 +76,32 @@
           shell.setError(error);
         }).finally(shell.hideLoading);
       }
-    }
+    };
 
     account.showCardForm = function(viewForm){
       account.cardFormView  = viewForm;
-    }
+    };
 
     account.showCancelForm = function(){
       account.hideUpgrade();
       account.cancelFormView = true;
-    }
+    };
 
     account.hideCancelForm = function(){
       account.cancelFormView = false;
-    }
+    };
 
     account.showUpgrade = function(){
       account.upgradeView = true;
-    }
+    };
 
     account.hideUpgrade = function(){
       account.upgradeView = false;
-    }
+    };
 
     account.updateUser = function(user){
       account.user = user;
-    }
+    };
     
   }
 

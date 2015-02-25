@@ -12,7 +12,7 @@
     var serie = this;
 
     var objectId = $stateParams.objectId;
-    serie.subscription;
+    // serie.subscription;
     $scope.loading = true;
 
 
@@ -32,7 +32,7 @@
       },function(error){
         shell.setError(error);
       });
-    }
+    };
   }
 
 })();

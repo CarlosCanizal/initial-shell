@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('app.admin')
+  .module('app.core')
   .factory('productsApi', productsApi);
 
   productsApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];

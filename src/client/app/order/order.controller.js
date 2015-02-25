@@ -20,7 +20,7 @@
       },function(error){
         shell.setError(error);
       }).finally(function(){
-        $scope.loading = false
+        $scope.loading = false;
       });
     }else if($scope.order){
       order.info = $scope.order;

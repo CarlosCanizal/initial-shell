@@ -44,7 +44,7 @@ function cardForm(userApi, conekta){
 
       scope.hideCardForm = function(){
         paymentMethod.showCardForm(false);
-      }
+      };
 
       if(attr.conektaId){
         scope.conektaId = attr.conektaId;
@@ -76,5 +76,5 @@ function cardForm(userApi, conekta){
         }).finally(shell.hideLoading);
       };
     }
-  }
+  };
 }

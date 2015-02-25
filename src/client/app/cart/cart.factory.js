@@ -3,14 +3,14 @@
 
   angular
   .module('app.cart')
-  .factory('ShoppingCart', cart);
+  .factory('ShoppingCart', ShoppingCart);
 
-  cart.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage', 'underscore', 'storeApi'];
+  ShoppingCart.$inject = ['$resource','$q', 'parseheaders', 'parse', 'storage', 'underscore', 'storeApi'];
 
   /* @ngInject */
-  function cart($resource, $q, parseheaders, parse, storage, underscore, storeApi) {
+  function ShoppingCart($resource, $q, parseheaders, parse, storage, underscore, storeApi) {
 
-    var cart = {
+    var shoppingCart = {
       getCart: getCart,
       addItem: addItem,
       getTotal: getTotal,
@@ -24,7 +24,7 @@
       initialize: initialize
     };
 
-    return cart;
+    return shoppingCart;
 
     function getCart(){
 
@@ -36,7 +36,7 @@
     }
 
     function initialize(){
-      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false, useWallet:false, wallet:0, userWallet:0, discount:0,shippingMethod:false, shippingAddress: false, paymentMethod:false}
+      var cart = {items:[], itemsTotal: 0, cartTotal :0, total:false, useWallet:false, wallet:0, userWallet:0, discount:0,shippingMethod:false, shippingAddress: false, paymentMethod:false};
       return this.setCart(cart);
     }
 
@@ -70,7 +70,7 @@
     }
 
     function setCart(cart){
-      storage.set('cart',cart)
+      storage.set('cart',cart);
       return this.getTotal();
     }
 
@@ -82,9 +82,9 @@
         return memo + item.quantity;
       },0,0);
       cart.itemsTotal = itemsTotal;
-      cart.cartTotal =  cartTotal
+      cart.cartTotal =  cartTotal;
       cart = this.calculateTotal(cart);
-      storage.set('cart',cart)
+      storage.set('cart',cart);
       return cart;
     }
     
@@ -94,7 +94,7 @@
 
       if(cart.membership == 'pro'){
         var discount = 15 /100;
-        cart.discount = (cartTotal * discount)
+        cart.discount = (cartTotal * discount);
         cartTotal -= cart.discount;
       }
 

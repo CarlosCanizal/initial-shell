@@ -1,6 +1,6 @@
 angular
 .module('app')
-.config(config)
+.config(config);
 
 config.$inject = ['$locationProvider', '$urlRouterProvider','$stateProvider'];
 

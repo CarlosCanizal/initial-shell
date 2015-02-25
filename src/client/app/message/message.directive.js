@@ -15,7 +15,7 @@ function confirmMessage(Message){
 
       scope.showModal = function(){
         showModal();
-      }
+      };
 
       function showModal(){
         Message.setOnConfirm(attribute.confirm);
@@ -29,14 +29,14 @@ function confirmMessage(Message){
 
       scope.hideModal = function(){
         Message.setModal(false);
-      }
+      };
 
       scope.$watch(
         function() {
           return Message.currentValue;
         },
         function() {
-          if(Message.currentValue == true){
+          if(Message.currentValue === true){
             // console.log('viewer', 'Change detected, new object:', Message.currentValue);
             Message.setValue(false);
             scope.$eval(Message.onConfirm);
@@ -48,5 +48,5 @@ function confirmMessage(Message){
 
 
     }
-  }
+  };
 }

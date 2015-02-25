@@ -15,20 +15,19 @@
 
     this.setValue = function(newValue){
       this.currentValue = newValue;
-    }
+    };
 
     this.setModal = function(newValue){
       this.showModal = newValue;
-    }
+    };
 
     this.setQuestion = function(question){
       this.question = question;
-    }
+    };
 
     this.setOnConfirm = function(newValue){
       this.onConfirm = newValue;
-    }
-
+    };
 
   }
 })();

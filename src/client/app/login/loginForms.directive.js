@@ -27,7 +27,7 @@ function loginForms(userApi, storage){
           scope.loginForm.username.$setDirty();
           scope.loginForm.password.$setDirty();
         }
-      }
+      };
 
       scope.register = function(){
         scope.response.register = false;
@@ -48,8 +48,8 @@ function loginForms(userApi, storage){
           scope.registerForm.username.$setDirty();
           scope.registerForm.password.$setDirty();
         }
-      }
+      };
       
     }
-  }
+  };
 }

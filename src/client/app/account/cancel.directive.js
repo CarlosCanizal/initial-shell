@@ -12,7 +12,7 @@ function cancelMembership(conekta){
     link:function(scope,element,attr){
       var shell =  scope.shell;
       var account =  scope.account;
-      var view = scope.view
+      var view = scope.view;
 
       scope.cancelMembership =  function(user){
         console.log(user);
@@ -31,8 +31,8 @@ function cancelMembership(conekta){
         }else{
           account.cancelForm.comment.$setDirty();
         }
-      }
+      };
 
     }
-  }
+  };
 }

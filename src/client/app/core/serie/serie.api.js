@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('app.admin')
+  .module('app.core')
   .factory('serieApi', serieApi);
 
   serieApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];

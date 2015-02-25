@@ -14,7 +14,7 @@ function newAddress(userApi, sepomexAPI){
       var shell =  scope.shell;
 
       if(scope.checkout)
-        var checkout = scope.checkout
+        var checkout = scope.checkout;
 
       if(scope.address)
         var address = scope.address;
@@ -28,11 +28,11 @@ function newAddress(userApi, sepomexAPI){
 
       function getDistrict(zip){
         sepomexAPI.getDistrict(zip).then(function(result){
-          var result = result.results[0];
-          var state =  result.state;
-          var municipality = result.municipality;
-          var district = result.name;
-          getUbication(state, municipality, district);
+          var district = result.results[0];
+          // var state =  item.state;
+          // var municipality = item.municipality;
+          // var district = item.name;
+          getUbication(district.state, district.municipality, district.name);
         },function(error){
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
         });
@@ -46,7 +46,7 @@ function newAddress(userApi, sepomexAPI){
         }).then(function(result){
           scope.municipalities = result.results;
           scope.newAddress.municipality =  scope.municipalities[0] && !municipality ? scope.municipalities[0].name : municipality;
-          return sepomexAPI.getDistricts(scope.newAddress.state, scope.newAddress.municipality) 
+          return sepomexAPI.getDistricts(scope.newAddress.state, scope.newAddress.municipality);
         }).then(function(result){
           scope.districts = result.results;
           scope.newAddress.district =  scope.districts[0] && !district ? scope.districts[0].name : district;
@@ -58,7 +58,7 @@ function newAddress(userApi, sepomexAPI){
       scope.updateUbication =  function(){
         var zip = scope.newAddress.zip;
         getDistrict(zip);
-      }
+      };
 
       scope.updateZip = function(){
         sepomexAPI.getZip(scope.newAddress.district, scope.newAddress.municipality, scope.newAddress.state).then(function(result){
@@ -67,7 +67,7 @@ function newAddress(userApi, sepomexAPI){
         },function(error){
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
         });
-      }
+      };
 
       scope.updateMunicipalities = function(){
         scope.newAddress.zip = null;
@@ -75,7 +75,7 @@ function newAddress(userApi, sepomexAPI){
           scope.municipalities = result.results;
           if(scope.municipalities[0])
             scope.newAddress.municipality = scope.municipalities[0].name;
-          return sepomexAPI.getDistricts(scope.newAddress.state, scope.newAddress.municipality) 
+          return sepomexAPI.getDistricts(scope.newAddress.state, scope.newAddress.municipality);
         }).then(function(result){
           scope.districts = result.results;
           if(scope.districts[0])
@@ -83,7 +83,7 @@ function newAddress(userApi, sepomexAPI){
         },function(error){
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
         });
-      }
+      };
 
       scope.updateDistricts = function(){
         scope.newAddress.zip = null;
@@ -94,7 +94,7 @@ function newAddress(userApi, sepomexAPI){
         },function(error){
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
         });
-      }
+      };
 
       scope.saveAddress = function(){
         if(scope.addressForm.$valid){
@@ -106,7 +106,7 @@ function newAddress(userApi, sepomexAPI){
           else
             objectId = shell.currentUser.objectId;
 
-          scope.newAddress.user = {"__type":"Pointer",className:"_User","objectId":objectId}
+          scope.newAddress.user = {"__type":"Pointer",className:"_User","objectId":objectId};
           userApi.saveAddress(scope.newAddress).then(function(result){
     
             if(address && address.addresses){
@@ -125,8 +125,8 @@ function newAddress(userApi, sepomexAPI){
             console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
           }).finally(shell.hideLoading);
         }
-      }
+      };
       
     }
-  }
+  };
 }

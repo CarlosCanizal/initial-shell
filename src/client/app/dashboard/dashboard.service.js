@@ -14,7 +14,7 @@
     return {
       get: get,
       set: set
-    }
+    };
 
     function set(value){
       isDashboard = value;
