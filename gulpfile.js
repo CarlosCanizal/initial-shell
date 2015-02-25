@@ -30,3 +30,10 @@ gulp.task('jade', function () {
       return file.base; 
     }))
 });
+
+gulp.task('scripts', function () {
+  return gulp.src('app/**/*.js')
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.size());
+});
