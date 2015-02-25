@@ -52,8 +52,7 @@
     }
 
     function subscriptionCard(payment, user){
-      var conektaId = user.conektaId;
-      var params = { card:payment.card.id, conektaId: conektaId, "function":"subscriptionCard"}
+      var params = { user:user, card:payment.card.id, "function":"subscriptionCard"}
       return conektaResource.save(params).$promise.then(function(){
         return userApi.logMembership({user: user.objectId, status:'updateCard', notes:payment});
       }).then(function(){
