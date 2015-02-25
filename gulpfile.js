@@ -37,3 +37,18 @@ gulp.task('scripts', function () {
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.size());
 });
+
+gulp.task('partials', function () {
+  return gulp.src('src/client/app/**/*.html')
+    .pipe($.minifyHtml({
+      empty: true,
+      spare: true,
+      quotes: true
+    }))
+    // .pipe($.ngHtml2js({
+    //   moduleName: "htmlTemplates.js",
+    //   prefix: "partials/"
+    // }))
+    .pipe(gulp.dest(".tmp/partials"))
+    .pipe($.size());
+});
