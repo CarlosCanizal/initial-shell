@@ -95,6 +95,16 @@
                   i.fa.fa-dot-circle-o.medium-icon(ng-show="registerForm.confirmPassword.$pristine")
                   i.fa.fa-check-circle-o.success.medium-icon(ng-show="registerForm.confirmPassword.$valid && registerForm.confirmPassword.$dirty")
                   i.fa.fa-times-circle-o.error.medium-icon(ng-show="registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$dirty")              
+            .privacy
+              |Al registrarme confirmo que he 
+              span.accent
+                |LEIDO 
+              |y 
+              span.accent
+                |ACEPTO 
+              |los Terminos, Condiciones y 
+              a(data-ui-sref="privacy")
+                |Politicas de Privacidad.
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="register()").
                 Registrarme
