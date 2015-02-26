@@ -697,7 +697,7 @@ a:hover, a:active, a:focus {
 .privacy {
   text-align: center;
   margin-bottom: 1rem;
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(0, 0, 0, 0.87); }
   /* line 586, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .privacy a {
     color: #FF9100;
