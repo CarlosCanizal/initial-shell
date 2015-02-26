@@ -25,6 +25,8 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
 nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
   a.pointer(ui-sref="about", data-ng-class="{'active': shell.menu == 'about'}")
     | ¿Comó funciona?
+  a.pointer(ui-sref="privacy", data-ng-class="{'active': shell.menu == 'privacy'}")
+    | Aviso de Privacidad
   a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}")
     | Tienda
   a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}")
