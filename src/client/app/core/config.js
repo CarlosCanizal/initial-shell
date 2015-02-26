@@ -53,6 +53,14 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'login'
       }
     })
+    .state('privacy',{
+      url:'/aviso-de-privacidad',
+      templateUrl:'app/privacy/privacy.template.html',
+      data:{
+        menu: 'privacy',
+        submenu: 'privacy'
+      }
+    })
     .state('subscribe',{
       url:'/suscripciones',
       templateUrl:'app/subscribe/subscribe.template.html',
