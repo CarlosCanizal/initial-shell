@@ -1,0 +1,33 @@
+.section-title
+  | Olvide mi Contraseña
+.filter-title
+  span.publisher-name.
+    Recuperar contraseña
+.shelf
+  .inner-shelf
+    .shelf-space
+      div(data-ng-hide="forgot.sendIt")
+        .title.align-center
+          | No te preocupes te ayudaremos a regresar a la Sociedad.
+        form.pure-form.pure-form-stacked(name="forgotForm", novalidate="")
+          fieldset
+            label(for="username", ng-show="forgotForm.username.$valid || forgotForm.username.$pristine")
+              | Correo Electronico:
+            label.error(for="username", ng-show="forgotForm.username.$invalid && forgotForm.username.$dirty")
+              | Correo Electronico invalido:
+            .form-icon
+              input.pure-input-1#username(name="username", type="email", data-ng-model="forgot.username", required="")
+              i.fa.fa-dot-circle-o.medium-icon(ng-show="forgotForm.username.$pristine")
+              i.fa.fa-check-circle-o.success.medium-icon(ng-show="forgotForm.username.$valid && forgotForm.username.$dirty")
+              i.fa.fa-times-circle-o.error.medium-icon(ng-show="forgotForm.username.$invalid && forgotForm.username.$dirty")  
+        .align-center.margin-bottom
+          a.pure-button.pure-button-primary(ng-click="forgot.sendLink(forgot.username)").
+            Recuperar Contraseña
+      div(data-ng-if="forgot.sendIt")
+        .title.align-center.success
+          |Se envio un correo electronico con los pasos para recuperar tu contraseña.
+
+        
+      
+
+      

@@ -43,6 +43,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'login'
       }
     })
+    .state('forgot',{
+      url:'/forgot-password',
+      controller: 'Forgot',
+      controllerAs: 'forgot',
+      templateUrl:'app/forgot/forgot.template.html',
+      data:{
+        menu: 'login',
+        submenu: 'login'
+      }
+    })
     .state('subscribe',{
       url:'/suscripciones',
       templateUrl:'app/subscribe/subscribe.template.html',

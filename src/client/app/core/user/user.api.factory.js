@@ -41,7 +41,8 @@
       getAllUsers: getAllUsers,
       getUser: getUser,
       saveUserProfile: saveUserProfile,
-      addMoney: addMoney
+      addMoney: addMoney,
+      sendLink: sendLink
     };
 
     return factory;
@@ -237,6 +238,10 @@
       var userHeaders = parseheaders.storeKeys;
       userHeaders['X-Parse-Session-Token'] = user.sessionToken;
       return parse.newUserResource(parseheaders.storeKeys);
+    }
+
+    function sendLink(email){
+      return UserCloud.save({email:email,function:'sendLink'}).$promise;
     }
 
   }
