@@ -703,14 +703,24 @@ a:hover, a:active, a:focus {
     color: #FF9100;
     text-decoration: none; }
 
-/* line 590, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 591, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.privacy-policy p {
+  color: rgba(0, 0, 0, 0.87); }
+/* line 593, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.privacy-policy h3 {
+  color: rgba(0, 0, 0, 0.54); }
+  /* line 595, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .privacy-policy h3.accent {
+    color: #FF9100; }
+
+/* line 598, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .accent {
   color: #FF9100; }
 
-/* line 593, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 601, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 .search-box {
   padding: 1rem 0; }
-  /* line 595, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 603, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box input {
     width: 85%;
     font-size: 1.5rem;
@@ -722,7 +732,7 @@ a:hover, a:active, a:focus {
     color: rgba(0, 0, 0, 0.87);
     outline: none;
     -webkit-box-sizing: border-box; }
-  /* line 606, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 614, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
   .search-box a {
     text-align: center;
     width: 15%;
