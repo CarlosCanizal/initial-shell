@@ -305,15 +305,15 @@ a:hover, a:active, a:focus
 
 .border-right
   border-right: solid 1px $dividers-black
-  -webkit-box-sizing: border-box
+  box-sizing: border-box
 
 .border-left
   border-left: solid 1px $dividers-black
-  -webkit-box-sizing: border-box
+  box-sizing: border-box
 
 .border-top
   border-top: solid 1px $dividers-black
-  -webkit-box-sizing: border-box
+  box-sizing: border-box
 
 .no-padding-top
   padding-top:0
@@ -538,14 +538,12 @@ a:hover, a:active, a:focus
   height: 100%
   background-color: $primary-color
   z-index: 5
-  -webkit-transition: 0.5s linear all
   transition: 0.5s linear all
   .initial-logo
     margin: 3rem auto
     margin-bottom: 1rem
     width: 20%
     text-align: center
-    -webkit-transition: 0.5s linear all
     transition: 0.5s linear all
     img
       width: 100%
@@ -617,19 +615,23 @@ p
     padding:0.3rem 1rem
     color:$text-primary-black
     outline: none
-    -webkit-box-sizing: border-box
+    box-sizing: border-box
   a
     text-align: center
     width:15%
+    display:inline-block
     background-color: $primary-color
     border:solid 2px $primary-color
     letter-spacing: normal
     color: $text-primary-white
-    line-height: 2.5rem
+    line-height: 2.2rem
     border-top-right-radius:0.5rem
     border-bottom-right-radius:0.5rem
-    -webkit-box-sizing: border-box
+    box-sizing: border-box
     cursor: pointer
+    position:relative
+    top:-0.2rem
+
 
   
 

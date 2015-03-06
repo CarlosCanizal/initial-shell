@@ -55,7 +55,7 @@ gulp.task('styles', function () {
       'src/client/bower_components/pure/pure-min.css',
       'src/client/bower_components/pure/grids-responsive-min.css',
       'src/client/bower_components/components-font-awesome/css/font-awesome.min.css',
-      'src/client/common/css/fontface.min.css',
+      'src/client/common/css/fontface.css',
       'src/client/common/css/layout/sidebar.css',
       'src/client/common/css/layout/mobile/menu.css',
       'src/client/common/css/loading/loading.css',
