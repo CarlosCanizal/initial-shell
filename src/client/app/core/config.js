@@ -197,6 +197,31 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'sales'
       }
     })
+    .state('admin.assistent',{
+      url:'/assistent',
+      templateUrl: 'app/admin/assistent/assistent.template.html',
+      controller: 'Assistent',
+      controllerAs: 'assistent',
+       data:{
+        menu: 'orders',
+        submenu: 'assistent'
+      }
+    })
+    .state('admin.assistentUser',{
+      url:'/assistent/:userId',
+      templateUrl: 'app/admin/assistent/user.template.html',
+      controller: 'AssistentUser',
+      controllerAs: 'assistentUser',
+      resolve:{
+        user : function(userApi,$stateParams){
+          return userApi.getUser($stateParams.userId);
+        }
+      },
+      data:{
+        menu: 'orders',
+        submenu: 'assistent'
+      }
+    })
     .state('admin.subscriptions',{
       url:'/subscriptions',
       templateUrl: 'app/admin/subscriptions/subscriptions.template.html',

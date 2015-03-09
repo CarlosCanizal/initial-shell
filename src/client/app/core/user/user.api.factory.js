@@ -42,7 +42,8 @@
       getUser: getUser,
       saveUserProfile: saveUserProfile,
       addMoney: addMoney,
-      sendLink: sendLink
+      sendLink: sendLink,
+      assistentRegister: assistentRegister
     };
 
     return factory;
@@ -77,6 +78,17 @@
       var deferred = $q.defer();
       Register.save(params).$promise.then(function(user){
         storage.set('user',user);
+        deferred.resolve(user);
+      },function(error){
+        deferred.reject(error);
+      });
+
+      return deferred.promise
+    }
+
+    function assistentRegister(params) {
+      var deferred = $q.defer();
+      Register.save(params).$promise.then(function(user){
         deferred.resolve(user);
       },function(error){
         deferred.reject(error);

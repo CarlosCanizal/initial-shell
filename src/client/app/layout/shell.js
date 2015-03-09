@@ -124,6 +124,7 @@
       }
       // else if(error.data){
       //  shell.errorBar = false;
+      if(error.data)
        shell.error = error.data.error; 
       // }
     };

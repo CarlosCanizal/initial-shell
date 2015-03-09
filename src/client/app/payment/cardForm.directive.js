@@ -34,6 +34,9 @@ function cardForm(userApi, conekta){
         paymentMethod = scope.checkout;
         var checkout = scope.checkout;
       }
+      else if(scope.assistentUser){
+        paymentMethod = scope.assistentUser;
+      }
 
       scope.card = {name:'Javier Pedreiro',
                             number: '4242424242424242',
@@ -71,6 +74,7 @@ function cardForm(userApi, conekta){
           }
 
           paymentMethod.showCardForm(false);
+
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

@@ -1,6 +1,7 @@
 doctype html
 html(data-ng-app="app")
   head
+    base(href="/")
     title
       |The Comics' Society
     meta(name="viewport", content="width=device-width,initial-scale=1")
@@ -127,6 +128,8 @@ html(data-ng-app="app")
     script(src="app/admin/products/newProduct.controller.js")
     script(src="app/admin/publishers/newPublisher.controller.js")
     script(src="app/admin/series/newSerie.controller.js")
+    script(src="app/admin/assistent/Assistent.controller.js")
+    script(src="app/admin/assistent/AssistentUser.controller.js")
     script(src="app/account/cancel.directive.js")
     script(src="app/serie/serie.factory.js")
     script(src="app/serie/series.controller.js")
