@@ -43,10 +43,11 @@
               <div data-ng-include="'app/layout/sidebar.template.html'" class="nav-top"></div>
             </div>
           </div>
-          <div id="right-pane" class="pure-u-1 pure-u-md-3-4 pure-u-lg-4-5">
+          <div class="right-pane pure-u-1 pure-u-md-3-4 pure-u-lg-4-5">
             <div id="inner-box"></div>
             <div data-ng-include="'app/layout/header.html'" class="nav-top"></div>
             <div ui-view></div>
+            <div class="footer">The Comics' Society 2015. Visita nuestros <a data-ui-sref="terms" class="accent">Terminos y Condiciones </a>asi como nuestro <a data-ui-sref="privacy" class="accent">Aviso de privacidad. </a></div>
           </div>
           <div id="mobile-menu" data-ng-include="'app/layout/mobile/menu.html'" data-ng-hide="shell.sideMenu || shell.isDashboard || shell.isAdmin" class="hidden-lg"></div>
         </div>

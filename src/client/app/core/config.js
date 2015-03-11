@@ -71,6 +71,14 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'privacy'
       }
     })
+    .state('terms',{
+      url:'/terminos-condiciones',
+      templateUrl:'app/terms/terms.template.html',
+      data:{
+        menu: 'terms', 
+        submenu: 'terms'
+      }
+    })
     .state('subscribe',{
       url:'/suscripciones',
       templateUrl:'app/subscribe/subscribe.template.html',

@@ -36,7 +36,6 @@ html(data-ng-app="app")
           div.dot2
       .error-layer(data-ng-if="shell.errorBar")
         |{{shell.errorResponse}}
-
       confirm-dialog
       #shell
         #mobile-side-menu(data-ng-include="'app/layout/mobile/side-menu.html'", data-ng-if="shell.sideMenu")
@@ -44,10 +43,18 @@ html(data-ng-app="app")
           .left-pane.pure-u-1.pure-u-md-1-4.pure-u-lg-1-5
             .side-space
               .nav-top(data-ng-include="'app/layout/sidebar.template.html'")
-          #right-pane.pure-u-1.pure-u-md-3-4.pure-u-lg-4-5
+          .right-pane.pure-u-1.pure-u-md-3-4.pure-u-lg-4-5
             #inner-box
             .nav-top(data-ng-include="'app/layout/header.html'")
             div(ui-view)
+            .footer
+              | The Comics' Society 2015. Visita nuestros 
+              a.accent(data-ui-sref='terms')
+                |Terminos y Condiciones 
+              |asi como nuestro 
+              a.accent(data-ui-sref='privacy')
+                |Aviso de privacidad. 
+
           #mobile-menu.hidden-lg(data-ng-include="'app/layout/mobile/menu.html'", data-ng-hide="shell.sideMenu || shell.isDashboard || shell.isAdmin")
           
     script(type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js")

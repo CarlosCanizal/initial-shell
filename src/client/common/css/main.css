@@ -794,3 +794,9 @@ a {
 /* line 660, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
 a.action:hover {
   color: #FF9100; }
+
+/* line 663, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.54); }
