@@ -1,76 +1,77 @@
 #admin-menu(data-ng-include="'app/admin/assistent/menu/assistent.menu.html'")
-.filter-title
-  span.publisher-name.
-    Información General
-.shelf
-  .inner-shelf
-    .shelf-space
-      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
-      form.pure-form.pure-form-stacked(name="assistent.registerForm", novalidate="")
-        fieldset
-          label(for="name", ng-show="assistent.registerForm.name.$valid || assistent.registerForm.name.$pristine")
-            | Nombre:
-          label.error(for="name", ng-show="assistent.registerForm.name.$invalid && assistent.registerForm.name.$dirty")
-            | Nombre es requerido:
-          .form-icon
-            input.pure-input-1#name(name="name", data-ng-model="newUser.name", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.name.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.name.$valid && assistent.registerForm.name.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.name.$invalid && assistent.registerForm.name.$dirty")
-        
-          label(for="lastname", ng-show="assistent.registerForm.lastname.$valid || assistent.registerForm.lastname.$pristine")
-            | Apellido:
-          label.error(for="lastname", ng-show="assistent.registerForm.lastname.$invalid && assistent.registerForm.lastname.$dirty")
-            | Apellido invalido:
-          .form-icon
-            input.pure-input-1#lastname(name="lastname", data-ng-model="newUser.lastname", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.lastname.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.lastname.$valid && assistent.registerForm.lastname.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.lastname.$invalid && assistent.registerForm.lastname.$dirty")
-        
-          label(for="username", ng-show="assistent.registerForm.username.$valid || assistent.registerForm.username.$pristine")
-            | Correo Electronico:
-          label.error(for="username", ng-show="assistent.registerForm.username.$invalid && assistent.registerForm.username.$dirty")
-            | Correo Electronico invalido:
-          .form-icon
-            input.pure-input-1#username(name="username", type="email", data-ng-model="newUser.username", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.username.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.username.$valid && assistent.registerForm.username.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.username.$invalid && assistent.registerForm.username.$dirty")
-        
-          label(for="password", ng-show="((assistent.registerForm.password.$valid || assistent.registerForm.password.$pristine) || (!assistent.registerForm.password.$error.required  && assistent.registerForm.password.$error.match && assistent.registerForm.confirmPassword.$pristine)) && !(assistent.registerForm.confirmPassword.$dirty && assistent.registerForm.password.$error.required)")
-            | Contraseña
-          label.error(for="password", ng-show="assistent.registerForm.password.$error.required && (assistent.registerForm.password.$dirty || assistent.registerForm.confirmPassword.$dirty)")
-            | Contraseña requerida:
-          label.error(for="password", ng-show="assistent.registerForm.confirmPassword.$dirty && !assistent.registerForm.password.$error.required && assistent.registerForm.password.$error.match && assistent.registerForm.password.$dirty")
-            | Contraseña no coincide:
-          .form-icon
-            input.pure-input-1#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.password.$pristine && !(assistent.registerForm.confirmPassword.$dirty && assistent.registerForm.password.$error.required)")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="(assistent.registerForm.password.$valid && assistent.registerForm.password.$dirty) || (assistent.registerForm.confirmPassword.$pristine && assistent.registerForm.password.$dirty && assistent.registerForm.password.$error.match) ")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="(assistent.registerForm.password.$error.required && assistent.registerForm.password.$dirty) || (assistent.registerForm.confirmPassword.$dirty && assistent.registerForm.password.$error.match)")
-        
-          label(for="confirmPassword", ng-show="assistent.registerForm.confirmPassword.$valid || assistent.registerForm.confirmPassword.$pristine")
-            | Confirmar Contraseña:
-          label.error(for="confirmPassword", ng-show="assistent.registerForm.confirmPassword.$error.required && assistent.registerForm.confirmPassword.$dirty")
-            | Contraseña requerida:
-          .form-icon
-            input.pure-input-1#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.confirmPassword.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.confirmPassword.$valid && assistent.registerForm.confirmPassword.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.confirmPassword.$invalid && assistent.registerForm.confirmPassword.$dirty")              
-      .privacy
-        |Al registrarme confirmo que he 
-        span.accent
-          |LEIDO 
-        |y 
-        span.accent
-          |ACEPTO 
-        |los Terminos, Condiciones y 
-        a(data-ui-sref="privacy")
-          |Politicas de Privacidad.
-      .align-center.margin-bottom
-        a.pure-button.pure-button-primary(ng-click="assistent.register()").
-          Registrar
-      .error.align-center(data-ng-show="assistent.response.register")
-        | {{assistent.response.register}}
+#speech(data-ng-if="!assistent.speech")
+  .filter-title
+    span.publisher-name.
+      Speech
+  .shelf
+    .inner-shelf
+      .shelf-space
+        .align-center
+          .big-button.launch(data-ng-click="assistent.speechDone()")
+            a.launch.launch-border
+              i.fa.fa-rocket
+            .big-button-label.launch
+              | LAUNCH
+#answer(data-ng-if="assistent.speech && assistent.answer ")
+  .filter-title
+    span.publisher-name.
+      Answer
+  .shelf
+    .inner-shelf
+      .shelf-space
+        .pure-g
+          .pure-u-1.pure-u-sm-1-2
+            .big-button.success(data-ui-sref="admin.assistentStart")
+              a
+                i.fa.fa-thumbs-up
+              .big-button-label
+                | OK
+          .pure-u-1.pure-u-sm-1-2
+            .big-button.error(data-ng-click="assistent.giveReason()")
+              a.error.error-border
+                i.fa.fa-thumbs-down
+              .big-button-label
+                | NOPE
+        .align-center
+          a.pure-button(data-ng-click="assistent.cancel()")
+            |Cancelar
+#nope(data-ng-if="assistent.nope")
+  .filter-title
+    span.publisher-name.
+      Reason
+  .shelf
+    .inner-shelf
+      .shelf-space
+        |¿Por qué no te interesa la membresia? {{assistent.reason}}
+        .margin-top-1
+          input.margin-right-1(type="radio" name="reason" value="nocard" data-ng-model="assistent.reason")
+          span
+            | No tengo tarjeta de credito.
+        .margin-top-1
+          input.margin-right-1(type="radio" name="reason" value="expensive" data-ng-model="assistent.reason")
+          span
+            | Es muy caro.
+        .margin-top-1
+          input.margin-right-1(type="radio" name="reason" value="noOnline" data-ng-model="assistent.reason")
+          span
+            | No confio en las compras en linea.
+        .margin-top-1
+          input.margin-right-1(type="radio" name="reason" value="volumen" data-ng-model="assistent.reason")
+          span
+            | No me conviene.
+        .margin-top-1
+          input.margin-right-1(type="radio" name="reason" value="stores" data-ng-model="assistent.reason")
+          span
+            | Prefiero ir a las tiendas.
+        .margin-top-1
+          span
+            |Especificar:
+          input.margin-right-1(data-ng-model="assistent.reason")
+        .align-center.margin-top-1
+          a.pure-button.pure-button-primary.margin-right-1(data-ng-click="assistent.saveReason()")
+            |Enviar
+          a.pure-button(data-ng-click="assistent.cancel()")
+            |Cancelar
+          
+
+

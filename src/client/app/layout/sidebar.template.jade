@@ -10,6 +10,8 @@
     .logo-h1
       | SOCIETY
 nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
+  a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
+    | Convención
   a.pointer(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
     | Usuarios
   a.pointer(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")

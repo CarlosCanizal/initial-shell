@@ -1,0 +1,84 @@
+#admin-menu(data-ng-include="'app/admin/assistent/menu/assistent.menu.html'")
+.filter-title
+  span.publisher-name.
+    Información General
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      form.pure-form.pure-form-stacked(name="assistent.registerForm", novalidate="")
+        fieldset
+          label(for="name", ng-show="assistent.registerForm.name.$valid || assistent.registerForm.name.$pristine")
+            | Nombre:
+          label.error(for="name", ng-show="assistent.registerForm.name.$invalid && assistent.registerForm.name.$dirty")
+            | Nombre es requerido:
+          .form-icon
+            input.pure-input-1#name(name="name", data-ng-model="newUser.name", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.name.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.name.$valid && assistent.registerForm.name.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.name.$invalid && assistent.registerForm.name.$dirty")
+        
+          label(for="lastname", ng-show="assistent.registerForm.lastname.$valid || assistent.registerForm.lastname.$pristine")
+            | Apellido:
+          label.error(for="lastname", ng-show="assistent.registerForm.lastname.$invalid && assistent.registerForm.lastname.$dirty")
+            | Apellido invalido:
+          .form-icon
+            input.pure-input-1#lastname(name="lastname", data-ng-model="newUser.lastname", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.lastname.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.lastname.$valid && assistent.registerForm.lastname.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.lastname.$invalid && assistent.registerForm.lastname.$dirty")
+        
+          label(for="username", ng-show="assistent.registerForm.username.$valid || assistent.registerForm.username.$pristine")
+            | Correo Electronico:
+          label.error(for="username", ng-show="assistent.registerForm.username.$invalid && assistent.registerForm.username.$dirty")
+            | Correo Electronico invalido:
+          .form-icon
+            input.pure-input-1#username(name="username", type="email", data-ng-model="newUser.username", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.username.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.username.$valid && assistent.registerForm.username.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.username.$invalid && assistent.registerForm.username.$dirty")
+          label(for="phone", ng-show="assistent.registerForm.phone.$valid || assistent.registerForm.phone.$pristine")
+              | Movil:
+            label.error(for="phone", ng-show="assistent.registerForm.phone.$invalid && assistent.registerForm.phone.$dirty")
+              | Movil es invalido:
+            .form-icon
+              input.pure-input-1#phone(name="phone", data-ng-model="newUser.phone", required="", data-ng-pattern="/[0-9]/",maxlength=10, data-ng-minlength=10 data-ng-maxlength=10)
+              i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.phone.$pristine")
+              i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.phone.$valid && assistent.registerForm.phone.$dirty")
+              i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.phone.$invalid && assistent.registerForm.phone.$dirty")
+          label(for="password", ng-show="((assistent.registerForm.password.$valid || assistent.registerForm.password.$pristine) || (!assistent.registerForm.password.$error.required  && assistent.registerForm.password.$error.match && assistent.registerForm.confirmPassword.$pristine)) && !(assistent.registerForm.confirmPassword.$dirty && assistent.registerForm.password.$error.required)")
+            | Contraseña
+          label.error(for="password", ng-show="assistent.registerForm.password.$error.required && (assistent.registerForm.password.$dirty || assistent.registerForm.confirmPassword.$dirty)")
+            | Contraseña requerida:
+          label.error(for="password", ng-show="assistent.registerForm.confirmPassword.$dirty && !assistent.registerForm.password.$error.required && assistent.registerForm.password.$error.match && assistent.registerForm.password.$dirty")
+            | Contraseña no coincide:
+          .form-icon
+            input.pure-input-1#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.password.$pristine && !(assistent.registerForm.confirmPassword.$dirty && assistent.registerForm.password.$error.required)")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="(assistent.registerForm.password.$valid && assistent.registerForm.password.$dirty) || (assistent.registerForm.confirmPassword.$pristine && assistent.registerForm.password.$dirty && assistent.registerForm.password.$error.match) ")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="(assistent.registerForm.password.$error.required && assistent.registerForm.password.$dirty) || (assistent.registerForm.confirmPassword.$dirty && assistent.registerForm.password.$error.match)")
+        
+          label(for="confirmPassword", ng-show="assistent.registerForm.confirmPassword.$valid || assistent.registerForm.confirmPassword.$pristine")
+            | Confirmar Contraseña:
+          label.error(for="confirmPassword", ng-show="assistent.registerForm.confirmPassword.$error.required && assistent.registerForm.confirmPassword.$dirty")
+            | Contraseña requerida:
+          .form-icon
+            input.pure-input-1#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="assistent.registerForm.confirmPassword.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="assistent.registerForm.confirmPassword.$valid && assistent.registerForm.confirmPassword.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="assistent.registerForm.confirmPassword.$invalid && assistent.registerForm.confirmPassword.$dirty")              
+      .privacy
+        |Al registrarme confirmo que he 
+        span.accent
+          |LEIDO 
+        |y 
+        span.accent
+          |ACEPTO 
+        |los Terminos, Condiciones y 
+        a(data-ui-sref="privacy")
+          |Politicas de Privacidad.
+      .align-center.margin-bottom
+        a.pure-button.pure-button-primary(ng-click="assistent.register()").
+          Registrar
+      .error.align-center(data-ng-show="assistent.response.register")
+        | {{assistent.response.register}}

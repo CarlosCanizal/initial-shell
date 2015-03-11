@@ -756,3 +756,41 @@ a:hover, a:active, a:focus {
     cursor: pointer;
     position: relative;
     top: -0.2rem; }
+
+/* line 634, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.big-button {
+  margin: 2rem;
+  text-align: center;
+  cursor: pointer; }
+  /* line 638, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .big-button a {
+    font-size: 5rem;
+    border: solid 5px #FF9100;
+    padding: 0.5rem 1rem;
+    border: solid 5px;
+    border-radius: 50%; }
+  /* line 644, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  .big-button .big-button-label {
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 4rem; }
+
+/* line 649, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.launch {
+  color: #0078e7; }
+
+/* line 651, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.launch-border {
+  border-color: #0078e7; }
+
+/* line 654, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+.error-border {
+  border-color: #dd514c; }
+
+/* line 657, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+a {
+  text-decoration: none; }
+
+/* line 660, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+a.action:hover {
+  color: #FF9100; }

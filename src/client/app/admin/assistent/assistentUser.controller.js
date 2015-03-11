@@ -46,7 +46,6 @@
     assistentUser.updateCash = function(){
       shell.showLoading();
       userApi.saveUserProfile({objectId: assistentUser.user.objectId,membership:'pro',upgrade:'upgraded'}).then(function(result){
-        console.log(user);
         assistentUser.user.membership = result.result.membership;
         assistentUser.user.subscriptionCard = result.result.subscriptionCard;
       },function(error){

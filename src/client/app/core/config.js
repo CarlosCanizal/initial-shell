@@ -53,6 +53,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         submenu: 'login'
       }
     })
+    .state('recovery',{
+      url:'/recovery/:key',
+      controller: 'Recovery',
+      controllerAs: 'recovery',
+      templateUrl:'app/recovery/recovery.template.html',
+      data:{
+        menu: 'login',
+        submenu: 'login'
+      }
+    })
     .state('privacy',{
       url:'/aviso-de-privacidad',
       templateUrl:'app/privacy/privacy.template.html',
@@ -202,6 +212,26 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       templateUrl: 'app/admin/assistent/assistent.template.html',
       controller: 'Assistent',
       controllerAs: 'assistent',
+       data:{
+        menu: 'assistent',
+        submenu: 'home'
+      }
+    })
+    .state('admin.assistentStart',{
+      url:'/assistent/start',
+      templateUrl: 'app/admin/assistent/assistentStart.template.html',
+      controller: 'AssistentStart',
+      controllerAs: 'assistent',
+      data:{
+        menu: 'assistent',
+        submenu: 'home'
+      }
+    })
+    .state('admin.assistentUsers',{
+      url:'/assistent/users',
+      templateUrl: 'app/admin/assistent/users.template.html',
+      controller: 'AssistentUsers',
+      controllerAs: 'users',
        data:{
         menu: 'orders',
         submenu: 'assistent'

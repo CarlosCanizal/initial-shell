@@ -1,0 +1,56 @@
+#admin-menu(data-ng-include="'app/admin/assistent/menu/assistent.menu.html'")
+.filter-title
+  span.publisher-name.
+    Usuarios
+.shelf
+  .inner-shelf
+    .shelf-space
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      #users
+        .shelf-content
+          h1.align-right
+            span.margin-right-1.error
+              | Nopes: {{users.nopes.length}}
+            span.margin-right-1.success
+              | Total: {{users.list.length}}
+          .shelf-message(ng-if="users.list.length < 1")
+            .subtitle
+              |No existen usuarios registrados.
+          #list(ng-if="users.list.length > 0")
+            table.info-table
+              thead
+                tr
+                  th
+                    |Nombre
+                  th
+                    |Email
+                  th
+                    |Membresia
+                  th
+                    |Orders
+                  th
+                    |Items
+                  th
+                    |Total
+                  th
+                    |Monedero
+                  th
+                    |Descuento
+              tbody
+                tr.pointer(ng-repeat="stat in users.list", data-ui-sref="admin.user.orders({userId : stat.user.objectId})")
+                  td
+                    |{{stat.user.name}} {{stat.user.lastname}}
+                  td
+                    |{{stat.user.username}}
+                  td
+                    |{{stat.user.membership}}
+                  td
+                    |{{stat.orders}}
+                  td
+                    |{{stat.items}}
+                  td
+                    |{{stat.total | currency}}
+                  td
+                    |{{stat.wallet | currency}}
+                  td
+                    |{{stat.discount | currency}}

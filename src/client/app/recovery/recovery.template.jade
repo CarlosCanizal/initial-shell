@@ -1,0 +1,34 @@
+.section-title.
+  Recuperar Contraseña
+.filter-title
+  span.publisher-name
+    |Ingresa tu nueva Contraseña
+.shelf
+  .inner-shelf
+    .shelf-space
+      form.pure-form.pure-form-stacked(name="recovery.form", novalidate="")
+        fieldset
+          label(for="password", ng-show="((recovery.form.password.$valid || recovery.form.password.$pristine) || (!recovery.form.password.$error.required  && recovery.form.password.$error.match && recovery.form.confirmPassword.$pristine)) && !(recovery.form.confirmPassword.$dirty && recovery.form.password.$error.required)")
+            | Contraseña
+          label.error(for="password", ng-show="recovery.form.password.$error.required && (recovery.form.password.$dirty || recovery.form.confirmPassword.$dirty)")
+            | Contraseña requerida:
+          label.error(for="password", ng-show="recovery.form.confirmPassword.$dirty && !recovery.form.password.$error.required && recovery.form.password.$error.match && recovery.form.password.$dirty")
+            | Contraseña no coincide:
+          .form-icon
+            input.pure-input-1#password(name="password", type="password" data-ng-model="recovery.password", required="", password-match="passwordMatch")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="recovery.form.password.$pristine && !(recovery.form.confirmPassword.$dirty && recovery.form.password.$error.required)")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="(recovery.form.password.$valid && recovery.form.password.$dirty) || (recovery.form.confirmPassword.$pristine && recovery.form.password.$dirty && recovery.form.password.$error.match) ")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="(recovery.form.password.$error.required && recovery.form.password.$dirty) || (recovery.form.confirmPassword.$dirty && recovery.form.password.$error.match)")
+        
+          label(for="confirmPassword", ng-show="recovery.form.confirmPassword.$valid || recovery.form.confirmPassword.$pristine")
+            | Confirmar Contraseña:
+          label.error(for="confirmPassword", ng-show="recovery.form.confirmPassword.$error.required && recovery.form.confirmPassword.$dirty")
+            | Contraseña requerida:
+          .form-icon
+            input.pure-input-1#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="recovery.form.confirmPassword.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="recovery.form.confirmPassword.$valid && recovery.form.confirmPassword.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="recovery.form.confirmPassword.$invalid && recovery.form.confirmPassword.$dirty")              
+        .align-center.margin-bottom
+          a.pure-button.pure-button-primary(ng-click="recovery.update()").
+            Actualizar

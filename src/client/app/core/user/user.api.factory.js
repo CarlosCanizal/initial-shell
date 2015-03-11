@@ -43,7 +43,10 @@
       saveUserProfile: saveUserProfile,
       addMoney: addMoney,
       sendLink: sendLink,
-      assistentRegister: assistentRegister
+      assistentRegister: assistentRegister,
+      getAssistentUsers: getAssistentUsers,
+      recoveryPassword: recoveryPassword,
+      getUserByKey: getUserByKey
     };
 
     return factory;
@@ -169,8 +172,38 @@
     }
 
     function getUser(userId){
-      return User.get({
+      User.get({
         objectId : userId
+      }).$promise;
+
+    }
+
+    function getUserByKey(key){
+      var deferred = $q.defer();
+      if(key){
+        User.get({
+          where: {recoveryKey : key}
+        }).$promise.then(function(result){
+          if(result.results.length > 0)
+            deferred.resolve();
+          else
+            deferred.reject();
+        },function(error){
+          deferred.reject(error);
+        });
+      }else{
+        deferred.reject();
+      }
+      return deferred.promise
+    }
+
+    function getAssistentUsers(assistent){
+      var where = {};
+      where.user = {"$inQuery":{"where":{"membership":'pro', "role":"client",'reference':assistent},"className":"_User"}};
+      return UserStats.query({
+        where : where,
+        include: 'user',
+        order : 'createdAt'
       }).$promise;
     }
 
@@ -195,12 +228,9 @@
 
       if(membership){
         where.user = {"$inQuery":{"where":{"membership":membership, "role":"client"},"className":"_User"}};
-        console.log(where.user);
       }else{
         where.user = {"$inQuery":{"where":{"role":"client"},"className":"_User"}};
       }
-
-
 
       return UserStats.query({
         where : where,
@@ -225,6 +255,11 @@
     function saveProfile(params){
       var  User  = setSessionToken();
       return User.update(params).$promise;
+    }
+
+    function recoveryPassword(params){
+      params.function = 'recoveryPassword';
+      return UserCloud.save(params).$promise;
     }
 
     function saveUserProfile(params){

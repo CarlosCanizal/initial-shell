@@ -1,0 +1,25 @@
+
+<div class="section-title">Recuperar Contraseña</div>
+<div class="filter-title"><span class="publisher-name">Ingresa tu nueva Contraseña</span></div>
+<div class="shelf">
+  <div class="inner-shelf">
+    <div class="shelf-space">
+      <form name="recovery.form" novalidate="" class="pure-form pure-form-stacked">
+        <fieldset>
+          <label for="password" ng-show="((recovery.form.password.$valid || recovery.form.password.$pristine) || (!recovery.form.password.$error.required  &amp;&amp; recovery.form.password.$error.match &amp;&amp; recovery.form.confirmPassword.$pristine)) &amp;&amp; !(recovery.form.confirmPassword.$dirty &amp;&amp; recovery.form.password.$error.required)">Contraseña</label>
+          <label for="password" ng-show="recovery.form.password.$error.required &amp;&amp; (recovery.form.password.$dirty || recovery.form.confirmPassword.$dirty)" class="error">Contraseña requerida:</label>
+          <label for="password" ng-show="recovery.form.confirmPassword.$dirty &amp;&amp; !recovery.form.password.$error.required &amp;&amp; recovery.form.password.$error.match &amp;&amp; recovery.form.password.$dirty" class="error">Contraseña no coincide:</label>
+          <div class="form-icon">
+            <input id="password" name="password" type="password" data-ng-model="recovery.password" required="" password-match="passwordMatch" class="pure-input-1"/><i ng-show="recovery.form.password.$pristine &amp;&amp; !(recovery.form.confirmPassword.$dirty &amp;&amp; recovery.form.password.$error.required)" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="(recovery.form.password.$valid &amp;&amp; recovery.form.password.$dirty) || (recovery.form.confirmPassword.$pristine &amp;&amp; recovery.form.password.$dirty &amp;&amp; recovery.form.password.$error.match) " class="fa fa-check-circle-o success medium-icon"></i><i ng-show="(recovery.form.password.$error.required &amp;&amp; recovery.form.password.$dirty) || (recovery.form.confirmPassword.$dirty &amp;&amp; recovery.form.password.$error.match)" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+          <label for="confirmPassword" ng-show="recovery.form.confirmPassword.$valid || recovery.form.confirmPassword.$pristine">Confirmar Contraseña:</label>
+          <label for="confirmPassword" ng-show="recovery.form.confirmPassword.$error.required &amp;&amp; recovery.form.confirmPassword.$dirty" class="error">Contraseña requerida:</label>
+          <div class="form-icon">
+            <input id="confirmPassword" name="confirmPassword" type="password" data-ng-model="passwordMatch" required="" class="pure-input-1"/><i ng-show="recovery.form.confirmPassword.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="recovery.form.confirmPassword.$valid &amp;&amp; recovery.form.confirmPassword.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="recovery.form.confirmPassword.$invalid &amp;&amp; recovery.form.confirmPassword.$dirty" class="fa fa-times-circle-o error medium-icon">             </i>
+          </div>
+        </fieldset>
+        <div class="align-center margin-bottom"><a ng-click="recovery.update()" class="pure-button pure-button-primary">Actualizar</a></div>
+      </form>
+    </div>
+  </div>
+</div>
