@@ -10,6 +10,7 @@
   function Recovery($scope,$state, $stateParams, userApi) {
     var shell = $scope.shell;
     var recovery = this;
+    recovery.complete = false;
 
     shell.showLoading();
     userApi.getUserByKey($stateParams.key).then(function(){
@@ -22,8 +23,7 @@
       if(recovery.form.$valid){
         shell.showLoading();
         userApi.recoveryPassword({key:$stateParams.key, password:recovery.password}).then(function(){
-          
-          $state.go('login');
+          recovery.complete = true;
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);
