@@ -2,9 +2,9 @@
   | Assistent
 #submenu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
   nav
-    a(data-ui-sref="admin.assistent", data-ng-class="{'active':shell.submenu == 'orders'}")
+    a(data-ui-sref="admin.assistent", data-ng-class="{'active':shell.submenu == 'home'}")
       |Inicio
-    a(data-ui-sref="admin.assistentStart", data-ng-class="{'active':shell.submenu == 'orders'}")
+    a(data-ui-sref="admin.assistentStart", data-ng-class="{'active':shell.submenu == 'membership'}")
       |Membresia
-    a(data-ui-sref="admin.assistentUsers", data-ng-class="{'active':shell.submenu == 'orders'}")
+    a(data-ui-sref="admin.assistentUsers", data-ng-class="{'active':shell.submenu == 'users'}")
       |Usuarios

@@ -11,7 +11,7 @@
     <div class="pure-g">
       <div data-ng-repeat="item in itemsList" class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pure-u-xl-1-5">
         <div class="item">
-          <div class="item-image"><a data-ui-sref="item({objectId:item.objectId})"> <img alt="" ng-src="{{item.cover.url}}"/></a></div>
+          <div class="item-image"><a data-ui-sref="item({objectId:item.objectId})"> <img alt="" ng-src="{{item.coverUrl}}"/></a></div>
           <div class="item-info"><a data-ui-sref="item({objectId:item.objectId})" class="pointer">{{item.name}}</a></div>
           <div class="item-info">{{item.price | currency}} MXN</div>
           <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.available == 'serie'">Suscribirme </span><span data-ng-if="item.available == 'preorder'">Preordenar</span><span data-ng-if="item.available == 'available'">Comprar</span></a></div>

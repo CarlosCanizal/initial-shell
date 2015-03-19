@@ -38,9 +38,9 @@ function cardForm(userApi, conekta){
         paymentMethod = scope.assistentUser;
       }
 
-      scope.card = {name:'Javier Pedreiro',
-                            number: '4242424242424242',
-                            cvc: '123',
+      scope.card = {name:null,
+                            number: null,
+                            cvc: null,
                             exp_month: scope.months[0],
                             exp_year: scope.years[0]
                            };

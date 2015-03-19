@@ -53,12 +53,12 @@
       .shelf-space(data-ng-hide="loading")
         .shelf-content(data-ng-hide="loading")
           card-form(conekta-id="{{assistentUser.user.conektaId}}")
-.align-center(data-ng-if="assistentUser.paymentMethod == 'card' && assistentUser.user.membership  == 'basic' && assistentUser.subscription.payment")
+.align-center.margin-bottom-1(data-ng-if="assistentUser.paymentMethod == 'card' && assistentUser.user.membership  == 'basic' && assistentUser.subscription.payment")
   .accent.margin-bottom-1
     |La tarjeta se agrego con exito.
   a.pure-button.pure-button-primary.button-large(data-ng-click="assistentUser.updateMembership('pro')")
     | Actualizar Cuenta
-.align-center(data-ng-if="assistentUser.paymentMethod == 'cash' && assistentUser.user.membership  == 'basic'")
+.align-center.margin-bottom-1(data-ng-if="assistentUser.paymentMethod == 'cash' && assistentUser.user.membership  == 'basic'")
   .accent.margin-bottom-1
     |Realiza el cobro y da click.
   a.pure-button.pure-button-primary.button-large(data-ng-click="assistentUser.updateCash()")

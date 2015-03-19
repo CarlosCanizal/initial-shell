@@ -9,7 +9,12 @@
       | COMICS'
     .logo-h1
       | SOCIETY
-nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
+nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.currentUser.role == 'assistent'")
+  a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
+    | Convención
+  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+    | Salir
+nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin && shell.currentUser.role == 'admin'")
   a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
     | Convención
   a.pointer(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
@@ -29,8 +34,8 @@ nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.i
     | ¿Comó funciona?
   a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}")
     | Tienda
-  a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}")
-    | Suscripciones
+  //- a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}")
+  //-   | Suscripciones
   a.pointer(ui-sref="login", data-ng-class="{'active': shell.menu == 'login'}")
     | Mi Cuenta
   a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")

@@ -232,7 +232,7 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controllerAs: 'assistent',
       data:{
         menu: 'assistent',
-        submenu: 'home'
+        submenu: 'membership'
       }
     })
     .state('admin.assistentUsers',{
@@ -241,8 +241,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'AssistentUsers',
       controllerAs: 'users',
        data:{
-        menu: 'orders',
-        submenu: 'assistent'
+        menu: 'assistent',
+        submenu: 'users'
       }
     })
     .state('admin.assistentUser',{
@@ -256,8 +256,8 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
         }
       },
       data:{
-        menu: 'orders',
-        submenu: 'assistent'
+        menu: 'assistent',
+        submenu: 'users'
       }
     })
     .state('admin.subscriptions',{

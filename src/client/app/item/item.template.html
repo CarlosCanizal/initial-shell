@@ -1,21 +1,25 @@
 
+<div id="back-menu" data-ng-include="'app/item/menu/item.menu.html'"></div>
 <div class="filter-title"><span class="publisher-name">Información</span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
       <div class="pure-g item-details">
-        <div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-4"><img data-ng-src="{{item.info.cover.url}}"/></div>
+        <div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-4"><img data-ng-src="{{item.info.coverUrl}}"/></div>
         <div class="pure-u-1 pure-u-sm-2-3 pure-u-md-3-4">
           <div class="padding-side-1">
             <div class="item-name">{{item.info.name}}</div>
-            <div class="item-description">{{item.info.description}}</div>
+            <div data-ng-bind-html="item.info.description" class="item-description"></div>
             <div class="item-attribute"><span class="text-secondary-black margin-right-1">Editorial:</span><span class="uppercase">{{item.info.publisher}}</span></div>
             <div class="item-attribute"><span class="text-secondary-black margin-right-1">Precio:</span>{{item.info.price | currency}}</div>
-            <div data-ng-if="item.info.stock &gt; 1 &amp;&amp; item.info.status=='active'">
+            <div data-ng-if="item.info.writer" class="item-attribute"><span class="text-secondary-black margin-right-1">Escritor:</span>{{item.info.writer}}</div>
+            <div data-ng-if="item.info.artist" class="item-attribute"><span class="text-secondary-black margin-right-1">Artista:</span>{{item.info.artist}}</div>
+            <div data-ng-if="item.info.coverArtist" class="item-attribute"><span class="text-secondary-black margin-right-1">Portada:</span>{{item.info.coverArtist}}</div>
+            <div data-ng-if="item.info.status=='active'">
               <div class="item-attribute"><span class="text-secondary-black margin-right-1">Disponibilidad:</span><span class="uppercase">{{item.info.available}}</span></div>
               <div class="item-attribute"><a data-ng-click="item.minusOne()" class="pure-button button-small just-icon"><i class="fa fa-minus-circle"></i></a><span data-ng-class="{update:update}" class="margin-side-1">{{item.quantity}}</span><a data-ng-click="item.plusOne()" class="pure-button button-small just-icon"><i class="fa fa-plus-circle"></i></a></div>
               <div data-ng-if="item.info.available == 'available' &amp;&amp; item.quantity &gt;= item.info.stock" class="item-attribute error">Solo {{item.info.stock}} disponibles.</div>
-              <div class="item-attribute"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.available =='serie'">Suscribirme </span><span data-ng-if="item.info.available =='preorder'">Preordenar</span><span data-ng-if="item.info.available =='available'">Comprar</span></a></div>
+              <div class="item-attribute"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.available =='serie'">Suscribirme </span><span data-ng-if="item.info.available =='preorder'">Preordenar</span><span data-ng-if="item.info.available =='available'">Comprar</span></a><a data-ui-sref="home" class="pure-button margin-left-1">Regresar</a></div>
             </div>
             <div data-ng-if="item.info.stock &lt; 1 || item.info.status!='active'">
               <div class="item-attribute"><span class="text-secondary-black margin-right-1">Disponibilidad:</span><span class="uppercase error">No hay existensias.</span></div>

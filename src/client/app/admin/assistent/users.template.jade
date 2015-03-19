@@ -26,31 +26,11 @@
                     |Email
                   th
                     |Membresia
-                  th
-                    |Orders
-                  th
-                    |Items
-                  th
-                    |Total
-                  th
-                    |Monedero
-                  th
-                    |Descuento
               tbody
-                tr.pointer(ng-repeat="stat in users.list", data-ui-sref="admin.user.orders({userId : stat.user.objectId})")
+                tr.pointer(ng-repeat="stat in users.list", data-ui-sref="admin.assistentUser({userId:stat.user.objectId})")
                   td
                     |{{stat.user.name}} {{stat.user.lastname}}
                   td
                     |{{stat.user.username}}
                   td
                     |{{stat.user.membership}}
-                  td
-                    |{{stat.orders}}
-                  td
-                    |{{stat.items}}
-                  td
-                    |{{stat.total | currency}}
-                  td
-                    |{{stat.wallet | currency}}
-                  td
-                    |{{stat.discount | currency}}

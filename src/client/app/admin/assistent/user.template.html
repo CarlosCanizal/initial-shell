@@ -56,10 +56,10 @@
     </div>
   </div>
 </div>
-<div data-ng-if="assistentUser.paymentMethod == 'card' &amp;&amp; assistentUser.user.membership  == 'basic' &amp;&amp; assistentUser.subscription.payment" class="align-center">
+<div data-ng-if="assistentUser.paymentMethod == 'card' &amp;&amp; assistentUser.user.membership  == 'basic' &amp;&amp; assistentUser.subscription.payment" class="align-center margin-bottom-1">
   <div class="accent margin-bottom-1">La tarjeta se agrego con exito.</div><a data-ng-click="assistentUser.updateMembership('pro')" class="pure-button pure-button-primary button-large">Actualizar Cuenta</a>
 </div>
-<div data-ng-if="assistentUser.paymentMethod == 'cash' &amp;&amp; assistentUser.user.membership  == 'basic'" class="align-center">
+<div data-ng-if="assistentUser.paymentMethod == 'cash' &amp;&amp; assistentUser.user.membership  == 'basic'" class="align-center margin-bottom-1">
   <div class="accent margin-bottom-1">Realiza el cobro y da click.</div><a data-ng-click="assistentUser.updateCash()" class="pure-button pure-button-primary button-large">Actualizar Cuenta</a>
 </div>
 <div data-ng-if="assistentUser.user.membership  == 'pro'" class="buttons-container">

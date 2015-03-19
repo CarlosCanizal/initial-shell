@@ -13,9 +13,16 @@
 
     $scope.setUser = function(user){
       shell.setCurrentUser(user);
-      $state.go('dashboard.account');
+      if(user.role == 'admin'){
+        $state.go('admin.assistent');
+      }
+      else if(user.role == 'assistent'){
+        $state.go('admin.assistent');
+      }else{
+        $state.go('dashboard.account');
+      }
+
     };
-    
   }
 
 })();

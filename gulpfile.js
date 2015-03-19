@@ -107,6 +107,8 @@ gulp.task('scripts', function () {
                       'src/client/app/storage/storage.service.js',
                       'src/client/app/layout/shelf.directive.js',
                       'src/client/app/layout/shell.js',
+                      'src/client/app/forgot/forgot.controller.js',
+                      'src/client/app/recovery/recovery.controller.js',
                       'src/client/app/login/login.controller.js',
                       'src/client/app/payment/payment.controller.js',
                       'src/client/app/wallet/wallet.controller.js',

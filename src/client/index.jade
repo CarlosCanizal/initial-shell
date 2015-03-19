@@ -47,15 +47,14 @@ html(data-ng-app="app")
             #inner-box
             .nav-top(data-ng-include="'app/layout/header.html'")
             div(ui-view)
-            .footer
-              | The Comics' Society 2015. Visita nuestros 
-              a.accent(data-ui-sref='terms')
-                |Terminos y Condiciones 
-              |asi como nuestro 
-              a.accent(data-ui-sref='privacy')
-                |Aviso de privacidad. 
-
           #mobile-menu.hidden-lg(data-ng-include="'app/layout/mobile/menu.html'", data-ng-hide="shell.sideMenu || shell.isDashboard || shell.isAdmin")
+    .footer
+      | The Comics' Society 2015. Visita nuestros 
+      a.accent(data-ui-sref='terms')
+        |Terminos y Condiciones 
+      |asi como nuestro 
+      a.accent(data-ui-sref='privacy')
+        |Aviso de privacidad. 
           
     script(type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js")
     <!-- build:js -->

@@ -172,10 +172,9 @@
     }
 
     function getUser(userId){
-      User.get({
+      return User.get({
         objectId : userId
       }).$promise;
-
     }
 
     function getUserByKey(key){
