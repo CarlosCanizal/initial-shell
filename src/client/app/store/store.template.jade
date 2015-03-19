@@ -1,6 +1,6 @@
 .section-title
   | Tienda
 .search(data-ng-include="'app/layout/search.template.html'")
-.shelf(data-ng-include="'app/layout/shelf.template.html'", data-ng-if="shell.itemsList.length > 0")
-.shelf(shelf, publisher="dc comics1", store="Product")
+.shelf(shelf, publisher="{{shell.searchValue}}" store="Search" data-ng-if="shell.itemsList.length > 0")
+.shelf(shelf, publisher="dc comics", store="Product")
 .shelf(shelf, publisher="marvel comics", store="Product")

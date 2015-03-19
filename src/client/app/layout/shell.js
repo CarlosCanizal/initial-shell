@@ -89,15 +89,17 @@
     };
 
     shell.searchByName = function(){
-      var params = {
-        name: shell.searchValue
-      };
-      storeApi.getSeries(params).then(function(series){
-        console.log(series.result);
-        shell.itemsList = series.result;
+      // var params = {
+      //   name: shell.searchValue
+      // };
+      shell.itemsList = [];
+      shell.showLoading();
+      storeApi.searchItems(shell.searchValue).then(function(result){
+        var items = result.results;
+        shell.itemsList = items;
       },function(error){
-        console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
-      });
+        shell.setError(error);
+      }).finally(shell.hideLoading);
     };
 
     shell.addToCart = function(item, qty){

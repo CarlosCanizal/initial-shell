@@ -11,12 +11,14 @@
   function storeApi($resource, parseheaders, parse) {
 
     var  Store = parse.newCloudCodeResource(parseheaders.storeKeys);
+    var  Product = parse.newParseResource(parseheaders.storeKeys,'Product');
 
     var factory = {
       // getSeries: getSeries,
       // getProducts: getProducts,
       getItems: getItems,
-      validateOrder: validateOrder
+      validateOrder: validateOrder,
+      searchItems : searchItems
     };
 
     return factory;
@@ -31,6 +33,20 @@
     //   console.log(params);
     //   return Store.query(params).$promise 
     // }
+
+    function searchItems(searchValue){
+      var tags = [];
+      tags.push(searchValue);
+      var values = searchValue.split(" ");
+
+      angular.forEach(values,function(tag){
+        if(tag != searchValue)
+          tags.push(tag);
+      });
+
+      var where = {"tags":{"$all":tags}};
+      return Product.query({where:where}).$promise;
+    }
 
     function getItems(params){
       return Store.query(params).$promise  
