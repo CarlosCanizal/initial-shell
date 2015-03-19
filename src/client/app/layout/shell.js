@@ -20,6 +20,11 @@
     shell.sideMenu = false;
     shell.loaded = false;
 
+    //production
+    // shell.planId = 'plan_CczxCcuzBBUew3Vm';
+    //development
+    shell.planId = 'plan_CczxCcuzBBUew3Vm';
+
 
     shell.title = 'Resultados';
 

@@ -36,7 +36,7 @@
               .information-box.padding-side-1
                 div(data-ng-show="checkout.addresses.length > 0")
                   .address-line
-                    | Seleccionar metodo de envio11
+                    | Seleccionar metodo de envio
                   .address-line
                     select(data-ng-model="shell.shoppingCart.shippingMethod", data-ng-options="item.name for item in checkout.shippingMethods track by item.objectId", data-ng-change="checkout.updateShipping()")                      
               .information-box.padding-side-1

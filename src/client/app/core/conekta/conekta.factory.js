@@ -10,9 +10,9 @@
   /* @ngInject */
   function conekta(userApi, $q, parse, parseheaders) {
     // development
-    // var conketaPublicKey = "key_LDjQwU7xkazYxSRSoW7XWfQ";
+    var conketaPublicKey = "key_LDjQwU7xkazYxSRSoW7XWfQ";
     // production
-    var conketaPublicKey = "key_RqR27tszgbcFyAV3sBy53sA";
+    // var conketaPublicKey = "key_RqR27tszgbcFyAV3sBy53sA";
     var  conektaResource  = parse.newCloudCodeResource(parseheaders.storeKeys);
 
     return conekta = {
