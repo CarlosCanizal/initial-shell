@@ -17,16 +17,14 @@
   nav.side-menu(data-ng-if="!shell.isDashboard && !shell.isAdmin")
     a.pointer(ui-sref="about", data-ng-class="{'active': shell.menu == 'about'}", data-ng-click="shell.showSideMenu(false)")
       | ¿Comó funciona?
-    a.pointer(ui-sref="privacy", data-ng-class="{'active': shell.menu == 'privacy'}",data-ng-click="shell.showSideMenu(false)")
-      | Aviso de Privacidad
     a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}", data-ng-click="shell.showSideMenu(false)")
       | Tienda
-    a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}", data-ng-click="shell.showSideMenu(false)")
-      | Suscripciones
     a.pointer(ui-sref="login", data-ng-class="{'active': shell.menu == 'login'}", data-ng-click="shell.showSideMenu(false)")
       | Mi Cuenta
     a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
       | Salir
+    a.pointer(ng-click="shell.sideMenu = false")
+      | Cerrar Menu
     span
       a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
         i.fa.fa-facebook
@@ -43,6 +41,8 @@
       | Mis Suscripciones
     a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
       | Salir
+    a.pointer(ng-click="shell.sideMenu = false")
+      | Cerrar Menu
     span
       a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
         i.fa.fa-facebook
