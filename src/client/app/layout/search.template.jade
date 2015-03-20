@@ -7,5 +7,5 @@
 .filters
   #submenu.hidden.visible-lg-block
     nav
-      a.pointer(data-ng-repeat="publisher in shell.publishers" data-ng-click="shell.loadShelf('{{publisher.name}}')")
+      a.pointer(data-ng-repeat="publisher in shell.publishers", data-ng-click="shell.loadShelf(publisher.name)")
         |{{publisher.name}}
