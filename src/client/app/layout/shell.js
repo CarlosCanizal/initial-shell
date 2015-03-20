@@ -5,14 +5,15 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$state','userApi','storeApi','ShoppingCart'];
+  Shell.$inject = ['$scope','$state','userApi','storeApi','ShoppingCart','publisherApi'];
 
-  function Shell($scope, $state, userApi, storeApi, ShoppingCart){
+  function Shell($scope, $state, userApi, storeApi, ShoppingCart, publisherApi){
     // jshint validthis: true 
     var shell = this;
 
     shell.searchValue = null;
     shell.itemsList = [];
+    shell.publishers = [];
     shell.errorResponse = null;
     shell.errorBar = false;
     shell.error = null;
@@ -158,6 +159,12 @@
     shell.showSideMenu = function(showIt){
       shell.sideMenu = showIt;
     };
+
+    publisherApi.getPublishers().then(function(result){
+      shell.publishers = result.results;
+    },function(error){
+      shell.setError(error);
+    })
     
   }
 

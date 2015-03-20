@@ -23,7 +23,7 @@
 
     function getPublishers(){
       return Publisher.query({
-        order : 'createdAt'
+        order : 'name'
       }).$promise;
     }
 

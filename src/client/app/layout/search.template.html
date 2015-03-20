@@ -4,6 +4,6 @@
 </div>
 <div class="filters">
   <div id="submenu" class="hidden visible-lg-block">
-    <nav><a data-ng-click="shell.loadShelf('dc comics')" class="pointer">DC COMICS</a><a data-ng-click="shell.loadShelf('marvel comics')" class="pointer">MARVEL COMICS</a></nav>
+    <nav><a data-ng-repeat="publisher in shell.publishers" data-ng-click="shell.loadShelf('{{publisher.name}}')" class="pointer">{{publisher.name}}</a></nav>
   </div>
 </div>

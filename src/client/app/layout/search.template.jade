@@ -7,7 +7,5 @@
 .filters
   #submenu.hidden.visible-lg-block
     nav
-      a.pointer(data-ng-click="shell.loadShelf('dc comics')")
-        |DC COMICS
-      a.pointer(data-ng-click="shell.loadShelf('marvel comics')")
-        |MARVEL COMICS
+      a.pointer(data-ng-repeat="publisher in shell.publishers" data-ng-click="shell.loadShelf('{{publisher.name}}')")
+        |{{publisher.name}}
