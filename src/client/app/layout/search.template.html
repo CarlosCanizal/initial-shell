@@ -2,3 +2,8 @@
 <div class="search-box">
   <input type="text" ng-model="shell.searchValue"/><a ng-click="shell.searchByName()"><i class="fa fa-search hidden-md"></i><span class="hidden visible-md-inline">BUSCAR</span></a>
 </div>
+<div class="filters">
+  <div id="submenu" class="hidden visible-lg-block">
+    <nav><a data-ng-click="shell.loadShelf('dc comics')" class="pointer">DC COMICS</a><a data-ng-click="shell.loadShelf('marvel comics')" class="pointer">MARVEL COMICS</a></nav>
+  </div>
+</div>

@@ -32,6 +32,9 @@
     shell.loading = false;
     shell.isDashboard = false;
     shell.confirmation = false;
+    shell.currentPublisher =null;
+    shell.shelfLoaded = false;
+    shell.landing = true;
 
     shell.shoppingCart = ShoppingCart.getTotal();
 
@@ -39,6 +42,15 @@
       shell.shoppingCart = cart;
       return shell.shoppingCart;
     };
+
+    shell.loadShelf = function(publisher){
+      shell.landing = false;
+      shell.searching = false;
+      shell.itemsList = [];
+      shell.searchValue = null;
+      shell.currentPublisher= publisher;
+      shell.shelfLoaded = true;
+    }
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       if(!shell.loaded)
@@ -94,17 +106,11 @@
     };
 
     shell.searchByName = function(){
-      // var params = {
-      //   name: shell.searchValue
-      // };
+      shell.landing =false;
+      shell.searching =true;
+      shell.shelfLoaded = false;
       shell.itemsList = [];
-      shell.showLoading();
-      storeApi.searchItems(shell.searchValue).then(function(result){
-        var items = result.results;
-        shell.itemsList = items;
-      },function(error){
-        shell.setError(error);
-      }).finally(shell.hideLoading);
+      
     };
 
     shell.addToCart = function(item, qty){

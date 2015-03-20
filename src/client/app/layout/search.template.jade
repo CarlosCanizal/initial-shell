@@ -2,6 +2,12 @@
   input(type="text", ng-model="shell.searchValue")
   a(ng-click="shell.searchByName()")
     i.fa.fa-search.hidden-md
-    
     span.hidden.visible-md-inline
       |BUSCAR
+.filters
+  #submenu.hidden.visible-lg-block
+    nav
+      a.pointer(data-ng-click="shell.loadShelf('dc comics')")
+        |DC COMICS
+      a.pointer(data-ng-click="shell.loadShelf('marvel comics')")
+        |MARVEL COMICS

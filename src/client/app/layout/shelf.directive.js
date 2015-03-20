@@ -20,24 +20,35 @@ function shelf(storeApi){
     },
     link:function(scope,element,attr){
       var shell = scope.shell;
-      var publisher = attr.publisher;
       var store = attr.store;
-      scope.title = publisher;
 
-      if(store == "Search"){
-        scope.title = "resultados: "+publisher;
-        scope.itemsList = shell.itemsList;
-      }else{
-        scope.loading = true;
-        scope.itemsList = [];
-        storeApi.getItems({publisher:publisher, status:'active', minStock: 1 , function: store}).then(function(series){
-          scope.itemsList = series.result;
-        },function(error){
-          shell.setError(error);
-        }).finally(function(){
-          scope.loading = false;
-        });
-      }
+      scope.$watch('publisher', function(newValue, oldValue) {
+        var publisher = newValue;
+        scope.title = publisher;
+        if(store == "Search"){
+          scope.title = publisher=="recomendados"? publisher : "resultados: "+publisher;
+          // scope.itemsList = shell.itemsList;
+          shell.showLoading();
+          storeApi.searchItems(publisher.toLowerCase()).then(function(result){
+            var items = result.results;
+            scope.itemsList = items;
+            shell.itemsList = items;
+          },function(error){
+            shell.setError(error);
+          }).finally(shell.hideLoading);
+
+        }else{
+          scope.loading = true;
+          scope.itemsList = [];
+          storeApi.getItems({publisher:publisher, status:'active', minStock: 1 , function: store}).then(function(series){
+            scope.itemsList = series.result;
+          },function(error){
+            shell.setError(error);
+          }).finally(function(){
+            scope.loading = false;
+          });
+        }
+      });
     }
   };
 }
