@@ -6,7 +6,7 @@ config.$inject = ['$locationProvider', '$urlRouterProvider','$stateProvider'];
 
 function config($locationProvider,$urlRouterProvider, $stateProvider) {
 
-  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 
   $stateProvider
     .state('home', {

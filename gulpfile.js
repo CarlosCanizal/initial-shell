@@ -187,6 +187,13 @@ gulp.task('images', function () {
     .pipe($.notify({message: 'Images task complete'}));
 });
 
+gulp.task('covers', function () {
+  return gulp.src('src/client/covers/*')
+    .pipe($.cache($.imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
+    .pipe(gulp.dest('dist/covers'))
+    .pipe($.notify({message: 'Covers task complete'}));
+});
+
 gulp.task('copyfiles', function () {
   gulp.src('src/client/app/**/*.html')
     .pipe(gulp.dest('dist/app'));

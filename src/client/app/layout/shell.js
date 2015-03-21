@@ -53,6 +53,20 @@
       return shell.shoppingCart;
     };
 
+    shell.hoverPremier = function(){
+      shell.premierList = true;
+      shell.publishersList = false;
+    }
+    shell.hoverPublishers = function(){
+      shell.premierList = false;
+      shell.publishersList = true;
+    }
+
+    shell.hideSubmenus = function(){
+      shell.premierList = false;
+      shell.publishersList = false;
+    }
+
     shell.loadShelf = function(publisher){
       shell.landing = false;
       shell.searching = false;

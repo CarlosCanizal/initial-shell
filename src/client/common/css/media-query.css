@@ -153,4 +153,8 @@
   /* line 91, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
   .footer {
     padding-bottom: 2rem; }
+
+  /* line 93, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/media-query.sass */
+  .box-list {
+    top: 4.3rem; }
  }

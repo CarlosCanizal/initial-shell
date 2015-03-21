@@ -1,7 +1,7 @@
-.search-params
+.search-params(data-ng-mouseleave="shell.hideSubmenus()")
   .pure-g
     .search-list.pure-u-1.pure-u-sm-1-3
-      .search-param.align-center.pointer(data-ng-mouseenter="shell.premierList = true")
+      .search-param.align-center.pointer(data-ng-mouseenter="shell.hoverPremier()")
         |PREMIER
         i.fa.fa-sort-down
       .box-list(data-ng-show="shell.premierList", data-ng-mouseleave="shell.premierList= false")
@@ -20,7 +20,7 @@
       a(ng-click="shell.searchByName()")
         i.fa.fa-search
     .search-list.pure-u-1.pure-u-sm-1-3
-      .search-param.align-center.pointer(data-ng-mouseenter="shell.publishersList = true")
+      .search-param.align-center.pointer(data-ng-mouseenter="shell.hoverPublishers()")
         |EDITORIALES
         i.fa.fa-sort-down
       .box-list(data-ng-show="shell.publishersList", data-ng-mouseleave="shell.publishersList= false")
