@@ -3,4 +3,5 @@
 node_modules
 src/client/bower_components
 dist
+covers
 src/client/covers
