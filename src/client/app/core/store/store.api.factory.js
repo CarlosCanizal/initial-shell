@@ -45,7 +45,7 @@
       });
 
       var where = {"tags":{"$all":tags}};
-      return Product.query({where:where}).$promise;
+      return Product.query({where:where, limit:500}).$promise;
     }
 
     function getItems(params){
