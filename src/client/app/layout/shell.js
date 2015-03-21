@@ -20,6 +20,8 @@
     shell.message = null;
     shell.sideMenu = false;
     shell.loaded = false;
+    shell.premierList = false;
+    shell.publishersList = false;
 
     //production
     // shell.planId = 'plan_CczxCcuzBBUew3Vm';
@@ -39,6 +41,13 @@
 
     shell.shoppingCart = ShoppingCart.getTotal();
 
+    shell.resetViews = function(event){
+      if(shell.sideMenu)
+        shell.sideMenu = false;
+      shell.premierList = false;
+      shell.publishersList = false;
+    }
+
     shell.updateShoppingCart =  function(cart){
       shell.shoppingCart = cart;
       return shell.shoppingCart;
@@ -47,6 +56,8 @@
     shell.loadShelf = function(publisher){
       shell.landing = false;
       shell.searching = false;
+      shell.premierList = false;
+      shell.publishersList = false;
       shell.itemsList = [];
       shell.searchValue = null;
       shell.currentPublisher= publisher;

@@ -1,63 +1,64 @@
 #menu-button.hidden-lg(data-ng-click="shell.showSideMenu(true)")
   i.fa.fa-bars
-.logo
-  img(src="common/images/quimera.png")
-  .logo-text
-    .logo-h3
-      | THE
-    .logo-h2
-      | COMICS'
-    .logo-h1
-      | SOCIETY
-nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.currentUser.role == 'assistent'")
-  a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
-    | Convención
-  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
-    | Salir
-nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin && shell.currentUser.role == 'admin'")
-  a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
-    | Convención
-  a.pointer(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
-    | Usuarios
-  a.pointer(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")
-    | Ordenes
-  a.pointer(ui-sref="admin.products", data-ng-class="{'active': shell.menu == 'products'}")
-    | Productos
-  a.pointer(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}")
-    | Publishers
-  a.pointer(ui-sref="admin.series", data-ng-class="{'active': shell.menu == 'series'}")
-    | Series
-  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
-    | Salir
-nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
-  a.pointer(ui-sref="about", data-ng-class="{'active': shell.menu == 'about'}")
-    | ¿Comó funciona?
-  a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}")
-    | Tienda
-  //- a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}")
-  //-   | Suscripciones
-  a.pointer(ui-sref="login", data-ng-class="{'active': shell.menu == 'login'}")
-    | Mi Cuenta
-  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
-    | Salir
-  span
-    a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
-      i.fa.fa-facebook
-     a.social(href="https://twitter.com/thecomicsociety", target="_blank")
-      i.fa.fa-twitter
-nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
-  a.pointer(ui-sref="dashboard.account", data-ng-class="{'active': shell.menu == 'account'}")
-    | Mi cuenta
-  a.pointer(ui-sref="home")
-    | Tienda
-  a.pointer(ui-sref="dashboard.orders", data-ng-class="{'active': shell.menu == 'orders'}")
-    | Mis Ordernes
-  a.pointer(ui-sref="dashboard.series", data-ng-class="{'active': shell.menu == 'series'}")
-    | Mis Suscripciones
-  a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
-    | Salir
-  span
-    a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
-      i.fa.fa-facebook
-     a.social(href="https://twitter.com/thecomicsociety", target="_blank")
-      i.fa.fa-twitter
+#sidebar(data-ng-click="shell.resetViews()")
+  .logo
+    img(src="common/images/quimera.png")
+    .logo-text
+      .logo-h3
+        | THE
+      .logo-h2
+        | COMICS'
+      .logo-h1
+        | SOCIETY
+  nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.currentUser.role == 'assistent'")
+    a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
+      | Convención
+    a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+      | Salir
+  nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin && shell.currentUser.role == 'admin'")
+    a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}")
+      | Convención
+    a.pointer(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}")
+      | Usuarios
+    a.pointer(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}")
+      | Ordenes
+    a.pointer(ui-sref="admin.products", data-ng-class="{'active': shell.menu == 'products'}")
+      | Productos
+    a.pointer(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}")
+      | Publishers
+    a.pointer(ui-sref="admin.series", data-ng-class="{'active': shell.menu == 'series'}")
+      | Series
+    a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+      | Salir
+  nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
+    a.pointer(ui-sref="about", data-ng-class="{'active': shell.menu == 'about'}")
+      | ¿Comó funciona?
+    a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}")
+      | Tienda
+    //- a.pointer(ui-sref="subscribe", data-ng-class="{'active': shell.menu == 'suscribe'}")
+    //-   | Suscripciones
+    a.pointer(ui-sref="login", data-ng-class="{'active': shell.menu == 'login'}")
+      | Mi Cuenta
+    a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+      | Salir
+    span
+      a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
+        i.fa.fa-facebook
+       a.social(href="https://twitter.com/thecomicsociety", target="_blank")
+        i.fa.fa-twitter
+  nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
+    a.pointer(ui-sref="dashboard.account", data-ng-class="{'active': shell.menu == 'account'}")
+      | Mi cuenta
+    a.pointer(ui-sref="home")
+      | Tienda
+    a.pointer(ui-sref="dashboard.orders", data-ng-class="{'active': shell.menu == 'orders'}")
+      | Mis Ordernes
+    a.pointer(ui-sref="dashboard.series", data-ng-class="{'active': shell.menu == 'series'}")
+      | Mis Suscripciones
+    a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser")
+      | Salir
+    span
+      a.social(href="https://www.facebook.com/thecomicsociety", target="_blank")
+        i.fa.fa-facebook
+       a.social(href="https://twitter.com/thecomicsociety", target="_blank")
+        i.fa.fa-twitter

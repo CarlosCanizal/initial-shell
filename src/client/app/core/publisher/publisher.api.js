@@ -23,7 +23,8 @@
 
     function getPublishers(){
       return Publisher.query({
-        order : 'name'
+        order : 'name',
+        limit: '250'
       }).$promise;
     }
 

@@ -43,7 +43,7 @@
               <div data-ng-include="'app/layout/sidebar.template.html'" class="nav-top"></div>
             </div>
           </div>
-          <div class="right-pane pure-u-1 pure-u-md-3-4 pure-u-lg-4-5">
+          <div data-ng-click="shell.resetViews()" class="right-pane pure-u-1 pure-u-md-3-4 pure-u-lg-4-5">
             <div id="inner-box"></div>
             <div data-ng-include="'app/layout/header.html'" class="nav-top"></div>
             <div ui-view></div>
