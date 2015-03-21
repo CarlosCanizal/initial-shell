@@ -12,6 +12,7 @@
     var shell = this;
 
     shell.searchValue = null;
+    shell.searchBox = null;
     shell.itemsList = [];
     shell.publishers = [];
     shell.errorResponse = null;
@@ -74,6 +75,7 @@
       shell.publishersList = false;
       shell.itemsList = [];
       shell.searchValue = null;
+      shell.searchBox = null;
       shell.currentPublisher= publisher;
       shell.shelfLoaded = true;
     }
@@ -136,6 +138,7 @@
       shell.searching =true;
       shell.shelfLoaded = false;
       shell.itemsList = [];
+      shell.searchValue = shell.searchBox;
       
     };
 
