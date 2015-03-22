@@ -5,10 +5,14 @@
   .module('app.core')
   .factory('serieApi', serieApi);
 
-  serieApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];
+  serieApi.$inject = ['$resource','$q', 'parseheaders', 'parse','Token'];
 
   /* @ngInject */
-  function serieApi($resource, $q, parseheaders, parse) {
+  function serieApi($resource, $q, parseheaders, parse, Token) {
+
+    var user =  Token.currentUser();
+    if(user)
+      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Serie  = parse.newParseResource(parseheaders.storeKeys, 'Serie');
 

@@ -5,10 +5,15 @@
   .module('app.core')
   .factory('shippingApi', shippingApi);
 
-  shippingApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];
+  shippingApi.$inject = ['$resource','$q', 'parseheaders', 'parse','Token'];
 
   /* @ngInject */
-  function shippingApi($resource, $q, parseheaders, parse) {
+  function shippingApi($resource, $q, parseheaders, parse, Token) {
+
+    var user =  Token.currentUser();
+    if(user)
+      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+
 
     var  Shipping  = parse.newParseResource(parseheaders.storeKeys, 'Shipping');
 

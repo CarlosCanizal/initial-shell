@@ -5,10 +5,13 @@
   .module('app.core')
   .factory('statsApi', statsApi);
 
-  statsApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];
+  statsApi.$inject = ['$resource','$q', 'parseheaders', 'parse','Token'];
 
   /* @ngInject */
-  function statsApi($resource, $q, parseheaders, parse) {
+  function statsApi($resource, $q, parseheaders, parse, Token) {
+    var user =  Token.currentUser();
+    if(user)
+      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Stats  = parse.newParseResource(parseheaders.storeKeys, 'Stats');
 

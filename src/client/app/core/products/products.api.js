@@ -5,10 +5,15 @@
   .module('app.core')
   .factory('productsApi', productsApi);
 
-  productsApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];
+  productsApi.$inject = ['$resource','$q', 'parseheaders', 'parse','Token'];
 
   /* @ngInject */
-  function productsApi($resource, $q, parseheaders, parse) {
+  function productsApi($resource, $q, parseheaders, parse, Token) {
+
+    var user =  Token.currentUser();
+    if(user)
+      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+
 
     var  Product  = parse.newParseResource(parseheaders.storeKeys, 'Product');
 

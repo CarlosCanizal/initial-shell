@@ -1,6 +1,14 @@
 var gulp = require('gulp');
 var paths = require('./gulp/gulp.config.json');
 var critical = require('critical');
+
+//checar con load plugins
+var jpegoptim = require('imagemin-jpegoptim');
+var pngquant = require('imagemin-pngquant');
+var optipng = require('imagemin-optipng');
+var imageResize = require('gulp-image-resize');
+//checar con load plugins
+
 // var sass = require('gulp-sass');
 var $ = require('gulp-load-plugins')();
 var htmlreplace = require('gulp-html-replace');
@@ -188,8 +196,11 @@ gulp.task('images', function () {
 });
 
 gulp.task('covers', function () {
-  return gulp.src('src/client/covers/*')
-    .pipe($.cache($.imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
+  return gulp.src('src/client/covers/**/*.{png,jpg,jpeg,gif,svg}')
+    .pipe(optipng({optimizationLevel: 3})())
+    .pipe(pngquant({quality: '65-80', speed: 4})())
+    .pipe(jpegoptim({max:70})())
+    .pipe(imageResize({width : 360,height : 547,crop : true,upscale : false}))
     .pipe(gulp.dest('dist/covers'))
     .pipe($.notify({message: 'Covers task complete'}));
 });

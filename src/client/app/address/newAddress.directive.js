@@ -29,9 +29,6 @@ function newAddress(userApi, sepomexAPI){
       function getDistrict(zip){
         sepomexAPI.getDistrict(zip).then(function(result){
           var district = result.results[0];
-          // var state =  item.state;
-          // var municipality = item.municipality;
-          // var district = item.name;
           getUbication(district.state, district.municipality, district.name);
         },function(error){
           console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
@@ -107,6 +104,9 @@ function newAddress(userApi, sepomexAPI){
             objectId = shell.currentUser.objectId;
 
           scope.newAddress.user = {"__type":"Pointer",className:"_User","objectId":objectId};
+          // scope.newAddress.ACL = {"*":{}, "role:admin":{"read":true, "write":true}};
+          // scope.newAddress.ACL[objectId] = {"read":true, "write":true};
+          // console.log(scope.newAddress);
           userApi.saveAddress(scope.newAddress).then(function(result){
     
             if(address && address.addresses){

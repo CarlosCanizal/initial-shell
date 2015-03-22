@@ -10,6 +10,11 @@
   /* @ngInject */
   function userApi($resource, $q, parseheaders, parse, storage, underscore) {
 
+    var user =  currentUser();
+    if(user){
+      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    }
+
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  Register  = parse.newRegisterResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
@@ -105,7 +110,7 @@
     }
 
     function getCurrentUser(){
-      var  User  = setSessionToken();
+      // var  User  = setSessionToken();
       return User.currentUser({objectId:'me'}).$promise;
 
     }
@@ -164,6 +169,7 @@
     }
 
     function getAddresses(userId){
+
       var where = {"user":{"__type":"Pointer","className":"_User","objectId":userId}}
       return Address.query({
         where : where,
@@ -252,7 +258,7 @@
     }
 
     function saveProfile(params){
-      var  User  = setSessionToken();
+      // var  User  = setSessionToken();
       return User.update(params).$promise;
     }
 
@@ -271,7 +277,7 @@
     }
 
     function updatePassword(user,oldPassword, newPassword){
-      var  User  = setSessionToken();
+      // var  User  = setSessionToken();
 
       return this.checkPassword({username:user.username, password:oldPassword}).then(function(user){
         return User.update({objectId:user.objectId,password: newPassword}).$promise;        
@@ -279,12 +285,12 @@
       
     }
 
-    function setSessionToken(){
-      var user = currentUser();
-      var userHeaders = parseheaders.storeKeys;
-      userHeaders['X-Parse-Session-Token'] = user.sessionToken;
-      return parse.newUserResource(parseheaders.storeKeys);
-    }
+    // function setSessionToken(){
+    //   var user = currentUser();
+    //   var userHeaders = parseheaders.storeKeys;
+    //   userHeaders['X-Parse-Session-Token'] = user.sessionToken;
+    //   return parse.newUserResource(parseheaders.storeKeys);
+    // }
 
     function sendLink(email){
       return UserCloud.save({email:email,function:'sendLink'}).$promise;

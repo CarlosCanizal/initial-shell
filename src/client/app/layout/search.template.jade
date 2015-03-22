@@ -26,3 +26,8 @@
       .box-list(data-ng-show="shell.publishersList", data-ng-mouseleave="shell.publishersList= false")
         .list-element.uppercase.pointer(data-ng-repeat="publisher in shell.publishers",data-ng-click="shell.loadShelf(publisher.name)")
           |{{publisher.name}}
+.notes
+  |IMPORTANTE: Las portadas (covers) en preorden 
+  span.error
+    |NO SON DEFINITIVAS 
+  |y pueden cambiar.

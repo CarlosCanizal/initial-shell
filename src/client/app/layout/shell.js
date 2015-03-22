@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$state','userApi','storeApi','ShoppingCart','publisherApi'];
+  Shell.$inject = ['$scope','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi'];
 
-  function Shell($scope, $state, userApi, storeApi, ShoppingCart, publisherApi){
+  function Shell($scope, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi){
     // jshint validthis: true 
     var shell = this;
 
@@ -23,6 +23,13 @@
     shell.loaded = false;
     shell.premierList = false;
     shell.publishersList = false;
+    shell.initialSearch = 'recomendados';
+
+    console.log($stateParams);
+    if($stateParams.section && $stateParams.section != null){
+      shell.initialSearch = $stateParams.section;
+      alert(shell.initialSearch);
+    }
 
     //production
     // shell.planId = 'plan_CczxCcuzBBUew3Vm';
@@ -150,7 +157,7 @@
                                              price:item.price,
                                              name:item.name, 
                                              type: item.type,
-                                             cover:item.cover,
+                                             coverUrl:item.coverUrl,
                                              available: item.available,
                                              stock: item.stock
                                             });

@@ -5,10 +5,13 @@
   .module('app.core')
   .factory('publisherApi', publisherApi);
 
-  publisherApi.$inject = ['$resource','$q', 'parseheaders', 'parse',];
+  publisherApi.$inject = ['$resource','$q', 'parseheaders', 'parse','Token'];
 
   /* @ngInject */
-  function publisherApi($resource, $q, parseheaders, parse) {
+  function publisherApi($resource, $q, parseheaders, parse, Token) {
+    var user =  Token.currentUser();
+    if(user)
+      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Publisher  = parse.newParseResource(parseheaders.storeKeys, 'Publisher');
 
