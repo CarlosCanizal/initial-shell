@@ -1,6 +1,7 @@
 .DS_Store
 *.log
-.divshot-cache  
+.divshot-cache
+.divshot-cache/*
 node_modules
 src/client/bower_components
 dist
