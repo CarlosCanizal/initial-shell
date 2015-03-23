@@ -9,7 +9,7 @@
 
   /* @ngInject */
   function conekta(userApi, $q, parse, parseheaders) {
-    var conketaPublicKey = parseheaders.conekta;
+    var conketaPublicKey = parseheaders.conektaKeys.public;
     var  conektaResource  = parse.newCloudCodeResource(parseheaders.storeKeys);
 
     return conekta = {
@@ -32,7 +32,7 @@
     }
 
     function getPlan(){
-      return parseheaders.storeKeys.planId;
+      return parseheaders.conektaKeys.planId;
     }
 
     function subscribe(plan, card, user){
