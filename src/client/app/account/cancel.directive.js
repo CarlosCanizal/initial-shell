@@ -18,7 +18,8 @@ function cancelMembership(conekta){
         console.log(user);
         if(scope.cancelForm.$valid){
           shell.showLoading();
-          conekta.unsubscribe(account.subscription.payment.card,'plan_CczxCcuzBBUew3Vm',scope.unsubscribe.comment, user).then(function(user){
+          var planId = conekta.getPlan();
+          conekta.unsubscribe(account.subscription.payment.card,planId,scope.unsubscribe.comment, user).then(function(user){
             account.updateUser(user.result);
             if(!view)
               shell.updateCurrentUser();

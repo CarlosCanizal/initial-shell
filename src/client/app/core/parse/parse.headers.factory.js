@@ -20,13 +20,17 @@
       // storeKeys: {
       //   'Content-Type': 'application/json',
       //   'X-Parse-Application-Id': '2KXbxfnsWw8UxGdbuzfUCkElRkwLsTvskbZAOZm0',
-      //   'X-Parse-REST-API-Key': 'T5Cp4DDp1Rl5vAa4iRlotNrvfW2fxE0esikIgfBr'
+      //   'X-Parse-REST-API-Key': 'T5Cp4DDp1Rl5vAa4iRlotNrvfW2fxE0esikIgfBr',
+      //   'conekta': 'key_RqR27tszgbcFyAV3sBy53sA',
+      //   'planId': 'plan_CczxCcuzBBUew3Vm'
       // }
       //Development
       storeKeys: {
         'Content-Type': 'application/json',
         'X-Parse-Application-Id': 'HCGa3edfKjokvwNQRuDgtZsjL5BYyJ6r9jm8aBmT',
-        'X-Parse-REST-API-Key': 'wSO0vXjzy6jOKwRfYBEoVPlKYzu6oZKrJuV9rE2H'
+        'X-Parse-REST-API-Key': 'wSO0vXjzy6jOKwRfYBEoVPlKYzu6oZKrJuV9rE2H',
+      'conekta': 'key_LDjQwU7xkazYxSRSoW7XWfQ',
+      'planId': 'plan_CczxCcuzBBUew3Vm'
       }
     };
   }

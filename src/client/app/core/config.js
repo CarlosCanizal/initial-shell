@@ -6,14 +6,14 @@ config.$inject = ['$locationProvider', '$urlRouterProvider','$stateProvider'];
 
 function config($locationProvider,$urlRouterProvider, $stateProvider) {
 
-  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 
   $stateProvider
     .state('home', {
-      url:'/:section',
+      url:'/',
       templateUrl: 'app/layout/shell.html',
-      controller: 'Store',
-      controllerAs: 'store',
+      // controller: 'Store',
+      // controllerAs: 'store',
       data:{
         menu: 'home',
         submenu: 'store'

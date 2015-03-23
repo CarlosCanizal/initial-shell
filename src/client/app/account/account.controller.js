@@ -67,7 +67,8 @@
     account.updateMembership = function(name){
       if(account.subscription.payment){
         shell.showLoading();
-        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},account.subscription.payment, account.user).then(function(result){
+        var planId = conekta.getPlan();
+        conekta.updateMembership({name:name,id: planId},account.subscription.payment, account.user).then(function(result){
           if(!view){
             shell.updateCurrentUser();
           }

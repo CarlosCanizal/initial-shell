@@ -34,7 +34,8 @@
     assistentUser.updateMembership = function(name){
       if(assistentUser.subscription.payment){
         shell.showLoading();
-        conekta.updateMembership({name:name,id:'plan_CczxCcuzBBUew3Vm'},assistentUser.subscription.payment, assistentUser.user).then(function(result){
+        var planId = conekta.getPlan();
+        conekta.updateMembership({name:name,id: planId},assistentUser.subscription.payment, assistentUser.user).then(function(result){
           assistentUser.user.membership = result.result.membership;
           assistentUser.user.subscriptionCard = result.result.subscriptionCard;
         },function(error){

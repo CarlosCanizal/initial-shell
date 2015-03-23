@@ -31,12 +31,6 @@
       alert(shell.initialSearch);
     }
 
-    //production
-    // shell.planId = 'plan_CczxCcuzBBUew3Vm';
-    //development
-    shell.planId = 'plan_CczxCcuzBBUew3Vm';
-
-
     shell.title = 'Resultados';
 
     shell.currentUser  = userApi.currentUser();
