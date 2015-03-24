@@ -7,3 +7,5 @@ src/client/bower_components
 dist
 covers
 src/client/covers
+src/client/**/*.html
+src/client/**/*.css
