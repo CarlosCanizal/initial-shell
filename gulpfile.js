@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var argv = require('yargs').argv;
 var paths = require('./gulp/gulp.config.json');
 var critical = require('critical');
 
@@ -42,22 +43,6 @@ gulp.task('jade', function () {
     }))
 });
 
-// gulp.task('scripts', function () {
-//   return gulp.src('src/client/app/**/*.js')
-//     .pipe($.jshint())
-//     .pipe($.jshint.reporter('jshint-stylish'))
-//     .pipe($.size());
-// });
-
-// Styles
-// gulp.task('styles', function () {
-//   return gulp.src('src/client/common/**/*.css')
-//     .pipe($.rename({suffix: '.min'}))
-//     .pipe($.minifyCss())
-//     .pipe(gulp.dest('dist/common/css'))
-//     .pipe($.notify({message: 'Styles task complete'}));
-// });
-
 gulp.task('styles', function () {
   return gulp.src([
       'src/client/bower_components/pure/pure-min.css',
@@ -80,7 +65,7 @@ gulp.task('styles', function () {
 
 //Scripts
 gulp.task('scripts', function () {
-    return gulp.src([ 'src/client/bower_components/angular/angular.min.js',
+    var scripts = [ 'src/client/bower_components/angular/angular.min.js',
                       'src/client/bower_components/angular-ui-router/release/angular-ui-router.min.js',
                       'src/client/bower_components/angular-resource/angular-resource.min.js',
                       'src/client/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
@@ -98,7 +83,6 @@ gulp.task('scripts', function () {
                       'src/client/app/core/config.js',
                       'src/client/app/core/parse/parse.factory.js',
                       'src/client/app/core/parse/sepomex.factory.js',
-                      'src/client/app/core/parse/parse.headers.factory.js',
                       'src/client/app/core/store/store.api.factory.js',
                       'src/client/app/core/user/user.api.factory.js',
                       'src/client/app/core/user/token.api.js',
@@ -179,9 +163,17 @@ gulp.task('scripts', function () {
                       'src/client/app/cart/checkout/paymentMethod/paymentMethod.directive.js',
                       'src/client/app/cart/checkout/placeOrder/placeOrder.directive.js',
                       'src/client/app/cart/checkout/responsePayment/responsePayment.directive.js'
-                     ])
-        // .pipe($.jshint())
-        // .pipe($.jshint.reporter('jshint-stylish'))
+                     ];
+
+    if(argv.production){
+      console.log('We are in production!');
+      scripts.unshift['src/client/app/core/parse/production.headers.factory.js']
+    }else{
+      console.log('We are in development!');
+      scripts.unshift['src/client/app/core/parse/development.headers.factory.js']
+    }
+
+    return gulp.src(scripts)
         .pipe($.concat('main.js'))
         .pipe($.rename({suffix: '.min'}))
         .pipe($.uglify({mangle:false}))
@@ -195,16 +187,6 @@ gulp.task('images', function () {
     .pipe($.cache($.imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
     .pipe(gulp.dest('dist/common/images'))
     .pipe($.notify({message: 'Images task complete'}));
-});
-
-gulp.task('covers', function () {
-  return gulp.src('src/client/covers/**/*.{png,jpg,jpeg,gif,svg}')
-    .pipe(optipng({optimizationLevel: 3})())
-    .pipe(pngquant({quality: '65-80', speed: 4})())
-    .pipe(jpegoptim({max:70})())
-    .pipe(imageResize({width : 360,height : 547,crop : true,upscale : false}))
-    .pipe(gulp.dest('dist/covers'))
-    .pipe($.notify({message: 'Covers task complete'}));
 });
 
 gulp.task('copyfiles', function () {
