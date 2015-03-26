@@ -1,63 +1,63 @@
-/* line 5, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 5, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 body {
   margin: 0;
   padding: 1rem 3rem;
   background: url('/common/images/satinweave.png'); }
 
-/* line 13, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 13, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 html, button, input, select, textarea, .pure-g [class*="pure-u"] {
   font-family: 'Raleway'; }
 
-/* line 16, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 16, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 #right-pane {
   margin-top: 2.3rem; }
 
-/* line 19, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 19, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .inner-box {
   padding-right: 2rem; }
 
-/* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 22, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .side-space {
   padding-right: 2rem; }
 
-/* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 25, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 a:hover, a:active, a:focus {
   outline: 0; }
 
-/* line 28, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 28, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .shelf {
   margin-bottom: 2rem;
   position: relative; }
 
-/* line 32, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 32, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .inner-shelf {
   border: solid 1px rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
   color: rgba(0, 0, 0, 0.87);
   position: relative; }
 
-/* line 38, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 38, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .text-disable-black {
   color: rgba(0, 0, 0, 0.26); }
 
-/* line 41, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 41, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .text-secondary-black {
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 45, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 45, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .shelf-space {
   padding: 1rem; }
 
-/* line 48, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 48, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-space {
   padding: 0 1rem; }
 
-/* line 51, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 51, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .filter-title {
   color: rgba(0, 0, 0, 0.54);
   font-size: 1.5rem; }
 
-/* line 55, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 55, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .section-title {
   font-family: 'RalewayLight';
   color: rgba(0, 0, 0, 0.87);
@@ -65,16 +65,16 @@ a:hover, a:active, a:focus {
   font-size: 2rem;
   padding-top: 4rem; }
 
-/* line 62, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 62, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .title {
   font-size: 1.8rem;
   margin-bottom: 1rem; }
 
-/* line 66, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 66, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .subtitle {
   font-size: 1.3rem; }
 
-/* line 69, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 69, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 #cart {
   background-color: #7C4DFF;
   text-align: right;
@@ -86,53 +86,53 @@ a:hover, a:active, a:focus {
   padding: 0.3rem 1rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem; }
-  /* line 80, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 80, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   #cart i {
     font-size: 1.8rem; }
-  /* line 82, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 82, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   #cart span {
     font-size: 1.8rem;
     margin: 0 0.5rem; }
-  /* line 85, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 85, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   #cart a {
     color: rgba(255, 255, 255, 0.87);
     text-decoration: none; }
-    /* line 88, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 88, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
     #cart a:hover {
       color: #FF9100; }
 
-/* line 91, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 91, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .login-header {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.87); }
-  /* line 94, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 94, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .login-header a {
     cursor: pointer; }
 
-/* line 97, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 97, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .left {
   float: left; }
 
-/* line 100, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 100, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .right {
   float: right; }
 
-/* line 103, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 103, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item {
   margin: 1rem; }
-  /* line 105, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 105, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .item img {
     width: 100%; }
 
-/* line 108, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 108, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-image {
   margin-bottom: 0.5rem; }
 
-/* line 111, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 111, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-button {
   text-align: center; }
 
-/* line 114, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 114, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-info {
   text-align: center;
   padding-bottom: 0.5rem;
@@ -140,126 +140,126 @@ a:hover, a:active, a:focus {
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.87);
   text-transform: uppercase; }
-  /* line 121, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 121, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .item-info a {
     color: rgba(0, 0, 0, 0.87);
     text-decoration: none; }
 
-/* line 125, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 125, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .shipping-method {
   font-size: 1.2rem;
   color: #0078e7;
   margin-bottom: 0.5rem; }
 
-/* line 132, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 132, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .publisher-name {
   text-transform: uppercase; }
 
-/* line 135, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 135, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .shelf-name {
   text-transform: uppercase; }
 
-/* line 138, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 138, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .uppercase {
   text-transform: uppercase; }
 
-/* line 141, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 141, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .login {
   font-size: 1.1rem;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 146, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 146, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .table-image {
   width: 5rem; }
 
-/* line 149, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 149, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .card-item {
   padding: 1rem 0;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12); }
-  /* line 152, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 152, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .card-item:last-child {
     border-bottom: 0;
     padding-bottom: 0; }
-  /* line 155, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 155, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .card-item i {
     margin-right: 1rem; }
 
-/* line 158, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 158, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .cart-item {
   padding-bottom: 0.5rem; }
-  /* line 160, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 160, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .cart-item:last-child {
     padding-bottom: 0; }
-  /* line 162, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 162, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .cart-item a.button {
     margin-left: 2rem; }
-  /* line 164, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 164, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .cart-item img {
     width: 100%; }
 
-/* line 170, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 170, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .bottom-divider {
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   margin-bottom: 1rem;
   padding-bottom: 1rem; }
 
-/* line 175, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 175, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .address-item:last-child {
   margin-bottom: 0; }
 
-/* line 178, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 178, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .list-item {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   cursor: pointer; }
-  /* line 183, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 183, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .list-item:hover {
     color: #FF9100; }
 
-/* line 187, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 187, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .list-item:last-child {
   margin-bottom: 0;
   border-bottom: 0; }
 
-/* line 191, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 191, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .address-line {
   padding-bottom: 0.5rem; }
 
-/* line 195, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 195, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .action {
   color: #0078e7; }
 
-/* line 198, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 198, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .error {
   color: #dd514c; }
 
-/* line 201, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 201, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .success {
   color: #1cb841; }
 
-/* line 204, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 204, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .warning {
   color: #f57b00; }
 
-/* line 207, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 207, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .update {
   color: #0078e7; }
 
-/* line 210, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 210, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .form-icon {
   position: relative; }
-  /* line 212, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 212, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .form-icon i.fa-dot-circle-o {
     color: rgba(0, 0, 0, 0.26); }
 
-/* line 215, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 215, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pure-form-stacked label {
   font-family: 'RalewayLight';
   margin: 0.5rem 0; }
 
-/* line 219, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 219, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .medium-icon {
   font-size: 1.5rem;
   position: absolute;
@@ -267,39 +267,39 @@ a:hover, a:active, a:focus {
   right: 0.5rem;
   padding-left: 0.5rem; }
 
-/* line 227, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 227, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .button {
   border: solid 1px rgba(0, 0, 0, 0.87);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem; }
 
-/* line 232, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 232, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .buttons-container {
   text-align: center;
   padding-bottom: 1rem;
   color: rgba(0, 0, 0, 0.26); }
-  /* line 236, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 236, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .buttons-container a {
     color: rgba(0, 0, 0, 0.26);
     cursor: pointer; }
 
-/* line 240, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 240, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .button-xsmall {
   font-size: 70%; }
 
-/* line 243, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 243, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .button-small {
   font-size: 85%; }
 
-/* line 246, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 246, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .button-large {
   font-size: 200%; }
 
-/* line 249, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 249, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .font-large {
   font-size: 5rem; }
 
-/* line 253, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 253, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pure-form select {
   width: 100%;
   display: inline-block;
@@ -310,7 +310,7 @@ a:hover, a:active, a:focus {
   font-size: 1.1rem;
   box-sizing: border-box; }
 
-/* line 263, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 263, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .disable-shelf {
   position: absolute;
   width: 100%;
@@ -320,281 +320,281 @@ a:hover, a:active, a:focus {
   text-align: center;
   z-index: 2; }
 
-/* line 273, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 273, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .fa-5 {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
   font-size: 5rem; }
 
-/* line 279, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 279, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .fa-8 {
   font-size: 8rem; }
 
-/* line 282, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 282, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .success-container {
   text-align: center;
   color: #1cb841; }
 
-/* line 286, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 286, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .error-container {
   text-align: center;
   color: #dd514c; }
 
-/* line 290, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 290, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .error-border {
   border-color: #dd514c; }
 
-/* line 293, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 293, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .description > div {
   font-size: 1.2rem;
   padding-bottom: 0.5rem; }
 
-/* line 298, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 298, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .quantity a {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 302, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 302, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .relative {
   position: relative; }
 
-/* line 307, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 307, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .border-right {
   border-right: solid 1px rgba(0, 0, 0, 0.12);
   box-sizing: border-box; }
 
-/* line 311, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 311, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .border-left {
   border-left: solid 1px rgba(0, 0, 0, 0.12);
   box-sizing: border-box; }
 
-/* line 315, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 315, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .border-top {
   border-top: solid 1px rgba(0, 0, 0, 0.12);
   box-sizing: border-box; }
 
-/* line 319, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 319, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .no-padding-top {
   padding-top: 0; }
 
-/* line 322, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 322, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .no-padding-bottom {
   padding-bottom: 0; }
 
-/* line 325, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 325, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .no-margin-top {
   margin-top: 0; }
 
-/* line 328, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 328, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .no-margin-bottom {
   margin-bottom: 0; }
 
-/* line 331, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 331, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .padding-1 {
   padding: 1rem; }
 
-/* line 334, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 334, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .padding-top {
   padding-top: 0.5rem; }
 
-/* line 337, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 337, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .padding-right-1 {
   padding-right: 1rem; }
 
-/* line 340, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 340, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .padding-left-1 {
   padding-left: 1rem; }
 
-/* line 343, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 343, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .padding-bottom-1 {
   padding-bottom: 1rem; }
 
-/* line 346, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 346, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-left-1 {
   margin-left: 1rem; }
 
-/* line 349, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 349, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-bottom-1 {
   margin-bottom: 1rem; }
 
-/* line 352, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 352, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-top-1 {
   margin-top: 1rem; }
 
-/* line 355, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 355, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-right-1 {
   margin-right: 1rem; }
 
-/* line 358, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 358, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-right-1-2 {
   margin-right: 0.5rem; }
 
-/* line 361, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 361, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-left-1-2 {
   margin-left: 0.5rem; }
 
-/* line 364, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 364, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-top-bottom-1 {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-/* line 368, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 368, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .padding-side-1 {
   padding-left: 1rem;
   padding-right: 1rem; }
 
-/* line 372, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 372, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pure-button {
   white-space: normal; }
 
-/* line 375, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 375, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .information-box.no-padding {
   padding-left: 0; }
 
-/* line 378, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 378, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .quantity input {
   margin: 0 0.5rem;
   color: rgba(0, 0, 0, 0.87); }
 
-/* line 382, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 382, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .query-params {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: solid 1px rgba(0, 0, 0, 0.12); }
 
-/* line 387, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 387, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .align-center {
   text-align: center; }
 
-/* line 390, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 390, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .align-right {
   text-align: right; }
 
-/* line 393, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 393, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pure-form .pure-group input {
   margin: 0 auto; }
 
-/* line 396, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 396, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-bottom {
   margin-bottom: 0.5rem; }
 
-/* line 399, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 399, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-side-1 {
   margin-left: 1rem;
   margin-right: 1rem; }
 
-/* line 403, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 403, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-side-1-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem; }
 
-/* line 407, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 407, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-right {
   margin-right: 1rem; }
 
-/* line 410, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 410, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .margin-1 {
   margin: 1rem; }
 
-/* line 414, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 414, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pure-button i {
   margin-right: 0.3rem; }
 
-/* line 418, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 418, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .address-line i {
   margin-right: 0.3rem; }
 
-/* line 422, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 422, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pure-button.just-icon i {
   margin-right: 0; }
 
-/* line 425, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 425, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .xs-input {
   width: 2em; }
 
-/* line 428, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 428, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .row {
   padding-bottom: 1rem; }
 
-/* line 433, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 433, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .information-title {
   padding-bottom: 0.5rem;
   font-style: italic;
   text-transform: uppercase;
   color: #FF9100; }
 
-/* line 440, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 440, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .info th {
   padding: 1rem; }
 
-/* line 443, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 443, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .info-label {
   text-align: right;
   padding-right: 1rem;
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 448, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 448, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .info-value, .pure-g .info-value {
   font-family: Helvetica; }
 
-/* line 451, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 451, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .info-important {
   font-family: Helvetica;
   font-weight: bold; }
 
-/* line 455, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 455, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pointer {
   cursor: pointer; }
 
-/* line 458, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 458, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .pointer:hover {
   color: #FF9100 !important; }
 
-/* line 462, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 462, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .form-container textarea {
   width: 100%; }
-/* line 464, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 464, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .form-container select {
   width: 49%;
   display: inline-block; }
 
-/* line 469, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 469, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .form-container select.complete-1 {
   width: 100%; }
 
-/* line 473, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 473, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .total-table {
   margin: 0 auto;
   margin-bottom: 1rem;
   text-align: right; }
-  /* line 477, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 477, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .total-table .table-label {
     padding-right: 1rem; }
 
-/* line 481, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 481, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .info-table td {
   padding: 0 1rem;
   font-size: 1.1rem;
   padding-top: 0.5rem;
   text-align: right; }
-/* line 486, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 486, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .info-table th {
   padding: 0 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   padding-bottom: 0.5rem;
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 494, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 494, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .coupon-row {
   font-size: 1rem;
   padding: 0.5rem 0; }
 
-/* line 498, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 498, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .total-container {
   display: inline-block; }
 
-/* line 501, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 501, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .error-layer {
   position: fixed;
   right: 1rem;
@@ -606,33 +606,33 @@ a:hover, a:active, a:focus {
   border-bottom-right-radius: 0.5rem;
   z-index: 4; }
 
-/* line 512, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 512, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .text-secondary-black {
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 515, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 515, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .important {
   font-size: 1.5rem;
   color: #FF9100; }
 
-/* line 519, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 519, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 #submenu {
   text-align: right; }
-  /* line 521, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 521, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   #submenu nav {
     margin: 1rem 0; }
-    /* line 523, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 523, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
     #submenu nav a {
       padding: 0 1rem;
       color: rgba(0, 0, 0, 0.54);
       text-decoration: none;
       text-transform: uppercase;
       border-right: solid 1px rgba(0, 0, 0, 0.12); }
-    /* line 529, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 529, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
     #submenu nav .active {
       color: #FF9100; }
 
-/* line 532, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 532, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .initial-layer {
   top: 0;
   left: 0;
@@ -643,7 +643,7 @@ a:hover, a:active, a:focus {
   z-index: 5;
   -webkit-transition: 0.5s linear all;
           transition: 0.5s linear all; }
-  /* line 541, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 541, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .initial-layer .initial-logo {
     margin: 3rem auto;
     margin-bottom: 1rem;
@@ -651,11 +651,11 @@ a:hover, a:active, a:focus {
     text-align: center;
     -webkit-transition: 0.5s linear all;
             transition: 0.5s linear all; }
-    /* line 547, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+    /* line 547, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
     .initial-layer .initial-logo img {
       width: 100%; }
 
-/* line 550, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 550, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .initial-text {
   color: rgba(255, 255, 255, 0.87);
   font-size: 1.2rem;
@@ -663,79 +663,79 @@ a:hover, a:active, a:focus {
   margin-bottom: 2rem;
   font-family: 'RalewayLight'; }
 
-/* line 557, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 557, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .initial-layer.ng-hide {
   top: 100%; }
-  /* line 559, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 559, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .initial-layer.ng-hide .initial-logo {
     width: 0; }
 
-/* line 562, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 562, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .amex {
   color: #2196F3; }
 
-/* line 565, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 565, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .visa {
   color: #01579B; }
 
-/* line 568, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 568, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .mastercard {
   color: #FFC107; }
 
-/* line 572, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 572, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-details img {
   width: 100%; }
-/* line 574, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 574, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-details .item-name {
   color: rgba(0, 0, 0, 0.87);
   text-transform: uppercase;
   font-size: 1.3rem;
   padding-bottom: 0.5rem; }
-/* line 579, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 579, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-details .item-description {
   padding: 0.5rem 0 1rem 0;
   font-size: 0.9rem; }
-/* line 582, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 582, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-details .item-attribute {
   padding-bottom: 0.5rem; }
-/* line 584, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 584, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .item-details .item-action {
   margin-top: 3rem; }
 
-/* line 587, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 587, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .privacy {
   text-align: center;
   margin-bottom: 1rem;
   color: rgba(0, 0, 0, 0.87); }
-  /* line 591, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 591, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .privacy a {
     color: #FF9100;
     text-decoration: none; }
 
-/* line 596, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 596, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .privacy-policy p {
   color: rgba(0, 0, 0, 0.87); }
-/* line 598, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 598, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .privacy-policy h3 {
   color: rgba(0, 0, 0, 0.54); }
-  /* line 600, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 600, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .privacy-policy h3.accent {
     color: #FF9100; }
 
-/* line 603, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 603, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .accent {
   color: #FF9100; }
 
-/* line 606, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 606, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .search-list {
   padding: 1rem 0 0.6rem 0;
   position: relative; }
 
-/* line 610, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 610, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .search-box {
   padding: 1rem 0 0.6rem 0;
   position: relative; }
-  /* line 613, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 613, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .search-box input {
     width: 85%;
     font-size: 1.5rem;
@@ -747,7 +747,7 @@ a:hover, a:active, a:focus {
     color: rgba(0, 0, 0, 0.87);
     outline: none;
     box-sizing: border-box; }
-  /* line 624, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 624, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .search-box a {
     text-align: center;
     width: 15%;
@@ -764,75 +764,75 @@ a:hover, a:active, a:focus {
     position: relative;
     top: -0.1rem; }
 
-/* line 641, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 641, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .big-button {
   margin: 2rem;
   text-align: center;
   cursor: pointer; }
-  /* line 645, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 645, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .big-button a {
     font-size: 5rem;
     border: solid 5px #FF9100;
     padding: 0.5rem 1rem;
     border: solid 5px;
     border-radius: 50%; }
-  /* line 651, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 651, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .big-button .big-button-label {
     cursor: pointer;
     margin-top: 1rem;
     font-size: 4rem; }
 
-/* line 656, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 656, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .launch {
   color: #0078e7; }
 
-/* line 658, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 658, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .launch-border {
   border-color: #0078e7; }
 
-/* line 661, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 661, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .error-border {
   border-color: #dd514c; }
 
-/* line 664, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 664, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 a {
   text-decoration: none; }
 
-/* line 667, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 667, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 a.action:hover {
   color: #FF9100; }
 
-/* line 670, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 670, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .footer {
   text-align: right;
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 675, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 675, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .landing-title {
   padding-top: 4rem;
   text-align: center;
   font-size: 6rem;
   color: rgba(0, 0, 0, 0.54); }
 
-/* line 681, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 681, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .search-params {
   border-top: solid 1px rgba(0, 0, 0, 0.12);
   border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   margin-bottom: 2rem; }
 
-/* line 686, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 686, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .search-param {
   color: rgba(0, 0, 0, 0.54);
   padding: 0.5rem 0;
   font-size: 1.8rem; }
-  /* line 690, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 690, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .search-param i {
     position: relative;
     margin-left: 0.3rem;
     top: -0.4rem; }
 
-/* line 695, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 695, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .box-list {
   text-align: center;
   position: absolute;
@@ -844,14 +844,14 @@ a.action:hover {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.8); }
-  /* line 706, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+  /* line 706, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
   .box-list .list-element {
     padding: 0.5rem 0;
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.87);
     border-bottom: solid 1px rgba(255, 255, 255, 0.12); }
 
-/* line 712, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/main.sass */
+/* line 712, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .notes {
   font-size: 0.9rem;
   text-align: center;

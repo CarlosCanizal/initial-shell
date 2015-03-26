@@ -1,32 +1,32 @@
-/* line 3, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 3, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-large {
   font-size: 110%; }
 
-/* line 6, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 6, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-xlarge {
   font-size: 125%; }
 
-/* line 12, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 12, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-success, .button-error, .button-warning, .button-secondary {
   color: rgba(255, 255, 255, 0.87);
   border-radius: 4px; }
 
-/* line 16, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 16, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-success {
   background: #1cb841;
   /* this is a green */ }
 
-/* line 19, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 19, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-error {
   background: #ca3c3c;
   /* this is a maroon */ }
 
-/* line 22, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 22, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-warning {
   background: #df7514;
   /* this is an orange */ }
 
-/* line 25, /Users/carloscanizal/projects/perro-de-cobre/src/client/common/css/buttons.sass */
+/* line 25, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/buttons.sass */
 .button-secondary {
   background: #42b8dd;
   /* this is a light blue */ }
