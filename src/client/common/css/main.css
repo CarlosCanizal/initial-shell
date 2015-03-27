@@ -597,14 +597,14 @@ a:hover, a:active, a:focus {
 /* line 501, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .error-layer {
   position: fixed;
-  right: 1rem;
+  left: 0;
   top: 0;
-  padding: 0.5rem;
+  padding: 1rem;
   color: white;
   background-color: #ca3c3c;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  z-index: 4; }
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 1.3rem; }
 
 /* line 512, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
 .text-secondary-black {

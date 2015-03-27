@@ -33,7 +33,7 @@
           <div class="dot2"></div>
         </div>
       </div>
-      <div data-ng-if="shell.errorBar" class="error-layer">{{shell.errorResponse}}</div>
+      <div data-ng-if="shell.errorBar" class="error-layer align-center">{{shell.errorResponse.message}}</div>
       <confirm-dialog></confirm-dialog>
       <div id="shell">
         <div id="mobile-side-menu" data-ng-include="'app/layout/mobile/side-menu.html'" data-ng-if="shell.sideMenu"></div>

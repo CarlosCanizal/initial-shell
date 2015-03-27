@@ -25,7 +25,7 @@
     shell.publishersList = false;
     shell.initialSearch = 'recomendados';
 
-    console.log($stateParams);
+    
     if($stateParams.section && $stateParams.section != null){
       shell.initialSearch = $stateParams.section;
       alert(shell.initialSearch);
@@ -81,6 +81,8 @@
       shell.shelfLoaded = true;
     }
 
+
+
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
       if(!shell.loaded)
         shell.loaded = true;
@@ -113,7 +115,7 @@
     };
 
     shell.setCurrentUser = function(user){
-      console.log('setCurrentUser');
+      
       userApi.setCurrentUser(user);
       shell.currentUser = user;
     };
@@ -158,20 +160,21 @@
     };
 
     shell.setError = function(error){
-      console.log(error);
-      shell.errorResponse = error;
+      
+      shell.errorResponse = {};
       shell.errorBar = true;
-      if(error.message_to_purchaser){
-        shell.errorBar = false;
-        shell.error = error.message_to_purchaser;
+      if(!error.status){
+        shell.errorResponse.message = "No hay conexión a Internet.";
+      }else{
+        if(error.message_to_purchaser){
+          shell.errorBar = false;
+          shell.error = error.message_to_purchaser;
+        }
+        if(error.data){
+         shell.errorBar = false;
+         shell.error = error.data.error; 
+        }
       }
-      // else if(error.data){
-      //  shell.errorBar = false;
-      if(error.data){
-       shell.errorBar = false;
-       shell.error = error.data.error; 
-      }
-      // }
     };
 
     shell.setMessage = function(message){

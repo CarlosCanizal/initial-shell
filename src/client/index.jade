@@ -34,8 +34,8 @@ html(data-ng-app="app")
         div.spinner-circle
           div.dot1
           div.dot2
-      .error-layer(data-ng-if="shell.errorBar")
-        |{{shell.errorResponse}}
+      .error-layer.align-center(data-ng-if="shell.errorBar")
+        |{{shell.errorResponse.message}}
       confirm-dialog
       #shell
         #mobile-side-menu(data-ng-include="'app/layout/mobile/side-menu.html'", data-ng-if="shell.sideMenu")
