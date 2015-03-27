@@ -22,9 +22,18 @@ function shippingAddress(userApi, shippingApi){
 
       shippingApi.getList().then(function(result){
         checkout.shippingMethods = result.results;
+        return userApi.getPlacedOrders();
+      }).then(function(result){
+        var orders = result.results;
+        if(orders.length < 1){
+          if(checkout.shippingMethods[0].label == 'group')
+          checkout.shippingMethods.splice(0,1);
+        }
+
         if(checkout.shippingMethods[0]){
           shell.shoppingCart.shippingMethod = checkout.shippingMethods[0];
         }
+
         return userApi.getAddresses(shell.currentUser.objectId)
       }).then(function(addresses){
         checkout.addresses =  addresses.results;

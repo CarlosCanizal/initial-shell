@@ -14,7 +14,6 @@
 
     $scope.$watch('shell.currentUser',function(){
       if(shell.currentUser){
-        console.log('shell.currentUser', shell.currentUser.membership);
         shell.shoppingCart.membership = shell.currentUser.membership;
         shell.shoppingCart.userWallet = shell.currentUser.wallet;
         ShoppingCart.setCart(shell.shoppingCart);
@@ -116,9 +115,9 @@
       checkout.paymentMethods = cards;
     }
 
-    checkout.setShippingMethods = function(methods){
-      checkout.shippingMethods = methods;
-    }
+    // checkout.setShippingMethods = function(methods){
+    //   checkout.shippingMethods = methods;
+    // }
 
     checkout.updateShipping = function(){
       shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);

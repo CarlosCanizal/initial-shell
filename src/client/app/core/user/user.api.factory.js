@@ -22,6 +22,7 @@
     var  Address = parse.newParseResource(parseheaders.storeKeys,'Address');
     var  Membership = parse.newParseResource(parseheaders.storeKeys,'Membership');
     var  UserStats = parse.newParseResource(parseheaders.storeKeys,'UserStats');
+    var  Order = parse.newParseResource(parseheaders.storeKeys,'Order');
     var  User = parse.newUserResource(parseheaders.storeKeys);
 
     var factory = {
@@ -51,7 +52,8 @@
       assistentRegister: assistentRegister,
       getAssistentUsers: getAssistentUsers,
       recoveryPassword: recoveryPassword,
-      getUserByKey: getUserByKey
+      getUserByKey: getUserByKey,
+      getPlacedOrders: getPlacedOrders
     };
 
     return factory;
@@ -200,6 +202,15 @@
         deferred.reject();
       }
       return deferred.promise
+    }
+
+    function getPlacedOrders(){
+      var user = this.currentUser();
+      var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId},"state":"placed"};
+      return Order.query({
+              where : where,
+              order : 'priority'
+             }).$promise;
     }
 
     function getAssistentUsers(assistent){

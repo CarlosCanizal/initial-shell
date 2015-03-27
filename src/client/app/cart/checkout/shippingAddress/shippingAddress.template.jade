@@ -39,7 +39,7 @@
                     | Seleccionar metodo de envio
                   .address-line
                     select(data-ng-model="shell.shoppingCart.shippingMethod", data-ng-options="item.name for item in checkout.shippingMethods track by item.objectId", data-ng-change="checkout.updateShipping()")                      
-              .information-box.padding-side-1
+              .information-box.padding-side-1(data-ng-show="shell.shoppingCart.shippingMethod.label !== 'group'")
                 div(data-ng-show="checkout.addresses.length > 0")
                   .address-line
                     | Cambiar direccion
@@ -49,6 +49,9 @@
                   a.pure-button.button-xsmall(data-ng-click="checkout.addressFormView=true")
                     i.fa.fa-plus
                     | Agregar Direccion
+              .information-box.padding-side-1(data-ng-show="shell.shoppingCart.shippingMethod.label == 'group'")
+                .address-line
+                  | Si ya tienes ordenes que no ha sido enviadas, puedes pedir que se te agrupen y aprovechar el mismo envio.
             .pure-u-1.pure-u-md-1-3.align-center
               div.padding-side-1(data-ng-hide="showPayment")
                 .shipping-method

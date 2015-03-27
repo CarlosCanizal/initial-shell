@@ -15,7 +15,7 @@
     var order = {
       getOrders: getOrders,
       getOrder: getOrder,
-      getAllOrders: getAllOrders
+      getAllOrders: getAllOrders 
     };
 
     return order;
