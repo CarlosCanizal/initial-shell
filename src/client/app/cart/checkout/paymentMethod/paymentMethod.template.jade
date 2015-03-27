@@ -41,7 +41,7 @@
                   .address-line
                     | Cambiar Metodo de Pago
                   .address-line
-                    select(ng-model="shell.shoppingCart.paymentMethod", data-ng-options="item as item.card.last4 for item in checkout.paymentMethods")
+                    select(ng-model="shell.shoppingCart.paymentMethod", data-ng-options="item as item.card.last4 for item in checkout.paymentMethods track by item.card.id")
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.cardFormView=true")
                     i.fa.fa-plus
