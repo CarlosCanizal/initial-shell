@@ -37,8 +37,9 @@ function upgradeMembership(userApi, conekta){
         var planId = conekta.getPlan();
         console.log(shell.shoppingCart.paymentMethod);
         conekta.updateMembership({name:name,id: planId},shell.shoppingCart.paymentMethod,shell.currentUser).then(function(result){          
-          shell.updateCurrentUser();
-          checkout.upgrade = false;
+          shell.updateCurrentUser().then(function(){
+            checkout.upgrade = false;
+          });
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

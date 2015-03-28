@@ -30,11 +30,11 @@ html(data-ng-app="app")
           .cube1
           .cube2
         
-      .opacity-layer(data-ng-show="shell.loading")
+      .opacity-layer(data-ng-show="shell.loading && shell.loaded",)
         div.spinner-circle
           div.dot1
           div.dot2
-      .error-layer.align-center(data-ng-if="shell.errorBar")
+      .error-layer.align-center(data-ng-if="shell.errorBar",data-ng-show='shell.loaded')
         |{{shell.errorResponse.message}}
       confirm-dialog
       #shell

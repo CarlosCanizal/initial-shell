@@ -65,14 +65,22 @@
     };
     
     account.updateMembership = function(name){
+      
       if(account.subscription.payment){
         shell.showLoading();
         var planId = conekta.getPlan();
+        console.log('user',account.user.conektaId);
+        console.log('name',name);
+        console.log('planId', planId);
+        console.log('payment', account.subscription.payment);
         conekta.updateMembership({name:name,id: planId},account.subscription.payment, account.user).then(function(result){
           if(!view){
-            shell.updateCurrentUser();
+            shell.updateCurrentUser().then(function(user){
+              account.user = userApi.currentUser(); 
+            });
+          }else{
+           account.user = result.result; 
           }
-          account.user = result.result;
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

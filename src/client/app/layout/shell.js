@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi'];
+  Shell.$inject = ['$scope','$q','$timeout','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi'];
 
-  function Shell($scope, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi){
+  function Shell($scope, $q, $timeout, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi){
     // jshint validthis: true 
     var shell = this;
 
@@ -93,8 +93,11 @@
 
 
     $scope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
-      if(!shell.loaded)
-        shell.loaded = true;
+      if(!shell.loaded){
+        $timeout(function(){
+          shell.loaded = true;
+        },300);
+      }
       
       shell.isDashboard = toState.data && toState.data.dashboard ? true : false;
       shell.isAdmin = toState.data && toState.data.admin ? true : false;
@@ -130,13 +133,16 @@
     };
 
     shell.updateCurrentUser = function(){
+      var deferred = $q.defer();
       userApi.getCurrentUser().then(function(user){
         shell.currentUser = user;
         userApi.setCurrentUser(user);
-
+        deferred.resolve(user);
       },function(error){
         shell.setError(error);
+        deferred.reject();
       });
+      return deferred.promise;
     };
 
     shell.logout = function(){

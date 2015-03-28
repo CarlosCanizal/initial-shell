@@ -27,13 +27,13 @@
           <div class="cube2"></div>
         </div>
       </div>
-      <div data-ng-show="shell.loading" class="opacity-layer">
+      <div data-ng-show="shell.loading &amp;&amp; shell.loaded" class="opacity-layer">
         <div class="spinner-circle">
           <div class="dot1"></div>
           <div class="dot2"></div>
         </div>
       </div>
-      <div data-ng-if="shell.errorBar" class="error-layer align-center">{{shell.errorResponse.message}}</div>
+      <div data-ng-if="shell.errorBar" data-ng-show="shell.loaded" class="error-layer align-center">{{shell.errorResponse.message}}</div>
       <confirm-dialog></confirm-dialog>
       <div id="shell">
         <div id="mobile-side-menu" data-ng-include="'app/layout/mobile/side-menu.html'" data-ng-if="shell.sideMenu"></div>
