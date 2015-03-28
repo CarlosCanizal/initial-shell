@@ -24,6 +24,8 @@
     shell.premierList = false;
     shell.publishersList = false;
     shell.initialSearch = 'recomendados';
+    shell.system = {};
+    shell.system.membership = true;
 
     
     if($stateParams.section && $stateParams.section != null){
@@ -48,6 +50,13 @@
         shell.sideMenu = false;
       shell.premierList = false;
       shell.publishersList = false;
+    }
+
+    shell.isMember = function(){
+      if(shell.currentUser)
+        return shell.currentUser.membership == "pro";
+      else
+        return false;
     }
 
     shell.updateShoppingCart =  function(cart){

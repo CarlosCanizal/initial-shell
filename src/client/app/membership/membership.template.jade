@@ -1,0 +1,31 @@
+#update-membership
+  .filter-title
+    span.publisher-name.
+      Actualizar Membresia
+  .shelf
+    .inner-shelf
+      .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
+      .shelf-space
+        p
+          |The Comics' Society actualmente solo permite comprar con membresia.
+        p
+          |La membresia tiene un costo de 
+          span.accent
+            |$100 MXN 
+          |mensuales y te otorga un 
+          span.accent
+            |15% 
+          |de descuento en todas tus compras y pre-ordenes del mes.
+        p
+          |Si tienes dudas de como funciona por favor visita nuestra pagina de 
+          a.accent(ui-sref="about", target="_blank")
+            | PREGUNTAS FRECUENTES.
+        p
+          |Si ya estas listo para unirte a la Sociedad y recibir todos los beneficios, actualiza tu membresia.
+        div.pure-g.align-center
+          .pure-u-1.pure-u-sm-1-2.margin-bottom-1
+            a.pure-button.pure-button-primary.margin-right-1(data-ng-click="checkout.upgrade= true")
+              |Actualizar Membresia
+          .pure-u-1.pure-u-sm-1-2
+            a.pure-button(data-ng-click="")
+              |No me interesa la Membresia

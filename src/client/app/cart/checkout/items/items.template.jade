@@ -50,9 +50,19 @@
                       i.fa.fa-check
                       | Actualizar Orden
                   .margin-bottom(data-ng-hide="checkout.updateCart")
-                    a.pure-button.button-success.button-small(data-ng-if="shell.currentUser", data-ng-click="checkout.toAddress()",data-ng-hide="checkout.showAddress")
-                      i.fa.fa-check
-                      | Continuar
+                    span(data-ng-if="shell.system.membership && shell.currentUser")
+                      a.pure-button.button-success.button-small(data-ng-if="shell.isMember()",data-ng-click="checkout.toAddress()",data-ng-hide="checkout.showAddress")
+                        i.fa.fa-check
+                        | Continuar
+                      a.pure-button.button-success.button-small.pure-button-primary(data-ng-if="!shell.isMember()",data-ng-click="checkout.upgrade = true",data-ng-hide="checkout.showAddress")
+                        | Membresia
+                    span(data-ng-if="!shell.system.membership && shell.currentUser")
+                      a.pure-button.button-success.button-small(data-ng-click="checkout.toAddress()",data-ng-hide="checkout.showAddress")
+                        i.fa.fa-check
+                        | Continuar
+                    //- a.pure-button.button-success.button-small(data-ng-if="shell.currentUser && shell.currentUser.membership == 'pro'", data-ng-click="checkout.toAddress()",data-ng-hide="checkout.showAddress")
+                    //-   i.fa.fa-check
+                    //-   | Continuar
                     a.pure-button.pure-button-primary.button-small(data-ng-if="!shell.currentUser", data-ng-click="checkout.showLoginForms(true)")
                       i.fa.fa-user
                       | Iniciar Sesion
