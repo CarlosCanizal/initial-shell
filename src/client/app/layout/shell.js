@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$q','$timeout','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi'];
+  Shell.$inject = ['$scope','$q','$timeout','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi','systemApi'];
 
-  function Shell($scope, $q, $timeout, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi){
+  function Shell($scope, $q, $timeout, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi, systemApi){
     // jshint validthis: true 
     var shell = this;
 
@@ -25,13 +25,21 @@
     shell.publishersList = false;
     shell.initialSearch = 'recomendados';
     shell.system = {};
-    shell.system.membership = true;
+    shell.system.membership = false;
+
+    systemApi.membership().then(function(membership){
+      shell.system.membership = membership;
+    },function(error){
+      shell.setError(error);
+    });
 
     
     if($stateParams.section && $stateParams.section != null){
       shell.initialSearch = $stateParams.section;
-      alert(shell.initialSearch);
     }
+
+
+
 
     shell.title = 'Resultados';
 
@@ -175,21 +183,23 @@
     };
 
     shell.setError = function(error){
-      
       shell.errorResponse = {};
       shell.errorBar = true;
-      if(!error.status){
+      if(error.status && error.status === 0){
         shell.errorResponse.message = "No hay conexión a Internet.";
       }else{
         if(error.message_to_purchaser){
           shell.errorBar = false;
           shell.error = error.message_to_purchaser;
         }
-        if(error.data){
+        else if(error.data){
          shell.errorBar = false;
          shell.error = error.data.error; 
+        }else{
+          console.log(error);
         }
       }
+
     };
 
     shell.setMessage = function(message){

@@ -79,6 +79,8 @@
       tokenParams = {card:card};
 
       successResponseHandler = function(token) {
+
+        console.log('token', token);
         
         userApi.addCard({conektaId:conektaId, token:token.id}).then(function(result){
           deferred.resolve(result.result);
@@ -89,8 +91,11 @@
       };
 
       errorResponseHandler = function(error) {
+        console.log(error);
         deferred.reject(error)
       };
+
+      console.log(tokenParams);
       Conekta.token.create(tokenParams, successResponseHandler, errorResponseHandler);
       return deferred.promise;
 
