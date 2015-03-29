@@ -26,20 +26,17 @@
     shell.initialSearch = 'recomendados';
     shell.system = {};
     shell.system.membership = false;
-
+    
     systemApi.membership().then(function(membership){
+      this.showLoading();
       shell.system.membership = membership;
     },function(error){
       shell.setError(error);
-    });
-
+    }).finally(this.hideLoading);
     
     if($stateParams.section && $stateParams.section != null){
       shell.initialSearch = $stateParams.section;
     }
-
-
-
 
     shell.title = 'Resultados';
 
