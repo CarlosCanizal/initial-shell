@@ -51,8 +51,8 @@
           <div id="mobile-menu" data-ng-include="'app/layout/mobile/menu.html'" data-ng-hide="shell.sideMenu || shell.isDashboard || shell.isAdmin" class="hidden-lg"></div>
         </div>
       </div>
+      <div class="footer"><span data-ng-bind="shell.labels.website"></span> <span data-ng-bind="shell.labels.year"></span>. <span data-ng-bind="shell.labels.visitOur"></span>        <a data-ui-sref="terms" data-ng-bind="shell.labels.termsAndConditions" class="accent"></a><span data-ng-bind="shell.labels.as"></span><a data-ui-sref="privacy" data-ng-bind="shell.labels.privacyTerms" class="accent"></a>.  </div>
     </div>
-    <div class="footer">The Comics' Society 2015. Visita nuestros <a data-ui-sref="terms" class="accent">Terminos y Condiciones </a>asi como nuestro <a data-ui-sref="privacy" class="accent">Aviso de privacidad. </a></div>
     <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script><!-- build:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -60,7 +60,6 @@
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="bower_components/ng-underscore/build/ng-underscore.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/core/core.module.js"></script>
     <script src="app/core/initialize.js"></script>
