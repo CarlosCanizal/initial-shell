@@ -24,7 +24,6 @@
 
     function updateMembership(membership, payment, user){
       var membershipStatus = null;
-      console.log('user2',user);
       return subscribe(membership.id, payment.card.id, user).then(function(result){
         membershipStatus = result.result.status;
         return userApi.logMembership({user: user.objectId, status:'active',membershipStatus:membershipStatus, notes:payment});

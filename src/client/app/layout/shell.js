@@ -28,11 +28,13 @@
     shell.system.membership = false;
     
     systemApi.membership().then(function(membership){
-      this.showLoading();
+      shell.loading = true;
       shell.system.membership = membership;
     },function(error){
       shell.setError(error);
-    }).finally(this.hideLoading);
+    }).finally(function(){
+      shell.loading = false;
+    });
     
     if($stateParams.section && $stateParams.section != null){
       shell.initialSearch = $stateParams.section;
@@ -59,7 +61,7 @@
 
     shell.isMember = function(){
       if(shell.currentUser)
-        return shell.currentUser.membership == "pro";
+        return shell.currentUser.membershipActive;
       else
         return false;
     }
