@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('Shell',Shell);
 
-  Shell.$inject = ['$scope','$q','$timeout','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi','systemApi'];
+  Shell.$inject = ['$scope','$q','$http','$timeout','$state','$stateParams','userApi','storeApi','ShoppingCart','publisherApi','systemApi'];
 
-  function Shell($scope, $q, $timeout, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi, systemApi){
+  function Shell($scope, $q, $http, $timeout, $state,$stateParams, userApi, storeApi, ShoppingCart, publisherApi, systemApi){
     // jshint validthis: true 
     var shell = this;
 
@@ -26,8 +26,13 @@
     shell.initialSearch = 'recomendados';
     shell.system = {};
     shell.system.membership = false;
-    
-    systemApi.membership().then(function(membership){
+    shell.labels = {};
+
+    $http.get('app/lang/es.json').then(function(labels){
+      if(labels.data)
+        shell.labels = labels.data;
+      return systemApi.membership();
+    }).then(function(membership){
       shell.loading = true;
       shell.system.membership = membership;
     },function(error){
