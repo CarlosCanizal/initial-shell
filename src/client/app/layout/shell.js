@@ -18,6 +18,7 @@
     shell.errorResponse = null;
     shell.errorBar = false;
     shell.error = null;
+    shell.code = null;
     shell.message = null;
     shell.sideMenu = false;
     shell.loaded = false;
@@ -200,6 +201,7 @@
         else if(error.data){
          shell.errorBar = false;
          shell.error = error.data.error; 
+         shell.code = error.data.code;
         }else{
           console.log(error);
         }
@@ -215,6 +217,7 @@
       shell.errorResponse = null;
       shell.errorBar = false;
       shell.error = null;
+      shell.code = null;
       shell.message = null;
     };
 

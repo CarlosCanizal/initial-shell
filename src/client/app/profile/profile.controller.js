@@ -27,7 +27,7 @@
         var oldPassword = profile.oldPassword;
         var newPassword = profile.newPassword;
         userApi.updatePassword(profile.user,oldPassword, newPassword).then(function(user){
-          shell.setMessage('Contraseña actualizada con exito');
+          shell.setMessage('passwordSuccess');
           profile.newPassword = null;
           profile.oldPassword = null;
           $scope.passwordMatch = null;

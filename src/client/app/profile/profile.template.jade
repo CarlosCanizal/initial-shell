@@ -1,46 +1,36 @@
 #admin-menu(data-ng-include="'app/admin/users/menu/user.menu.html'", data-ng-if="view")
 #account-menu(data-ng-include="'app/account/menu/account.menu.html'", data-ng-if="!view")
 .filter-title
-  span.publisher-name.
-    Mi Perfil
+  span.publisher-name(data-ng-bind="shell.labels.myProfile")
 .shelf
   .inner-shelf
     .shelf-space
       profile-form
 div(data-ng-show="!view")
   .filter-title
-    span.publisher-name.
-      Mi Contraseña
+    span.publisher-name(data-ng-bind="shell.labels.myPassword")
   .shelf
     .inner-shelf
       .shelf-space
         form.pure-form.pure-form-stacked(name="passwordForm", novalidate="")
           fieldset
-            label(for="name", ng-show="passwordForm.oldPassword.$valid || passwordForm.oldPassword.$pristine")
-              | Contraseña:
-            label.error(for="oldPassword", ng-show="passwordForm.oldPassword.$invalid && passwordForm.oldPassword.$dirty")
-              | Contraseña es requerido:
+            label(for="name", ng-show="passwordForm.oldPassword.$valid || passwordForm.oldPassword.$pristine", data-ng-bind="shell.labels.password")
+            label.error(for="oldPassword", ng-show="passwordForm.oldPassword.$invalid && passwordForm.oldPassword.$dirty", data-ng-bind="shell.labels.passwordRequired")              
             .form-icon
               input.pure-input-1#oldPassword(name="oldPassword",type="password", data-ng-model="profile.oldPassword", required="")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.oldPassword.$pristine")
               i.fa.fa-check-circle-o.success.medium-icon(ng-show="passwordForm.oldPassword.$valid && passwordForm.oldPassword.$dirty")
               i.fa.fa-times-circle-o.error.medium-icon(ng-show="passwordForm.oldPassword.$invalid && passwordForm.name.$dirty")
-            label(for="password", ng-show="((passwordForm.password.$valid || passwordForm.password.$pristine) || (!passwordForm.password.$error.required  && passwordForm.password.$error.match && passwordForm.confirmPassword.$pristine)) && !(passwordForm.confirmPassword.$dirty && passwordForm.password.$error.required)")
-              | Nueva contraseña
-            label.error(for="password", ng-show="passwordForm.password.$error.required && (passwordForm.password.$dirty || passwordForm.confirmPassword.$dirty)")
-              | Nueva contraseña requerida:
-            label.error(for="password", ng-show="passwordForm.confirmPassword.$dirty && !passwordForm.password.$error.required && passwordForm.password.$error.match && passwordForm.password.$dirty")
-              | Nueva contraseña no coincide:
+            label(for="password", ng-show="((passwordForm.password.$valid || passwordForm.password.$pristine) || (!passwordForm.password.$error.required  && passwordForm.password.$error.match && passwordForm.confirmPassword.$pristine)) && !(passwordForm.confirmPassword.$dirty && passwordForm.password.$error.required)", data-ng-bind="shell.labels.newPassword")
+            label.error(for="password", ng-show="passwordForm.password.$error.required && (passwordForm.password.$dirty || passwordForm.confirmPassword.$dirty)", data-ng-bind="shell.labels.newPasswordRequired")
+            label.error(for="password", ng-show="passwordForm.confirmPassword.$dirty && !passwordForm.password.$error.required && passwordForm.password.$error.match && passwordForm.password.$dirty", data-ng-bind="shell.labels.newPasswordNoMatch")
             .form-icon
               input.pure-input-1#password(name="password", type="password" data-ng-model="profile.newPassword", required="", password-match="passwordMatch")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.password.$pristine && !(passwordForm.confirmPassword.$dirty && passwordForm.password.$error.required)")
               i.fa.fa-check-circle-o.success.medium-icon(ng-show="(passwordForm.password.$valid && passwordForm.password.$dirty) || (passwordForm.confirmPassword.$pristine && passwordForm.password.$dirty && passwordForm.password.$error.match) ")
               i.fa.fa-times-circle-o.error.medium-icon(ng-show="(passwordForm.password.$error.required && passwordForm.password.$dirty) || (passwordForm.confirmPassword.$dirty && passwordForm.password.$error.match)")
-          
-            label(for="confirmPassword", ng-show="passwordForm.confirmPassword.$valid || passwordForm.confirmPassword.$pristine")
-              | Confirmar Contraseña:
-            label.error(for="confirmPassword", ng-show="passwordForm.confirmPassword.$error.required && passwordForm.confirmPassword.$dirty")
-              | Contraseña requerida:
+            label(for="confirmPassword", ng-show="passwordForm.confirmPassword.$valid || passwordForm.confirmPassword.$pristine", data-ng-bind="shell.labels.passwordConfirm")
+            label.error(for="confirmPassword", ng-show="passwordForm.confirmPassword.$error.required && passwordForm.confirmPassword.$dirty", data-ng-bind="shell.labels.passwordRequired")
             .form-icon
               input.pure-input-1#confirmPassword(name="confirmPassword", type="password", data-ng-model="passwordMatch", required="")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="passwordForm.confirmPassword.$pristine")
@@ -48,12 +38,10 @@ div(data-ng-show="!view")
               i.fa.fa-times-circle-o.error.medium-icon(ng-show="passwordForm.confirmPassword.$invalid && passwordForm.confirmPassword.$dirty")      
           .align-center
             a.pure-button(data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$invalid")
-              | Campos Requeridos    
               i.fa.fa-dot-circle-o.error
+              span(data-ng-bind="shell.labels.fieldsRequired")
             a.pure-button(data-ng-click="profile.updatePassword()", data-ng-class="{'pure-button-disabled': passwordForm.$invalid, 'button-success':passwordForm.$valid}", data-ng-if="passwordForm.$valid")
               i.fa.fa-thumbs-o-up
-              | Guardar
-          .align-center.error(data-ng-if="shell.error")
-            |{{shell.error}}
-          .align-center.success(data-ng-if="shell.message")
-            |{{shell.message}}
+              span(data-ng-bind="shell.labels.save")
+          .align-center.error(data-ng-if="shell.error", data-ng-bind="shell.labels.profileLabels[shell.code]")
+          .align-center.success(data-ng-if="shell.message", data-ng-bind="shell.labels.profileLabels[shell.message]")
