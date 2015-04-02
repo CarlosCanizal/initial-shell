@@ -26,11 +26,9 @@
       var membershipStatus = null;
       return subscribe(membership.id, payment.card.id, user).then(function(result){
         membershipStatus = result.result.status;
-        return userApi.logMembership({user: user.objectId, status:'active',membershipStatus:membershipStatus, notes:payment});
-      }).then(function(){
-        return userApi.saveUserProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment, membershipStatus:membershipStatus});
+        var membershipActive = (membershipStatus === 'active')? true : false;
+        return userApi.saveUserProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment,membershipActive:membershipActive, membershipStatus:membershipStatus});
       });
-      
     }
 
     function getPlan(){
@@ -49,9 +47,9 @@
       
       var params = {user:user, plan: plan, "function":"unsubscribe"}
       return conektaResource.save(params).$promise.then(function(){
-        return userApi.logMembership({user: user.objectId, status:'cancelled',notes:{message:message}});
+        return userApi.logMembership({user: user.objectId, status:'canceled',membershipStatus:'canceled',notes:{message:message}});
       }).then(function(){
-        return userApi.saveUserProfile({objectId: user.objectId, membership: 'basic', upgrade:'cancelled'});
+        return userApi.saveUserProfile({objectId: user.objectId, membership: 'basic', membershipActive:false, membershipStatus:'canceled', upgrade:'canceled'});        
       });
     }
 

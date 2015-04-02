@@ -24,7 +24,6 @@ function cancelMembership(conekta, userApi){
                 account.updateUser(userApi.currentUser());
               });
             }else{
-              console.log('user cancelled',user.results);
               account.updateUser(user.result);
             }
           },function(error){

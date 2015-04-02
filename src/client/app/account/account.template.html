@@ -8,12 +8,18 @@
       <div data-ng-if="account.user.membership  == 'basic'" class="align-center">
         <p>Tipo de membresia: Basica</p>
         <p>Con tu membresia basica puedes comprar, pero no tienes acceso a todos los descuentos que la Sociedad tiene para ti.</p>
-        <p>Actualiza tu membresia a MIEMBRO HONORARIO y obten el 15% de descuento en todas tus compras.</p><a data-ng-click="account.showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
+        <p>Actualiza tu membresia a <span class="accent">MIEMBRO HONORARIO </span>y obten el 15% de descuento en todas tus compras.</p><a data-ng-click="account.showUpgrade()" class="pure-button pure-button-primary">Actualizar a PRO</a>
       </div>
-      <div data-ng-if="account.user.membership  == 'pro'">
-        <p>¡Felicidades! Eres uno de los MIEMBROS HONORARIOS de la Sociedad, aprovecha tu descuento del 15% en todas tus compras del mes!</p>
+      <div data-ng-if="account.user.membership  == 'pro' &amp;&amp; shell.isMember()">
+        <p>¡Felicidades! Eres uno de los <span class="accent">MIEMBROS HONORARIOS </span>de la Sociedad, aprovecha tu descuento del <span class="accent">15% </span>en todas tus compras del mes.</p>
         <p></p>
         <div class="align-right"><a data-ng-click="account.showCancelForm()" class="pure-button">Cancelar Membresia</a></div>
+      </div>
+      <div data-ng-if="account.user.membership  == 'pro' &amp;&amp; !shell.isMember()">
+        <p class="error uppercase">IMPORTANTE</p>
+        <p class="error">Hubo problemas al realizar el cobro de tu membresia. El cargo de $100 MXN se intentara realizar nuevamente mañana. Puedes esperar a que se active tu cuenta o cancelar y cambiar tu metodo de pago a otra tarjeta.</p>
+        <p>Si tienes dudas o comentarios contactanos a travez del correo <span class="accent">contacto@thecomicsociety.com</span></p>
+        <div class="align-right"><a data-ng-click="account.showCancelForm()" class="pure-button button-error">Cancelar Membresia</a></div>
       </div>
     </div>
   </div>
@@ -41,7 +47,7 @@
     </div>
   </div>
 </div>
-<div id="update-membership" data-ng-show="(account.upgradeView || account.user.membership  == 'pro') &amp;&amp; !account.cancelFormView">
+<div id="update-membership" data-ng-show="(account.upgradeView || shell.isMember()) &amp;&amp; !account.cancelFormView">
   <div class="filter-title"><span class="publisher-name">Actualizar Membresia</span></div>
   <div class="shelf">
     <div class="inner-shelf">

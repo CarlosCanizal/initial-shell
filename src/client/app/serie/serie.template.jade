@@ -12,7 +12,7 @@
             .item-image
               img(alt="", ng-src="{{serie.info.cover.url}}")
         .pure-u-1.pure-u-md-2-3
-          .item(data-ng-if="serie.subscription.status != 'cancelled'")
+          .item(data-ng-if="serie.subscription.status != 'canceled'")
             .title.uppercase
               | {{serie.info.name}}
             .row(data-ng-if="serie.subscription.status == 'active'")
@@ -26,9 +26,9 @@
               a.pure-button.button-success.button-small(data-ng-click="serie.changeStatus('active')")
                 |Activar Suscripción
             .row
-              a.pure-button.button-error.button-small(data-ng-click="serie.changeStatus('cancelled')")
+              a.pure-button.button-error.button-small(data-ng-click="serie.changeStatus('canceled')")
                 |Cancelar Suscripción
-          .item(data-ng-if="serie.subscription.status == 'cancelled'")
+          .item(data-ng-if="serie.subscription.status == 'canceled'")
             .row.subtitle
               |Tu subscription a la serie 
               span.uppercase

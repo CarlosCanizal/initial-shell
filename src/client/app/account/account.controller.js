@@ -69,18 +69,21 @@
       if(account.subscription.payment){
         shell.showLoading();
         var planId = conekta.getPlan();
-        console.log('user',account.user.conektaId);
-        console.log('name',name);
-        console.log('planId', planId);
-        console.log('payment', account.subscription.payment);
         conekta.updateMembership({name:name,id: planId},account.subscription.payment, account.user).then(function(result){
           if(!view){
             shell.updateCurrentUser().then(function(user){
-              account.user = userApi.currentUser(); 
+              account.user = userApi.currentUser();
+              if(!account.user.membershipActive){
+                account.upgradeView = false;
+              }
             });
           }else{
            account.user = result.result; 
+            if(!account.user.membershipActive){
+              account.upgradeView = false;
+            }
           }
+
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

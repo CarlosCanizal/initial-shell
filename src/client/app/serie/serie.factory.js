@@ -25,7 +25,7 @@
       if(!user)
         user = userApi.currentUser();
       
-      var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId},"status":{"$ne":"cancelled"}};
+      var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId},"status":{"$ne":"canceled"}};
       return Subscription.query({
               where : where,
               include: 'serie',

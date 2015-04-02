@@ -12,15 +12,36 @@
         p
           | Con tu membresia basica puedes comprar, pero no tienes acceso a todos los descuentos que la Sociedad tiene para ti.
         p
-          | Actualiza tu membresia a MIEMBRO HONORARIO y obten el 15% de descuento en todas tus compras.
+          | Actualiza tu membresia a 
+          span.accent
+            |MIEMBRO HONORARIO 
+          |y obten el 15% de descuento en todas tus compras.
         a.pure-button.pure-button-primary(data-ng-click="account.showUpgrade()")
           | Actualizar a PRO
-      div(data-ng-if="account.user.membership  == 'pro'")
+      div(data-ng-if="account.user.membership  == 'pro' && shell.isMember()")
         p
-          | ¡Felicidades! Eres uno de los MIEMBROS HONORARIOS de la Sociedad, aprovecha tu descuento del 15% en todas tus compras del mes!
+          | ¡Felicidades! Eres uno de los 
+          span.accent
+            |MIEMBROS HONORARIOS 
+          |de la Sociedad, aprovecha tu descuento del 
+          span.accent
+            |15% 
+          |en todas tus compras del mes.
         p
         div.align-right
           a.pure-button(data-ng-click="account.showCancelForm()")
+            | Cancelar Membresia
+      div(data-ng-if="account.user.membership  == 'pro' && !shell.isMember()")
+        p.error.uppercase
+          |IMPORTANTE
+        p.error
+          |Hubo problemas al realizar el cobro de tu membresia. El cargo de $100 MXN se intentara realizar nuevamente mañana. Puedes esperar a que se active tu cuenta o cancelar y cambiar tu metodo de pago a otra tarjeta.
+        p
+          |Si tienes dudas o comentarios contactanos a travez del correo 
+          span.accent
+            |contacto@thecomicsociety.com
+        div.align-right
+          a.pure-button.button-error(data-ng-click="account.showCancelForm()")
             | Cancelar Membresia
 #new-card(data-ng-if="account.cardFormView")
   .filter-title
@@ -41,7 +62,8 @@
     .inner-shelf.error-border
       .shelf-space
         cancel-membership
-#update-membership(data-ng-show="(account.upgradeView || account.user.membership  == 'pro') && !account.cancelFormView")
+
+#update-membership(data-ng-show="(account.upgradeView || shell.isMember()) && !account.cancelFormView")
   .filter-title
     span.publisher-name.
       Actualizar Membresia
