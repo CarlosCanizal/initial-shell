@@ -12,7 +12,7 @@
                 label(for="username", ng-show="loginForm.username.$valid || loginForm.username.$pristine", data-ng-bind="shell.labels.email")
                 label.error(for="username", ng-show="loginForm.username.$invalid && loginForm.username.$dirty", data-ng-bind="shell.labels.emailInvalid")
                 .form-icon
-                  input.pure-input-1#username(name="username", type="email", data-ng-model="user.username", required="")
+                  input.pure-input-1#username(name="username", type="email", data-ng-model="user.username", required="", autofocus)
                   i.fa.fa-dot-circle-o.medium-icon(ng-show="loginForm.username.$pristine")
                   i.fa.fa-check-circle-o.success.medium-icon(ng-show="loginForm.username.$valid && loginForm.username.$dirty")
                   i.fa.fa-times-circle-o.error.medium-icon(ng-show="loginForm.username.$invalid && loginForm.username.$dirty")
@@ -26,9 +26,8 @@
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="login()", data-ng-bind="shell.labels.login")
             .align-center.margin-top-1.margin-bottom
-              a.action(data-ui-sref="forgot", data-ng-bind="shell.labels.passwordForgot")
-            .error.align-center(data-ng-show="response.login")
-              | {{response.login}}
+              a.action(data-ui-sref="forgot", data-ng-bind="shell.labels.passwordForgot")    
+            .error.align-center(data-ng-show="response.login",data-ng-bind="shell.labels.login_errors[response.code]")
         .pure-u-1.pure-u-sm-1-2
           .shelf-space.border-left
             .title.align-center(data-ng-bind="shell.labels.registerNow")
@@ -85,5 +84,4 @@
                 
             .align-center.margin-bottom
               a.pure-button.pure-button-primary(ng-click="register()", data-ng-bind="shell.labels.register")
-            .error.align-center(data-ng-show="response.register")
-              | {{response.register}}
+            .error.align-center(data-ng-show="response.register", data-ng-bind="newUser.username+' '+shell.labels.login_errors[response.code]")

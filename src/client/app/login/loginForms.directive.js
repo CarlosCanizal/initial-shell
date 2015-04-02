@@ -11,7 +11,7 @@ function loginForms(userApi, storage){
     scope: true,
     link:function(scope,element,attr){
       var shell = scope.shell;
-      scope.response = {};
+      scope.response = {code:400};
       
       scope.login = function(){
         scope.response.login = false;
@@ -19,8 +19,9 @@ function loginForms(userApi, storage){
           shell.showLoading();
           userApi.login(scope.user).then(function(user){
             scope.setUser(user);
-          },function(error){
+          },function(error){            
             scope.response.login = error.data.error;
+            scope.response.code = error.data.code;
             shell.setError(error);
           }).finally(shell.hideLoading);
         }else{
@@ -36,8 +37,10 @@ function loginForms(userApi, storage){
           userApi.register(scope.newUser).then(function(user){
             scope.setUser(user);
           },function(error){
+            console.log(error);
             if(error.data.error){
               scope.response.register = error.data.error;
+              scope.response.code = error.data.code;
             }else{
               shell.setError(error);
             }

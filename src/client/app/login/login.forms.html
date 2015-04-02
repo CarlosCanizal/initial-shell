@@ -12,7 +12,7 @@
                 <label for="username" ng-show="loginForm.username.$valid || loginForm.username.$pristine" data-ng-bind="shell.labels.email"></label>
                 <label for="username" ng-show="loginForm.username.$invalid &amp;&amp; loginForm.username.$dirty" data-ng-bind="shell.labels.emailInvalid" class="error"></label>
                 <div class="form-icon">
-                  <input id="username" name="username" type="email" data-ng-model="user.username" required="" class="pure-input-1"/><i ng-show="loginForm.username.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="loginForm.username.$valid &amp;&amp; loginForm.username.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="loginForm.username.$invalid &amp;&amp; loginForm.username.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+                  <input id="username" name="username" type="email" data-ng-model="user.username" required="" autofocus="autofocus" class="pure-input-1"/><i ng-show="loginForm.username.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="loginForm.username.$valid &amp;&amp; loginForm.username.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="loginForm.username.$invalid &amp;&amp; loginForm.username.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
                 </div>
                 <label for="password" ng-show="loginForm.password.$valid || loginForm.password.$pristine" data-ng-bind="shell.labels.password"></label>
                 <label for="password" ng-show="loginForm.password.$invalid &amp;&amp; loginForm.password.$dirty" data-ng-bind="shell.labels.passwordInvalid" class="error"></label>
@@ -22,8 +22,8 @@
               </fieldset>
             </form>
             <div class="align-center margin-bottom"><a ng-click="login()" data-ng-bind="shell.labels.login" class="pure-button pure-button-primary"></a></div>
-            <div class="align-center margin-top-1 margin-bottom"><a data-ui-sref="forgot" data-ng-bind="shell.labels.passwordForgot" class="action"></a></div>
-            <div data-ng-show="response.login" class="error align-center">{{response.login}}</div>
+            <div class="align-center margin-top-1 margin-bottom"><a data-ui-sref="forgot" data-ng-bind="shell.labels.passwordForgot" class="action">   </a></div>
+            <div data-ng-show="response.login" data-ng-bind="shell.labels.login_errors[response.code]" class="error align-center"></div>
           </div>
         </div>
         <div class="pure-u-1 pure-u-sm-1-2">
@@ -61,7 +61,7 @@
             </form>
             <div class="privacy"><span data-ng-bind="shell.labels.privacyParagraph1"></span><span data-ng-bind="shell.labels.readIt" class="accent"></span><span data-ng-bind="shell.labels.and"></span><span data-ng-bind="shell.labels.acceptIt" class="accent"></span><span data-ng-bind="shell.labels.the"></span><a data-ui-sref="terms" data-ng-bind="shell.labels.termsAndConditions"></a><span data-ng-bind="shell.labels.as"></span><a data-ui-sref="privacy" data-ng-bind="shell.labels.privacyTerms"></a>.</div>
             <div class="align-center margin-bottom"><a ng-click="register()" data-ng-bind="shell.labels.register" class="pure-button pure-button-primary"></a></div>
-            <div data-ng-show="response.register" class="error align-center">{{response.register}}</div>
+            <div data-ng-show="response.register" data-ng-bind="newUser.username+' '+shell.labels.login_errors[response.code]" class="error align-center"></div>
           </div>
         </div>
       </div>

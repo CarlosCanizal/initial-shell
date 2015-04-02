@@ -26,5 +26,11 @@
   "privacyTerms":"Aviso de Privacidad",
   "website":"The Comics' Society",
   "year":"2015",
-  "visitOur":"Visita nuestros"
+  "visitOur":"Visita nuestros",
+  "login_errors":{
+    "400": "Hubo un error porfavor intenta de nuevo",
+    "101": "Correo electronico o contraseña incorrecta.",
+    "202": "ya se encuentra registrado."
+  }
+
 }

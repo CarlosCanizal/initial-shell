@@ -189,6 +189,7 @@
     shell.setError = function(error){
       shell.errorResponse = {};
       shell.errorBar = true;
+      console.log(error);
       if(error.status && error.status === 0){
         shell.errorResponse.message = "No hay conexión a Internet.";
       }else{
