@@ -3,60 +3,49 @@ form.pure-form.pure-form-stacked(name="addressForm", novalidate="")
     .child-container
       ng-form(name="addressForm")
         .form-container
-            label(for="street", ng-show="addressForm.street.$valid || addressForm.street.$pristine")
-              | Calle:
-            label.error(for="street", ng-show="addressForm.street.$invalid && addressForm.street.$dirty")
-              | Calle es requerido:
+            label(for="street", ng-show="addressForm.street.$valid || addressForm.street.$pristine", data-ng-bind="shell.labels.street")
+            label.error(for="street", ng-show="addressForm.street.$invalid && addressForm.street.$dirty", data-ng-bind="shell.labels.streetRequired")
             .form-icon
               input.pure-input-1#street(name="street", data-ng-model="newAddress.street", required="")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="addressForm.street.$pristine")
               i.fa.fa-check-circle-o.success.medium-icon(ng-show="addressForm.street.$valid && addressForm.street.$dirty")
               i.fa.fa-times-circle-o.error.medium-icon(ng-show="addressForm.street.$invalid && addressForm.street.$dirty")
           .pure-control-group
-            label(for="number", ng-show="addressForm.number.$valid || addressForm.number.$pristine")
-              | Número exterior:
-            label.error(for="number", ng-show="addressForm.number.$invalid && addressForm.number.$dirty")
-              | Número exterior es requerido:
+            label(for="number", ng-show="addressForm.number.$valid || addressForm.number.$pristine", data-ng-bind="shell.labels.number")
+            label.error(for="number", ng-show="addressForm.number.$invalid && addressForm.number.$dirty", data-ng-bind="shell.labels.numberRequired")
             .form-icon
               input.pure-input-1#number(name="number", data-ng-model="newAddress.number", required="")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="addressForm.number.$pristine")
               i.fa.fa-check-circle-o.success.medium-icon(ng-show="addressForm.number.$valid && addressForm.number.$dirty")
               i.fa.fa-times-circle-o.error.medium-icon(ng-show="addressForm.number.$invalid && addressForm.number.$dirty")
           .pure-control-group
-            label(for="apt")
-              | Numero interior:
+            label(for="apt", data-ng-bind="shell.labels.apt")
             .form-icon
               input.pure-input-1#apt(name="apt", data-ng-model="newAddress.apt")
           .pure-control-group
-            label(for="zip", ng-show="addressForm.zip.$valid || addressForm.zip.$pristine")
-              | Codigo Postal:
-            label.error(for="zip", ng-show="addressForm.zip.$invalid && addressForm.zip.$dirty")
-              | Codigo Postal no valido:
+            label(for="zip", ng-show="addressForm.zip.$valid || addressForm.zip.$pristine", data-ng-bind="shell.labels.zip")
+            label.error(for="zip", ng-show="addressForm.zip.$invalid && addressForm.zip.$dirty", data-ng-bind="shell.labels.zipInvalid")
             .form-icon
               input.pure-input-1#zip(name="zip", data-ng-model="newAddress.zip", required="", data-ng-pattern="/[0-9]/",maxlength=5, data-ng-minlength=5 data-ng-maxlength=5, data-ng-change="updateUbication()")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="addressForm.zip.$pristine")
               i.fa.fa-check-circle-o.success.medium-icon(ng-show="addressForm.zip.$valid && addressForm.zip.$dirty")
               i.fa.fa-times-circle-o.error.medium-icon(ng-show="addressForm.zip.$invalid && addressForm.zip.$dirty")
           .pure-control-group
-            label(for="district")
-              | Colonia:
+            label(for="district", data-ng-bind="shell.labels.district")
             select(data-ng-model="newAddress.district", data-ng-options="item.name as item.name for item in districts",data-ng-change="updateZip()")
           .pure-control-group
-            label(for="municipality")
-              | Delegacion o Municipio:
+            label(for="municipality", data-ng-bind="shell.labels.municipality")
             select(ng-model="newAddress.municipality", ng-options="item.name as item.name for item in municipalities",data-ng-change="updateDistricts()")
           .pure-control-group
-            label(for="state")
-              | Estado:
+            label(for="state", data-ng-bind="shell.labels.state")
             select(ng-model="newAddress.state", ng-options="item.name as item.name for item in states",data-ng-change="updateMunicipalities()")
   .align-center.margin-bottom
     a.pure-button(data-ng-click="saveAddress()", data-ng-class="{'pure-button-disabled': addressForm.$invalid, 'button-success':addressForm.$valid}")
       span(data-ng-if="addressForm.$invalid")
-        | Campos Requeridos    
         i.fa.fa-dot-circle-o.error
+        span(data-ng-bind="shell.labels.fieldsRequired")
       span(data-ng-if="addressForm.$valid")
         i.fa.fa-thumbs-o-up
-        |     Guardar
+        span(data-ng-bind="shell.labels.save")
   .align-center.margin-bottom
-    a.pure-button(data-ng-click="showAddressForm(false)")
-      | Cancelar
+    a.pure-button(data-ng-click="showAddressForm(false)", data-ng-bind="shell.labels.cancel")

@@ -86,6 +86,22 @@
   "myPassword":"Mi Contraseña",
   "newPassword": "Nueva Contraseña",
   "newPasswordRequired": "Nueva contraseña requerida",
-  "newPasswordNoMatch": "Nueva contraseña no coincide"
+  "newPasswordNoMatch": "Nueva contraseña no coincide",
+  "myAddresses": "Mis Direcciones",
+  "noAddresses": "No existen direcciones registradas.",
+  "delete": "Borrar",
+  "addAddress":"Agregar Dirección",
+  "street": "Calle",
+  "streetRequired": "Calle es requerida",
+  "number":"Numero Exterior",
+  "numberRequired": "Numero Exterior es requerido",
+  "apt":"Numero interior",
+  "zip":"Codigo Postal",
+  "zipInvalid": "Codigo Postal invalido",
+  "district": "Colonia",
+  "municipality": "Delegacion o Muncipio",
+  "state": "Estado",
+  "cancel": "Cancelar"
+
 
 }

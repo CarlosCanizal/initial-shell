@@ -1,16 +1,14 @@
 #admin-menu(data-ng-include="'app/admin/users/menu/user.menu.html'", data-ng-if="view")
 #account-menu(data-ng-include="'app/account/menu/account.menu.html'", data-ng-if="!view")
 .filter-title
-  span.publisher-name.
-    Mis Direcciones
+  span.publisher-name(data-ng-bind="shell.labels.myAddresses")
 .shelf
   .inner-shelf
     .shelf-space
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       #address-list(data-ng-hide="loading")  
         .shelf-message.bottom-divider(ng-if="address.addresses.length < 1")
-          .subtitle
-            |No existen direcciones registradas.
+          .subtitle(data-ng-bind="shell.labels.noAddresses")
         .bottom-divider(ng-repeat="address in address.addresses")
           .address-line
             | {{address.street}} {{address.number}} {{address.apt}}
@@ -19,22 +17,17 @@
           .address-line
             | {{address.country}}, {{address.state}}, {{address.zip}} 
           .address-line
-            //- a.pure-button.pure-button-primary.button-small
-            //-   i.fa.fa-edit
-            //-   |Editar
             a.pure-button.button-small(data-ng-click="showModal()", data-question='¿Eliminar dirección?', data-confirm="deleteAddress(address.objectId, $index)", confirm-message)
               i.fa.fa-trash 
-              |Borrar
+              span(data-ng-bind="shell.labels.delete")
         .buttons-container
           a(ng-click="address.addressFormView = true")
             i.fa.fa-plus-circle.fa-4x
-          div
-            |Agregar Dirección
+          div(data-ng-bind="shell.labels.addAddress")
 
 div(ng-show="address.addressFormView")
   .filter-title
-    span.publisher-name.
-      Agregar Dirección
+    span.publisher-name(data-ng-bind="shell.labels.addAddress")
   .shelf
     .inner-shelf
       .shelf-space
