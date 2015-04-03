@@ -1,15 +1,15 @@
 
 <div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'"></div>
-<div class="filter-title"><span class="publisher-name">Mi Saldo</span></div>
+<div class="filter-title"><span data-ng-bind="shell.labels.myBalance" class="publisher-name"></span></div>
 <div class="shelf">
   <div class="inner-shelf">
-    <div class="shelf-space"><span>Tu cuenta tiene un saldo de: </span><span class="important">{{shell.currentUser.wallet | currency}} </span><span>pesos</span></div>
+    <div class="shelf-space"><span data-ng-bind="shell.labels.walletText1"></span><span class="important">{{shell.currentUser.wallet | currency}} </span><span data-ng-bind="shell.labels.currency"></span></div>
   </div>
 </div>
-<div class="filter-title"><span class="publisher-name">Cupon</span></div>
+<div class="filter-title"><span data-ng-bind="shell.labels.coupon" class="publisher-name"></span></div>
 <div class="shelf">
   <div class="inner-shelf">
-    <div class="shelf-space">¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
+    <div class="shelf-space"><span data-ng-bind="shell.labels.walletText2"></span>
       <coupon></coupon>
     </div>
   </div>

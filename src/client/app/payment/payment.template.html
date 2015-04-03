@@ -1,41 +1,41 @@
 
 <div id="account-menu" data-ng-include="'app/account/menu/account.menu.html'" data-ng-if="!view"></div>
 <div id="admin-menu" data-ng-include="'app/admin/users/menu/user.menu.html'" data-ng-if="view"></div>
-<div class="filter-title"><span class="publisher-name">Mis Tarjetas</span></div>
+<div class="filter-title"><span data-ng-bind="shell.labels.myCards" class="publisher-name"></span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
       <div id="cards-list" data-ng-hide="loading">
         <div ng-if="payment.cards.length &lt; 1" class="shelf-message bottom-divider">
-          <div class="subtitle">No existen tarjetas registradas.</div>
+          <div data-ng-bind="shell.labels.noPaymentMethods" class="subtitle"></div>
         </div>
         <div ng-if="payment.cards.length &gt; 0" class="bottom-divider">
           <div ng-repeat="item in payment.cards" class="card-item">
             <table class="info">
               <tbody>
                 <tr>
-                  <td class="info-label">Nombre:</td>
+                  <td data-ng-bind="shell.labels.name+':'" class="info-label"></td>
                   <td class="info-value">{{item.card.name}}</td>
                 </tr>
                 <tr>
-                  <td class="info-label">Tarjeta:</td>
+                  <td data-ng-bind="shell.labels.card+':'" class="info-label"></td>
                   <td class="info-value"><i ng-if="item.card.brand == 'VISA'" class="fa fa-cc-visa fa-lg visa"></i><i ng-if="item.card.brand == 'MC'" class="fa fa-cc-mastercard fa-lg mastercard"></i><i ng-if="item.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex fa-lg amex"></i>**** **** **** {{item.card.last4}}</td>
                 </tr>
               </tbody>
-            </table><a data-ng-click="showModal()" data-question="¿Eliminar tarjeta?" data-confirm="payment.deleteCard({{$index}})" confirm-message="confirm-message" class="pure-button button-small margin-top-1"><i class="fa fa-trash"></i> Eliminar</a>
+            </table><a data-ng-click="showModal()" data-question="¿Eliminar tarjeta?" data-confirm="payment.deleteCard({{$index}})" confirm-message="confirm-message" class="pure-button button-small margin-top-1"><i class="fa fa-trash"></i><span data-ng-bind="shell.labels.remove"></span></a>
           </div>
           <div data-ng-if="payment.error" class="error align-center">{{payment.error}}</div>
         </div>
         <div class="buttons-container"><a ng-click="payment.cardFormView = true"><i class="fa fa-plus-circle fa-4x"></i></a>
-          <div>Agregar Tarjeta</div>
+          <div data-ng-bind="shell.labels.addCard"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 <div data-ng-show="payment.cardFormView">
-  <div class="filter-title"><span class="publisher-name">Agregar Tarjeta</span></div>
+  <div class="filter-title"><span data-ng-bind="shell.label.addCard" class="publisher-name"></span></div>
   <div class="shelf">
     <div class="inner-shelf">
       <div class="shelf-space">

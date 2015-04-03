@@ -90,6 +90,7 @@
   "myAddresses": "Mis Direcciones",
   "noAddresses": "No existen direcciones registradas.",
   "delete": "Borrar",
+  "remove": "Eliminar",
   "addAddress":"Agregar Dirección",
   "street": "Calle",
   "streetRequired": "Calle es requerida",
@@ -101,7 +102,24 @@
   "district": "Colonia",
   "municipality": "Delegacion o Muncipio",
   "state": "Estado",
-  "cancel": "Cancelar"
-
-
+  "cancel": "Cancelar",
+  "addCard":"Agregar Tarjeta",
+  "paymentMethod":"Metodo de Pago",
+  "noPaymentMethods":"No existen metodos de pago registrados.",
+  "continue":"Continuar",
+  "goToCart": "Ir al Carrito",
+  "myCards": "Mis Tarjetas",
+  "cardNumber": "Numero que aparece en tu tarjeta:",
+  "cardNumberRequired":"Numero de tarjeta es requerido",
+  "cvc":"CVC (ultimos 3 digitos de la parte trasera de tu tarjeta):",
+  "cvcRequired":"CVC es requerido",
+  "expirationDate": "Fecha de expiración (MM/AAAA)",
+  "saveCard":"Guardar Tarjeta",
+  "myBalance":"Mi Saldo",
+  "walletText1": "Tu cuenta tiene un saldo de: ",
+  "walletText2": "¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.",
+  "currency": "pesos",
+  "coupon": "Cupon",
+  "couponRequired": "Cupon es requerido",
+  "validateCode":"Validar Codigo"
 }

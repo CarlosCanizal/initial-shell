@@ -1,21 +1,17 @@
 #account-menu(data-ng-include="'app/account/menu/account.menu.html'")
 .filter-title
-  span.publisher-name.
-    Mi Saldo
+  span.publisher-name(data-ng-bind="shell.labels.myBalance")
 .shelf
   .inner-shelf
     .shelf-space
-      span
-        |Tu cuenta tiene un saldo de: 
+      span(data-ng-bind="shell.labels.walletText1")
       span.important
         | {{shell.currentUser.wallet | currency}} 
-      span
-        |pesos
+      span(data-ng-bind="shell.labels.currency")
 .filter-title
-  span.publisher-name.
-    Cupon
+  span.publisher-name(data-ng-bind="shell.labels.coupon")
 .shelf
   .inner-shelf
     .shelf-space
-      |¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.
+      span(data-ng-bind="shell.labels.walletText2")
       coupon

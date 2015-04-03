@@ -1,7 +1,6 @@
 #new-card(data-ng-if="checkout.cardFormView")
   .filter-title
-    span.publisher-name.
-      Agregar Tarjeta
+    span.publisher-name(data-ng-bind="shell.labels.addCard")
   .shelf
     .inner-shelf
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
@@ -10,8 +9,7 @@
           div(card-form)
 #payment(data-ng-show="checkout.showPayment && !checkout.cardFormView")
   .filter-title
-    span.publisher-name.
-     Metodo de Pago
+    span.publisher-name(data-ng-bind="shell.labels.paymentMethod")
   .shelf
     .disable-shelf(data-ng-show="checkout.showPlaceOrder")
       i.fa.fa-check-square-o.fa-5.success
@@ -23,11 +21,9 @@
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.paddin-right-1
                 .shelf-message(data-ng-if="checkout.paymentMethods.length < 1")
-                  .subtitle
-                    |No existen metodos de pago registrados.
+                  .subtitle(data-ng-bind="shell.labels.noPaymentMethods")
                 div(data-ng-show="checkout.paymentMethods.length > 0")
-                  .address-line
-                    | Tarjeta 
+                  .address-line(data-ng-bind="shell.labels.card")
                   .address-line
                     | {{shell.shoppingCart.paymentMethod.card.name}}
                   .address-line
@@ -38,21 +34,20 @@
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.padding-side-1
                 div(data-ng-show="checkout.paymentMethods.length > 0")
-                  .address-line
-                    | Cambiar Metodo de Pago
+                  .address-line(data-ng-bind="shell.labels.changePaymentMethod")
                   .address-line
                     select(ng-model="shell.shoppingCart.paymentMethod", data-ng-options="item as item.card.last4 for item in checkout.paymentMethods track by item.card.id")
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.cardFormView=true")
                     i.fa.fa-plus
-                    | Agregar Tarjeta
+                    span(data-ng-bind="shell.labels.addCard")
             .pure-u-1.pure-u-md-1-3.align-center
               div.padding-side-1(data-ng-hide="checkout.showPlaceOrder")
                 .address-line
                   a.pure-button.button-success(data-ng-click="checkout.toConfirmOrder()", data-ng-class="{'pure-button-disabled':!shell.shoppingCart.paymentMethod}")
                     i.fa.fa-check
-                    | Continuar
+                    span(data-ng-bind="shell.labels.continue")
                 .address-line.no-padding
                 a.pure-button(data-ng-click="showModal()", data-question='¿Ir al carrito?', data-confirm="checkout.goToCart()", data-ng-hide="checkout.showConfirmation", confirm-message)
                     i.fa.fa-shopping-cart
-                    | Ir al carrito
+                    span(data-ng-bind="shell.labels.goToCart")
