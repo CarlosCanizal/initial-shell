@@ -90,7 +90,7 @@ a:hover, a:active, a:focus {
   #cart i {
     font-size: 1.8rem; }
   /* line 82, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
-  #cart span {
+  #cart span.items {
     font-size: 1.8rem;
     margin: 0 0.5rem; }
   /* line 85, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */

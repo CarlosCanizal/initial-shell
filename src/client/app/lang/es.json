@@ -121,5 +121,13 @@
   "currency": "pesos",
   "coupon": "Cupon",
   "couponRequired": "Cupon es requerido",
-  "validateCode":"Validar Codigo"
+  "validateCode":"Validar Codigo",
+  "cart":"Carrito",
+  "items":"articulos",
+  "premier":"premier",
+  "searchText1":"IMPORTANTE: Las portadas (covers) en preorden ",
+  "searchText2":"NO SON DEFINITIVAS ",
+  "searchText3":"y pueden cambiar."
+
+
 }

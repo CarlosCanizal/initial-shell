@@ -2,7 +2,7 @@
   .pure-g
     .search-list.pure-u-1.pure-u-sm-1-3
       .search-param.align-center.pointer(data-ng-mouseenter="shell.hoverPremier()")
-        |PREMIER
+        span.uppercase(data-ng-bind="shell.labels.premier")
         i.fa.fa-sort-down
       .box-list(data-ng-show="shell.premierList", data-ng-mouseleave="shell.premierList= false")
         .list-element.uppercase.pointer(data-ng-click="shell.loadShelf('dc comics')")
@@ -21,13 +21,12 @@
         i.fa.fa-search
     .search-list.pure-u-1.pure-u-sm-1-3
       .search-param.align-center.pointer(data-ng-mouseenter="shell.hoverPublishers()")
-        |EDITORIALES
+        span.uppercase(data-ng-bind="shell.labels.publishers")
         i.fa.fa-sort-down
       .box-list(data-ng-show="shell.publishersList", data-ng-mouseleave="shell.publishersList= false")
         .list-element.uppercase.pointer(data-ng-repeat="publisher in shell.publishers",data-ng-click="shell.loadShelf(publisher.name)")
           |{{publisher.name}}
 .notes
-  |IMPORTANTE: Las portadas (covers) en preorden 
-  span.error
-    |NO SON DEFINITIVAS 
-  |y pueden cambiar.
+  span(data-ng-bind="shell.labels.searchText1")
+  span.error(data-ng-bind="shell.labels.searchText2")
+  span(data-ng-bind="shell.labels.searchText3")
