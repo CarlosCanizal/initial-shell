@@ -47,6 +47,7 @@
   "mySubscriptions":"Mis Suscripciones",
   "products":"Productos",
   "publishers": "Editoriales",
+  "publisher": "Editorial",
   "series":"Series",
   "howItWorks":"¿Comó funciona?",
   "convention":"Convención",
@@ -119,6 +120,7 @@
   "walletText1": "Tu cuenta tiene un saldo de: ",
   "walletText2": "¿Tienes un cupon? Ingresalo para agregar saldo a tu cuenta.",
   "currency": "pesos",
+  "currencySymbol": "MXN",
   "coupon": "Cupon",
   "couponRequired": "Cupon es requerido",
   "validateCode":"Validar Codigo",
@@ -127,7 +129,20 @@
   "premier":"premier",
   "searchText1":"IMPORTANTE: Las portadas (covers) en preorden ",
   "searchText2":"NO SON DEFINITIVAS ",
-  "searchText3":"y pueden cambiar."
-
-
+  "searchText3":"y pueden cambiar.",
+  "back:":"Regresar",
+  "information":"Información",
+  "price":"Precio",
+  "writer":"Escritor",
+  "artist":"Dibujante",
+  "coverArtist":"Portada",
+  "availability":"Disponibilidad",
+  "releaseDate":"Fecha de Publicación",
+  "only":"Solo",
+  "availables":"Disponibles",
+  "subscribeMe":"Suscribirme",
+  "preorderIt":"Preordernar",
+  "buyIt":"Comprar",
+  "noStock":"No hay existencias.",
+  "closeMenu":"Cerrar Menu"
 }

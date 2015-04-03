@@ -1,9 +1,6 @@
-//- #account-menu(data-ng-include="'app/account/menu/account.menu.html'", data-ng-if="!view")
-//- #admin-menu(data-ng-include="'app/admin/users/menu/user.menu.html'")
 #back-menu(data-ng-include="'app/item/menu/item.menu.html'")
 .filter-title
-  span.publisher-name.
-    Información
+  span.publisher-name(data-ng-bind="shell.labels.information")
 .shelf
   .inner-shelf
     .shelf-space
@@ -16,38 +13,33 @@
               |{{item.info.name}}
             .item-description(data-ng-bind-html="item.info.description")
             .item-attribute
-              span.text-secondary-black.margin-right-1
-                |Editorial:
+              span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.publisher")
               span.uppercase
                 |{{item.info.publisher}}
             .item-attribute
-              span.text-secondary-black.margin-right-1
-                |Precio:
-              |{{item.info.price | currency}}
+              span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.price")
+              span.accent
+                |{{item.info.price | currency}} 
+              span.accent(data-ng-bind="shell.labels.currencySymbol")
             .item-attribute(data-ng-if="item.info.writer")
-              span.text-secondary-black.margin-right-1
-                |Escritor:
+              span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.writer")
               span.uppercase
                 |{{item.info.writer}}
             .item-attribute(data-ng-if="item.info.artist")
-              span.text-secondary-black.margin-right-1
-                |Artista:
+              span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.artist")
               span.uppercase
                 |{{item.info.artist}}
             .item-attribute(data-ng-if="item.info.coverArtist")
-              span.text-secondary-black.margin-right-1
-                |Portada:
+              span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.coverArtist")
               span.uppercase
                 |{{item.info.coverArtist}}
             div(data-ng-if="item.info.status=='active'")
               .item-attribute
-                span.text-secondary-black.margin-right-1
-                  |Disponibilidad:
+                span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.availability")
                 span.uppercase
                   |{{item.info.available}}
               .item-attribute(data-ng-if="item.info.release")
-                span.text-secondary-black.margin-right-1
-                  |Publicacion:
+                span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.releaseDate")
                 span.uppercase.accent
                   |{{item.info.release | date : longDate}}
               .item-attribute
@@ -58,21 +50,18 @@
                 a.pure-button.button-small.just-icon(data-ng-click="item.plusOne()")
                   i.fa.fa-plus-circle
               .item-attribute.error(data-ng-if="item.info.available == 'available' && item.quantity >= item.info.stock")
-                | Solo {{item.info.stock}} disponibles.
+                span(data-ng-bind="shell.labels.only")
+                |  
+                | {{item.info.stock}} 
+                span(data-ng-bind="shell.labels.availables")
               .item-attribute
                 a.pure-button.pure-button-primary(data-ng-click="shell.addToCart(item.info, item.quantity)")
-                  span(data-ng-if="item.info.available =='serie'")
-                    | Suscribirme 
-                  span(data-ng-if="item.info.available =='preorder'")
-                    | Preordenar
-                  span(data-ng-if="item.info.available =='available'")
-                    | Comprar
-                a.pure-button.margin-left-1(data-ui-sref="home")
-                  |Regresar
+                  span(data-ng-if="item.info.available =='serie'",data-ng-bind="shell.labels.subscribeMe")
+                  span(data-ng-if="item.info.available =='preorder'",data-ng-bind="shell.labels.preorderIt")
+                  span(data-ng-if="item.info.available =='available'",data-ng-bind="shell.labels.buyIt")
+                a.pure-button.margin-left-1(data-ui-sref="home", data-ng-bind="shell.labels.back")
             div(data-ng-if="item.info.stock < 1 || item.info.status!='active'")
               .item-attribute
-                span.text-secondary-black.margin-right-1
-                  |Disponibilidad:
-                span.uppercase.error
-                  | No hay existensias.
+                span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.availability")
+                span.uppercase.error(data-ng-bind="shell.labels.noStock")
 

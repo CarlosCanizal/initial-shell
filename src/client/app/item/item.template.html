@@ -1,6 +1,6 @@
 
 <div id="back-menu" data-ng-include="'app/item/menu/item.menu.html'"></div>
-<div class="filter-title"><span class="publisher-name">Información</span></div>
+<div class="filter-title"><span data-ng-bind="shell.labels.information" class="publisher-name"></span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
@@ -10,20 +10,22 @@
           <div class="padding-side-1">
             <div class="item-name">{{item.info.name}}</div>
             <div data-ng-bind-html="item.info.description" class="item-description"></div>
-            <div class="item-attribute"><span class="text-secondary-black margin-right-1">Editorial:</span><span class="uppercase">{{item.info.publisher}}</span></div>
-            <div class="item-attribute"><span class="text-secondary-black margin-right-1">Precio:</span>{{item.info.price | currency}}</div>
-            <div data-ng-if="item.info.writer" class="item-attribute"><span class="text-secondary-black margin-right-1">Escritor:</span><span class="uppercase">{{item.info.writer}}</span></div>
-            <div data-ng-if="item.info.artist" class="item-attribute"><span class="text-secondary-black margin-right-1">Artista:</span><span class="uppercase">{{item.info.artist}}</span></div>
-            <div data-ng-if="item.info.coverArtist" class="item-attribute"><span class="text-secondary-black margin-right-1">Portada:</span><span class="uppercase">{{item.info.coverArtist}}</span></div>
+            <div class="item-attribute"><span data-ng-bind="shell.labels.publisher" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.publisher}}</span></div>
+            <div class="item-attribute"><span data-ng-bind="shell.labels.price" class="text-secondary-black margin-right-1"></span><span class="accent">{{item.info.price | currency}} </span><span data-ng-bind="shell.labels.currencySymbol" class="accent"></span></div>
+            <div data-ng-if="item.info.writer" class="item-attribute"><span data-ng-bind="shell.labels.writer" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.writer}}</span></div>
+            <div data-ng-if="item.info.artist" class="item-attribute"><span data-ng-bind="shell.labels.artist" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.artist}}</span></div>
+            <div data-ng-if="item.info.coverArtist" class="item-attribute"><span data-ng-bind="shell.labels.coverArtist" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.coverArtist}}</span></div>
             <div data-ng-if="item.info.status=='active'">
-              <div class="item-attribute"><span class="text-secondary-black margin-right-1">Disponibilidad:</span><span class="uppercase">{{item.info.available}}</span></div>
-              <div data-ng-if="item.info.release" class="item-attribute"><span class="text-secondary-black margin-right-1">Publicacion:</span><span class="uppercase accent">{{item.info.release | date : longDate}}</span></div>
+              <div class="item-attribute"><span data-ng-bind="shell.labels.availability" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.available}}</span></div>
+              <div data-ng-if="item.info.release" class="item-attribute"><span data-ng-bind="shell.labels.releaseDate" class="text-secondary-black margin-right-1"></span><span class="uppercase accent">{{item.info.release | date : longDate}}</span></div>
               <div class="item-attribute"><a data-ng-click="item.minusOne()" class="pure-button button-small just-icon"><i class="fa fa-minus-circle"></i></a><span data-ng-class="{update:update}" class="margin-side-1">{{item.quantity}}</span><a data-ng-click="item.plusOne()" class="pure-button button-small just-icon"><i class="fa fa-plus-circle"></i></a></div>
-              <div data-ng-if="item.info.available == 'available' &amp;&amp; item.quantity &gt;= item.info.stock" class="item-attribute error">Solo {{item.info.stock}} disponibles.</div>
-              <div class="item-attribute"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.available =='serie'">Suscribirme </span><span data-ng-if="item.info.available =='preorder'">Preordenar</span><span data-ng-if="item.info.available =='available'">Comprar</span></a><a data-ui-sref="home" class="pure-button margin-left-1">Regresar</a></div>
+              <div data-ng-if="item.info.available == 'available' &amp;&amp; item.quantity &gt;= item.info.stock" class="item-attribute error"><span data-ng-bind="shell.labels.only"></span> 
+                {{item.info.stock}} <span data-ng-bind="shell.labels.availables"></span>
+              </div>
+              <div class="item-attribute"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.available =='serie'" data-ng-bind="shell.labels.subscribeMe"></span><span data-ng-if="item.info.available =='preorder'" data-ng-bind="shell.labels.preorderIt"></span><span data-ng-if="item.info.available =='available'" data-ng-bind="shell.labels.buyIt"></span></a><a data-ui-sref="home" data-ng-bind="shell.labels.back" class="pure-button margin-left-1"></a></div>
             </div>
             <div data-ng-if="item.info.stock &lt; 1 || item.info.status!='active'">
-              <div class="item-attribute"><span class="text-secondary-black margin-right-1">Disponibilidad:</span><span class="uppercase error">No hay existensias.</span></div>
+              <div class="item-attribute"><span data-ng-bind="shell.labels.availability" class="text-secondary-black margin-right-1"></span><span data-ng-bind="shell.labels.noStock" class="uppercase error"></span></div>
             </div>
           </div>
         </div>
