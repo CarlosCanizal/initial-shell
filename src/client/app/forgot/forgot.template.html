@@ -1,24 +1,24 @@
 
-<div class="section-title">Olvide mi Contraseña</div>
-<div class="filter-title"><span class="publisher-name">Recuperar contraseña</span></div>
+<div data-ng-bind="shell.labels.forgotMyPassword" class="section-title"></div>
+<div class="filter-title"><span data-ng-bind="shell.labels.recoveryPassword" class="publisher-name"></span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div class="shelf-space">
       <div data-ng-hide="forgot.sendIt">
-        <div class="title align-center">No te preocupes te ayudaremos a regresar a la Sociedad.</div>
+        <div data-ng-bind="shell.labels.recoveryText1" class="title align-center"></div>
         <form name="forgotForm" novalidate="" class="pure-form pure-form-stacked">
           <fieldset>
-            <label for="username" ng-show="forgotForm.username.$valid || forgotForm.username.$pristine">Correo Electronico:</label>
-            <label for="username" ng-show="forgotForm.username.$invalid &amp;&amp; forgotForm.username.$dirty" class="error">Correo Electronico invalido:</label>
+            <label for="username" ng-show="forgotForm.username.$valid || forgotForm.username.$pristine" data-ng-bind="shell.labels.email"></label>
+            <label for="username" ng-show="forgotForm.username.$invalid &amp;&amp; forgotForm.username.$dirty" data-ng-bind="shell.labels.emailInvalid" class="error"></label>
             <div class="form-icon">
               <input id="username" name="username" type="email" data-ng-model="forgot.username" required="" class="pure-input-1"/><i ng-show="forgotForm.username.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="forgotForm.username.$valid &amp;&amp; forgotForm.username.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="forgotForm.username.$invalid &amp;&amp; forgotForm.username.$dirty" class="fa fa-times-circle-o error medium-icon"> </i>
             </div>
           </fieldset>
         </form>
-        <div class="align-center margin-bottom"><a ng-click="forgot.sendLink(forgot.username)" class="pure-button pure-button-primary">Recuperar Contraseña</a></div>
+        <div class="align-center margin-bottom"><a ng-click="forgot.sendLink(forgot.username)" data-ng-bind="shell.labels.recoveryPassword" class="pure-button pure-button-primary"></a></div>
       </div>
       <div data-ng-if="forgot.sendIt">
-        <div class="title align-center success">Se envio un correo electronico con los pasos para recuperar tu contraseña.</div>
+        <div data-ng-bind="shell.labels.recoveryText2" class="title align-center success"></div>
       </div>
     </div>
   </div>

@@ -1,13 +1,11 @@
-|Lamentamos mucho que nos abandones, nos gustaria que nos dejaras tus comentarios y sugerencias para poder mejorar, ¡Gracias!
+span(data-ng-bind="shell.labels.cancelText1")
 form.pure-form.pure-form-stacked(name="cancelForm", novalidate="")
   fieldset
     .child-container
       ng-form(name="cancelForm")
         .form-container
-            label(for="comment", ng-show="cancelForm.comment.$valid || cancelForm.comment.$pristine")
-              | Comentario:
-            label.error(for="comment", ng-show="cancelForm.comment.$invalid && cancelForm.comment.$dirty")
-              | Comentario es requerido:
+            label(for="comment", ng-show="cancelForm.comment.$valid || cancelForm.comment.$pristine", data-ng-bind="shell.labels.comment")
+            label.error(for="comment", ng-show="cancelForm.comment.$invalid && cancelForm.comment.$dirty", data-ng-bind="shell.labels.commentRequired")
             .form-icon
               textarea#comment(name="comment", data-ng-model="unsubscribe.comment", required="")
               i.fa.fa-dot-circle-o.medium-icon(ng-show="cancelForm.comment.$pristine")
@@ -16,13 +14,11 @@ form.pure-form.pure-form-stacked(name="cancelForm", novalidate="")
   .align-center.margin-bottom
     a.pure-button(data-ng-if="cancelForm.$invalid")
       i.fa.fa-dot-circle-o
-      | Campos Requeridos
+      span(data-ng-bind="shell.labels.fieldsRequired")
     a.pure-button.button-error(data-ng-click="showModal()", data-question='¿Deseas cancelar tu membresia?', data-confirm="cancelMembership(account.user)",data-ng-if="cancelForm.$valid", confirm-message)
       i.fa.fa-times
-      | Cancelar Membrecia
+      span(data-ng-bind="shell.labels.cancelMembership")
   .align-center.margin-bottom
     a.pure-button.button-success(data-ng-click="account.hideCancelForm()")
       i.fa.fa-check
-      | Continuar Membrecia
-
-
+      span(data-ng-bind="shell.labels.noCancel")

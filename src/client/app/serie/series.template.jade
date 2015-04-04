@@ -1,22 +1,16 @@
 #series-menu(data-ng-include="'app/serie/menu/serie.menu.html'")
 .filter-title
-  span.publisher-name.
-    Mis Series
+  span.publisher-name(data-ng-bind="shell.labels.mySeries")
 .shelf
   .inner-shelf
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
     .shelf-content(data-ng-hide="loading")
       .shelf-message(ng-if="series.list.length < 1")
-        .subtitle
-          |No existen series registradas.
+        .subtitle(data-ng-bind="shell.labels.noSeries")
       .pure-g
         .pure-u-1.pure-u-md-1-2.pure-u-lg-1-4.pure-u-xl-1-5(data-ng-repeat="item in series.list")
           .item.pointer(data-ui-sref="dashboard.serie({objectId : item.objectId})")
             .item-image
               img(alt="", ng-src="{{item.serie.cover.url}}")
-            .item-info
-              | {{item.serie.name}}
-            .item-info
-              | {{item.status}}
-              
-        
+            .item-info(data-ng-bind="item.serie.name")
+            .item-info(data-ng-bind="item.status")

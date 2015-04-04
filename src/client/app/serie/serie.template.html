@@ -15,15 +15,15 @@
           <div data-ng-if="serie.subscription.status != 'canceled'" class="item">
             <div class="title uppercase">{{serie.info.name}}</div>
             <div data-ng-if="serie.subscription.status == 'active'" class="row">
-              <div class="row subtitle success">Suscripción Activa</div><a data-ng-click="serie.changeStatus('paused')" class="pure-button button-warning button-small">Pausar Suscripción</a>
+              <div data-ng-bind="shell.labels.subscriptionActive" class="row subtitle success"></div><a data-ng-click="serie.changeStatus('paused')" data-ng-bind="shell.labels.pauseSubscription" class="pure-button button-warning button-small"></a>
             </div>
-            <div data-ng-if="serie.subscription.status == 'paused'" class="row">             
-              <div class="row subtitle warning">Suscripción Pausada</div><a data-ng-click="serie.changeStatus('active')" class="pure-button button-success button-small">Activar Suscripción</a>
+            <div data-ng-if="serie.subscription.status == 'paused'" class="row">
+              <div data-ng-bind="shell.labels.subscriptionPaused" class="row subtitle warning"></div><a data-ng-click="serie.changeStatus('active')" data-ng-bind="shell.labels.activeSubscription" class="pure-button button-success button-small"></a>
             </div>
-            <div class="row"><a data-ng-click="serie.changeStatus('canceled')" class="pure-button button-error button-small">Cancelar Suscripción</a></div>
+            <div class="row"><a data-ng-click="serie.changeStatus('canceled')" data-ng-bind="shell.labels.cancelSubscription" class="pure-button button-error button-small"></a></div>
           </div>
           <div data-ng-if="serie.subscription.status == 'canceled'" class="item">
-            <div class="row subtitle">Tu subscription a la serie <span class="uppercase">{{serie.info.name}} </span>ha sido cancelada.</div><a data-ng-click="serie.changeStatus('active')" class="pure-button button-success">Activar Suscripción</a>
+            <div class="row subtitle"><span data-ng-bind="shell.labels.subscriptionText1"></span><span data-ng-bind="serie.info.name" class="uppercase"></span><span data-ng-bind="shell.labels.subscriptionText2"></span></div><a data-ng-click="serie.changeStatus('active')" data-ng-bind="shell.labels.activeSubscription" class="pure-button button-success"></a>
           </div>
         </div>
       </div>

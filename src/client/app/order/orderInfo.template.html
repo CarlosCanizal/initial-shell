@@ -11,23 +11,23 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3 border-right">
             <div class="information-box padding-right-1">
-              <div class="information-title">RESUMEN</div>
+              <div data-ng-bind="shell.labels.summary" class="information-title uppercase"></div>
               <table class="info">
                 <tbody>
                   <tr>
-                    <td class="info-label">Referencia:</td>
+                    <td data-ng-bind="shell.labels.reference" class="info-label"></td>
                     <td class="info-value">{{order.info.referenceId}}</td>
                   </tr>
                   <tr>
-                    <td class="info-label">Monto:</td>
+                    <td data-ng-bind="shell.labels.amount+': '" class="info-label"></td>
                     <td class="info-value">{{order.info.amount | currency}}</td>
                   </tr>
                   <tr>
-                    <td class="info-label">Fecha:</td>
+                    <td data-ng-bind="shell.labels.date+': '" class="info-label"></td>
                     <td class="info-value">{{order.info.createdAt | date: 'medium'}}</td>
                   </tr>
                   <tr>
-                    <td class="info-label">status:</td>
+                    <td data-ng-bind="shell.labels.status+': '" class="info-label"></td>
                     <td class="info-value">{{order.info.status}}</td>
                   </tr>
                 </tbody>
@@ -36,29 +36,29 @@
           </div>
           <div class="pure-u-1 pure-u-md-1-3 border-right">
             <div class="information-box padding-side-1">
-              <div class="information-title">DIRECCION DE ENVIO</div>
+              <div data-ng-bind="shell.labels.shippingAddress" class="information-title uppercase"></div>
               <div class="description">{{order.info.shippingAddress.street}} {{order.info.shippingAddress.number}} {{order.info.shippingAddress.apt}}<br/>{{order.info.shippingAddress.district}} {{order.info.shippingAddress.municipality}} <br/>{{order.info.shippingAddress.country}}, {{order.info.shippingAddress.state}},  {{order.info.shippingAddress.zip}}</div>
             </div>
           </div>
           <div class="pure-u-1 pure-u-md-1-3">
             <div class="information-box padding-side-1">
-              <div class="information-title">METODO DE PAGO</div>
+              <div data-ng-bind="shell.labels.paymentMethod" class="information-title uppercase"></div>
               <table class="info">
                 <tbody>
                   <tr>
-                    <td class="info-label">Nombre</td>
+                    <td data-ng-bind="shell.labels.name" class="info-label"></td>
                     <td class="info-value">{{order.info.paymentMethod.name}}</td>
                   </tr>
                   <tr>
-                    <td class="info-label">Emisor:</td>
+                    <td data-ng-bind="shell.labels.issuer" class="info-label"></td>
                     <td class="info-value">{{order.info.paymentMethod.brand}}</td>
                   </tr>
                   <tr>
-                    <td class="info-label">Tarjeta:</td>
+                    <td data-ng-bind="shell.labels.card" class="info-label"></td>
                     <td class="info-value">**** **** **** {{order.info.paymentMethod.last4}}</td>
                   </tr>
                   <tr>
-                    <td class="info-label">Tipo:</td>
+                    <td data-ng-bind="shell.labels.type" class="info-label"></td>
                     <td class="info-value">{{order.info.available}}</td>
                   </tr>
                 </tbody>
@@ -70,7 +70,7 @@
     </div>
   </div>
 </div>
-<div class="filter-title"><span class="publisher-name">Articulos</span></div>
+<div class="filter-title"><span data-ng-bind="shell.labels.items" class="publisher-name"></span></div>
 <div class="shelf">
   <div class="inner-shelf">
     <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
@@ -79,9 +79,9 @@
         <table class="info">
           <thead>
             <tr class="text-secondary-black">
-              <th>Articulo</th>
-              <th>Cantidad</th>
-              <th colspan="3">Total</th>
+              <th data-ng-bind="shell.labels.item"></th>
+              <th data-ng-bind="shell.labels.quantity"></th>
+              <th colspan="3" data-ng-bind="shell.labels.total"></th>
             </tr>
           </thead>
           <tbody>
@@ -89,17 +89,17 @@
               <td class="info-value uppercase">{{item.name}}</td>
               <td class="info-value align-center">{{item.quantity}}</td>
               <td class="info-value align-right">$</td>
-              <td class="info-value align-right">{{item.price | currency:''}} MXN</td>
+              <td class="info-value align-right">{{item.price | currency:''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
             </tr>
             <tr data-ng-if="order.info.shippingMethod">
-              <td class="info-value uppercase">Envio {{order.info.shippingMethod.name}}</td>
+              <td class="info-value uppercase"><span data-ng-bind="shell.labels.shipping"></span>{{order.info.shippingMethod.name}}</td>
               <td class="info-value align-center">1</td>
               <td class="info-value align-right">$</td>
-              <td class="info-value align-right">{{order.info.shippingMethod.price | currency:''}} MXN</td>
+              <td class="info-value align-right">{{order.info.shippingMethod.price | currency:''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
             </tr>
             <tr>
               <td colspan="3"></td>
-              <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}} MXN</td>
+              <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
             </tr>
           </tbody>
         </table>
@@ -108,7 +108,7 @@
   </div>
 </div>
 <div data-ng-if="order.info.notAvailable &amp;&amp; order.info.notAvailable.length &gt; 0">
-  <div class="filter-title"><span class="publisher-name error">No disponibles al momento de pagar</span></div>
+  <div class="filter-title"><span data-ng-bind="shell.labels.notAvailableAtPayment" class="publisher-name error"></span></div>
   <div class="shelf">
     <div class="inner-shelf error-border">
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="loading" class="spinner"></div>
@@ -117,9 +117,9 @@
           <table class="info">
             <thead>
               <tr class="text-secondary-black">
-                <th>Articulo</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
+                <th data-ng-bind="shell.labels.price"></th>
+                <th data-ng-bind="shell.labels.quantity"></th>
+                <th data-ng-bind="shell.labels.price"></th>
               </tr>
             </thead>
             <tbody>

@@ -1,42 +1,43 @@
 table.total-table
   tr
-    td.table-label
-      |Total de la orden:
+    td.table-label(data-ng-bind="shell.labels.orderTotal+': '")
     td
       |$
     td
-      |{{shell.shoppingCart.cartTotal | currency: ''}} MXN
+      |{{shell.shoppingCart.cartTotal | currency: ''}}
+      span(data-ng-bind="shell.labels.currencySymbol")
   tr(data-ng-show="shell.shoppingCart.shippingMethod && shell.shoppingCart.shippingAddress")
-    td.table-label
-      |Envio:
+    td.table-label(data-ng-bind="shell.labels.shipping+': '")
     td
       |$
     td
-      |{{shell.shoppingCart.shippingMethod.price | currency: ''}} MXN
+      |{{shell.shoppingCart.shippingMethod.price | currency: ''}}
+      span(data-ng-bind="shell.labels.currencySymbol")
   tr(data-ng-hide="shell.shoppingCart.shippingMethod && shell.shoppingCart.shippingAddress")
-    td.table-label
-      |Envio:
+    td.table-label(data-ng-bind="shell.labels.shipping+': '")
     td
     td
-      |+ Envio
+      span
+        |+
+      span(data-ng-bind="shell.labels.shipping")
   tr.action
-    td.table-label
-      |Saldo:
+    td.table-label(data-ng-bind="shell.labels.balance")
     td
       |$
     td
       |{{shell.shoppingCart.wallet | currency: ''}} MXN
+      span(data-ng-bind="shell.labels.currencySymbol")
   tr.action
-    td.table-label
-      |Descuento:
+    td.table-label(data-ng-bind="shell.labels.discount")
     td
       |$
     td
-      |{{shell.shoppingCart.discount | currency: ''}} MXN
+      |{{shell.shoppingCart.discount | currency: ''}}
+      span(data-ng-bind="shell.labels.currencySymbol")
   tr
-    td.table-label
-      |Total a Pagar:
+    td.table-label(data-ng-bind="shell.labels.totalToPay+': '")
     td
       |$
     td
-      |{{shell.shoppingCart.total| currency: ''}} MXN
+      |{{shell.shoppingCart.total| currency: ''}}
+      span(data-ng-bind="shell.labels.currencySymbol")

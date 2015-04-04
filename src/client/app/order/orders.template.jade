@@ -2,46 +2,38 @@
 div(data-ng-controller="Orders as orders")
   #orders-menu(data-ng-include="'app/order/menu/order.menu.html'")
   .filter-title
-    span.publisher-name.
-      Mis Ordenes
+    span.publisher-name(data-ng-bind="shell.labels.myOrders")
   .shelf
     .inner-shelf
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
       .shelf-space(data-ng-hide="loading")
         .shelf-content(data-ng-hide="loading")
           .shelf-message(ng-if="orders.list.length < 1")
-            .subtitle.align-center
-              |No existen ordenes registradas.
+            .subtitle.align-center(data-ng-bind="shell.labels.noOrders")
           .list-item(ng-repeat="item in orders.list", data-ui-sref="dashboard.order({objectId : item.objectId})")
             .pure-g
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
-                    | Referencia
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black(data-ng-bind="shell.labels.reference")
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.referenceId}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
-                    | Fecha
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black(data-ng-bind="shell.labels.date")
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.createdAt | date: 'mediumDate'}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
-                    | Monto
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black(data-ng-bind="shell.labels.amount")
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.amount | currency}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
-                    | Estado
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black(data-ng-bind="shell.labels.state")
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.status}}
               .pure-u-1.pure-u-md-1-5
                 .pure-g
-                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black
-                    | Tipo
+                  .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.text-secondary-black(data-ng-bind="shell.labels.type")
                   .pure-u-1-2.pure-u-sm-1-4.pure-u-md-1.info-value
                     | {{item.available}}
-        

@@ -16,28 +16,16 @@
             .title.uppercase
               | {{serie.info.name}}
             .row(data-ng-if="serie.subscription.status == 'active'")
-              .row.subtitle.success
-                | Suscripción Activa
-              a.pure-button.button-warning.button-small(data-ng-click="serie.changeStatus('paused')")
-                | Pausar Suscripción
-            .row(data-ng-if="serie.subscription.status == 'paused'")              
-              .row.subtitle.warning
-                | Suscripción Pausada
-              a.pure-button.button-success.button-small(data-ng-click="serie.changeStatus('active')")
-                |Activar Suscripción
+              .row.subtitle.success(data-ng-bind="shell.labels.subscriptionActive")
+              a.pure-button.button-warning.button-small(data-ng-click="serie.changeStatus('paused')", data-ng-bind="shell.labels.pauseSubscription")
+            .row(data-ng-if="serie.subscription.status == 'paused'")
+              .row.subtitle.warning(data-ng-bind="shell.labels.subscriptionPaused")
+              a.pure-button.button-success.button-small(data-ng-click="serie.changeStatus('active')", data-ng-bind="shell.labels.activeSubscription")
             .row
-              a.pure-button.button-error.button-small(data-ng-click="serie.changeStatus('canceled')")
-                |Cancelar Suscripción
+              a.pure-button.button-error.button-small(data-ng-click="serie.changeStatus('canceled')", data-ng-bind="shell.labels.cancelSubscription")
           .item(data-ng-if="serie.subscription.status == 'canceled'")
             .row.subtitle
-              |Tu subscription a la serie 
-              span.uppercase
-                |{{serie.info.name}} 
-              |ha sido cancelada.
-            a.pure-button.button-success(data-ng-click="serie.changeStatus('active')")
-              |Activar Suscripción
-
-
-
-
-        
+              span(data-ng-bind="shell.labels.subscriptionText1")
+              span.uppercase(data-ng-bind="serie.info.name")
+              span(data-ng-bind="shell.labels.subscriptionText2")
+            a.pure-button.button-success(data-ng-click="serie.changeStatus('active')", data-ng-bind="shell.labels.activeSubscription")

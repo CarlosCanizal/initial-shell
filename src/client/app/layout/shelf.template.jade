@@ -17,8 +17,9 @@
           .item-info
             a.pointer(data-ui-sref="item({objectId:item.objectId})")
               |{{item.name}}
-          .item-info.
-            {{item.price | currency}} MXN
+          .item-info
+            |{{item.price | currency}}
+            span(data-ng-bind="shell.labels.currencySymbol")
           .item-button
             a.pure-button.pure-button-primary(data-ng-click="shell.addToCart(item)")
               span(data-ng-if="item.available == 'serie'", data-ng-bind="shell.labels.subscribeMe")

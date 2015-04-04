@@ -1,5 +1,4 @@
-.section-title.
-  Suscripciones
+.section-title(data-ng-bind="shell.labels.subscriptions")
 .search(data-ng-include="'app/layout/search.template.html'")
 .shelf(data-ng-include="'app/layout/shelf.template.html'", data-ng-if="shell.itemsList.length > 0")
 .shelf(shelf, publisher="dc", store="Serie")
