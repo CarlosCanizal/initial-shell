@@ -1,7 +1,5 @@
-.section-title
-  | Mis Suscripciones
+.section-title(data-ng-bind="shell.labels.mySubscriptions")
 #submenu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
   nav
-    a(data-ui-sref="dashboard.series", data-ng-class="{'active':shell.submenu == 'series'}")
-      |Series
+    a(data-ui-sref="dashboard.series", data-ng-class="{'active':shell.submenu == 'series'}", data-ng-bind="shell.labels.series")
     

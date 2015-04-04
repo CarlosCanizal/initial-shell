@@ -1,6 +1,4 @@
-.section-title
-  | Publisher
+.section-title(data-ng-bind="shell.labels.publisher")
 #submenu.hidden.visible-lg-block(data-ng-if="shell.isAdmin")
   nav
-    a(data-ui-sref="admin.publishers", data-ng-class="{'active':shell.submenu == 'publisher'}")
-      |Regresar
+    a(data-ui-sref="admin.publishers", data-ng-class="{'active':shell.submenu == 'publisher'}", data-ng-bind="shell.labels.back")

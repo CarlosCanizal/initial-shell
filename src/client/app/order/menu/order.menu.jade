@@ -1,7 +1,5 @@
-.section-title
-  | Mis Ordenes
+.section-title(data-ng-bind="shell.labels.myOrders")
 #submenu.hidden.visible-lg-block(data-ng-if="shell.isDashboard")
   nav
-    a(data-ui-sref="dashboard.orders", data-ng-class="{'active':shell.submenu == 'orders'}")
-      |Ordenes
+    a(data-ui-sref="dashboard.orders", data-ng-class="{'active':shell.submenu == 'orders'}", data-ng-bind="shell.labels.orders")
     

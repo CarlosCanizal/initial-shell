@@ -1,6 +1,5 @@
 div(data-ng-controller="Checkout as checkout")
-  .section-title
-    | Carrito de Compras
+  .section-title(data-ng-bind="shell.labels.shoppingCart")
   #user-forms(login-forms, data-ng-if="!shell.currentUser", data-ng-show="checkout.loginFormsView")
   #items-checkout(items-list, data-ng-if="!checkout.completed")
   #wallet-checkout(wallet, data-ng-if="checkout.walletView")
@@ -10,15 +9,3 @@ div(data-ng-controller="Checkout as checkout")
   #payment-checkout(payment-method, data-ng-if="shell.currentUser && checkout.loadPayment")
   #placeOrder-checkout(place-order, data-ng-if="shell.currentUser")
   #response-checkout(response-payment, data-ng-if="shell.currentUser")
-
-      
-        
-
-
-        
-
-          
-        
-
-
-        

@@ -5,7 +5,7 @@
   <div data-ng-hide="loading">
     <div ng-if="itemsList.length &lt; 1" class="shelf-message">
       <div class="shelf-space">
-        <div class="subtitle">No existen productos con estos parametros.</div>
+        <div data-ng-bind="shell.labels.noItems" class="subtitle"></div>
       </div>
     </div>
     <div class="pure-g">
@@ -14,7 +14,7 @@
           <div class="item-image"><a data-ui-sref="item({objectId:item.objectId})"> <img alt="" ng-src="{{item.coverUrl}}"/></a></div>
           <div class="item-info"><a data-ui-sref="item({objectId:item.objectId})" class="pointer">{{item.name}}</a></div>
           <div class="item-info">{{item.price | currency}} MXN</div>
-          <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.available == 'serie'">Suscribirme </span><span data-ng-if="item.available == 'preorder'">Preordenar</span><span data-ng-if="item.available == 'available'">Comprar</span></a></div>
+          <div class="item-button"><a data-ng-click="shell.addToCart(item)" class="pure-button pure-button-primary"><span data-ng-if="item.available == 'serie'" data-ng-bind="shell.labels.subscribeMe"></span><span data-ng-if="item.available == 'preorder'" data-ng-bind="shell.labels.preorderIt"></span><span data-ng-if="item.available == 'available'" data-ng-bind="shell.labels.buyIt"></span></a></div>
         </div>
       </div>
     </div>

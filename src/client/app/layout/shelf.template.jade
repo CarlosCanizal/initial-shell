@@ -7,8 +7,7 @@
   div(data-ng-hide="loading")
     .shelf-message(ng-if="itemsList.length < 1")
       .shelf-space
-        .subtitle
-          |No existen productos con estos parametros.
+        .subtitle(data-ng-bind="shell.labels.noItems")
     .pure-g
       .pure-u-1.pure-u-md-1-2.pure-u-lg-1-4.pure-u-xl-1-5(data-ng-repeat="item in itemsList")
         .item
@@ -22,15 +21,6 @@
             {{item.price | currency}} MXN
           .item-button
             a.pure-button.pure-button-primary(data-ng-click="shell.addToCart(item)")
-              span(data-ng-if="item.available == 'serie'")
-                | Suscribirme 
-              span(data-ng-if="item.available == 'preorder'")
-                | Preordenar
-              span(data-ng-if="item.available == 'available'")
-                | Comprar
-          
-
-
-
-
-
+              span(data-ng-if="item.available == 'serie'", data-ng-bind="shell.labels.subscribeMe")
+              span(data-ng-if="item.available == 'preorder'", data-ng-bind="shell.labels.preorderIt")
+              span(data-ng-if="item.available == 'available'", data-ng-bind="shell.labels.buyIt")

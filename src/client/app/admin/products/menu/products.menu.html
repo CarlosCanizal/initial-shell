@@ -1,5 +1,5 @@
 
-<div class="section-title">Productos</div>
+<div data-ng-bind="shell.labels.products" class="section-title"></div>
 <div id="submenu" data-ng-if="shell.isAdmin" class="hidden visible-lg-block">
-  <nav><a data-ui-sref="admin.products" data-ng-class="{'active':shell.submenu == 'products'}">Productos</a><a data-ui-sref="admin.products" data-ng-class="{'active':shell.submenu == 'products'}">Estadisticas</a></nav>
+  <nav><a data-ui-sref="admin.products" data-ng-class="{'active':shell.submenu == 'products'}" data-ng-bind="shell.labels.products"></a><a data-ui-sref="admin.products" data-ng-class="{'active':shell.submenu == 'products'}" data-ng-bind="shell.labels.stats"></a></nav>
 </div>

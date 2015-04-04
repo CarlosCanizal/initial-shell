@@ -1,7 +1,6 @@
 #admin-menu(data-ng-include="'app/admin/assistent/menu/assistent.menu.html'")
 .filter-title
-  span.publisher-name.
-    Informacion General
+  span.publisher-name(data-ng-bind="shell.labels.generalInformation")
 .shelf
   .inner-shelf
     .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="loading")
@@ -10,32 +9,26 @@
         .pure-g
           .pure-u-1.pure-u-md-1-2.border-right
             .information-box.padding-right-1
-              .information-title
-                | RESUMEN
+              .information-title.uppercase(data-ng-bind="shell.labels.summary")
               table.info
                 tbody
                   tr
-                    td.info-label
-                      |Nombre:
+                    td.info-label(data-ng-bind="shell.labels.name+':'")
                     td.info-value
                       |{{assistentUser.user.name}} {{assistentUser.user.lastname}}
                   tr
-                    td.info-label
-                      |Correo:
+                    td.info-label(data-ng-bind="shell.labels.email+':'")
                     td.info-value
                       |{{assistentUser.user.username}}
                   tr
-                    td.info-label
-                      |Telefono:
+                    td.info-label(data-ng-bind="shell.labels.mobile+':'")
                     td.info-value
                       | {{assistentUser.user.phone}}
           .pure-u-1.pure-u-md-1-2
             .information-box.padding-side-1(data-ng-if="assistentUser.user.membership  == 'basic'")
-              .information-title
-                |METODO DE PAGO
+              .information-title.uppercase(data-ng-bind="shell.labels.paymentMethod")
               div.align-center
-                a.pure-button.pure-button-primary(data-ng-click="assistentUser.paymentMethod = 'card'")
-                  |Tarjeta de Credito
+                a.pure-button.pure-button-primary(data-ng-click="assistentUser.paymentMethod = 'card'", data-ng-bind="shell.labels.card")
               div.align-center.margin-top-1 
                 a.pure-button(data-ng-click="assistentUser.paymentMethod = 'cash'")
                   |Pago en Efectivo
