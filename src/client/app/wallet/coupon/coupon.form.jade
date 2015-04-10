@@ -17,7 +17,6 @@ form.pure-form.pure-form-stacked(name="couponForm", novalidate="")
   a.pure-button.button-success(data-ng-click="redeemCode()", data-ng-class="{'pure-button-disabled': profileForm.$invalid, 'button-success':profileForm.$valid}", data-ng-if="couponForm.$valid")
     i.fa.fa-thumbs-o-up
     span(data-ng-bind="shell.labels.validateCode")    
-  .error(data-ng-if="error")
-    | {{error}}
-  .success(data-ng-if="success")
-    | {{success}}
+  .margin-top-1
+    .error(data-ng-if="error", data-ng-bind="shell.labels.couponResponse[error]")
+    .success(data-ng-if="success", data-ng-bind="shell.labels.couponResponse[success]")

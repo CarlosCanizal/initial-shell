@@ -20,12 +20,17 @@ function coupon(couponApi, userApi){
           shell.showLoading();
           couponApi.redeemCode(scope.coupon.code, userApi.currentUser().objectId).then(function(result){
             var coupon = result.result;
-            scope.success = "Codigo valido";
+            scope.success = 200;
+            scope.coupon.code = null;
+            scope.couponForm.$setPristine();
             shell.updateCurrentUser();
             if(shell.shoppingCart){
               shell.shoppingCart.userWallet += coupon.amount;
             }
           },function(error){
+            scope.error =400;
+            if(error.data && error.data.code)
+              scope.error = error.data.code;
             shell.setError(error);
           }).finally(shell.hideLoading);
         }

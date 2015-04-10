@@ -236,5 +236,10 @@
   "noSeries":"No existen series registradas.",
   "subscriptions":"Suscripciones",
   "addMoney":"Agregar saldo",
-  "nextBilling":"Proximo pago"
+  "nextBilling":"Próximo pago",
+  "couponResponse":{
+    "200":"Cupón valido",
+    "400":"Cupón invalido",
+    "141":"Cupón invalido"
+  }
 }
