@@ -23,8 +23,6 @@
     return factory;
 
     function getDistricts(state, municipality) {
-      console.log(state);
-      console.log(municipality);
       return sepomexAPI.query({
         class: 'Districts',
         where: {

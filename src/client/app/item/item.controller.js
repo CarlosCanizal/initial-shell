@@ -14,7 +14,8 @@
     item.quantity = 1;
 
     item.info.description = $sce.trustAsHtml(item.info.description);
-
+    if(item.info.release)
+      item.info.release = moment(item.info.release).locale('es').format('LL');
 
     item.plusOne = function(){
       if(item.info.available == 'available'){

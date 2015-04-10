@@ -31,7 +31,7 @@ function newAddress(userApi, sepomexAPI){
           var district = result.results[0];
           getUbication(district.state, district.municipality, district.name);
         },function(error){
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          shell.setError(error);
         });
       }
 
@@ -48,7 +48,7 @@ function newAddress(userApi, sepomexAPI){
           scope.districts = result.results;
           scope.newAddress.district =  scope.districts[0] && !district ? scope.districts[0].name : district;
         },function(error){
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          shell.setError(error);
         });
       }
 
@@ -62,7 +62,7 @@ function newAddress(userApi, sepomexAPI){
           scope.addressForm.zip.$setViewValue(result.results[0].zip);
           scope.addressForm.zip.$render();
         },function(error){
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          shell.setError(error);
         });
       };
 
@@ -78,7 +78,7 @@ function newAddress(userApi, sepomexAPI){
           if(scope.districts[0])
             scope.newAddress.district = scope.districts[0].name;
         },function(error){
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          shell.setError(error);
         });
       };
 
@@ -89,7 +89,7 @@ function newAddress(userApi, sepomexAPI){
           if(scope.districts[0])
             scope.newAddress.district = scope.districts[0].name;
         },function(error){
-          console.error('status: '+error.status+', statusText: '+error.statusText+', error: '+error.data.error);
+          shell.setError(error);
         });
       };
 
@@ -104,9 +104,6 @@ function newAddress(userApi, sepomexAPI){
             objectId = shell.currentUser.objectId;
 
           scope.newAddress.user = {"__type":"Pointer",className:"_User","objectId":objectId};
-          // scope.newAddress.ACL = {"*":{}, "role:admin":{"read":true, "write":true}};
-          // scope.newAddress.ACL[objectId] = {"read":true, "write":true};
-          // console.log(scope.newAddress);
           userApi.saveAddress(scope.newAddress).then(function(result){
     
             if(address && address.addresses){
