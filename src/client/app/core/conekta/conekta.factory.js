@@ -24,10 +24,20 @@
 
     function updateMembership(membership, payment, user){
       var membershipStatus = null;
+      var nextBilling = null;
       return subscribe(membership.id, payment.card.id, user).then(function(result){
-        membershipStatus = result.result.status;
+        if(result.result){
+          if(result.result.status)
+            membershipStatus = result.result.status;
+          if(result.result.billing_cycle_end){
+            nextBilling = result.result.billing_cycle_end;
+            nextBilling = new Date(nextBilling* 1000);
+            nextBilling = moment(nextBilling).subtract(6,'hours').locale('es').format('LL');
+          }
+        }
+
         var membershipActive = (membershipStatus === 'active')? true : false;
-        return userApi.saveUserProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment,membershipActive:membershipActive, membershipStatus:membershipStatus});
+        return userApi.saveUserProfile({objectId: user.objectId, membership: membership.name , upgrade:'upgraded',subscriptionCard:payment,membershipActive:membershipActive, membershipStatus:membershipStatus, nextBilling:nextBilling});
       });
     }
 

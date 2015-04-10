@@ -15,7 +15,7 @@
         <p></p>
         <div class="align-right"><a data-ng-click="account.showCancelForm()" data-ng-bind="shell.labels.cancelMembership" class="pure-button"></a></div>
         <div class="align-center">
-          <h3 data-ng-if="shell.currentUser.nextBilling"><span data-ng-bind="shell.labels.nextBilling"></span>: <span data-ng-bind="shell.currentUser.nextBilling"></span></h3>
+          <h3 data-ng-if="shell.currentUser.nextBilling"><span data-ng-bind="shell.labels.nextBilling"></span>: <span data-ng-bind="shell.currentUser.nextBilling" class="accent"></span></h3>
         </div>
       </div>
       <div data-ng-if="account.user.membership  == 'pro' &amp;&amp; !shell.isMember()">

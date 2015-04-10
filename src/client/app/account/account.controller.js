@@ -15,7 +15,6 @@
     account.cardFormView = false;
     account.cancelFormView = false;
     account.upgradeView = false;
-    //checar esta variable cards tal vez sea la misma que payment methods
     account.cards = [];
     account.subscription = {payment:false};
     $scope.loading = true;
