@@ -21,7 +21,6 @@
       }else{
         $state.go('dashboard.account');
       }
-
     };
   }
 

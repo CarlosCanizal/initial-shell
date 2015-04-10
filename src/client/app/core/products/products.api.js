@@ -10,9 +10,9 @@
   /* @ngInject */
   function productsApi($resource, $q, parseheaders, parse, Token) {
 
-    var user =  Token.currentUser();
-    if(user)
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    // var user =  Token.currentUser();
+    // if(user)
+    //   parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
 
     var  Product  = parse.newParseResource(parseheaders.storeKeys, 'Product');

@@ -9,9 +9,9 @@
 
   /* @ngInject */
   function salesApi($resource, $q, parseheaders, parse,Token) {
-    var user =  Token.currentUser();
-    if(user)
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    // var user =  Token.currentUser();
+    // if(user)
+      // parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Sale  = parse.newCloudCodeResource(parseheaders.storeKeys);
 

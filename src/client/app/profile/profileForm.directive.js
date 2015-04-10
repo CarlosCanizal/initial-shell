@@ -18,9 +18,10 @@ function profileForm(userApi){
         if(scope.profileForm.$valid){
           shell.showLoading();
           userApi.saveUserProfile(profile.user).then(function(user){
-            if(view)
+            // if(view)
               shell.updateCurrentUser();
           },function(error){
+            console.log(error);
             shell.setError(error);
           }).finally(shell.hideLoading);
         }

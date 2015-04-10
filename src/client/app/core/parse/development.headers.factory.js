@@ -23,7 +23,7 @@
       },
       conektaKeys:{
         'public': 'key_LDjQwU7xkazYxSRSoW7XWfQ',
-        'planId': 'plan_CczxCcuzBBUew3Vm'
+        'planId': 'plan_ENQB7bHnKSuE7o76'
       }
     };
   }

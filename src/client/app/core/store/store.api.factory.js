@@ -9,9 +9,9 @@
 
   /* @ngInject */
   function storeApi($resource, parseheaders, parse, Token) {
-    var user =  Token.currentUser();
-    if(user)
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    // var user =  Token.currentUser();
+    // if(user)
+    //   parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Store = parse.newCloudCodeResource(parseheaders.storeKeys);
     var  Product = parse.newParseResource(parseheaders.storeKeys,'Product');

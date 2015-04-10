@@ -9,12 +9,6 @@
 
   /* @ngInject */
   function userApi($resource, $q, parseheaders, parse, storage, underscore) {
-
-    var user =  currentUser();
-    if(user){
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
-    }
-
     var  Login = parse.newLoginResource(parseheaders.storeKeys);
     var  Register  = parse.newRegisterResource(parseheaders.storeKeys);
     var  Card  = parse.newCloudCodeResource(parseheaders.storeKeys);
@@ -118,10 +112,17 @@
     }
 
     function currentUser() {
-      return storage.get('user');
+      var user = storage.get('user');
+      if(user && user.sessionToken){
+        parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+      }
+      return user;
     }
 
     function setCurrentUser(user){
+      if(user.sessionToken){
+        parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+      }
       return storage.set('user', user);
     }
 

@@ -9,9 +9,9 @@
 
   /* @ngInject */
   function statsApi($resource, $q, parseheaders, parse, Token) {
-    var user =  Token.currentUser();
-    if(user)
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    //var user =  Token.currentUser();
+    //if(user)
+      //parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Stats  = parse.newParseResource(parseheaders.storeKeys, 'Stats');
 

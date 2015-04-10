@@ -9,9 +9,9 @@
 
   /* @ngInject */
   function systemApi($resource,$q, parseheaders, parse, Token) {
-    var user =  Token.currentUser();
-    if(user)
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    // var user =  Token.currentUser();
+    // if(user)
+    //   parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  System = parse.newParseResource(parseheaders.storeKeys,'System');
 

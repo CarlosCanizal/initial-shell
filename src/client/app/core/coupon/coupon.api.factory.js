@@ -10,9 +10,9 @@
   /* @ngInject */
   function couponApi($resource, $q, parseheaders, parse, Token) {
 
-    var user =  Token.currentUser();
-    if(user)
-      parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
+    // var user =  Token.currentUser();
+    // if(user)
+    //   parseheaders.storeKeys['X-Parse-Session-Token'] = user.sessionToken;
 
     var  Coupon = parse.newCloudCodeResource(parseheaders.storeKeys);
 

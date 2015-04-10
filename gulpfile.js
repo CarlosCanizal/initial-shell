@@ -65,7 +65,7 @@ gulp.task('styles', function () {
 
 //Scripts
 gulp.task('scripts', function () {
-    var scripts = [ 'src/client/bower_components/angular/angular.min.js',
+    var scriptList = [ 'src/client/bower_components/angular/angular.min.js',
                       'src/client/bower_components/angular-ui-router/release/angular-ui-router.min.js',
                       'src/client/bower_components/angular-resource/angular-resource.min.js',
                       'src/client/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
@@ -83,6 +83,7 @@ gulp.task('scripts', function () {
                       'src/client/app/core/config.js',
                       'src/client/app/core/parse/parse.factory.js',
                       'src/client/app/core/parse/sepomex.factory.js',
+                      'src/client/app/core/parse/development.headers.factory.js',
                       'src/client/app/core/store/store.api.factory.js',
                       'src/client/app/core/user/user.api.factory.js',
                       'src/client/app/core/user/token.api.js',
@@ -97,7 +98,7 @@ gulp.task('scripts', function () {
                       'src/client/app/core/conekta/conekta.factory.js',
                       'src/client/app/cart/checkout/checkout.controller.js',
                       'src/client/app/store/store.controller.js',
-                      'src/client/app/item/Item.controller.js',
+                      'src/client/app/item/item.controller.js',
                       'src/client/app/storage/storage.service.js',
                       'src/client/app/layout/shelf.directive.js',
                       'src/client/app/layout/shell.js',
@@ -109,6 +110,9 @@ gulp.task('scripts', function () {
                       'src/client/app/wallet/coupon/coupon.directive.js',
                       'src/client/app/wallet/coupon/adminCoupon.directive.js',
                       'src/client/app/wallet/money/money.directive.js',
+                      'src/client/app/membership/membership.directive.js',
+                      'src/client/app/core/system/system.api.js',
+                      'src/client/app/membership/upgrade.directive.js',
                       'src/client/app/address/address.controller.js',
                       'src/client/app/order/order.controller.js',
                       'src/client/app/order/order.factory.js',
@@ -165,15 +169,16 @@ gulp.task('scripts', function () {
                       'src/client/app/cart/checkout/responsePayment/responsePayment.directive.js'
                      ];
 
-    if(argv.production){
-      console.log('We are in production!');
-      scripts.unshift['src/client/app/core/parse/production.headers.factory.js']
-    }else{
-      console.log('We are in development!');
-      scripts.unshift['src/client/app/core/parse/development.headers.factory.js']
-    }
+    // if(argv.production){
+    //   console.log('We are in production!');
+    //   scriptList.push['src/client/app/core/parse/production.headers.factory.js']
+    // }else{
+    //   console.log('We are in development!');
+    //   scriptList.push['src/client/app/core/parse/development.headers.factory.js']
+    //   console.log(scriptList)
+    // }
 
-    return gulp.src(scripts)
+    return gulp.src(scriptList)
         .pipe($.concat('main.js'))
         .pipe($.rename({suffix: '.min'}))
         .pipe($.uglify({mangle:false}))
@@ -192,6 +197,8 @@ gulp.task('images', function () {
 gulp.task('copyfiles', function () {
   gulp.src('src/client/app/**/*.html')
     .pipe(gulp.dest('dist/app'));
+  gulp.src('src/client/app/lang/*.json')
+    .pipe(gulp.dest('dist/app/lang'));
   gulp.src('src/client/common/css/fonts/**')
     .pipe(gulp.dest('dist/css/fonts'));
   gulp.src('src/client/bower_components/components-font-awesome/fonts/*')

@@ -5,19 +5,20 @@
   <div class="inner-shelf">
     <div class="shelf-space privacy-policy">
       <h3 data-ng-bind="shell.labels.whatIs"></h3>
-      <p data-ng-bind="shell.labels.abouttext1"></p>
-      <p data-ng-bind="shell.labels.abouttext2"></p>
+      <p data-ng-bind="shell.labels.aboutText1"></p>
+      <p data-ng-bind="shell.labels.aboutText2"></p>
       <p data-ng-bind="shell.labels.aboutText3"></p>
       <h3 data-ng-bind="shell.labels.aboutText4"></h3>
       <p data-ng-bind="shell.labels.aboutText5"></p>
       <h3 data-ng-bind="shell.labels.aboutText6"></h3>
       <p data-ng-bind="shell.labels.aboutText7"></p>
       <h3 data-ng-bind="shell.labels.aboutText8"></h3>
-      <p data-ng-bind="shell.labels.abouttext9"></p>
+      <p data-ng-bind="shell.labels.aboutText9"></p>
       <h3 data-ng-bind="shell.labels.aboutText10"></h3>
       <p data-ng-bind="shell.labels.aboutText11"></p>
       <h3 data-ng-bind="shell.labels.aboutText12"></h3>
-      <p data-ng-bind="shell.labels.aboutText13"></p>
+      <p data-ng-bind="shell.labels.aboutText13" data-ng-if="!shell.system.membership"></p>
+      <p data-ng-bind="shell.labels.aboutText13A" data-ng-if="shell.system.membership"></p>
       <h3 data-ng-bind="shell.labels.aboutText14"></h3>
       <p data-ng-bind="shell.labels.aboutText15"></p>
     </div>

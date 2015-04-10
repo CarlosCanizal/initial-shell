@@ -25,6 +25,11 @@
         p
         div.align-right
           a.pure-button(data-ng-click="account.showCancelForm()", data-ng-bind="shell.labels.cancelMembership")
+        div.align-center
+          h3(data-ng-if="shell.currentUser.nextBilling")
+            span(data-ng-bind="shell.labels.nextBilling")
+            |: 
+            span(data-ng-bind="shell.currentUser.nextBilling")
       div(data-ng-if="account.user.membership  == 'pro' && !shell.isMember()")
         p.error.uppercase(data-ng-bind="shell.labels.important")
         p.error(data-ng-bind="shell.labels.accountText7")
