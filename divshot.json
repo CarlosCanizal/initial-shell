@@ -1,4 +1,9 @@
 {
+  "headers": {
+    "/cors-stuff/**": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  },
   "name": "thecomicsociety",
   "root": "dist",
   "error_page": "error.html",
