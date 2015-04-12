@@ -3,4 +3,5 @@
 <div data-ng-include="'app/layout/search.template.html'" class="search"></div>
 <div shelf="shelf" publisher="{{shell.searchValue}}" store="Search" data-ng-if="shell.searching" class="shelf"></div>
 <div shelf="shelf" publisher="{{shell.currentPublisher}}" store="Product" data-ng-if="shell.shelfLoaded" class="shelf"></div>
+<div shelf="shelf" publisher="ya disponibles" store="Search" data-ng-if="shell.landing" class="shelf"></div>
 <div shelf="shelf" publisher="{{shell.initialSearch}}" store="Search" data-ng-if="shell.landing" class="shelf"></div>

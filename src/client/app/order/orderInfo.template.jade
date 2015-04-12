@@ -58,10 +58,10 @@
                     td.info-label(data-ng-bind="shell.labels.card")
                     td.info-value
                       |**** **** **** {{order.info.paymentMethod.last4}}
-                  tr
-                    td.info-label(data-ng-bind="shell.labels.type")
-                    td.info-value
-                      |{{order.info.available}}
+                  //- tr
+                  //-   td.info-label(data-ng-bind="shell.labels.type")
+                  //-   td.info-value
+                  //-     |{{order.info.available}}
 
 .filter-title
   span.publisher-name(data-ng-bind="shell.labels.items")
@@ -86,23 +86,23 @@
                 |$
               td.info-value.align-right
                 | {{item.price | currency:''}}
-                span(data-ng-bind="shell.labels.currencySymbol")
+                span(data-ng-bind="' '+shell.labels.currencySymbol")
             tr(data-ng-if="order.info.shippingMethod")
               td.info-value.uppercase
-                span(data-ng-bind="shell.labels.shipping")
-                |{{order.info.shippingMethod.name}}
+                span(data-ng-bind="shell.labels.shipping+' '")                
+                | {{order.info.shippingMethod.name}}
               td.info-value.align-center
                 | 1
               td.info-value.align-right
                 |$
               td.info-value.align-right
                 | {{order.info.shippingMethod.price | currency:''}}
-                span(data-ng-bind="shell.labels.currencySymbol")
+                span(data-ng-bind="' '+shell.labels.currencySymbol")
             tr
               td(colspan="3")
               td.info-important.align-right.border-top.padding-top
                 |{{order.info.amount | currency}}
-                span(data-ng-bind="shell.labels.currencySymbol")
+                span(data-ng-bind="' '+shell.labels.currencySymbol")
 
 div(data-ng-if="order.info.notAvailable && order.info.notAvailable.length > 0")
   .filter-title

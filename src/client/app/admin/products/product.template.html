@@ -24,10 +24,34 @@
               <td class="info-value">{{product.info.name}}</td>
             </tr>
             <tr>
+              <td class="info-label">Main Desc:</td>
+              <td class="info-value">{{product.info.mainDesc}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Issue No:</td>
+              <td class="info-value">{{product.info.issueNo}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Volume Tag:</td>
+              <td class="info-value">{{product.info.volumeTag}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Max issue:</td>
+              <td class="info-value">{{product.info.maxIssue}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">Diamond ID:</td>
+              <td class="info-value">{{product.info.diamondId}}</td>
+            </tr>
+            <tr>
+              <td class="info-label">stock ID:</td>
+              <td class="info-value">{{product.info.stockId}}</td>
+            </tr>
+            <tr>
               <td class="info-label">Disponibilidad:</td>
               <td class="info-value">{{product.info.available}}</td>
             </tr>
-            <tr>
+            <tr data-ng-if="product.info.stock">
               <td class="info-label">Cantidad:</td>
               <td class="info-value">{{product.info.stock}}</td>
             </tr>
@@ -40,8 +64,8 @@
               <td class="info-value">{{product.info.publisher}}</td>
             </tr>
             <tr>
-              <td class="info-label">Cover:</td>
-              <td class="info-value">{{product.info.cover.url}}</td>
+              <td class="info-label">Cover URL:</td>
+              <td class="info-value"><a data-ng-href="{{product.info.coverUrl}}" target="_blank">Ver Imagen</a></td>
             </tr>
             <tr>
               <td class="info-label">Status:</td>

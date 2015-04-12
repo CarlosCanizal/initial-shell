@@ -14,6 +14,7 @@ function productForm($state, productsApi, publisherApi){
       var shell =  scope.shell;
       var product = scope.product;
       scope.form = product.info;
+      scope.tags = product.info.tags.join(",");
       scope.publisher = {name:null};
       scope.available = {name:scope.form.available};
       scope.status = {name:scope.form.status};
@@ -38,6 +39,12 @@ function productForm($state, productsApi, publisherApi){
         shell.showLoading();
         product.info.stock = parseInt(product.info.stock);
         product.info.price = parseFloat(product.info.price);
+        var tags = scope.tags.split(',');
+        for(i = 0; i < tags.length; i++){
+          tags[i] = tags[i].trim();
+        }
+        product.info.tags = tags;
+
 
         productsApi.saveProduct(product.info).then(function(result){          
           if(product.info.objectId)

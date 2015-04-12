@@ -57,10 +57,6 @@
                     <td data-ng-bind="shell.labels.card" class="info-label"></td>
                     <td class="info-value">**** **** **** {{order.info.paymentMethod.last4}}</td>
                   </tr>
-                  <tr>
-                    <td data-ng-bind="shell.labels.type" class="info-label"></td>
-                    <td class="info-value">{{order.info.available}}</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -89,17 +85,17 @@
               <td class="info-value uppercase">{{item.name}}</td>
               <td class="info-value align-center">{{item.quantity}}</td>
               <td class="info-value align-right">$</td>
-              <td class="info-value align-right">{{item.price | currency:''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+              <td class="info-value align-right">{{item.price | currency:''}}<span data-ng-bind="' '+shell.labels.currencySymbol"></span></td>
             </tr>
             <tr data-ng-if="order.info.shippingMethod">
-              <td class="info-value uppercase"><span data-ng-bind="shell.labels.shipping"></span>{{order.info.shippingMethod.name}}</td>
+              <td class="info-value uppercase"><span data-ng-bind="shell.labels.shipping+' '">               </span>{{order.info.shippingMethod.name}}</td>
               <td class="info-value align-center">1</td>
               <td class="info-value align-right">$</td>
-              <td class="info-value align-right">{{order.info.shippingMethod.price | currency:''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+              <td class="info-value align-right">{{order.info.shippingMethod.price | currency:''}}<span data-ng-bind="' '+shell.labels.currencySymbol"></span></td>
             </tr>
             <tr>
               <td colspan="3"></td>
-              <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+              <td class="info-important align-right border-top padding-top">{{order.info.amount | currency}}<span data-ng-bind="' '+shell.labels.currencySymbol"></span></td>
             </tr>
           </tbody>
         </table>

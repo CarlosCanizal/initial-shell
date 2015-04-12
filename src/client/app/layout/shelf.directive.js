@@ -26,7 +26,7 @@ function shelf(storeApi){
         var publisher = newValue;
         scope.title = publisher;
         if(store == "Search"){
-          scope.title = publisher=="recomendados"? publisher : "resultados: "+publisher;
+          scope.title = (publisher=="recomendados" || publisher == "ya disponibles") ? publisher : "resultados: "+publisher;
           // scope.itemsList = shell.itemsList;
           shell.showLoading();
           storeApi.searchItems(publisher.toLowerCase()).then(function(result){
