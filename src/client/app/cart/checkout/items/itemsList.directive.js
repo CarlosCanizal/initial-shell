@@ -12,7 +12,6 @@ function itemsList(ShoppingCart){
     link:function(scope,element,attr){
       var shell = scope.shell;
       var checkout = scope.checkout;
-      console.log('checkout item list',checkout);
       
       scope.loading = true;
 

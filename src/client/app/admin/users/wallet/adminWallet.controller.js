@@ -22,7 +22,6 @@
     }).finally(shell.hideLoading);
 
     wallet.setBalance = function(amount){
-      console.log(amount);
       wallet.user.wallet += amount;
     }
   }

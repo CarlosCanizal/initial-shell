@@ -4,6 +4,8 @@
     <div class="search-list pure-u-1 pure-u-sm-1-3">
       <div data-ng-mouseenter="shell.hoverPremier()" class="search-param align-center pointer"><span data-ng-bind="shell.labels.premier" class="uppercase"></span><i class="fa fa-sort-down"></i></div>
       <div data-ng-show="shell.premierList" data-ng-mouseleave="shell.premierList= false" class="box-list">
+        <div data-ng-click="shell.loadShelf('ya disponibles')" class="list-element uppercase pointer">YA DISPONIBLES</div>
+        <div data-ng-click="shell.loadShelf('recomendados')" class="list-element uppercase pointer">RECOMENDADOS</div>
         <div data-ng-click="shell.loadShelf('dc comics')" class="list-element uppercase pointer">DC COMICS</div>
         <div data-ng-click="shell.loadShelf('marvel comics')" class="list-element pointer">MARVEL COMICS</div>
         <div data-ng-click="shell.loadShelf('dark horse comics')" class="list-element pointer">DARK HORSE</div>

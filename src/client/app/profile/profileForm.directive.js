@@ -21,7 +21,6 @@ function profileForm(userApi){
             // if(view)
               shell.updateCurrentUser();
           },function(error){
-            console.log(error);
             shell.setError(error);
           }).finally(shell.hideLoading);
         }

@@ -26,7 +26,6 @@ function publisherForm($state, publisherApi){
           else{
             $state.go('admin.publisher',{publisherId:result.objectId})
           }
-          console.log(result);
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

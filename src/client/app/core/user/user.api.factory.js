@@ -284,7 +284,6 @@
     }
 
     function addMoney(params){
-      console.log(params);
      return UserCloud.save({user:params,function:'addMoney'}).$promise; 
     }
 

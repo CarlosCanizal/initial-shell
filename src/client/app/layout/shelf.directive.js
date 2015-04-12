@@ -12,7 +12,8 @@ function shelf(storeApi){
     restrict: 'EA',
     scope:{
       publisher : '@',
-      store : '@'
+      store : '@',
+      stock: '@'
     },
     templateUrl: 'app/layout/shelf.template.html',
     controller:function($scope){
@@ -21,6 +22,7 @@ function shelf(storeApi){
     link:function(scope,element,attr){
       var shell = scope.shell;
       var store = attr.store;
+      var stock = attr.stock;
 
       scope.$watch('publisher', function(newValue, oldValue) {
         var publisher = newValue;
@@ -40,7 +42,15 @@ function shelf(storeApi){
         }else{
           scope.loading = true;
           scope.itemsList = [];
-          storeApi.getItems({publisher:publisher, status:'active', minStock: 1 , function: store}).then(function(series){
+          // var params = {status:'active', minStock: 1 , function: store}
+          var params = {status:'active' , function: store}
+          if(publisher)
+            params.publisher = publisher;
+          if(stock){
+            params.available = 'available';
+            params.minStock = 1;
+          }
+          storeApi.getItems(params).then(function(series){
             scope.itemsList = series.result;
           },function(error){
             shell.setError(error);

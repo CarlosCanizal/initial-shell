@@ -35,7 +35,6 @@ function upgradeMembership(userApi, conekta){
       if(shell.shoppingCart.paymentMethod){
         shell.showLoading();
         var planId = conekta.getPlan();
-        console.log(shell.shoppingCart.paymentMethod);
         conekta.updateMembership({name:name,id: planId},shell.shoppingCart.paymentMethod,shell.currentUser).then(function(result){          
           shell.updateCurrentUser().then(function(){
             checkout.upgrade = false;

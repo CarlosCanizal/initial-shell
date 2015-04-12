@@ -44,9 +44,6 @@ function serieForm($state, serieApi, publisherApi){
           else{
             $state.go('admin.serie',{serieId:result.objectId})
           }
-
-
-          console.log(result);
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

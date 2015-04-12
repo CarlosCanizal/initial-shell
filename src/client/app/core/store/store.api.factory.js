@@ -46,7 +46,7 @@
         if(tag != searchValue)
           tags.push(tag);
       });
-
+      
       var where = {"tags":{"$all":tags}};
       return Product.query({where:where, limit:500}).$promise;
     }

@@ -5,6 +5,10 @@
         span.uppercase(data-ng-bind="shell.labels.premier")
         i.fa.fa-sort-down
       .box-list(data-ng-show="shell.premierList", data-ng-mouseleave="shell.premierList= false")
+        .list-element.uppercase.pointer(data-ng-click="shell.loadShelf('ya disponibles')")
+          |YA DISPONIBLES
+        .list-element.uppercase.pointer(data-ng-click="shell.loadShelf('recomendados')")
+          |RECOMENDADOS
         .list-element.uppercase.pointer(data-ng-click="shell.loadShelf('dc comics')")
           |DC COMICS
         .list-element.pointer(data-ng-click="shell.loadShelf('marvel comics')")

@@ -24,7 +24,6 @@
 
     userApi.getUser(userId).then(function(user){
       account.user = user;
-      console.log(account.user);
       return userApi.getCards({conektaId:user.conektaId});
     }).then(function(cards){
       account.cards = cards;
@@ -97,7 +96,6 @@
     }
 
     account.updateUser = function(user){
-      console.log('updateUser',user);
       account.user = user;
     }
     

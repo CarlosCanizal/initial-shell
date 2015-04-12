@@ -17,14 +17,14 @@
             <div data-ng-if="item.info.coverArtist" class="item-attribute"><span data-ng-bind="shell.labels.coverArtist" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.coverArtist}}</span></div>
             <div data-ng-if="item.info.status=='active'">
               <div class="item-attribute"><span data-ng-bind="shell.labels.availability" class="text-secondary-black margin-right-1"></span><span class="uppercase">{{item.info.available}}</span></div>
-              <div data-ng-if="item.info.release" class="item-attribute"><span data-ng-bind="shell.labels.releaseDate" class="text-secondary-black margin-right-1"></span><span class="uppercase accent">{{item.info.release | date : longDate}}</span></div>
+              <div data-ng-if="item.info.release" class="item-attribute"><span data-ng-bind="shell.labels.releaseDate" class="text-secondary-black margin-right-1"></span><span class="uppercase accent">{{item.info.release}}</span></div>
               <div class="item-attribute"><a data-ng-click="item.minusOne()" class="pure-button button-small just-icon"><i class="fa fa-minus-circle"></i></a><span data-ng-class="{update:update}" class="margin-side-1">{{item.quantity}}</span><a data-ng-click="item.plusOne()" class="pure-button button-small just-icon"><i class="fa fa-plus-circle"></i></a></div>
               <div data-ng-if="item.info.available == 'available' &amp;&amp; item.quantity &gt;= item.info.stock" class="item-attribute error"><span data-ng-bind="shell.labels.only"></span> 
                 {{item.info.stock}} <span data-ng-bind="shell.labels.availables"></span>
               </div>
               <div class="item-attribute"><a data-ng-click="shell.addToCart(item.info, item.quantity)" class="pure-button pure-button-primary"><span data-ng-if="item.info.available =='serie'" data-ng-bind="shell.labels.subscribeMe"></span><span data-ng-if="item.info.available =='preorder'" data-ng-bind="shell.labels.preorderIt"></span><span data-ng-if="item.info.available =='available'" data-ng-bind="shell.labels.buyIt"></span></a><a data-ui-sref="home" data-ng-bind="shell.labels.back" class="pure-button margin-left-1"></a></div>
             </div>
-            <div data-ng-if="item.info.stock &lt; 1 || item.info.status!='active'">
+            <div data-ng-if="item.info.status !== 'active'">
               <div class="item-attribute"><span data-ng-bind="shell.labels.availability" class="text-secondary-black margin-right-1"></span><span data-ng-bind="shell.labels.noStock" class="uppercase error"></span></div>
             </div>
           </div>

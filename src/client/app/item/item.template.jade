@@ -41,7 +41,7 @@
               .item-attribute(data-ng-if="item.info.release")
                 span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.releaseDate")
                 span.uppercase.accent
-                  |{{item.info.release | date : longDate}}
+                  |{{item.info.release}}
               .item-attribute
                 a.pure-button.button-small.just-icon(data-ng-click="item.minusOne()")
                   i.fa.fa-minus-circle
@@ -60,7 +60,7 @@
                   span(data-ng-if="item.info.available =='preorder'",data-ng-bind="shell.labels.preorderIt")
                   span(data-ng-if="item.info.available =='available'",data-ng-bind="shell.labels.buyIt")
                 a.pure-button.margin-left-1(data-ui-sref="home", data-ng-bind="shell.labels.back")
-            div(data-ng-if="item.info.stock < 1 || item.info.status!='active'")
+            div(data-ng-if="item.info.status !== 'active'")
               .item-attribute
                 span.text-secondary-black.margin-right-1(data-ng-bind="shell.labels.availability")
                 span.uppercase.error(data-ng-bind="shell.labels.noStock")

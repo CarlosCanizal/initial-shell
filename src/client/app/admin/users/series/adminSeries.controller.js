@@ -12,9 +12,6 @@
     var series = this;
     var view =  $scope.view;
     series.user = view.user;
-
-    console.log(series.user);
-
     series.list = [];
     $scope.loading =  true;
 

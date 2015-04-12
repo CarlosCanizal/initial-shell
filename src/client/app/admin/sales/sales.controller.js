@@ -28,7 +28,6 @@
       shell.showLoading();
       salesApi.getSales({startDate:startDate, endDate:endDate}).then(function(result){
         sales.result = result.result;
-        console.log(result);
       },function(error){
         shell.setError(error);
       }).finally(shell.hideLoading)

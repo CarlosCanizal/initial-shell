@@ -12,6 +12,7 @@
     var store = this;
     if($stateParams.section){
       shell.initialSearch =  $stateParams.section;
+      shell.searchLoaded = true;
     }
   }
 })();

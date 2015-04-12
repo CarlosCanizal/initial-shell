@@ -37,7 +37,6 @@ function loginForms(userApi, storage){
           userApi.register(scope.newUser).then(function(user){
             scope.setUser(user);
           },function(error){
-            console.log(error);
             if(error.data.error){
               scope.response.register = error.data.error;
               scope.response.code = error.data.code;

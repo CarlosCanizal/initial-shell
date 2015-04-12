@@ -33,13 +33,10 @@
 
     assistent.saveReason = function(){
       shell.showLoading();
-      console.log(assistent.reason);
       var params = {assistent: shell.currentUser.username, reason: assistent.reason};
       statsApi.save(params).then(function(stat){
-        console.log(stat);
         assistent.cancel();
       },function(error){
-        console.log(error);
         shell.setError(error);
       }).finally(shell.hideLoading);
     }

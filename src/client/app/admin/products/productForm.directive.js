@@ -52,7 +52,6 @@ function productForm($state, productsApi, publisherApi){
           else{
             $state.go('admin.product',{productId:result.objectId})
           }
-          console.log(result);
         },function(error){
           shell.setError(error);
         }).finally(shell.hideLoading);

@@ -24,6 +24,7 @@
     shell.loaded = false;
     shell.premierList = false;
     shell.publishersList = false;
+    shell.searchLoaded = false;
     shell.initialSearch = 'recomendados';
     shell.system = {};
     shell.system.membership = false;
@@ -41,10 +42,11 @@
     }).finally(function(){
       shell.loading = false;
     });
-    
-    if($stateParams.section && $stateParams.section != null){
-      shell.initialSearch = $stateParams.section;
-    }
+
+    // if($stateParams.section && $stateParams.section != null){
+    //   alert($stateParams.section);
+    //   shell.initialSearch = $stateParams.section;
+    // }
 
     shell.title = 'Resultados';
 
@@ -92,15 +94,22 @@
     }
 
     shell.loadShelf = function(publisher){
-      shell.landing = false;
-      shell.searching = false;
       shell.premierList = false;
       shell.publishersList = false;
-      shell.itemsList = [];
-      shell.searchValue = null;
-      shell.searchBox = null;
-      shell.currentPublisher= publisher;
-      shell.shelfLoaded = true;
+      if(publisher == 'ya disponibles' || publisher=='recomendados'){
+        shell.searchLoaded = false;
+        shell.initialSearch = 'recomendados';
+        shell.landing = true;
+        shell.shelfLoaded = false;
+      }else{
+        shell.landing = false;
+        shell.searching = false;
+        shell.itemsList = [];
+        shell.searchValue = null;
+        shell.searchBox = null;
+        shell.currentPublisher= publisher;
+        shell.shelfLoaded = true;
+      }
     }
 
 
@@ -190,7 +199,6 @@
     shell.setError = function(error){
       shell.errorResponse = {};
       shell.errorBar = true;
-      console.log(error);
       if(error.status && error.status === 0){
         shell.errorResponse.message = "No hay conexión a Internet.";
       }else{

@@ -9,16 +9,6 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
   // $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('home', {
-      url:'/',
-      templateUrl: 'app/layout/shell.html',
-      // controller: 'Store',
-      // controllerAs: 'store',
-      data:{
-        menu: 'home',
-        submenu: 'store'
-      }
-    })
     .state('item', {
       url:'/item/:objectId',
       templateUrl: 'app/item/item.template.html',
@@ -111,6 +101,16 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       data:{
         access: true,
         dashboard: true
+      }
+    })
+    .state('home', {
+      url:'/:section',
+      templateUrl: 'app/layout/shell.html',
+      controller: 'Store',
+      controllerAs: 'store',
+      data:{
+        menu: 'home',
+        submenu: 'store'
       }
     })
     .state('dashboard.payment',{

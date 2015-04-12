@@ -22,7 +22,6 @@ function adminCoupon(couponApi, userApi){
           couponApi.redeemCode(scope.coupon.code, userId).then(function(result){
             var coupon = result.result;
             scope.success = "Codigo valido";
-            console.log(coupon);
             wallet.setBalance(coupon.amount);
           },function(error){
             shell.setError(error);

@@ -16,7 +16,6 @@
     shell.showLoading();
 
     publisherApi.getPublishers().then(function(result){
-      console.log(result);
       publishers.list = result.results;
     },function(error){
       shell.setError(error);
