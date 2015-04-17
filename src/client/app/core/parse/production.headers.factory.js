@@ -22,7 +22,7 @@
         'X-Parse-REST-API-Key': 'T5Cp4DDp1Rl5vAa4iRlotNrvfW2fxE0esikIgfBr'
       },
       conektaKeys:{
-        'conekta': 'key_RqR27tszgbcFyAV3sBy53sA',
+        'public': 'key_RqR27tszgbcFyAV3sBy53sA',
         'planId': 'plan_CczxCcuzBBUew3Vm'
       }
     };
