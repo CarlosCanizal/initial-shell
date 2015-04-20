@@ -25,7 +25,7 @@
       var where = {"user":{"__type":"Pointer","className":"_User","objectId":user.objectId}};
       return Order.query({
               where : where,
-              order : 'createdAt'
+              order : '-createdAt'
              }).$promise;
       
     }

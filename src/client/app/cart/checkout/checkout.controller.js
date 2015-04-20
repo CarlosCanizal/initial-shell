@@ -67,13 +67,16 @@
     }
 
     checkout.toPaymentMethod = function(){
+      if(shell.shoppingCart.shippingMethod.label == 'basic' && checkout.addresses.length < 1){
+        console.log('select address');
+      }else{
+        shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
+        checkout.showPayment = true;
+        if(!checkout.loadPayment)
+          checkout.loadPayment = true;
 
-      shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
-      checkout.showPayment = true;
-      if(!checkout.loadPayment)
-        checkout.loadPayment = true;
-
-      checkout.showPlaceOrder = false;
+        checkout.showPlaceOrder = false;
+      }
     }
 
     checkout.toConfirmOrder = function(){
@@ -120,6 +123,13 @@
     // }
 
     checkout.updateShipping = function(){
+      if(!shell.shoppingCart.shippingMethod.shipping){
+        shell.shoppingCart.shippingAddress = null;
+      }else{
+        if(checkout.addresses.length > 0){
+          shell.shoppingCart.shippingAddress = checkout.addresses[0];
+        }
+      }
       shell.shoppingCart = ShoppingCart.setCart(shell.shoppingCart);
     }
 

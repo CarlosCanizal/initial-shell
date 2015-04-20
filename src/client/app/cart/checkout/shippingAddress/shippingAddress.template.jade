@@ -20,7 +20,7 @@
         .shelf-content(data-ng-hide="loading")
           .pure-g
             .pure-u-1.pure-u-md-1-3.border-right
-              .information-box
+              .information-box(data-ng-show="shell.shoppingCart.shippingMethod.shipping")
                 .shelf-message(ng-if="checkout.addresses.length < 1")
                   .subtitle(data-ng-bind="shell.labels.noAddresses")
                 .description(data-ng-show="checkout.addresses.length > 0")
@@ -29,18 +29,22 @@
                   | {{shell.shoppingCart.shippingAddress.district}}, {{shell.shoppingCart.shippingAddress.municipality}} 
                   br
                   | {{shell.shoppingCart.shippingAddress.country}}, {{shell.shoppingCart.shippingAddress.state}}, {{shell.shoppingCart.shippingAddress.zip}} 
+              .information-box.padding-side-1(data-ng-show="shell.shoppingCart.shippingMethod.label == 'pickUp'")
+                .address-line.accent(data-ng-bind="shell.labels.localPickUp")
+                .address-line(data-ng-bind="shell.labels.pickUpText")
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.padding-side-1
-                div(data-ng-show="checkout.addresses.length > 0")
+                //- div(data-ng-show="checkout.addresses.length > 0")
+                div
                   .address-line(data-ng-bind="shell.labels.selectShipping")
                   .address-line
                     select(data-ng-model="shell.shoppingCart.shippingMethod", data-ng-options="item.name for item in checkout.shippingMethods track by item.objectId", data-ng-change="checkout.updateShipping()")                      
               .information-box.padding-side-1(data-ng-show="shell.shoppingCart.shippingMethod.label !== 'group'")
-                div(data-ng-show="checkout.addresses.length > 0")
+                div(data-ng-show="checkout.addresses.length > 0 && shell.shoppingCart.shippingMethod.label == 'basic'")
                   .address-line(data-ng-bind="shell.labels.changeAddress")
                   .address-line
                     select(data-ng-model="shell.shoppingCart.shippingAddress", data-ng-options="item.street for item in checkout.addresses track by item.objectId")
-                .address-line
+                .address-line(data-ng-if="shell.shoppingCart.shippingMethod.label == 'basic'")
                   a.pure-button.button-xsmall(data-ng-click="checkout.addressFormView=true")
                     i.fa.fa-plus
                     span(data-ng-bind="shell.labels.addAddress")
@@ -51,7 +55,7 @@
                 .shipping-method
                   | {{shell.shoppingCart.shippingMethod.name}} - {{shell.shoppingCart.shippingMethod.price | currency}}
                 .address-line
-                  a.pure-button.button-success(data-ng-click="checkout.toPaymentMethod()", data-ng-class="{'pure-button-disabled': !shell.shoppingCart.shippingAddress}")
+                  a.pure-button.button-success(data-ng-click="checkout.toPaymentMethod()", data-ng-class="{'pure-button-disabled': (shell.shoppingCart.shippingMethod.label == 'basic' && checkout.addresses.length < 1)}")
                     i.fa.fa-check
                     span(data-ng-bind="shell.labels.continue")
                 .address-line

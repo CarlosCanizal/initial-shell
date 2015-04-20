@@ -241,5 +241,13 @@
     "200":"Cupón valido",
     "400":"Cupón invalido",
     "141":"Cupón invalido"
-  }
+  },
+  "excludeTags": ["the","comics","comic","and","my","you","of","as","not","so","that","or"],
+  "localPickUp":"Solo México, Distrito Federal.",
+  "pickUpText": "Recoleccion personal en las oficinas de la tienda.",
+  "payments":"Pagos",
+  "payment": "Pago",
+  "toPay":"Por pagar",
+  "personaPayment":"Deposito Personal",
+  "trackingNumber":"Rastreo"
 }

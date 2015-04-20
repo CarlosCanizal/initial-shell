@@ -14,7 +14,8 @@ function productForm($state, productsApi, publisherApi){
       var shell =  scope.shell;
       var product = scope.product;
       scope.form = product.info;
-      scope.tags = product.info.tags.join(",");
+      if(product.info && product.info.tags)
+        scope.tags = product.info.tags.join(",");
       scope.publisher = {name:null};
       scope.available = {name:scope.form.available};
       scope.status = {name:scope.form.status};
@@ -35,10 +36,49 @@ function productForm($state, productsApi, publisherApi){
         shell.setError(error);
       });
 
+      scope.defaultTags = function(){
+        var tags = [];
+        if(product.info.diamondId)
+          tags.push(product.info.diamondId.toLowerCase());
+        if(product.info.name)
+          tags.push(product.info.name.toLowerCase());
+        if(product.info.mainDesc){
+          var mainDesc = product.info.mainDesc.toLowerCase();
+          tags = splitInTags(tags,mainDesc," ")
+        }
+        if(scope.publisher && scope.publisher.name){
+          var publisher = scope.publisher.name.toLowerCase();
+          tags = splitInTags(tags,publisher," ")
+        }
+
+        scope.tags = tags.join(',');
+
+      }
+
+      function splitInTags(array,tag,separator){
+        array.push(tag);
+        var split = tag.split(separator);
+        angular.forEach(split,function(tag){
+          if(shouldAdd(tag))
+            array.push(tag);
+        });
+        return array;
+      }
+
+      function shouldAdd(value){
+        var excludeTags = shell.labels.excludeTags;
+        var index = excludeTags.indexOf(value) > -1 ? false :true;
+        return index;
+      }
+
       scope.saveProduct = function(){
         shell.showLoading();
-        product.info.stock = parseInt(product.info.stock);
-        product.info.price = parseFloat(product.info.price);
+        if(product.info.stock)
+          product.info.stock = parseInt(product.info.stock);
+        if(product.info.price)
+          product.info.price = parseFloat(product.info.price);
+        if(product.info.diamondId)
+          product.info.diamondId  = product.info.diamondId.toUpperCase();
         var tags = scope.tags.split(',');
         for(i = 0; i < tags.length; i++){
           tags[i] = tags[i].trim();

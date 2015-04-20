@@ -52,7 +52,7 @@
     }
 
     function getAvailables(){
-      return [{name:'preorder', label:'Preorden'},{name:'available', label:'Disponible'}];
+      return [{name:'available', label:'Disponible'},{name:'preorder', label:'Preorden'}];
     }
 
     function getStatusList(){

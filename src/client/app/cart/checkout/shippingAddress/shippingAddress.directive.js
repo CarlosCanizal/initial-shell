@@ -24,10 +24,13 @@ function shippingAddress(userApi, shippingApi){
         checkout.shippingMethods = result.results;
         return userApi.getPlacedOrders();
       }).then(function(result){
-        var orders = result.results;
+        var orders = result.results; 
+        console.log(orders.length);
         if(orders.length < 1){
-          if(checkout.shippingMethods[0].label == 'group')
-          checkout.shippingMethods.splice(0,1);
+          angular.forEach(checkout.shippingMethods,function(method,index){
+            if(method.label == 'group')
+              checkout.shippingMethods.splice(index,1);
+          });
         }
 
         if(checkout.shippingMethods[0]){

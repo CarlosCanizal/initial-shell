@@ -47,10 +47,25 @@
       getAssistentUsers: getAssistentUsers,
       recoveryPassword: recoveryPassword,
       getUserByKey: getUserByKey,
-      getPlacedOrders: getPlacedOrders
+      getPlacedOrders: getPlacedOrders,
+      getAltPayment : getAltPayment
     };
 
     return factory;
+
+    function getAltPayment(cards){
+      // var methods = altPaymentMethods();
+      // if(cards && cards.length > 0)
+        // methods = cards.concat(methods);
+      // return methods;
+      return cards;
+    }
+
+    function altPaymentMethods(){
+      var oxxo = {"type":"oxxo","card":{"last4":"Deposito en OXXO", "id":'oxxo'}};
+      var altMethods = [oxxo];
+      return altMethods;
+    }
 
     function login(params) {
       var deferred = $q.defer();

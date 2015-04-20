@@ -32,18 +32,6 @@
           </div>
         </div>
         <div class="form-container">
-          <label for="volumeTag" ng-show="productForm.volumeTag.$valid || productForm.volumeTag.$pristine">Volume Tag:</label>
-          <div class="form-icon">
-            <input id="volumeTag" name="volumeTag" data-ng-model="form.volumeTag" class="pure-input-1"/><i ng-show="productForm.volumeTag.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.volumeTag.$valid &amp;&amp; productForm.volumeTag.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.volumeTag.$invalid &amp;&amp; productForm.volumeTag.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
-        </div>
-        <div class="form-container">
-          <label for="maxIssue" ng-show="productForm.maxIssue.$valid || productForm.maxIssue.$pristine">Max Issue:</label>
-          <div class="form-icon">
-            <input id="maxIssue" name="maxIssue" data-ng-model="form.maxIssue" class="pure-input-1"/><i ng-show="productForm.maxIssue.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.maxIssue.$valid &amp;&amp; productForm.maxIssue.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.maxIssue.$invalid &amp;&amp; productForm.maxIssue.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
-          </div>
-        </div>
-        <div class="form-container">
           <label for="diamondId" ng-show="productForm.diamondId.$valid || productForm.diamondId.$pristine">DiamondId:</label>
           <div class="form-icon">
             <input id="diamondId" name="diamondId" data-ng-model="form.diamondId" class="pure-input-1"/><i ng-show="productForm.diamondId.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.diamondId.$valid &amp;&amp; productForm.diamondId.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.diamondId.$invalid &amp;&amp; productForm.diamondId.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
@@ -92,8 +80,20 @@
           <input type="hidden" data-ng-model="form.status"/>
         </div>
         <div class="form-container">
-          <label for="tags">Tags:</label>
+          <label for="tags">Tags:</label><a data-ng-click="defaultTags()" class="pure-button">Default Tags</a>
           <textarea data-ng-model="tags">{{tags}}</textarea>
+        </div>
+        <div class="form-container">
+          <label for="volumeTag" ng-show="productForm.volumeTag.$valid || productForm.volumeTag.$pristine">Volume Tag:</label>
+          <div class="form-icon">
+            <input id="volumeTag" name="volumeTag" data-ng-model="form.volumeTag" class="pure-input-1"/><i ng-show="productForm.volumeTag.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.volumeTag.$valid &amp;&amp; productForm.volumeTag.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.volumeTag.$invalid &amp;&amp; productForm.volumeTag.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
+        </div>
+        <div class="form-container">
+          <label for="maxIssue" ng-show="productForm.maxIssue.$valid || productForm.maxIssue.$pristine">Max Issue:</label>
+          <div class="form-icon">
+            <input id="maxIssue" name="maxIssue" data-ng-model="form.maxIssue" class="pure-input-1"/><i ng-show="productForm.maxIssue.$pristine" class="fa fa-dot-circle-o medium-icon"></i><i ng-show="productForm.maxIssue.$valid &amp;&amp; productForm.maxIssue.$dirty" class="fa fa-check-circle-o success medium-icon"></i><i ng-show="productForm.maxIssue.$invalid &amp;&amp; productForm.maxIssue.$dirty" class="fa fa-times-circle-o error medium-icon"></i>
+          </div>
         </div>
       </ng-form>
     </div>

@@ -25,7 +25,7 @@
 
     function getList(){
       return Shipping.query({
-        order : 'price'
+        order : 'priority'
       }).$promise;
     }
 

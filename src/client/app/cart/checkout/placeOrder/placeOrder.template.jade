@@ -10,7 +10,7 @@
         .shelf-content(data-ng-hide="loading")
           .pure-g
             .pure-u-1.pure-u-md-1-3.border-right
-              .information-box.padding-right-1
+              .information-box.padding-right-1(data-ng-if="shell.shoppingCart.shippingMethod.label == 'basic'")
                 .information-title(data-ng-bind="shell.labels.shipping")
                 .description.margin-bottom
                   | {{shell.shoppingCart.shippingAddress.street}} {{shell.shoppingCart.shippingAddress.number}} {{shell.shoppingCart.shippingAddress.apt}}
@@ -18,6 +18,12 @@
                   | {{shell.shoppingCart.shippingAddress.district}}, {{shell.shoppingCart.shippingAddress.municipality}} 
                   br
                   | {{shell.shoppingCart.shippingAddress.country}}, {{shell.shoppingCart.shippingAddress.state}}, {{shell.shoppingCart.shippingAddress.zip}} 
+                .address-line
+                  a.pure-button.button-xsmall(data-ng-click="checkout.toAddress()",data-ng-bind="shell.labels.modify")
+              .information-box.padding-right-1(data-ng-if="shell.shoppingCart.shippingMethod.label == 'pickUp'")
+                .information-title(data-ng-bind="shell.labels.shipping")
+                .address-line.accent(data-ng-bind="shell.labels.localPickUp")
+                .address-line(data-ng-bind="shell.labels.pickUpText")
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.toAddress()",data-ng-bind="shell.labels.modify")
             .pure-u-1.pure-u-md-1-3.border-right

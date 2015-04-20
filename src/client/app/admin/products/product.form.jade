@@ -43,22 +43,6 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.issueNo.$valid && productForm.issueNo.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.issueNo.$invalid && productForm.issueNo.$dirty")
         .form-container
-          label(for="volumeTag", ng-show="productForm.volumeTag.$valid || productForm.volumeTag.$pristine")
-            | Volume Tag:
-          .form-icon
-            input.pure-input-1#volumeTag(name="volumeTag", data-ng-model="form.volumeTag")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.volumeTag.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.volumeTag.$valid && productForm.volumeTag.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.volumeTag.$invalid && productForm.volumeTag.$dirty")
-        .form-container
-          label(for="maxIssue", ng-show="productForm.maxIssue.$valid || productForm.maxIssue.$pristine")
-            | Max Issue:
-          .form-icon
-            input.pure-input-1#maxIssue(name="maxIssue", data-ng-model="form.maxIssue")
-            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.maxIssue.$pristine")
-            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.maxIssue.$valid && productForm.maxIssue.$dirty")
-            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.maxIssue.$invalid && productForm.maxIssue.$dirty")
-        .form-container
           label(for="diamondId", ng-show="productForm.diamondId.$valid || productForm.diamondId.$pristine")
             | DiamondId:
           .form-icon
@@ -74,7 +58,6 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
             i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.stockId.$pristine")
             i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.stockId.$valid && productForm.stockId.$dirty")
             i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.stockId.$invalid && productForm.stockId.$dirty")
-
         .form-container
           label(for="available")
             | Diponibilidad:
@@ -123,8 +106,26 @@ form.pure-form.pure-form-stacked(name="productForm", novalidate="")
         .form-container
           label(for="tags")
             | Tags:
+          a.pure-button(data-ng-click="defaultTags()")
+            |Default Tags
           textarea(data-ng-model="tags")
             |{{tags}}
+        .form-container
+          label(for="volumeTag", ng-show="productForm.volumeTag.$valid || productForm.volumeTag.$pristine")
+            | Volume Tag:
+          .form-icon
+            input.pure-input-1#volumeTag(name="volumeTag", data-ng-model="form.volumeTag")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.volumeTag.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.volumeTag.$valid && productForm.volumeTag.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.volumeTag.$invalid && productForm.volumeTag.$dirty")
+        .form-container
+          label(for="maxIssue", ng-show="productForm.maxIssue.$valid || productForm.maxIssue.$pristine")
+            | Max Issue:
+          .form-icon
+            input.pure-input-1#maxIssue(name="maxIssue", data-ng-model="form.maxIssue")
+            i.fa.fa-dot-circle-o.medium-icon(ng-show="productForm.maxIssue.$pristine")
+            i.fa.fa-check-circle-o.success.medium-icon(ng-show="productForm.maxIssue.$valid && productForm.maxIssue.$dirty")
+            i.fa.fa-times-circle-o.error.medium-icon(ng-show="productForm.maxIssue.$invalid && productForm.maxIssue.$dirty")
 
   .align-center.margin-bottom
     a.pure-button.button-small(data-ng-if="productForm.$invalid")

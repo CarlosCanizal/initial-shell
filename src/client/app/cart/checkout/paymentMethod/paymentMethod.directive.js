@@ -17,12 +17,9 @@ function paymentMethod(userApi){
       shell.shoppingCart.paymentMethod = false;
 
       userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
-        // if(checkout && checkout.cards){
-          // checkout.cards = cards;
-          // shell.shoppingCart.paymentMethod = checkout.cards[0];
-        // }
         if(checkout && checkout.paymentMethods){
-          checkout.setMethods(cards);
+          var methods = userApi.getAltPayment(cards);
+          checkout.setMethods(methods);
           shell.shoppingCart.paymentMethod = checkout.paymentMethods[0];
         } 
       },function(error){
