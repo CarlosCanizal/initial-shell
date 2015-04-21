@@ -25,7 +25,6 @@ function shippingAddress(userApi, shippingApi){
         return userApi.getPlacedOrders();
       }).then(function(result){
         var orders = result.results; 
-        console.log(orders.length);
         if(orders.length < 1){
           angular.forEach(checkout.shippingMethods,function(method,index){
             if(method.label == 'group')

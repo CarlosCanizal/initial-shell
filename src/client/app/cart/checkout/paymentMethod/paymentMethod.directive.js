@@ -16,10 +16,13 @@ function paymentMethod(userApi){
       scope.loading = true;
       shell.shoppingCart.paymentMethod = false;
 
+      checkout.paymentOptions = [{name:'card',id:'card'},{name:'oxxo',id:'oxxo'}];
+      checkout.paymentOption = checkout.paymentOptions[0];
+
       userApi.getCards({conektaId:shell.currentUser.conektaId}).then(function(cards){
         if(checkout && checkout.paymentMethods){
-          var methods = userApi.getAltPayment(cards);
-          checkout.setMethods(methods);
+          // var methods = userApi.getAltPayment(cards);
+          checkout.setMethods(cards);
           shell.shoppingCart.paymentMethod = checkout.paymentMethods[0];
         } 
       },function(error){

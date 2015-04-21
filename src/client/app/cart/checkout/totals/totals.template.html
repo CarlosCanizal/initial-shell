@@ -3,12 +3,18 @@
   <tr>
     <td data-ng-bind="shell.labels.orderTotal+': '" class="table-label"></td>
     <td>$</td>
-    <td>{{shell.shoppingCart.cartTotal | currency: ''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+    <td>
+      {{shell.shoppingCart.cartTotal | currency: ''}}
+       <span data-ng-bind="shell.labels.currencySymbol"></span>
+    </td>
   </tr>
   <tr data-ng-show="shell.shoppingCart.shippingMethod &amp;&amp; shell.shoppingCart.shippingAddress">
     <td data-ng-bind="shell.labels.shipping+': '" class="table-label"></td>
     <td>$</td>
-    <td>{{shell.shoppingCart.shippingMethod.price | currency: ''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+    <td>
+      {{shell.shoppingCart.shippingMethod.price | currency: ''}}
+       <span data-ng-bind="shell.labels.currencySymbol"></span>
+    </td>
   </tr>
   <tr data-ng-hide="shell.shoppingCart.shippingMethod &amp;&amp; shell.shoppingCart.shippingAddress">
     <td data-ng-bind="shell.labels.shipping+': '" class="table-label"></td>
@@ -18,16 +24,25 @@
   <tr class="action">
     <td data-ng-bind="shell.labels.balance" class="table-label"></td>
     <td>$</td>
-    <td>{{shell.shoppingCart.wallet | currency: ''}} MXN<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+    <td>
+      {{shell.shoppingCart.wallet | currency: ''}}
+       <span data-ng-bind="shell.labels.currencySymbol"></span>
+    </td>
   </tr>
   <tr class="action">
     <td data-ng-bind="shell.labels.discount" class="table-label"></td>
     <td>$</td>
-    <td>{{shell.shoppingCart.discount | currency: ''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+    <td>
+      {{shell.shoppingCart.discount | currency: ''}}
+       <span data-ng-bind="shell.labels.currencySymbol"></span>
+    </td>
   </tr>
   <tr>
     <td data-ng-bind="shell.labels.totalToPay+': '" class="table-label"></td>
     <td>$</td>
-    <td>{{shell.shoppingCart.total| currency: ''}}<span data-ng-bind="shell.labels.currencySymbol"></span></td>
+    <td>
+      {{shell.shoppingCart.total| currency: ''}}
+       <span data-ng-bind="shell.labels.currencySymbol"></span>
+    </td>
   </tr>
 </table>

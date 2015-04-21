@@ -78,6 +78,8 @@
   "addCard":"Agregar Tarjeta",
   "noPaymentMethods":"No existen métodos de pago registrados.",
   "changePaymentMethod":"Cambiar Método de Pago",
+  "selectPaymentMethod":"Seleccionar Método de Pago",
+  "selectCard":"Seleccionar Tarjeta",
   "noUpdateMembership":"No Actualizar",
   "updateCard":"Actualiza Tarjeta",
   "mobile": "Movil",
@@ -249,5 +251,11 @@
   "payment": "Pago",
   "toPay":"Por pagar",
   "personaPayment":"Deposito Personal",
-  "trackingNumber":"Rastreo"
+  "trackingNumber":"Rastreo",
+  "paymentOptions":{
+    "card":"Tajeta de Credito o Debito",
+    "oxxo":"Deposito en OXXO"
+  },
+  "oxxoInfo":"Al final se te proporcionara un código para que hagas el pago en cualquier OXXO.",
+  "oxxoPayment":"Deposito en tiendas OXXO."
 }

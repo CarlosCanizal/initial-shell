@@ -47,25 +47,24 @@
       getAssistentUsers: getAssistentUsers,
       recoveryPassword: recoveryPassword,
       getUserByKey: getUserByKey,
-      getPlacedOrders: getPlacedOrders,
-      getAltPayment : getAltPayment
+      getPlacedOrders: getPlacedOrders
     };
 
     return factory;
 
-    function getAltPayment(cards){
-      // var methods = altPaymentMethods();
-      // if(cards && cards.length > 0)
-        // methods = cards.concat(methods);
-      // return methods;
-      return cards;
-    }
+    // function getAltPayment(cards){
+    //   var methods = altPaymentMethods();
+    //   if(cards && cards.length > 0)
+    //     methods = cards.concat(methods);
+    //   return methods;
+    //   // return cards;
+    // }
 
-    function altPaymentMethods(){
-      var oxxo = {"type":"oxxo","card":{"last4":"Deposito en OXXO", "id":'oxxo'}};
-      var altMethods = [oxxo];
-      return altMethods;
-    }
+    // function altPaymentMethods(){
+    //   var oxxo = {"type":"oxxo","card":{"last4":"Deposito en OXXO", "id":'oxxo'}};
+    //   var altMethods = [oxxo];
+    //   return altMethods;
+    // }
 
     function login(params) {
       var deferred = $q.defer();
@@ -152,7 +151,7 @@
       Card.get(params).$promise.then(function(result){
         var cards = result.result;
         var result = underscore.map(cards,function(item){
-          return {type:"card", card:item};
+          return {type:"card", card:item, label:"**** **** **** "+item.last4};
         });
         deferred.resolve(result);
       },function(error){
@@ -310,13 +309,6 @@
       });
       
     }
-
-    // function setSessionToken(){
-    //   var user = currentUser();
-    //   var userHeaders = parseheaders.storeKeys;
-    //   userHeaders['X-Parse-Session-Token'] = user.sessionToken;
-    //   return parse.newUserResource(parseheaders.storeKeys);
-    // }
 
     function sendLink(email){
       return UserCloud.save({email:email,function:'sendLink'}).$promise;

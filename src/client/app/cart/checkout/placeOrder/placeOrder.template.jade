@@ -29,13 +29,17 @@
             .pure-u-1.pure-u-md-1-3.border-right
               .information-box.padding-side-1
                 .information-title(data-ng-bind="shell.labels.paymentMethod+':'")
-                .address-line
-                  | {{shell.shoppingCart.paymentMethod.card.name}}
-                .address-line
-                  i.fa.fa-cc-visa.visa(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'")
-                  i.fa.fa-cc-mastercard.mastercard(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'")
-                  i.fa.fa-cc-amex.amex(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'")
-                  | **** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}
+                div(data-ng-if="checkout.paymentOption.name == 'card'")
+                  .address-line
+                    | {{shell.shoppingCart.paymentMethod.card.name}}
+                  .address-line
+                    i.fa.fa-cc-visa.visa(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'")
+                    i.fa.fa-cc-mastercard.mastercard(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'")
+                    i.fa.fa-cc-amex.amex(ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'")
+                    | **** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}
+                div(data-ng-if="checkout.paymentOption.name != 'card'")
+                  .address-line
+                    | {{shell.shoppingCart.paymentMethod.label}}
                 .address-line
                   a.pure-button.button-xsmall(data-ng-click="checkout.toPaymentMethod()",data-ng-bind="shell.labels.modify")
             .pure-u-1.pure-u-sm-1-3

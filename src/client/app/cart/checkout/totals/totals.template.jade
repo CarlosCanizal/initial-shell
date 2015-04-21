@@ -5,6 +5,7 @@ table.total-table
       |$
     td
       |{{shell.shoppingCart.cartTotal | currency: ''}}
+      | 
       span(data-ng-bind="shell.labels.currencySymbol")
   tr(data-ng-show="shell.shoppingCart.shippingMethod && shell.shoppingCart.shippingAddress")
     td.table-label(data-ng-bind="shell.labels.shipping+': '")
@@ -12,6 +13,7 @@ table.total-table
       |$
     td
       |{{shell.shoppingCart.shippingMethod.price | currency: ''}}
+      | 
       span(data-ng-bind="shell.labels.currencySymbol")
   tr(data-ng-hide="shell.shoppingCart.shippingMethod && shell.shoppingCart.shippingAddress")
     td.table-label(data-ng-bind="shell.labels.shipping+': '")
@@ -25,7 +27,8 @@ table.total-table
     td
       |$
     td
-      |{{shell.shoppingCart.wallet | currency: ''}} MXN
+      |{{shell.shoppingCart.wallet | currency: ''}}
+      | 
       span(data-ng-bind="shell.labels.currencySymbol")
   tr.action
     td.table-label(data-ng-bind="shell.labels.discount")
@@ -33,6 +36,7 @@ table.total-table
       |$
     td
       |{{shell.shoppingCart.discount | currency: ''}}
+      | 
       span(data-ng-bind="shell.labels.currencySymbol")
   tr
     td.table-label(data-ng-bind="shell.labels.totalToPay+': '")
@@ -40,4 +44,5 @@ table.total-table
       |$
     td
       |{{shell.shoppingCart.total| currency: ''}}
+      | 
       span(data-ng-bind="shell.labels.currencySymbol")

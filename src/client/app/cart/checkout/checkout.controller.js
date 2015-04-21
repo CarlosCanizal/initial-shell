@@ -79,6 +79,17 @@
       }
     }
 
+    checkout.updatePaymentOption = function(){
+      var option = checkout.paymentOption.name;
+      var paymentMethod = false;
+      if(option == 'oxxo'){
+        paymentMethod = {type:'oxxo', label:shell.labels.oxxoPayment}
+      }else if(option == 'card' && checkout.paymentMethods.length >0){
+        paymentMethod = checkout.paymentMethods[0];
+      }
+      shell.shoppingCart.paymentMethod = paymentMethod; 
+    }
+
     checkout.toConfirmOrder = function(){
       ShoppingCart.setCart(shell.shoppingCart);
       checkout.showPlaceOrder = true;
@@ -117,10 +128,6 @@
     checkout.setMethods = function(cards){
       checkout.paymentMethods = cards;
     }
-
-    // checkout.setShippingMethods = function(methods){
-    //   checkout.shippingMethods = methods;
-    // }
 
     checkout.updateShipping = function(){
       if(!shell.shoppingCart.shippingMethod.shipping){

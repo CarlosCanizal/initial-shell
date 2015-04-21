@@ -24,8 +24,13 @@
             <div class="pure-u-1 pure-u-md-1-3 border-right">
               <div class="information-box padding-side-1">
                 <div data-ng-bind="shell.labels.paymentMethod+':'" class="information-title"></div>
-                <div class="address-line">{{shell.shoppingCart.paymentMethod.card.name}}</div>
-                <div class="address-line"><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa visa"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard mastercard"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex amex"></i>**** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}</div>
+                <div data-ng-if="checkout.paymentOption.name == 'card'">
+                  <div class="address-line">{{shell.shoppingCart.paymentMethod.card.name}}</div>
+                  <div class="address-line"><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'VISA'" class="fa fa-cc-visa visa"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'MC'" class="fa fa-cc-mastercard mastercard"></i><i ng-if="shell.shoppingCart.paymentMethod.card.brand == 'AMERICAN_EXPRESS'" class="fa fa-cc-amex amex"></i>**** **** **** {{shell.shoppingCart.paymentMethod.card.last4}}</div>
+                </div>
+                <div data-ng-if="checkout.paymentOption.name != 'card'">
+                  <div class="address-line">{{shell.shoppingCart.paymentMethod.label}}</div>
+                </div>
                 <div class="address-line"><a data-ng-click="checkout.toPaymentMethod()" data-ng-bind="shell.labels.modify" class="pure-button button-xsmall"></a></div>
               </div>
             </div>
