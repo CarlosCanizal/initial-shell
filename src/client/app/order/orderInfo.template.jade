@@ -50,8 +50,8 @@
               .address-line.accent(data-ng-bind="shell.labels.localPickUp")
               .address-line(data-ng-bind="shell.labels.pickUpText")
           .pure-u-1.pure-u-md-1-3
-            .information-box.padding-side-1(data-ng-if="order.info.paymentMethod")
-              .information-title.uppercase(data-ng-bind="shell.labels.paymentMethod")
+            .information-title.uppercase.padding-side-1(data-ng-bind="shell.labels.paymentMethod")
+            .information-box.padding-side-1(data-ng-if="order.info.type == 'card' && order.info.paymentMethod")
               table.info
                 tbody
                   tr
@@ -65,9 +65,10 @@
                   tr
                     td.info-label(data-ng-bind="shell.labels.card")
                     td.info-value
-                      |**** **** **** {{order.info.paymentMethod.last4}}
+                      |**** **** **** {{order.info.paymentMethod.last4}}            
+            .barcode.information-box.padding-side-1(data-ng-if="order.info.type == 'oxxo' && order.info.paymentMethod")
+              oxxo-code(barcode-url="{{order.info.paymentMethod.barcode_url}}", barcode="{{order.info.paymentMethod.barcode}}", expiration="{{order.info.paymentMethod.expires_at}}", status="{{order.info.status}}")
             .information-box.padding-side-1(data-ng-if="!order.info.paymentMethod")
-              .information-title.uppercase(data-ng-bind="shell.labels.paymentMethod")
               .description
                 |Deposito Personal.
 
@@ -106,11 +107,25 @@
               td.info-value.align-right
                 | {{order.info.shippingMethod.price | currency:''}}
                 span(data-ng-bind="' '+shell.labels.currencySymbol")
+            tr(data-ng-if="order.info.discount")
+              td(colspan="3")
+              //- td.info-important.align-right.border-top.padding-top(data-ng-bind="shell.labels.total")
+              td.info-important.align-right.border-top.padding-top
+                |{{order.info.discount+order.info.amount | currency}}
+                span(data-ng-bind="' '+shell.labels.currencySymbol")
+            tr(data-ng-if="order.info.discount")
+              td(colspan="3")
+              td.info-important.align-right.border-top.padding-top
+                span.accent(data-ng-bind="'-'+shell.labels.discountValue+' '")
+                | {{order.info.discount | currency}}
+                span(data-ng-bind="' '+shell.labels.currencySymbol")
             tr
               td(colspan="3")
               td.info-important.align-right.border-top.padding-top
                 |{{order.info.amount | currency}}
                 span(data-ng-bind="' '+shell.labels.currencySymbol")
+      span.accent(data-ng-if="order.info.discount")
+        |* El decuento no aplica al envio.
 
 div(data-ng-if="order.info.state == 'preorder' && order.info.payments.length >0")
   .filter-title

@@ -54,8 +54,12 @@
       <div data-ng-include="'app/layout/loading/loading.template.html'" data-ng-show="waitingForResponse" class="spinner"></div>
       <div class="shelf-space">
         <div data-ng-hide="waitingForResponse" class="shelf-content">
-          <div data-ng-if="checkout.completed" class="success-container"><i class="fa fa-check-circle fa-8"></i>
+          <div data-ng-if="checkout.completed &amp;&amp; order.info.type=='card' &amp;&amp; order.info.status == 'paid'" class="success-container"><i class="fa fa-check-circle fa-8"></i>
             <h2 data-ng-bind="shell.labels.thanksForBuy"></h2>
+          </div>
+          <div data-ng-if="checkout.completed &amp;&amp; order.info.type == 'oxxo'" class="align-center"><i class="success fa fa-money fa-8"></i>
+            <div data-ng-bind="shell.labels.oxxoConditions"></div>
+            <oxxo-code barcode-url="{{order.info.paymentMethod.barcode_url}}" barcode="{{order.info.paymentMethod.barcode}}" expiration="{{order.info.paymentMethod.expires_at}}" status="{{order.info.status}}"></oxxo-code>
           </div>
           <div data-ng-if="!checkout.completed" class="error-container"><i class="fa fa-credit-card fa-8"></i>
             <h2>{{errorMessage}}</h2>

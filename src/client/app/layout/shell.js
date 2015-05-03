@@ -29,6 +29,7 @@
     shell.system = {};
     shell.system.membership = false;
     shell.labels = {};
+    shell.offset = 5;
 
     $http.get('app/lang/es.json').then(function(labels){
       if(labels.data)
@@ -232,6 +233,10 @@
     shell.showSideMenu = function(showIt){
       shell.sideMenu = showIt;
     };
+
+    shell.print = function(){
+      window.print();
+    }
 
     publisherApi.getPublishers().then(function(result){
       shell.publishers = result.results;

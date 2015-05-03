@@ -257,5 +257,11 @@
     "oxxo":"Deposito en OXXO"
   },
   "oxxoInfo":"Al final se te proporcionara un código para que hagas el pago en cualquier OXXO.",
-  "oxxoPayment":"Deposito en tiendas OXXO."
+  "oxxoPayment":"Deposito en tiendas OXXO.",
+  "oxxoInstructions": "Acude a tu OXXO mas cercano con este código y has tu pago.",
+  "printPayment": "Imprimir Orden",
+  "limitPaymentDate": "Fecha limite de pago:",
+  "oxxoConditions": "Tienes 3 dias para realizar tu pago, de no ser asi, la orden se cancelara y los articulos se pondran en venta nuevamente.",
+  "oxxoExpired": "Lo sentimos este pago a expirado, debes crear nuevamente tu orden y verificar la existencia de los articulos.",
+  "paidAtOxxo": "Orden pagada en OXXO"
 }

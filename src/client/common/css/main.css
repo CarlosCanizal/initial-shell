@@ -856,3 +856,12 @@ a.action:hover {
   font-size: 0.9rem;
   text-align: center;
   margin-bottom: 1rem; }
+
+/* line 718, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
+.barcode img {
+  max-width: 280px;
+  width: 100%; }
+
+/* line 722, /Users/carloscanizal/projects/the-comic-society/src/client/common/css/main.sass */
+.arial {
+  font-family: Arial; }

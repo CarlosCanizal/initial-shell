@@ -61,9 +61,13 @@
       .spinner(data-ng-include="'app/layout/loading/loading.template.html'", data-ng-show="waitingForResponse")
       .shelf-space
         .shelf-content(data-ng-hide="waitingForResponse")
-          .success-container(data-ng-if="checkout.completed")
+          .success-container(data-ng-if="checkout.completed && order.info.type=='card' && order.info.status == 'paid'")
             i.fa.fa-check-circle.fa-8
             h2(data-ng-bind="shell.labels.thanksForBuy")
+          .align-center(data-ng-if="checkout.completed && order.info.type == 'oxxo'")
+            i.success.fa.fa-money.fa-8
+            div(data-ng-bind="shell.labels.oxxoConditions")
+            oxxo-code(barcode-url="{{order.info.paymentMethod.barcode_url}}", barcode="{{order.info.paymentMethod.barcode}}", expiration="{{order.info.paymentMethod.expires_at}}", status="{{order.info.status}}")
           .error-container(data-ng-if="!checkout.completed")
             i.fa.fa-credit-card.fa-8
             h2

@@ -1,6 +1,6 @@
 {
   "headers": {
-    "/cors-stuff/**": {
+    "/**/*.js": {
       "Access-Control-Allow-Origin": "*"
     }
   },
