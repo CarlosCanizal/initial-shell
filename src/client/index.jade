@@ -7,7 +7,7 @@ html(data-ng-app="app")
     meta(name="viewport", content="width=device-width,initial-scale=1")
     meta(charset="utf-8")
     link(rel="shorcut icon", href="common/images/quimera.ico", type="image/x-icon")
-    <!-- build:css -->
+    //build:css
     link(rel="stylesheet", href="bower_components/pure/pure-min.css")
     link(rel="stylesheet", href="bower_components/pure/grids-responsive-min.css")
     link(rel="stylesheet", href="bower_components/components-font-awesome/css/font-awesome.min.css")
@@ -18,7 +18,7 @@ html(data-ng-app="app")
     link(rel="stylesheet", href="common/css/buttons.css")
     link(rel="stylesheet", href="common/css/main.css")
     link(rel="stylesheet", href="common/css/media-query.css")
-    <!-- endbuild --> 
+    //endbuild
   body
     div(data-ng-controller="Shell as shell")
       .initial-layer(data-ng-hide="shell.loaded")
@@ -60,7 +60,7 @@ html(data-ng-app="app")
         a.accent(data-ui-sref='privacy', data-ng-bind="shell.labels.privacyTerms")
         |.  
     script(type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js")
-    <!-- build:js -->
+    //build:js
     script(src="bower_components/angular/angular.js")
     script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
     script(src="bower_components/angular-resource/angular-resource.min.js")
@@ -165,7 +165,7 @@ html(data-ng-app="app")
     script(src="app/cart/checkout/responsePayment/responsePayment.directive.js")
     script(src="app/oxxo/oxxo.directive.js")
     script(src="common/js/moment.js")
-    <!-- endbuild -->
+    //endbuild
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
