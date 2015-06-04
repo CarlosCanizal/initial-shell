@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var argv = require('yargs').argv;
 var paths = require('./gulp/gulp.config.json');
 var critical = require('critical');
+var addsrc = require('gulp-add-src');
 
 //checar con load plugins
 var jpegoptim = require('imagemin-jpegoptim');
@@ -83,7 +84,7 @@ gulp.task('scripts', function () {
                       'src/client/app/core/config.js',
                       'src/client/app/core/parse/parse.factory.js',
                       'src/client/app/core/parse/sepomex.factory.js',
-                      'src/client/app/core/parse/development.headers.factory.js',
+                      // 'src/client/app/core/parse/development.headers.factory.js',
                       'src/client/app/core/store/store.api.factory.js',
                       'src/client/app/core/user/user.api.factory.js',
                       'src/client/app/core/user/token.api.js',
@@ -171,22 +172,27 @@ gulp.task('scripts', function () {
                       'src/client/common/js/moment.js'
                      ];
 
-    // if(argv.production){
-    //   console.log('We are in production!');
-    //   scriptList.push['src/client/app/core/parse/production.headers.factory.js']
-    // }else{
-    //   console.log('We are in development!');
-    //   scriptList.push['src/client/app/core/parse/development.headers.factory.js']
-    //   console.log(scriptList)
-    // }
+    if(argv.production){
+      console.log('We are in production!');
+    }else{
+      console.log('We are in development!');
+    }
 
     return gulp.src(scriptList)
+        .pipe(addsrc(enviromentKeys(argv.production))) 
         .pipe($.concat('main.js'))
         .pipe($.rename({suffix: '.min'}))
         .pipe($.uglify({mangle:false}))
         .pipe(gulp.dest('dist/js'))
         .pipe($.notify({message: 'Scripts task complete'}));
 });
+
+function enviromentKeys(production){
+  if(production)
+    return 'src/client/app/core/parse/production.headers.factory.js';
+  else
+    return 'src/client/app/core/parse/development.headers.factory.js';
+}         
 
 //Images
 gulp.task('images', function () {
