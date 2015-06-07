@@ -84,7 +84,7 @@ gulp.task('scripts', function () {
                       'src/client/app/core/config.js',
                       'src/client/app/core/parse/parse.factory.js',
                       'src/client/app/core/parse/sepomex.factory.js',
-                      // 'src/client/app/core/parse/development.headers.factory.js',
+                      'src/client/app/core/parse/development.headers.factory.js',
                       'src/client/app/core/store/store.api.factory.js',
                       'src/client/app/core/user/user.api.factory.js',
                       'src/client/app/core/user/token.api.js',
@@ -179,7 +179,7 @@ gulp.task('scripts', function () {
     }
 
     return gulp.src(scriptList)
-        .pipe(addsrc(enviromentKeys(argv.production))) 
+        // .pipe(addsrc(enviromentKeys(argv.production))) 
         .pipe($.concat('main.js'))
         .pipe($.rename({suffix: '.min'}))
         .pipe($.uglify({mangle:false}))

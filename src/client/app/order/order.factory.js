@@ -64,7 +64,7 @@
     }
 
     function getOrder(objectId){
-      return Order.get({objectId:objectId}).$promise;
+      return Order.get({objectId:objectId, include:'user'}).$promise;
     }
 
   }

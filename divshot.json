@@ -1,6 +1,6 @@
 {
   "headers": {
-    "/**/*.js": {
+    "*": {
       "Access-Control-Allow-Origin": "*"
     }
   },

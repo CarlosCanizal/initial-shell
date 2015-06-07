@@ -39,12 +39,16 @@
             </div>
           </div>
           <div class="pure-u-1 pure-u-md-1-3 border-right">
-            <div data-ng-show="order.info.shippingMethod.shipping" class="information-box padding-side-1">
+            <div data-ng-show="order.info.shippingMethod" class="information-box padding-side-1">
               <div data-ng-bind="shell.labels.shippingAddress" class="information-title uppercase"></div>
+              <div class="description">{{order.info.user.name}} {{order.info.user.lastname}}</div>
+              <div class="description margin-bottom">{{order.info.user.username}}</div>
               <div class="description">{{order.info.shippingAddress.street}} {{order.info.shippingAddress.number}} {{order.info.shippingAddress.apt}}<br/>{{order.info.shippingAddress.district}} {{order.info.shippingAddress.municipality}} <br/>{{order.info.shippingAddress.country}}, {{order.info.shippingAddress.state}},  {{order.info.shippingAddress.zip}}</div>
             </div>
-            <div data-ng-hide="order.info.shippingMethod.shipping" class="information-box padding-side-1">
+            <div data-ng-hide="order.info.shippingMethod" class="information-box padding-side-1">
               <div data-ng-bind="shell.labels.shipping" class="information-title uppercase"></div>
+              <div class="description">{{order.info.user.name}} {{order.info.user.lastname}}</div>
+              <div class="description margin-bottom">{{order.info.user.username}}</div>
               <div data-ng-bind="shell.labels.localPickUp" class="address-line accent"></div>
               <div data-ng-bind="shell.labels.pickUpText" class="address-line"></div>
             </div>

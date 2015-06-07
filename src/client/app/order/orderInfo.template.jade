@@ -37,16 +37,24 @@
                     td.info-value
                       |{{order.info.tracking}}
           .pure-u-1.pure-u-md-1-3.border-right
-            .information-box.padding-side-1(data-ng-show="order.info.shippingMethod.shipping")
+            .information-box.padding-side-1(data-ng-show="order.info.shippingMethod")
               .information-title.uppercase(data-ng-bind="shell.labels.shippingAddress")
+              .description
+                |{{order.info.user.name}} {{order.info.user.lastname}}
+              .description.margin-bottom
+                |{{order.info.user.username}}
               .description
                 | {{order.info.shippingAddress.street}} {{order.info.shippingAddress.number}} {{order.info.shippingAddress.apt}}
                 br
                 | {{order.info.shippingAddress.district}} {{order.info.shippingAddress.municipality}} 
                 br
                 | {{order.info.shippingAddress.country}}, {{order.info.shippingAddress.state}},  {{order.info.shippingAddress.zip}}
-            .information-box.padding-side-1(data-ng-hide="order.info.shippingMethod.shipping")
+            .information-box.padding-side-1(data-ng-hide="order.info.shippingMethod")
               .information-title.uppercase(data-ng-bind="shell.labels.shipping")
+              .description
+                |{{order.info.user.name}} {{order.info.user.lastname}}
+              .description.margin-bottom
+                |{{order.info.user.username}}
               .address-line.accent(data-ng-bind="shell.labels.localPickUp")
               .address-line(data-ng-bind="shell.labels.pickUpText")
           .pure-u-1.pure-u-md-1-3

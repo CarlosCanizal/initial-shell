@@ -6,6 +6,7 @@
     "imagemin-jpegoptim": "^4.0.0",
     "imagemin-optipng": "^4.2.0",
     "imagemin-pngquant": "^4.0.0",
+    "superstatic": "^2.2.0",
     "yargs": "^3.6.0"
   },
   "devDependencies": {

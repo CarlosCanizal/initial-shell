@@ -16,6 +16,7 @@
       $scope.loading = true;
 
       orderApi.getOrder(objectId).then(function(result){
+        console.log(result);
         order.info = result;
       },function(error){
         shell.setError(error);
