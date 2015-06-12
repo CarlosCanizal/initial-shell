@@ -14,7 +14,8 @@
 
     shell.showLoading();
     userApi.getUserByKey($stateParams.key).then(function(){
-    },function(){
+    },function(error){
+      console.log(error);
       $state.go('login');
     }).finally(shell.hideLoading);
 

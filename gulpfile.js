@@ -84,7 +84,7 @@ gulp.task('scripts', function () {
                       'src/client/app/core/config.js',
                       'src/client/app/core/parse/parse.factory.js',
                       'src/client/app/core/parse/sepomex.factory.js',
-                      'src/client/app/core/parse/development.headers.factory.js',
+                      'src/client/app/core/parse/production.headers.factory.js',
                       'src/client/app/core/store/store.api.factory.js',
                       'src/client/app/core/user/user.api.factory.js',
                       'src/client/app/core/user/token.api.js',

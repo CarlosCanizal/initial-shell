@@ -123,7 +123,6 @@
       }
       
       shell.isDashboard = toState.data && toState.data.dashboard ? true : false;
-      shell.isAdmin = toState.data && toState.data.admin ? true : false;
       shell.menu = toState.data && toState.data.menu ? toState.data.menu : null ;
       shell.submenu = toState.data && toState.data.submenu ? toState.data.submenu : null ;
     });

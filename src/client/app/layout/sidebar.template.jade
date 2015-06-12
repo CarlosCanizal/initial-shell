@@ -10,18 +10,7 @@
         | COMICS'
       .logo-h1
         | SOCIETY
-  nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.currentUser.role == 'assistent'")
-    a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}", data-ng-bind="shell.labels.convention")
-    a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser", data-ng-bind="shell.labels.goOut")
-  nav.side-menu.hidden.visible-lg-block(data-ng-if="shell.isAdmin && shell.currentUser.role == 'admin'")
-    a.pointer(ui-sref="admin.assistent", data-ng-class="{'active': shell.menu == 'assistent'}", data-ng-bind="shell.labels.convention")
-    a.pointer(ui-sref="admin.users", data-ng-class="{'active': shell.menu == 'users'}", data-ng-bind="shell.labels.users")
-    a.pointer(ui-sref="admin.orders", data-ng-class="{'active': shell.menu == 'orders'}", data-ng-bind="shell.labels.orders")
-    a.pointer(ui-sref="admin.products", data-ng-class="{'active': shell.menu == 'products'}", data-ng-bind="shell.labels.products")
-    a.pointer(ui-sref="admin.publishers", data-ng-class="{'active': shell.menu == 'publishers'}", data-ng-bind="shell.labels.publishers")
-    a.pointer(ui-sref="admin.series", data-ng-class="{'active': shell.menu == 'series'}", data-ng-bind="shell.labels.series")
-    a.pointer(ng-click="shell.logout()",data-ng-if="shell.currentUser", data-ng-bind="shell.labels.goOut")
-  nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard && !shell.isAdmin")
+  nav.side-menu.hidden.visible-lg-block(data-ng-if="!shell.isDashboard")
     a.pointer(ui-sref="about", data-ng-class="{'active': shell.menu == 'about'}", data-ng-bind="shell.labels.howItWorks")
     a.pointer(ui-sref="home", data-ng-class="{'active': shell.menu == 'home'}", data-ng-bind="shell.labels.store")          
     a.pointer(ui-sref="login", data-ng-class="{'active': shell.menu == 'login'}", data-ng-bind="shell.labels.myAccount")

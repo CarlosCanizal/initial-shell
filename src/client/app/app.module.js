@@ -10,7 +10,6 @@
     'app.layout',
     'app.conekta',
     'app.cart',
-    'app.dashboard',
-    'app.admin'
+    'app.dashboard'
   ]);
 })();

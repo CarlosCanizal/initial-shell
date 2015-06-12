@@ -1,7 +1,7 @@
 {
   "headers": {
-    "*": {
-      "Access-Control-Allow-Origin": "*"
+    "https://thecomicsociety.com": {
+      "Access-Control-Allow-Origin": "https://ssl.kaptcha.com"
     }
   },
   "name": "thecomicsociety",

@@ -210,7 +210,7 @@
   "forgotMyPassword":"Olvide mi Contraseña",
   "recoveryPassword":"Recuperar Contraseña",
   "recoveryText1":"No te preocupes te ayudaremos a regresar a la Sociedad.",
-  "recoveryText1":"Se envió un correo electrónico con los pasos para recuperar tu contraseña.",
+  "recoveryText2":"Se envió un correo electrónico con los pasos para recuperar tu contraseña.",
   "noCancel":"No, Cancelar",
   "yesContinue":"Si, Continuar",
   "reference":"Referencia",
