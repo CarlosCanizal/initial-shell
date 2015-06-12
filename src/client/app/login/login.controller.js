@@ -19,7 +19,7 @@
       // else if(user.role == 'assistent'){
       //   $state.go('admin.assistent');
       // }else{
-      $state.go('dashboard.account');
+      $state.go('dashboard.profile');
       // }
     };
   }

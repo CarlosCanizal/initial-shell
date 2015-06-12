@@ -12,6 +12,11 @@
     var view = $scope.view;
     var account = this;
 
+    if(!shell.isMember()){
+      $state.go('dashboard.profile');
+      return;
+    }
+
     account.cardFormView = false;
     account.cancelFormView = false;
     account.upgradeView = false;
