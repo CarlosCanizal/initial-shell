@@ -1,7 +1,0 @@
-.section-title
-  | Tienda
-.search(data-ng-include="'app/layout/search.template.html'")
-.shelf(shelf, publisher="{{shell.searchValue}}" store="Search" data-ng-if="shell.searching")
-.shelf(shelf, publisher="{{shell.currentPublisher}}", store="Product", data-ng-if="shell.shelfLoaded")
-.shelf(shelf, publisher="", stock="true", store="Product", data-ng-if="shell.landing && !shell.searchLoaded")
-.shelf(shelf, publisher="{{shell.initialSearch}}", store="Search", data-ng-if="shell.landing")
